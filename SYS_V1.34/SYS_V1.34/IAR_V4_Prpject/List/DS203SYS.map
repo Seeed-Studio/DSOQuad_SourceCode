@@ -1,0 +1,3508 @@
+################################################################################
+#                                                                              #
+#      IAR Universal Linker V4.60I/386                                         #
+#                                                                              #
+#           Link time     =  25/Apr/2011  15:04:59                             #
+#           Target CPU    =  ARM                                               #
+#           List file     =  "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\List\DS203SYS #
+#                            .map"                                             #
+#           Output file 1 =  "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Exe\DS203SYS. #
+#                            d79"                                              #
+#                            Format: debug                                     #
+#                            UBROF version 10.0.2                              #
+#                            Using library modules for C-SPY (-rt)             #
+#           Output file 2 =  "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Exe\DS203SYS. #
+#                            hex"                                              #
+#                            Format: intel-extended, variant: -y(CODE)         #
+#           Command line  =  "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\ASM.r79"  #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\BIOS.r79" #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\Config.r7 #
+#                            9"                                                #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\Function. #
+#                            r79"                                              #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\Ident.r79 #
+#                            "                                                 #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\Interrupt #
+#                            .r79"                                             #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\LCD.r79"  #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\Main.r79" #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\Memory.r7 #
+#                            9"                                                #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\SPI_flash #
+#                            .r79"                                             #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\USB_bot.r #
+#                            79"                                               #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\USB_desc. #
+#                            r79"                                              #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\USB_endp. #
+#                            r79"                                              #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\USB_istr. #
+#                            r79"                                              #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\USB_prop. #
+#                            r79"                                              #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\USB_pwr.r #
+#                            79"                                               #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\USB_scsi. #
+#                            r79"                                              #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\cortexm3_ #
+#                            macro.r79"                                        #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\scsi_data #
+#                            .r79"                                             #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\stm32f10x #
+#                            _dma.r79"                                         #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\stm32f10x #
+#                            _flash.r79"                                       #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\stm32f10x #
+#                            _fsmc.r79"                                        #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\stm32f10x #
+#                            _gpio.r79"                                        #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\stm32f10x #
+#                            _lib.r79"                                         #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\stm32f10x #
+#                            _nvic.r79"                                        #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\stm32f10x #
+#                            _rcc.r79"                                         #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\stm32f10x #
+#                            _sdio.r79"                                        #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\stm32f10x #
+#                            _spi.r79"                                         #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\stm32f10x #
+#                            _vector.r79"                                      #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\usb_core. #
+#                            r79"                                              #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\usb_init. #
+#                            r79"                                              #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\usb_int.r #
+#                            79"                                               #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\usb_mem.r #
+#                            79"                                               #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\usb_regs. #
+#                            r79"                                              #
+#                            -o                                                #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Exe\DS203SYS. #
+#                            d79"                                              #
+#                            -l                                                #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\List\DS203SYS #
+#                            .map"                                             #
+#                            -xms                                              #
+#                            "-IE:\IARWorkBench(Cracked)\Embedded Workbench 4. #
+#                            0 Evaluation\ARM\LIB\"                            #
+#                            -f                                                #
+#                            "C:\Users\Administrator\Desktop\mini DSO download #
+#                            \SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\lnkarm.xcl"   #
+#                            (-DROMSTART=0x8004000 -DROMEND=0x803FFFF          #
+#                            -DRAMSTART=0x20000000 -DRAMEND=0x2000BFFF         #
+#                            -Z(CODE)SYS_FUNC=0x8004200-ROMEND -carm           #
+#                            -Z(CODE)INTVEC=ROMSTART-ROMEND                    #
+#                            -Z(CODE)ICODE,DIFUNCT=ROMSTART-ROMEND             #
+#                            -Z(CODE)SWITAB=ROMSTART-ROMEND                    #
+#                            -Z(CODE)CODE=ROMSTART-ROMEND                      #
+#                            -Z(CONST)CODE_ID=ROMSTART-ROMEND                  #
+#                            -Z(CONST)INITTAB,DATA_ID,DATA_C=ROMSTART-ROMEND   #
+#                            -Z(CONST)CHECKSUM=ROMSTART-ROMEND                 #
+#                            -Z(DATA)DATA_I,DATA_Z,DATA_N=RAMSTART-RAMEND      #
+#                            -Z(DATA)CODE_I=RAMSTART-RAMEND -QCODE_I=CODE_ID   #
+#                            -D_CSTACK_SIZE=400 -D_HEAP_SIZE=200               #
+#                            -Z(DATA)CSTACK+_CSTACK_SIZE=RAMSTART-RAMEND       #
+#                            -Z(DATA)HEAP+_HEAP_SIZE=RAMSTART-RAMEND           #
+#                            -Ointel-extended,(CODE)=.hex) -rt                 #
+#                            "E:\IARWorkBench(Cracked)\Embedded Workbench 4.0  #
+#                            Evaluation\ARM\LIB\dl7mptnnl8n.r79"               #
+#                            -s __program_start                                #
+#                                                                              #
+#                        Copyright 1987-2007 IAR Systems. All rights reserved. #
+################################################################################
+
+
+
+
+
+                ****************************************
+                *                                      *
+                *           CROSS REFERENCE            *
+                *                                      *
+                ****************************************
+
+       Program entry at :           08004165  Relocatable, from module : ?CMAIN
+
+
+
+
+                ****************************************
+                *                                      *
+                *            RUNTIME MODEL             *
+                *                                      *
+                ****************************************
+
+  StackAlign4            = USED
+  __cpu_mode             = __pcs__thumb
+  __data_model           = absolute
+  __dlib_file_descriptor = 0
+  __endian               = little
+  __rt_version           = 6
+
+
+
+                ****************************************
+                *                                      *
+                *              MODULE MAP              *
+                *                                      *
+                ****************************************
+
+
+  DEFINED ABSOLUTE ENTRIES
+    *************************************************************************
+
+  DEFINED ABSOLUTE ENTRIES
+  PROGRAM MODULE, NAME : ?ABS_ENTRY_MOD
+
+Absolute parts
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _HEAP_SIZE              00000200 
+           _CSTACK_SIZE            00000400 
+           RAMEND                  2000BFFF 
+           RAMSTART                20000000 
+           ROMEND                  0803FFFF 
+           ROMSTART                08004000 
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\ASM.r79
+  PROGRAM MODULE, NAME : ASM
+
+  SEGMENTS IN THE MODULE
+  ======================
+SYS_FUNC
+  Relative segment, address: 08004200 - 0800435B (0x15c bytes), align: 2
+  Segment part 0. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __CTR_HP                08004201 
+           __USB_Istr              08004205 
+           __LCD_Initial           08004209 
+           __Point_SCR             0800420D 
+           __LCD_SetPixl           08004211        Display_Str (LCD)
+           __Clear_Screen          08004215 
+           __Get_TAB_8x14          08004219 
+           __LCD_Set_Block         0800421D 
+           __LCD_DMA_Ready         08004221        Clear_Screen (LCD)
+                                                   Point_SCR (LCD)
+           __LCD_Copy              08004225 
+           __LCD_Fill              08004229        Clear_Screen (LCD)
+           __Row_DMA_Ready         0800422D 
+           __Row_Copy              08004231 
+           __Read_FIFO             08004235 
+           __Input_Lic             08004239 
+           __Dev_SN                0800423D        main (Main)
+           __Chk_SYS               08004241        main (Main)
+           __Ident                 08004245 
+           __Display_Str           08004249 
+           __Set                   0800424D 
+           __Set_Param             08004251 
+           __Get                   08004255 
+           __Disk_Buff_WR          08004259 
+           __Disk_Buff_RD          0800425D 
+           __Param_Area_WR         08004261 
+           __Param_Area_RD         08004265 
+           __LCD_GetPixl           08004269 
+           __USB_Init              0800426D 
+           __FLASH_Erase           08004271 
+           __FLASH_Prog            08004275 
+           __FLASH_Unlock          08004279 
+           __FLASH_Lock            0800427D 
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           LCD_SetPixl             0800429B 
+           LCD_DMA_Ready           080042B5 
+           LCD_Copy                080042EF 
+           LCD_Fill                08004303 
+           Row_DMA_Ready           080042A1 
+           Row_Copy                080042C9 
+           Read_FIFO               08004323 
+           Dev_SN                  0800428D 
+           Chk_SYS                 08004281 
+           Ident                   08004287 
+           LCD_GetPixl             08004293 
+           Row_DMA_Ready_1         080042AD 
+           LCD_DMA_Ready_1         080042C1 
+           Row_Copy_1              080042D1 
+           LCD_Fill_1              0800430B 
+           _?0                     0800433C 
+           _?1                     08004340 
+           _?2                     08004344 
+           _?3                     08004348 
+           _?4                     0800434C 
+           _?5                     08004350 
+           _?6                     08004354 
+           _?7                     08004358 
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\BIOS.r79
+  PROGRAM MODULE, NAME : BIOS
+
+  SEGMENTS IN THE MODULE
+  ======================
+DATA_C
+  Relative segment, address: 08007904 - 08007D2F (0x42c bytes), align: 2
+  Segment part 2.             Intra module refs:   Get
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           G_ATTR                  08007904 
+           T_ATTR                  08007BF0 
+           X_ATTR                  080079D4 
+           Y_ATTR                  08007920 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800435C - 08004763 (0x408 bytes), align: 2
+  Segment part 3.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Set                     0800435D        Beep (Function)
+                                                   Segment part 0 (ASM)
+                                                   TIM3_IRQHandler (Interrupt)
+               stack 1 = 00000000 ( 00000028 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08004764 - 0800479B (0x38 bytes), align: 2
+  Segment part 4.             Intra module refs:   Set_Param
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SendByte                08004765 
+               stack 1 = 00000000 ( 0000000C )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800479C - 080047B9 (0x1e bytes), align: 2
+  Segment part 5.             Intra module refs:   Set
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Set_Param               0800479D        Segment part 0 (ASM)
+               stack 1 = 00000000 ( 0000000C )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080047BC - 080047BF (0x4 bytes), align: 2
+  Segment part 6.             Intra module refs:   Set_Param
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080047C0 - 080048D7 (0x118 bytes), align: 2
+  Segment part 7.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Get                     080047C1        Read_Keys (Function)
+                                                   Segment part 0 (ASM)
+               stack 1 = 00000000 ( 0000000C )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080048D8 - 080048DB (0x4 bytes), align: 2
+  Segment part 8.             Intra module refs:   Get
+                                                   Set_Param
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\Config.r79
+  PROGRAM MODULE, NAME : Config
+
+  SEGMENTS IN THE MODULE
+  ======================
+DATA_Z
+  Relative segment, address: 2000044A - 2000044A (0x1 bytes), align: 0
+  Segment part 2.             Intra module refs:   Set_System
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           HSEStartUpStatus        2000044A 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080048DC - 0800495F (0x84 bytes), align: 2
+  Segment part 3.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Set_System              080048DD        main (Main)
+               stack 1 = 00000000 ( 00000008 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08004960 - 080049CB (0x6c bytes), align: 2
+  Segment part 4.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           NVIC_Config             08004961        main (Main)
+               stack 1 = 00000000 ( 00000010 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080049CC - 08004A77 (0xac bytes), align: 2
+  Segment part 6.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           GPIO_Config             080049CD        main (Main)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08004A78 - 08004A7B (0x4 bytes), align: 2
+  Segment part 7.             Intra module refs:   GPIO_Config
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08004A7C - 08004AC3 (0x48 bytes), align: 2
+  Segment part 8.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           FSMC_Config             08004A7D        main (Main)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08004AC4 - 08004B0F (0x4c bytes), align: 2
+  Segment part 9.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SPI_Config              08004AC5        main (Main)
+               stack 1 = 00000000 ( 0000001C )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08004B10 - 08004B83 (0x74 bytes), align: 2
+  Segment part 10.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMA_Config              08004B11        main (Main)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08004B84 - 08004B97 (0x14 bytes), align: 2
+  Segment part 11.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DAC_Config              08004B85        main (Main)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08004B98 - 08004C9B (0x104 bytes), align: 2
+  Segment part 12.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ADC_Config              08004B99        main (Main)
+               stack 1 = 00000000 ( 00000008 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08004C9C - 08004DC7 (0x12c bytes), align: 2
+  Segment part 13.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Timer_Config            08004C9D        main (Main)
+               stack 1 = 00000000 ( 0000000C )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08004DC8 - 08004E17 (0x50 bytes), align: 2
+  Segment part 14.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Get_SerialNum           08004DC9        MASS_init (USB_prop)
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+INITTAB
+  Relative segment, address: 080077B8 - 080077C3 (0xc bytes), align: 2
+  Segment part 30. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?init?tab?DATA_Z        080077B8 
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\Function.r79
+  PROGRAM MODULE, NAME : Function
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 08004E18 - 08004EC3 (0xac bytes), align: 2
+  Segment part 8.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Word2Hex                08004E19        Input_Lic (Ident)
+                                                   main (Main)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08004EC4 - 08004F63 (0xa0 bytes), align: 2
+  Segment part 10.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Read_Keys               08004EC5        TIM3_IRQHandler (Interrupt)
+               stack 1 = 00000000 ( 0000001C )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08004F64 - 08004F73 (0x10 bytes), align: 2
+  Segment part 11.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Beep                    08004F65        main (Main)
+               stack 1 = 00000000 ( 00000004 )
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\Ident.r79
+  PROGRAM MODULE, NAME : Ident
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 08004F74 - 08004F79 (0x6 bytes), align: 2
+  Segment part 5.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Get_Lic                 08004F75        main (Main)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08004F7C - 08004FAB (0x30 bytes), align: 2
+  Segment part 14.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Add_Lic                 08004F7D        main (Main)
+               stack 1 = 00000000 ( 00000010 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08004FAC - 08004FAF (0x4 bytes), align: 2
+  Segment part 15.            Intra module refs:   Add_Lic
+                                                   Get_Lic
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08004FB0 - 080050BB (0x10c bytes), align: 2
+  Segment part 16.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Input_Lic               08004FB1        Segment part 0 (ASM)
+                                                   main (Main)
+               stack 1 = 00000000 ( 00000044 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080050BC - 080050E5 (0x2a bytes), align: 2
+  Segment part 17.            Intra module refs:   Add_Lic
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           FLASH_Prog              080050BD        Segment part 0 (ASM)
+               stack 1 = 00000000 ( 0000000C )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080050E8 - 08005115 (0x2e bytes), align: 2
+  Segment part 18.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           FLASH_Erase             080050E9        Segment part 0 (ASM)
+               stack 1 = 00000000 ( 00000008 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005118 - 0800511B (0x4 bytes), align: 2
+  Segment part 19.            Intra module refs:   FLASH_Erase
+                                                   FLASH_Prog
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 080084A8 - 080084A9 (0x2 bytes), align: 0
+  Segment part 2.             Intra module refs:   Input_Lic
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\Interrupt.r79
+  PROGRAM MODULE, NAME : Interrupt
+
+  SEGMENTS IN THE MODULE
+  ======================
+DATA_Z
+  Relative segment, address: 2000042C - 2000043B (0x10 bytes), align: 1
+  Segment part 2.             Intra module refs:   TIM3_IRQHandler
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Beep_mS                 2000043A        Beep (Function)
+           Cnt_20mS                20000431 
+           Cnt_mS                  20000430 
+           Cursor_Cnt              2000042C 
+           Delay_Cnt               20000434        Delayms (LCD)
+           Key_Buffer              2000042F        Input_Lic (Ident)
+                                                   main (Main)
+           Key_Repeat_Cnt          2000042E        Read_Keys (Function)
+           Key_Wait_Cnt            2000042D        Read_Keys (Function)
+           PD_Cnt                  20000438 
+           Sec_Cnt                 20000436 
+           Twink                   20000432        Input_Lic (Ident)
+    -------------------------------------------------------------------------
+DATA_Z
+  Relative segment, address: 2000043C - 2000043D (0x2 bytes), align: 1
+  Segment part 4.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Key_Status_Last         2000043C        Read_Keys (Function)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800511C - 0800511D (0x2 bytes), align: 2
+  Segment part 5.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           NMIException            0800511D        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005120 - 08005121 (0x2 bytes), align: 2
+  Segment part 6.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           HardFaultException      08005121        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005124 - 08005125 (0x2 bytes), align: 2
+  Segment part 7.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           MemManageException      08005125        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005128 - 08005129 (0x2 bytes), align: 2
+  Segment part 8.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           BusFaultException       08005129        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800512C - 0800512D (0x2 bytes), align: 2
+  Segment part 9.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           UsageFaultException     0800512D        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005130 - 08005131 (0x2 bytes), align: 2
+  Segment part 10.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DebugMonitor            08005131        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005134 - 08005135 (0x2 bytes), align: 2
+  Segment part 11.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SVCHandler              08005135        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005138 - 08005139 (0x2 bytes), align: 2
+  Segment part 12.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           PendSVC                 08005139        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800513C - 0800513D (0x2 bytes), align: 2
+  Segment part 13.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SysTickHandler          0800513D        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005140 - 08005141 (0x2 bytes), align: 2
+  Segment part 14.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           WWDG_IRQHandler         08005141        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005144 - 08005145 (0x2 bytes), align: 2
+  Segment part 15.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           PVD_IRQHandler          08005145        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005148 - 08005149 (0x2 bytes), align: 2
+  Segment part 16.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TAMPER_IRQHandler       08005149        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800514C - 0800514D (0x2 bytes), align: 2
+  Segment part 17.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           RTC_IRQHandler          0800514D        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005150 - 08005151 (0x2 bytes), align: 2
+  Segment part 18.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           FLASH_IRQHandler        08005151        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005154 - 08005155 (0x2 bytes), align: 2
+  Segment part 19.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           RCC_IRQHandler          08005155        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005158 - 08005159 (0x2 bytes), align: 2
+  Segment part 20.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           EXTI0_IRQHandler        08005159        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800515C - 0800515D (0x2 bytes), align: 2
+  Segment part 21.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           EXTI1_IRQHandler        0800515D        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005160 - 08005161 (0x2 bytes), align: 2
+  Segment part 22.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           EXTI2_IRQHandler        08005161        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005164 - 08005165 (0x2 bytes), align: 2
+  Segment part 23.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           EXTI3_IRQHandler        08005165        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005168 - 08005169 (0x2 bytes), align: 2
+  Segment part 24.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           EXTI4_IRQHandler        08005169        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800516C - 0800516D (0x2 bytes), align: 2
+  Segment part 25.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMA1_Channel1_IRQHandler
+                                   0800516D        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005170 - 08005171 (0x2 bytes), align: 2
+  Segment part 26.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMA1_Channel2_IRQHandler
+                                   08005171        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005174 - 08005175 (0x2 bytes), align: 2
+  Segment part 27.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMA1_Channel3_IRQHandler
+                                   08005175        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005178 - 08005179 (0x2 bytes), align: 2
+  Segment part 28.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMA1_Channel4_IRQHandler
+                                   08005179        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800517C - 0800517D (0x2 bytes), align: 2
+  Segment part 29.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMA1_Channel5_IRQHandler
+                                   0800517D        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005180 - 08005181 (0x2 bytes), align: 2
+  Segment part 30.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMA1_Channel6_IRQHandler
+                                   08005181        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005184 - 08005185 (0x2 bytes), align: 2
+  Segment part 31.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMA1_Channel7_IRQHandler
+                                   08005185        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005188 - 08005189 (0x2 bytes), align: 2
+  Segment part 32.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ADC1_2_IRQHandler       08005189        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800518C - 0800518F (0x4 bytes), align: 2
+  Segment part 33.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           USB_HP_CAN_TX_IRQHandler
+                                   0800518D        __vector_table (stm32f10x_vector)
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005190 - 08005193 (0x4 bytes), align: 2
+  Segment part 34.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           USB_LP_CAN_RX0_IRQHandler
+                                   08005191        __vector_table (stm32f10x_vector)
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005194 - 08005195 (0x2 bytes), align: 2
+  Segment part 35.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           CAN_RX1_IRQHandler      08005195        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005198 - 08005199 (0x2 bytes), align: 2
+  Segment part 36.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           CAN_SCE_IRQHandler      08005199        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800519C - 0800519D (0x2 bytes), align: 2
+  Segment part 37.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           EXTI9_5_IRQHandler      0800519D        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080051A0 - 080051A1 (0x2 bytes), align: 2
+  Segment part 38.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TIM1_BRK_IRQHandler     080051A1        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080051A4 - 080051A5 (0x2 bytes), align: 2
+  Segment part 39.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TIM1_UP_IRQHandler      080051A5        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080051A8 - 080051A9 (0x2 bytes), align: 2
+  Segment part 40.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TIM1_TRG_COM_IRQHandler
+                                   080051A9        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080051AC - 080051AD (0x2 bytes), align: 2
+  Segment part 41.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TIM1_CC_IRQHandler      080051AD        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080051B0 - 080051B1 (0x2 bytes), align: 2
+  Segment part 42.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TIM2_IRQHandler         080051B1        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080051B4 - 0800526B (0xb8 bytes), align: 2
+  Segment part 43.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TIM3_IRQHandler         080051B5        __vector_table (stm32f10x_vector)
+               stack 1 = 00000000 ( 0000000C )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800526C - 0800526D (0x2 bytes), align: 2
+  Segment part 44.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TIM4_IRQHandler         0800526D        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005270 - 08005271 (0x2 bytes), align: 2
+  Segment part 45.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           I2C1_EV_IRQHandler      08005271        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005274 - 08005275 (0x2 bytes), align: 2
+  Segment part 46.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           I2C1_ER_IRQHandler      08005275        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005278 - 08005279 (0x2 bytes), align: 2
+  Segment part 47.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           I2C2_EV_IRQHandler      08005279        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800527C - 0800527D (0x2 bytes), align: 2
+  Segment part 48.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           I2C2_ER_IRQHandler      0800527D        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005280 - 08005281 (0x2 bytes), align: 2
+  Segment part 49.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SPI1_IRQHandler         08005281        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005284 - 08005285 (0x2 bytes), align: 2
+  Segment part 50.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SPI2_IRQHandler         08005285        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005288 - 08005289 (0x2 bytes), align: 2
+  Segment part 51.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           USART1_IRQHandler       08005289        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800528C - 0800528D (0x2 bytes), align: 2
+  Segment part 52.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           USART2_IRQHandler       0800528D        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005290 - 08005291 (0x2 bytes), align: 2
+  Segment part 53.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           USART3_IRQHandler       08005291        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005294 - 08005295 (0x2 bytes), align: 2
+  Segment part 54.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           EXTI15_10_IRQHandler    08005295        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005298 - 08005299 (0x2 bytes), align: 2
+  Segment part 55.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           RTCAlarm_IRQHandler     08005299        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800529C - 0800529D (0x2 bytes), align: 2
+  Segment part 56.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           USBWakeUp_IRQHandler    0800529D        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080052A0 - 080052A1 (0x2 bytes), align: 2
+  Segment part 57.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TIM8_BRK_IRQHandler     080052A1        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080052A4 - 080052A5 (0x2 bytes), align: 2
+  Segment part 58.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TIM8_UP_IRQHandler      080052A5        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080052A8 - 080052A9 (0x2 bytes), align: 2
+  Segment part 59.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TIM8_TRG_COM_IRQHandler
+                                   080052A9        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080052AC - 080052AD (0x2 bytes), align: 2
+  Segment part 60.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TIM8_CC_IRQHandler      080052AD        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080052B0 - 080052B1 (0x2 bytes), align: 2
+  Segment part 61.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ADC3_IRQHandler         080052B1        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080052B4 - 080052B5 (0x2 bytes), align: 2
+  Segment part 62.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           FSMC_IRQHandler         080052B5        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080052B8 - 080052B9 (0x2 bytes), align: 2
+  Segment part 63.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SDIO_IRQHandler         080052B9        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080052BC - 080052BD (0x2 bytes), align: 2
+  Segment part 64.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TIM5_IRQHandler         080052BD        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080052C0 - 080052C1 (0x2 bytes), align: 2
+  Segment part 65.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SPI3_IRQHandler         080052C1        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080052C4 - 080052C5 (0x2 bytes), align: 2
+  Segment part 66.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           UART4_IRQHandler        080052C5        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080052C8 - 080052C9 (0x2 bytes), align: 2
+  Segment part 67.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           UART5_IRQHandler        080052C9        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080052CC - 080052CD (0x2 bytes), align: 2
+  Segment part 68.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TIM6_IRQHandler         080052CD        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080052D0 - 080052D1 (0x2 bytes), align: 2
+  Segment part 69.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TIM7_IRQHandler         080052D1        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080052D4 - 080052D5 (0x2 bytes), align: 2
+  Segment part 70.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMA2_Channel1_IRQHandler
+                                   080052D5        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080052D8 - 080052D9 (0x2 bytes), align: 2
+  Segment part 71.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMA2_Channel2_IRQHandler
+                                   080052D9        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080052DC - 080052DD (0x2 bytes), align: 2
+  Segment part 72.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMA2_Channel3_IRQHandler
+                                   080052DD        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080052E0 - 080052E1 (0x2 bytes), align: 2
+  Segment part 73.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMA2_Channel4_5_IRQHandler
+                                   080052E1        __vector_table (stm32f10x_vector)
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\LCD.r79
+  PROGRAM MODULE, NAME : LCD
+
+  SEGMENTS IN THE MODULE
+  ======================
+DATA_Z
+  Relative segment, address: 20000134 - 20000137 (0x4 bytes), align: 2
+  Segment part 2.             Intra module refs:   Segment part 17
+                                                   Segment part 28
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           LCD_Type                20000134 
+    -------------------------------------------------------------------------
+DATA_Z
+  Relative segment, address: 2000043E - 2000043F (0x2 bytes), align: 1
+  Segment part 3.             Intra module refs:   Clear_Screen
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Fill_Buffer             2000043E 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 08007D30 - 080082FF (0x5d0 bytes), align: 2
+  Segment part 4.             Intra module refs:   Get_TAB_8x14
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Char_TAB_8x14           08007D30 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080052E4 - 0800560F (0x32c bytes), align: 2
+  Segment part 5.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           LCD_Initial             080052E5        Segment part 0 (ASM)
+                                                   main (Main)
+               stack 1 = 00000000 ( 00000018 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005610 - 08005613 (0x4 bytes), align: 2
+  Segment part 6.             Intra module refs:   LCD_Initial
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005614 - 08005617 (0x4 bytes), align: 2
+  Segment part 7.             Intra module refs:   LCD_Initial
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005618 - 0800561B (0x4 bytes), align: 2
+  Segment part 8.             Intra module refs:   LCD_Initial
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800561C - 0800561F (0x4 bytes), align: 2
+  Segment part 9.             Intra module refs:   LCD_Initial
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005620 - 08005635 (0x16 bytes), align: 2
+  Segment part 10.            Intra module refs:   LCD_Initial
+                                                   LCD_Set_Block
+                                                   Point_SCR
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           LCD_WR_REG              08005621 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005638 - 0800564B (0x14 bytes), align: 2
+  Segment part 13.            Intra module refs:   LCD_Initial
+                                                   LCD_RD_Type
+                                                   LCD_Set_Block
+                                                   Point_SCR
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           LCD_WR_Ctrl             08005639 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800564C - 0800564F (0x4 bytes), align: 2
+  Segment part 14.            Intra module refs:   LCD_Initial
+                                                   LCD_WR_Ctrl
+                                                   LCD_WR_REG
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005650 - 08005653 (0x4 bytes), align: 2
+  Segment part 15.            Intra module refs:   LCD_Initial
+                                                   LCD_WR_Ctrl
+                                                   LCD_WR_REG
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005654 - 08005697 (0x44 bytes), align: 2
+  Segment part 16.            Intra module refs:   LCD_Initial
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           LCD_RD_Type             08005655 
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005698 - 0800569B (0x4 bytes), align: 2
+  Segment part 17.            Intra module refs:   LCD_Initial
+                                                   LCD_RD_Type
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800569C - 080056AB (0x10 bytes), align: 2
+  Segment part 19.            Intra module refs:   LCD_Initial
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Delayms                 0800569D        Set (BIOS)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080056AC - 08005719 (0x6e bytes), align: 2
+  Segment part 20.            Intra module refs:   Clear_Screen
+                                                   Display_Logo
+                                                   Display_Str
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Point_SCR               080056AD        Segment part 0 (ASM)
+               stack 1 = 00000000 ( 00000010 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800571C - 0800571F (0x4 bytes), align: 2
+  Segment part 21.            Intra module refs:   LCD_Initial
+                                                   Point_SCR
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005720 - 08005723 (0x4 bytes), align: 2
+  Segment part 22.            Intra module refs:   LCD_Initial
+                                                   Point_SCR
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005724 - 08005753 (0x30 bytes), align: 2
+  Segment part 23.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Clear_Screen            08005725        Segment part 0 (ASM)
+                                                   main (Main)
+               stack 1 = 00000000 ( 0000000C )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005754 - 0800576B (0x18 bytes), align: 2
+  Segment part 24.            Intra module refs:   Display_Str
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Get_TAB_8x14            08005755        Segment part 0 (ASM)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800576C - 08005831 (0xc6 bytes), align: 2
+  Segment part 25.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Display_Str             0800576D        Input_Lic (Ident)
+                                                   Segment part 0 (ASM)
+                                                   main (Main)
+               stack 1 = 00000000 ( 00000024 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005834 - 080058FB (0xc8 bytes), align: 2
+  Segment part 26.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Display_Logo            08005835        main (Main)
+               stack 1 = 00000000 ( 00000044 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080058FC - 08005995 (0x9a bytes), align: 2
+  Segment part 27.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           LCD_Set_Block           080058FD        Segment part 0 (ASM)
+               stack 1 = 00000000 ( 00000018 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005998 - 0800599B (0x4 bytes), align: 2
+  Segment part 28.            Intra module refs:   LCD_Set_Block
+                                                   Point_SCR
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800599C - 0800599F (0x4 bytes), align: 2
+  Segment part 29.            Intra module refs:   LCD_Set_Block
+                                                   Point_SCR
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080059A0 - 080059A3 (0x4 bytes), align: 2
+  Segment part 30.            Intra module refs:   LCD_Set_Block
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080059A4 - 080059A7 (0x4 bytes), align: 2
+  Segment part 31.            Intra module refs:   LCD_Set_Block
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080059A8 - 080059AB (0x4 bytes), align: 2
+  Segment part 32.            Intra module refs:   LCD_Set_Block
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080059AC - 080059AF (0x4 bytes), align: 2
+  Segment part 33.            Intra module refs:   LCD_Set_Block
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080059B0 - 080059B3 (0x4 bytes), align: 2
+  Segment part 34.            Intra module refs:   LCD_Set_Block
+                                                   Point_SCR
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080059B4 - 080059B7 (0x4 bytes), align: 2
+  Segment part 35.            Intra module refs:   LCD_Set_Block
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080059B8 - 080059BB (0x4 bytes), align: 2
+  Segment part 36.            Intra module refs:   LCD_Set_Block
+                                                   Point_SCR
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\Main.r79
+  PROGRAM MODULE, NAME : Main
+
+  SEGMENTS IN THE MODULE
+  ======================
+DATA_Z
+  Relative segment, address: 20000138 - 2000013F (0x8 bytes), align: 2
+  Segment part 3.             Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           JumpAddr                2000013C 
+           Jump_To_App             20000138 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080059BC - 08005B9F (0x1e4 bytes), align: 2
+  Segment part 4.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           main                    080059BD        _main (?CMAIN)
+               stack 1 = 00000000 ( 00000034 )
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 08008300 - 0800840F (0x110 bytes), align: 2
+  Segment part 2.             Intra module refs:   main
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\Memory.r79
+  PROGRAM MODULE, NAME : Memory
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 08005BA0 - 08005C31 (0x92 bytes), align: 2
+  Segment part 4.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Read_Memory             08005BA1        SCSI_Read10_Cmd (USB_scsi)
+               stack 1 = 00000000 ( 00000010 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005C34 - 08005CDF (0xac bytes), align: 2
+  Segment part 5.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Write_Memory            08005C35        SCSI_Write10_Cmd (USB_scsi)
+               stack 1 = 00000000 ( 00000014 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005CE0 - 08005CE3 (0x4 bytes), align: 2
+  Segment part 6.             Intra module refs:   Read_Memory
+                                                   Write_Memory
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005CE4 - 08005CE7 (0x4 bytes), align: 2
+  Segment part 7.             Intra module refs:   Read_Memory
+                                                   Write_Memory
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005CE8 - 08005CEB (0x4 bytes), align: 2
+  Segment part 8.             Intra module refs:   Read_Memory
+                                                   Write_Memory
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005CEC - 08005CEF (0x4 bytes), align: 2
+  Segment part 9.             Intra module refs:   Read_Memory
+                                                   Write_Memory
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005CF0 - 08005CF3 (0x4 bytes), align: 2
+  Segment part 10.            Intra module refs:   Read_Memory
+                                                   Write_Memory
+    -------------------------------------------------------------------------
+DATA_Z
+  Relative segment, address: 20000140 - 20000163 (0x24 bytes), align: 2
+  Segment part 2.             Intra module refs:   Segment part 7
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Block_Read_count        20000144 
+           Block_offset            20000148 
+           Counter                 2000014C 
+           Idx                     20000150 
+           TransferState           20000140 
+    -------------------------------------------------------------------------
+DATA_Z
+  Relative segment, address: 20000164 - 20000363 (0x200 bytes), align: 2
+  Segment part 3.             Intra module refs:   Segment part 8
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Data_Buffer             20000164 
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\SPI_flash.r79
+  PROGRAM MODULE, NAME : SPI_flash
+
+  SEGMENTS IN THE MODULE
+  ======================
+DATA_Z
+  Relative segment, address: 20000364 - 2000036F (0xc bytes), align: 2
+  Segment part 2.             Intra module refs:   MAL_GetStatus
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Mass_Block_Count        2000036C        Segment part 22 (USB_scsi)
+           Mass_Block_Size         20000368        Segment part 23 (USB_scsi)
+                                                   Segment part 6 (Memory)
+           Mass_Memory_Size        20000364 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005CF4 - 08005D4B (0x58 bytes), align: 2
+  Segment part 4.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Param_PageWrite         08005CF5        Segment part 0 (ASM)
+               stack 1 = 00000000 ( 00000014 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005D4C - 08005D9D (0x52 bytes), align: 2
+  Segment part 5.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SPI_FLASH_PageWrite     08005D4D        Segment part 0 (ASM)
+                                                   Write_Memory (Memory)
+               stack 1 = 00000000 ( 00000014 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005DA0 - 08005DEF (0x50 bytes), align: 2
+  Segment part 6.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SPI_FLASH_BufferRead    08005DA1        Read_Memory (Memory)
+                                                   Segment part 0 (ASM)
+               stack 1 = 00000000 ( 00000014 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005DF0 - 08005E43 (0x54 bytes), align: 2
+  Segment part 7.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Param_PageRead          08005DF1        Segment part 0 (ASM)
+               stack 1 = 00000000 ( 00000014 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005E44 - 08005E47 (0x4 bytes), align: 2
+  Segment part 8.             Intra module refs:   Param_PageRead
+                                                   Param_PageWrite
+                                                   SPI_FLASH_BufferRead
+                                                   SPI_FLASH_PageWrite
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005E48 - 08005E7B (0x34 bytes), align: 2
+  Segment part 10.            Intra module refs:   Param_PageRead
+                                                   Param_PageWrite
+                                                   SPI_FLASH_BufferRead
+                                                   SPI_FLASH_PageWrite
+                                                   SPI_FLASH_WaitForWriteEnd
+                                                   SPI_FLASH_WriteEnable
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SPI_FLASH_SendByte      08005E49 
+               stack 1 = 00000000 ( 0000000C )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005E7C - 08005E99 (0x1e bytes), align: 2
+  Segment part 11.            Intra module refs:   Param_PageWrite
+                                                   SPI_FLASH_PageWrite
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SPI_FLASH_WriteEnable   08005E7D 
+               stack 1 = 00000000 ( 00000008 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005E9C - 08005EC3 (0x28 bytes), align: 2
+  Segment part 12.            Intra module refs:   Param_PageWrite
+                                                   SPI_FLASH_PageWrite
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SPI_FLASH_WaitForWriteEnd
+                                   08005E9D 
+               stack 1 = 00000000 ( 00000008 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005EC4 - 08005EC7 (0x4 bytes), align: 2
+  Segment part 13.            Intra module refs:   Param_PageRead
+                                                   Param_PageWrite
+                                                   SPI_FLASH_BufferRead
+                                                   SPI_FLASH_PageWrite
+                                                   SPI_FLASH_WaitForWriteEnd
+                                                   SPI_FLASH_WriteEnable
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005EC8 - 08005EDF (0x18 bytes), align: 2
+  Segment part 14.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           MAL_GetStatus           08005EC9        SCSI_Format_Cmd (USB_scsi)
+                                                   SCSI_ReadCapacity10_Cmd (USB_scsi)
+                                                   SCSI_ReadFormatCapacity_Cmd (USB_scsi)
+                                                   SCSI_TestUnitReady_Cmd (USB_scsi)
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\USB_bot.r79
+  PROGRAM MODULE, NAME : USB_bot
+
+  SEGMENTS IN THE MODULE
+  ======================
+DATA_Z
+  Relative segment, address: 20000370 - 2000039B (0x2c bytes), align: 2
+  Segment part 2.             Intra module refs:   Segment part 8
+                                                   Set_CSW
+                                                   Transfer_Data_Request
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Bot_State               20000390        Segment part 10 (Memory)
+                                                   Segment part 13 (USB_scsi)
+                                                   Segment part 27 (USB_prop)
+           CBW                     20000370        SCSI_RequestSense_Cmd (USB_scsi)
+                                                   Segment part 14 (USB_scsi)
+                                                   Segment part 20 (USB_scsi)
+                                                   Segment part 24 (USB_scsi)
+                                                   Segment part 25 (USB_prop)
+           Data_Len                20000392        Write_Memory (Memory)
+           SCSI_BlkLen             20000398 
+           SCSI_LBA                20000394 
+    -------------------------------------------------------------------------
+DATA_Z
+  Relative segment, address: 2000039C - 200003DB (0x40 bytes), align: 2
+  Segment part 3.             Intra module refs:   Segment part 9
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Bulk_Data_Buff          2000039C        Write_Memory (Memory)
+    -------------------------------------------------------------------------
+DATA_Z
+  Relative segment, address: 200003DC - 200003EB (0x10 bytes), align: 2
+  Segment part 4.             Intra module refs:   Segment part 12
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           CSW                     200003DC        Segment part 9 (Memory)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005EE0 - 08005F2F (0x50 bytes), align: 2
+  Segment part 5.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Mass_Storage_In         08005EE1        EP1_IN_Callback (USB_endp)
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005F30 - 08005F81 (0x52 bytes), align: 2
+  Segment part 6.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Mass_Storage_Out        08005F31        EP2_OUT_Callback (USB_endp)
+               stack 1 = 00000000 ( 0000000C )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08005F84 - 08006133 (0x1b0 bytes), align: 2
+  Segment part 7.             Intra module refs:   Mass_Storage_Out
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           CBW_Decode              08005F85 
+               stack 1 = 00000000 ( 0000000C )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006134 - 08006137 (0x4 bytes), align: 2
+  Segment part 8.             Intra module refs:   CBW_Decode
+                                                   Mass_Storage_In
+                                                   Mass_Storage_Out
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006138 - 0800613B (0x4 bytes), align: 2
+  Segment part 9.             Intra module refs:   CBW_Decode
+                                                   Mass_Storage_Out
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800613C - 0800616F (0x34 bytes), align: 2
+  Segment part 10.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Transfer_Data_Request   0800613D        SCSI_Inquiry_Cmd (USB_scsi)
+                                                   SCSI_ModeSense10_Cmd (USB_scsi)
+                                                   SCSI_ModeSense6_Cmd (USB_scsi)
+                                                   SCSI_ReadCapacity10_Cmd (USB_scsi)
+                                                   SCSI_ReadFormatCapacity_Cmd (USB_scsi)
+                                                   SCSI_RequestSense_Cmd (USB_scsi)
+               stack 1 = 00000000 ( 00000008 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006170 - 080061AF (0x40 bytes), align: 2
+  Segment part 11.            Intra module refs:   CBW_Decode
+                                                   Mass_Storage_In
+                                                   Mass_Storage_Out
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Set_CSW                 08006171        SCSI_Address_Management (USB_scsi)
+                                                   SCSI_Invalid_Cmd (USB_scsi)
+                                                   SCSI_Read10_Cmd (USB_scsi)
+                                                   SCSI_Start_Stop_Unit_Cmd (USB_scsi)
+                                                   SCSI_TestUnitReady_Cmd (USB_scsi)
+                                                   SCSI_Verify10_Cmd (USB_scsi)
+                                                   SCSI_Write10_Cmd (USB_scsi)
+                                                   Write_Memory (Memory)
+               stack 1 = 00000000 ( 00000008 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080061B0 - 080061B3 (0x4 bytes), align: 2
+  Segment part 12.            Intra module refs:   CBW_Decode
+                                                   Set_CSW
+                                                   Transfer_Data_Request
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080061B4 - 080061E9 (0x36 bytes), align: 2
+  Segment part 13.            Intra module refs:   CBW_Decode
+                                                   Mass_Storage_Out
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Bot_Abort               080061B5        Mass_Storage_ClearFeature (USB_prop)
+                                                   SCSI_Address_Management (USB_scsi)
+                                                   SCSI_Invalid_Cmd (USB_scsi)
+                                                   SCSI_Read10_Cmd (USB_scsi)
+                                                   SCSI_Verify10_Cmd (USB_scsi)
+                                                   SCSI_Write10_Cmd (USB_scsi)
+               stack 1 = 00000000 ( 00000004 )
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\USB_desc.r79
+  PROGRAM MODULE, NAME : USB_desc
+
+  SEGMENTS IN THE MODULE
+  ======================
+DATA_C
+  Relative segment, address: 08008410 - 08008423 (0x14 bytes), align: 2
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           MASS_DeviceDescriptor   08008410        Segment part 10 (USB_prop)
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 08008424 - 08008443 (0x20 bytes), align: 2
+  Segment part 3.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           MASS_ConfigDescriptor   08008424        MASS_Reset (USB_prop)
+                                                   Segment part 12 (USB_prop)
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 08008444 - 08008447 (0x4 bytes), align: 2
+  Segment part 4.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           MASS_StringLangID       08008444        Segment part 14 (USB_prop)
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 08008448 - 0800846F (0x28 bytes), align: 2
+  Segment part 5.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           MASS_StringVendor       08008448        Segment part 14 (USB_prop)
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 08008470 - 08008497 (0x28 bytes), align: 2
+  Segment part 6.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           MASS_StringProduct      08008470        Segment part 14 (USB_prop)
+    -------------------------------------------------------------------------
+DATA_I
+  Relative segment, address: 20000000 - 2000001B (0x1c bytes), align: 2
+  Segment part 7.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           MASS_StringSerial       20000000        Get_SerialNum (Config)
+                                                   Segment part 14 (USB_prop)
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 08008498 - 080084A7 (0x10 bytes), align: 2
+  Segment part 9.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           MASS_StringInterface    08008498        Segment part 14 (USB_prop)
+    -------------------------------------------------------------------------
+DATA_ID
+  Relative segment, address: 080077D0 - 080077EB (0x1c bytes), align: 2
+  Segment part 8.             Intra module refs:   MASS_StringSerial
+    -------------------------------------------------------------------------
+INITTAB
+  Relative segment, address: 080077C4 - 080077CF (0xc bytes), align: 2
+  Segment part 11. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?init?tab?DATA_I        080077C4 
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\USB_endp.r79
+  PROGRAM MODULE, NAME : USB_endp
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 080061EC - 080061EF (0x4 bytes), align: 2
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           EP1_IN_Callback         080061ED        Segment part 5 (USB_istr)
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080061F0 - 080061F3 (0x4 bytes), align: 2
+  Segment part 3.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           EP2_OUT_Callback        080061F1        Segment part 7 (USB_istr)
+               stack 1 = 00000000 ( 00000004 )
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\USB_istr.r79
+  PROGRAM MODULE, NAME : USB_istr
+
+  SEGMENTS IN THE MODULE
+  ======================
+DATA_Z
+  Relative segment, address: 20000440 - 20000441 (0x2 bytes), align: 1
+  Segment part 2.             Intra module refs:   USB_Istr
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           wIstr                   20000440        Segment part 5 (usb_int)
+    -------------------------------------------------------------------------
+DATA_I
+  Relative segment, address: 2000001C - 20000037 (0x1c bytes), align: 2
+  Segment part 4.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           pEpInt_IN               2000001C        Segment part 13 (usb_int)
+    -------------------------------------------------------------------------
+DATA_I
+  Relative segment, address: 20000038 - 20000053 (0x1c bytes), align: 2
+  Segment part 6.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           pEpInt_OUT              20000038        Segment part 8 (usb_int)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080061F4 - 08006237 (0x44 bytes), align: 2
+  Segment part 8.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           USB_Istr                080061F5        Segment part 0 (ASM)
+                                                   USB_LP_CAN_RX0_IRQHandler (Interrupt)
+               stack 1 = 00000000 ( 0000000C )
+    -------------------------------------------------------------------------
+DATA_ID
+  Relative segment, address: 080077EC - 08007807 (0x1c bytes), align: 2
+  Segment part 5.             Intra module refs:   pEpInt_IN
+    -------------------------------------------------------------------------
+DATA_ID
+  Relative segment, address: 08007808 - 08007823 (0x1c bytes), align: 2
+  Segment part 7.             Intra module refs:   pEpInt_OUT
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\USB_prop.r79
+  PROGRAM MODULE, NAME : USB_prop
+
+  SEGMENTS IN THE MODULE
+  ======================
+DATA_Z
+  Relative segment, address: 200003EC - 200003EF (0x4 bytes), align: 2
+  Segment part 2.             Intra module refs:   Get_Max_Lun
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Max_Lun                 200003EC        CBW_Decode (USB_bot)
+    -------------------------------------------------------------------------
+DATA_I
+  Relative segment, address: 20000130 - 20000131 (0x2 bytes), align: 0
+  Segment part 3.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Device_Table            20000130        Segment part 13 (usb_core)
+                                                   Segment part 42 (usb_core)
+                                                   Standard_SetConfiguration (usb_core)
+    -------------------------------------------------------------------------
+DATA_I
+  Relative segment, address: 20000054 - 20000083 (0x30 bytes), align: 2
+  Segment part 5.             Intra module refs:   MASS_Reset
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Device_Property         20000054        Segment part 11 (usb_core)
+                                                   Segment part 37 (usb_core)
+                                                   USB_Init (usb_init)
+                                                   USB_Istr (USB_istr)
+    -------------------------------------------------------------------------
+DATA_I
+  Relative segment, address: 20000084 - 200000A7 (0x24 bytes), align: 2
+  Segment part 7.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           User_Standard_Requests
+                                   20000084        USB_Init (usb_init)
+    -------------------------------------------------------------------------
+DATA_I
+  Relative segment, address: 200000A8 - 200000AF (0x8 bytes), align: 2
+  Segment part 9.             Intra module refs:   MASS_GetDeviceDescriptor
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Device_Descriptor       200000A8 
+    -------------------------------------------------------------------------
+DATA_I
+  Relative segment, address: 200000B0 - 200000B7 (0x8 bytes), align: 2
+  Segment part 11.            Intra module refs:   MASS_GetConfigDescriptor
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Config_Descriptor       200000B0 
+    -------------------------------------------------------------------------
+DATA_I
+  Relative segment, address: 200000B8 - 200000DF (0x28 bytes), align: 2
+  Segment part 13.            Intra module refs:   MASS_GetStringDescriptor
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           String_Descriptor       200000B8 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006238 - 0800626B (0x34 bytes), align: 2
+  Segment part 15.            Intra module refs:   Segment part 6
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           MASS_init               08006239 
+               stack 1 = 00000000 ( 00000008 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800626C - 0800633F (0xd4 bytes), align: 2
+  Segment part 16.            Intra module refs:   Segment part 6
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           MASS_Reset              0800626D 
+               stack 1 = 00000000 ( 0000000C )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006340 - 08006363 (0x24 bytes), align: 2
+  Segment part 17.            Intra module refs:   Segment part 8
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Mass_Storage_SetConfiguration
+                                   08006341 
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006364 - 08006377 (0x14 bytes), align: 2
+  Segment part 18.            Intra module refs:   Segment part 8
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Mass_Storage_ClearFeature
+                                   08006365 
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006378 - 0800637F (0x8 bytes), align: 2
+  Segment part 19.            Intra module refs:   Segment part 8
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Mass_Storage_SetDeviceAddress
+                                   08006379 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006380 - 08006383 (0x4 bytes), align: 2
+  Segment part 20.            Intra module refs:   MASS_Reset
+                                                   MASS_init
+                                                   Mass_Storage_SetConfiguration
+                                                   Mass_Storage_SetDeviceAddress
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006384 - 08006385 (0x2 bytes), align: 2
+  Segment part 21.            Intra module refs:   Segment part 6
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           MASS_Status_In          08006385 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006388 - 08006389 (0x2 bytes), align: 2
+  Segment part 22.            Intra module refs:   Segment part 6
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           MASS_Status_Out         08006389 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800638C - 080063CF (0x44 bytes), align: 2
+  Segment part 23.            Intra module refs:   Segment part 6
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           MASS_Data_Setup         0800638D 
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080063D0 - 0800640F (0x40 bytes), align: 2
+  Segment part 24.            Intra module refs:   Segment part 6
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           MASS_NoData_Setup       080063D1 
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006410 - 08006413 (0x4 bytes), align: 2
+  Segment part 25.            Intra module refs:   MASS_NoData_Setup
+                                                   MASS_Reset
+                                                   Mass_Storage_ClearFeature
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006414 - 08006417 (0x4 bytes), align: 2
+  Segment part 26.            Intra module refs:   MASS_NoData_Setup
+                                                   MASS_Reset
+                                                   Mass_Storage_ClearFeature
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006418 - 0800641B (0x4 bytes), align: 2
+  Segment part 27.            Intra module refs:   MASS_NoData_Setup
+                                                   MASS_Reset
+                                                   Mass_Storage_SetConfiguration
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800641C - 08006427 (0xc bytes), align: 2
+  Segment part 28.            Intra module refs:   Segment part 6
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           MASS_Get_Interface_Setting
+                                   0800641D 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006428 - 08006433 (0xc bytes), align: 2
+  Segment part 29.            Intra module refs:   Segment part 6
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           MASS_GetDeviceDescriptor
+                                   08006429 
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006434 - 0800643F (0xc bytes), align: 2
+  Segment part 30.            Intra module refs:   Segment part 6
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           MASS_GetConfigDescriptor
+                                   08006435 
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006440 - 08006463 (0x24 bytes), align: 2
+  Segment part 31.            Intra module refs:   Segment part 6
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           MASS_GetStringDescriptor
+                                   08006441 
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006464 - 0800647B (0x18 bytes), align: 2
+  Segment part 32.            Intra module refs:   MASS_Data_Setup
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Get_Max_Lun             08006465 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800647C - 0800647F (0x4 bytes), align: 2
+  Segment part 33.            Intra module refs:   Get_Max_Lun
+                                                   MASS_Data_Setup
+                                                   MASS_GetStringDescriptor
+                                                   MASS_NoData_Setup
+                                                   MASS_Reset
+                                                   MASS_init
+                                                   Mass_Storage_SetConfiguration
+    -------------------------------------------------------------------------
+DATA_ID
+  Relative segment, address: 08007900 - 08007901 (0x2 bytes), align: 0
+  Segment part 4.             Intra module refs:   Device_Table
+    -------------------------------------------------------------------------
+DATA_ID
+  Relative segment, address: 08007824 - 08007853 (0x30 bytes), align: 2
+  Segment part 6.             Intra module refs:   Device_Property
+    -------------------------------------------------------------------------
+DATA_ID
+  Relative segment, address: 08007854 - 08007877 (0x24 bytes), align: 2
+  Segment part 8.             Intra module refs:   User_Standard_Requests
+    -------------------------------------------------------------------------
+DATA_ID
+  Relative segment, address: 08007878 - 0800787F (0x8 bytes), align: 2
+  Segment part 10.            Intra module refs:   Device_Descriptor
+    -------------------------------------------------------------------------
+DATA_ID
+  Relative segment, address: 08007880 - 08007887 (0x8 bytes), align: 2
+  Segment part 12.            Intra module refs:   Config_Descriptor
+    -------------------------------------------------------------------------
+DATA_ID
+  Relative segment, address: 08007888 - 080078AF (0x28 bytes), align: 2
+  Segment part 14.            Intra module refs:   String_Descriptor
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\USB_pwr.r79
+  PROGRAM MODULE, NAME : USB_pwr
+
+  SEGMENTS IN THE MODULE
+  ======================
+DATA_Z
+  Relative segment, address: 200003F0 - 200003F3 (0x4 bytes), align: 2
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           bDeviceState            200003F0        Segment part 20 (USB_prop)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006480 - 0800649F (0x20 bytes), align: 2
+  Segment part 6.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           PowerOn                 08006481        MASS_init (USB_prop)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080064A0 - 080064A3 (0x4 bytes), align: 2
+  Segment part 8.             Intra module refs:   PowerOn
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080064A4 - 080064A7 (0x4 bytes), align: 2
+  Segment part 12.            Intra module refs:   PowerOn
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\USB_scsi.r79
+  PROGRAM MODULE, NAME : USB_scsi
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 080064A8 - 080064CB (0x24 bytes), align: 2
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SCSI_Inquiry_Cmd        080064A9        CBW_Decode (USB_bot)
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080064CC - 08006503 (0x38 bytes), align: 2
+  Segment part 3.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SCSI_ReadFormatCapacity_Cmd
+                                   080064CD        CBW_Decode (USB_bot)
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006504 - 08006543 (0x40 bytes), align: 2
+  Segment part 4.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SCSI_ReadCapacity10_Cmd
+                                   08006505        CBW_Decode (USB_bot)
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006544 - 0800654F (0xc bytes), align: 2
+  Segment part 5.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SCSI_ModeSense6_Cmd     08006545        CBW_Decode (USB_bot)
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006550 - 0800655B (0xc bytes), align: 2
+  Segment part 6.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SCSI_ModeSense10_Cmd    08006551        CBW_Decode (USB_bot)
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800655C - 0800656F (0x14 bytes), align: 2
+  Segment part 7.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SCSI_RequestSense_Cmd   0800655D        CBW_Decode (USB_bot)
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006570 - 08006577 (0x8 bytes), align: 2
+  Segment part 8.             Intra module refs:   SCSI_Address_Management
+                                                   SCSI_Invalid_Cmd
+                                                   SCSI_Read10_Cmd
+                                                   SCSI_Verify10_Cmd
+                                                   SCSI_Write10_Cmd
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Set_Scsi_Sense_Data     08006571        CBW_Decode (USB_bot)
+                                                   Mass_Storage_Out (USB_bot)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006578 - 0800657B (0x4 bytes), align: 2
+  Segment part 9.             Intra module refs:   SCSI_RequestSense_Cmd
+                                                   Set_Scsi_Sense_Data
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800657C - 08006583 (0x8 bytes), align: 2
+  Segment part 10.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SCSI_Start_Stop_Unit_Cmd
+                                   0800657D        CBW_Decode (USB_bot)
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006584 - 080065D9 (0x56 bytes), align: 2
+  Segment part 11.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SCSI_Read10_Cmd         08006585        CBW_Decode (USB_bot)
+                                                   Mass_Storage_In (USB_bot)
+               stack 1 = 00000000 ( 00000010 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080065DC - 0800662D (0x52 bytes), align: 2
+  Segment part 12.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SCSI_Write10_Cmd        080065DD        CBW_Decode (USB_bot)
+                                                   Mass_Storage_Out (USB_bot)
+               stack 1 = 00000000 ( 00000008 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006630 - 08006633 (0x4 bytes), align: 2
+  Segment part 13.            Intra module refs:   SCSI_Read10_Cmd
+                                                   SCSI_Write10_Cmd
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006634 - 08006637 (0x4 bytes), align: 2
+  Segment part 14.            Intra module refs:   SCSI_Read10_Cmd
+                                                   SCSI_Write10_Cmd
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006638 - 0800666B (0x34 bytes), align: 2
+  Segment part 15.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SCSI_Verify10_Cmd       08006639        CBW_Decode (USB_bot)
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800666C - 0800667D (0x12 bytes), align: 2
+  Segment part 17.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SCSI_TestUnitReady_Cmd
+                                   0800666D        CBW_Decode (USB_bot)
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006680 - 08006683 (0x4 bytes), align: 2
+  Segment part 18.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SCSI_Format_Cmd         08006681        CBW_Decode (USB_bot)
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006684 - 080066B3 (0x30 bytes), align: 2
+  Segment part 19.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SCSI_Invalid_Cmd        08006685        CBW_Decode (USB_bot)
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080066B4 - 080066B7 (0x4 bytes), align: 2
+  Segment part 20.            Intra module refs:   SCSI_Inquiry_Cmd
+                                                   SCSI_Invalid_Cmd
+                                                   SCSI_Verify10_Cmd
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080066B8 - 0800670B (0x54 bytes), align: 2
+  Segment part 21.            Intra module refs:   SCSI_Read10_Cmd
+                                                   SCSI_Write10_Cmd
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SCSI_Address_Management
+                                   080066B9 
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800670C - 0800670F (0x4 bytes), align: 2
+  Segment part 22.            Intra module refs:   SCSI_Address_Management
+                                                   SCSI_ReadCapacity10_Cmd
+                                                   SCSI_ReadFormatCapacity_Cmd
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006710 - 08006713 (0x4 bytes), align: 2
+  Segment part 23.            Intra module refs:   SCSI_Address_Management
+                                                   SCSI_ReadCapacity10_Cmd
+                                                   SCSI_ReadFormatCapacity_Cmd
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006714 - 08006717 (0x4 bytes), align: 2
+  Segment part 24.            Intra module refs:   SCSI_Address_Management
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\cortexm3_macro.r79
+  PROGRAM MODULE, NAME : cortexm3_macro
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 08006718 - 08006791 (0x7a bytes), align: 2
+  Segment part 0. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __WFI                   08006719 
+           __WFE                   0800671D 
+           __SEV                   08006721 
+           __ISB                   08006725 
+           __DSB                   0800672B 
+           __DMB                   08006731 
+           __SVC                   08006737 
+           __MRS_CONTROL           0800673B 
+           __MSR_CONTROL           08006741 
+           __MRS_PSP               0800674B 
+           __MSR_PSP               08006751 
+           __MRS_MSP               08006757 
+           __MSR_MSP               0800675D        main (Main)
+           __RESETPRIMASK          08006763 
+           __SETPRIMASK            08006767 
+           __READ_PRIMASK          0800676B 
+           __RESETFAULTMASK        08006771 
+           __SETFAULTMASK          08006775 
+           __READ_FAULTMASK        08006779 
+           __BASEPRICONFIG         0800677F 
+           __GetBASEPRI            08006785 
+           __REV_HalfWord          0800678B 
+           __REV_Word              0800678F 
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\scsi_data.r79
+  PROGRAM MODULE, NAME : scsi_data
+
+  SEGMENTS IN THE MODULE
+  ======================
+DATA_Z
+  Relative segment, address: 200003F4 - 200003FB (0x8 bytes), align: 2
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Page00_Inquiry_Data     200003F4        SCSI_Inquiry_Cmd (USB_scsi)
+    -------------------------------------------------------------------------
+DATA_I
+  Relative segment, address: 200000E0 - 20000103 (0x24 bytes), align: 2
+  Segment part 3.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Standard_Inquiry_Data   200000E0        SCSI_Inquiry_Cmd (USB_scsi)
+    -------------------------------------------------------------------------
+DATA_I
+  Relative segment, address: 20000104 - 20000107 (0x4 bytes), align: 2
+  Segment part 5.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Mode_Sense6_data        20000104        SCSI_ModeSense6_Cmd (USB_scsi)
+    -------------------------------------------------------------------------
+DATA_I
+  Relative segment, address: 20000108 - 2000010F (0x8 bytes), align: 2
+  Segment part 7.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Mode_Sense10_data       20000108        SCSI_ModeSense10_Cmd (USB_scsi)
+    -------------------------------------------------------------------------
+DATA_I
+  Relative segment, address: 20000110 - 20000123 (0x14 bytes), align: 2
+  Segment part 9.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Scsi_Sense_Data         20000110        Segment part 9 (USB_scsi)
+    -------------------------------------------------------------------------
+DATA_Z
+  Relative segment, address: 200003FC - 20000403 (0x8 bytes), align: 2
+  Segment part 11.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ReadCapacity10_Data     200003FC        SCSI_ReadCapacity10_Cmd (USB_scsi)
+    -------------------------------------------------------------------------
+DATA_I
+  Relative segment, address: 20000124 - 2000012F (0xc bytes), align: 2
+  Segment part 12.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ReadFormatCapacity_Data
+                                   20000124        SCSI_ReadFormatCapacity_Cmd (USB_scsi)
+    -------------------------------------------------------------------------
+DATA_ID
+  Relative segment, address: 080078B0 - 080078D3 (0x24 bytes), align: 2
+  Segment part 4.             Intra module refs:   Standard_Inquiry_Data
+    -------------------------------------------------------------------------
+DATA_ID
+  Relative segment, address: 080078D4 - 080078D7 (0x4 bytes), align: 2
+  Segment part 6.             Intra module refs:   Mode_Sense6_data
+    -------------------------------------------------------------------------
+DATA_ID
+  Relative segment, address: 080078D8 - 080078DF (0x8 bytes), align: 2
+  Segment part 8.             Intra module refs:   Mode_Sense10_data
+    -------------------------------------------------------------------------
+DATA_ID
+  Relative segment, address: 080078E0 - 080078F3 (0x14 bytes), align: 2
+  Segment part 10.            Intra module refs:   Scsi_Sense_Data
+    -------------------------------------------------------------------------
+DATA_ID
+  Relative segment, address: 080078F4 - 080078FF (0xc bytes), align: 2
+  Segment part 13.            Intra module refs:   ReadFormatCapacity_Data
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\stm32f10x_dma.r79
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\stm32f10x_flash.r79
+  PROGRAM MODULE, NAME : stm32f10x_flash
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 08006794 - 080067A5 (0x12 bytes), align: 2
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           FLASH_SetLatency        08006795        Set_System (Config)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080067A8 - 080067B9 (0x12 bytes), align: 2
+  Segment part 4.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           FLASH_PrefetchBufferCmd
+                                   080067A9        Set_System (Config)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080067BC - 080067BF (0x4 bytes), align: 2
+  Segment part 5.             Intra module refs:   FLASH_PrefetchBufferCmd
+                                                   FLASH_SetLatency
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080067C0 - 080067CF (0x10 bytes), align: 2
+  Segment part 6.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           FLASH_Unlock            080067C1        Add_Lic (Ident)
+                                                   Segment part 0 (ASM)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080067D0 - 080067DB (0xc bytes), align: 2
+  Segment part 7.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           FLASH_Lock              080067D1        Add_Lic (Ident)
+                                                   Segment part 0 (ASM)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080067DC - 0800681F (0x44 bytes), align: 2
+  Segment part 8.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           FLASH_ErasePage         080067DD        FLASH_Erase (Ident)
+               stack 1 = 00000000 ( 00000010 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006820 - 0800684F (0x30 bytes), align: 2
+  Segment part 12.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           FLASH_ProgramHalfWord   08006821        FLASH_Prog (Ident)
+               stack 1 = 00000000 ( 00000010 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006850 - 08006853 (0x4 bytes), align: 2
+  Segment part 13.            Intra module refs:   FLASH_ProgramHalfWord
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006854 - 08006857 (0x4 bytes), align: 2
+  Segment part 17.            Intra module refs:   FLASH_ErasePage
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006858 - 0800685B (0x4 bytes), align: 2
+  Segment part 18.            Intra module refs:   FLASH_Unlock
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800685C - 0800685F (0x4 bytes), align: 2
+  Segment part 19.            Intra module refs:   FLASH_Unlock
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006860 - 08006863 (0x4 bytes), align: 2
+  Segment part 26.            Intra module refs:   FLASH_ErasePage
+                                                   FLASH_Lock
+                                                   FLASH_ProgramHalfWord
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006864 - 08006869 (0x6 bytes), align: 2
+  Segment part 37.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           FLASH_ClearFlag         08006865        FLASH_Erase (Ident)
+                                                   FLASH_Prog (Ident)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800686C - 0800688F (0x24 bytes), align: 2
+  Segment part 38.            Intra module refs:   FLASH_WaitForLastOperation
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           FLASH_GetStatus         0800686D 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006890 - 08006893 (0x4 bytes), align: 2
+  Segment part 39.            Intra module refs:   FLASH_ClearFlag
+                                                   FLASH_GetStatus
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006894 - 080068B5 (0x22 bytes), align: 2
+  Segment part 40.            Intra module refs:   FLASH_ErasePage
+                                                   FLASH_ProgramHalfWord
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           FLASH_WaitForLastOperation
+                                   08006895        FLASH_Erase (Ident)
+                                                   FLASH_Prog (Ident)
+               stack 1 = 00000000 ( 00000008 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080068B8 - 080068D1 (0x1a bytes), align: 2
+  Segment part 41.            Intra module refs:   FLASH_WaitForLastOperation
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           delay                   080068B9 
+               stack 1 = 00000000 ( 00000004 )
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\stm32f10x_fsmc.r79
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\stm32f10x_gpio.r79
+  PROGRAM MODULE, NAME : stm32f10x_gpio
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 080068D4 - 080068D7 (0x4 bytes), align: 2
+  Segment part 10.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           GPIO_SetBits            080068D5        Param_PageRead (SPI_flash)
+                                                   Param_PageWrite (SPI_flash)
+                                                   SPI_FLASH_BufferRead (SPI_flash)
+                                                   SPI_FLASH_PageWrite (SPI_flash)
+                                                   SPI_FLASH_WaitForWriteEnd (SPI_flash)
+                                                   SPI_FLASH_WriteEnable (SPI_flash)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080068D8 - 080068DB (0x4 bytes), align: 2
+  Segment part 11.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           GPIO_ResetBits          080068D9        Param_PageRead (SPI_flash)
+                                                   Param_PageWrite (SPI_flash)
+                                                   SPI_FLASH_BufferRead (SPI_flash)
+                                                   SPI_FLASH_PageWrite (SPI_flash)
+                                                   SPI_FLASH_WaitForWriteEnd (SPI_flash)
+                                                   SPI_FLASH_WriteEnable (SPI_flash)
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\stm32f10x_lib.r79
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\stm32f10x_nvic.r79
+  PROGRAM MODULE, NAME : stm32f10x_nvic
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 080068DC - 080068E5 (0xa bytes), align: 2
+  Segment part 4.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           NVIC_PriorityGroupConfig
+                                   080068DD        NVIC_Config (Config)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080068E8 - 080068EB (0x4 bytes), align: 2
+  Segment part 5.             Intra module refs:   NVIC_PriorityGroupConfig
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080068EC - 08006967 (0x7c bytes), align: 2
+  Segment part 6.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           NVIC_Init               080068ED        NVIC_Config (Config)
+               stack 1 = 00000000 ( 00000010 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006968 - 0800696B (0x4 bytes), align: 2
+  Segment part 7.             Intra module refs:   NVIC_Init
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800696C - 0800696F (0x4 bytes), align: 2
+  Segment part 8.             Intra module refs:   NVIC_Init
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006970 - 0800697F (0x10 bytes), align: 2
+  Segment part 24.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           NVIC_SetVectorTable     08006971        NVIC_Config (Config)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006980 - 08006983 (0x4 bytes), align: 2
+  Segment part 25.            Intra module refs:   NVIC_SetVectorTable
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006984 - 08006987 (0x4 bytes), align: 2
+  Segment part 32.            Intra module refs:   NVIC_Init
+                                                   NVIC_PriorityGroupConfig
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\stm32f10x_rcc.r79
+  PROGRAM MODULE, NAME : stm32f10x_rcc
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 08006988 - 080069C7 (0x40 bytes), align: 2
+  Segment part 3.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           RCC_DeInit              08006989        Set_System (Config)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080069C8 - 08006A01 (0x3a bytes), align: 2
+  Segment part 4.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           RCC_HSEConfig           080069C9        Set_System (Config)
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006A04 - 08006A31 (0x2e bytes), align: 2
+  Segment part 5.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           RCC_WaitForHSEStartUp   08006A05        Set_System (Config)
+               stack 1 = 00000000 ( 0000000C )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006A34 - 08006A3F (0xc bytes), align: 2
+  Segment part 9.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           RCC_PLLCmd              08006A35        Set_System (Config)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006A40 - 08006A4D (0xe bytes), align: 2
+  Segment part 10.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           RCC_SYSCLKConfig        08006A41        Set_System (Config)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006A50 - 08006A59 (0xa bytes), align: 2
+  Segment part 11.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           RCC_GetSYSCLKSource     08006A51        Set_System (Config)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006A5C - 08006A67 (0xc bytes), align: 2
+  Segment part 16.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           RCC_USBCLKConfig        08006A5D        Set_System (Config)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006A68 - 08006A6B (0x4 bytes), align: 2
+  Segment part 23.            Intra module refs:   RCC_DeInit
+                                                   RCC_GetSYSCLKSource
+                                                   RCC_SYSCLKConfig
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006A6C - 08006A97 (0x2c bytes), align: 2
+  Segment part 32.            Intra module refs:   RCC_WaitForHSEStartUp
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           RCC_GetFlagStatus       08006A6D        Set_System (Config)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006A98 - 08006A9B (0x4 bytes), align: 2
+  Segment part 33.            Intra module refs:   RCC_DeInit
+                                                   RCC_GetFlagStatus
+                                                   RCC_HSEConfig
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006A9C - 08006A9F (0x4 bytes), align: 2
+  Segment part 34.            Intra module refs:   RCC_GetFlagStatus
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006AA0 - 08006AA3 (0x4 bytes), align: 2
+  Segment part 36.            Intra module refs:   RCC_GetFlagStatus
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006AA4 - 08006AA7 (0x4 bytes), align: 2
+  Segment part 38.            Intra module refs:   RCC_DeInit
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\stm32f10x_sdio.r79
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\stm32f10x_spi.r79
+  PROGRAM MODULE, NAME : stm32f10x_spi
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 08006AA8 - 08006AD5 (0x2e bytes), align: 2
+  Segment part 3.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SPI_Init                08006AA9        SPI_Config (Config)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006AD8 - 08006AF3 (0x1c bytes), align: 2
+  Segment part 5.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SPI_Cmd                 08006AD9        SPI_Config (Config)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006AF4 - 08006AF7 (0x4 bytes), align: 2
+  Segment part 8.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SPI_SendData            08006AF5        SPI_FLASH_SendByte (SPI_flash)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006AF8 - 08006AFB (0x4 bytes), align: 2
+  Segment part 9.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SPI_ReceiveData         08006AF9        SPI_FLASH_SendByte (SPI_flash)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006AFC - 08006B0B (0x10 bytes), align: 2
+  Segment part 18.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SPI_GetFlagStatus       08006AFD        SPI_FLASH_SendByte (SPI_flash)
+               stack 1 = 00000000 ( 00000004 )
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\stm32f10x_vector.r79
+  PROGRAM MODULE, NAME : stm32f10x_vector
+
+  SEGMENTS IN THE MODULE
+  ======================
+INTVEC
+  Relative segment, address: 08004000 - 0800412F (0x130 bytes), align: 2
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __vector_table          08004000        __program_start (?CMAIN)
+    -------------------------------------------------------------------------
+CSTACK
+  Relative segment, address: 20000450, align: 2
+  Segment part 1.
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\usb_core.r79
+  PROGRAM MODULE, NAME : usb_core
+
+  SEGMENTS IN THE MODULE
+  ======================
+DATA_Z
+  Relative segment, address: 20000442 - 20000443 (0x2 bytes), align: 1
+  Segment part 2.             Intra module refs:   Standard_GetStatus
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           StatusInfo              20000442 
+    -------------------------------------------------------------------------
+DATA_Z
+  Relative segment, address: 2000044B - 2000044B (0x1 bytes), align: 0
+  Segment part 3.             Intra module refs:   Segment part 29
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Data_Mul_MaxPacketSize
+                                   2000044B 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006B0C - 08006B29 (0x1e bytes), align: 2
+  Segment part 4.             Intra module refs:   Data_Setup0
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Standard_GetConfiguration
+                                   08006B0D 
+               stack 1 = 00000000 ( 00000008 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006B2C - 08006B5B (0x30 bytes), align: 2
+  Segment part 5.             Intra module refs:   NoData_Setup0
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Standard_SetConfiguration
+                                   08006B2D 
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006B5C - 08006B79 (0x1e bytes), align: 2
+  Segment part 6.             Intra module refs:   Data_Setup0
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Standard_GetInterface   08006B5D 
+               stack 1 = 00000000 ( 00000008 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006B7C - 08006BB9 (0x3e bytes), align: 2
+  Segment part 7.             Intra module refs:   NoData_Setup0
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Standard_SetInterface   08006B7D 
+               stack 1 = 00000000 ( 00000008 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006BBC - 08006BBF (0x4 bytes), align: 2
+  Segment part 8.             Intra module refs:   Standard_SetInterface
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006BC0 - 08006C57 (0x98 bytes), align: 2
+  Segment part 9.             Intra module refs:   Data_Setup0
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Standard_GetStatus      08006BC1 
+               stack 1 = 00000000 ( 00000008 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006C58 - 08006D1B (0xc4 bytes), align: 2
+  Segment part 10.            Intra module refs:   NoData_Setup0
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Standard_ClearFeature   08006C59 
+               stack 1 = 00000000 ( 00000010 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006D1C - 08006D1F (0x4 bytes), align: 2
+  Segment part 11.            Intra module refs:   Standard_ClearFeature
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006D20 - 08006D8F (0x70 bytes), align: 2
+  Segment part 12.            Intra module refs:   NoData_Setup0
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Standard_SetEndPointFeature
+                                   08006D21 
+               stack 1 = 00000000 ( 00000008 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006D90 - 08006D93 (0x4 bytes), align: 2
+  Segment part 13.            Intra module refs:   Standard_ClearFeature
+                                                   Standard_SetEndPointFeature
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006D94 - 08006D97 (0x4 bytes), align: 2
+  Segment part 14.            Intra module refs:   Standard_ClearFeature
+                                                   Standard_GetStatus
+                                                   Standard_SetEndPointFeature
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006D98 - 08006D9B (0x4 bytes), align: 2
+  Segment part 15.            Intra module refs:   Standard_ClearFeature
+                                                   Standard_SetEndPointFeature
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006D9C - 08006DB5 (0x1a bytes), align: 2
+  Segment part 16.            Intra module refs:   NoData_Setup0
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Standard_SetDeviceFeature
+                                   08006D9D 
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006DB8 - 08006DBB (0x4 bytes), align: 2
+  Segment part 17.            Intra module refs:   Standard_ClearFeature
+                                                   Standard_GetConfiguration
+                                                   Standard_GetInterface
+                                                   Standard_GetStatus
+                                                   Standard_SetConfiguration
+                                                   Standard_SetDeviceFeature
+                                                   Standard_SetEndPointFeature
+                                                   Standard_SetInterface
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006DBC - 08006DD3 (0x18 bytes), align: 2
+  Segment part 18.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Standard_GetDescriptorData
+                                   08006DBD        MASS_GetConfigDescriptor (USB_prop)
+                                                   MASS_GetDeviceDescriptor (USB_prop)
+                                                   MASS_GetStringDescriptor (USB_prop)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006DD4 - 08006DD7 (0x4 bytes), align: 2
+  Segment part 19.            Intra module refs:   Standard_ClearFeature
+                                                   Standard_GetConfiguration
+                                                   Standard_GetDescriptorData
+                                                   Standard_GetInterface
+                                                   Standard_GetStatus
+                                                   Standard_SetConfiguration
+                                                   Standard_SetDeviceFeature
+                                                   Standard_SetEndPointFeature
+                                                   Standard_SetInterface
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006DD8 - 08006E59 (0x82 bytes), align: 2
+  Segment part 20.            Intra module refs:   Out0_Process
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           DataStageOut            08006DD9 
+               stack 1 = 00000000 ( 00000014 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006E5C - 08006EEB (0x90 bytes), align: 2
+  Segment part 21.            Intra module refs:   Data_Setup0
+                                                   In0_Process
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           DataStageIn             08006E5D 
+               stack 1 = 00000000 ( 0000001C )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006EEC - 08006EEF (0x4 bytes), align: 2
+  Segment part 22.            Intra module refs:   DataStageIn
+                                                   DataStageOut
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006EF0 - 08006FA5 (0xb6 bytes), align: 2
+  Segment part 23.            Intra module refs:   Setup0_Process
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           NoData_Setup0           08006EF1 
+               stack 1 = 00000000 ( 00000010 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006FA8 - 08006FAB (0x4 bytes), align: 2
+  Segment part 24.            Intra module refs:   DataStageIn
+                                                   DataStageOut
+                                                   NoData_Setup0
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006FAC - 08006FAF (0x4 bytes), align: 2
+  Segment part 25.            Intra module refs:   DataStageIn
+                                                   DataStageOut
+                                                   NoData_Setup0
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006FB0 - 08006FB3 (0x4 bytes), align: 2
+  Segment part 26.            Intra module refs:   DataStageIn
+                                                   DataStageOut
+                                                   NoData_Setup0
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006FB4 - 08006FB7 (0x4 bytes), align: 2
+  Segment part 27.            Intra module refs:   DataStageIn
+                                                   DataStageOut
+                                                   NoData_Setup0
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08006FB8 - 0800713F (0x188 bytes), align: 2
+  Segment part 28.            Intra module refs:   Setup0_Process
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           Data_Setup0             08006FB9 
+               stack 1 = 00000000 ( 00000024 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007140 - 08007143 (0x4 bytes), align: 2
+  Segment part 29.            Intra module refs:   DataStageIn
+                                                   Data_Setup0
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007144 - 080071B7 (0x74 bytes), align: 2
+  Segment part 30.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Setup0_Process          08007145        CTR_LP (usb_int)
+               stack 1 = 00000000 ( 0000000C )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080071B8 - 080071BB (0x4 bytes), align: 2
+  Segment part 31.            Intra module refs:   Setup0_Process
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080071BC - 08007207 (0x4c bytes), align: 2
+  Segment part 32.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           In0_Process             080071BD        CTR_LP (usb_int)
+               stack 1 = 00000000 ( 0000000C )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007208 - 0800720B (0x4 bytes), align: 2
+  Segment part 33.            Intra module refs:   In0_Process
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800720C - 0800723B (0x30 bytes), align: 2
+  Segment part 34.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Out0_Process            0800720D        CTR_LP (usb_int)
+               stack 1 = 00000000 ( 0000000C )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800723C - 0800726D (0x32 bytes), align: 2
+  Segment part 35.            Intra module refs:   In0_Process
+                                                   Out0_Process
+                                                   Setup0_Process
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Post0_Process           0800723D 
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007270 - 08007273 (0x4 bytes), align: 2
+  Segment part 36.            Intra module refs:   Data_Setup0
+                                                   In0_Process
+                                                   NoData_Setup0
+                                                   Out0_Process
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007274 - 08007277 (0x4 bytes), align: 2
+  Segment part 37.            Intra module refs:   Post0_Process
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007278 - 0800727B (0x4 bytes), align: 2
+  Segment part 38.            Intra module refs:   Data_Setup0
+                                                   In0_Process
+                                                   Out0_Process
+                                                   Post0_Process
+                                                   Setup0_Process
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800727C - 0800727F (0x4 bytes), align: 2
+  Segment part 39.            Intra module refs:   Data_Setup0
+                                                   Post0_Process
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007280 - 08007283 (0x4 bytes), align: 2
+  Segment part 40.            Intra module refs:   Post0_Process
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007284 - 080072BB (0x38 bytes), align: 2
+  Segment part 41.            Intra module refs:   In0_Process
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SetDeviceAddress        08007285        MASS_Reset (USB_prop)
+               stack 1 = 00000000 ( 0000000C )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080072BC - 080072BF (0x4 bytes), align: 2
+  Segment part 42.            Intra module refs:   Data_Setup0
+                                                   SetDeviceAddress
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080072C0 - 080072C3 (0x4 bytes), align: 2
+  Segment part 43.            Intra module refs:   Data_Setup0
+                                                   SetDeviceAddress
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080072C4 - 080072C5 (0x2 bytes), align: 2
+  Segment part 44.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           NOP_Process             080072C5        Segment part 5 (USB_istr)
+                                                   Segment part 7 (USB_istr)
+                                                   Segment part 8 (USB_prop)
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\usb_init.r79
+  PROGRAM MODULE, NAME : usb_init
+
+  SEGMENTS IN THE MODULE
+  ======================
+DATA_Z
+  Relative segment, address: 2000044C - 2000044C (0x1 bytes), align: 0
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           EPindex                 2000044C        Segment part 10 (usb_int)
+    -------------------------------------------------------------------------
+DATA_Z
+  Relative segment, address: 20000404 - 2000042B (0x28 bytes), align: 2
+  Segment part 3.             Intra module refs:   USB_Init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Device_Info             20000404        MASS_Reset (USB_prop)
+           pInformation            20000420        Segment part 19 (usb_core)
+                                                   Segment part 24 (usb_core)
+                                                   Segment part 33 (USB_prop)
+                                                   Segment part 38 (usb_core)
+           pProperty               20000424        Segment part 36 (usb_core)
+                                                   Segment part 8 (usb_core)
+           pUser_Standard_Requests
+                                   20000428        Segment part 17 (usb_core)
+                                                   Segment part 33 (usb_core)
+    -------------------------------------------------------------------------
+DATA_Z
+  Relative segment, address: 20000444 - 20000445 (0x2 bytes), align: 1
+  Segment part 5.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           wInterrupt_Mask         20000444        MASS_init (USB_prop)
+                                                   PowerOn (USB_pwr)
+                                                   USB_Istr (USB_istr)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080072C8 - 080072E7 (0x20 bytes), align: 2
+  Segment part 6.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           USB_Init                080072C9        Segment part 0 (ASM)
+                                                   main (Main)
+               stack 1 = 00000000 ( 00000004 )
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\usb_int.r79
+  PROGRAM MODULE, NAME : usb_int
+
+  SEGMENTS IN THE MODULE
+  ======================
+DATA_Z
+  Relative segment, address: 20000446 - 20000449 (0x4 bytes), align: 1
+  Segment part 2.             Intra module refs:   CTR_LP
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SaveRState              20000446        Segment part 22 (usb_core)
+                                                   Segment part 39 (usb_core)
+           SaveTState              20000448        Segment part 27 (usb_core)
+                                                   Segment part 40 (usb_core)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080072E8 - 080074C3 (0x1dc bytes), align: 2
+  Segment part 3.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           CTR_LP                  080072E9        USB_Istr (USB_istr)
+               stack 1 = 00000000 ( 00000024 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080074C4 - 0800751F (0x5c bytes), align: 2
+  Segment part 4.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           CTR_HP                  080074C5        Segment part 0 (ASM)
+                                                   USB_HP_CAN_TX_IRQHandler (Interrupt)
+               stack 1 = 00000000 ( 0000000C )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007520 - 08007523 (0x4 bytes), align: 2
+  Segment part 5.             Intra module refs:   CTR_HP
+                                                   CTR_LP
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007524 - 08007527 (0x4 bytes), align: 2
+  Segment part 6.             Intra module refs:   CTR_HP
+                                                   CTR_LP
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007528 - 0800752B (0x4 bytes), align: 2
+  Segment part 7.             Intra module refs:   CTR_HP
+                                                   CTR_LP
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800752C - 0800752F (0x4 bytes), align: 2
+  Segment part 8.             Intra module refs:   CTR_HP
+                                                   CTR_LP
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007530 - 08007533 (0x4 bytes), align: 2
+  Segment part 9.             Intra module refs:   CTR_HP
+                                                   CTR_LP
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007534 - 08007537 (0x4 bytes), align: 2
+  Segment part 10.            Intra module refs:   CTR_HP
+                                                   CTR_LP
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007538 - 0800753B (0x4 bytes), align: 2
+  Segment part 11.            Intra module refs:   CTR_HP
+                                                   CTR_LP
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800753C - 0800753F (0x4 bytes), align: 2
+  Segment part 12.            Intra module refs:   CTR_HP
+                                                   CTR_LP
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007540 - 08007543 (0x4 bytes), align: 2
+  Segment part 13.            Intra module refs:   CTR_HP
+                                                   CTR_LP
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\usb_mem.r79
+  PROGRAM MODULE, NAME : usb_mem
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 08007544 - 08007569 (0x26 bytes), align: 2
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           UserToPMABufferCopy     08007545        DataStageIn (usb_core)
+                                                   Read_Memory (Memory)
+                                                   Set_CSW (USB_bot)
+                                                   Transfer_Data_Request (USB_bot)
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800756C - 08007585 (0x1a bytes), align: 2
+  Segment part 3.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           PMAToUserBufferCopy     0800756D        DataStageOut (usb_core)
+                                                   Mass_Storage_Out (USB_bot)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007588 - 0800758B (0x4 bytes), align: 2
+  Segment part 4.             Intra module refs:   PMAToUserBufferCopy
+                                                   UserToPMABufferCopy
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\usb_regs.r79
+  PROGRAM MODULE, NAME : usb_regs
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 0800758C - 0800759B (0x10 bytes), align: 2
+  Segment part 12.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SetBTABLE               0800758D        MASS_Reset (USB_prop)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800759C - 080075B3 (0x18 bytes), align: 2
+  Segment part 16.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SetEPType               0800759D        MASS_Reset (USB_prop)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080075B4 - 080075D5 (0x22 bytes), align: 2
+  Segment part 18.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SetEPTxStatus           080075B5        Bot_Abort (USB_bot)
+                                                   MASS_Reset (USB_prop)
+                                                   Read_Memory (Memory)
+                                                   Set_CSW (USB_bot)
+                                                   Standard_ClearFeature (usb_core)
+                                                   Transfer_Data_Request (USB_bot)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080075D8 - 080075F9 (0x22 bytes), align: 2
+  Segment part 19.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SetEPRxStatus           080075D9        Bot_Abort (USB_bot)
+                                                   MASS_Reset (USB_prop)
+                                                   Mass_Storage_In (USB_bot)
+                                                   SCSI_Write10_Cmd (USB_scsi)
+                                                   Write_Memory (Memory)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080075FC - 080075FF (0x4 bytes), align: 2
+  Segment part 24.            Intra module refs:   SetEPTxStatus
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007600 - 08007613 (0x14 bytes), align: 2
+  Segment part 25.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SetEPRxValid            08007601        MASS_Reset (USB_prop)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007614 - 08007617 (0x4 bytes), align: 2
+  Segment part 26.            Intra module refs:   SetEPRxStatus
+                                                   SetEPRxValid
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007618 - 08007627 (0x10 bytes), align: 2
+  Segment part 29.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Clear_Status_Out        08007619        MASS_Reset (USB_prop)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007628 - 0800762B (0x4 bytes), align: 2
+  Segment part 33.            Intra module refs:   Clear_Status_Out
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800762C - 08007645 (0x1a bytes), align: 2
+  Segment part 40.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ClearDTOG_RX            0800762D        MASS_NoData_Setup (USB_prop)
+                                                   Mass_Storage_SetConfiguration (USB_prop)
+                                                   Standard_ClearFeature (usb_core)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007648 - 08007661 (0x1a bytes), align: 2
+  Segment part 41.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ClearDTOG_TX            08007649        MASS_NoData_Setup (USB_prop)
+                                                   Mass_Storage_SetConfiguration (USB_prop)
+                                                   Standard_ClearFeature (usb_core)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007664 - 08007667 (0x4 bytes), align: 2
+  Segment part 43.            Intra module refs:   ClearDTOG_RX
+                                                   ClearDTOG_TX
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007668 - 0800766B (0x4 bytes), align: 2
+  Segment part 45.            Intra module refs:   ClearDTOG_RX
+                                                   ClearDTOG_TX
+                                                   Clear_Status_Out
+                                                   SetEPRxStatus
+                                                   SetEPRxValid
+                                                   SetEPTxStatus
+                                                   SetEPType
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800766C - 08007681 (0x16 bytes), align: 2
+  Segment part 46.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SetEPTxAddr             0800766D        MASS_Reset (USB_prop)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007684 - 08007699 (0x16 bytes), align: 2
+  Segment part 47.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SetEPRxAddr             08007685        MASS_Reset (USB_prop)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800769C - 080076AF (0x14 bytes), align: 2
+  Segment part 48.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           GetEPTxAddr             0800769D        DataStageIn (usb_core)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080076B0 - 080076C3 (0x14 bytes), align: 2
+  Segment part 49.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           GetEPRxAddr             080076B1        DataStageOut (usb_core)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080076C4 - 080076D5 (0x12 bytes), align: 2
+  Segment part 50.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SetEPTxCount            080076C5        DataStageIn (usb_core)
+                                                   DataStageOut (usb_core)
+                                                   Read_Memory (Memory)
+                                                   Set_CSW (USB_bot)
+                                                   Transfer_Data_Request (USB_bot)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080076D8 - 080076DB (0x4 bytes), align: 2
+  Segment part 51.            Intra module refs:   GetEPRxAddr
+                                                   GetEPTxAddr
+                                                   SetBTABLE
+                                                   SetEPRxAddr
+                                                   SetEPTxAddr
+                                                   SetEPTxCount
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080076DC - 08007711 (0x36 bytes), align: 2
+  Segment part 53.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SetEPRxCount            080076DD        MASS_Reset (USB_prop)
+                                                   Post0_Process (usb_core)
+                                                   Standard_ClearFeature (usb_core)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007714 - 08007729 (0x16 bytes), align: 2
+  Segment part 55.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           GetEPRxCount            08007715        Mass_Storage_Out (USB_bot)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800772C - 0800772F (0x4 bytes), align: 2
+  Segment part 60.            Intra module refs:   GetEPTxAddr
+                                                   SetEPTxAddr
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007730 - 08007733 (0x4 bytes), align: 2
+  Segment part 62.            Intra module refs:   GetEPRxAddr
+                                                   SetEPRxAddr
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007734 - 08007737 (0x4 bytes), align: 2
+  Segment part 69.            Intra module refs:   GetEPRxCount
+                                                   SetEPRxCount
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007738 - 0800773B (0x4 bytes), align: 2
+  Segment part 70.            Intra module refs:   GetEPRxCount
+                                                   SetEPRxCount
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800773C - 0800773F (0x4 bytes), align: 2
+  Segment part 71.            Intra module refs:   SetEPTxCount
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007740 - 08007749 (0xa bytes), align: 2
+  Segment part 76.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ByteSwap                08007741        Setup0_Process (usb_core)
+
+    *************************************************************************
+
+  FILE NAME : E:\IARWorkBench(Cracked)\Embedded Workbench 4.0 Evaluation\ARM\LIB\dl7mptnnl8n.r79
+  LIBRARY MODULE, NAME : ?low_level_init
+
+  SEGMENTS IN THE MODULE
+  ======================
+ICODE
+  Relative segment, address: 08004130 - 08004133 (0x4 bytes), align: 2
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __low_level_init        08004131        __program_start (?CMAIN)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?segment_init
+
+  SEGMENTS IN THE MODULE
+  ======================
+ICODE
+  Relative segment, address: 08004134 - 08004163 (0x30 bytes), align: 2
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __segment_init          08004135        __program_start (?CMAIN)
+               stack 1 = 00000000 ( 00000008 )
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?__dbg_break
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 0800774C - 0800774D (0x2 bytes), align: 2
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __DebugBreak            0800774D        __exit (?__exit)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?__exit
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 08007750 - 08007761 (0x12 bytes), align: 2
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __exit                  08007751        Segment part 5 (?_EXIT)
+               stack 1 = 00000000 ( 0000000C )
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?exit
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 08007764 - 08007767 (0x4 bytes), align: 2
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           exit                    08007765        _main (?CMAIN)
+               stack 1 = 00000000 ( 00000004 )
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?memcpy
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 08007768 - 0800777D (0x16 bytes), align: 2
+  Segment part 3.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           memcpy                  08007769        __segment_init (?segment_init)
+               stack 1 = 00000000 ( 00000008 )
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?memset
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 08007780 - 08007791 (0x12 bytes), align: 2
+  Segment part 3.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           memset                  08007781        __segment_init (?segment_init)
+               stack 1 = 00000000 ( 00000008 )
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?CMAIN
+
+  SEGMENTS IN THE MODULE
+  ======================
+DIFUNCT
+  Relative segment, address: 08004194, align: 2
+  Segment part 0. ROOT.
+    -------------------------------------------------------------------------
+ICODE
+  Relative segment, address: 08004164 - 08004177 (0x14 bytes), align: 2
+  Segment part 1.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __program_start         08004165        Absolute parts (?ABS_ENTRY_MOD)
+                                                   __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+ICODE
+  Relative segment, address: 08004178 - 08004193 (0x1c bytes), align: 2
+  Segment part 3.             Intra module refs:   __program_start
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _main                   08004181 
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?_EXIT
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 08007794, align: 2
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _exit                   08007795        _main (?CMAIN)
+                                                   exit (?exit)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08007794 - 0800779F (0xc bytes), align: 2
+  Segment part 5.             Intra module refs:   _exit
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?div_module
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 080077A0 - 080077AB (0xc bytes), align: 2
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ??divu32_t              080077A1        Write_Memory (Memory)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080077AC - 080077B7 (0xc bytes), align: 2
+  Segment part 5.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ??div32_t               080077AD        Data_Setup0 (usb_core)
+
+
+
+
+                ****************************************
+                *                                      *
+                *      SEGMENTS IN ADDRESS ORDER       *
+                *                                      *
+                ****************************************
+
+
+SEGMENT              SPACE    START ADDRESS   END ADDRESS     SIZE  TYPE  ALIGN
+=======              =====    =============   ===========     ====  ====  =====
+INTVEC                             08004000 - 0800412F         130   rel    2
+ICODE                              08004130 - 08004193          64   rel    2
+DIFUNCT                                 08004194                     rel    2
+SYS_FUNC                           08004200 - 0800435B         15C   rel    2
+CODE                               0800435C - 080077B7        345C   rel    2
+INITTAB                            080077B8 - 080077CF          18   rel    2
+DATA_ID                            080077D0 - 08007901         132   rel    2
+DATA_C                             08007904 - 080084A9         BA6   rel    2
+DATA_I                             20000000 - 20000131         132   rel    2
+DATA_Z                             20000134 - 2000044C         319   rel    2
+CSTACK                             20000450 - 2000084F         400   rel    2
+
+                ****************************************
+                *                                      *
+                *        END OF CROSS REFERENCE        *
+                *                                      *
+                ****************************************
+
+ 14 156 bytes of CODE  memory
+  2 123 bytes of DATA  memory
+  3 312 bytes of CONST memory
+
+Errors: none
+Warnings: none
+

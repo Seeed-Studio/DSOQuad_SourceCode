@@ -1,0 +1,17 @@
+[Disassemble mode]
+mode=1
+[Breakpoints]
+Bp0=_ "Code" "{C:\Users\Administrator\Desktop\mini DSO download\APP_V2.32\APP_V2.32\source\Process.c}.377.1@1" 1 0 0 0 "" 0 ""
+Count=1
+[Interrupts]
+Enabled=1
+[MemoryMap]
+Enabled=0
+Base=0
+UseAuto=0
+TypeViolation=1
+UnspecRange=1
+ActionState=1
+[TraceHelper]
+Enabled=0
+ShowSource=1

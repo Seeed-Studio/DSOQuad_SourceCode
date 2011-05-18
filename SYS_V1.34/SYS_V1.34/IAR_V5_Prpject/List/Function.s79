@@ -1,0 +1,864 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32 EVALUATION   30/Mar/2011  13:15:06 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  D:\Design\DS203_MiniDSO\SFW\SYS_V1.32\source\Functi /
+//                       on.c                                                /
+//    Command line    =  D:\Design\DS203_MiniDSO\SFW\SYS_V1.32\source\Functi /
+//                       on.c -lA D:\Design\DS203_MiniDSO\SFW\SYS_V1.32\IAR_ /
+//                       V4_Prpject\List\ -o D:\Design\DS203_MiniDSO\SFW\SYS /
+//                       _V1.32\IAR_V4_Prpject\Obj\ -s6 --no_unroll          /
+//                       --no_inline --no_tbaa --no_scheduling --cpu_mode    /
+//                       thumb --endian little --cpu cortex-M3               /
+//                       --stack_align 4 -e --fpu None --dlib_config         /
+//                       "C:\Program Files\IAR Systems\Embedded Workbench    /
+//                       4.0 Evaluation\arm\LIB\dl7mptnnl8n.h" -I            /
+//                       D:\Design\DS203_MiniDSO\SFW\SYS_V1.32\IAR_V4_Prpjec /
+//                       t\..\..\FWLib\inc\ -I D:\Design\DS203_MiniDSO\SFW\S /
+//                       YS_V1.32\IAR_V4_Prpject\..\..\USBLib\inc\ -I        /
+//                       D:\Design\DS203_MiniDSO\SFW\SYS_V1.32\IAR_V4_Prpjec /
+//                       t\..\include\ -I "C:\Program Files\IAR              /
+//                       Systems\Embedded Workbench 4.0 Evaluation\arm\INC\" /
+//    List file       =  D:\Design\DS203_MiniDSO\SFW\SYS_V1.32\IAR_V4_Prpjec /
+//                       t\List\Function.s79                                 /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME Function
+
+        RTMODEL "StackAlign4", "USED"
+        RTMODEL "__cpu_mode", "__pcs__thumb"
+        RTMODEL "__data_model", "absolute"
+        RTMODEL "__endian", "little"
+        RTMODEL "__rt_version", "6"
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+        EXTERN ??div32_t
+
+        MULTWEAK ??Get??rT
+        MULTWEAK ??Set??rT
+        MULTWEAK ??rT??div32_t
+        PUBLIC Beep
+        FUNCTION Beep,0203H
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC Char2Hex
+        FUNCTION Char2Hex,0203H
+        PUBLIC Int_sqrt
+        FUNCTION Int_sqrt,0203H
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC Read_Keys
+        FUNCTION Read_Keys,0203H
+        LOCFRAME CSTACK, 28, STACK
+        PUBLIC Str2Byte
+        FUNCTION Str2Byte,0203H
+        LOCFRAME CSTACK, 32, STACK
+        PUBLIC Word2Hex
+        FUNCTION Word2Hex,0203H
+        PUBLIC u16ToDec5
+        FUNCTION u16ToDec5,0203H
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC u8ToDec2
+        FUNCTION u8ToDec2,0203H
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC u8ToDec3
+        FUNCTION u8ToDec3,0203H
+        LOCFRAME CSTACK, 4, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA R13 HUGEDATA
+        CFI Resource R0:32, R1:32, R2:32, R3:32, R4:32, R5:32, R6:32, R7:32
+        CFI Resource R8:32, R9:32, R10:32, R11:32, R12:32, R13:32, R14:32
+        CFI VirtualResource ?RET:32
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 2
+        CFI DataAlign 4
+        CFI ReturnAddress ?RET CODE
+        CFI CFA R13+0
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI R8 SameValue
+        CFI R9 SameValue
+        CFI R10 SameValue
+        CFI R11 SameValue
+        CFI R12 Undefined
+        CFI R14 Undefined
+        CFI ?RET R14
+        CFI EndCommon cfiCommon0
+        
+Get                 SYMBOL "Get"
+Set                 SYMBOL "Set"
+??Get??rT           SYMBOL "??rT", Get
+??Set??rT           SYMBOL "??rT", Set
+
+        EXTERN Beep_mS
+        EXTERN Get
+        FUNCTION Get,0202H
+        EXTERN Key_Repeat_Cnt
+        EXTERN Key_Status_Last
+        EXTERN Key_Wait_Cnt
+        EXTERN Set
+        FUNCTION Set,0202H
+
+// D:\Design\DS203_MiniDSO\SFW\SYS_V1.32\source\Function.c
+//    1 /********************* (C) COPYRIGHT 2010 e-Design Co.,Ltd. ********************
+//    2  File Name : Function.c  
+//    3  Version   : DS203_SYS Ver 1.3x                          Author : kewei & bure
+//    4 *******************************************************************************/
+//    5 
+//    6 #include "stm32f10x_lib.h"
+//    7 #include "Interrupt.h"
+//    8 #include "Function.h"
+//    9 #include "Config.h"
+//   10 #include "BIOS.h"
+//   11 #include "ASM.h"
+//   12 
+//   13                           
+//   14 /*******************************************************************************
+//   15  Two ASCII character Change to 1 Byte HEX data 
+//   16 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function Str2Byte
+        THUMB
+//   17 u8 Str2Byte(u8 x,u8 y) // 双ASCII字符转1字节二进制数
+//   18 {
+Str2Byte:
+        PUSH     {R4-R6}
+        CFI R6 Frame(CFA, -4)
+        CFI R5 Frame(CFA, -8)
+        CFI R4 Frame(CFA, -12)
+        CFI CFA R13+12
+        SUB      SP,SP,#+20
+        CFI CFA R13+32
+        MOVS     R2,R0
+//   19   uc8 Hexcode[17]="0123456789ABCDEF";
+        MOV      R0,SP
+        LDR.N    R3,??Str2Byte_0  ;; `?<Constant "0123456789ABCDEF">`
+        MOVS     R5,#+17
+??Str2Byte_1:
+        SUBS     R5,R5,#+1
+        LDRB     R4,[R3, R5]
+        STRB     R4,[R0, R5]
+        BNE.N    ??Str2Byte_1
+//   20   u8 i, Temp=0;
+        MOVS     R3,#+0
+        MOVS     R0,R3
+//   21   
+//   22   if(x>='a' && x<='z')  x-=32;     // 小写改大写
+        CMP      R2,#+97
+        BCC.N    ??Str2Byte_2
+        CMP      R2,#+123
+        BCS.N    ??Str2Byte_2
+        ADDS     R2,R2,#+224
+//   23   if(y>='a' && y<='z')  y-=32;     // 小写改大写
+??Str2Byte_2:
+        CMP      R1,#+97
+        BCC.N    ??Str2Byte_3
+        CMP      R1,#+123
+        BCS.N    ??Str2Byte_3
+        ADDS     R1,R1,#+224
+//   24   for(i=0;i<16;i++){
+??Str2Byte_3:
+        MOVS     R4,R3
+        MOV      R6,SP
+        B.N      ??Str2Byte_4
+//   25     if(Hexcode[i]==x)  Temp+=i*16; // 将字符转为高4位十六进制数值
+??Str2Byte_5:
+        LDRB     R5,[R6, R5]
+        UXTB     R2,R2
+        CMP      R5,R2
+        BNE.N    ??Str2Byte_6
+        MOVS     R5,R4
+        ADDS     R0,R0,R5, LSL #+4
+        UXTB     R0,R0
+//   26   }
+??Str2Byte_6:
+        ADDS     R4,R4,#+1
+        UXTB     R4,R4
+??Str2Byte_4:
+        MOVS     R5,R4
+        CMP      R5,#+16
+        BCC.N    ??Str2Byte_5
+//   27   for(i=0;i<16;i++){
+        MOV      R4,SP
+        B.N      ??Str2Byte_7
+//   28     if(Hexcode[i]==y)  Temp+=i;    // 将字符转为低4位十六进制数值
+??Str2Byte_8:
+        LDRB     R2,[R4, R2]
+        UXTB     R1,R1
+        CMP      R2,R1
+        BNE.N    ??Str2Byte_9
+        MOVS     R2,R3
+        ADDS     R0,R0,R2
+        UXTB     R0,R0
+//   29   }
+??Str2Byte_9:
+        ADDS     R3,R3,#+1
+        UXTB     R3,R3
+??Str2Byte_7:
+        MOVS     R2,R3
+        CMP      R2,#+16
+        BCC.N    ??Str2Byte_8
+//   30   return Temp;
+        ADD      SP,SP,#+20
+        CFI CFA R13+12
+        POP      {R4-R6}
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI CFA R13+0
+        BX       LR               ;; return
+        Nop      
+        DATA
+??Str2Byte_0:
+        DC32     `?<Constant "0123456789ABCDEF">`
+        CFI EndBlock cfiBlock0
+//   31 }
+//   32 
+//   33 /*******************************************************************************
+//   34  u16ToDec5: Change Byte to 3 decimal number string   
+//   35 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function u16ToDec5
+        THUMB
+//   36 void u16ToDec5(u8 *p, u16 n)
+//   37 {
+u16ToDec5:
+        PUSH     {LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI CFA R13+4
+        MOVS     R2,R0
+        MOVS     R0,R1
+//   38     *p++ = '0'+n/10000;
+        LDR.N    R1,??u16ToDec5_0  ;; 0x2710
+        SDIV     R3,R0,R1
+        ADDS     R3,R3,#+48
+        STRB     R3,[R2, #+0]
+        ADDS     R2,R2,#+1
+//   39     n %= 10000;
+        _BLF     ??div32_t,??rT??div32_t
+//   40     *p++ = '0'+n/1000;
+        UXTH     R0,R0
+        MOVS     R1,#+1000
+        SDIV     R1,R0,R1
+        ADDS     R1,R1,#+48
+        STRB     R1,[R2, #+0]
+        ADDS     R2,R2,#+1
+//   41     n %= 1000;
+        MOVS     R1,#+1000
+        _BLF     ??div32_t,??rT??div32_t
+//   42     *p++ = '0'+n/100;
+        UXTH     R0,R0
+        MOVS     R1,#+100
+        SDIV     R1,R0,R1
+        ADDS     R1,R1,#+48
+        STRB     R1,[R2, #+0]
+        ADDS     R2,R2,#+1
+//   43     n %= 100;
+        MOVS     R1,#+100
+        _BLF     ??div32_t,??rT??div32_t
+//   44     *p++ = '0'+n/10;
+        UXTH     R0,R0
+        MOVS     R1,#+10
+        SDIV     R1,R0,R1
+        ADDS     R1,R1,#+48
+        STRB     R1,[R2, #+0]
+        ADDS     R2,R2,#+1
+//   45     n %= 10;
+//   46     *p++ = '0'+n;
+        MOVS     R1,#+10
+        _BLF     ??div32_t,??rT??div32_t
+        ADDS     R0,R0,#+48
+        STRB     R0,[R2, #+0]
+        ADDS     R2,R2,#+1
+//   47     *p = 0;
+        MOVS     R0,#+0
+        STRB     R0,[R2, #+0]
+//   48 }
+        POP      {PC}             ;; return
+        Nop      
+        DATA
+??u16ToDec5_0:
+        DC32     0x2710
+        CFI EndBlock cfiBlock1
+//   49 /*******************************************************************************
+//   50  Char2Dec3: Change Byte to 3 decimal number string   
+//   51 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function u8ToDec3
+        THUMB
+//   52 void u8ToDec3(u8 *p, u8 n)
+//   53 {
+u8ToDec3:
+        PUSH     {LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI CFA R13+4
+        MOVS     R2,R0
+        MOVS     R0,R1
+//   54     *p++ = '0'+n/100;
+        MOVS     R1,#+100
+        SDIV     R1,R0,R1
+        ADDS     R1,R1,#+48
+        STRB     R1,[R2, #+0]
+        ADDS     R2,R2,#+1
+//   55     n %= 100;
+        MOVS     R1,#+100
+        _BLF     ??div32_t,??rT??div32_t
+//   56     *p++ = '0'+n/10;
+        UXTB     R0,R0
+        MOVS     R1,#+10
+        SDIV     R1,R0,R1
+        ADDS     R1,R1,#+48
+        STRB     R1,[R2, #+0]
+        ADDS     R2,R2,#+1
+//   57     n %= 10;
+//   58     *p++ = '0'+n;
+        MOVS     R1,#+10
+        _BLF     ??div32_t,??rT??div32_t
+        ADDS     R0,R0,#+48
+        STRB     R0,[R2, #+0]
+        ADDS     R2,R2,#+1
+//   59     *p = 0;
+        MOVS     R0,#+0
+        STRB     R0,[R2, #+0]
+//   60 }
+        POP      {PC}             ;; return
+        CFI EndBlock cfiBlock2
+//   61 /*******************************************************************************
+//   62  Char2Dec2: Change Byte to 2 decimal number string   
+//   63 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function u8ToDec2
+        THUMB
+//   64 void u8ToDec2(u8 *p, u8 n)
+//   65 {
+u8ToDec2:
+        PUSH     {LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI CFA R13+4
+        MOVS     R2,R0
+        MOVS     R0,R1
+//   66 //    *p++ = '0'+n/100;
+//   67     n %= 100;
+        MOVS     R1,#+100
+        _BLF     ??div32_t,??rT??div32_t
+//   68     *p++ = '0'+n/10;
+        UXTB     R0,R0
+        MOVS     R1,#+10
+        SDIV     R1,R0,R1
+        ADDS     R1,R1,#+48
+        STRB     R1,[R2, #+0]
+        ADDS     R2,R2,#+1
+//   69     n %= 10;
+//   70     *p++ = '0'+n;
+        MOVS     R1,#+10
+        _BLF     ??div32_t,??rT??div32_t
+        ADDS     R0,R0,#+48
+        STRB     R0,[R2, #+0]
+        ADDS     R2,R2,#+1
+//   71     *p = 0;
+        MOVS     R0,#+0
+        STRB     R0,[R2, #+0]
+//   72 }
+        POP      {PC}             ;; return
+        CFI EndBlock cfiBlock3
+//   73 /*******************************************************************************
+//   74  Char2Hex: Change Byte to 2 hex number string  
+//   75 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function Char2Hex
+        THUMB
+//   76 void Char2Hex(u8 *p, u8 n)
+//   77 {
+//   78     if(n/16>9) *p++ = 'A'+(n/16-10);
+Char2Hex:
+        MOVS     R3,R1
+        LSRS     R3,R3,#+4
+        CMP      R3,#+10
+        BCC.N    ??Char2Hex_0
+        MOVS     R2,R3
+        ADDS     R2,R2,#+55
+        STRB     R2,[R0, #+0]
+        ADDS     R0,R0,#+1
+        B.N      ??Char2Hex_1
+//   79     else       *p++ = '0'+n/16;
+??Char2Hex_0:
+        MOVS     R2,R3
+        ADDS     R2,R2,#+48
+        STRB     R2,[R0, #+0]
+        ADDS     R0,R0,#+1
+//   80     n %= 16;
+??Char2Hex_1:
+        SUBS     R1,R1,R3, LSL #+4
+//   81     if(n>9)    *p++ = 'A'+(n-10);
+        UXTB     R1,R1
+        CMP      R1,#+10
+        BCC.N    ??Char2Hex_2
+        ADDS     R1,R1,#+55
+        STRB     R1,[R0, #+0]
+        ADDS     R0,R0,#+1
+        B.N      ??Char2Hex_3
+//   82     else       *p++ = '0'+n;
+??Char2Hex_2:
+        ADDS     R1,R1,#+48
+        STRB     R1,[R0, #+0]
+        ADDS     R0,R0,#+1
+//   83     *p = 0;
+??Char2Hex_3:
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+0]
+//   84 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock4
+//   85 /*******************************************************************************
+//   86  Word2Hex: Change 4 Bytes to 8 hex number string  
+//   87 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function Word2Hex
+        THUMB
+//   88 void Word2Hex(u8 *p, u32 n)
+//   89 {
+//   90     if(n/0x10000000>9) *p++ = 'A'+(n/0x10000000-10);
+Word2Hex:
+        MOVS     R2,R1
+        LSRS     R2,R2,#+28
+        CMP      R2,#+10
+        BCC.N    ??Word2Hex_0
+        ADDS     R2,R2,#+55
+        STRB     R2,[R0, #+0]
+        ADDS     R0,R0,#+1
+        B.N      ??Word2Hex_1
+//   91     else               *p++ = '0'+ n/0x10000000;
+??Word2Hex_0:
+        ADDS     R2,R2,#+48
+        STRB     R2,[R0, #+0]
+        ADDS     R0,R0,#+1
+//   92     n %= 0x10000000;
+??Word2Hex_1:
+        LSLS     R1,R1,#+4
+        LSRS     R1,R1,#+4
+//   93     if(n/0x01000000>9) *p++ = 'A'+(n/0x01000000-10);
+        MOVS     R2,R1
+        LSRS     R2,R2,#+24
+        CMP      R2,#+10
+        BCC.N    ??Word2Hex_2
+        ADDS     R2,R2,#+55
+        STRB     R2,[R0, #+0]
+        ADDS     R0,R0,#+1
+        B.N      ??Word2Hex_3
+//   94     else               *p++ = '0'+ n/0x01000000;
+??Word2Hex_2:
+        ADDS     R2,R2,#+48
+        STRB     R2,[R0, #+0]
+        ADDS     R0,R0,#+1
+//   95     n %= 0x01000000;
+??Word2Hex_3:
+        LSLS     R1,R1,#+8
+        LSRS     R1,R1,#+8
+//   96     if(n/0x00100000>9) *p++ = 'A'+(n/0x00100000-10);
+        MOVS     R2,R1
+        LSRS     R2,R2,#+20
+        CMP      R2,#+10
+        BCC.N    ??Word2Hex_4
+        ADDS     R2,R2,#+55
+        STRB     R2,[R0, #+0]
+        ADDS     R0,R0,#+1
+        B.N      ??Word2Hex_5
+//   97     else               *p++ = '0'+ n/0x00100000;
+??Word2Hex_4:
+        ADDS     R2,R2,#+48
+        STRB     R2,[R0, #+0]
+        ADDS     R0,R0,#+1
+//   98     n %= 0x00100000;
+??Word2Hex_5:
+        LSLS     R1,R1,#+12
+        LSRS     R1,R1,#+12
+//   99     if(n/0x00010000>9) *p++ = 'A'+(n/0x00010000-10);
+        MOVS     R2,R1
+        LSRS     R2,R2,#+16
+        CMP      R2,#+10
+        BCC.N    ??Word2Hex_6
+        ADDS     R2,R2,#+55
+        STRB     R2,[R0, #+0]
+        ADDS     R0,R0,#+1
+        B.N      ??Word2Hex_7
+//  100     else               *p++ = '0'+ n/0x00010000;
+??Word2Hex_6:
+        ADDS     R2,R2,#+48
+        STRB     R2,[R0, #+0]
+        ADDS     R0,R0,#+1
+//  101     n %= 0x00010000;
+??Word2Hex_7:
+        UXTH     R1,R1
+//  102     if(n/0x00001000>9) *p++ = 'A'+(n/0x00001000-10);
+        MOVS     R2,R1
+        LSRS     R2,R2,#+12
+        CMP      R2,#+10
+        BCC.N    ??Word2Hex_8
+        ADDS     R2,R2,#+55
+        STRB     R2,[R0, #+0]
+        ADDS     R0,R0,#+1
+        B.N      ??Word2Hex_9
+//  103     else               *p++ = '0'+ n/0x00001000;
+??Word2Hex_8:
+        ADDS     R2,R2,#+48
+        STRB     R2,[R0, #+0]
+        ADDS     R0,R0,#+1
+//  104     n %= 0x00001000;
+??Word2Hex_9:
+        LSLS     R1,R1,#+20
+        LSRS     R1,R1,#+20
+//  105     if(n/0x00000100>9) *p++ = 'A'+(n/0x00000100-10);
+        MOVS     R2,R1
+        LSRS     R2,R2,#+8
+        CMP      R2,#+10
+        BCC.N    ??Word2Hex_10
+        ADDS     R2,R2,#+55
+        STRB     R2,[R0, #+0]
+        ADDS     R0,R0,#+1
+        B.N      ??Word2Hex_11
+//  106     else               *p++ = '0'+ n/0x00000100;
+??Word2Hex_10:
+        ADDS     R2,R2,#+48
+        STRB     R2,[R0, #+0]
+        ADDS     R0,R0,#+1
+//  107     n %= 0x00000100;
+??Word2Hex_11:
+        UXTB     R1,R1
+//  108     if(n/0x00000010>9) *p++ = 'A'+(n/0x00000010-10);
+        MOVS     R2,R1
+        LSRS     R2,R2,#+4
+        CMP      R2,#+10
+        BCC.N    ??Word2Hex_12
+        ADDS     R2,R2,#+55
+        STRB     R2,[R0, #+0]
+        ADDS     R0,R0,#+1
+        B.N      ??Word2Hex_13
+//  109     else               *p++ = '0'+ n/0x00000010;
+??Word2Hex_12:
+        ADDS     R2,R2,#+48
+        STRB     R2,[R0, #+0]
+        ADDS     R0,R0,#+1
+//  110     n %= 0x00000010;
+??Word2Hex_13:
+        LSLS     R1,R1,#+28
+        LSRS     R1,R1,#+28
+//  111     if(n/0x00000001>9) *p++ = 'A'+(n/0x00000001-10);
+        CMP      R1,#+10
+        BCC.N    ??Word2Hex_14
+        ADDS     R1,R1,#+55
+        STRB     R1,[R0, #+0]
+        ADDS     R0,R0,#+1
+        B.N      ??Word2Hex_15
+//  112     else               *p++ = '0'+ n/0x00000001;
+??Word2Hex_14:
+        ADDS     R1,R1,#+48
+        STRB     R1,[R0, #+0]
+        ADDS     R0,R0,#+1
+//  113     n %= 0x10000000;
+//  114     *p = 0;
+??Word2Hex_15:
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+0]
+//  115 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock5
+//  116 /*******************************************************************************
+//  117  Int_sqrt: unsigned int square root
+//  118 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function Int_sqrt
+        THUMB
+//  119 u32 Int_sqrt(u32 n)
+//  120 { u32 k;
+Int_sqrt:
+        PUSH     {R4,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R4 Frame(CFA, -8)
+        CFI CFA R13+8
+        MOVS     R4,R0
+//  121   if ( n == 0 ) return 0;
+        BNE.N    ??Int_sqrt_0
+        MOVS     R0,#+0
+        POP      {R4,PC}
+//  122   k = 2*Int_sqrt(n/4)+1;
+??Int_sqrt_0:
+        LSRS     R0,R0,#+2
+        BL       Int_sqrt
+        LSLS     R0,R0,#+1
+        ADDS     R0,R0,#+1
+//  123   if ( k*k > n ) return k-1;
+        MUL      R1,R0,R0
+        CMP      R4,R1
+        BCS.N    ??Int_sqrt_1
+        SUBS     R0,R0,#+1
+//  124   else return k;
+??Int_sqrt_1:
+        POP      {R4,PC}          ;; return
+        CFI EndBlock cfiBlock6
+//  125 }
+//  126 /*******************************************************************************
+//  127 Read_Keys:    Key status process                                Return: KeyCode
+//  128 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function Read_Keys
+        THUMB
+//  129 u8 Read_Keys(void)
+//  130 {
+Read_Keys:
+        PUSH     {R4-R9,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R9 Frame(CFA, -8)
+        CFI R8 Frame(CFA, -12)
+        CFI R7 Frame(CFA, -16)
+        CFI R6 Frame(CFA, -20)
+        CFI R5 Frame(CFA, -24)
+        CFI R4 Frame(CFA, -28)
+        CFI CFA R13+28
+//  131   u16 Key_Status, Key_Status_Now;
+//  132   u8  KeyCode=0;
+        MOVS     R4,#+0
+//  133   Key_Status_Now = ~Get(KEY_STATUS, 0);
+        MOV      R1,R4
+        MOVS     R0,#+4
+        _BLF     Get,??Get??rT
+        MVNS     R1,R0
+        UXTH     R1,R1
+//  134   Key_Status = Key_Status_Now &(~Key_Status_Last);
+        LDR.N    R0,??Read_Keys_0  ;; Key_Status_Last
+        MOVS     R2,R1
+        LDRH     R3,[R0, #+0]
+        BICS     R2,R2,R3
+//  135   if(Key_Status){                               // New key push on
+        MOVS     R3,#+9
+        MOV      R8,R3
+        MOVS     R3,#+8
+        MOV      R9,R3
+        MOVS     R3,#+6
+        MOVS     R5,#+5
+        LDR.N    R6,??Read_Keys_0+0x4  ;; Key_Wait_Cnt
+        MOVS     R7,R2
+        BEQ.N    ??Read_Keys_1
+//  136     Key_Wait_Cnt=25;                        // Close auto repeat 500mS
+        MOVS     R7,#+25
+        STRB     R7,[R6, #+0]
+//  137     if(Key_Status & 0x0100)  KeyCode = K_FUNC;         // K3 
+        LSLS     R6,R2,#+23
+        BPL.N    ??Read_Keys_2
+        MOVS     R4,#+3
+//  138     if(Key_Status & 0x0200)  KeyCode = K_MENU;         // K4 
+??Read_Keys_2:
+        LSLS     R6,R2,#+22
+        BPL.N    ??Read_Keys_3
+        MOVS     R4,#+4
+//  139     if(Key_Status & 0x0400)  KeyCode = K_INDEX_DEC;    // K5 
+??Read_Keys_3:
+        LSLS     R6,R2,#+21
+        BPL.N    ??Read_Keys_4
+        MOVS     R4,R5
+//  140     if(Key_Status & 0x0800)  KeyCode = K_INDEX_INC;    // K6  
+??Read_Keys_4:
+        LSLS     R5,R2,#+20
+        BPL.N    ??Read_Keys_5
+        MOVS     R4,R3
+//  141     if(Key_Status & 0x1000)  KeyCode = K_INDEX_OK;     // K7  
+??Read_Keys_5:
+        LSLS     R3,R2,#+19
+        BPL.N    ??Read_Keys_6
+        MOVS     R4,#+7
+//  142     if(Key_Status & 0x2000)  KeyCode = K_SELE;         // K2
+??Read_Keys_6:
+        LSLS     R3,R2,#+18
+        BPL.N    ??Read_Keys_7
+        MOVS     R4,#+2
+//  143     if(Key_Status & 0x4000)  KeyCode = K_PLAY;         // K1
+??Read_Keys_7:
+        LSLS     R3,R2,#+17
+        BPL.N    ??Read_Keys_8
+        MOVS     R4,#+1
+//  144     if(Key_Status & 0x8000)  KeyCode = K_ITEM_INC;     // K8
+??Read_Keys_8:
+        LSLS     R3,R2,#+16
+        BPL.N    ??Read_Keys_9
+        MOV      R4,R9
+//  145     if(Key_Status & 0x0008)  KeyCode = K_ITEM_DEC;     // K9
+??Read_Keys_9:
+        MOVS     R3,R2
+        LSLS     R3,R3,#+28
+        BPL.N    ??Read_Keys_10
+        MOV      R4,R8
+//  146     if(Key_Status & 0x0040)  KeyCode = K_ITEM_OK;      // K10
+??Read_Keys_10:
+        LSLS     R2,R2,#+25
+        BPL.N    ??Read_Keys_11
+        MOVS     R4,#+10
+        B.N      ??Read_Keys_11
+//  147   } else {
+//  148     if(Key_Status_Now & Key_Status_Last){       // Key push hold on
+??Read_Keys_1:
+        LDRH     R2,[R0, #+0]
+        TST      R1,R2
+        BEQ.N    ??Read_Keys_11
+//  149       if((Key_Wait_Cnt ==0)&&(Key_Repeat_Cnt ==0)){
+        LDRB     R2,[R6, #+0]
+        CMP      R2,#+0
+        BNE.N    ??Read_Keys_11
+        LDR.N    R2,??Read_Keys_0+0x8  ;; Key_Repeat_Cnt
+        LDRB     R6,[R2, #+0]
+        CMP      R6,#+0
+        BNE.N    ??Read_Keys_11
+//  150         if(Key_Status_Now & 0x0400)  KeyCode = K_INDEX_DEC;    // K5 
+        LSLS     R6,R1,#+21
+        BPL.N    ??Read_Keys_12
+        MOVS     R4,R5
+//  151         if(Key_Status_Now & 0x0800)  KeyCode = K_INDEX_INC;    // K6
+??Read_Keys_12:
+        LSLS     R6,R1,#+20
+        BPL.N    ??Read_Keys_13
+        MOVS     R4,R3
+//  152         if(Key_Status_Now & 0x0008)  KeyCode = K_ITEM_DEC;     // K9 
+??Read_Keys_13:
+        MOVS     R3,R1
+        LSLS     R3,R3,#+28
+        BPL.N    ??Read_Keys_14
+        MOV      R4,R8
+//  153         if(Key_Status_Now & 0x8000)  KeyCode = K_ITEM_INC;     // K8 
+??Read_Keys_14:
+        LSLS     R3,R1,#+16
+        BPL.N    ??Read_Keys_15
+        MOV      R4,R9
+//  154         Key_Repeat_Cnt = 5;                 // Auto repeat per 100mS
+??Read_Keys_15:
+        STRB     R5,[R2, #+0]
+//  155       }
+//  156     }
+//  157   }
+//  158   Key_Status_Last = Key_Status_Now;
+??Read_Keys_11:
+        STRH     R1,[R0, #+0]
+//  159   return KeyCode;
+        MOVS     R0,R4
+        POP      {R4-R9,PC}       ;; return
+        DATA
+??Read_Keys_0:
+        DC32     Key_Status_Last
+        DC32     Key_Wait_Cnt
+        DC32     Key_Repeat_Cnt
+        CFI EndBlock cfiBlock7
+//  160 }    
+//  161 /*******************************************************************************
+//  162 Beep : Beeper Ctrl  (Volume=0~99, Lenght=1~65535mS)
+//  163 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI Function Beep
+        THUMB
+//  164 void Beep(u8 Volume, u16 mS)
+//  165 {
+Beep:
+        PUSH     {LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI CFA R13+4
+//  166   Beep_mS = mS; 
+        LDR.N    R2,??Beep_0      ;; Beep_mS
+        STRH     R1,[R2, #+0]
+//  167   Set(BEEP_VOLUME, Volume);
+        MOVS     R1,R0
+        MOVS     R0,#+3
+        _BLF     Set,??Set??rT
+//  168 }
+        POP      {PC}             ;; return
+        DATA
+??Beep_0:
+        DC32     Beep_mS
+        CFI EndBlock cfiBlock8
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??rT??div32_t:
+        PUSH     {R3}
+        CFI CFA R13+4
+        LDR.N    R3,??Subroutine0_0  ;; ??div32_t
+        MOV      R12,R3
+        POP      {R3}
+        CFI CFA R13+0
+        BX       R12
+        Nop      
+        DATA
+??Subroutine0_0:
+        DC32     ??div32_t
+        CFI EndBlock cfiBlock9
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Get??rT:
+        LDR.N    R3,??Subroutine1_0  ;; Get
+        BX       R3
+        DATA
+??Subroutine1_0:
+        DC32     Get
+        CFI EndBlock cfiBlock10
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock11 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Set??rT:
+        LDR.N    R3,??Subroutine2_0  ;; Set
+        BX       R3
+        DATA
+??Subroutine2_0:
+        DC32     Set
+        CFI EndBlock cfiBlock11
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+`?<Constant "0123456789ABCDEF">`:
+        DATA
+        DC8 "0123456789ABCDEF"
+        DC8 0, 0, 0
+
+        END
+//  169 /********************************* END OF FILE ********************************/
+// 
+// 842 bytes in segment CODE
+//  20 bytes in segment DATA_C
+// 
+// 810 bytes of CODE  memory (+ 32 bytes shared)
+//  20 bytes of CONST memory
+//
+//Errors: none
+//Warnings: none

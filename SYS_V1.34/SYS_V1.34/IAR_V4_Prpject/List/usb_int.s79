@@ -1,0 +1,687 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32 EVALUATION   25/Apr/2011  15:04:58 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  C:\Users\Administrator\Desktop\mini DSO             /
+//                       download\SYS_V1.34\USBLib\src\usb_int.c             /
+//    Command line    =  "C:\Users\Administrator\Desktop\mini DSO            /
+//                       download\SYS_V1.34\USBLib\src\usb_int.c" -lA        /
+//                       "C:\Users\Administrator\Desktop\mini DSO            /
+//                       download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\List\"  /
+//                       -o "C:\Users\Administrator\Desktop\mini DSO         /
+//                       download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\"   /
+//                       -s9 --no_inline --cpu_mode thumb --endian little    /
+//                       --cpu cortex-M3 --stack_align 4 -e --fpu None       /
+//                       --dlib_config "E:\IARWorkBench(Cracked)\Embedded    /
+//                       Workbench 4.0 Evaluation\ARM\LIB\dl7mptnnl8n.h" -I  /
+//                       "C:\Users\Administrator\Desktop\mini DSO            /
+//                       download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\..\..\F /
+//                       WLib\inc\" -I "C:\Users\Administrator\Desktop\mini  /
+//                       DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\..\ /
+//                       ..\USBLib\inc\" -I "C:\Users\Administrator\Desktop\ /
+//                       mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpjec /
+//                       t\..\include\" -I "E:\IARWorkBench(Cracked)\Embedde /
+//                       d Workbench 4.0 Evaluation\ARM\INC\"                /
+//    List file       =  C:\Users\Administrator\Desktop\mini DSO             /
+//                       download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\List\us /
+//                       b_int.s79                                           /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME usb_int
+
+        RTMODEL "StackAlign4", "USED"
+        RTMODEL "__cpu_mode", "__pcs__thumb"
+        RTMODEL "__data_model", "absolute"
+        RTMODEL "__endian", "little"
+        RTMODEL "__rt_version", "6"
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+??DataTable0 EQU 0
+??DataTable1 EQU 0
+??DataTable2 EQU 0
+??DataTable3 EQU 0
+??DataTable4 EQU 0
+??DataTable5 EQU 0
+??DataTable6 EQU 0
+??DataTable7 EQU 0
+??DataTable8 EQU 0
+        MULTWEAK ??In0_Process??rT
+        MULTWEAK ??Out0_Process??rT
+        MULTWEAK ??Setup0_Process??rT
+        PUBWEAK ?init?tab?DATA_Z
+        PUBLIC CTR_HP
+        FUNCTION CTR_HP,0203H
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC CTR_LP
+        FUNCTION CTR_LP,0203H
+        LOCFRAME CSTACK, 36, STACK
+        PUBLIC SaveRState
+        PUBLIC SaveTState
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA R13 HUGEDATA
+        CFI Resource R0:32, R1:32, R2:32, R3:32, R4:32, R5:32, R6:32, R7:32
+        CFI Resource R8:32, R9:32, R10:32, R11:32, R12:32, R13:32, R14:32
+        CFI VirtualResource ?RET:32
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 2
+        CFI DataAlign 4
+        CFI ReturnAddress ?RET CODE
+        CFI CFA R13+0
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI R8 SameValue
+        CFI R9 SameValue
+        CFI R10 SameValue
+        CFI R11 SameValue
+        CFI R12 Undefined
+        CFI R14 Undefined
+        CFI ?RET R14
+        CFI EndCommon cfiCommon0
+        
+In0_Process         SYMBOL "In0_Process"
+Out0_Process        SYMBOL "Out0_Process"
+Setup0_Process      SYMBOL "Setup0_Process"
+??In0_Process??rT   SYMBOL "??rT", In0_Process
+??Out0_Process??rT  SYMBOL "??rT", Out0_Process
+??Setup0_Process??rT SYMBOL "??rT", Setup0_Process
+
+        EXTERN EPindex
+        EXTERN In0_Process
+        FUNCTION In0_Process,0202H
+        EXTERN Out0_Process
+        FUNCTION Out0_Process,0202H
+        EXTERN Setup0_Process
+        FUNCTION Setup0_Process,0202H
+        EXTERN pEpInt_IN
+        EXTERN pEpInt_OUT
+        EXTERN wIstr
+
+// C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\USBLib\src\usb_int.c
+//    1 /******************** (C) COPYRIGHT 2008 STMicroelectronics ********************
+//    2 * File Name          : usb_int.c
+//    3 * Author             : MCD Application Team
+//    4 * Version            : V2.2.1
+//    5 * Date               : 09/22/2008
+//    6 * Description        : Endpoint CTR (Low and High) interrupt's service routines
+//    7 ********************************************************************************
+//    8 * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+//    9 * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+//   10 * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+//   11 * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+//   12 * CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+//   13 * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+//   14 *******************************************************************************/
+//   15 
+//   16 /* Includes ------------------------------------------------------------------*/
+//   17 #include "usb_lib.h"
+//   18 
+//   19 /* Private typedef -----------------------------------------------------------*/
+//   20 /* Private define ------------------------------------------------------------*/
+//   21 /* Private macro -------------------------------------------------------------*/
+//   22 /* Private variables ---------------------------------------------------------*/
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(1)
+//   23 u16 SaveRState;
+SaveRState:
+        DS8 2
+//   24 u16 SaveTState;
+SaveTState:
+        DS8 2
+//   25 
+//   26 /* Extern variables ----------------------------------------------------------*/
+//   27 extern void (*pEpInt_IN[7])(void);    /*  Handles IN  interrupts   */
+//   28 extern void (*pEpInt_OUT[7])(void);   /*  Handles OUT interrupts   */
+//   29 
+//   30 /* Private function prototypes -----------------------------------------------*/
+//   31 /* Private functions ---------------------------------------------------------*/
+//   32 
+//   33 /*******************************************************************************
+//   34 * Function Name  : CTR_LP.
+//   35 * Description    : Low priority Endpoint Correct Transfer interrupt's service
+//   36 *                  routine.
+//   37 * Input          : None.
+//   38 * Output         : None.
+//   39 * Return         : None.
+//   40 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function CTR_LP
+        THUMB
+//   41 void CTR_LP(void)
+//   42 {
+//   43   u32 wEPVal = 0;
+CTR_LP:
+        LDR.N    R0,??DataTable9  ;; wIstr
+        PUSH     {R4-R11,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R11 Frame(CFA, -8)
+        CFI R10 Frame(CFA, -12)
+        CFI R9 Frame(CFA, -16)
+        CFI R8 Frame(CFA, -20)
+        CFI R7 Frame(CFA, -24)
+        CFI R6 Frame(CFA, -28)
+        CFI R5 Frame(CFA, -32)
+        CFI R4 Frame(CFA, -36)
+        CFI CFA R13+36
+        LDR.N    R5,??DataTable15  ;; 0x40005c00
+        LDR.N    R6,??CTR_LP_0    ;; 0x8fbf
+        MOV      R8,R0
+        LDR.N    R0,??DataTable10  ;; 0x40005c44
+        MOV      R9,R0
+        B.N      ??CTR_LP_1
+//   44   /* stay in loop while pending ints */
+//   45   while (((wIstr = _GetISTR()) & ISTR_CTR) != 0)
+//   46   {
+//   47     _SetISTR((u16)CLR_CTR); /* clear CTR flag */
+//   48     /* extract highest priority endpoint number */
+//   49     EPindex = (u8)(wIstr & ISTR_EP_ID);
+//   50     if (EPindex == 0)
+//   51     {
+//   52       /* Decode and service control endpoint interrupt */
+//   53       /* calling related service routine */
+//   54       /* (Setup0_Process, In0_Process, Out0_Process) */
+//   55 
+//   56       /* save RX & TX status */
+//   57       /* and set both to NAK */
+//   58       SaveRState = _GetEPRxStatus(ENDP0);
+//   59       SaveTState = _GetEPTxStatus(ENDP0);
+//   60       _SetEPRxStatus(ENDP0, EP_RX_NAK);
+//   61       _SetEPTxStatus(ENDP0, EP_TX_NAK);
+//   62 
+//   63 
+//   64       /* DIR bit = origin of the interrupt */
+//   65 
+//   66       if ((wIstr & ISTR_DIR) == 0)
+//   67       {
+//   68         /* DIR = 0 */
+//   69 
+//   70         /* DIR = 0      => IN  int */
+//   71         /* DIR = 0 implies that (EP_CTR_TX = 1) always  */
+//   72 
+//   73 
+//   74         _ClearEP_CTR_TX(ENDP0);
+//   75         In0_Process();
+//   76 
+//   77            /* before terminate set Tx & Rx status */
+//   78           _SetEPRxStatus(ENDP0, SaveRState);
+//   79           _SetEPTxStatus(ENDP0, SaveTState);
+//   80           return;
+//   81       }
+//   82       else
+//   83       {
+//   84         /* DIR = 1 */
+//   85 
+//   86         /* DIR = 1 & CTR_RX       => SETUP or OUT int */
+//   87         /* DIR = 1 & (CTR_TX | CTR_RX) => 2 int pending */
+//   88 
+//   89         wEPVal = _GetENDPOINT(ENDP0);
+//   90         if ((wEPVal & EP_CTR_TX) != 0)
+//   91         {
+//   92           _ClearEP_CTR_TX(ENDP0);
+//   93           In0_Process();
+//   94           /* before terminate set Tx & Rx status */
+//   95           _SetEPRxStatus(ENDP0, SaveRState);
+//   96           _SetEPTxStatus(ENDP0, SaveTState);
+//   97           return;
+//   98         }
+//   99         else if ((wEPVal &EP_SETUP) != 0)
+//  100         {
+//  101           _ClearEP_CTR_RX(ENDP0); /* SETUP bit kept frozen while CTR_RX = 1 */
+//  102           Setup0_Process();
+//  103           /* before terminate set Tx & Rx status */
+//  104           _SetEPRxStatus(ENDP0, SaveRState);
+//  105           _SetEPTxStatus(ENDP0, SaveTState);
+//  106           return;
+//  107         }
+//  108 
+//  109         else if ((wEPVal & EP_CTR_RX) != 0)
+//  110         {
+//  111           _ClearEP_CTR_RX(ENDP0);
+//  112           Out0_Process();
+//  113           /* before terminate set Tx & Rx status */
+//  114           _SetEPRxStatus(ENDP0, SaveRState);
+//  115           _SetEPTxStatus(ENDP0, SaveTState);
+//  116           return;
+//  117         }
+//  118       }
+//  119     }/* if(EPindex == 0) */
+//  120     else
+//  121     {
+//  122       /* Decode and service non control endpoints interrupt  */
+//  123 
+//  124       /* process related endpoint register */
+//  125       wEPVal = _GetENDPOINT(EPindex);
+??CTR_LP_2:
+        ADDS     R2,R5,R1, LSL #+2
+        LDR      R7,[R2, #+0]
+        UXTH     R7,R7
+//  126       if ((wEPVal & EP_CTR_RX) != 0)
+        LSLS     R3,R7,#+16
+        BPL.N    ??CTR_LP_3
+//  127       {
+//  128         /* clear int flag */
+//  129         _ClearEP_CTR_RX(EPindex);
+        LDR      R3,[R2, #+0]
+        ANDS     R0,R0,R3
+        STR      R0,[R2, #+0]
+//  130 
+//  131         /* call OUT service function */
+//  132         (*pEpInt_OUT[EPindex-1])();
+        LDR.N    R0,??DataTable12  ;; pEpInt_OUT
+        ADDS     R0,R0,R1, LSL #+2
+        SUBS     R0,R0,#+4
+        LDR      R0,[R0, #+0]
+        BLX      R0
+//  133 
+//  134       } /* if((wEPVal & EP_CTR_RX) */
+//  135 
+//  136       if ((wEPVal & EP_CTR_TX) != 0)
+??CTR_LP_3:
+        LSLS     R0,R7,#+24
+        BPL.N    ??CTR_LP_1
+        LDRB     R0,[R4, #+0]
+        ADDS     R1,R5,R0, LSL #+2
+        LDR      R2,[R1, #+0]
+        ANDS     R2,R10,R2
+        STR      R2,[R1, #+0]
+//  137       {
+//  138         /* clear int flag */
+//  139         _ClearEP_CTR_TX(EPindex);
+//  140 
+//  141         /* call IN service function */
+//  142         (*pEpInt_IN[EPindex-1])();
+        LDR.N    R1,??DataTable17  ;; pEpInt_IN
+        ADDS     R0,R1,R0, LSL #+2
+        SUBS     R0,R0,#+4
+        LDR      R0,[R0, #+0]
+        BLX      R0
+//  143       } /* if((wEPVal & EP_CTR_TX) != 0) */
+//  144 
+//  145     }/* if(EPindex == 0) else */
+??CTR_LP_1:
+        LDR      R0,[R9, #+0]
+        STRH     R0,[R8, #+0]
+        LSLS     R0,R0,#+16
+        BPL.W    ??CTR_LP_4
+        LDR.N    R0,??DataTable13  ;; 0x7fff
+        LDR.N    R4,??DataTable14  ;; EPindex
+        STR      R0,[R9, #+0]
+        LDRH     R0,[R8, #+0]
+        LSLS     R1,R0,#+28
+        LDR.N    R0,??DataTable16  ;; 0x8f0f
+        LSRS     R1,R1,#+28
+        STRB     R1,[R4, #+0]
+        MOV      R10,R0
+        LDR.N    R0,??DataTable11  ;; 0xf8f
+        CMP      R1,#+0
+        BNE.N    ??CTR_LP_2
+        LDR.N    R1,??CTR_LP_0+0x4  ;; SaveRState
+        LDR.N    R4,??CTR_LP_0+0x8  ;; 0xbf8f
+        MOV      R11,R1
+        LDR      R1,[R5, #+0]
+        ANDS     R1,R1,#0x3000
+        STRH     R1,[R11, #+0]
+        LDR      R1,[R5, #+0]
+        ANDS     R1,R1,#0x30
+        STRH     R1,[R11, #+2]
+        LDR      R1,[R5, #+0]
+        ANDS     R1,R1,R4
+        EORS     R1,R1,#0x2000
+        STR      R1,[R5, #+0]
+        LDR      R1,[R5, #+0]
+        ANDS     R1,R1,R6
+        EORS     R1,R1,#0x20
+        STR      R1,[R5, #+0]
+        LDRH     R1,[R8, #+0]
+        LSLS     R1,R1,#+27
+        BMI.N    ??CTR_LP_5
+        LDR      R0,[R5, #+0]
+        ANDS     R0,R10,R0
+        STR      R0,[R5, #+0]
+        _BLF     In0_Process,??In0_Process??rT
+        LDR      R0,[R5, #+0]
+        ANDS     R4,R4,R0
+        LDRH     R0,[R11, #+0]
+        LSLS     R1,R0,#+19
+        IT      MI 
+        EORSMI   R4,R4,#0x1000
+        LSLS     R0,R0,#+18
+        BPL.N    ??CTR_LP_6
+        EORS     R4,R4,#0x2000
+        UXTH     R4,R4
+??CTR_LP_6:
+        STR      R4,[R5, #+0]
+        LDR      R0,[R5, #+0]
+        ANDS     R6,R6,R0
+        LDRH     R0,[R11, #+2]
+        LSLS     R1,R0,#+27
+        IT      MI 
+        EORSMI   R6,R6,#0x10
+        LSLS     R0,R0,#+26
+        BPL.N    ??CTR_LP_7
+        EORS     R6,R6,#0x20
+        UXTH     R6,R6
+??CTR_LP_8:
+        B.N      ??CTR_LP_7
+??CTR_LP_5:
+        LDR      R7,[R5, #+0]
+        UXTH     R7,R7
+        LSLS     R1,R7,#+24
+        BPL.N    ??CTR_LP_9
+        LDR      R0,[R5, #+0]
+        ANDS     R0,R10,R0
+        STR      R0,[R5, #+0]
+        _BLF     In0_Process,??In0_Process??rT
+        LDR      R0,[R5, #+0]
+        ANDS     R4,R4,R0
+        LDRH     R0,[R11, #+0]
+        LSLS     R1,R0,#+19
+        IT      MI 
+        EORSMI   R4,R4,#0x1000
+        LSLS     R0,R0,#+18
+        BPL.N    ??CTR_LP_10
+        EORS     R4,R4,#0x2000
+        UXTH     R4,R4
+??CTR_LP_10:
+        STR      R4,[R5, #+0]
+        LDR      R0,[R5, #+0]
+        ANDS     R6,R6,R0
+        LDRH     R0,[R11, #+2]
+        LSLS     R1,R0,#+27
+        IT      MI 
+        EORSMI   R6,R6,#0x10
+        LSLS     R0,R0,#+26
+        BPL.N    ??CTR_LP_7
+        EORS     R6,R6,#0x20
+        UXTH     R6,R6
+??CTR_LP_11:
+        B.N      ??CTR_LP_7
+??CTR_LP_9:
+        LSLS     R1,R7,#+20
+        BPL.N    ??CTR_LP_12
+        LDR      R1,[R5, #+0]
+        ANDS     R0,R0,R1
+        STR      R0,[R5, #+0]
+        _BLF     Setup0_Process,??Setup0_Process??rT
+        LDR      R0,[R5, #+0]
+        ANDS     R4,R4,R0
+        LDRH     R0,[R11, #+0]
+        LSLS     R1,R0,#+19
+        IT      MI 
+        EORSMI   R4,R4,#0x1000
+        LSLS     R0,R0,#+18
+        BPL.N    ??CTR_LP_13
+        EORS     R4,R4,#0x2000
+        UXTH     R4,R4
+??CTR_LP_13:
+        STR      R4,[R5, #+0]
+        LDR      R0,[R5, #+0]
+        ANDS     R6,R6,R0
+        LDRH     R0,[R11, #+2]
+        LSLS     R1,R0,#+27
+        IT      MI 
+        EORSMI   R6,R6,#0x10
+        LSLS     R0,R0,#+26
+        BPL.N    ??CTR_LP_7
+        EORS     R6,R6,#0x20
+        UXTH     R6,R6
+??CTR_LP_14:
+        B.N      ??CTR_LP_7
+??CTR_LP_12:
+        LSLS     R1,R7,#+16
+        BPL.W    ??CTR_LP_1
+        LDR      R1,[R5, #+0]
+        ANDS     R0,R0,R1
+        STR      R0,[R5, #+0]
+        _BLF     Out0_Process,??Out0_Process??rT
+        LDR      R0,[R5, #+0]
+        ANDS     R4,R4,R0
+        LDRH     R0,[R11, #+0]
+        LSLS     R1,R0,#+19
+        IT      MI 
+        EORSMI   R4,R4,#0x1000
+        LSLS     R0,R0,#+18
+        BPL.N    ??CTR_LP_15
+        EORS     R4,R4,#0x2000
+        UXTH     R4,R4
+??CTR_LP_15:
+        STR      R4,[R5, #+0]
+        LDR      R0,[R5, #+0]
+        ANDS     R6,R6,R0
+        LDRH     R0,[R11, #+2]
+        LSLS     R1,R0,#+27
+        IT      MI 
+        EORSMI   R6,R6,#0x10
+        LSLS     R0,R0,#+26
+        BPL.N    ??CTR_LP_7
+        EORS     R6,R6,#0x20
+        UXTH     R6,R6
+??CTR_LP_7:
+        STR      R6,[R5, #+0]
+??CTR_LP_4:
+        POP      {R4-R11,PC}      ;; return
+        DATA
+??CTR_LP_0:
+        DC32     0x8fbf
+        DC32     SaveRState
+        DC32     0xbf8f
+        CFI EndBlock cfiBlock0
+//  146 
+//  147   }/* while(...) */
+//  148 }
+//  149 
+//  150 /*******************************************************************************
+//  151 * Function Name  : CTR_HP.
+//  152 * Description    : High Priority Endpoint Correct Transfer interrupt's service 
+//  153 *                  routine.
+//  154 * Input          : None.
+//  155 * Output         : None.
+//  156 * Return         : None.
+//  157 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function CTR_HP
+        THUMB
+//  158 void CTR_HP(void)
+//  159 {
+CTR_HP:
+        PUSH     {R4,R5,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R5 Frame(CFA, -8)
+        CFI R4 Frame(CFA, -12)
+        CFI CFA R13+12
+//  160   u32 wEPVal = 0;
+        LDR.N    R4,??DataTable9  ;; wIstr
+        LDR.N    R5,??DataTable10  ;; 0x40005c44
+        B.N      ??CTR_HP_0
+//  161 
+//  162   while (((wIstr = _GetISTR()) & ISTR_CTR) != 0)
+//  163   {
+//  164     _SetISTR((u16)CLR_CTR); /* clear CTR flag */
+//  165     /* extract highest priority endpoint number */
+//  166     EPindex = (u8)(wIstr & ISTR_EP_ID);
+//  167     /* process related endpoint register */
+//  168     wEPVal = _GetENDPOINT(EPindex);
+//  169     if ((wEPVal & EP_CTR_RX) != 0)
+//  170     {
+//  171       /* clear int flag */
+//  172       _ClearEP_CTR_RX(EPindex);
+??CTR_HP_1:
+        LDR      R2,[R1, #+0]
+        LDR.N    R3,??DataTable11  ;; 0xf8f
+        ANDS     R3,R3,R2
+        STR      R3,[R1, #+0]
+//  173 
+//  174       /* call OUT service function */
+//  175       (*pEpInt_OUT[EPindex-1])();
+        LDR.N    R1,??DataTable12  ;; pEpInt_OUT
+        ADDS     R0,R1,R0, LSL #+2
+        SUBS     R0,R0,#+4
+        LDR      R0,[R0, #+0]
+        BLX      R0
+//  176 
+//  177     } /* if((wEPVal & EP_CTR_RX) */
+??CTR_HP_0:
+        LDR      R0,[R5, #+0]
+        STRH     R0,[R4, #+0]
+        LSLS     R0,R0,#+16
+        BPL.N    ??CTR_HP_2
+        LDR.N    R0,??DataTable13  ;; 0x7fff
+        LDR.N    R1,??DataTable14  ;; EPindex
+        STR      R0,[R5, #+0]
+        LDRH     R0,[R4, #+0]
+        LSLS     R0,R0,#+28
+        LSRS     R0,R0,#+28
+        STRB     R0,[R1, #+0]
+        LDR.N    R1,??DataTable15  ;; 0x40005c00
+        ADDS     R1,R1,R0, LSL #+2
+        LDR      R2,[R1, #+0]
+        UXTH     R2,R2
+        LSLS     R3,R2,#+16
+        BMI.N    ??CTR_HP_1
+//  178     else if ((wEPVal & EP_CTR_TX) != 0)
+        LSLS     R2,R2,#+24
+        BPL.N    ??CTR_HP_0
+//  179     {
+//  180       /* clear int flag */
+//  181       _ClearEP_CTR_TX(EPindex);
+        LDR      R2,[R1, #+0]
+        LDR.N    R3,??DataTable16  ;; 0x8f0f
+        ANDS     R3,R3,R2
+        STR      R3,[R1, #+0]
+//  182 
+//  183       /* call IN service function */
+//  184       (*pEpInt_IN[EPindex-1])();
+        LDR.N    R1,??DataTable17  ;; pEpInt_IN
+        ADDS     R0,R1,R0, LSL #+2
+        SUBS     R0,R0,#+4
+        LDR      R0,[R0, #+0]
+        BLX      R0
+        B.N      ??CTR_HP_0
+//  185 
+//  186 
+//  187     } /* if((wEPVal & EP_CTR_TX) != 0) */
+//  188 
+//  189   }/* while(...) */
+//  190 }
+??CTR_HP_2:
+        POP      {R4,R5,PC}       ;; return
+        CFI EndBlock cfiBlock1
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable9:
+        DC32     wIstr
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable10:
+        DC32     0x40005c44
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable11:
+        DC32     0xf8f
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable12:
+        DC32     pEpInt_OUT
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable13:
+        DC32     0x7fff
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable14:
+        DC32     EPindex
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable15:
+        DC32     0x40005c00
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable16:
+        DC32     0x8f0f
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable17:
+        DC32     pEpInt_IN
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??In0_Process??rT:
+        LDR.N    R3,??Subroutine0_0  ;; In0_Process
+        BX       R3
+        DATA
+??Subroutine0_0:
+        DC32     In0_Process
+        CFI EndBlock cfiBlock2
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Setup0_Process??rT:
+        LDR.N    R3,??Subroutine1_0  ;; Setup0_Process
+        BX       R3
+        DATA
+??Subroutine1_0:
+        DC32     Setup0_Process
+        CFI EndBlock cfiBlock3
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Out0_Process??rT:
+        LDR.N    R3,??Subroutine2_0  ;; Out0_Process
+        BX       R3
+        DATA
+??Subroutine2_0:
+        DC32     Out0_Process
+        CFI EndBlock cfiBlock4
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_Z:
+        DCD      sfe(DATA_Z) - sfb(DATA_Z), sfb(DATA_Z), sfb(DATA_Z)
+
+        END
+//  191 
+//  192 /******************* (C) COPYRIGHT 2008 STMicroelectronics *****END OF FILE****/
+// 
+// 628 bytes in segment CODE
+//   4 bytes in segment DATA_Z
+//  12 bytes in segment INITTAB
+// 
+// 604 bytes of CODE memory (+ 36 bytes shared)
+//   4 bytes of DATA memory
+//
+//Errors: none
+//Warnings: none

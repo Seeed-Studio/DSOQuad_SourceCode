@@ -1,0 +1,419 @@
+###############################################################################
+#                                                                             #
+#     IAR Systems ARM Assembler V4.42A/W32 25/Apr/2011  15:04:54              #
+#     Copyright 1999-2007 IAR Systems. All rights reserved.                   #
+#                                                                             #
+#           Source file   =  C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\cortexm3_macro.s#
+#           List file     =  C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\List\cortexm3_macro.lst#
+#           Object file   =  C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\cortexm3_macro.r79#
+#           Command line  =  C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\cortexm3_macro.s #
+#                            -OC:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\ #
+#                            -s+ -M<> -w+ -r                                  #
+#                            -LC:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\List\ #
+#                            -t8 --cpu cortex-M3 --fpu None                   #
+#                            -IE:\IARWorkBench(Cracked)\Embedded Workbench 4.0 Evaluation\ARM\INC\ #
+#                                                                             #
+###############################################################################
+
+    1    00000000              ;******************** (C) COPYRIGHT 2008
+                                STMicroelectronics ********************
+    2    00000000              ;* File Name          : cortexm3_macro.s
+    3    00000000              ;* Author             : MCD Application
+                                Team
+    4    00000000              ;* Version            : V2.2.1
+    5    00000000              ;* Date               : 09/22/2008
+    6    00000000              ;* Description        : Instruction wrappers for
+                                special Cortex-M3 instructions.
+    7    00000000              ;*                      to be used with EWARM4.x
+                                toolchain.
+    8    00000000              ;***********************************************
+                               ********************************
+    9    00000000              ; THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE
+                                ONLY AIMS AT PROVIDING CUSTOMERS
+   10    00000000              ; WITH CODING INFORMATION REGARDING THEIR
+                                PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+   11    00000000              ; AS A RESULT, STMICROELECTRONICS SHALL NOT BE
+                                HELD LIABLE FOR ANY DIRECT,
+   12    00000000              ; INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT
+                                TO ANY CLAIMS ARISING FROM THE
+   13    00000000              ; CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE
+                                BY CUSTOMERS OF THE CODING
+   14    00000000              ; INFORMATION CONTAINED HEREIN IN CONNECTION
+                                WITH THEIR PRODUCTS.
+   15    00000000              ;***********************************************
+                               ********************************
+   16    00000000                  
+   17    00000000                RSEG CODE:CODE(2)
+   18    00000000              
+   19    00000000                ; Exported functions
+   20    00000000                EXPORT __WFI
+   21    00000000                EXPORT __WFE
+   22    00000000                EXPORT __SEV
+   23    00000000                EXPORT __ISB
+   24    00000000                EXPORT __DSB
+   25    00000000                EXPORT __DMB
+   26    00000000                EXPORT __SVC
+   27    00000000                EXPORT __MRS_CONTROL
+   28    00000000                EXPORT __MSR_CONTROL
+   29    00000000                EXPORT __MRS_PSP
+   30    00000000                EXPORT __MSR_PSP
+   31    00000000                EXPORT __MRS_MSP
+   32    00000000                EXPORT __MSR_MSP    
+   33    00000000                EXPORT __RESETPRIMASK
+   34    00000000                EXPORT __SETPRIMASK
+   35    00000000                EXPORT __READ_PRIMASK
+   36    00000000                EXPORT __RESETFAULTMASK
+   37    00000000                EXPORT __SETFAULTMASK
+   38    00000000                EXPORT __READ_FAULTMASK
+   39    00000000                EXPORT __BASEPRICONFIG
+   40    00000000                EXPORT __GetBASEPRI
+   41    00000000                EXPORT __REV_HalfWord
+   42    00000000                EXPORT __REV_Word  
+   43    00000000              
+   44    00000000              ;***********************************************
+                               ********************************
+   45    00000000              ; Function Name  : __WFI
+   46    00000000              ; Description    : Assembler function for the
+                                WFI instruction.
+   47    00000000              ; Input          : None
+   48    00000000              ; Return         : None
+   49    00000000              ;***********************************************
+                               ********************************
+   50    00000000              __WFI 
+   51    00000000               
+   52    00000000 30BF             WFI
+   53    00000002 7047             BX r14
+   54    00000004              
+   55    00000004              ;***********************************************
+                               ********************************
+   56    00000004              ; Function Name  : __WFE
+   57    00000004              ; Description    : Assembler function for the
+                                WFE instruction.
+   58    00000004              ; Input          : None
+   59    00000004              ; Return         : None
+   60    00000004              ;***********************************************
+                               ********************************
+   61    00000004              __WFE
+   62    00000004              
+   63    00000004 20BF             WFE
+   64    00000006 7047             BX r14
+   65    00000008              
+   66    00000008              ;***********************************************
+                               ********************************
+   67    00000008              ; Function Name  : __SEV
+   68    00000008              ; Description    : Assembler function for the
+                                SEV instruction.
+   69    00000008              ; Input          : None
+   70    00000008              ; Return         : None
+   71    00000008              ;***********************************************
+                               ********************************
+   72    00000008              __SEV
+   73    00000008              
+   74    00000008 40BF             SEV
+   75    0000000A 7047             BX r14
+   76    0000000C              
+   77    0000000C              ;***********************************************
+                               ********************************
+   78    0000000C              ; Function Name  : __ISB
+   79    0000000C              ; Description    : Assembler function for the
+                                ISB instruction.
+   80    0000000C              ; Input          : None
+   81    0000000C              ; Return         : None
+   82    0000000C              ;***********************************************
+                               ********************************
+   83    0000000C              __ISB
+   84    0000000C              
+   85    0000000C BFF36F8F         ISB
+   86    00000010 7047             BX r14
+   87    00000012              
+   88    00000012              ;***********************************************
+                               ********************************
+   89    00000012              ; Function Name  : __DSB
+   90    00000012              ; Description    : Assembler function for the
+                                DSB instruction.
+   91    00000012              ; Input          : None
+   92    00000012              ; Return         : None
+   93    00000012              ;***********************************************
+                               ********************************
+   94    00000012              __DSB
+   95    00000012              
+   96    00000012 BFF34F8F         DSB
+   97    00000016 7047             BX r14
+   98    00000018              
+   99    00000018              ;***********************************************
+                               ********************************
+  100    00000018              ; Function Name  : __DMB
+  101    00000018              ; Description    : Assembler function for the
+                                DMB instruction.
+  102    00000018              ; Input          : None
+  103    00000018              ; Return         : None
+  104    00000018              ;***********************************************
+                               ********************************
+  105    00000018              __DMB
+  106    00000018              
+  107    00000018 BFF35F8F         DMB
+  108    0000001C 7047             BX r14
+  109    0000001E              
+  110    0000001E              ;***********************************************
+                               ********************************
+  111    0000001E              ; Function Name  : __SVC
+  112    0000001E              ; Description    : Assembler function for the
+                                SVC instruction.
+  113    0000001E              ; Input          : None
+  114    0000001E              ; Return         : None
+  115    0000001E              ;***********************************************
+                               ********************************
+  116    0000001E              __SVC
+  117    0000001E              
+  118    0000001E 01DF             SVC 0x01
+  119    00000020 7047             BX r14
+  120    00000022              
+  121    00000022              ;***********************************************
+                               ********************************
+  122    00000022              ; Function Name  : __MRS_CONTROL
+  123    00000022              ; Description    : Assembler function for the
+                                MRS instruction.
+  124    00000022              ; Input          : None
+  125    00000022              ; Return         : - r0 : Cortex-M3 CONTROL
+                                register value.
+  126    00000022              ;***********************************************
+                               ********************************
+  127    00000022              __MRS_CONTROL
+  128    00000022              
+  129    00000022 EFF31480       MRS r0, CONTROL
+  130    00000026 7047           BX r14
+  131    00000028              
+  132    00000028              ;***********************************************
+                               ********************************
+  133    00000028              ; Function Name  : __MSR_CONTROL
+  134    00000028              ; Description    : Assembler function for the
+                                MSR instruction.
+  135    00000028              ; Input          : - r0 : Cortex-M3 CONTROL
+                                register new value.  
+  136    00000028              ; Return         : None
+  137    00000028              ;***********************************************
+                               ********************************
+  138    00000028              __MSR_CONTROL
+  139    00000028              
+  140    00000028 80F31488       MSR CONTROL, r0
+  141    0000002C BFF36F8F       ISB
+  142    00000030 7047           BX r14
+  143    00000032              
+  144    00000032              ;***********************************************
+                               ********************************
+  145    00000032              ; Function Name  : __MRS_PSP
+  146    00000032              ; Description    : Assembler function for the
+                                MRS instruction.
+  147    00000032              ; Input          : None
+  148    00000032              ; Return         : - r0 : Process Stack
+                                value.
+  149    00000032              ;***********************************************
+                               ********************************
+  150    00000032              __MRS_PSP
+  151    00000032              
+  152    00000032 EFF30980       MRS r0, PSP
+  153    00000036 7047           BX r14
+  154    00000038              
+  155    00000038              ;***********************************************
+                               ********************************
+  156    00000038              ; Function Name  : __MSR_PSP
+  157    00000038              ; Description    : Assembler function for the
+                                MSR instruction.
+  158    00000038              ; Input          : - r0 : Process Stack new
+                                value.  
+  159    00000038              ; Return         : None
+  160    00000038              ;***********************************************
+                               ********************************
+  161    00000038              __MSR_PSP 
+  162    00000038               
+  163    00000038 80F30988         MSR PSP, r0 ; set Process Stack value
+  164    0000003C 7047             BX r14
+  165    0000003E              
+  166    0000003E              ;***********************************************
+                               ********************************
+  167    0000003E              ; Function Name  : __MRS_MSP
+  168    0000003E              ; Description    : Assembler function for the
+                                MRS instruction.
+  169    0000003E              ; Input          : None
+  170    0000003E              ; Return         : - r0 : Main Stack value.
+  171    0000003E              ;***********************************************
+                               ********************************
+  172    0000003E              __MRS_MSP
+  173    0000003E              
+  174    0000003E EFF30880       MRS r0, MSP
+  175    00000042 7047           BX r14
+  176    00000044              
+  177    00000044              ;***********************************************
+                               ********************************
+  178    00000044              ; Function Name  : __MSR_MSP
+  179    00000044              ; Description    : Assembler function for the
+                                MSR instruction.
+  180    00000044              ; Input          : - r0 : Main Stack new value. 
+                                
+  181    00000044              ; Return         : None
+  182    00000044              ;***********************************************
+                               ********************************
+  183    00000044              __MSR_MSP 
+  184    00000044               
+  185    00000044 80F30888         MSR MSP, r0 ; set Main Stack value
+  186    00000048 7047             BX r14
+  187    0000004A                          
+  188    0000004A              ;***********************************************
+                               ********************************
+  189    0000004A              ; Function Name  : __RESETPRIMASK
+  190    0000004A              ; Description    : Assembler function to reset
+                                the PRIMASK.
+  191    0000004A              ; Input          : None 
+  192    0000004A              ; Return         : None
+  193    0000004A              ;***********************************************
+                               ********************************
+  194    0000004A              __RESETPRIMASK
+  195    0000004A              
+  196    0000004A 62B6           CPSIE i
+  197    0000004C 7047           BX r14
+  198    0000004E                
+  199    0000004E              ;***********************************************
+                               ********************************
+  200    0000004E              ; Function Name  : __SETPRIMASK
+  201    0000004E              ; Description    : Assembler function to set the
+                                PRIMASK.
+  202    0000004E              ; Input          : None 
+  203    0000004E              ; Return         : None
+  204    0000004E              ;***********************************************
+                               ********************************
+  205    0000004E              __SETPRIMASK
+  206    0000004E              
+  207    0000004E 72B6           CPSID i
+  208    00000050 7047           BX r14
+  209    00000052              
+  210    00000052              ;***********************************************
+                               ********************************
+  211    00000052              ; Function Name  : __READ_PRIMASK
+  212    00000052              ; Description    : Assembler function to get the
+                                PRIMASK value.
+  213    00000052              ; Input          : None
+  214    00000052              ; Return         : - r0 : PRIMASK register value
+                                
+  215    00000052              ;***********************************************
+                               ********************************
+  216    00000052              __READ_PRIMASK 
+  217    00000052               
+  218    00000052 EFF31080       MRS r0, PRIMASK
+  219    00000056 7047           BX r14
+  220    00000058                
+  221    00000058              ;***********************************************
+                               ********************************
+  222    00000058              ; Function Name  : __RESETFAULTMASK
+  223    00000058              ; Description    : Assembler function to reset
+                                the FAULTMASK.
+  224    00000058              ; Input          : None 
+  225    00000058              ; Return         : None
+  226    00000058              ;***********************************************
+                               ********************************
+  227    00000058              __RESETFAULTMASK
+  228    00000058              
+  229    00000058 61B6           CPSIE f
+  230    0000005A 7047           BX r14
+  231    0000005C                
+  232    0000005C              ;***********************************************
+                               ********************************
+  233    0000005C              ; Function Name  : __SETFAULTMASK
+  234    0000005C              ; Description    : Assembler function to set the
+                                FAULTMASK.
+  235    0000005C              ; Input          : None 
+  236    0000005C              ; Return         : None
+  237    0000005C              ;***********************************************
+                               ********************************
+  238    0000005C              __SETFAULTMASK
+  239    0000005C              
+  240    0000005C 71B6           CPSID f
+  241    0000005E 7047           BX r14
+  242    00000060                
+  243    00000060              ;***********************************************
+                               ********************************
+  244    00000060              ; Function Name  : __READ_FAULTMASK
+  245    00000060              ; Description    : Assembler function to get the
+                                FAULTMASK value.
+  246    00000060              ; Input          : None
+  247    00000060              ; Return         : - r0 : FAULTMASK register
+                                value 
+  248    00000060              ;***********************************************
+                               ********************************
+  249    00000060              __READ_FAULTMASK 
+  250    00000060               
+  251    00000060 EFF31380       MRS r0, FAULTMASK
+  252    00000064 7047           BX r14  
+  253    00000066              
+  254    00000066              ;***********************************************
+                               ********************************
+  255    00000066              ; Function Name  : __BASEPRICONFIG
+  256    00000066              ; Description    : Assembler function to set the
+                                Base Priority.
+  257    00000066              ; Input          : - r0 : Base Priority new
+                                value  
+  258    00000066              ; Return         : None
+  259    00000066              ;***********************************************
+                               ********************************
+  260    00000066              __BASEPRICONFIG
+  261    00000066              
+  262    00000066 80F31188       MSR BASEPRI, r0
+  263    0000006A 7047           BX r14
+  264    0000006C              
+  265    0000006C              ;***********************************************
+                               ********************************
+  266    0000006C              ; Function Name  : __GetBASEPRI
+  267    0000006C              ; Description    : Assembler function to get the
+                                Base Priority value.
+  268    0000006C              ; Input          : None 
+  269    0000006C              ; Return         : - r0 : Base Priority value
+                                
+  270    0000006C              ;***********************************************
+                               ********************************
+  271    0000006C              __GetBASEPRI
+  272    0000006C              
+  273    0000006C EFF31280       MRS r0, BASEPRI_MAX
+  274    00000070 7047           BX r14
+  275    00000072              
+  276    00000072              ;***********************************************
+                               ********************************
+  277    00000072              ; Function Name  : __REV_HalfWord
+  278    00000072              ; Description    : Reverses the byte order in
+                                HalfWord(16-bit) input variable.
+  279    00000072              ; Input          : - r0 : specifies the input
+                                variable
+  280    00000072              ; Return         : - r0 : holds tve variable
+                                value after byte reversing.
+  281    00000072              ;***********************************************
+                               ********************************
+  282    00000072              __REV_HalfWord 
+  283    00000072               
+  284    00000072 40BA           REV16 r0, r0
+  285    00000074 7047           BX r14
+  286    00000076              
+  287    00000076              ;***********************************************
+                               ********************************
+  288    00000076              ; Function Name  : __REV_Word
+  289    00000076              ; Description    : Reverses the byte order in
+                                Word(32-bit) input variable.
+  290    00000076              ; Input          : - r0 : specifies the input
+                                variable
+  291    00000076              ; Return         : - r0 : holds tve variable
+                                value after byte reversing.
+  292    00000076              ;***********************************************
+                               ********************************
+  293    00000076              __REV_Word 
+  294    00000076               
+  295    00000076 00BA           REV r0, r0
+  296    00000078 7047           BX r14
+  297    0000007A                
+  298    0000007A                END
+##############################
+#          CRC:A497          #
+#        Errors:   0         #
+#        Warnings: 0         #
+#         Bytes: 122         #
+##############################
+
+
+
+

@@ -1,0 +1,25 @@
+版本修改说明
+
+SYS V1.24: 修改了144MHz交替采样模式下的插值系数(BIOS.C)
+           修改了V2.6硬件电路下模拟输入量程档位(BIOS.C)
+SYS V1.30: 将Licence识别函数转移到了DFU模块中(ASM.s,Ident.c)
+           修改了Licence权限控制力度(Main.c, Ident.c)
+           修改了DFU,SYS库函数向量及其调用方式(ASM.s, VECTOR.c)
+           添加了新的SYS库函数(BIOS.C)
+SYS V1.31: 将内部U盘的初始化推迟到Licence识别后进行(Main.c,Config.c)
+           修改了U盘扇区读写程序(SPI_flash.c)
+           修改了SYS库函数向量表存放起始地址
+SYS V1.32: 修改了Set(T_BASE_ARR, Value)函数中的BUG(BIOS.C)
+
+
+APP V2.30: 从该版本起不再兼容PCB_V2.6以下版本的主板
+           从该版本起不再兼容SYS_V1.31以下版本
+           休眠定时修改为600秒(Main.c)
+           修改及添加了新的SYS库函数(BIOS.s)
+           修改了开机信息显示程序(Main.c)
+APP V2.31: 增加了开机识别FPGA加载配置完成与否判别(Main.c)
+           增加了Licence权限管理功能的Demo程序范例(Ident.c,Main.c)
+           修改了模拟通道校正功能的进入和退出相关操作(calibrat.c)
+           增加了144MHz交替采样模式下的相关功能(Process.c)
+           
+           

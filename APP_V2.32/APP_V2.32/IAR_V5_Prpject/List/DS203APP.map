@@ -1,0 +1,622 @@
+###############################################################################
+#                                                                             #
+# IAR ELF Linker V5.20.0.50951/W32 for ARM              12/Apr/2011  13:45:48 #
+# Copyright 2007-2008 IAR Systems AB.                                         #
+#                                                                             #
+#    Output file  =  E:\DS0203\APP_V2.32\IAR_V5_Prpject\Exe\DS203APP.out      #
+#    Map file     =  E:\DS0203\APP_V2.32\IAR_V5_Prpject\List\DS203APP.map     #
+#    Command line =  E:\DS0203\APP_V2.32\IAR_V5_Prpject\Obj\BIOS.o            #
+#                    E:\DS0203\APP_V2.32\IAR_V5_Prpject\Obj\Calibrat.o        #
+#                    E:\DS0203\APP_V2.32\IAR_V5_Prpject\Obj\Draw.o            #
+#                    E:\DS0203\APP_V2.32\IAR_V5_Prpject\Obj\Files.o           #
+#                    E:\DS0203\APP_V2.32\IAR_V5_Prpject\Obj\Function.o        #
+#                    E:\DS0203\APP_V2.32\IAR_V5_Prpject\Obj\Ident.o           #
+#                    E:\DS0203\APP_V2.32\IAR_V5_Prpject\Obj\Interrupt.o       #
+#                    E:\DS0203\APP_V2.32\IAR_V5_Prpject\Obj\Main.o            #
+#                    E:\DS0203\APP_V2.32\IAR_V5_Prpject\Obj\Menu.o            #
+#                    E:\DS0203\APP_V2.32\IAR_V5_Prpject\Obj\Process.o         #
+#                    E:\DS0203\APP_V2.32\IAR_V5_Prpject\Obj\cortexm3_macro.o  #
+#                    E:\DS0203\APP_V2.32\IAR_V5_Prpject\Obj\stm32f10x_dma.o   #
+#                    E:\DS0203\APP_V2.32\IAR_V5_Prpject\Obj\stm32f10x_flash.o #
+#                     E:\DS0203\APP_V2.32\IAR_V5_Prpject\Obj\stm32f10x_fsmc.o #
+#                     E:\DS0203\APP_V2.32\IAR_V5_Prpject\Obj\stm32f10x_gpio.o #
+#                     E:\DS0203\APP_V2.32\IAR_V5_Prpject\Obj\stm32f10x_lib.o  #
+#                    E:\DS0203\APP_V2.32\IAR_V5_Prpject\Obj\stm32f10x_nvic.o  #
+#                    E:\DS0203\APP_V2.32\IAR_V5_Prpject\Obj\stm32f10x_rcc.o   #
+#                    E:\DS0203\APP_V2.32\IAR_V5_Prpject\Obj\stm32f10x_sdio.o  #
+#                    E:\DS0203\APP_V2.32\IAR_V5_Prpject\Obj\stm32f10x_spi.o   #
+#                    E:\DS0203\APP_V2.32\IAR_V5_Prpject\Obj\stm32f10x_vector. #
+#                    o -o E:\DS0203\APP_V2.32\IAR_V5_Prpject\Exe\DS203APP.out #
+#                     --map E:\DS0203\APP_V2.32\IAR_V5_Prpject\List\DS203APP. #
+#                    map --config E:\DS0203\APP_V2.32\IAR_V5_Prpject\stm32f10 #
+#                    x_flash.icf --semihosting --entry __iar_program_start    #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at mem:0x800c000 { ro section .intvec };
+"P1":  place in [from mem:0x800c000 to mem:0x803ffff] { ro };
+"P2":  place in [from mem:0x20002000 to mem:0x2000bfff] {
+          rw, block CSTACK, block HEAP };
+
+  Section            Kind        Address    Size  Object
+  -------            ----        -------    ----  ------
+"A1":                                      0x130
+  .intvec            const    0x0800c000   0x130  stm32f10x_vector.o [1]
+                            - 0x0800c130   0x130
+
+"P1":                                     0x68fb
+  .text              ro code  0x0800c130  0x11b0  Draw.o [1]
+  .text              ro code  0x0800d2e0   0xda0  Process.o [1]
+  .text              ro code  0x0800e080   0xc20  Calibrat.o [1]
+  .text              ro code  0x0800eca0   0x918  Menu.o [1]
+  .text              ro code  0x0800f5b8   0x89c  Main.o [1]
+  .text              ro code  0x0800fe54   0x7d4  Files.o [1]
+  .rodata            const    0x08010628   0x650  Draw.o [1]
+  .rodata            const    0x08010c78   0x5d0  Draw.o [1]
+  .text              ro code  0x08011248   0x30c  Function.o [1]
+  .rodata            const    0x08011554   0x268  Calibrat.o [1]
+  .text              ro code  0x080117bc   0x1e2  Interrupt.o [1]
+  .rodata            const    0x080119a0    0xc8  Menu.o [1]
+  .rodata            const    0x08011a68    0x88  Main.o [1]
+  CODE               ro code  0x08011af0    0x80  BIOS.o [1]
+  CODE               ro code  0x08011b70    0x7a  cortexm3_macro.o [1]
+  .text              ro code  0x08011bec    0x78  rle_init2.o [4]
+  .text              ro code  0x08011c64    0x6e  ABImemcpy.o [4]
+  .text              ro code  0x08011cd4    0x66  ABImemset.o [4]
+  .rodata            const    0x08011d3c    0x64  Menu.o [1]
+  .rodata            const    0x08011da0    0x58  Draw.o [1]
+  .rodata            const    0x08011df8    0x50  Menu.o [1]
+  .rodata            const    0x08011e48    0x50  Menu.o [1]
+  .rodata            const    0x08011e98    0x48  Menu.o [1]
+  .text              ro code  0x08011ee0    0x46  strcmp.o [4]
+  .text              ro code  0x08011f28    0x46  strcpy.o [4]
+  .rodata            const    0x08011f70    0x38  Menu.o [1]
+  .rodata            const    0x08011fa8    0x38  Process.o [1]
+  .text              ro code  0x08011fe0    0x38  ABImemset48.o [4]
+  .rodata            const    0x08012018    0x34  Menu.o [1]
+  .rodata            const    0x0801204c    0x34  Menu.o [1]
+  .rodata            const    0x08012080    0x28  Menu.o [1]
+  .rodata            const    0x080120a8    0x24  Draw.o [1]
+  .iar.init_table    const    0x080120cc    0x2c  - Linker created -
+  .rodata            const    0x080120f8    0x20  Menu.o [1]
+  .text              ro code  0x08012118    0x1c  data_init2.o [4]
+  .text              ro code  0x08012134    0x1a  zero_init2.o [4]
+  .text              ro code  0x08012150    0x18  cmain.o [4]
+  .text              ro code  0x08012168    0x18  iarwstd.o [5]
+  .rodata            const    0x08012180    0x14  Menu.o [1]
+  .rodata            const    0x08012194    0x14  Menu.o [1]
+  .rodata            const    0x080121a8    0x14  Menu.o [1]
+  .rodata            const    0x080121bc    0x14  Menu.o [1]
+  .rodata            const    0x080121d0    0x14  Menu.o [1]
+  .rodata            const    0x080121e4    0x14  Menu.o [1]
+  .rodata            const    0x080121f8    0x14  Menu.o [1]
+  .text              ro code  0x0801220c    0x14  stm32f10x_nvic.o [1]
+  .text              ro code  0x08012220    0x14  exit.o [5]
+  .rodata            const    0x08012234    0x10  Draw.o [1]
+  .rodata            const    0x08012244     0xc  Files.o [1]
+  .rodata            const    0x08012250     0xc  Menu.o [1]
+  .rodata            const    0x0801225c     0xc  Menu.o [1]
+  .rodata            const    0x08012268     0xc  Menu.o [1]
+  .text              ro code  0x08012274     0xa  cexit.o [4]
+  .rodata            const    0x08012280     0x8  Menu.o [1]
+  .rodata            const    0x08012288     0x8  Menu.o [1]
+  .rodata            const    0x08012290     0x8  Menu.o [1]
+  .rodata            const    0x08012298     0x8  Menu.o [1]
+  .rodata            const    0x080122a0     0x8  Menu.o [1]
+  .rodata            const    0x080122a8     0x8  Menu.o [1]
+  .rodata            const    0x080122b0     0x8  Menu.o [1]
+  .rodata            const    0x080122b8     0x8  Menu.o [1]
+  .text              ro code  0x080122c0     0x6  ABImemclr.o [4]
+  .text              ro code  0x080122c8     0x6  ABImemclr4.o [4]
+  .rodata            const    0x080122d0     0x4  Menu.o [1]
+  .rodata            const    0x080122d4     0x4  Menu.o [1]
+  .rodata            const    0x080122d8     0x4  Menu.o [1]
+  .rodata            const    0x080122dc     0x4  Menu.o [1]
+  .text              ro code  0x080122e0     0x4  low_level_init.o [3]
+  .text              ro code  0x080122e4     0x4  exit.o [3]
+  .rodata            const    0x080122e8     0x2  Menu.o [1]
+  .rodata            const    0x080122ea     0x2  Menu.o [1]
+  .rodata            const    0x080122ec     0x2  Menu.o [1]
+  .rodata            const    0x080122ee     0x2  Menu.o [1]
+  .rodata            const    0x080122f0     0x2  Menu.o [1]
+  Initializer bytes  ro data  0x080122f2   0x739  <for P2 s0>
+                            - 0x08012a2b  0x68fb
+
+"P2", part 1 of 3:                         0x400
+  CSTACK                      0x20002000   0x400  <Block>
+    CSTACK           uninit   0x20002000   0x400  <Block tail>
+                            - 0x20002400   0x400
+
+"P2", part 2 of 3:                        0x4028
+  .bss               zero     0x20002400  0x4004  Process.o [1]
+  .bss               zero     0x20006404    0x14  Interrupt.o [1]
+  .bss               zero     0x20006418     0x4  Process.o [1]
+  .bss               zero     0x2000641c     0x4  Process.o [1]
+  .bss               zero     0x20006420     0x4  iarwstd.o [5]
+  .bss               zero     0x20006424     0x2  Interrupt.o [1]
+  .bss               zero     0x20006426     0x1  Calibrat.o [1]
+                            - 0x20006427  0x4027
+
+"P2", part 3 of 3:                        0x1925
+  P2 s0                       0x20006428  0x1925  <Init block>
+    .data            inited   0x20006428   0x6f4  Files.o [1]
+    .data            inited   0x20006b1c   0x684  Menu.o [1]
+    .data            inited   0x200071a0   0x538  Process.o [1]
+    .data            inited   0x200076d8   0x3f0  Draw.o [1]
+    .data            inited   0x20007ac8   0x274  Process.o [1]
+    .data            inited   0x20007d3c     0x8  Menu.o [1]
+    .data            inited   0x20007d44     0x8  Menu.o [1]
+    .data            inited   0x20007d4c     0x1  Menu.o [1]
+                            - 0x20007d4d  0x1925
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+Kind        Routine           From       Size   To          Size
+----        -------           ----       ----   --          ----
+Zero        __iar_zero_init2                    0x20002400  0x4027
+Copy/zeros  __iar_rle_init2   0x80122f2  0x739
+                                                0x20006428  0x1925
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module              ro code  ro data  rw data
+    ------              -------  -------  -------
+E:\DS0203\APP_V2.32\IAR_V5_Prpject\Obj: [1]
+    BIOS.o                  128
+    Calibrat.o            3 104      616        1
+    Draw.o                4 528    3 301    1 008
+    Files.o               2 004       53    1 780
+    Function.o              780
+    Interrupt.o             482                22
+    Main.o                2 204      136
+    Menu.o                2 328    2 118    1 685
+    Process.o             3 488      719   18 360
+    cortexm3_macro.o        122
+    stm32f10x_nvic.o         20
+    stm32f10x_vector.o               304
+    ---------------------------------------------
+    Total:               19 188    7 247   22 856
+
+command line: [2]
+    ---------------------------------------------
+    Total:
+
+dl7M_tl_in.a: [3]
+    exit.o                    4
+    low_level_init.o          4
+    ---------------------------------------------
+    Total:                    8
+
+rt7M_tl.a: [4]
+    ABImemclr.o               6
+    ABImemclr4.o              6
+    ABImemcpy.o             110
+    ABImemset.o             102
+    ABImemset48.o            56
+    cexit.o                  10
+    cmain.o                  24
+    data_init2.o             28
+    rle_init2.o             120
+    strcmp.o                 70
+    strcpy.o                 70
+    zero_init2.o             26
+    ---------------------------------------------
+    Total:                  628
+
+shb_l.a: [5]
+    exit.o                   20
+    iarwstd.o                24                 4
+    ---------------------------------------------
+    Total:                   44                 4
+
+    Gaps                     10       10
+    Linker created                    44    1 024
+-------------------------------------------------
+    Grand Total:         19 878    7 301   23 884
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address       Size  Type      Object
+-----                      -------       ----  ----      ------
+                        0x08004201  0x8004201  Code  Lc  BIOS.o [1]
+                        0x08004205  0x8004205  Code  Lc  BIOS.o [1]
+                        0x08004209  0x8004209  Code  Lc  BIOS.o [1]
+                        0x0800420d  0x800420d  Code  Lc  BIOS.o [1]
+                        0x08004211  0x8004211  Code  Lc  BIOS.o [1]
+                        0x08004215  0x8004215  Code  Lc  BIOS.o [1]
+                        0x08004219  0x8004219  Code  Lc  BIOS.o [1]
+                        0x0800421d  0x800421d  Code  Lc  BIOS.o [1]
+                        0x08004221  0x8004221  Code  Lc  BIOS.o [1]
+                        0x08004225  0x8004225  Code  Lc  BIOS.o [1]
+                        0x08004229  0x8004229  Code  Lc  BIOS.o [1]
+                        0x0800422d  0x800422d  Code  Lc  BIOS.o [1]
+                        0x08004231  0x8004231  Code  Lc  BIOS.o [1]
+                        0x08004235  0x8004235  Code  Lc  BIOS.o [1]
+                        0x08004239  0x8004239  Code  Lc  BIOS.o [1]
+                        0x0800423d  0x800423d  Code  Lc  BIOS.o [1]
+                        0x08004241  0x8004241  Code  Lc  BIOS.o [1]
+                        0x08004245  0x8004245  Code  Lc  BIOS.o [1]
+                        0x08004249  0x8004249  Code  Lc  BIOS.o [1]
+                        0x0800424d  0x800424d  Code  Lc  BIOS.o [1]
+                        0x08004251  0x8004251  Code  Lc  BIOS.o [1]
+                        0x08004255  0x8004255  Code  Lc  BIOS.o [1]
+                        0x08004259  0x8004259  Code  Lc  BIOS.o [1]
+                        0x0800425d  0x800425d  Code  Lc  BIOS.o [1]
+                        0x08004261  0x8004261  Code  Lc  BIOS.o [1]
+                        0x08004265  0x8004265  Code  Lc  BIOS.o [1]
+                        0x08004269  0x8004269  Code  Lc  BIOS.o [1]
+                        0x0800426d  0x800426d  Code  Lc  BIOS.o [1]
+                        0x08004271  0x8004271  Code  Lc  BIOS.o [1]
+                        0x08004275  0x8004275  Code  Lc  BIOS.o [1]
+                        0x08004279  0x8004279  Code  Lc  BIOS.o [1]
+                        0x0800427d  0x800427d  Code  Lc  BIOS.o [1]
+ADC1_2_IRQHandler       0x08011829        0x2  Code  Gb  Interrupt.o [1]
+ADC3_IRQHandler         0x0801196d        0x2  Code  Gb  Interrupt.o [1]
+A_Max                   0x20007666        0x2  Data  Gb  Process.o [1]
+A_Min                   0x20007668        0x2  Data  Gb  Process.o [1]
+A_Rms                   0x2000766a        0x2  Data  Gb  Process.o [1]
+A_Tab                   0x20007be0       0x84  Data  Gb  Process.o [1]
+A_Vdc                   0x20007662        0x2  Data  Gb  Process.o [1]
+A_Vpp                   0x20007664        0x2  Data  Gb  Process.o [1]
+App_init                0x0800d2e1       0xbc  Code  Gb  Process.o [1]
+BATT_STR                0x08012018       0x34  Data  Gb  Menu.o [1]
+BL_Str                  0x20007d3c        0x8  Data  Gb  Menu.o [1]
+BMP_Color               0x2000664c       0x20  Data  Gb  Files.o [1]
+B_COLOR                 0x08012250        0xc  Data  Gb  Menu.o [1]
+B_Max                   0x20007670        0x2  Data  Gb  Process.o [1]
+B_Min                   0x20007672        0x2  Data  Gb  Process.o [1]
+B_Rms                   0x20007674        0x2  Data  Gb  Process.o [1]
+B_Vdc                   0x2000766c        0x2  Data  Gb  Process.o [1]
+B_Vpp                   0x2000766e        0x2  Data  Gb  Process.o [1]
+BaseStr                 0x20007074      0x12c  Data  Gb  Menu.o [1]
+Beep_mS                 0x2000640e        0x2  Data  Gb  Interrupt.o [1]
+Blink                   0x2000640b        0x1  Data  Gb  Interrupt.o [1]
+BusFaultException       0x080117c9        0x2  Code  Gb  Interrupt.o [1]
+CAN_RX1_IRQHandler      0x08011835        0x2  Code  Gb  Interrupt.o [1]
+CAN_SCE_IRQHandler      0x08011839        0x2  Code  Gb  Interrupt.o [1]
+CH_A_STR                0x080121a8       0x14  Data  Gb  Menu.o [1]
+CH_B_STR                0x080121bc       0x14  Data  Gb  Menu.o [1]
+CH_C_STR                0x080121d0       0x14  Data  Gb  Menu.o [1]
+CH_D_Data               0x0800dc69      0x14c  Code  Gb  Process.o [1]
+CH_D_STR                0x08011d3c       0x64  Data  Gb  Menu.o [1]
+CLK_TAB                 0x08011da0       0x58  Data  Gb  Draw.o [1]
+CSTACK$$Base            0x20002000              --   Gb  - Linker created -
+CSTACK$$Limit           0x20002400              --   Gb  - Linker created -
+Calibrat                0x0800e081      0xc20  Code  Gb  Calibrat.o [1]
+Ch                      0x20007658        0x4  Data  Gb  Process.o [1]
+Char_TAB_8x11           0x08010c78      0x5d0  Data  Gb  Draw.o [1]
+ClusterNum              0x20006640        0x4  Data  Gb  Files.o [1]
+Cnt_20mS                0x20006409        0x1  Data  Gb  Interrupt.o [1]
+Cnt_mS                  0x20006408        0x1  Data  Gb  Interrupt.o [1]
+Color                   0x20007a98       0x20  Data  Gb  Draw.o [1]
+Color_Num               0x080101e1       0xca  Code  Gb  Files.o [1]
+Current                 0x20006fa4        0x1  Data  Gb  Menu.o [1]
+Cursor_Cnt              0x20006404        0x1  Data  Gb  Interrupt.o [1]
+DELTA_T                 0x080122dc        0x4  Data  Gb  Menu.o [1]
+DELTA_V                 0x080121f8       0x14  Data  Gb  Menu.o [1]
+DMA1_Channel1_IRQHandler
+                        0x0801180d        0x2  Code  Gb  Interrupt.o [1]
+DMA1_Channel2_IRQHandler
+                        0x08011811        0x2  Code  Gb  Interrupt.o [1]
+DMA1_Channel3_IRQHandler
+                        0x08011815        0x2  Code  Gb  Interrupt.o [1]
+DMA1_Channel4_IRQHandler
+                        0x08011819        0x2  Code  Gb  Interrupt.o [1]
+DMA1_Channel5_IRQHandler
+                        0x0801181d        0x2  Code  Gb  Interrupt.o [1]
+DMA1_Channel6_IRQHandler
+                        0x08011821        0x2  Code  Gb  Interrupt.o [1]
+DMA1_Channel7_IRQHandler
+                        0x08011825        0x2  Code  Gb  Interrupt.o [1]
+DMA2_Channel1_IRQHandler
+                        0x08011991        0x2  Code  Gb  Interrupt.o [1]
+DMA2_Channel2_IRQHandler
+                        0x08011995        0x2  Code  Gb  Interrupt.o [1]
+DMA2_Channel3_IRQHandler
+                        0x08011999        0x2  Code  Gb  Interrupt.o [1]
+DMA2_Channel4_5_IRQHandler
+                        0x0801199d        0x2  Code  Gb  Interrupt.o [1]
+D_Tab                   0x20007ac8      0x118  Data  Gb  Process.o [1]
+DataBuf                 0x20002404     0x4000  Data  Gb  Process.o [1]
+DebugMonitor            0x080117d1        0x2  Code  Gb  Interrupt.o [1]
+Delay_Cnt               0x2000640c        0x2  Data  Gb  Interrupt.o [1]
+Delayms                 0x08011249       0x10  Code  Gb  Function.o [1]
+Detail                  0x20006fb4       0x10  Data  Gb  Menu.o [1]
+DirSecNum               0x20006630        0x2  Data  Gb  Files.o [1]
+DiskStart               0x20006634        0x4  Data  Gb  Files.o [1]
+Display_Meter           0x0800eca1       0xa0  Code  Gb  Menu.o [1]
+Display_Title           0x0800f0c1      0x3d4  Code  Gb  Menu.o [1]
+Display_Value           0x0800ed41      0x380  Code  Gb  Menu.o [1]
+Draw_Mark               0x0800cd85      0x170  Code  Gb  Draw.o [1]
+Draw_Row                0x0800c295      0xa9c  Code  Gb  Draw.o [1]
+Draw_Window             0x0800cd35       0x46  Code  Gb  Draw.o [1]
+EXTI0_IRQHandler        0x080117f9        0x2  Code  Gb  Interrupt.o [1]
+EXTI15_10_IRQHandler    0x08011951        0x2  Code  Gb  Interrupt.o [1]
+EXTI1_IRQHandler        0x080117fd        0x2  Code  Gb  Interrupt.o [1]
+EXTI2_IRQHandler        0x08011801        0x2  Code  Gb  Interrupt.o [1]
+EXTI3_IRQHandler        0x08011805        0x2  Code  Gb  Interrupt.o [1]
+EXTI4_IRQHandler        0x08011809        0x2  Code  Gb  Interrupt.o [1]
+EXTI9_5_IRQHandler      0x0801183d        0x2  Code  Gb  Interrupt.o [1]
+Exit                    0x20006426        0x1  Data  Gb  Calibrat.o [1]
+ExitStr                 0x08011760       0x5c  Data  Gb  Calibrat.o [1]
+FAT_Size16              0x2000662c        0x2  Data  Gb  Files.o [1]
+FLASH_IRQHandler        0x080117f1        0x2  Code  Gb  Interrupt.o [1]
+FO_STR                  0x080119a0       0xc8  Data  Gb  Menu.o [1]
+FO_TYPE                 0x08012080       0x28  Data  Gb  Menu.o [1]
+FSMC_IRQHandler         0x08011971        0x2  Code  Gb  Interrupt.o [1]
+F_EXT                   0x08011e98       0x48  Data  Gb  Menu.o [1]
+F_FUNC                  0x080121e4       0x14  Data  Gb  Menu.o [1]
+F_INV                   0x080122f0        0x2  Data  Gb  Menu.o [1]
+FileBuff                0x2000666c      0x4b0  Data  Gb  Files.o [1]
+File_Addr               0x20006644        0x4  Data  Gb  Files.o [1]
+File_Size               0x20006648        0x4  Data  Gb  Files.o [1]
+G_Attr                  0x20007694        0x4  Data  Gb  Process.o [1]
+HardFaultException      0x080117c1        0x2  Code  Gb  Interrupt.o [1]
+Hidden_Sec              0x20006638        0x4  Data  Gb  Files.o [1]
+I2C1_ER_IRQHandler      0x08011931        0x2  Code  Gb  Interrupt.o [1]
+I2C1_EV_IRQHandler      0x0801192d        0x2  Code  Gb  Interrupt.o [1]
+I2C2_ER_IRQHandler      0x08011939        0x2  Code  Gb  Interrupt.o [1]
+I2C2_EV_IRQHandler      0x08011935        0x2  Code  Gb  Interrupt.o [1]
+Int32String_sign        0x08011259      0x1a6  Code  Gb  Function.o [1]
+Int_sqrt                0x08011475       0x20  Code  Gb  Function.o [1]
+Interlace               0x20007660        0x1  Data  Gb  Process.o [1]
+JumpCnt                 0x20007676        0x2  Data  Gb  Process.o [1]
+Ka1                     0x20007698        0xc  Data  Gb  Process.o [1]
+Ka2                     0x200076b0       0x14  Data  Gb  Process.o [1]
+Ka3                     0x2000767a        0x2  Data  Gb  Process.o [1]
+Kb1                     0x200076a4        0xc  Data  Gb  Process.o [1]
+Kb2                     0x200076c4       0x14  Data  Gb  Process.o [1]
+Kb3                     0x2000767c        0x2  Data  Gb  Process.o [1]
+Key_Buffer              0x20006407        0x1  Data  Gb  Interrupt.o [1]
+Key_Repeat_Cnt          0x20006406        0x1  Data  Gb  Interrupt.o [1]
+Key_Status_Last         0x20006424        0x2  Data  Gb  Interrupt.o [1]
+Key_Wait_Cnt            0x20006405        0x1  Data  Gb  Interrupt.o [1]
+LCD_Buffer1             0x200076d8      0x1e0  Data  Gb  Draw.o [1]
+LCD_Buffer2             0x200078b8      0x1e0  Data  Gb  Draw.o [1]
+Load_Attr               0x0800f49d       0xa8  Code  Gb  Menu.o [1]
+Load_Dat                0x08010059       0x64  Code  Gb  Files.o [1]
+Load_Parameter          0x080102ad      0x198  Code  Gb  Files.o [1]
+METER                   0x08011f70       0x38  Data  Gb  Menu.o [1]
+MODESTR                 0x0801204c       0x34  Data  Gb  Menu.o [1]
+Mark_TAB                0x080120a8       0x24  Data  Gb  Draw.o [1]
+MemManageException      0x080117c5        0x2  Code  Gb  Interrupt.o [1]
+Meter                   0x20006f2c       0x6c  Data  Gb  Menu.o [1]
+NMIException            0x080117bd        0x2  Code  Gb  Interrupt.o [1]
+NO_DEF                  0x08012288        0x8  Data  Gb  Menu.o [1]
+NO_RANGE                0x08012280        0x8  Data  Gb  Menu.o [1]
+NVIC_SetVectorTable     0x0801220d       0x14  Code  Gb  stm32f10x_nvic.o [1]
+Num                     0x20006fa8        0xc  Data  Gb  Menu.o [1]
+NumStr                  0x20006f98        0xc  Data  Gb  Menu.o [1]
+O_COLOR                 0x080122d8        0x4  Data  Gb  Menu.o [1]
+Open_File               0x0800fe55      0x184  Code  Gb  Files.o [1]
+PD_Cnt                  0x20006412        0x2  Data  Gb  Interrupt.o [1]
+PVD_IRQHandler          0x080117e5        0x2  Code  Gb  Interrupt.o [1]
+PendSVC                 0x080117d9        0x2  Code  Gb  Interrupt.o [1]
+Print_Clk               0x0800c131       0x88  Code  Gb  Draw.o [1]
+Print_Str               0x0800c1b9       0xd8  Code  Gb  Draw.o [1]
+Process                 0x0800d669      0x600  Code  Gb  Process.o [1]
+RCC_IRQHandler          0x080117f5        0x2  Code  Gb  Interrupt.o [1]
+RTCAlarm_IRQHandler     0x08011955        0x2  Code  Gb  Interrupt.o [1]
+RTC_IRQHandler          0x080117ed        0x2  Code  Gb  Interrupt.o [1]
+RULE_BASE               0x08012234       0x10  Data  Gb  Draw.o [1]
+Read_Keys               0x08011495       0xc0  Code  Gb  Function.o [1]
+Region$$Table$$Base     0x080120cc              --   Gb  - Linker created -
+Region$$Table$$Limit    0x080120f8              --   Gb  - Linker created -
+Result_FPS              0x20006fa6        0x2  Data  Gb  Menu.o [1]
+Root_Addr               0x2000663c        0x4  Data  Gb  Files.o [1]
+Row_Base1               0x08010628      0x194  Data  Gb  Draw.o [1]
+Row_Base2               0x080107bc      0x194  Data  Gb  Draw.o [1]
+Row_Base3               0x08010950      0x194  Data  Gb  Draw.o [1]
+Row_Base4               0x08010ae4      0x194  Data  Gb  Draw.o [1]
+RsvdSecCnt              0x20006628        0x2  Data  Gb  Files.o [1]
+SAW_DATA                0x20007cf4       0x48  Data  Gb  Process.o [1]
+SDIO_IRQHandler         0x08011975        0x2  Code  Gb  Interrupt.o [1]
+SIN_DATA                0x20007c64       0x48  Data  Gb  Process.o [1]
+SPI1_IRQHandler         0x0801193d        0x2  Code  Gb  Interrupt.o [1]
+SPI2_IRQHandler         0x08011941        0x2  Code  Gb  Interrupt.o [1]
+SPI3_IRQHandler         0x0801197d        0x2  Code  Gb  Interrupt.o [1]
+STATESTR                0x08012194       0x14  Data  Gb  Menu.o [1]
+SVCHandler              0x080117d5        0x2  Code  Gb  Interrupt.o [1]
+S_Inv                   0x080122d0        0x4  Data  Gb  Menu.o [1]
+Save_Bmp                0x080100bd      0x124  Code  Gb  Files.o [1]
+Save_Dat                0x0800ffd9       0x80  Code  Gb  Files.o [1]
+Save_Parameter          0x08010445      0x1b4  Code  Gb  Files.o [1]
+SecBuff                 0x20006428      0x200  Data  Gb  Files.o [1]
+SecPerClus              0x2000662e        0x2  Data  Gb  Files.o [1]
+Sec_Cnt                 0x20006410        0x2  Data  Gb  Interrupt.o [1]
+SectorSize              0x2000662a        0x2  Data  Gb  Files.o [1]
+Synchro                 0x0800ddb5      0x2ba  Code  Gb  Process.o [1]
+SysTickHandler          0x080117dd        0x2  Code  Gb  Interrupt.o [1]
+TAMPER_IRQHandler       0x080117e9        0x2  Code  Gb  Interrupt.o [1]
+TIM1_BRK_IRQHandler     0x08011841        0x2  Code  Gb  Interrupt.o [1]
+TIM1_CC_IRQHandler      0x0801184d        0x2  Code  Gb  Interrupt.o [1]
+TIM1_TRG_COM_IRQHandler
+                        0x08011849        0x2  Code  Gb  Interrupt.o [1]
+TIM1_UP_IRQHandler      0x08011845        0x2  Code  Gb  Interrupt.o [1]
+TIM2_IRQHandler         0x08011851        0x2  Code  Gb  Interrupt.o [1]
+TIM3_IRQHandler         0x08011855       0xd4  Code  Gb  Interrupt.o [1]
+TIM4_IRQHandler         0x08011929        0x2  Code  Gb  Interrupt.o [1]
+TIM5_IRQHandler         0x08011979        0x2  Code  Gb  Interrupt.o [1]
+TIM6_IRQHandler         0x08011989        0x2  Code  Gb  Interrupt.o [1]
+TIM7_IRQHandler         0x0801198d        0x2  Code  Gb  Interrupt.o [1]
+TIM8_BRK_IRQHandler     0x0801195d        0x2  Code  Gb  Interrupt.o [1]
+TIM8_CC_IRQHandler      0x08011969        0x2  Code  Gb  Interrupt.o [1]
+TIM8_TRG_COM_IRQHandler
+                        0x08011965        0x2  Code  Gb  Interrupt.o [1]
+TIM8_UP_IRQHandler      0x08011961        0x2  Code  Gb  Interrupt.o [1]
+TRG_DATA                0x20007cac       0x48  Data  Gb  Process.o [1]
+TRIGSTR                 0x08011df8       0x50  Data  Gb  Menu.o [1]
+TR_TYPE                 0x08011e48       0x50  Data  Gb  Menu.o [1]
+T_Attr                  0x2000641c        0x4  Data  Gb  Process.o [1]
+T_COLOR                 0x080122ee        0x2  Data  Gb  Menu.o [1]
+T_INV                   0x080122ec        0x2  Data  Gb  Menu.o [1]
+T_Unit                  0x20006fd0        0xc  Data  Gb  Menu.o [1]
+Title                   0x20006b1c      0x410  Data  Gb  Menu.o [1]
+Tmp                     0x20002400        0x4  Data  Gb  Process.o [1]
+TrackBuff               0x200071a0      0x4b0  Data  Gb  Process.o [1]
+Twink                   0x2000640a        0x1  Data  Gb  Interrupt.o [1]
+UART4_IRQHandler        0x08011981        0x2  Code  Gb  Interrupt.o [1]
+UART5_IRQHandler        0x08011985        0x2  Code  Gb  Interrupt.o [1]
+USART1_IRQHandler       0x08011945        0x2  Code  Gb  Interrupt.o [1]
+USART2_IRQHandler       0x08011949        0x2  Code  Gb  Interrupt.o [1]
+USART3_IRQHandler       0x0801194d        0x2  Code  Gb  Interrupt.o [1]
+USBWakeUp_IRQHandler    0x08011959        0x2  Code  Gb  Interrupt.o [1]
+USB_HP_CAN_TX_IRQHandler
+                        0x0801182d        0x4  Code  Gb  Interrupt.o [1]
+USB_LP_CAN_RX0_IRQHandler
+                        0x08011831        0x4  Code  Gb  Interrupt.o [1]
+Update                  0x20007d4c        0x1  Data  Gb  Menu.o [1]
+Update_Base             0x0800d479       0x62  Code  Gb  Process.o [1]
+Update_Battery          0x0800f54d       0x68  Code  Gb  Menu.o [1]
+Update_Mark             0x0800cef5      0x288  Code  Gb  Draw.o [1]
+Update_Output           0x0800d4dd       0xe4  Code  Gb  Process.o [1]
+Update_Range            0x0800d39d       0xdc  Code  Gb  Process.o [1]
+Update_Trig             0x0800d5c1       0xa8  Code  Gb  Process.o [1]
+Update_View_Area        0x0800d17d      0x164  Code  Gb  Draw.o [1]
+UsageFaultException     0x080117cd        0x2  Code  Gb  Interrupt.o [1]
+V                       0x20007650        0x8  Data  Gb  Process.o [1]
+VERNIE1                 0x080122a0        0x8  Data  Gb  Menu.o [1]
+VERNIE2                 0x080122a8        0x8  Data  Gb  Menu.o [1]
+VERNIE3                 0x080122b0        0x8  Data  Gb  Menu.o [1]
+VERNIE4                 0x080122b8        0x8  Data  Gb  Menu.o [1]
+VS_STR                  0x080116e8       0x78  Data  Gb  Calibrat.o [1]
+VT_STR                  0x08012268        0xc  Data  Gb  Menu.o [1]
+V_COLOR                 0x080122ea        0x2  Data  Gb  Menu.o [1]
+V_INV                   0x080122e8        0x2  Data  Gb  Menu.o [1]
+V_Trigg                 0x20007ab8       0x10  Data  Gb  Draw.o [1]
+V_Unit                  0x20006fc4        0xc  Data  Gb  Menu.o [1]
+Vertical                0x20006fdc       0x98  Data  Gb  Menu.o [1]
+Vol_Str                 0x20007d44        0x8  Data  Gb  Menu.o [1]
+WWDG_IRQHandler         0x080117e1        0x2  Code  Gb  Interrupt.o [1]
+Wait                    0x08011fa8       0x38  Data  Gb  Process.o [1]
+Wait_Cnt                0x20006414        0x4  Data  Gb  Interrupt.o [1]
+XCOLOR                  0x080122d4        0x4  Data  Gb  Menu.o [1]
+XPOSISTR                0x08012298        0x8  Data  Gb  Menu.o [1]
+X_Attr                  0x20007690        0x4  Data  Gb  Process.o [1]
+YCOUPLE                 0x080120f8       0x20  Data  Gb  Menu.o [1]
+YPOSISTR                0x08012290        0x8  Data  Gb  Menu.o [1]
+Y_Attr                  0x20006418        0x4  Data  Gb  Process.o [1]
+Y_COLOR                 0x08012180        0xc  Data  Gb  Menu.o [1]
+Y_INV                   0x0801225c        0xc  Data  Gb  Menu.o [1]
+__BASEPRICONFIG         0x08011bd7             Code  Gb  cortexm3_macro.o [1]
+__CTR_HP                0x08011af1             Code  Gb  BIOS.o [1]
+__Chk_SYS               0x08011b31             Code  Gb  BIOS.o [1]
+__Clear_Screen          0x08011b05             Code  Gb  BIOS.o [1]
+__DMB                   0x08011b89             Code  Gb  cortexm3_macro.o [1]
+__DSB                   0x08011b83             Code  Gb  cortexm3_macro.o [1]
+__Disk_Buff_RD          0x08011b4d             Code  Gb  BIOS.o [1]
+__Disk_Buff_WR          0x08011b49             Code  Gb  BIOS.o [1]
+__Display_Str           0x08011b39             Code  Gb  BIOS.o [1]
+__FLASH_Erase           0x08011b61             Code  Gb  BIOS.o [1]
+__FLASH_Lock            0x08011b6d             Code  Gb  BIOS.o [1]
+__FLASH_Prog            0x08011b65             Code  Gb  BIOS.o [1]
+__FLASH_Unlock          0x08011b69             Code  Gb  BIOS.o [1]
+__Get                   0x08011b45             Code  Gb  BIOS.o [1]
+__GetBASEPRI            0x08011bdd             Code  Gb  cortexm3_macro.o [1]
+__GetDev_SN             0x08011b2d             Code  Gb  BIOS.o [1]
+__Get_TAB_8x14          0x08011b09             Code  Gb  BIOS.o [1]
+__ISB                   0x08011b7d             Code  Gb  cortexm3_macro.o [1]
+__Ident                 0x08011b35             Code  Gb  BIOS.o [1]
+__Input_Lic             0x08011b29             Code  Gb  BIOS.o [1]
+__LCD_Copy              0x08011b15             Code  Gb  BIOS.o [1]
+__LCD_DMA_Ready         0x08011b11             Code  Gb  BIOS.o [1]
+__LCD_Fill              0x08011b19             Code  Gb  BIOS.o [1]
+__LCD_GetPixl           0x08011b59             Code  Gb  BIOS.o [1]
+__LCD_Initial           0x08011af9             Code  Gb  BIOS.o [1]
+__LCD_SetPixl           0x08011b01             Code  Gb  BIOS.o [1]
+__LCD_Set_Block         0x08011b0d             Code  Gb  BIOS.o [1]
+__MRS_CONTROL           0x08011b93             Code  Gb  cortexm3_macro.o [1]
+__MRS_MSP               0x08011baf             Code  Gb  cortexm3_macro.o [1]
+__MRS_PSP               0x08011ba3             Code  Gb  cortexm3_macro.o [1]
+__MSR_CONTROL           0x08011b99             Code  Gb  cortexm3_macro.o [1]
+__MSR_MSP               0x08011bb5             Code  Gb  cortexm3_macro.o [1]
+__MSR_PSP               0x08011ba9             Code  Gb  cortexm3_macro.o [1]
+__Param_Area_RD         0x08011b55             Code  Gb  BIOS.o [1]
+__Param_Area_WR         0x08011b51             Code  Gb  BIOS.o [1]
+__Point_SCR             0x08011afd             Code  Gb  BIOS.o [1]
+__READ_FAULTMASK        0x08011bd1             Code  Gb  cortexm3_macro.o [1]
+__READ_PRIMASK          0x08011bc3             Code  Gb  cortexm3_macro.o [1]
+__RESETFAULTMASK        0x08011bc9             Code  Gb  cortexm3_macro.o [1]
+__RESETPRIMASK          0x08011bbb             Code  Gb  cortexm3_macro.o [1]
+__REV_HalfWord          0x08011be3             Code  Gb  cortexm3_macro.o [1]
+__REV_Word              0x08011be7             Code  Gb  cortexm3_macro.o [1]
+__Read_FIFO             0x08011b25             Code  Gb  BIOS.o [1]
+__Row_Copy              0x08011b21             Code  Gb  BIOS.o [1]
+__Row_DMA_Ready         0x08011b1d             Code  Gb  BIOS.o [1]
+__SETFAULTMASK          0x08011bcd             Code  Gb  cortexm3_macro.o [1]
+__SETPRIMASK            0x08011bbf             Code  Gb  cortexm3_macro.o [1]
+__SEV                   0x08011b79             Code  Gb  cortexm3_macro.o [1]
+__SVC                   0x08011b8f             Code  Gb  cortexm3_macro.o [1]
+__Set                   0x08011b3d             Code  Gb  BIOS.o [1]
+__Set_Param             0x08011b41             Code  Gb  BIOS.o [1]
+__USB_Init              0x08011b5d             Code  Gb  BIOS.o [1]
+__USB_Istr              0x08011af5             Code  Gb  BIOS.o [1]
+__WFE                   0x08011b75             Code  Gb  cortexm3_macro.o [1]
+__WFI                   0x08011b71             Code  Gb  cortexm3_macro.o [1]
+__aeabi_memclr          0x080122c1             Code  Gb  ABImemclr.o [4]
+__aeabi_memclr4         0x080122c9             Code  Gb  ABImemclr4.o [4]
+__aeabi_memcpy          0x08011c65             Code  Gb  ABImemcpy.o [4]
+__aeabi_memcpy4         0x08011c7d             Code  Gb  ABImemcpy.o [4]
+__aeabi_memcpy8         0x08011c7d             Code  Gb  ABImemcpy.o [4]
+__aeabi_memset          0x08011cd5             Code  Gb  ABImemset.o [4]
+__aeabi_memset4         0x08011fe1             Code  Gb  ABImemset48.o [4]
+__aeabi_memset8         0x08011fe1             Code  Gb  ABImemset48.o [4]
+__exit                  0x08012221       0x14  Code  Gb  exit.o [5]
+__iar_Memset            0x08011cd5             Code  Gb  ABImemset.o [4]
+__iar_Memset4_word      0x08011fe9             Code  Gb  ABImemset48.o [4]
+__iar_Memset8_word      0x08011fe9             Code  Gb  ABImemset48.o [4]
+__iar_Memset_word       0x08011cdd             Code  Gb  ABImemset.o [4]
+__iar_data_init2        0x08012119       0x1c  Code  Gb  data_init2.o [4]
+__iar_program_start     0x08012151             Code  Gb  cmain.o [4]
+__iar_rle_init2         0x08011bed       0x78  Code  Gb  rle_init2.o [4]
+__iar_sh_stdout_close   0x08012169       0x14  Code  Gb  iarwstd.o [5]
+__iar_sh_stdout_handle  0x20006420        0x4  Data  Lc  iarwstd.o [5]
+__iar_strcmp            0x08011ee1             Code  Gb  strcmp.o [4]
+__iar_zero_init2        0x08012135       0x1a  Code  Gb  zero_init2.o [4]
+__low_level_init        0x080122e1        0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x0800c000      0x130  Data  Gb  stm32f10x_vector.o [1]
+_exit                   0x08012275             Code  Gb  cexit.o [4]
+_main                   0x08012163             Code  Gb  cmain.o [4]
+a_Avg                   0x20007680        0x4  Data  Gb  Process.o [1]
+a_Ssq                   0x20007688        0x4  Data  Gb  Process.o [1]
+a_max                   0x2000765c        0x1  Data  Gb  Process.o [1]
+a_min                   0x2000765e        0x1  Data  Gb  Process.o [1]
+b_Avg                   0x20007684        0x4  Data  Gb  Process.o [1]
+b_Ssq                   0x2000768c        0x4  Data  Gb  Process.o [1]
+b_max                   0x2000765d        0x1  Data  Gb  Process.o [1]
+b_min                   0x2000765f        0x1  Data  Gb  Process.o [1]
+exit                    0x080122e5        0x4  Code  Gb  exit.o [3]
+main                    0x0800f5b9      0x89c  Code  Gb  Main.o [1]
+n                       0x20007678        0x2  Data  Gb  Process.o [1]
+strcmp                  0x08011ee1             Code  Gb  strcmp.o [4]
+strcpy                  0x08011f29             Code  Gb  strcpy.o [4]
+u8ToDec2                0x08011449       0x2c  Code  Gb  Function.o [1]
+u8ToDec3                0x08011415       0x34  Code  Gb  Function.o [1]
+
+
+[1] = E:\DS0203\APP_V2.32\IAR_V5_Prpject\Obj
+[2] = command line
+[3] = dl7M_tl_in.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+  19 878 bytes of readonly  code memory
+   7 301 bytes of readonly  data memory
+  23 884 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,403 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32 EVALUATION   06/May/2011  11:15:49 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  C:\Users\Administrator\Desktop\mini DSO             /
+//                       download\APP_V2.32\APP_V2.32\IAR_V4_Prpject\stm32f1 /
+//                       0x_vector.c                                         /
+//    Command line    =  "C:\Users\Administrator\Desktop\mini DSO            /
+//                       download\APP_V2.32\APP_V2.32\IAR_V4_Prpject\stm32f1 /
+//                       0x_vector.c" -lA "C:\Users\Administrator\Desktop\mi /
+//                       ni DSO download\APP_V2.32\APP_V2.32\IAR_V4_Prpject\ /
+//                       List\" -o "C:\Users\Administrator\Desktop\mini DSO  /
+//                       download\APP_V2.32\APP_V2.32\IAR_V4_Prpject\Obj\"   /
+//                       -s9 --debug --cpu_mode thumb --endian little --cpu  /
+//                       cortex-M3 --stack_align 4 --fpu None --dlib_config  /
+//                       "E:\IARWorkBench(Cracked)\Embedded Workbench 4.0    /
+//                       Evaluation\ARM\LIB\dl7mptnnl8f.h" -I                /
+//                       "C:\Users\Administrator\Desktop\mini DSO            /
+//                       download\APP_V2.32\APP_V2.32\IAR_V4_Prpject\..\..\F /
+//                       WLib\inc\" -I "C:\Users\Administrator\Desktop\mini  /
+//                       DSO download\APP_V2.32\APP_V2.32\IAR_V4_Prpject\..\ /
+//                       ..\USBLib\inc\" -I "C:\Users\Administrator\Desktop\ /
+//                       mini DSO download\APP_V2.32\APP_V2.32\IAR_V4_Prpjec /
+//                       t\..\include\" -I "E:\IARWorkBench(Cracked)\Embedde /
+//                       d Workbench 4.0 Evaluation\ARM\INC\"                /
+//                       --inline_threshold=16                               /
+//    List file       =  C:\Users\Administrator\Desktop\mini DSO             /
+//                       download\APP_V2.32\APP_V2.32\IAR_V4_Prpject\List\st /
+//                       m32f10x_vector.s79                                  /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME stm32f10x_vector
+
+        RTMODEL "StackAlign4", "USED"
+        RTMODEL "__cpu_mode", "__pcs__thumb"
+        RTMODEL "__data_model", "absolute"
+        RTMODEL "__endian", "little"
+        RTMODEL "__rt_version", "6"
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+        PUBLIC __vector_table
+        EXTERN ADC1_2_IRQHandler
+        FUNCTION ADC1_2_IRQHandler,0602H
+        EXTERN ADC3_IRQHandler
+        FUNCTION ADC3_IRQHandler,0602H
+        EXTERN BusFaultException
+        FUNCTION BusFaultException,0602H
+        EXTERN CAN_RX1_IRQHandler
+        FUNCTION CAN_RX1_IRQHandler,0602H
+        EXTERN CAN_SCE_IRQHandler
+        FUNCTION CAN_SCE_IRQHandler,0602H
+        EXTERN DMA1_Channel1_IRQHandler
+        FUNCTION DMA1_Channel1_IRQHandler,0602H
+        EXTERN DMA1_Channel2_IRQHandler
+        FUNCTION DMA1_Channel2_IRQHandler,0602H
+        EXTERN DMA1_Channel3_IRQHandler
+        FUNCTION DMA1_Channel3_IRQHandler,0602H
+        EXTERN DMA1_Channel4_IRQHandler
+        FUNCTION DMA1_Channel4_IRQHandler,0602H
+        EXTERN DMA1_Channel5_IRQHandler
+        FUNCTION DMA1_Channel5_IRQHandler,0602H
+        EXTERN DMA1_Channel6_IRQHandler
+        FUNCTION DMA1_Channel6_IRQHandler,0602H
+        EXTERN DMA1_Channel7_IRQHandler
+        FUNCTION DMA1_Channel7_IRQHandler,0602H
+        EXTERN DMA2_Channel1_IRQHandler
+        FUNCTION DMA2_Channel1_IRQHandler,0602H
+        EXTERN DMA2_Channel2_IRQHandler
+        FUNCTION DMA2_Channel2_IRQHandler,0602H
+        EXTERN DMA2_Channel3_IRQHandler
+        FUNCTION DMA2_Channel3_IRQHandler,0602H
+        EXTERN DMA2_Channel4_5_IRQHandler
+        FUNCTION DMA2_Channel4_5_IRQHandler,0602H
+        EXTERN DebugMonitor
+        FUNCTION DebugMonitor,0602H
+        EXTERN EXTI0_IRQHandler
+        FUNCTION EXTI0_IRQHandler,0602H
+        EXTERN EXTI15_10_IRQHandler
+        FUNCTION EXTI15_10_IRQHandler,0602H
+        EXTERN EXTI1_IRQHandler
+        FUNCTION EXTI1_IRQHandler,0602H
+        EXTERN EXTI2_IRQHandler
+        FUNCTION EXTI2_IRQHandler,0602H
+        EXTERN EXTI3_IRQHandler
+        FUNCTION EXTI3_IRQHandler,0602H
+        EXTERN EXTI4_IRQHandler
+        FUNCTION EXTI4_IRQHandler,0602H
+        EXTERN EXTI9_5_IRQHandler
+        FUNCTION EXTI9_5_IRQHandler,0602H
+        EXTERN FLASH_IRQHandler
+        FUNCTION FLASH_IRQHandler,0602H
+        EXTERN FSMC_IRQHandler
+        FUNCTION FSMC_IRQHandler,0602H
+        EXTERN HardFaultException
+        FUNCTION HardFaultException,0602H
+        EXTERN I2C1_ER_IRQHandler
+        FUNCTION I2C1_ER_IRQHandler,0602H
+        EXTERN I2C1_EV_IRQHandler
+        FUNCTION I2C1_EV_IRQHandler,0602H
+        EXTERN I2C2_ER_IRQHandler
+        FUNCTION I2C2_ER_IRQHandler,0602H
+        EXTERN I2C2_EV_IRQHandler
+        FUNCTION I2C2_EV_IRQHandler,0602H
+        EXTERN MemManageException
+        FUNCTION MemManageException,0602H
+        EXTERN NMIException
+        FUNCTION NMIException,0602H
+        EXTERN PVD_IRQHandler
+        FUNCTION PVD_IRQHandler,0602H
+        EXTERN PendSVC
+        FUNCTION PendSVC,0602H
+        EXTERN RCC_IRQHandler
+        FUNCTION RCC_IRQHandler,0602H
+        EXTERN RTCAlarm_IRQHandler
+        FUNCTION RTCAlarm_IRQHandler,0602H
+        EXTERN RTC_IRQHandler
+        FUNCTION RTC_IRQHandler,0602H
+        EXTERN SDIO_IRQHandler
+        FUNCTION SDIO_IRQHandler,0602H
+        EXTERN SPI1_IRQHandler
+        FUNCTION SPI1_IRQHandler,0602H
+        EXTERN SPI2_IRQHandler
+        FUNCTION SPI2_IRQHandler,0602H
+        EXTERN SPI3_IRQHandler
+        FUNCTION SPI3_IRQHandler,0602H
+        EXTERN SVCHandler
+        FUNCTION SVCHandler,0602H
+        EXTERN SysTickHandler
+        FUNCTION SysTickHandler,0602H
+        EXTERN TAMPER_IRQHandler
+        FUNCTION TAMPER_IRQHandler,0602H
+        EXTERN TIM1_BRK_IRQHandler
+        FUNCTION TIM1_BRK_IRQHandler,0602H
+        EXTERN TIM1_CC_IRQHandler
+        FUNCTION TIM1_CC_IRQHandler,0602H
+        EXTERN TIM1_TRG_COM_IRQHandler
+        FUNCTION TIM1_TRG_COM_IRQHandler,0602H
+        EXTERN TIM1_UP_IRQHandler
+        FUNCTION TIM1_UP_IRQHandler,0602H
+        EXTERN TIM2_IRQHandler
+        FUNCTION TIM2_IRQHandler,0602H
+        EXTERN TIM3_IRQHandler
+        FUNCTION TIM3_IRQHandler,0602H
+        EXTERN TIM4_IRQHandler
+        FUNCTION TIM4_IRQHandler,0602H
+        EXTERN TIM5_IRQHandler
+        FUNCTION TIM5_IRQHandler,0602H
+        EXTERN TIM6_IRQHandler
+        FUNCTION TIM6_IRQHandler,0602H
+        EXTERN TIM7_IRQHandler
+        FUNCTION TIM7_IRQHandler,0602H
+        EXTERN TIM8_BRK_IRQHandler
+        FUNCTION TIM8_BRK_IRQHandler,0602H
+        EXTERN TIM8_CC_IRQHandler
+        FUNCTION TIM8_CC_IRQHandler,0602H
+        EXTERN TIM8_TRG_COM_IRQHandler
+        FUNCTION TIM8_TRG_COM_IRQHandler,0602H
+        EXTERN TIM8_UP_IRQHandler
+        FUNCTION TIM8_UP_IRQHandler,0602H
+        EXTERN UART4_IRQHandler
+        FUNCTION UART4_IRQHandler,0602H
+        EXTERN UART5_IRQHandler
+        FUNCTION UART5_IRQHandler,0602H
+        EXTERN USART1_IRQHandler
+        FUNCTION USART1_IRQHandler,0602H
+        EXTERN USART2_IRQHandler
+        FUNCTION USART2_IRQHandler,0602H
+        EXTERN USART3_IRQHandler
+        FUNCTION USART3_IRQHandler,0602H
+        EXTERN USBWakeUp_IRQHandler
+        FUNCTION USBWakeUp_IRQHandler,0602H
+        EXTERN USB_HP_CAN_TX_IRQHandler
+        FUNCTION USB_HP_CAN_TX_IRQHandler,0602H
+        EXTERN USB_LP_CAN_RX0_IRQHandler
+        FUNCTION USB_LP_CAN_RX0_IRQHandler,0602H
+        EXTERN UsageFaultException
+        FUNCTION UsageFaultException,0602H
+        EXTERN WWDG_IRQHandler
+        FUNCTION WWDG_IRQHandler,0602H
+        EXTERN __program_start
+        FUNCTION __program_start,0602H
+
+// C:\Users\Administrator\Desktop\mini DSO download\APP_V2.32\APP_V2.32\IAR_V4_Prpject\stm32f10x_vector.c
+//    1 /******************** (C) COPYRIGHT 2008 STMicroelectronics ********************
+//    2 * File Name          : stm32f10x_vector.c
+//    3 * Author             : MCD Application Team
+//    4 * Version            : V2.2.1
+//    5 * Date               : 09/22/2008
+//    6 * Description        : STM32F10x vector table for EWARM4.x toolchain.
+//    7 *                      This module performs:
+//    8 *                      - Set the initial SP
+//    9 *                      - Set the initial PC == __program_start,
+//   10 *                      - Set the vector table entries with the exceptions ISR address,
+//   11 *                     - Configure external SRAM mounted on STM3210E-EVAL board
+//   12 *                       to be used as data memory (optional, to be enabled by user)
+//   13 *                      After Reset the Cortex-M3 processor is in Thread mode,
+//   14 *                      priority is Privileged, and the Stack is set to Main.
+//   15 ********************************************************************************
+//   16 * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+//   17 * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+//   18 * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+//   19 * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+//   20 * CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+//   21 * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+//   22 *******************************************************************************/
+//   23 
+//   24 /* Includes ------------------------------------------------------------------*/
+//   25 #include "stm32f10x_lib.h"
+//   26 #include "Interrupt.h"
+//   27 
+//   28 /* Private typedef -----------------------------------------------------------*/
+//   29 typedef void( *intfunc )( void );
+//   30 typedef union { intfunc __fun; void * __ptr; } intvec_elem;
+//   31 
+//   32 /* Private define ------------------------------------------------------------*/
+//   33 /* Uncomment the following line if you need to use external SRAM mounted on
+//   34    STM3210E-EVAL board as data memory */
+//   35 
+//   36 /* #define DATA_IN_ExtSRAM */
+//   37 
+//   38 /* Private macro -------------------------------------------------------------*/
+//   39 /* Private variables ---------------------------------------------------------*/
+//   40 /* Private function prototypes -----------------------------------------------*/
+//   41 /* Private functions ---------------------------------------------------------*/
+//   42 
+//   43 
+//   44 #pragma language=extended
+//   45 #pragma segment="CSTACK"
+//   46 
+//   47 void __program_start( void );
+//   48 
+//   49 #pragma location = "INTVEC"
+//   50 /* STM32F10x Vector Table entries */
+
+        RSEG INTVEC:CONST:SORT:NOROOT(2)
+//   51 const intvec_elem __vector_table[] =
+__vector_table:
+        DATA
+        DC32 SFE(CSTACK), __program_start, NMIException, HardFaultException
+        DC32 MemManageException, BusFaultException, UsageFaultException, 0H, 0H
+        DC32 0H, 0H, SVCHandler, DebugMonitor, 0H, PendSVC, SysTickHandler
+        DC32 WWDG_IRQHandler, PVD_IRQHandler, TAMPER_IRQHandler, RTC_IRQHandler
+        DC32 FLASH_IRQHandler, RCC_IRQHandler, EXTI0_IRQHandler
+        DC32 EXTI1_IRQHandler, EXTI2_IRQHandler, EXTI3_IRQHandler
+        DC32 EXTI4_IRQHandler, DMA1_Channel1_IRQHandler
+        DC32 DMA1_Channel2_IRQHandler, DMA1_Channel3_IRQHandler
+        DC32 DMA1_Channel4_IRQHandler, DMA1_Channel5_IRQHandler
+        DC32 DMA1_Channel6_IRQHandler, DMA1_Channel7_IRQHandler
+        DC32 ADC1_2_IRQHandler, USB_HP_CAN_TX_IRQHandler
+        DC32 USB_LP_CAN_RX0_IRQHandler, CAN_RX1_IRQHandler, CAN_SCE_IRQHandler
+        DC32 EXTI9_5_IRQHandler, TIM1_BRK_IRQHandler, TIM1_UP_IRQHandler
+        DC32 TIM1_TRG_COM_IRQHandler, TIM1_CC_IRQHandler, TIM2_IRQHandler
+        DC32 TIM3_IRQHandler, TIM4_IRQHandler, I2C1_EV_IRQHandler
+        DC32 I2C1_ER_IRQHandler, I2C2_EV_IRQHandler, I2C2_ER_IRQHandler
+        DC32 SPI1_IRQHandler, SPI2_IRQHandler, USART1_IRQHandler
+        DC32 USART2_IRQHandler, USART3_IRQHandler, EXTI15_10_IRQHandler
+        DC32 RTCAlarm_IRQHandler, USBWakeUp_IRQHandler, TIM8_BRK_IRQHandler
+        DC32 TIM8_UP_IRQHandler, TIM8_TRG_COM_IRQHandler, TIM8_CC_IRQHandler
+        DC32 ADC3_IRQHandler, FSMC_IRQHandler, SDIO_IRQHandler, TIM5_IRQHandler
+        DC32 SPI3_IRQHandler, UART4_IRQHandler, UART5_IRQHandler
+        DC32 TIM6_IRQHandler, TIM7_IRQHandler, DMA2_Channel1_IRQHandler
+        DC32 DMA2_Channel2_IRQHandler, DMA2_Channel3_IRQHandler
+        DC32 DMA2_Channel4_5_IRQHandler
+
+        END
+//   52 {
+//   53   { .__ptr = __sfe( "CSTACK" ) },
+//   54   __program_start,
+//   55   NMIException,
+//   56   HardFaultException,
+//   57   MemManageException,
+//   58   BusFaultException,
+//   59   UsageFaultException,
+//   60   0, 0, 0, 0,            /* Reserved */ 
+//   61   SVCHandler,
+//   62   DebugMonitor,
+//   63   0,                      /* Reserved */
+//   64   PendSVC,
+//   65   SysTickHandler,
+//   66   WWDG_IRQHandler,
+//   67   PVD_IRQHandler,
+//   68   TAMPER_IRQHandler,
+//   69   RTC_IRQHandler,
+//   70   FLASH_IRQHandler,
+//   71   RCC_IRQHandler,
+//   72   EXTI0_IRQHandler,
+//   73   EXTI1_IRQHandler,
+//   74   EXTI2_IRQHandler,
+//   75   EXTI3_IRQHandler,
+//   76   EXTI4_IRQHandler,
+//   77   DMA1_Channel1_IRQHandler,
+//   78   DMA1_Channel2_IRQHandler,
+//   79   DMA1_Channel3_IRQHandler,
+//   80   DMA1_Channel4_IRQHandler,
+//   81   DMA1_Channel5_IRQHandler,
+//   82   DMA1_Channel6_IRQHandler,
+//   83   DMA1_Channel7_IRQHandler,
+//   84   ADC1_2_IRQHandler,
+//   85   USB_HP_CAN_TX_IRQHandler,
+//   86   USB_LP_CAN_RX0_IRQHandler,
+//   87   CAN_RX1_IRQHandler,
+//   88   CAN_SCE_IRQHandler,
+//   89   EXTI9_5_IRQHandler,
+//   90   TIM1_BRK_IRQHandler,
+//   91   TIM1_UP_IRQHandler,
+//   92   TIM1_TRG_COM_IRQHandler,
+//   93   TIM1_CC_IRQHandler,
+//   94   TIM2_IRQHandler,
+//   95   TIM3_IRQHandler,
+//   96   TIM4_IRQHandler,
+//   97   I2C1_EV_IRQHandler,
+//   98   I2C1_ER_IRQHandler,
+//   99   I2C2_EV_IRQHandler,
+//  100   I2C2_ER_IRQHandler,
+//  101   SPI1_IRQHandler,
+//  102   SPI2_IRQHandler,
+//  103   USART1_IRQHandler,
+//  104   USART2_IRQHandler,
+//  105   USART3_IRQHandler,
+//  106   EXTI15_10_IRQHandler,
+//  107   RTCAlarm_IRQHandler,
+//  108   USBWakeUp_IRQHandler,
+//  109   TIM8_BRK_IRQHandler,
+//  110   TIM8_UP_IRQHandler,
+//  111   TIM8_TRG_COM_IRQHandler,
+//  112   TIM8_CC_IRQHandler,
+//  113   ADC3_IRQHandler,
+//  114   FSMC_IRQHandler,
+//  115   SDIO_IRQHandler,
+//  116   TIM5_IRQHandler,
+//  117   SPI3_IRQHandler,
+//  118   UART4_IRQHandler,
+//  119   UART5_IRQHandler,
+//  120   TIM6_IRQHandler,
+//  121   TIM7_IRQHandler,
+//  122   DMA2_Channel1_IRQHandler,
+//  123   DMA2_Channel2_IRQHandler,
+//  124   DMA2_Channel3_IRQHandler,
+//  125   DMA2_Channel4_5_IRQHandler,
+//  126 };
+//  127 #ifdef DATA_IN_ExtSRAM
+//  128 #pragma language=extended
+//  129 
+//  130 __interwork int __low_level_init(void);
+//  131 
+//  132 #pragma location="ICODE"
+//  133 __interwork int __low_level_init(void)
+//  134 {
+//  135    
+//  136 /* FSMC Bank1 NOR/SRAM3 is used for the STM3210E-EVAL, if another Bank is 
+//  137   required, then adjust the Register Addresses*/
+//  138 
+//  139   /* Enable FSMC clock */
+//  140   *(vu32 *)0x40021014 = 0x00000114;
+//  141   
+//  142   /* Enable GPIOD, GPIOE, GPIOF and GPIOG clocks */  
+//  143   *(vu32 *)0x40021018 = 0x000001E0;
+//  144   
+//  145 /* ---------------  SRAM Data lines, NOE and NWE configuration ---------------*/
+//  146 /*----------------  SRAM Address lines configuration -------------------------*/
+//  147 /*----------------  NOE and NWE configuration --------------------------------*/  
+//  148 /*----------------  NE3 configuration ----------------------------------------*/
+//  149 /*----------------  NBL0, NBL1 configuration ---------------------------------*/
+//  150   
+//  151   *(vu32 *)0x40011400 = 0x44BB44BB;
+//  152   *(vu32 *)0x40011404 = 0xBBBBBBBB;
+//  153   
+//  154   *(vu32 *)0x40011800 = 0xB44444BB;
+//  155   *(vu32 *)0x40011804 = 0xBBBBBBBB;
+//  156    
+//  157   *(vu32 *)0x40011C00 = 0x44BBBBBB;
+//  158   *(vu32 *)0x40011C04 = 0xBBBB4444;  
+//  159 
+//  160   *(vu32 *)0x40012000 = 0x44BBBBBB;
+//  161   *(vu32 *)0x40012004 = 0x44444B44;
+//  162   
+//  163 /*----------------  FSMC Configuration ---------------------------------------*/  
+//  164 /*----------------  Enable FSMC Bank1_SRAM Bank ------------------------------*/
+//  165   
+//  166   *(vu32 *)0xA0000010 = 0x00001011;
+//  167   *(vu32 *)0xA0000014 = 0x00000200;
+//  168   
+//  169 
+//  170   return (1);
+//  171 }
+//  172 #endif /*DATA_IN_ExtSRAM*/
+//  173 
+//  174 /******************* (C) COPYRIGHT 2008 STMicroelectronics *****END OF FILE****/
+//  175 
+// 
+// 304 bytes in segment INTVEC
+// 
+// 304 bytes of CONST memory
+//
+//Errors: none
+//Warnings: none

@@ -1,0 +1,759 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32 EVALUATION   25/Apr/2011  15:04:52 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  C:\Users\Administrator\Desktop\mini DSO             /
+//                       download\SYS_V1.34\SYS_V1.34\source\SPI_flash.c     /
+//    Command line    =  "C:\Users\Administrator\Desktop\mini DSO            /
+//                       download\SYS_V1.34\SYS_V1.34\source\SPI_flash.c"    /
+//                       -lA "C:\Users\Administrator\Desktop\mini DSO        /
+//                       download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\List\"  /
+//                       -o "C:\Users\Administrator\Desktop\mini DSO         /
+//                       download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\"   /
+//                       -s9 --no_inline --cpu_mode thumb --endian little    /
+//                       --cpu cortex-M3 --stack_align 4 -e --fpu None       /
+//                       --dlib_config "E:\IARWorkBench(Cracked)\Embedded    /
+//                       Workbench 4.0 Evaluation\ARM\LIB\dl7mptnnl8n.h" -I  /
+//                       "C:\Users\Administrator\Desktop\mini DSO            /
+//                       download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\..\..\F /
+//                       WLib\inc\" -I "C:\Users\Administrator\Desktop\mini  /
+//                       DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\..\ /
+//                       ..\USBLib\inc\" -I "C:\Users\Administrator\Desktop\ /
+//                       mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpjec /
+//                       t\..\include\" -I "E:\IARWorkBench(Cracked)\Embedde /
+//                       d Workbench 4.0 Evaluation\ARM\INC\"                /
+//    List file       =  C:\Users\Administrator\Desktop\mini DSO             /
+//                       download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\List\SP /
+//                       I_flash.s79                                         /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME SPI_flash
+
+        RTMODEL "StackAlign4", "USED"
+        RTMODEL "__cpu_mode", "__pcs__thumb"
+        RTMODEL "__data_model", "absolute"
+        RTMODEL "__endian", "little"
+        RTMODEL "__rt_version", "6"
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+??DataTable0 EQU 0
+??DataTable1 EQU 0
+??DataTable2 EQU 0
+??DataTable3 EQU 0
+??DataTable4 EQU 0
+??DataTable5 EQU 0
+??DataTable6 EQU 0
+??DataTable7 EQU 0
+??DataTable9 EQU 0
+        MULTWEAK ??GPIO_ResetBits??rT
+        MULTWEAK ??GPIO_SetBits??rT
+        MULTWEAK ??SPI_GetFlagStatus??rT
+        MULTWEAK ??SPI_ReceiveData??rT
+        MULTWEAK ??SPI_SendData??rT
+        PUBWEAK ?init?tab?DATA_Z
+        PUBLIC MAL_GetStatus
+        FUNCTION MAL_GetStatus,0203H
+        PUBLIC Mass_Block_Count
+        PUBLIC Mass_Block_Size
+        PUBLIC Mass_Memory_Size
+        PUBLIC Param_PageRead
+        FUNCTION Param_PageRead,0203H
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC Param_PageWrite
+        FUNCTION Param_PageWrite,0203H
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC SPI_FLASH_BufferRead
+        FUNCTION SPI_FLASH_BufferRead,0203H
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC SPI_FLASH_PageErase
+        FUNCTION SPI_FLASH_PageErase,0203H
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC SPI_FLASH_PageWrite
+        FUNCTION SPI_FLASH_PageWrite,0203H
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC SPI_FLASH_ReadByte
+        FUNCTION SPI_FLASH_ReadByte,0203H
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC SPI_FLASH_SendByte
+        FUNCTION SPI_FLASH_SendByte,0203H
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC SPI_FLASH_WaitForWriteEnd
+        FUNCTION SPI_FLASH_WaitForWriteEnd,0203H
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC SPI_FLASH_WriteEnable
+        FUNCTION SPI_FLASH_WriteEnable,0203H
+        LOCFRAME CSTACK, 8, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA R13 HUGEDATA
+        CFI Resource R0:32, R1:32, R2:32, R3:32, R4:32, R5:32, R6:32, R7:32
+        CFI Resource R8:32, R9:32, R10:32, R11:32, R12:32, R13:32, R14:32
+        CFI VirtualResource ?RET:32
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 2
+        CFI DataAlign 4
+        CFI ReturnAddress ?RET CODE
+        CFI CFA R13+0
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI R8 SameValue
+        CFI R9 SameValue
+        CFI R10 SameValue
+        CFI R11 SameValue
+        CFI R12 Undefined
+        CFI R14 Undefined
+        CFI ?RET R14
+        CFI EndCommon cfiCommon0
+        
+GPIO_ResetBits      SYMBOL "GPIO_ResetBits"
+GPIO_SetBits        SYMBOL "GPIO_SetBits"
+SPI_GetFlagStatus   SYMBOL "SPI_GetFlagStatus"
+SPI_ReceiveData     SYMBOL "SPI_ReceiveData"
+SPI_SendData        SYMBOL "SPI_SendData"
+??GPIO_ResetBits??rT SYMBOL "??rT", GPIO_ResetBits
+??GPIO_SetBits??rT  SYMBOL "??rT", GPIO_SetBits
+??SPI_GetFlagStatus??rT SYMBOL "??rT", SPI_GetFlagStatus
+??SPI_ReceiveData??rT SYMBOL "??rT", SPI_ReceiveData
+??SPI_SendData??rT  SYMBOL "??rT", SPI_SendData
+
+        EXTERN GPIO_ResetBits
+        FUNCTION GPIO_ResetBits,0202H
+        EXTERN GPIO_SetBits
+        FUNCTION GPIO_SetBits,0202H
+        EXTERN SPI_GetFlagStatus
+        FUNCTION SPI_GetFlagStatus,0202H
+        EXTERN SPI_ReceiveData
+        FUNCTION SPI_ReceiveData,0202H
+        EXTERN SPI_SendData
+        FUNCTION SPI_SendData,0202H
+
+// C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\source\SPI_flash.c
+//    1 /********************* (C) COPYRIGHT 2010 e-Design Co.,Ltd. ********************
+//    2  File Name : SPI_flash.c  
+//    3  Version   : DS203_SYS Ver 1.3x                                  Author : bure
+//    4 *******************************************************************************/
+//    5 #include "SPI_flash.h"
+//    6 
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+//    7 u32 Mass_Memory_Size;
+Mass_Memory_Size:
+        DS8 4
+//    8 u32 Mass_Block_Size;
+Mass_Block_Size:
+        DS8 4
+//    9 u32 Mass_Block_Count;
+Mass_Block_Count:
+        DS8 4
+//   10 
+//   11 /*******************************************************************************
+//   12  SPI_FLASH_PageErase  : Erases the specified FLASH Page.
+//   13 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function SPI_FLASH_PageErase
+        THUMB
+//   14 void SPI_FLASH_PageErase(u32 PageAddr)
+//   15 {
+SPI_FLASH_PageErase:
+        PUSH     {R4,R5,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R5 Frame(CFA, -8)
+        CFI R4 Frame(CFA, -12)
+        CFI CFA R13+12
+//   16   SPI_FLASH_WriteEnable();
+//   17   SPI_FLASH_CS_LOW();
+        LDR.N    R5,??DataTable10  ;; 0x40010c00
+        MOVS     R4,R0
+        BL       SPI_FLASH_WriteEnable
+        MOVS     R1,#+128
+        MOVS     R0,R5
+        _BLF     GPIO_ResetBits,??GPIO_ResetBits??rT
+//   18   SPI_FLASH_SendByte(PE);
+        MOVS     R0,#+219
+        BL       SPI_FLASH_SendByte
+//   19   SPI_FLASH_SendByte((PageAddr & 0xFF0000) >> 16);   //Send high address byte
+        LSRS     R0,R4,#+16
+        UXTB     R0,R0
+        BL       SPI_FLASH_SendByte
+//   20   SPI_FLASH_SendByte((PageAddr & 0xFF00) >> 8);      //Send medium address byte
+        LSRS     R0,R4,#+8
+        UXTB     R0,R0
+        BL       SPI_FLASH_SendByte
+//   21   SPI_FLASH_SendByte(PageAddr & 0xFF);               //Send low address byte
+        UXTB     R0,R4
+        BL       SPI_FLASH_SendByte
+//   22   SPI_FLASH_CS_HIGH();
+        MOVS     R1,#+128
+        MOVS     R0,R5
+        _BLF     GPIO_SetBits,??GPIO_SetBits??rT
+//   23 
+//   24   SPI_FLASH_WaitForWriteEnd();                // Wait the end of Flash writing 
+        POP      {R4,R5,LR}       ;; Pop
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI ?RET R14
+        CFI CFA R13+0
+        B.N      SPI_FLASH_WaitForWriteEnd
+        CFI EndBlock cfiBlock0
+//   25 }
+//   26 /*******************************************************************************
+//   27  SPI_FLASH_PageWrite : 
+//   28 
+//   29  SPI FLASH 的2~16页被定义成参数区
+//   30 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function Param_PageWrite
+        THUMB
+//   31 void Param_PageWrite(u8* pBuffer, u8 PageNum)
+//   32 {
+Param_PageWrite:
+        PUSH     {R4-R7,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R7 Frame(CFA, -8)
+        CFI R6 Frame(CFA, -12)
+        CFI R5 Frame(CFA, -16)
+        CFI R4 Frame(CFA, -20)
+        CFI CFA R13+20
+//   33   u16 Lenght;
+//   34   u32 WriteAddr;
+//   35   
+//   36   Lenght = 0x100;
+//   37   WriteAddr = 0x200 * (1 + PageNum);
+//   38 //  SPI_FLASH_PageErase(WriteAddr);
+//   39   SPI_FLASH_WriteEnable();
+//   40   SPI_FLASH_CS_LOW();
+        LDR.N    R6,??DataTable10  ;; 0x40010c00
+        MOVS     R4,R0
+        ADDS     R1,R1,#+1
+        LSLS     R7,R1,#+9
+        BL       SPI_FLASH_WriteEnable
+        MOVS     R1,#+128
+        MOVS     R0,R6
+        _BLF     GPIO_ResetBits,??GPIO_ResetBits??rT
+//   41   SPI_FLASH_SendByte(PW);
+        MOVS     R0,#+10
+        BL       SPI_FLASH_SendByte
+//   42   SPI_FLASH_SendByte((WriteAddr & 0xFF0000) >> 16);
+        LSRS     R0,R7,#+16
+        UXTB     R0,R0
+        BL       SPI_FLASH_SendByte
+//   43   SPI_FLASH_SendByte((WriteAddr & 0xFF00) >> 8);  
+        LSRS     R0,R7,#+8
+//   44   SPI_FLASH_SendByte(WriteAddr & 0xFF);
+        LDR.N    R7,??DataTable8  ;; 0xffff
+        UXTB     R0,R0
+        BL       SPI_FLASH_SendByte
+        MOVS     R0,#+0
+        BL       SPI_FLASH_SendByte
+        MOVS     R5,#+256
+        B.N      ??Param_PageWrite_0
+//   45   while(Lenght--) {         // while there is data to be written on the FLASH 
+//   46     SPI_FLASH_SendByte(*pBuffer);
+??Param_PageWrite_1:
+        LDRB     R0,[R4], #+1
+        BL       SPI_FLASH_SendByte
+//   47     pBuffer++; 
+//   48   }
+??Param_PageWrite_0:
+        MOVS     R0,R5
+        ADDS     R5,R0,R7
+        LSLS     R0,R0,#+16
+        BNE.N    ??Param_PageWrite_1
+//   49   SPI_FLASH_CS_HIGH();
+        MOVS     R1,#+128
+        MOVS     R0,R6
+        _BLF     GPIO_SetBits,??GPIO_SetBits??rT
+//   50   SPI_FLASH_WaitForWriteEnd();
+        POP      {R4-R7,LR}       ;; Pop
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI ?RET R14
+        CFI CFA R13+0
+        B.N      SPI_FLASH_WaitForWriteEnd
+        CFI EndBlock cfiBlock1
+//   51 }
+//   52 
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function SPI_FLASH_PageWrite
+        THUMB
+//   53 void SPI_FLASH_PageWrite(u8* pBuffer, u32 WriteAddr)
+//   54 {
+SPI_FLASH_PageWrite:
+        PUSH     {R4-R7,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R7 Frame(CFA, -8)
+        CFI R6 Frame(CFA, -12)
+        CFI R5 Frame(CFA, -16)
+        CFI R4 Frame(CFA, -20)
+        CFI CFA R13+20
+//   55   u16 Lenght = 0x100;
+//   56   SPI_FLASH_WriteEnable();
+//   57   SPI_FLASH_CS_LOW();
+        LDR.N    R6,??DataTable10  ;; 0x40010c00
+        MOVS     R4,R0
+        MOVS     R5,#+256
+        MOVS     R7,R1
+        BL       SPI_FLASH_WriteEnable
+        MOVS     R1,#+128
+        MOVS     R0,R6
+        _BLF     GPIO_ResetBits,??GPIO_ResetBits??rT
+//   58   SPI_FLASH_SendByte(PW);
+        MOVS     R0,#+10
+        BL       SPI_FLASH_SendByte
+//   59   SPI_FLASH_SendByte((WriteAddr & 0xFF0000) >> 16);
+        LSRS     R0,R7,#+16
+        UXTB     R0,R0
+        BL       SPI_FLASH_SendByte
+//   60   SPI_FLASH_SendByte((WriteAddr & 0xFF00) >> 8);  
+        LSRS     R0,R7,#+8
+        UXTB     R0,R0
+        BL       SPI_FLASH_SendByte
+//   61   SPI_FLASH_SendByte(WriteAddr & 0xFF);
+        UXTB     R0,R7
+        LDR.N    R7,??DataTable8  ;; 0xffff
+        B.N      ??SPI_FLASH_PageWrite_0
+//   62   while(Lenght--) {         // while there is data to be written on the FLASH 
+//   63     SPI_FLASH_SendByte(*pBuffer);
+??SPI_FLASH_PageWrite_1:
+        LDRB     R0,[R4], #+1
+??SPI_FLASH_PageWrite_0:
+        BL       SPI_FLASH_SendByte
+//   64     pBuffer++; 
+//   65   }
+        MOVS     R0,R5
+        ADDS     R5,R0,R7
+        LSLS     R0,R0,#+16
+        BNE.N    ??SPI_FLASH_PageWrite_1
+//   66   SPI_FLASH_CS_HIGH();
+        MOVS     R1,#+128
+        MOVS     R0,R6
+        _BLF     GPIO_SetBits,??GPIO_SetBits??rT
+//   67   SPI_FLASH_WaitForWriteEnd();
+        POP      {R4-R7,LR}       ;; Pop
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI ?RET R14
+        CFI CFA R13+0
+        B.N      SPI_FLASH_WaitForWriteEnd
+        CFI EndBlock cfiBlock2
+//   68 }
+//   69 
+//   70 /*******************************************************************************
+//   71  SPI_FLASH_BufferRead
+//   72 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function SPI_FLASH_BufferRead
+        THUMB
+//   73 void SPI_FLASH_BufferRead(u8* pBuffer, u32 ReadAddr, u16 NumByteToRead)
+//   74 {
+SPI_FLASH_BufferRead:
+        PUSH     {R4-R7,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R7 Frame(CFA, -8)
+        CFI R6 Frame(CFA, -12)
+        CFI R5 Frame(CFA, -16)
+        CFI R4 Frame(CFA, -20)
+        CFI CFA R13+20
+//   75   SPI_FLASH_CS_LOW();
+        LDR.N    R6,??DataTable10  ;; 0x40010c00
+        MOVS     R4,R0
+        MOVS     R5,R2
+        MOVS     R7,R1
+        MOVS     R1,#+128
+        MOVS     R0,R6
+        _BLF     GPIO_ResetBits,??GPIO_ResetBits??rT
+//   76   SPI_FLASH_SendByte(READ);
+        MOVS     R0,#+3
+        BL       SPI_FLASH_SendByte
+//   77   SPI_FLASH_SendByte((ReadAddr & 0xFF0000) >> 16);
+        LSRS     R0,R7,#+16
+        UXTB     R0,R0
+        BL       SPI_FLASH_SendByte
+//   78   SPI_FLASH_SendByte((ReadAddr& 0xFF00) >> 8);
+        LSRS     R0,R7,#+8
+        UXTB     R0,R0
+        BL       SPI_FLASH_SendByte
+//   79   SPI_FLASH_SendByte(ReadAddr & 0xFF);
+        UXTB     R0,R7
+        LDR.N    R7,??DataTable8  ;; 0xffff
+        BL       SPI_FLASH_SendByte
+        B.N      ??SPI_FLASH_BufferRead_0
+//   80 
+//   81   while(NumByteToRead--){ // while there is data to be read 
+//   82     *pBuffer = SPI_FLASH_SendByte(Dummy_Byte);
+??SPI_FLASH_BufferRead_1:
+        MOVS     R0,#+165
+        BL       SPI_FLASH_SendByte
+        STRB     R0,[R4], #+1
+//   83     pBuffer++;
+//   84   }
+??SPI_FLASH_BufferRead_0:
+        MOVS     R0,R5
+        ADDS     R5,R0,R7
+        LSLS     R0,R0,#+16
+        BNE.N    ??SPI_FLASH_BufferRead_1
+//   85   SPI_FLASH_CS_HIGH();
+        MOVS     R1,#+128
+        MOVS     R0,R6
+        POP      {R4-R7,LR}       ;; Pop
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI ?RET R14
+        CFI CFA R13+0
+        _BF.W    GPIO_SetBits,??GPIO_SetBits??rT
+        CFI EndBlock cfiBlock3
+//   86 }
+//   87 
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function Param_PageRead
+        THUMB
+//   88 void Param_PageRead(u8* pBuffer, u8 PageNum)
+//   89 {
+Param_PageRead:
+        PUSH     {R4-R7,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R7 Frame(CFA, -8)
+        CFI R6 Frame(CFA, -12)
+        CFI R5 Frame(CFA, -16)
+        CFI R4 Frame(CFA, -20)
+        CFI CFA R13+20
+//   90   u16 Lenght = 256;
+//   91   u32 ReadAddr = 0x200 * (1 + PageNum);
+//   92   SPI_FLASH_CS_LOW();
+        LDR.N    R6,??DataTable10  ;; 0x40010c00
+        MOVS     R4,R0
+        ADDS     R1,R1,#+1
+        LSLS     R7,R1,#+9
+        MOVS     R1,#+128
+        MOVS     R0,R6
+        _BLF     GPIO_ResetBits,??GPIO_ResetBits??rT
+//   93   SPI_FLASH_SendByte(READ);
+        MOVS     R0,#+3
+        BL       SPI_FLASH_SendByte
+//   94   SPI_FLASH_SendByte((ReadAddr & 0xFF0000) >> 16);
+        LSRS     R0,R7,#+16
+        UXTB     R0,R0
+        BL       SPI_FLASH_SendByte
+//   95   SPI_FLASH_SendByte((ReadAddr& 0xFF00) >> 8);
+        LSRS     R0,R7,#+8
+//   96   SPI_FLASH_SendByte(ReadAddr & 0xFF);
+        LDR.N    R7,??DataTable8  ;; 0xffff
+        UXTB     R0,R0
+        BL       SPI_FLASH_SendByte
+        MOVS     R0,#+0
+        BL       SPI_FLASH_SendByte
+        MOVS     R5,#+256
+        B.N      ??Param_PageRead_0
+//   97   while(Lenght--){ // while there is data to be read 
+//   98     *pBuffer = SPI_FLASH_SendByte(Dummy_Byte);
+??Param_PageRead_1:
+        MOVS     R0,#+165
+        BL       SPI_FLASH_SendByte
+        STRB     R0,[R4], #+1
+//   99     pBuffer++;
+//  100   }
+??Param_PageRead_0:
+        MOVS     R0,R5
+        ADDS     R5,R0,R7
+        LSLS     R0,R0,#+16
+        BNE.N    ??Param_PageRead_1
+//  101   SPI_FLASH_CS_HIGH();
+        MOVS     R1,#+128
+        MOVS     R0,R6
+        POP      {R4-R7,LR}       ;; Pop
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI ?RET R14
+        CFI CFA R13+0
+        _BF.W    GPIO_SetBits,??GPIO_SetBits??rT
+        CFI EndBlock cfiBlock4
+//  102 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable8:
+        DC32     0xffff
+//  103 /*******************************************************************************
+//  104  SPI_FLASH_ReadByte
+//  105 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function SPI_FLASH_ReadByte
+        THUMB
+//  106 u8 SPI_FLASH_ReadByte(void)
+//  107 {
+//  108   return (SPI_FLASH_SendByte(Dummy_Byte));
+SPI_FLASH_ReadByte:
+        MOVS     R0,#+165
+        Nop      
+        CFI EndBlock cfiBlock5
+        REQUIRE SPI_FLASH_SendByte
+        ;; // Fall through to label SPI_FLASH_SendByte
+//  109 }
+//  110 
+//  111 /*******************************************************************************
+//  112  SPI_FLASH_SendByte
+//  113 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function SPI_FLASH_SendByte
+        THUMB
+//  114 u8 SPI_FLASH_SendByte(u8 byte)
+//  115 {
+SPI_FLASH_SendByte:
+        PUSH     {R4,R5,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R5 Frame(CFA, -8)
+        CFI R4 Frame(CFA, -12)
+        CFI CFA R13+12
+        LDR.N    R5,??SPI_FLASH_SendByte_0  ;; 0x40003c00
+        MOVS     R4,R0
+//  116   while(SPI_GetFlagStatus(SPI3, SPI_FLAG_TXE) == RESET);
+??SPI_FLASH_SendByte_1:
+        MOVS     R1,#+2
+        MOVS     R0,R5
+        _BLF     SPI_GetFlagStatus,??SPI_GetFlagStatus??rT
+        CMP      R0,#+0
+        BEQ.N    ??SPI_FLASH_SendByte_1
+//  117   SPI_SendData(SPI3, byte);
+        MOVS     R1,R4
+        MOVS     R0,R5
+        _BLF     SPI_SendData,??SPI_SendData??rT
+//  118   while(SPI_GetFlagStatus(SPI3, SPI_FLAG_RXNE) == RESET);
+??SPI_FLASH_SendByte_2:
+        MOVS     R1,#+1
+        MOVS     R0,R5
+        _BLF     SPI_GetFlagStatus,??SPI_GetFlagStatus??rT
+        CMP      R0,#+0
+        BEQ.N    ??SPI_FLASH_SendByte_2
+//  119   return SPI_ReceiveData(SPI3);
+        MOVS     R0,R5
+        _BLF     SPI_ReceiveData,??SPI_ReceiveData??rT
+        UXTB     R0,R0
+        POP      {R4,R5,PC}       ;; return
+        DATA
+??SPI_FLASH_SendByte_0:
+        DC32     0x40003c00
+        CFI EndBlock cfiBlock6
+//  120 }
+//  121 /*******************************************************************************
+//  122  SPI_FLASH_WriteEnable
+//  123 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function SPI_FLASH_WriteEnable
+        THUMB
+//  124 void SPI_FLASH_WriteEnable(void)
+//  125 {
+SPI_FLASH_WriteEnable:
+        PUSH     {R4,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R4 Frame(CFA, -8)
+        CFI CFA R13+8
+//  126   SPI_FLASH_CS_LOW();
+        LDR.N    R4,??DataTable10  ;; 0x40010c00
+        MOVS     R1,#+128
+        MOVS     R0,R4
+        _BLF     GPIO_ResetBits,??GPIO_ResetBits??rT
+//  127   SPI_FLASH_SendByte(WREN);
+        MOVS     R0,#+6
+        BL       SPI_FLASH_SendByte
+//  128   SPI_FLASH_CS_HIGH();
+        MOVS     R1,#+128
+        MOVS     R0,R4
+        POP      {R4,LR}          ;; Pop
+        CFI R4 SameValue
+        CFI ?RET R14
+        CFI CFA R13+0
+        _BF.W    GPIO_SetBits,??GPIO_SetBits??rT
+        CFI EndBlock cfiBlock7
+//  129 }
+//  130 /*******************************************************************************
+//  131  SPI_FLASH_WaitForWriteEnd
+//  132 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI Function SPI_FLASH_WaitForWriteEnd
+        THUMB
+//  133 void SPI_FLASH_WaitForWriteEnd(void)
+//  134 {
+SPI_FLASH_WaitForWriteEnd:
+        PUSH     {R4,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R4 Frame(CFA, -8)
+        CFI CFA R13+8
+//  135   u8 FLASH_Status = 0;
+//  136   SPI_FLASH_CS_LOW();
+        LDR.N    R4,??DataTable10  ;; 0x40010c00
+        MOVS     R1,#+128
+        MOVS     R0,R4
+        _BLF     GPIO_ResetBits,??GPIO_ResetBits??rT
+//  137   SPI_FLASH_SendByte(RDSR);
+        MOVS     R0,#+5
+        BL       SPI_FLASH_SendByte
+//  138   do { FLASH_Status = SPI_FLASH_SendByte(Dummy_Byte);                
+//  139   } while((FLASH_Status & WIP_Flag) == SET);              // Write in progress 
+??SPI_FLASH_WaitForWriteEnd_0:
+        MOVS     R0,#+165
+        BL       SPI_FLASH_SendByte
+        LSLS     R0,R0,#+31
+        BMI.N    ??SPI_FLASH_WaitForWriteEnd_0
+//  140   SPI_FLASH_CS_HIGH();
+        MOVS     R1,#+128
+        MOVS     R0,R4
+        POP      {R4,LR}          ;; Pop
+        CFI R4 SameValue
+        CFI ?RET R14
+        CFI CFA R13+0
+        _BF.W    GPIO_SetBits,??GPIO_SetBits??rT
+        CFI EndBlock cfiBlock8
+//  141 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable10:
+        DC32     0x40010c00
+//  142 /*******************************************************************************
+//  143  MAL_GetStatus
+//  144 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI Function MAL_GetStatus
+        THUMB
+//  145 void MAL_GetStatus (void)
+//  146 {
+//  147     Mass_Block_Count = 4096;        //FLASH_SIZE/FLASH_PAGE_SIZE; 
+MAL_GetStatus:
+        LDR.N    R0,??MAL_GetStatus_0  ;; Mass_Memory_Size
+        MOVS     R1,#+4096
+        STR      R1,[R0, #+8]
+//  148     Mass_Block_Size  = 512;         //FLASH_PAGE_SIZE; 
+        LSRS     R1,R1,#+3
+        STR      R1,[R0, #+4]
+//  149     Mass_Memory_Size = 0x200000;    //FLASH_SIZE; 
+        LSLS     R1,R1,#+12
+        STR      R1,[R0, #+0]
+//  150 } 
+        BX       LR               ;; return
+        Nop      
+        DATA
+??MAL_GetStatus_0:
+        DC32     Mass_Memory_Size
+        CFI EndBlock cfiBlock9
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??GPIO_ResetBits??rT:
+        LDR.N    R3,??Subroutine0_0  ;; GPIO_ResetBits
+        BX       R3
+        DATA
+??Subroutine0_0:
+        DC32     GPIO_ResetBits
+        CFI EndBlock cfiBlock10
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock11 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??GPIO_SetBits??rT:
+        LDR.N    R3,??Subroutine1_0  ;; GPIO_SetBits
+        BX       R3
+        DATA
+??Subroutine1_0:
+        DC32     GPIO_SetBits
+        CFI EndBlock cfiBlock11
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock12 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SPI_GetFlagStatus??rT:
+        LDR.N    R3,??Subroutine2_0  ;; SPI_GetFlagStatus
+        BX       R3
+        DATA
+??Subroutine2_0:
+        DC32     SPI_GetFlagStatus
+        CFI EndBlock cfiBlock12
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock13 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SPI_SendData??rT:
+        LDR.N    R3,??Subroutine3_0  ;; SPI_SendData
+        BX       R3
+        DATA
+??Subroutine3_0:
+        DC32     SPI_SendData
+        CFI EndBlock cfiBlock13
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock14 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SPI_ReceiveData??rT:
+        LDR.N    R3,??Subroutine4_0  ;; SPI_ReceiveData
+        BX       R3
+        DATA
+??Subroutine4_0:
+        DC32     SPI_ReceiveData
+        CFI EndBlock cfiBlock14
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_Z:
+        DCD      sfe(DATA_Z) - sfb(DATA_Z), sfb(DATA_Z), sfb(DATA_Z)
+
+        END
+//  151 
+//  152 /*********************************  END OF FILE  ******************************/
+// 
+// 592 bytes in segment CODE
+//  12 bytes in segment DATA_Z
+//  12 bytes in segment INITTAB
+// 
+// 552 bytes of CODE memory (+ 52 bytes shared)
+//  12 bytes of DATA memory
+//
+//Errors: none
+//Warnings: none

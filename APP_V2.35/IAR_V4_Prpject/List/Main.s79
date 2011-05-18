@@ -1,0 +1,1865 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32 EVALUATION   16/May/2011  12:36:12 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  D:\Design\DS203\PRG\APP_V2.35\source\Main.c         /
+//    Command line    =  D:\Design\DS203\PRG\APP_V2.35\source\Main.c -lA     /
+//                       D:\Design\DS203\PRG\APP_V2.35\IAR_V4_Prpject\List\  /
+//                       -o D:\Design\DS203\PRG\APP_V2.35\IAR_V4_Prpject\Obj /
+//                       \ -s9 --debug --cpu_mode thumb --endian little      /
+//                       --cpu cortex-M3 --stack_align 4 --fpu None          /
+//                       --dlib_config "C:\Program Files\IAR                 /
+//                       Systems\Embedded Workbench 4.0                      /
+//                       Evaluation\arm\LIB\dl7mptnnl8f.h" -I                /
+//                       D:\Design\DS203\PRG\APP_V2.35\IAR_V4_Prpject\..\..\ /
+//                       FWLib\inc\ -I D:\Design\DS203\PRG\APP_V2.35\IAR_V4_ /
+//                       Prpject\..\..\USBLib\inc\ -I                        /
+//                       D:\Design\DS203\PRG\APP_V2.35\IAR_V4_Prpject\..\inc /
+//                       lude\ -I "C:\Program Files\IAR Systems\Embedded     /
+//                       Workbench 4.0 Evaluation\arm\INC\"                  /
+//                       --inline_threshold=16                               /
+//    List file       =  D:\Design\DS203\PRG\APP_V2.35\IAR_V4_Prpject\List\M /
+//                       ain.s79                                             /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME Main
+
+        RTMODEL "StackAlign4", "USED"
+        RTMODEL "__cpu_mode", "__pcs__thumb"
+        RTMODEL "__data_model", "absolute"
+        RTMODEL "__endian", "little"
+        RTMODEL "__rt_version", "6"
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+        MULTWEAK ??App_init??rT
+        MULTWEAK ??Balance??rT
+        MULTWEAK ??Calibrat??rT
+        MULTWEAK ??Delayms??rT
+        MULTWEAK ??Display_Meter??rT
+        MULTWEAK ??Display_Title??rT
+        MULTWEAK ??Display_Value??rT
+        MULTWEAK ??Load_Attr??rT
+        MULTWEAK ??Load_Dat??rT
+        MULTWEAK ??Load_Parameter??rT
+        MULTWEAK ??NVIC_SetVectorTable??rT
+        MULTWEAK ??Print_Str??rT
+        MULTWEAK ??Save_Bmp??rT
+        MULTWEAK ??Save_Dat??rT
+        MULTWEAK ??Save_Parameter??rT
+        MULTWEAK ??Synchro??rT
+        MULTWEAK ??Update_Base??rT
+        MULTWEAK ??Update_Battery??rT
+        MULTWEAK ??Update_Mark??rT
+        MULTWEAK ??Update_Output??rT
+        MULTWEAK ??Update_Range??rT
+        MULTWEAK ??Update_Trig??rT
+        MULTWEAK ??Update_View_Area??rT
+        MULTWEAK ??__Display_Str??rT
+        MULTWEAK ??__Get??rT
+        MULTWEAK ??__Set??rT
+        MULTWEAK ??__USB_Init??rT
+        PUBLIC PROJECT_STR
+        PUBLIC main
+        FUNCTION main,0a03H
+        LOCFRAME CSTACK, 68, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA R13 HUGEDATA
+        CFI Resource R0:32, R1:32, R2:32, R3:32, R4:32, R5:32, R6:32, R7:32
+        CFI Resource R8:32, R9:32, R10:32, R11:32, R12:32, R13:32, R14:32
+        CFI VirtualResource ?RET:32
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 2
+        CFI DataAlign 4
+        CFI ReturnAddress ?RET CODE
+        CFI CFA R13+0
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI R8 SameValue
+        CFI R9 SameValue
+        CFI R10 SameValue
+        CFI R11 SameValue
+        CFI R12 Undefined
+        CFI R14 Undefined
+        CFI ?RET R14
+        CFI EndCommon cfiCommon0
+        
+App_init            SYMBOL "App_init"
+Balance             SYMBOL "Balance"
+Calibrat            SYMBOL "Calibrat"
+Delayms             SYMBOL "Delayms"
+Display_Meter       SYMBOL "Display_Meter"
+Display_Title       SYMBOL "Display_Title"
+Display_Value       SYMBOL "Display_Value"
+Load_Attr           SYMBOL "Load_Attr"
+Load_Dat            SYMBOL "Load_Dat"
+Load_Parameter      SYMBOL "Load_Parameter"
+NVIC_SetVectorTable SYMBOL "NVIC_SetVectorTable"
+Print_Str           SYMBOL "Print_Str"
+Save_Bmp            SYMBOL "Save_Bmp"
+Save_Dat            SYMBOL "Save_Dat"
+Save_Parameter      SYMBOL "Save_Parameter"
+Synchro             SYMBOL "Synchro"
+Update_Base         SYMBOL "Update_Base"
+Update_Battery      SYMBOL "Update_Battery"
+Update_Mark         SYMBOL "Update_Mark"
+Update_Output       SYMBOL "Update_Output"
+Update_Range        SYMBOL "Update_Range"
+Update_Trig         SYMBOL "Update_Trig"
+Update_View_Area    SYMBOL "Update_View_Area"
+__Display_Str       SYMBOL "__Display_Str"
+__Get               SYMBOL "__Get"
+__Set               SYMBOL "__Set"
+__USB_Init          SYMBOL "__USB_Init"
+??App_init??rT      SYMBOL "??rT", App_init
+??Balance??rT       SYMBOL "??rT", Balance
+??Calibrat??rT      SYMBOL "??rT", Calibrat
+??Delayms??rT       SYMBOL "??rT", Delayms
+??Display_Meter??rT SYMBOL "??rT", Display_Meter
+??Display_Title??rT SYMBOL "??rT", Display_Title
+??Display_Value??rT SYMBOL "??rT", Display_Value
+??Load_Attr??rT     SYMBOL "??rT", Load_Attr
+??Load_Dat??rT      SYMBOL "??rT", Load_Dat
+??Load_Parameter??rT SYMBOL "??rT", Load_Parameter
+??NVIC_SetVectorTable??rT SYMBOL "??rT", NVIC_SetVectorTable
+??Print_Str??rT     SYMBOL "??rT", Print_Str
+??Save_Bmp??rT      SYMBOL "??rT", Save_Bmp
+??Save_Dat??rT      SYMBOL "??rT", Save_Dat
+??Save_Parameter??rT SYMBOL "??rT", Save_Parameter
+??Synchro??rT       SYMBOL "??rT", Synchro
+??Update_Base??rT   SYMBOL "??rT", Update_Base
+??Update_Battery??rT SYMBOL "??rT", Update_Battery
+??Update_Mark??rT   SYMBOL "??rT", Update_Mark
+??Update_Output??rT SYMBOL "??rT", Update_Output
+??Update_Range??rT  SYMBOL "??rT", Update_Range
+??Update_Trig??rT   SYMBOL "??rT", Update_Trig
+??Update_View_Area??rT SYMBOL "??rT", Update_View_Area
+??__Display_Str??rT SYMBOL "??rT", __Display_Str
+??__Get??rT         SYMBOL "??rT", __Get
+??__Set??rT         SYMBOL "??rT", __Set
+??__USB_Init??rT    SYMBOL "??rT", __USB_Init
+
+        EXTERN App_init
+        FUNCTION App_init,0202H
+        EXTERN Balance
+        FUNCTION Balance,0202H
+        EXTERN Beep_mS
+        EXTERN Blink
+        EXTERN Calibrat
+        FUNCTION Calibrat,0202H
+        EXTERN Current
+        EXTERN Delay_Cnt
+        EXTERN Delayms
+        FUNCTION Delayms,0202H
+        EXTERN Detail
+        EXTERN Display_Meter
+        FUNCTION Display_Meter,0202H
+        EXTERN Display_Title
+        FUNCTION Display_Title,0202H
+        EXTERN Display_Value
+        FUNCTION Display_Value,0202H
+        EXTERN G_Attr
+        EXTERN Key_Buffer
+        EXTERN Load_Attr
+        FUNCTION Load_Attr,0202H
+        EXTERN Load_Dat
+        FUNCTION Load_Dat,0202H
+        EXTERN Load_Parameter
+        FUNCTION Load_Parameter,0202H
+        EXTERN Meter
+        EXTERN NVIC_SetVectorTable
+        FUNCTION NVIC_SetVectorTable,0202H
+        EXTERN PD_Cnt
+        EXTERN Print_Str
+        FUNCTION Print_Str,0202H
+        EXTERN Result_FPS
+        EXTERN Save_Bmp
+        FUNCTION Save_Bmp,0202H
+        EXTERN Save_Dat
+        FUNCTION Save_Dat,0202H
+        EXTERN Save_Parameter
+        FUNCTION Save_Parameter,0202H
+        EXTERN Sec_Cnt
+        EXTERN Synchro
+        FUNCTION Synchro,0202H
+        EXTERN T_Attr
+        EXTERN Title
+        EXTERN TrackBuff
+        EXTERN Update
+        EXTERN Update_Base
+        FUNCTION Update_Base,0202H
+        EXTERN Update_Battery
+        FUNCTION Update_Battery,0202H
+        EXTERN Update_Mark
+        FUNCTION Update_Mark,0202H
+        EXTERN Update_Output
+        FUNCTION Update_Output,0202H
+        EXTERN Update_Range
+        FUNCTION Update_Range,0202H
+        EXTERN Update_Trig
+        FUNCTION Update_Trig,0202H
+        EXTERN Update_View_Area
+        FUNCTION Update_View_Area,0202H
+        EXTERN V_Trigg
+        EXTERN X_Attr
+        EXTERN Y_Attr
+        EXTERN __Display_Str
+        FUNCTION __Display_Str,0202H
+        EXTERN __Get
+        FUNCTION __Get,0202H
+        EXTERN __Set
+        FUNCTION __Set,0202H
+        EXTERN __USB_Init
+        FUNCTION __USB_Init,0202H
+
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+`?<Constant "      FPGA configurat...">`:
+        DATA
+        DC8 "      FPGA configuration error       "
+        DC8 0, 0
+        DC8 "     DS203 Mini DSO APP Ver 2.35      "
+        DC8 0
+        DC8 "! Save the current setting !"
+        DC8 0, 0, 0
+        DC8 " >   "
+        DC8 0, 0
+        DC8 " ERR "
+        DC8 0, 0
+        DC8 " OK  "
+        DC8 0, 0
+// D:\Design\DS203\PRG\APP_V2.35\source\Main.c
+//    1 /********************* (C) COPYRIGHT 2010 e-Design Co.,Ltd. ********************
+//    2  File Name : main.c  
+//    3  Version   : DS203_APP Ver 2.3x                                  Author : bure
+//    4 *******************************************************************************/
+//    5 #include "Interrupt.h"
+//    6 #include "Function.h"
+//    7 #include "Calibrat.h"
+//    8 #include "Process.h"
+//    9 #include "Ident.h"
+//   10 #include "Draw.h"
+//   11 #include "BIOS.h"
+//   12 #include "Menu.h"
+//   13 #include "File.h"
+//   14 
+//   15 /*******************************************************************************
+//   16 版本修改说明
+//   17 APP V2.30: 从该版本起不再兼容PCB_V2.6以下版本的主板
+//   18            从该版本起不再兼容SYS_V1.31以下版本
+//   19            休眠定时修改为600秒(Main.c)
+//   20            修改及添加了新的SYS库函数(BIOS.s)
+//   21            修改了开机信息显示程序(Main.c)
+//   22 APP V2.31: 增加了开机识别FPGA加载配置完成与否判别(Main.c)
+//   23            增加了Licence权限管理功能的Demo程序范例(Ident.c,Main.c)
+//   24            修改了模拟通道校正功能的进入和退出相关操作(calibrat.c)
+//   25            增加了144MHz交替采样模式下的相关功能(Process.c)
+//   26 APP V2.32  从该版本起可并行使用IAR 4.42与5.0版本
+//   27            源程序没改动，增加了文件夹　IAR_V5_Prpject
+//   28 APP V2.33  修改了扫描时基<1uS时，显示刷新的BUG(Process.c)
+//   29            修改了在校准状态下，操作提示信息的BUG(Calibrat.c)
+//   30 APP V2.34  改为按通道单独校准(Calibrat.c & Main.c)
+//   31            修改了校准项选择的操作方式(Calibrat.c)
+//   32 APP V2.35  修改了校准过程中的BUG(Calibrat.c)
+//   33            修改了扫描时基<5uS时，暂停不了的BUG(Process.c)
+//   34            优化了显示数据处理程序(Process.c)
+//   35            增加了模拟通道自动零点平衡功能(Main.c,Process.c,Calibrat.c)
+//   36 *******************************************************************************/
+//   37 
+//   38 #define APP_VERSION       "     DS203 Mini DSO APP Ver 2.35      "
+//   39 
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+//   40 uc8 PROJECT_STR[20] = "Demo PROG. Ver 1.00";
+PROJECT_STR:
+        DATA
+        DC8 "Demo PROG. Ver 1.00"
+//   41 
+//   42 /*******************************************************************************
+//   43   main : Main routine.
+//   44 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function main
+        THUMB
+//   45 int main(void)
+//   46 { 
+main:
+        PUSH     {R4-R11,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R11 Frame(CFA, -8)
+        CFI R10 Frame(CFA, -12)
+        CFI R9 Frame(CFA, -16)
+        CFI R8 Frame(CFA, -20)
+        CFI R7 Frame(CFA, -24)
+        CFI R6 Frame(CFA, -28)
+        CFI R5 Frame(CFA, -32)
+        CFI R4 Frame(CFA, -36)
+        CFI CFA R13+36
+        SUB      SP,SP,#+28
+        CFI CFA R13+64
+//   47   u32 i, Licence;
+//   48   u16 Count_FPS, Second, Offset, Result;
+//   49   
+//   50   NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0x0C000);   // For Application #1
+        MOVS     R1,#+49152
+        MOVS     R0,#+134217728
+        _BLF     NVIC_SetVectorTable,??NVIC_SetVectorTable??rT
+//   51 //NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0x14000);   // For Application #2
+//   52 //NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0x1C000);   // For Application #3
+//   53 //NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0x24000);   // For Application #4
+//   54   
+//   55 //Note: 用 IAR_V4.x 编译时，变更 App#n 还要同时修改 lnkarm.xcl 文件中的对应项 
+//   56 //      用 IAR_V5.x 编译时，变更 App#n 还要同时修改 xxxxxx.icf 文件中的对应项 
+//   57   
+//   58   __USB_Init();
+        _BLF     __USB_Init,??__USB_Init??rT
+        MOVS     R0,#+11
+//   59   
+//   60   if(__Get(FPGA_OK)== 0){
+        _BLF     __Get,??__Get??rT
+        CBNZ     R0,??main_0
+//   61     __Display_Str(6*8, 30, YEL, PRN, "      FPGA configuration error       ");
+        LDR.N    R0,??main_1      ;; `?<Constant "      FPGA configurat...">`
+        LDR.N    R2,??main_1+0x4  ;; 0x7ff
+        MOVS     R3,#+0
+        PUSH     {R0}
+        CFI CFA R13+68
+        MOVS     R1,#+30
+        MOVS     R0,#+48
+        _BLF     __Display_Str,??__Display_Str??rT
+        ADD      SP,SP,#+4
+        CFI CFA R13+64
+//   62     while (1){};
+??main_2:
+        B.N      ??main_2
+//   63   }
+//   64   
+//   65   __Display_Str(48, 50, WHT, PRN, APP_VERSION);
+??main_0:
+        LDR.N    R0,??main_1+0x8  ;; `?<Constant "      FPGA configurat...">` + 40
+        LDR.N    R2,??main_1+0xC  ;; 0xffff
+        MOVS     R3,#+0
+        PUSH     {R0}
+        CFI CFA R13+68
+        MOVS     R1,#+50
+        MOVS     R0,#+48
+        _BLF     __Display_Str,??__Display_Str??rT
+//   66   Y_Attr = (Y_attr*)__Get(VERTICAL);     
+        MOVS     R0,#+7
+        _BLF     __Get,??__Get??rT
+        LDR.N    R1,??main_1+0x10  ;; Y_Attr
+//   67   X_Attr = (X_attr*)__Get(HORIZONTAL);
+//   68   G_Attr = (G_attr*)__Get(GLOBAL);
+//   69   T_Attr = (T_attr*)__Get(TRIGGER);
+//   70   Load_Attr();
+//   71   Load_Parameter();            // 读取预设开机参数，赋值Y_Attr等
+//   72   
+//   73 /*--------------------------- LICENCE_CTRL_DEMO --------------------------------
+//   74   Offset = Seek_Proj(PROJECT_ID);
+//   75   if(Offset >= 2048){                          // Project ID not found
+//   76     Offset = Seek_Blank();
+//   77     if(Offset == 2048){  
+//   78       __Display_Str(6*8, 50, GRN, PRN,   "         Licence record full         ");
+//   79       while (1){};
+//   80     } else {
+//   81       Result  = Add_Proj(PROJECT_ID, Offset);  // Set project ID
+//   82       Result &= Add_Cnt(DEMOCNT, Offset);      // Set max demo run counter      
+//   83       Result &= Add_Str((u32)PROJECT_STR, Offset); 
+//   84       if(Result != 1){                                
+//   85         __Display_Str(6*8,50,GRN, PRN,   "       Project ID writen error       ");
+//   86         Delayms(500);
+//   87       }
+//   88     }
+//   89   }
+//   90   Licence = Get_Lic(Offset);                   // Get project licence record
+//   91   if(__Ident(DEVELOPER_ID, PROJECT_ID, Licence)!= 1){
+//   92     __Display_Str(6*8, 50, GRN, PRN,   "Please input project licence:00000000");
+//   93     Licence = Input_Lic((6+29)*8, 50);         // Input Licence
+//   94     if(__Ident(DEVELOPER_ID, PROJECT_ID, Licence)!=1)  Result = 0;
+//   95     else{                                      // Licence correct
+//   96       Result  = Add_Lic(Licence, Offset);            
+//   97       if(Result == 1)                                
+//   98         __Display_Str(6*8,50,GRN, PRN, "          Licence writen ok          ");
+//   99       else  
+//  100         __Display_Str(6*8,50,GRN, PRN, "         Licence writen error        ");
+//  101       Delayms(500);
+//  102     }
+//  103     if(Result != 1){
+//  104       __Display_Str(6*8, 30, GRN, PRN, "      Push any key to next step      ");
+//  105       while(Key_Buffer == 0){};
+//  106     }
+//  107   }
+//  108 //  --------------------------------------------------------------------------*/
+//  109   
+//  110   Beep_mS = 500;
+//  111   Balance();
+//  112 //  Delayms(2000); 
+//  113   App_init();
+//  114   Key_Buffer=0;
+        MOVS     R4,#+0
+        STR      R0,[R1, #+0]
+        MOVS     R0,#+8
+        _BLF     __Get,??__Get??rT
+        LDR.N    R1,??main_1+0x14  ;; X_Attr
+        STR      R0,[R1, #+0]
+        MOVS     R0,#+9
+        _BLF     __Get,??__Get??rT
+        LDR.N    R1,??main_1+0x18  ;; G_Attr
+        STR      R0,[R1, #+0]
+        MOVS     R0,#+10
+        _BLF     __Get,??__Get??rT
+        LDR.N    R1,??main_1+0x1C  ;; T_Attr
+        STR      R0,[R1, #+0]
+        _BLF     Load_Attr,??Load_Attr??rT
+        _BLF     Load_Parameter,??Load_Parameter??rT
+        LDR.N    R0,??main_1+0x20  ;; Beep_mS
+        MOVS     R1,#+500
+        STRH     R1,[R0, #+0]
+        _BLF     Balance,??Balance??rT
+        _BLF     App_init,??App_init??rT
+        LDR.N    R0,??main_1+0x24  ;; Key_Buffer
+        MOV      R8,R0
+        MOVS     R0,#+0
+        STRB     R0,[R8, #+0]
+        ADD      SP,SP,#+4
+        CFI CFA R13+64
+        B.N      ??main_3
+//  115   
+//  116 //--------------------------------- 主循环 ------------------------------------- 
+//  117   while (1){
+//  118     if(PD_Cnt == 0){
+//  119       __Set(BACKLIGHT, 0);     // 关闭背光
+//  120       __Set(STANDBY, EN);      // 进入省电状态  
+//  121     } else {
+//  122       Synchro();                              // 同步显示各个轨迹波形数据
+//  123       Count_FPS++;
+//  124       if(Second != Sec_Cnt) {
+//  125         Second = Sec_Cnt;
+//  126         Result_FPS = Count_FPS;
+//  127         Count_FPS = 0;
+//  128         Update_Battery();
+//  129         for(i=0; i<9; ++i)  Display_Value(i); // 每秒刷新测量值        
+//  130       }
+//  131       Display_Meter();
+//  132       Display_Title();
+//  133       if(Update){                             // 处理按键后需要刷新的项目
+//  134         Update_Range();
+//  135         Update_Base();
+//  136         Update_Output();
+//  137         Update_Trig();
+//  138         Update_Mark();
+//  139         __Set(BACKLIGHT, 10*(Title[BK_LIGHT][CLASS].Value+1));
+//  140         if(Current != FILE) Update_View_Area();
+//  141         _D_V_Source.Flag |= UPDAT;            // Updat delta V 
+//  142         _Delta_V.Flag    |= UPDAT; 
+//  143         _Delta_T.Flag    |= UPDAT;            // Updat delta T 
+//  144         Update = 0;                           // Update finish
+//  145       } 
+//  146       Blink = 0;
+//  147     }
+//  148 //------------------------------ 按键处理循环 ---------------------------------- 
+//  149     if(Key_Buffer) { 
+//  150       if(PD_Cnt == 0)  App_init();          // 退出省电状态
+//  151       PD_Cnt = 600;                         // 600秒
+//  152       if(Key_Buffer == KEY_P){
+//  153         _State.Value = 1-_State.Value;                 // "RUN/HOLD" 状态互换
+//  154         _State.Flag |= UPDAT;                          // 置相应的更新标志
+//  155         if(_Mode == SIGN){
+//  156           for(i=0; i<4*X_SIZE; ++i)  TrackBuff[i] = 0; // 清除旧的显示波形
+//  157           __Set(FIFO_CLR, W_PTR);                      // FIFO写指针复位
+//  158         }
+//  159       }
+//  160       if(Key_Buffer== KEY2){
+//  161         if((Current == TRACK1)||(Current == TRACK2)){
+//  162           Delay_Cnt = 2000;
+//  163           while (Delay_Cnt > 0){
+//  164             if((__Get(KEY_STATUS)& KEY2_STATUS)!=0) break; 
+//  165           }
+//  166           if(Delay_Cnt == 0)  Calibrat(Current);             // 模拟通道校准
+//  167         }
+//  168       }
+//  169       if(Key_Buffer== KEY3){
+//  170         Save_Parameter(0);                             // 保存当前操作设置参数    
+//  171         if(Current != FILE){
+//  172           Print_Str(91, 0, 0x0405, PRN, "! Save the current setting !");
+//  173           Delayms(500);
+//  174         } 
+//  175       }
+//  176       if(Key_Buffer== KEY4){
+//  177         if(Current == FILE){
+//  178           Print_Str(230, 0, (SCRN<<8)+ TEXT1, PRN, " >   ");
+//  179           if(_Curr[0].Value == SAVE){
+//  180             if(_Curr[2].Value == BMP)       i = Save_Bmp(_Curr[1].Value);
+//  181             else if(_Curr[2].Value == DAT)  i = Save_Dat(_Curr[1].Value);
+//  182 //            else if(_Curr[2].Value == CSV)  i = Save_CSV(_Curr[1].Value);
+//  183           } else if(_Curr[0].Value == LOAD) i = Load_Dat(_Curr[1].Value);
+//  184           if(i != 0) Print_Str(230, 0, (SCRN<<8)+ TEXT1, PRN, " ERR "); 
+//  185           else       Print_Str(230, 0, (SCRN<<8)+ TEXT1, PRN, " OK  ");
+//  186           Delayms(500);
+//  187           _Curr[2].Flag |= UPDAT;
+//  188         }  
+//  189       }             
+//  190       if(Key_Buffer == K_ITEM_DEC){ //------------------ "Item-" Key
+//  191         if(Current < METER_0){
+//  192           _Curr[_Det].Flag |= UPDAT;
+//  193           if(Current == TRACK1)  Current = VOLUME;
+//  194           else                   Current --;
+//  195           if(Current == RUNNING) Current --;               // Jump over Item 4
+//  196           if(_Det >2)  _Det =0;
+//  197           _Curr[_Det].Flag |= BLINK;
+//  198           _Curr[0].Flag |= UPDAT;
+//  199           _Curr[1].Flag |= UPDAT;
+//  200           _Curr[2].Flag |= UPDAT;
+//  201           _Curr[3].Flag |= UPDAT;
+//  202         } else {
+//  203           Meter[Current-METER_0].Flag |= UPDAT; 
+//  204           if(Current == METER_0) Current = METER_8;
+//  205           else                   Current --;
+//  206           Meter[Current-METER_0].Flag |= BLINK;
+//  207         }
+//  208       }
+//  209       if(Key_Buffer == K_ITEM_S){ //------------------ "Item_Select"  Key
+//  210         if(Current < METER_0)  Current = METER_0;
+//  211         else                   Current = TRACK1;
+//  212       }
+//  213       if(Key_Buffer == K_ITEM_INC){ //------------------ "Item+" Key
+//  214         if(Current < METER_0){
+//  215           _Curr[_Det].Flag |= UPDAT;
+//  216           if(Current == VOLUME)  Current = TRACK1;
+//  217           else                   Current ++;
+//  218           if(Current == RUNNING) Current ++;              // Jump over RUNNING
+//  219           if(_Det >2)    _Det =0;
+//  220           _Curr[_Det].Flag |= BLINK;
+//  221           _Curr[0].Flag |= UPDAT;
+//  222           _Curr[1].Flag |= UPDAT;
+//  223           _Curr[2].Flag |= UPDAT;
+//  224           _Curr[3].Flag |= UPDAT;
+//  225         } else {
+//  226           Meter[Current-METER_0].Flag |= UPDAT;  
+//  227           if(Current == METER_8) Current  = METER_0;
+//  228           else                   Current ++;
+//  229           Meter[Current-METER_0].Flag |= BLINK;
+//  230         }
+//  231       }
+//  232       if(Key_Buffer == K_INDEX_DEC){ //--------------------- "Index-" Key 
+//  233         if(Current < METER_0){
+//  234           if((Current == TRIGG)&&(Detail[Current]==2)){         // 触发电平调节
+//  235             if(V_Trigg[_Trigg[SOURCE].Value].Value > MIN_Y+4) 
+//  236               V_Trigg[_Trigg[SOURCE].Value].Value--;
+//  237           } else if((Current == BK_LIGHT)||(Current == VOLUME)){// 背光或音量调节
+//  238             if(_Curr[1].Value > 0)   _Curr[1].Value--;
+//  239           } else if((Current == T_BASE)&&(_Det == XPOSI)){      // X_POSI调节
+//  240             if(_Curr[_Det].Value > 30) _Curr[_Det].Value -= 30; 
+//  241             else if(_Curr[_Det].Value > 0) _Curr[_Det].Value--;
+//  242             _X_View.Flag |= UPDAT;                              // 刷新X_View
+//  243           } else {                                              // 当前项为其他
+//  244             if(_Curr[_Det].Value > 0) _Curr[_Det].Value--; 
+//  245             else if(_Curr[_Det].MARK & CIRC) _Curr[_Det].Value =_Curr[_Det].Limit;
+//  246           }
+//  247           if((Current == T_BASE)&&(_Det == MODE)){     // T_BASE MODE 选择
+//  248             Title[RUNNING][STATE].Value = RUN;         // STATE = RUNNING 
+//  249             Title[RUNNING][STATE].Flag |= UPDAT;       // 刷新 RUNNING STATE
+//  250           }
+//  251           if(((Current == OUTPUT)&&(Title[OUTPUT][SOURCE].Value != DIGI))&&
+//  252             (Title[OUTPUT][FRQN].Value > 10)) 
+//  253             Title[OUTPUT][FRQN].Value = 10;            // 模拟信号频率上限为20KHz
+//  254           if((Current == FILE)&&(_Curr[0].Value == 1)) 
+//  255             _Curr[2].Value = 1;                        // 只能Load Dat文件
+//  256           _Curr[0].Flag |= UPDAT;
+//  257           _Curr[1].Flag |= UPDAT;
+//  258           _Curr[2].Flag |= UPDAT;
+//  259           _Curr[3].Flag |= UPDAT;
+//  260         } else {
+//  261           Meter[Current-METER_0].Flag |= UPDAT;
+//  262           if(Meter[Current-METER_0].Item  > VBT) 
+//  263             Meter[Current-METER_0].Item -= 1;          // 改变测量项目 
+//  264           else                     
+//  265             Meter[Current-METER_0].Item  = MIN;
+//  266           if(Meter[Current-METER_0].Item == FPS) 
+//  267             Meter[Current-METER_0].Track = 4;
+//  268           if(Meter[Current-METER_0].Item == MIN) 
+//  269             Meter[Current-METER_0].Track = 0;
+//  270         }
+//  271       }
+//  272       if(Key_Buffer == K_INDEX_S){ //----------------- "Index_Select" Key
+//  273         if(Current < METER_0){                         // 改变Detail
+//  274           _Curr[_Det].Flag |= UPDAT;
+//  275           if(_Det < 3)    _Det += 1;
+//  276           else            _Det  = 0;
+//  277           if(_Curr[_Det].MARK & NOT)                        _Det  = 0; 
+//  278           if(_Curr[_Det].MARK & NUM2)                       _Det  = 0; 
+//  279           if((_Curr[_Det].MARK & NUM3)&&(Current != FILE))  _Det  = 0;  
+//  280           _Curr[_Det].Flag |= BLINK;
+//  281         } else {                                       // 改变测量对象
+//  282           Meter[Current-METER_0].Flag |= UPDAT;
+//  283           if(Meter[Current-METER_0].Track <  TRACK4) 
+//  284             Meter[Current-METER_0].Track += 1;
+//  285           if(Meter[Current-METER_0].Track == TRACK4) 
+//  286             Meter[Current-METER_0].Track  = 0;
+//  287         }
+//  288       }
+//  289       if(Key_Buffer == K_INDEX_INC){ //--------------------- "Index+" Key 
+//  290         if(Current < METER_0){
+//  291           if((Current == TRIGG)&&(Detail[Current]==2)){         // 触发电平调节
+//  292             if(V_Trigg[_Trigg[SOURCE].Value].Value < MAX_Y-4) 
+//  293               V_Trigg[_Trigg[SOURCE].Value].Value++;
+//  294           } else if((Current == BK_LIGHT)||(Current == VOLUME)){// 背光或音量调节
+//  295             if(_Curr[1].Value < _Curr[1].Limit)   _Curr[1].Value++;
+//  296           } else if((Current == T_BASE)&&(_Det == XPOSI)){      // X_POSI调节
+//  297             if(_Curr[_Det].Value <(_Curr[_Det].Limit-30))  _Curr[_Det].Value += 30; 
+//  298             else if(_Curr[_Det].Value < _Curr[_Det].Limit) _Curr[_Det].Value ++;
+//  299             _X_View.Flag |= UPDAT;                      
+//  300           } else {                                              // 当前项为其他
+//  301             if(_Curr[_Det].Value < _Curr[_Det].Limit)  _Curr[_Det].Value++;
+//  302             else if(_Curr[_Det].MARK & CIRC)   _Curr[_Det].Value  = 0;
+//  303           }
+//  304           if((Current == T_BASE)&&(_Det == MODE)){     // T_BASE MODE 选择
+//  305             Title[RUNNING][STATE].Value = RUN;         // STATE = RUNNING 
+//  306             Title[RUNNING][STATE].Flag |= UPDAT;       // 刷新 RUNNING STATE
+//  307           }
+//  308           if((Current == OUTPUT)&&(Title[OUTPUT][SOURCE].Value != DIGI)){
+//  309             if(Title[OUTPUT][FRQN].Value > 10) 
+//  310               Title[OUTPUT][FRQN].Value = 10;          // 模拟信号频率上限为20KHz
+//  311           }
+//  312           if((Current == FILE)&&(_Curr[0].Value == 1))  
+//  313             _Curr[2].Value = 1;                        // 只能Load Dat文件
+//  314           _Curr[0].Flag |= UPDAT;
+//  315           _Curr[1].Flag |= UPDAT;
+//  316           _Curr[2].Flag |= UPDAT;
+//  317           _Curr[3].Flag |= UPDAT;
+//  318         } else {
+//  319           Meter[Current-METER_0].Flag |= UPDAT;
+//  320           if(Meter[Current-METER_0].Item < MIN)  
+//  321             Meter[Current-METER_0].Item += 1;          // 改变测量项目
+//  322           else                     
+//  323             Meter[Current-METER_0].Item  = VBT;
+??main_4:
+        STRB     R4,[R2, #+1]
+//  324           if(Meter[Current-METER_0].Item == VBT) 
+//  325             Meter[Current-METER_0].Track = 4;
+??main_5:
+        MOVS     R0,#+4
+        STRB     R0,[R2, #+0]
+//  326           if(Meter[Current-METER_0].Item == VPP) 
+??main_6:
+        LDRB     R0,[R2, #+1]
+        CMP      R0,#+2
+        IT      EQ 
+//  327             Meter[Current-METER_0].Track = 0;
+        STRBEQ   R4,[R2, #+0]
+//  328         }
+//  329       }
+//  330       Key_Buffer=0;
+??main_7:
+        MOVS     R0,#+0
+        STRB     R0,[R8, #+0]
+//  331       Update = 1;
+        LDR.N    R0,??main_1+0x28  ;; Update
+        MOVS     R1,#+1
+        STRB     R1,[R0, #+0]
+??main_3:
+        LDR.N    R5,??main_1+0x2C  ;; Title
+        LDR.N    R7,??main_1+0x30  ;; Current
+        ADDW     R0,R5,#+698
+        STR      R0,[SP, #+8]
+        LDR.N    R0,??main_1+0x34  ;; PD_Cnt
+        LDRH     R0,[R0, #+0]
+        CBNZ     R0,??main_8
+        MOVS     R1,#+0
+        MOVS     R0,#+2
+        _BLF     __Set,??__Set??rT
+        MOVS     R1,#+1
+        MOVS     R0,#+20
+        _BLF     __Set,??__Set??rT
+        B.N      ??main_9
+??main_8:
+        _BLF     Synchro,??Synchro??rT
+        LDR      R0,[SP, #+16]
+        ADDS     R0,R0,#+1
+        UXTH     R0,R0
+        STR      R0,[SP, #+16]
+        LDR.N    R0,??main_1+0x38  ;; Sec_Cnt
+        LDR      R1,[SP, #+24]
+        LDRH     R2,[R0, #+0]
+        UXTH     R1,R1
+        CMP      R1,R2
+        BEQ.N    ??main_10
+        LDRH     R0,[R0, #+0]
+        MOVS     R6,#+0
+        STR      R0,[SP, #+24]
+        LDR.N    R0,??main_1+0x3C  ;; Result_FPS
+        LDR      R1,[SP, #+16]
+        STRH     R1,[R0, #+0]
+        STR      R4,[SP, #+16]
+        _BLF     Update_Battery,??Update_Battery??rT
+??main_11:
+        UXTB     R0,R6
+        _BLF     Display_Value,??Display_Value??rT
+        ADDS     R6,R6,#+1
+        CMP      R6,#+9
+        BCC.N    ??main_11
+??main_10:
+        _BLF     Display_Meter,??Display_Meter??rT
+        _BLF     Display_Title,??Display_Title??rT
+        LDR.N    R0,??main_1+0x28  ;; Update
+        LDRB     R0,[R0, #+0]
+        CBZ      R0,??main_12
+        ADDW     R9,R5,#+878
+        _BLF     Update_Range,??Update_Range??rT
+        _BLF     Update_Base,??Update_Base??rT
+        _BLF     Update_Output,??Update_Output??rT
+        _BLF     Update_Trig,??Update_Trig??rT
+        _BLF     Update_Mark,??Update_Mark??rT
+        LDRSH    R1,[R9, #+38]
+        MOVS     R0,#+10
+        ADDS     R1,R1,#+1
+        MULS     R1,R0,R1
+        MOVS     R0,#+2
+        _BLF     __Set,??__Set??rT
+        LDRB     R0,[R7, #+0]
+        CMP      R0,#+9
+        IT      NE 
+        _BLFNE   Update_View_Area,??Update_View_Area??rT
+        LDR      R0,[SP, #+8]
+        LDRB     R1,[R0, #+0]
+        ORRS     R1,R1,#0x2
+        STRB     R1,[R0, #+0]
+        LDR      R0,[SP, #+8]
+        LDRB     R1,[R0, #+20]
+        ORRS     R1,R1,#0x2
+        STRB     R1,[R0, #+20]
+        LDRB     R0,[R9, #+0]
+        ORRS     R0,R0,#0x2
+        STRB     R0,[R9, #+0]
+        LDR.N    R0,??main_1+0x28  ;; Update
+        STRB     R4,[R0, #+0]
+??main_12:
+        LDR.N    R0,??main_1+0x40  ;; Blink
+        STRB     R4,[R0, #+0]
+??main_9:
+        LDRB     R0,[R8, #+0]
+        CMP      R0,#+0
+        BEQ.N    ??main_3
+        LDR.N    R0,??main_1+0x34  ;; PD_Cnt
+        LDRH     R0,[R0, #+0]
+        CBNZ     R0,??main_13
+        _BLF     App_init,??App_init??rT
+??main_13:
+        LDR.N    R0,??main_1+0x34  ;; PD_Cnt
+        MOVS     R1,#+600
+        ADDW     R9,R5,#+336
+        STRH     R1,[R0, #+0]
+        LDRB     R0,[R8, #+0]
+        CMP      R0,#+1
+        BNE.N    ??main_14
+        LDRSH    R1,[R9, #+0]
+        SUBS     R0,R0,R1
+        STRH     R0,[R9, #+0]
+        LDRB     R0,[R9, #+2]
+        ORRS     R0,R0,#0x2
+        STRB     R0,[R9, #+2]
+        LDRSH    R0,[R9, #+80]
+        CMP      R0,#+2
+        BNE.N    ??main_14
+        LDR.N    R0,??main_1+0x44  ;; TrackBuff
+        MOVS     R6,#+0
+??main_15:
+        STRB     R4,[R0, R6]
+        ADDS     R6,R6,#+1
+        CMP      R6,#+1200
+        BCC.N    ??main_15
+        MOVS     R1,#+1
+        MOVS     R0,#+6
+        _BLF     __Set,??__Set??rT
+??main_14:
+        LDRB     R0,[R8, #+0]
+        CMP      R0,#+2
+        BNE.N    ??main_16
+        LDRB     R0,[R7, #+0]
+        CBZ      R0,??main_17
+        CMP      R0,#+1
+        BNE.N    ??main_16
+??main_17:
+        LDR.N    R0,??main_1+0x48  ;; Delay_Cnt
+        MOV      R10,R0
+        MOVS     R0,#+2000
+        STRH     R0,[R10, #+0]
+??main_18:
+        LDRH     R0,[R10, #+0]
+        CBZ      R0,??main_19
+        MOVS     R0,#+4
+        _BLF     __Get,??__Get??rT
+        LSLS     R0,R0,#+18
+        BPL.N    ??main_18
+??main_19:
+        LDRH     R0,[R10, #+0]
+        CBNZ     R0,??main_16
+        LDRB     R0,[R7, #+0]
+        _BLF     Calibrat,??Calibrat??rT
+??main_16:
+        LDRB     R0,[R8, #+0]
+        CMP      R0,#+3
+        BNE.N    ??main_20
+        MOVS     R0,#+0
+        _BLF     Save_Parameter,??Save_Parameter??rT
+        LDRB     R0,[R7, #+0]
+        CMP      R0,#+9
+        BEQ.N    ??main_20
+        LDR.N    R0,??main_1+0x4C  ;; `?<Constant "      FPGA configurat...">` + 80
+        LDR.N    R2,??main_1+0x50  ;; 0x405
+        MOVS     R3,#+0
+        PUSH     {R0}
+        CFI CFA R13+68
+        MOV      R1,R3
+        MOVS     R0,#+91
+        _BLF     Print_Str,??Print_Str??rT
+        MOVS     R0,#+500
+        _BLF     Delayms,??Delayms??rT
+        ADD      SP,SP,#+4
+        CFI CFA R13+64
+??main_20:
+        LDRB     R0,[R8, #+0]
+        CMP      R0,#+4
+        BNE.N    ??main_21
+        LDRB     R0,[R7, #+0]
+        CMP      R0,#+9
+        BNE.N    ??main_21
+        LDR.N    R0,??main_1+0x54  ;; 0x50a
+        MOVS     R3,#+0
+        MOV      R1,R3
+        MOV      R10,R0
+        LDR.N    R0,??main_1+0x58  ;; `?<Constant "      FPGA configurat...">` + 112
+        MOV      R2,R10
+        PUSH     {R0}
+        CFI CFA R13+68
+        MOVS     R0,#+230
+        _BLF     Print_Str,??Print_Str??rT
+        LDRB     R0,[R7, #+0]
+        MOVS     R1,#+80
+        MLA      R0,R0,R1,R5
+        LDRSH    R1,[R0, #+16]
+        ADD      SP,SP,#+4
+        CFI CFA R13+64
+        CBNZ     R1,??main_22
+        LDRSH    R1,[R0, #+56]
+        CBNZ     R1,??main_23
+        LDRSH    R0,[R0, #+36]
+        UXTB     R0,R0
+        _BLF     Save_Bmp,??Save_Bmp??rT
+        B.N      ??main_24
+??main_23:
+        CMP      R1,#+1
+        BNE.N    ??main_25
+        LDRSH    R0,[R0, #+36]
+        UXTB     R0,R0
+        _BLF     Save_Dat,??Save_Dat??rT
+        B.N      ??main_24
+??main_22:
+        CMP      R1,#+1
+        BNE.N    ??main_25
+        LDRSH    R0,[R0, #+36]
+        UXTB     R0,R0
+        _BLF     Load_Dat,??Load_Dat??rT
+??main_24:
+        MOVS     R6,R0
+??main_25:
+        CBZ      R6,??main_26
+        LDR.N    R0,??main_1+0x5C  ;; `?<Constant "      FPGA configurat...">` + 120
+        B.N      ??main_27
+??main_26:
+        LDR.N    R0,??main_1+0x60  ;; `?<Constant "      FPGA configurat...">` + 128
+??main_27:
+        MOVS     R3,#+0
+        MOV      R2,R10
+        PUSH     {R0}
+        CFI CFA R13+68
+        MOV      R1,R3
+        MOVS     R0,#+230
+        _BLF     Print_Str,??Print_Str??rT
+        ADD      SP,SP,#+4
+        CFI CFA R13+64
+        MOVS     R0,#+500
+        _BLF     Delayms,??Delayms??rT
+        LDRB     R0,[R7, #+0]
+        MOVS     R1,#+80
+        MLA      R0,R0,R1,R5
+        MOVS     R1,R0
+        ADDS     R1,R1,#+58
+        LDRB     R1,[R1, #+0]
+        ORRS     R1,R1,#0x2
+        STRB     R1,[R0, #+58]
+??main_21:
+        LDR.N    R0,??main_1+0x64  ;; Meter
+        MOV      R11,R0
+        LDRB     R0,[R8, #+0]
+        CMP      R0,#+9
+        BNE.W    ??main_28
+        LDRB     R1,[R7, #+0]
+        ADDW     R10,R1,#+255
+        CMP      R1,#+13
+        BCS.N    ??main_29
+        LDR.N    R0,??main_1+0x68  ;; Detail
+        MOVS     R3,#+80
+        MOV      R12,R3
+        LDRB     R0,[R0, R1]
+        MOVS     R3,#+20
+        MLA      R0,R0,R3,R5
+        MLA      R0,R1,R12,R0
+        LDRB     R2,[R0, #+18]
+        ORRS     R2,R2,#0x2
+        STRB     R2,[R0, #+18]
+        CBNZ     R1,??main_30
+        MOVS     R0,#+12
+        B.N      ??main_31
+??main_30:
+        MOV      R0,R10
+        UXTB     R0,R0
+        CMP      R0,#+4
+        IT      EQ 
+        MOVEQ    R0,#+3
+??main_31:
+        LDR.N    R1,??main_1+0x68  ;; Detail
+        STRB     R0,[R7, #+0]
+        ADDS     R1,R1,R0
+        LDRB     R2,[R1, #+0]
+        CMP      R2,#+3
+        IT      CS 
+        STRBCS   R4,[R1, #+0]
+        LDRB     R1,[R1, #+0]
+        MOVS     R2,#+80
+        MULS     R0,R2,R0
+        MLA      R1,R1,R3,R5
+        ADDS     R1,R1,R0
+        LDRB     R2,[R1, #+18]
+        ADDS     R0,R5,R0
+        ORRS     R2,R2,#0x1
+        STRB     R2,[R1, #+18]
+        MOVS     R1,R0
+        LDRB     R2,[R1, #+18]!
+        ORRS     R2,R2,#0x2
+        STRB     R2,[R1, #+0]
+        LDRB     R2,[R1, #+20]
+        ORRS     R2,R2,#0x2
+        STRB     R2,[R1, #+20]
+        LDRB     R1,[R0, #+58]!
+        ORRS     R1,R1,#0x2
+        STRB     R1,[R0, #+0]
+        LDRB     R1,[R0, #+20]
+        ORRS     R1,R1,#0x2
+        STRB     R1,[R0, #+20]
+        B.N      ??main_28
+        DATA
+??main_1:
+        DC32     `?<Constant "      FPGA configurat...">`
+        DC32     0x7ff
+        DC32     `?<Constant "      FPGA configurat...">` + 40
+        DC32     0xffff
+        DC32     Y_Attr
+        DC32     X_Attr
+        DC32     G_Attr
+        DC32     T_Attr
+        DC32     Beep_mS
+        DC32     Key_Buffer
+        DC32     Update
+        DC32     Title
+        DC32     Current
+        DC32     PD_Cnt
+        DC32     Sec_Cnt
+        DC32     Result_FPS
+        DC32     Blink
+        DC32     TrackBuff
+        DC32     Delay_Cnt
+        DC32     `?<Constant "      FPGA configurat...">` + 80
+        DC32     0x405
+        DC32     0x50a
+        DC32     `?<Constant "      FPGA configurat...">` + 112
+        DC32     `?<Constant "      FPGA configurat...">` + 120
+        DC32     `?<Constant "      FPGA configurat...">` + 128
+        DC32     Meter
+        DC32     Detail
+        THUMB
+??main_29:
+        MOVS     R0,#+12
+        MLA      R0,R1,R0,R11
+        LDRB     R2,[R0, #-145]!
+        ORRS     R2,R2,#0x2
+        STRB     R2,[R0, #+0]
+        CMP      R1,#+13
+        ITE     NE 
+        MOVNE    R0,R10
+        MOVEQ    R0,#+21
+        STRB     R0,[R7, #+0]
+        UXTB     R0,R0
+        MOVS     R1,#+12
+        MLA      R0,R0,R1,R11
+        LDRB     R1,[R0, #-145]!
+        ORRS     R1,R1,#0x1
+        STRB     R1,[R0, #+0]
+??main_28:
+        LDRB     R1,[R8, #+0]
+        MOVS     R0,#+13
+        CMP      R1,#+10
+        BNE.N    ??main_32
+        LDRB     R1,[R7, #+0]
+        CMP      R1,#+13
+        ITE     CS 
+        STRBCS   R4,[R7, #+0]
+        STRBCC   R0,[R7, #+0]
+??main_32:
+        LDRB     R1,[R8, #+0]
+        CMP      R1,#+8
+        BNE.N    ??main_33
+        LDRB     R1,[R7, #+0]
+        ADDW     R10,R1,#+1
+        MOVS     R2,R1
+        CMP      R1,#+13
+        BCS.N    ??main_34
+        LDR.N    R0,??main_35     ;; Detail
+        MOVS     R3,#+80
+        MOV      R12,R3
+        LDRB     R0,[R0, R2]
+        MOVS     R3,#+20
+        MLA      R0,R0,R3,R5
+        MLA      R0,R2,R12,R0
+        LDRB     R2,[R0, #+18]
+        ORRS     R2,R2,#0x2
+        STRB     R2,[R0, #+18]
+        CMP      R1,#+12
+        BNE.N    ??main_36
+        MOVS     R0,#+0
+        B.N      ??main_37
+??main_36:
+        MOV      R0,R10
+        UXTB     R0,R0
+        CMP      R0,#+4
+        IT      EQ 
+        MOVEQ    R0,#+5
+??main_37:
+        LDR.N    R1,??main_35     ;; Detail
+        STRB     R0,[R7, #+0]
+        ADDS     R1,R1,R0
+        LDRB     R2,[R1, #+0]
+        CMP      R2,#+3
+        IT      CS 
+        STRBCS   R4,[R1, #+0]
+        LDRB     R1,[R1, #+0]
+        MOVS     R2,#+80
+        MULS     R0,R2,R0
+        MLA      R1,R1,R3,R5
+        ADDS     R1,R1,R0
+        LDRB     R2,[R1, #+18]
+        ADDS     R0,R5,R0
+        ORRS     R2,R2,#0x1
+        STRB     R2,[R1, #+18]
+        MOVS     R1,R0
+        LDRB     R2,[R1, #+18]!
+        ORRS     R2,R2,#0x2
+        STRB     R2,[R1, #+0]
+        LDRB     R2,[R1, #+20]
+        ORRS     R2,R2,#0x2
+        STRB     R2,[R1, #+20]
+        LDRB     R1,[R0, #+58]!
+        ORRS     R1,R1,#0x2
+        STRB     R1,[R0, #+0]
+        LDRB     R1,[R0, #+20]
+        ORRS     R1,R1,#0x2
+        STRB     R1,[R0, #+20]
+        B.N      ??main_33
+??main_34:
+        MOVS     R3,#+12
+        MLA      R2,R2,R3,R11
+        LDRB     R3,[R2, #-145]!
+        ORRS     R3,R3,#0x2
+        STRB     R3,[R2, #+0]
+        CMP      R1,#+21
+        ITE     NE 
+        STRBNE   R10,[R7, #+0]
+        STRBEQ   R0,[R7, #+0]
+        LDRB     R0,[R7, #+0]
+        MOVS     R1,#+12
+        MLA      R0,R0,R1,R11
+        LDRB     R1,[R0, #-145]!
+        ORRS     R1,R1,#0x1
+        STRB     R1,[R0, #+0]
+??main_33:
+        LDRB     R1,[R7, #+0]
+        MOVS     R0,#+80
+        ADDW     R3,R5,#+456
+        MULS     R0,R1,R0
+        STR      R0,[SP, #+4]
+        ADDS     R0,R5,R0
+        STR      R0,[SP, #+0]
+        ADDS     R0,R0,#+18
+        MOV      R10,R0
+        MOVS     R0,#+12
+        MLA      R2,R1,R0,R11
+        LDR.N    R0,??main_35     ;; Detail
+        SUBS     R2,R2,#+152
+        ADDS     R0,R0,R1
+        MOV      R11,R0
+        ADDW     R0,R5,#+776
+        STR      R0,[SP, #+20]
+        LDRB     R0,[R8, #+0]
+        CMP      R0,#+5
+        BNE.W    ??main_38
+        CMP      R1,#+13
+        BCS.W    ??main_39
+        CMP      R1,#+7
+        BNE.N    ??main_40
+        LDR.N    R0,??main_41     ;; Detail + 7
+        LDRB     R0,[R0, #+0]
+        CMP      R0,#+2
+        BNE.N    ??main_42
+        LDRSH    R0,[R3, #+120]
+        LDR.N    R7,??main_41+0x4  ;; V_Trigg
+        ADDS     R7,R7,R0, LSL #+2
+        LDRSH    R0,[R7, R4]
+        CMP      R0,#+18
+        BLT.N    ??main_43
+        SUBS     R0,R0,#+1
+        STRH     R0,[R7, #+0]
+        B.N      ??main_43
+??main_40:
+        CMP      R1,#+11
+        BEQ.N    ??main_44
+        CMP      R1,#+12
+        BNE.N    ??main_45
+??main_44:
+        LDRSH    R0,[R10, #+18]
+        CMP      R0,#+1
+        BLT.N    ??main_46
+        SUBS     R0,R0,#+1
+        STRH     R0,[R10, #+18]
+        B.N      ??main_46
+??main_45:
+        CMP      R1,#+5
+        BNE.N    ??main_42
+        LDR.N    R0,??main_41+0x8  ;; Detail + 5
+        LDRB     R0,[R0, #+0]
+        CMP      R0,#+2
+        BNE.N    ??main_42
+        LDRSH    R0,[R3, R4]
+        CMP      R0,#+31
+        BLT.N    ??main_47
+        SUBS     R0,R0,#+30
+        STRH     R0,[R3, #+0]
+        B.N      ??main_48
+??main_47:
+        CMP      R0,#+1
+        ITT     GE 
+        SUBGE    R0,R0,#+1
+        STRHGE   R0,[R3, #+0]
+??main_48:
+        LDRB     R0,[R3, #+22]
+        ORRS     R0,R0,#0x2
+        STRB     R0,[R3, #+22]
+        B.N      ??main_43
+??main_42:
+        LDRB     R0,[R11, #+0]
+        STRB     R0,[SP, #+12]
+        LDR      R7,[SP, #+4]
+        MOV      R12,R7
+        MOVS     R7,#+20
+        MLA      R0,R0,R7,R5
+        MOV      R7,R12
+        ADDS     R0,R0,R7
+        LDRSH    R7,[R0, #+16]
+        CMP      R7,#+1
+        BLT.N    ??main_49
+        SUBS     R7,R7,#+1
+        STRH     R7,[R0, #+16]
+        B.N      ??main_46
+??main_49:
+        LDRB     R7,[R0, #+10]
+        LSLS     R7,R7,#+27
+        ITT     MI 
+        LDRHMI   R7,[R0, #+8]
+        STRHMI   R7,[R0, #+16]
+??main_46:
+        CMP      R1,#+5
+        BNE.N    ??main_50
+        LDR.N    R0,??main_41+0x8  ;; Detail + 5
+        LDRB     R0,[R0, #+0]
+        CBNZ     R0,??main_43
+        STRH     R0,[R9, #+0]
+        LDRB     R0,[R9, #+2]
+        ORRS     R0,R0,#0x2
+        STRB     R0,[R9, #+2]
+        B.N      ??main_43
+??main_50:
+        CMP      R1,#+6
+        BNE.N    ??main_51
+        LDRSH    R0,[R3, #+40]
+        CMP      R0,#+3
+        BEQ.N    ??main_43
+        LDRSH    R0,[R3, #+60]
+        CMP      R0,#+11
+        BLT.N    ??main_43
+        MOVS     R0,#+10
+        STRH     R0,[R3, #+60]
+        B.N      ??main_43
+??main_51:
+        CMP      R1,#+9
+        BNE.N    ??main_43
+        LDR      R0,[SP, #+8]
+        LDRSH    R0,[R0, #+38]
+        CMP      R0,#+1
+        ITTT    EQ 
+        LDREQ    R0,[SP, #+20]
+        MOVEQ    R7,#+1
+        STRHEQ   R7,[R0, #+0]
+??main_43:
+        LDRB     R0,[R10, #+0]
+        ORRS     R0,R0,#0x2
+        STRB     R0,[R10, #+0]
+        LDRB     R0,[R10, #+20]
+        ORRS     R0,R0,#0x2
+        STRB     R0,[R10, #+20]
+        LDR      R7,[SP, #+0]
+        LDR      R0,[SP, #+0]
+        ADDS     R7,R7,#+58
+        LDRB     R7,[R7, #+0]
+        ORRS     R7,R7,#0x2
+        STRB     R7,[R0, #+58]!
+        LDR      R7,[SP, #+0]
+        LDR      R0,[SP, #+0]
+        ADDS     R7,R7,#+58
+        LDRB     R7,[R7, #+20]
+        ADDS     R0,R0,#+58
+        ORRS     R7,R7,#0x2
+        STRB     R7,[R0, #+20]
+        B.N      ??main_38
+??main_39:
+        LDRB     R0,[R2, #+7]
+        ORRS     R0,R0,#0x2
+        STRB     R0,[R2, #+7]
+        LDRB     R0,[R2, #+1]
+        CBZ      R0,??main_52
+        SUBS     R0,R0,#+1
+        STRB     R0,[R2, #+1]
+        UXTB     R0,R0
+        CMP      R0,#+1
+        ITT     EQ 
+        MOVEQ    R0,#+4
+        STRBEQ   R0,[R2, #+0]
+        LDRB     R0,[R2, #+1]
+        CMP      R0,#+6
+        BNE.N    ??main_38
+??main_53:
+        STRB     R4,[R2, #+0]
+??main_38:
+        LDRB     R0,[R8, #+0]
+        CMP      R0,#+7
+        BNE.N    ??main_54
+        CMP      R1,#+13
+        BCS.N    ??main_55
+        LDRB     R0,[R11, #+0]
+        STRB     R0,[SP, #+12]
+        LDR      R7,[SP, #+4]
+        MOV      R12,R7
+        MOVS     R7,#+20
+        MLA      R0,R0,R7,R5
+        MOV      R7,R12
+        ADDS     R0,R0,R7
+        LDRB     R7,[R0, #+18]
+        ORRS     R7,R7,#0x2
+        STRB     R7,[R0, #+18]
+        LDRB     R0,[SP, #+12]
+        CMP      R0,#+3
+        ITTEE   CS 
+        MOVCS    R0,#+0
+        STRBCS   R0,[R11, #+0]
+        ADDCC    R0,R0,#+1
+        STRBCC   R0,[R11, #+0]
+        B.N      ??main_56
+??main_52:
+        MOVS     R0,#+6
+        STRB     R0,[R2, #+1]
+        B.N      ??main_53
+??main_56:
+        LDR      R7,[SP, #+4]
+        LDRB     R0,[R11, #+0]
+        MOV      R12,R7
+        MOVS     R7,#+20
+        MLA      R0,R0,R7,R5
+        MOV      R7,R12
+        ADDS     R0,R0,R7
+        LDRB     R0,[R0, #+10]
+        LSLS     R0,R0,#+24
+        ITT     MI 
+        MOVMI    R0,#+0
+        STRBMI   R0,[R11, #+0]
+        LDR      R7,[SP, #+4]
+        LDRB     R0,[R11, #+0]
+        MOV      R12,R7
+        MOVS     R7,#+20
+        MLA      R0,R0,R7,R5
+        MOV      R7,R12
+        ADDS     R0,R0,R7
+        LDRB     R0,[R0, #+10]
+        LSLS     R0,R0,#+31
+        ITT     MI 
+        MOVMI    R0,#+0
+        STRBMI   R0,[R11, #+0]
+        LDR      R7,[SP, #+4]
+        LDRB     R0,[R11, #+0]
+        MOV      R12,R7
+        MOVS     R7,#+20
+        MLA      R0,R0,R7,R5
+        MOV      R7,R12
+        ADDS     R0,R0,R7
+        LDRB     R0,[R0, #+10]
+        LSLS     R0,R0,#+30
+        BPL.N    ??main_57
+        CMP      R1,#+9
+        ITT     NE 
+        MOVNE    R0,#+0
+        STRBNE   R0,[R11, #+0]
+??main_57:
+        LDR      R7,[SP, #+4]
+        LDRB     R0,[R11, #+0]
+        MOV      R12,R7
+        MOVS     R7,#+20
+        MLA      R0,R0,R7,R5
+        MOV      R7,R12
+        ADDS     R0,R0,R7
+        LDRB     R7,[R0, #+18]
+        ORRS     R7,R7,#0x1
+        STRB     R7,[R0, #+18]
+        B.N      ??main_54
+??main_55:
+        LDRB     R0,[R2, #+7]
+        ORRS     R0,R0,#0x2
+        STRB     R0,[R2, #+7]
+        LDRB     R0,[R2, #+0]
+        CMP      R0,#+3
+        ITT     CC 
+        ADDCC    R0,R0,#+1
+        STRBCC   R0,[R2, #+0]
+        LDRB     R0,[R2, #+0]
+        CMP      R0,#+3
+        IT      EQ 
+        STRBEQ   R4,[R2, #+0]
+??main_54:
+        LDRB     R0,[R8, #+0]
+        CMP      R0,#+6
+        BNE.W    ??main_7
+        CMP      R1,#+13
+        BCS.W    ??main_58
+        LDR.N    R0,??main_41+0x8  ;; Detail + 5
+        CMP      R1,#+7
+        LDRB     R0,[R0, #+0]
+        BNE.N    ??main_59
+        LDR.N    R2,??main_41     ;; Detail + 7
+        LDRB     R2,[R2, #+0]
+        CMP      R2,#+2
+        BNE.N    ??main_60
+        LDRSH    R0,[R3, #+120]
+        LDR.N    R1,??main_41+0x4  ;; V_Trigg
+        ADDS     R0,R1,R0, LSL #+2
+        LDRSH    R1,[R0, R4]
+        CMP      R1,#+209
+        BGE.N    ??main_61
+        ADDS     R1,R1,#+1
+        STRH     R1,[R0, #+0]
+        B.N      ??main_61
+??main_59:
+        CMP      R1,#+11
+        BEQ.N    ??main_62
+        CMP      R1,#+12
+        BNE.N    ??main_63
+??main_62:
+        LDRSH    R2,[R10, #+18]
+        LDRSH    R5,[R10, #+10]
+        CMP      R2,R5
+        BGE.N    ??main_64
+        ADDS     R2,R2,#+1
+        STRH     R2,[R10, #+18]
+        B.N      ??main_64
+??main_63:
+        CMP      R1,#+5
+        BNE.N    ??main_60
+        CMP      R0,#+2
+        BNE.N    ??main_60
+        LDRSH    R1,[R9, #+112]
+        LDRSH    R2,[R3, R4]
+        MOVS     R0,R1
+        SUBS     R0,R0,#+30
+        CMP      R2,R0
+        BGE.N    ??main_65
+        ADDS     R2,R2,#+30
+        STRH     R2,[R3, #+0]
+        B.N      ??main_66
+??main_65:
+        CMP      R2,R1
+        ITT     LT 
+        ADDLT    R2,R2,#+1
+        STRHLT   R2,[R3, #+0]
+??main_66:
+        LDRB     R0,[R3, #+22]
+        ORRS     R0,R0,#0x2
+        STRB     R0,[R3, #+22]
+        B.N      ??main_61
+        Nop      
+        DATA
+??main_35:
+        DC32     Detail
+        THUMB
+??main_60:
+        LDR      R2,[SP, #+4]
+        LDRB     R7,[R11, #+0]
+        MOV      R12,R2
+        MOVS     R2,#+20
+        MLA      R5,R7,R2,R5
+        MOV      R2,R12
+        ADDS     R2,R5,R2
+        LDRSH    R5,[R2, #+16]
+        LDRSH    R7,[R2, #+8]
+        CMP      R5,R7
+        BGE.N    ??main_67
+        ADDS     R5,R5,#+1
+        STRH     R5,[R2, #+16]
+        B.N      ??main_64
+??main_67:
+        LDRB     R5,[R2, #+10]
+        LSLS     R5,R5,#+27
+        IT      MI 
+        STRHMI   R4,[R2, #+16]
+??main_64:
+        CMP      R1,#+5
+        BNE.N    ??main_68
+        CBNZ     R0,??main_61
+        STRH     R0,[R9, #+0]
+        LDRB     R0,[R9, #+2]
+        ORRS     R0,R0,#0x2
+        STRB     R0,[R9, #+2]
+        B.N      ??main_61
+??main_68:
+        CMP      R1,#+6
+        BNE.N    ??main_69
+        LDRSH    R0,[R3, #+40]
+        CMP      R0,#+3
+        BEQ.N    ??main_61
+        LDRSH    R0,[R3, #+60]
+        CMP      R0,#+11
+        BLT.N    ??main_61
+        MOVS     R0,#+10
+        STRH     R0,[R3, #+60]
+        B.N      ??main_61
+??main_69:
+        CMP      R1,#+9
+        BNE.N    ??main_61
+        LDR      R0,[SP, #+8]
+        LDRSH    R0,[R0, #+38]
+        CMP      R0,#+1
+        ITTT    EQ 
+        LDREQ    R0,[SP, #+20]
+        MOVEQ    R1,#+1
+        STRHEQ   R1,[R0, #+0]
+??main_61:
+        LDRB     R0,[R10, #+0]
+        ORRS     R0,R0,#0x2
+        STRB     R0,[R10, #+0]
+        LDRB     R0,[R10, #+20]
+        ORRS     R0,R0,#0x2
+        STRB     R0,[R10, #+20]
+        LDR      R1,[SP, #+0]
+        LDR      R0,[SP, #+0]
+        ADDS     R1,R1,#+58
+        LDRB     R1,[R1, #+0]
+        ORRS     R1,R1,#0x2
+        STRB     R1,[R0, #+58]!
+        LDR      R1,[SP, #+0]
+        LDR      R0,[SP, #+0]
+        ADDS     R1,R1,#+58
+        LDRB     R1,[R1, #+20]
+        ADDS     R0,R0,#+58
+        ORRS     R1,R1,#0x2
+        STRB     R1,[R0, #+20]
+        B.N      ??main_7
+??main_58:
+        LDRB     R0,[R2, #+7]
+        ORRS     R0,R0,#0x2
+        STRB     R0,[R2, #+7]
+        LDRB     R0,[R2, #+1]
+        CMP      R0,#+6
+        BCS.W    ??main_4
+        ADDS     R0,R0,#+1
+        STRB     R0,[R2, #+1]
+        LSLS     R0,R0,#+24
+        BNE.W    ??main_6
+        B.N      ??main_5
+        DATA
+??main_41:
+        DC32     Detail + 7
+        DC32     V_Trigg
+        DC32     Detail + 5
+        CFI EndBlock cfiBlock0
+//  332     }
+//  333   }
+//  334 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??NVIC_SetVectorTable??rT:
+        LDR.N    R3,??Subroutine0_0  ;; NVIC_SetVectorTable
+        BX       R3
+        DATA
+??Subroutine0_0:
+        DC32     NVIC_SetVectorTable
+        CFI EndBlock cfiBlock1
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__USB_Init??rT:
+        LDR.N    R3,??Subroutine1_0  ;; __USB_Init
+        BX       R3
+        DATA
+??Subroutine1_0:
+        DC32     __USB_Init
+        CFI EndBlock cfiBlock2
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__Get??rT:
+        LDR.N    R3,??Subroutine2_0  ;; __Get
+        BX       R3
+        DATA
+??Subroutine2_0:
+        DC32     __Get
+        CFI EndBlock cfiBlock3
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__Display_Str??rT:
+        PUSH     {R3}
+        CFI CFA R13+4
+        LDR.N    R3,??Subroutine3_0  ;; __Display_Str
+        MOV      R12,R3
+        POP      {R3}
+        CFI CFA R13+0
+        BX       R12
+        Nop      
+        DATA
+??Subroutine3_0:
+        DC32     __Display_Str
+        CFI EndBlock cfiBlock4
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Load_Attr??rT:
+        LDR.N    R3,??Subroutine4_0  ;; Load_Attr
+        BX       R3
+        DATA
+??Subroutine4_0:
+        DC32     Load_Attr
+        CFI EndBlock cfiBlock5
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Load_Parameter??rT:
+        LDR.N    R3,??Subroutine5_0  ;; Load_Parameter
+        BX       R3
+        DATA
+??Subroutine5_0:
+        DC32     Load_Parameter
+        CFI EndBlock cfiBlock6
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Balance??rT:
+        LDR.N    R3,??Subroutine6_0  ;; Balance
+        BX       R3
+        DATA
+??Subroutine6_0:
+        DC32     Balance
+        CFI EndBlock cfiBlock7
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??App_init??rT:
+        LDR.N    R3,??Subroutine7_0  ;; App_init
+        BX       R3
+        DATA
+??Subroutine7_0:
+        DC32     App_init
+        CFI EndBlock cfiBlock8
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__Set??rT:
+        LDR.N    R3,??Subroutine8_0  ;; __Set
+        BX       R3
+        DATA
+??Subroutine8_0:
+        DC32     __Set
+        CFI EndBlock cfiBlock9
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Synchro??rT:
+        LDR.N    R3,??Subroutine9_0  ;; Synchro
+        BX       R3
+        DATA
+??Subroutine9_0:
+        DC32     Synchro
+        CFI EndBlock cfiBlock10
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock11 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Update_Battery??rT:
+        LDR.N    R3,??Subroutine10_0  ;; Update_Battery
+        BX       R3
+        DATA
+??Subroutine10_0:
+        DC32     Update_Battery
+        CFI EndBlock cfiBlock11
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock12 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Display_Value??rT:
+        LDR.N    R3,??Subroutine11_0  ;; Display_Value
+        BX       R3
+        DATA
+??Subroutine11_0:
+        DC32     Display_Value
+        CFI EndBlock cfiBlock12
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock13 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Display_Meter??rT:
+        LDR.N    R3,??Subroutine12_0  ;; Display_Meter
+        BX       R3
+        DATA
+??Subroutine12_0:
+        DC32     Display_Meter
+        CFI EndBlock cfiBlock13
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock14 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Display_Title??rT:
+        LDR.N    R3,??Subroutine13_0  ;; Display_Title
+        BX       R3
+        DATA
+??Subroutine13_0:
+        DC32     Display_Title
+        CFI EndBlock cfiBlock14
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock15 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Update_Range??rT:
+        LDR.N    R3,??Subroutine14_0  ;; Update_Range
+        BX       R3
+        DATA
+??Subroutine14_0:
+        DC32     Update_Range
+        CFI EndBlock cfiBlock15
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock16 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Update_Base??rT:
+        LDR.N    R3,??Subroutine15_0  ;; Update_Base
+        BX       R3
+        DATA
+??Subroutine15_0:
+        DC32     Update_Base
+        CFI EndBlock cfiBlock16
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock17 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Update_Output??rT:
+        LDR.N    R3,??Subroutine16_0  ;; Update_Output
+        BX       R3
+        DATA
+??Subroutine16_0:
+        DC32     Update_Output
+        CFI EndBlock cfiBlock17
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock18 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Update_Trig??rT:
+        LDR.N    R3,??Subroutine17_0  ;; Update_Trig
+        BX       R3
+        DATA
+??Subroutine17_0:
+        DC32     Update_Trig
+        CFI EndBlock cfiBlock18
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock19 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Update_Mark??rT:
+        LDR.N    R3,??Subroutine18_0  ;; Update_Mark
+        BX       R3
+        DATA
+??Subroutine18_0:
+        DC32     Update_Mark
+        CFI EndBlock cfiBlock19
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock20 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Update_View_Area??rT:
+        LDR.N    R3,??Subroutine19_0  ;; Update_View_Area
+        BX       R3
+        DATA
+??Subroutine19_0:
+        DC32     Update_View_Area
+        CFI EndBlock cfiBlock20
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock21 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Calibrat??rT:
+        LDR.N    R3,??Subroutine20_0  ;; Calibrat
+        BX       R3
+        DATA
+??Subroutine20_0:
+        DC32     Calibrat
+        CFI EndBlock cfiBlock21
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock22 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Save_Parameter??rT:
+        LDR.N    R3,??Subroutine21_0  ;; Save_Parameter
+        BX       R3
+        DATA
+??Subroutine21_0:
+        DC32     Save_Parameter
+        CFI EndBlock cfiBlock22
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock23 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Print_Str??rT:
+        PUSH     {R3}
+        CFI CFA R13+4
+        LDR.N    R3,??Subroutine22_0  ;; Print_Str
+        MOV      R12,R3
+        POP      {R3}
+        CFI CFA R13+0
+        BX       R12
+        Nop      
+        DATA
+??Subroutine22_0:
+        DC32     Print_Str
+        CFI EndBlock cfiBlock23
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock24 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Delayms??rT:
+        LDR.N    R3,??Subroutine23_0  ;; Delayms
+        BX       R3
+        DATA
+??Subroutine23_0:
+        DC32     Delayms
+        CFI EndBlock cfiBlock24
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock25 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Save_Bmp??rT:
+        LDR.N    R3,??Subroutine24_0  ;; Save_Bmp
+        BX       R3
+        DATA
+??Subroutine24_0:
+        DC32     Save_Bmp
+        CFI EndBlock cfiBlock25
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock26 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Save_Dat??rT:
+        LDR.N    R3,??Subroutine25_0  ;; Save_Dat
+        BX       R3
+        DATA
+??Subroutine25_0:
+        DC32     Save_Dat
+        CFI EndBlock cfiBlock26
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock27 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Load_Dat??rT:
+        LDR.N    R3,??Subroutine26_0  ;; Load_Dat
+        BX       R3
+        DATA
+??Subroutine26_0:
+        DC32     Load_Dat
+        CFI EndBlock cfiBlock27
+
+        END
+//  335 /*********************************  END OF FILE  ******************************/
+// 
+// 2 372 bytes in segment CODE
+//   156 bytes in segment DATA_C
+// 
+// 2 140 bytes of CODE  memory (+ 232 bytes shared)
+//   156 bytes of CONST memory
+//
+//Errors: none
+//Warnings: 3

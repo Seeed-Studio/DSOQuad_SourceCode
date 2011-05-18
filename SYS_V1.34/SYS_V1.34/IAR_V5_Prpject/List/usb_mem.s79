@@ -1,0 +1,216 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32 EVALUATION   25/Mar/2011  15:04:44 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  D:\Design\DS203_MiniDSO\SFW\USBLib\src\usb_mem.c    /
+//    Command line    =  D:\Design\DS203_MiniDSO\SFW\USBLib\src\usb_mem.c    /
+//                       -lA D:\Design\DS203_MiniDSO\SFW\SYS_V1.3\IAR_V4_Prp /
+//                       ject\List\ -o D:\Design\DS203_MiniDSO\SFW\SYS_V1.3\ /
+//                       IAR_V4_Prpject\Obj\ -s6 --no_unroll --no_inline     /
+//                       --no_tbaa --no_scheduling --cpu_mode thumb          /
+//                       --endian little --cpu cortex-M3 --stack_align 4 -e  /
+//                       --fpu None --dlib_config "C:\Program Files\IAR      /
+//                       Systems\Embedded Workbench 4.0                      /
+//                       Evaluation\arm\LIB\dl7mptnnl8n.h" -I                /
+//                       D:\Design\DS203_MiniDSO\SFW\SYS_V1.3\IAR_V4_Prpject /
+//                       \..\..\FWLib\inc\ -I D:\Design\DS203_MiniDSO\SFW\SY /
+//                       S_V1.3\IAR_V4_Prpject\..\..\USBLib\inc\ -I          /
+//                       D:\Design\DS203_MiniDSO\SFW\SYS_V1.3\IAR_V4_Prpject /
+//                       \..\include\ -I "C:\Program Files\IAR               /
+//                       Systems\Embedded Workbench 4.0 Evaluation\arm\INC\" /
+//    List file       =  D:\Design\DS203_MiniDSO\SFW\SYS_V1.3\IAR_V4_Prpject /
+//                       \List\usb_mem.s79                                   /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME usb_mem
+
+        RTMODEL "StackAlign4", "USED"
+        RTMODEL "__cpu_mode", "__pcs__thumb"
+        RTMODEL "__data_model", "absolute"
+        RTMODEL "__endian", "little"
+        RTMODEL "__rt_version", "6"
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+??DataTable0 EQU 0
+        PUBLIC PMAToUserBufferCopy
+        FUNCTION PMAToUserBufferCopy,0203H
+        PUBLIC UserToPMABufferCopy
+        FUNCTION UserToPMABufferCopy,0203H
+        LOCFRAME CSTACK, 4, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA R13 HUGEDATA
+        CFI Resource R0:32, R1:32, R2:32, R3:32, R4:32, R5:32, R6:32, R7:32
+        CFI Resource R8:32, R9:32, R10:32, R11:32, R12:32, R13:32, R14:32
+        CFI VirtualResource ?RET:32
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 2
+        CFI DataAlign 4
+        CFI ReturnAddress ?RET CODE
+        CFI CFA R13+0
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI R8 SameValue
+        CFI R9 SameValue
+        CFI R10 SameValue
+        CFI R11 SameValue
+        CFI R12 Undefined
+        CFI R14 Undefined
+        CFI ?RET R14
+        CFI EndCommon cfiCommon0
+        
+// D:\Design\DS203_MiniDSO\SFW\USBLib\src\usb_mem.c
+//    1 /******************** (C) COPYRIGHT 2008 STMicroelectronics ********************
+//    2 * File Name          : usb_mem.c
+//    3 * Author             : MCD Application Team
+//    4 * Version            : V2.2.1
+//    5 * Date               : 09/22/2008
+//    6 * Description        : Utility functions for memory transfers to/from PMA
+//    7 ********************************************************************************
+//    8 * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+//    9 * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+//   10 * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+//   11 * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+//   12 * CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+//   13 * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+//   14 *******************************************************************************/
+//   15 
+//   16 /* Includes ------------------------------------------------------------------*/
+//   17 #include "usb_lib.h"
+//   18 
+//   19 /* Private typedef -----------------------------------------------------------*/
+//   20 /* Private define ------------------------------------------------------------*/
+//   21 /* Private macro -------------------------------------------------------------*/
+//   22 /* Private variables ---------------------------------------------------------*/
+//   23 /* Extern variables ----------------------------------------------------------*/
+//   24 /* Private function prototypes -----------------------------------------------*/
+//   25 /* Private functions ---------------------------------------------------------*/
+//   26 /*******************************************************************************
+//   27 * Function Name  : UserToPMABufferCopy
+//   28 * Description    : Copy a buffer from user memory area to packet memory area (PMA)
+//   29 * Input          : - pbUsrBuf: pointer to user memory area.
+//   30 *                  - wPMABufAddr: address into PMA.
+//   31 *                  - wNBytes: no. of bytes to be copied.
+//   32 * Output         : None.
+//   33 * Return         : None	.
+//   34 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function UserToPMABufferCopy
+        THUMB
+//   35 void UserToPMABufferCopy(u8 *pbUsrBuf, u16 wPMABufAddr, u16 wNBytes)
+//   36 {
+UserToPMABufferCopy:
+        PUSH     {R4}
+        CFI R4 Frame(CFA, -4)
+        CFI CFA R13+4
+//   37   u32 n = (wNBytes + 1) >> 1;   /* n = (wNBytes + 1) / 2 */
+//   38   u32 i, temp1, temp2;
+//   39   u16 *pdwVal;
+//   40   pdwVal = (u16 *)(wPMABufAddr * 2 + PMAAddr);
+        LDR.N    R3,??DataTable1  ;; 0x40006000
+        ADDS     R1,R3,R1, LSL #+1
+//   41   for (i = n; i != 0; i--)
+        ADDS     R2,R2,#+1
+        ASRS     R2,R2,#+1
+        B.N      ??UserToPMABufferCopy_0
+//   42   {
+//   43     temp1 = (u16) * pbUsrBuf;
+??UserToPMABufferCopy_1:
+        LDRB     R3,[R0, #+0]
+//   44     pbUsrBuf++;
+        ADDS     R0,R0,#+1
+//   45     temp2 = temp1 | (u16) * pbUsrBuf << 8;
+//   46     *pdwVal++ = temp2;
+        LDRB     R4,[R0, #+0]
+        ORRS     R3,R3,R4, LSL #+8
+        STRH     R3,[R1, #+0]
+        ADDS     R1,R1,#+2
+//   47     pdwVal++;
+        ADDS     R1,R1,#+2
+//   48     pbUsrBuf++;
+        ADDS     R0,R0,#+1
+//   49   }
+        SUBS     R2,R2,#+1
+??UserToPMABufferCopy_0:
+        BNE.N    ??UserToPMABufferCopy_1
+//   50 }
+        POP      {R4}
+        CFI R4 SameValue
+        CFI CFA R13+0
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock0
+//   51 /*******************************************************************************
+//   52 * Function Name  : PMAToUserBufferCopy
+//   53 * Description    : Copy a buffer from user memory area to packet memory area (PMA)
+//   54 * Input          : - pbUsrBuf    = pointer to user memory area.
+//   55 *                  - wPMABufAddr = address into PMA.
+//   56 *                  - wNBytes     = no. of bytes to be copied.
+//   57 * Output         : None.
+//   58 * Return         : None.
+//   59 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function PMAToUserBufferCopy
+        THUMB
+//   60 void PMAToUserBufferCopy(u8 *pbUsrBuf, u16 wPMABufAddr, u16 wNBytes)
+//   61 {
+//   62   u32 n = (wNBytes + 1) >> 1;/* /2*/
+//   63   u32 i;
+//   64   u32 *pdwVal;
+//   65   pdwVal = (u32 *)(wPMABufAddr * 2 + PMAAddr);
+PMAToUserBufferCopy:
+        LDR.N    R3,??DataTable1  ;; 0x40006000
+        ADDS     R1,R3,R1, LSL #+1
+//   66   for (i = n; i != 0; i--)
+        ADDS     R2,R2,#+1
+        ASRS     R2,R2,#+1
+        B.N      ??PMAToUserBufferCopy_0
+//   67   {
+//   68     *(u16*)pbUsrBuf++ = *pdwVal++;
+??PMAToUserBufferCopy_1:
+        LDR      R3,[R1, #+0]
+        STRH     R3,[R0, #+0]
+        ADDS     R1,R1,#+4
+//   69     pbUsrBuf++;
+        ADDS     R0,R0,#+2
+//   70   }
+        SUBS     R2,R2,#+1
+??PMAToUserBufferCopy_0:
+        BNE.N    ??PMAToUserBufferCopy_1
+//   71 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock1
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable1:
+        DC32     0x40006000
+
+        END
+//   72 
+//   73 /******************* (C) COPYRIGHT 2008 STMicroelectronics *****END OF FILE****/
+// 
+// 70 bytes in segment CODE
+// 
+// 70 bytes of CODE memory
+//
+//Errors: none
+//Warnings: none

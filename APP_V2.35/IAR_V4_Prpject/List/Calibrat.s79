@@ -1,0 +1,2212 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32 EVALUATION   16/May/2011  12:36:11 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  D:\Design\DS203\PRG\APP_V2.35\source\Calibrat.c     /
+//    Command line    =  D:\Design\DS203\PRG\APP_V2.35\source\Calibrat.c     /
+//                       -lA D:\Design\DS203\PRG\APP_V2.35\IAR_V4_Prpject\Li /
+//                       st\ -o D:\Design\DS203\PRG\APP_V2.35\IAR_V4_Prpject /
+//                       \Obj\ -s9 --debug --cpu_mode thumb --endian little  /
+//                       --cpu cortex-M3 --stack_align 4 --fpu None          /
+//                       --dlib_config "C:\Program Files\IAR                 /
+//                       Systems\Embedded Workbench 4.0                      /
+//                       Evaluation\arm\LIB\dl7mptnnl8f.h" -I                /
+//                       D:\Design\DS203\PRG\APP_V2.35\IAR_V4_Prpject\..\..\ /
+//                       FWLib\inc\ -I D:\Design\DS203\PRG\APP_V2.35\IAR_V4_ /
+//                       Prpject\..\..\USBLib\inc\ -I                        /
+//                       D:\Design\DS203\PRG\APP_V2.35\IAR_V4_Prpject\..\inc /
+//                       lude\ -I "C:\Program Files\IAR Systems\Embedded     /
+//                       Workbench 4.0 Evaluation\arm\INC\"                  /
+//                       --inline_threshold=16                               /
+//    List file       =  D:\Design\DS203\PRG\APP_V2.35\IAR_V4_Prpject\List\C /
+//                       alibrat.s79                                         /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME Calibrat
+
+        RTMODEL "StackAlign4", "USED"
+        RTMODEL "__cpu_mode", "__pcs__thumb"
+        RTMODEL "__data_model", "absolute"
+        RTMODEL "__endian", "little"
+        RTMODEL "__rt_version", "6"
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+        EXTERN ??div32_t
+
+        MULTWEAK ??App_init??rT
+        MULTWEAK ??Delayms??rT
+        MULTWEAK ??Int32String_sign??rT
+        MULTWEAK ??Load_Parameter??rT
+        MULTWEAK ??Print_Str??rT
+        MULTWEAK ??Process??rT
+        MULTWEAK ??Save_Parameter??rT
+        MULTWEAK ??__Clear_Screen??rT
+        MULTWEAK ??__LCD_SetPixl??rT
+        MULTWEAK ??__Point_SCR??rT
+        MULTWEAK ??__Set??rT
+        MULTWEAK ??rT??div32_t
+        PUBLIC Balance
+        FUNCTION Balance,0203H
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC Calibrat
+        FUNCTION Calibrat,0203H
+        LOCFRAME CSTACK, 124, STACK
+        PUBLIC ExitStr
+        PUBLIC VS_STR
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA R13 HUGEDATA
+        CFI Resource R0:32, R1:32, R2:32, R3:32, R4:32, R5:32, R6:32, R7:32
+        CFI Resource R8:32, R9:32, R10:32, R11:32, R12:32, R13:32, R14:32
+        CFI VirtualResource ?RET:32
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 2
+        CFI DataAlign 4
+        CFI ReturnAddress ?RET CODE
+        CFI CFA R13+0
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI R8 SameValue
+        CFI R9 SameValue
+        CFI R10 SameValue
+        CFI R11 SameValue
+        CFI R12 Undefined
+        CFI R14 Undefined
+        CFI ?RET R14
+        CFI EndCommon cfiCommon0
+        
+App_init            SYMBOL "App_init"
+Delayms             SYMBOL "Delayms"
+Int32String_sign    SYMBOL "Int32String_sign"
+Load_Parameter      SYMBOL "Load_Parameter"
+Print_Str           SYMBOL "Print_Str"
+Process             SYMBOL "Process"
+Save_Parameter      SYMBOL "Save_Parameter"
+__Clear_Screen      SYMBOL "__Clear_Screen"
+__LCD_SetPixl       SYMBOL "__LCD_SetPixl"
+__Point_SCR         SYMBOL "__Point_SCR"
+__Set               SYMBOL "__Set"
+??App_init??rT      SYMBOL "??rT", App_init
+??Delayms??rT       SYMBOL "??rT", Delayms
+??Int32String_sign??rT SYMBOL "??rT", Int32String_sign
+??Load_Parameter??rT SYMBOL "??rT", Load_Parameter
+??Print_Str??rT     SYMBOL "??rT", Print_Str
+??Process??rT       SYMBOL "??rT", Process
+??Save_Parameter??rT SYMBOL "??rT", Save_Parameter
+??__Clear_Screen??rT SYMBOL "??rT", __Clear_Screen
+??__LCD_SetPixl??rT SYMBOL "??rT", __LCD_SetPixl
+??__Point_SCR??rT   SYMBOL "??rT", __Point_SCR
+??__Set??rT         SYMBOL "??rT", __Set
+
+        EXTERN A_Vdc
+        EXTERN App_init
+        FUNCTION App_init,0202H
+        EXTERN B_Vdc
+        EXTERN Beep_mS
+        EXTERN Blink
+        EXTERN Delayms
+        FUNCTION Delayms,0202H
+        EXTERN G_Attr
+        EXTERN Int32String_sign
+        FUNCTION Int32String_sign,0202H
+        EXTERN Interlace
+        EXTERN JumpCnt
+        EXTERN Ka1
+        EXTERN Ka2
+        EXTERN Ka3
+        EXTERN Kab
+        EXTERN Kb1
+        EXTERN Kb2
+        EXTERN Kb3
+        EXTERN Key_Buffer
+        EXTERN Load_Parameter
+        FUNCTION Load_Parameter,0202H
+        EXTERN PD_Cnt
+        EXTERN Print_Str
+        FUNCTION Print_Str,0202H
+        EXTERN Process
+        FUNCTION Process,0202H
+        EXTERN Save_Parameter
+        FUNCTION Save_Parameter,0202H
+        EXTERN Title
+        EXTERN Twink
+        EXTERN X_Attr
+        EXTERN Y_Attr
+        EXTERN __Clear_Screen
+        FUNCTION __Clear_Screen,0202H
+        EXTERN __LCD_SetPixl
+        FUNCTION __LCD_SetPixl,0202H
+        EXTERN __Point_SCR
+        FUNCTION __Point_SCR,0202H
+        EXTERN __Set
+        FUNCTION __Set,0202H
+        EXTERN a_Avg
+        EXTERN b_Avg
+
+// D:\Design\DS203\PRG\APP_V2.35\source\Calibrat.c
+//    1 /********************* (C) COPYRIGHT 2010 e-Design Co.,Ltd. ********************
+//    2  File Name : Calibrat.c  
+//    3  Version   : DS203_APP Ver 2.3x                                  Author : bure
+//    4 *******************************************************************************/
+//    5 #include <string.h>
+//    6 #include "Interrupt.h"
+//    7 #include "Function.h"
+//    8 #include "Calibrat.h"
+//    9 #include "Process.h"
+//   10 #include "File.h"
+//   11 #include "BIOS.h"
+//   12 #include "Menu.h"
+//   13 
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+`?<Constant {"uV", "mV", "V ", "kV"}>`:
+        DATA
+        DC8 "uV"
+        DC8 "mV"
+        DC8 "V "
+        DC8 "kV"
+        DC8 "CH_A"
+        DC8 0, 0, 0
+        DC8 "ZERO"
+        DC8 0, 0, 0
+        DC8 "DIFF"
+        DC8 0, 0, 0
+        DC8 "VOTAGE"
+        DC8 0
+        DC8 "CH_B"
+        DC8 0, 0, 0
+        DC8 "         Parameters version error          "
+        DC8 "         Save the calibration data         "
+        DC8 "           Restore defaults data           "
+        DC8 "     Please connect"
+        DC8 " CH_A "
+        DC8 0
+        DC8 "input to GND       "
+        DC8 " -- "
+        DC8 0, 0, 0
+        DC8 " Input "
+        DC8 " standard voltage to "
+        DC8 0, 0
+        DC8 "CH_A  "
+        DC8 0
+        DC8 " CH_B "
+        DC8 0
+        DC8 "CH_B  "
+        DC8 0
+//   14 uc8 VS_STR[9][12]={"250-300mV","0.5-0.6V ","1.0-1.2V ","2.5-3.0V ",
+VS_STR:
+        DC8 "250-300mV"
+        DC8 0, 0
+        DC8 "0.5-0.6V "
+        DC8 0, 0
+        DC8 "1.0-1.2V "
+        DC8 0, 0
+        DC8 "2.5-3.0V "
+        DC8 0, 0
+        DC8 "5.0-6.0V "
+        DC8 0, 0
+        DC8 " 10-12V  "
+        DC8 0, 0
+        DC8 " 25-30V  "
+        DC8 0, 0
+        DC8 " 50-60V  "
+        DC8 0, 0
+        DC8 "suitable "
+        DC8 0, 0
+//   15                    "5.0-6.0V "," 10-12V  "," 25-30V  "," 50-60V  ","suitable "};
+//   16 uc8 ExitStr[3][30]={" Exit without Calibration ", 
+ExitStr:
+        DC8 " Exit without Calibration "
+        DC8 0, 0, 0
+        DC8 "Exit with Save Calibration"
+        DC8 0, 0, 0
+        DC8 "Exit with Restore Defaults"
+        DC8 0, 0, 0, 0, 0
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+        DATA
+        DC8 "GND"
+//   17                     "Exit with Save Calibration", 
+//   18                     "Exit with Restore Defaults"};
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function Balance
+        THUMB
+//   19 void Balance(void)
+//   20 {
+Balance:
+        PUSH     {R4,R5,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R5 Frame(CFA, -8)
+        CFI R4 Frame(CFA, -12)
+        CFI CFA R13+12
+//   21   __Set(STANDBY, DN);          // 退出省电状态
+        MOVS     R1,#+0
+//   22   __Set(ADC_CTRL, EN );       
+//   23   _Status = RUN;
+//   24   __Set(T_BASE_PSC, X_Attr[_2uS].PSC);                // T_BASE = 2uS
+        LDR.N    R5,??DataTable0  ;; X_Attr
+        MOVS     R0,#+20
+        _BLF     __Set,??__Set??rT
+        MOVS     R1,#+1
+        MOVS     R0,#+36
+        _BLF     __Set,??__Set??rT
+        LDR.N    R0,??Balance_0   ;; Title + 336
+        MOVS     R4,#+0
+        STRH     R4,[R0, #+0]
+        LDR      R0,[R5, #+0]
+        LDRSH    R1,[R0, #+348]
+        MOVS     R0,#+7
+        _BLF     __Set,??__Set??rT
+//   25   __Set(T_BASE_ARR, X_Attr[_2uS].ARR);
+        LDR      R1,[R5, #+0]
+//   26   __Set(CH_A_COUPLE, DC);
+//   27   __Set(CH_A_OFFSET, 100);
+//   28   __Set(CH_B_COUPLE, DC);
+//   29   __Set(CH_B_OFFSET, 100);
+//   30   __Set(CH_A_RANGE,  G_Attr[0].Yp_Max);        // 10V/Div
+        LDR.N    R5,??DataTable1  ;; G_Attr
+        MOVS     R0,#+350
+        LDRH     R1,[R1, R0]
+        MOVS     R0,#+8
+        _BLF     __Set,??__Set??rT
+        MOVS     R1,#+0
+        MOVS     R0,#+9
+        _BLF     __Set,??__Set??rT
+        MOVS     R1,#+100
+        MOV      R0,R4
+        _BLF     __Set,??__Set??rT
+        MOV      R1,R4
+        MOVS     R0,#+11
+        _BLF     __Set,??__Set??rT
+        MOVS     R1,#+100
+        MOVS     R0,#+1
+        _BLF     __Set,??__Set??rT
+        LDR      R0,[R5, #+0]
+        LDRH     R1,[R0, #+4]
+        MOVS     R0,#+10
+        _BLF     __Set,??__Set??rT
+//   31   __Set(CH_B_RANGE,  G_Attr[0].Yp_Max+1);      // B通道合并到A通道
+        LDR      R0,[R5, #+0]
+        LDRH     R1,[R0, #+4]
+        MOVS     R0,#+12
+        ADDS     R1,R1,#+1
+        _BLF     __Set,??__Set??rT
+//   32   __Set(ADC_MODE, INTERLACE);                  // Set Interlace mode
+        MOVS     R1,#+1
+        MOVS     R0,#+5
+        _BLF     __Set,??__Set??rT
+//   33   Delayms(2000); 
+        MOVS     R0,#+2000
+        _BLF     Delayms,??Delayms??rT
+//   34   __Set(FIFO_CLR, W_PTR); 
+        MOVS     R1,#+1
+        MOVS     R0,#+6
+        _BLF     __Set,??__Set??rT
+//   35   Delayms(20); 
+        MOVS     R0,#+20
+        _BLF     Delayms,??Delayms??rT
+//   36   JumpCnt =0;
+        LDR.N    R0,??DataTable2  ;; JumpCnt
+        STRH     R4,[R0, #+0]
+//   37   Process();                                     // 采样波形处理   
+        _BLF     Process,??Process??rT
+//   38 //  Kab = 0;
+//   39   Kab = (a_Avg - b_Avg)/4096;
+        LDR.N    R1,??DataTable3  ;; a_Avg
+        LDR.N    R2,??DataTable4  ;; b_Avg
+        LDR.N    R0,??Balance_0+0x4  ;; Kab
+        LDR      R1,[R1, #+0]
+        LDR      R2,[R2, #+0]
+        SUBS     R1,R1,R2
+        LSRS     R1,R1,#+12
+        STRB     R1,[R0, #+0]
+//   40 }
+        POP      {R4,R5,PC}       ;; return
+        DATA
+??Balance_0:
+        DC32     Title + 336
+        DC32     Kab
+        CFI EndBlock cfiBlock0
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable0:
+        DC32     X_Attr
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable1:
+        DC32     G_Attr
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable2:
+        DC32     JumpCnt
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable3:
+        DC32     a_Avg
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable4:
+        DC32     b_Avg
+//   41 /*******************************************************************************
+//   42   Calibrat : Calibrat routine
+//   43 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function Calibrat
+        THUMB
+//   44 void Calibrat(u8 Channel)
+//   45 { 
+Calibrat:
+        PUSH     {R4-R11,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R11 Frame(CFA, -8)
+        CFI R10 Frame(CFA, -12)
+        CFI R9 Frame(CFA, -16)
+        CFI R8 Frame(CFA, -20)
+        CFI R7 Frame(CFA, -24)
+        CFI R6 Frame(CFA, -28)
+        CFI R5 Frame(CFA, -32)
+        CFI R4 Frame(CFA, -36)
+        CFI CFA R13+36
+//   46   u8  V_Unit[4][3]={"uV","mV","V ","kV"};
+//   47   u16 i, j, k, Range, Target;
+//   48   u8  Exit = 0;      
+//   49 
+//   50   I32STR_RES Num;
+//   51   
+//   52   Key_Buffer = 0; 
+//   53   __Set(STANDBY, DN);                                   // 退出省电状态
+//   54   __Set(BACKLIGHT, 10*(Title[BK_LIGHT][CLASS].Value+1));
+        LDR.N    R5,??Calibrat_3  ;; Title
+        SUB      SP,SP,#+56
+        CFI CFA R13+92
+        MOVS     R4,#+0
+        STRB     R0,[SP, #+2]
+        LDR.N    R0,??Calibrat_3+0x4  ;; `?<Constant {"uV", "mV", "V ", "kV"}>`
+        MOV      R8,R0
+        MOV      R1,R8
+        LDR      R2,[R1, #0]
+        ADD      R0,SP,#+44
+        STR      R2,[R0, #+0]
+        LDR      R2,[R1, #+4]
+        STR      R2,[R0, #+4]
+        LDR      R2,[R1, #+8]
+        MOV      R1,R4
+        STR      R2,[R0, #+8]
+        MOVS     R0,#+0
+        MOV      R9,R0
+        LDR.N    R0,??Calibrat_3+0x8  ;; Key_Buffer
+        STRB     R1,[R0, #+0]
+        MOVS     R0,#+20
+        _BLF     __Set,??__Set??rT
+        ADDW     R0,R5,#+916
+        STR      R0,[SP, #+20]
+        LDRSH    R1,[R0, #+0]
+        MOVS     R0,#+10
+        ADDS     R1,R1,#+1
+        MULS     R1,R0,R1
+        MOVS     R0,#+2
+        _BLF     __Set,??__Set??rT
+//   55   __Clear_Screen(BLACK);                                // 清屏幕
+        MOV      R0,R4
+        _BLF     __Clear_Screen,??__Clear_Screen??rT
+//   56   
+//   57   k = Load_Parameter();                                 // 读取预设开机参数  
+        _BLF     Load_Parameter,??Load_Parameter??rT
+//   58   Interlace = 0;
+        MOV      R1,R9
+        STR      R0,[SP, #+8]
+        LDR.N    R0,??Calibrat_3+0xC  ;; Interlace
+        STRB     R1,[R0, #+0]
+//   59   __Set(ADC_MODE, SEPARATE);                        // Set Separate mode
+        MOVS     R0,#+5
+        _BLF     __Set,??__Set??rT
+//   60   __Set(TRIGG_MODE, UNCONDITION);                       // 设任意触发
+        MOVS     R1,#+32
+        MOV      R0,R1
+        _BLF     __Set,??__Set??rT
+//   61   __Set(ADC_CTRL, EN);       
+        MOVS     R1,#+1
+        MOVS     R0,#+36
+        _BLF     __Set,??__Set??rT
+//   62   _Status = RUN;
+        MOV      R0,R9
+        STRH     R0,[R5, #+336]
+//   63   __Set(BEEP_VOLUME, 5*(Title[VOLUME][CLASS].Value-1)); // Reload volume
+        LDR      R0,[SP, #+20]
+//   64   Beep_mS = 500;                                        // 蜂鸣器响500mS
+//   65   Range = 0;
+        MOV      R5,R9
+        LDRSH    R1,[R0, #+80]
+        MOVS     R0,#+5
+        SUBS     R1,R1,#+1
+        MULS     R1,R0,R1
+        MOVS     R0,#+3
+        _BLF     __Set,??__Set??rT
+        LDR.N    R0,??Calibrat_3+0x10  ;; Beep_mS
+        MOVS     R1,#+500
+        STRH     R1,[R0, #+0]
+        LDRB     R0,[SP, #+2]
+        CMP      R0,#+0
+        ITE     NE 
+        MOVNE    R6,#+3
+//   66   if(Channel == TRACK1)  Target = 0;
+        MOVEQ    R6,#+0
+//   67   else                   Target = 3;
+//   68   Key_Buffer = 0; 
+        LDR.N    R0,??Calibrat_3+0x8  ;; Key_Buffer
+//   69   
+//   70   __Set(T_BASE_PSC, X_Attr[_100uS].PSC);                // T_BASE = 100uS
+        LDR.N    R7,??Calibrat_3+0x14  ;; X_Attr
+//   71   __Set(T_BASE_ARR, X_Attr[_100uS].ARR);
+//   72 
+//   73   __Set(CH_A_COUPLE, DC);
+//   74   __Set(CH_A_OFFSET, 5);
+//   75   __Set(CH_B_COUPLE, DC);
+//   76   __Set(CH_B_OFFSET, 5);
+//   77   
+//   78   
+//   79   for(j=0; j<220; j+=20){                               // 画表格  
+        MOV      R11,R9
+        STRB     R4,[R0, #+0]
+        LDR      R0,[R7, #+0]
+        LDRSH    R1,[R0, #+248]
+        MOVS     R0,#+7
+        _BLF     __Set,??__Set??rT
+        LDR      R0,[R7, #+0]
+        LDRH     R1,[R0, #+250]!
+        MOVS     R0,#+8
+        _BLF     __Set,??__Set??rT
+        MOVS     R1,#+0
+        MOVS     R0,#+9
+        _BLF     __Set,??__Set??rT
+        MOVS     R1,#+5
+        MOV      R0,R4
+        _BLF     __Set,??__Set??rT
+        MOV      R1,R4
+        MOVS     R0,#+11
+        _BLF     __Set,??__Set??rT
+        MOVS     R1,#+5
+        MOVS     R0,#+1
+        _BLF     __Set,??__Set??rT
+//   80     for(i=0; i<399; i++){
+??Calibrat_4:
+        MOVS     R7,#+0
+//   81       __Point_SCR(i, j);
+??Calibrat_5:
+        MOV      R1,R11
+        MOVS     R0,R7
+        _BLF     __Point_SCR,??__Point_SCR??rT
+//   82       __LCD_SetPixl(WHT);
+        LDR.N    R0,??Calibrat_3+0x18  ;; 0xffff
+//   83     }
+        ADDS     R7,R7,#+1
+        UXTH     R7,R7
+        MOV      R10,R0
+        _BLF     __LCD_SetPixl,??__LCD_SetPixl??rT
+        LDR.N    R1,??Calibrat_3+0x1C  ;; 0x18f
+        CMP      R7,R1
+        BCC.N    ??Calibrat_5
+//   84   }
+        MOV      R0,R11
+        ADDS     R0,R0,#+20
+        UXTH     R0,R0
+        MOV      R11,R0
+        CMP      R0,#+220
+        BCC.N    ??Calibrat_4
+//   85   for(i=0; i<399; i++){
+        MOVS     R7,#+0
+//   86     __Point_SCR(i, 239);
+??Calibrat_6:
+        MOVS     R1,#+239
+        MOVS     R0,R7
+        _BLF     __Point_SCR,??__Point_SCR??rT
+//   87     __LCD_SetPixl(WHT);
+        MOV      R0,R10
+        _BLF     __LCD_SetPixl,??__LCD_SetPixl??rT
+//   88   }
+        LDR.N    R1,??Calibrat_3+0x1C  ;; 0x18f
+        ADDS     R7,R7,#+1
+        UXTH     R7,R7
+        CMP      R7,R1
+        BCC.N    ??Calibrat_6
+//   89   __Point_SCR(  0,  0);
+        MOVS     R1,#+0
+        MOV      R0,R1
+        _BLF     __Point_SCR,??__Point_SCR??rT
+//   90   for(j= 0; j<239; j++)  __LCD_SetPixl(WHT); 
+        MOV      R7,R4
+??Calibrat_7:
+        MOV      R0,R10
+        _BLF     __LCD_SetPixl,??__LCD_SetPixl??rT
+        ADDS     R7,R7,#+1
+        UXTH     R7,R7
+        CMP      R7,#+239
+        BCC.N    ??Calibrat_7
+//   91   __Point_SCR( 44, 20);
+        MOVS     R1,#+20
+        MOVS     R0,#+44
+        _BLF     __Point_SCR,??__Point_SCR??rT
+//   92   for(j=20; j<201; j++)  __LCD_SetPixl(WHT); 
+        MOVS     R7,#+20
+??Calibrat_8:
+        MOV      R0,R10
+        _BLF     __LCD_SetPixl,??__LCD_SetPixl??rT
+        ADDS     R7,R7,#+1
+        UXTH     R7,R7
+        CMP      R7,#+201
+        BCC.N    ??Calibrat_8
+//   93   __Point_SCR( 88, 20);
+        MOVS     R1,#+20
+        MOVS     R0,#+88
+        _BLF     __Point_SCR,??__Point_SCR??rT
+//   94   for(j=20; j<201; j++)  __LCD_SetPixl(WHT); 
+        MOVS     R7,#+20
+??Calibrat_9:
+        MOV      R0,R10
+        _BLF     __LCD_SetPixl,??__LCD_SetPixl??rT
+        ADDS     R7,R7,#+1
+        UXTH     R7,R7
+        CMP      R7,#+201
+        BCC.N    ??Calibrat_9
+//   95   __Point_SCR(132, 20);
+        MOVS     R1,#+20
+        MOVS     R0,#+132
+        _BLF     __Point_SCR,??__Point_SCR??rT
+//   96   for(j=20; j<201; j++)  __LCD_SetPixl(WHT); 
+        MOVS     R7,#+20
+??Calibrat_10:
+        MOV      R0,R10
+        _BLF     __LCD_SetPixl,??__LCD_SetPixl??rT
+        ADDS     R7,R7,#+1
+        UXTH     R7,R7
+        CMP      R7,#+201
+        BCC.N    ??Calibrat_10
+//   97   __Point_SCR(200, 20);
+        MOVS     R1,#+20
+        MOVS     R0,#+200
+        _BLF     __Point_SCR,??__Point_SCR??rT
+//   98   for(j=20; j<201; j++)  __LCD_SetPixl(WHT); 
+        MOVS     R7,#+20
+??Calibrat_11:
+        MOV      R0,R10
+        _BLF     __LCD_SetPixl,??__LCD_SetPixl??rT
+        ADDS     R7,R7,#+1
+        UXTH     R7,R7
+        CMP      R7,#+201
+        BCC.N    ??Calibrat_11
+//   99   __Point_SCR(244, 20);
+        MOVS     R1,#+20
+        MOVS     R0,#+244
+        _BLF     __Point_SCR,??__Point_SCR??rT
+//  100   for(j=20; j<201; j++)  __LCD_SetPixl(WHT); 
+        MOVS     R7,#+20
+??Calibrat_12:
+        MOV      R0,R10
+        _BLF     __LCD_SetPixl,??__LCD_SetPixl??rT
+        ADDS     R7,R7,#+1
+        UXTH     R7,R7
+        CMP      R7,#+201
+        BCC.N    ??Calibrat_12
+//  101   __Point_SCR(288, 20);
+        MOVS     R1,#+20
+        MOVS     R0,#+288
+        _BLF     __Point_SCR,??__Point_SCR??rT
+//  102   for(j=20; j<201; j++)  __LCD_SetPixl(WHT); 
+        MOVS     R7,#+20
+??Calibrat_13:
+        MOV      R0,R10
+        _BLF     __LCD_SetPixl,??__LCD_SetPixl??rT
+        ADDS     R7,R7,#+1
+        UXTH     R7,R7
+        CMP      R7,#+201
+        BCC.N    ??Calibrat_13
+//  103   __Point_SCR(332, 20);
+        MOVS     R1,#+20
+        MOVS     R0,#+332
+        _BLF     __Point_SCR,??__Point_SCR??rT
+//  104   for(j=20; j<201; j++)  __LCD_SetPixl(WHT); 
+        MOVS     R7,#+20
+??Calibrat_14:
+        MOV      R0,R10
+        _BLF     __LCD_SetPixl,??__LCD_SetPixl??rT
+        ADDS     R7,R7,#+1
+        UXTH     R7,R7
+        CMP      R7,#+201
+        BCC.N    ??Calibrat_14
+//  105   __Point_SCR(398, 0);
+        MOVS     R1,#+0
+        MOVS     R0,#+398
+        _BLF     __Point_SCR,??__Point_SCR??rT
+//  106   for(j= 0; j<239; j++)  __LCD_SetPixl(WHT); 
+        MOV      R7,R4
+??Calibrat_15:
+        MOV      R0,R10
+        _BLF     __LCD_SetPixl,??__LCD_SetPixl??rT
+        ADDS     R7,R7,#+1
+        UXTH     R7,R7
+        CMP      R7,#+239
+        BCC.N    ??Calibrat_15
+//  107  
+//  108   Print_Str(  6, 185, 0x0005, PRN, "CH_A");              // 显示表格标题栏
+        MOV      R0,R8
+        ADDS     R0,R0,#+12
+        PUSH     {R0}
+        CFI CFA R13+96
+        MOVS     R3,#+0
+        MOVS     R2,#+5
+        MOVS     R1,#+185
+        MOVS     R0,#+6
+        _BLF     Print_Str,??Print_Str??rT
+//  109   Print_Str( 49, 185, 0x0005, PRN, "ZERO");
+        MOV      R0,R8
+        ADDS     R0,R0,#+20
+        PUSH     {R0}
+        CFI CFA R13+100
+        MOV      R3,R4
+        MOVS     R2,#+5
+        MOVS     R1,#+185
+        MOVS     R0,#+49
+        _BLF     Print_Str,??Print_Str??rT
+//  110   Print_Str( 93, 185, 0x0005, PRN, "DIFF");
+        MOV      R0,R8
+        ADDS     R0,R0,#+28
+        PUSH     {R0}
+        CFI CFA R13+104
+        MOV      R3,R4
+        MOVS     R2,#+5
+        MOVS     R1,#+185
+        MOVS     R0,#+93
+        _BLF     Print_Str,??Print_Str??rT
+//  111   Print_Str(141, 185, 0x0005, PRN, "VOTAGE");
+        MOV      R0,R8
+        ADDS     R0,R0,#+36
+        PUSH     {R0}
+        CFI CFA R13+108
+        MOV      R3,R4
+        MOVS     R2,#+5
+        MOVS     R1,#+185
+        MOVS     R0,#+141
+        _BLF     Print_Str,??Print_Str??rT
+//  112   Print_Str(206, 185, 0x0105, PRN, "CH_B");
+        LDR.N    R0,??Calibrat_3+0x20  ;; 0x105
+        MOV      R3,R4
+        MOVS     R1,#+185
+        MOV      R11,R0
+        MOV      R0,R8
+        ADDS     R0,R0,#+44
+        PUSH     {R0}
+        CFI CFA R13+112
+        MOV      R2,R11
+        MOVS     R0,#+206
+        _BLF     Print_Str,??Print_Str??rT
+//  113   Print_Str(249, 185, 0x0105, PRN, "ZERO");
+        MOV      R0,R8
+        ADDS     R0,R0,#+20
+        PUSH     {R0}
+        CFI CFA R13+116
+        MOV      R3,R4
+        MOV      R2,R11
+        MOVS     R1,#+185
+        MOVS     R0,#+249
+        _BLF     Print_Str,??Print_Str??rT
+//  114   Print_Str(293, 185, 0x0105, PRN, "DIFF");
+        MOV      R0,R8
+        ADDS     R0,R0,#+28
+        PUSH     {R0}
+        CFI CFA R13+120
+        LDR.N    R0,??Calibrat_3+0x24  ;; 0x125
+        MOV      R3,R4
+        MOV      R2,R11
+        MOVS     R1,#+185
+        _BLF     Print_Str,??Print_Str??rT
+//  115   Print_Str(342, 185, 0x0105, PRN, "VOTAGE");
+        MOV      R0,R8
+        ADDS     R0,R0,#+36
+        PUSH     {R0}
+        CFI CFA R13+124
+        MOV      R3,R4
+        MOV      R2,R11
+        MOVS     R1,#+185
+        MOVS     R0,#+342
+        _BLF     Print_Str,??Print_Str??rT
+//  116     
+//  117   for(i=0; i<G_Attr[0].Yp_Max+1; i++){
+        LDR.N    R0,??Calibrat_3+0x28  ;; G_Attr
+        MOV      R7,R4
+        LDR      R0,[R0, #+0]
+        LDRH     R0,[R0, #+4]
+        ADD      SP,SP,#+32
+        CFI CFA R13+92
+        ADDS     R0,R0,#+1
+        CMP      R0,#+1
+        BGE.N    ??Calibrat_16
+        B.N      ??Calibrat_17
+//  118     Print_Str(  6, 166-(i*20), 0x0005, PRN, Y_Attr[i].STR);
+??Calibrat_18:
+        MOVS     R1,#+20
+        MOVS     R3,#+0
+        MULS     R0,R1,R0
+        STR      R0,[SP, #+4]
+        LDR      R1,[SP, #+4]
+        MOVS     R0,#+166
+        MOVS     R2,#+5
+        SUBS     R0,R0,R1
+        STRH     R0,[SP, #+0]
+        MOV      R0,R1
+        LDR.N    R1,??Calibrat_3+0x2C  ;; Y_Attr
+//  119     Print_Str(206, 166-(i*20), 0x0105, PRN, Y_Attr[i].STR);
+//  120   }
+        ADDS     R7,R7,#+1
+        UXTH     R7,R7
+        LDR      R1,[R1, #+0]
+        ADDS     R0,R1,R0
+        PUSH     {R0}
+        CFI CFA R13+96
+        LDRH     R1,[SP, #+4]
+        MOVS     R0,#+6
+        _BLF     Print_Str,??Print_Str??rT
+        LDR.N    R1,??Calibrat_3+0x2C  ;; Y_Attr
+        LDR      R0,[SP, #+8]
+        MOV      R3,R4
+        LDR      R1,[R1, #+0]
+        MOV      R2,R11
+        ADDS     R0,R1,R0
+        PUSH     {R0}
+        CFI CFA R13+100
+        LDRH     R1,[SP, #+8]
+        MOVS     R0,#+206
+        _BLF     Print_Str,??Print_Str??rT
+        ADD      SP,SP,#+8
+        CFI CFA R13+92
+??Calibrat_16:
+        LDR.N    R1,??Calibrat_3+0x28  ;; G_Attr
+        MOVS     R0,R7
+        LDR      R1,[R1, #+0]
+        LDRH     R1,[R1, #+4]
+        ADDS     R1,R1,#+1
+        CMP      R0,R1
+        BLT.N    ??Calibrat_18
+??Calibrat_17:
+        LDR.N    R2,??Calibrat_3+0x30  ;; 0x405
+        ADDW     R0,R8,#+404
+        PUSH     {R0}
+        CFI CFA R13+96
+        MOVS     R3,#+0
+        MOVS     R1,#+6
+        MOVS     R0,#+10
+//  121   Print_Str( 10, 166-(8*20), 0x0405, PRN, (u8*)ExitStr[Exit % 3]);
+        _BLF     Print_Str,??Print_Str??rT
+//  122 
+//  123   if(k != 0) {
+        LDR      R0,[SP, #+12]
+        ADD      SP,SP,#+4
+        CFI CFA R13+92
+        LSLS     R0,R0,#+16
+        BEQ.N    ??Calibrat_19
+//  124     Print_Str( 32, 216, 0x0405, PRN, "         Parameters version error          ");
+        LDR.N    R2,??Calibrat_3+0x30  ;; 0x405
+        MOV      R0,R8
+        ADDS     R0,R0,#+52
+        PUSH     {R0}
+        CFI CFA R13+96
+        MOVS     R3,#+0
+        MOVS     R1,#+216
+        MOVS     R0,#+32
+        _BLF     Print_Str,??Print_Str??rT
+//  125     __Set(BEEP_VOLUME, 5*(Title[VOLUME][CLASS].Value-1));// Volume
+        LDR      R0,[SP, #+24]
+        LDRSH    R1,[R0, #+80]
+        MOVS     R0,#+5
+        SUBS     R1,R1,#+1
+        MULS     R1,R0,R1
+        MOVS     R0,#+3
+        _BLF     __Set,??__Set??rT
+//  126     Beep_mS = 500;                                       // 蜂鸣器响500mS
+        LDR.N    R0,??Calibrat_3+0x10  ;; Beep_mS
+        MOVS     R1,#+500
+        STRH     R1,[R0, #+0]
+//  127     Delayms(2000); 
+        LSLS     R0,R1,#+2
+        _BLF     Delayms,??Delayms??rT
+//  128     App_init();
+        _BLF     App_init,??App_init??rT
+//  129     return;
+        ADD      SP,SP,#+4
+        CFI CFA R13+92
+??Calibrat_20:
+        ADD      SP,SP,#+56
+        CFI CFA R13+36
+        POP      {R4-R11,PC}      ;; return
+        CFI CFA R13+92
+//  130   }
+//  131   while (1){
+//  132     if(PD_Cnt == 0){
+//  133       __Set(BACKLIGHT, 0);                         // 关闭背光
+//  134       __Set(STANDBY, EN);                          // 进入省电状态
+//  135       return;
+//  136     }
+//  137     JumpCnt =0;
+//  138     Process();                                     // 采样波形处理   
+//  139     if((Target == 1)||(Target == 4)){ 
+//  140       A_Vdc = Ka1[Range] +(Ka2[Range]*(a_Avg/4096))/1024 - 195;      
+//  141       B_Vdc = Kb1[Range] +(Kb2[Range]*(b_Avg/4096))/1024 - 195;      
+//  142     } else {
+//  143       A_Vdc = Ka1[Range] +(Ka2[Range]*(a_Avg/4096))/1024 - 5;      
+//  144       B_Vdc = Kb1[Range] +(Kb2[Range]*(b_Avg/4096))/1024 - 5;     
+//  145     }
+//  146 //    if(__Get(FIFO_FULL))  __Set(FIFO_CLR, W_PTR); // FIFO写指针复位 
+//  147 
+//  148     if(Key_Buffer) { 
+//  149       PD_Cnt = 600;                               // 600秒
+//  150       if(Range <= G_Attr[0].Yp_Max){
+//  151       switch (Target){  
+//  152       case 0:
+//  153         Int32String_sign(&Num, A_Vdc);
+//  154         Print_Str( 45, 166-(Range*20), 0x0005, PRN, Num.str);
+//  155         break;
+//  156       case 1:
+//  157         Int32String_sign(&Num, A_Vdc);
+//  158         Print_Str( 89, 166-(Range*20), 0x0005, PRN, Num.str);
+//  159         break;
+//  160       case 2:
+//  161         Int32String_sign(&Num, A_Vdc * Y_Attr[Range].SCALE);
+//  162         Print_Str(134, 166-(Range*20), 0x0005, PRN, Num.str);
+//  163         Print_Str(174, 166-(Range*20), 0x0005, PRN, V_Unit[Num.decPos]);
+//  164         break;
+//  165       case 3:
+//  166         Int32String_sign(&Num, B_Vdc);
+//  167         Print_Str(245, 166-(Range*20), 0x0105, PRN, Num.str);
+//  168         break;
+//  169       case 4:
+//  170         Int32String_sign(&Num, B_Vdc);
+//  171         Print_Str(289, 166-(Range*20), 0x0105, PRN, Num.str);
+//  172         break;
+//  173       case 5:
+//  174         Int32String_sign(&Num, B_Vdc * Y_Attr[Range].SCALE);
+//  175         Print_Str(334, 166-(Range*20), 0x0105, PRN, Num.str);
+//  176         Print_Str(374, 166-(Range*20), 0x0105, PRN, V_Unit[Num.decPos]);
+//  177       }
+//  178       }
+//  179       switch (Key_Buffer){  
+//  180       case KEY2:
+//  181         if(Range > G_Attr[0].Yp_Max){
+//  182           if(Exit == 1){
+//  183             Save_Parameter(0);                         // 保存校正后的参数
+//  184             Print_Str( 32, 216, 0x0405, PRN, "         Save the calibration data         ");
+//  185             Delayms(1000); 
+//  186           }
+//  187           if(Exit == 2){
+//  188             for(i=0; i<=G_Attr[0].Yp_Max; i++){
+//  189               Ka1[i]=0;
+//  190               Kb1[i]=0;
+//  191               Ka2[i]=1024;
+//  192               Kb2[i]=1024;
+//  193             }
+//  194             Ka3=256;
+//  195             Kb3=256;
+//  196             Save_Parameter(0);                         // 保存缺省值参数
+//  197             Print_Str( 32, 216, 0x0405, PRN, "           Restore defaults data           ");
+//  198             Delayms(1000); 
+//  199           }
+//  200           App_init();
+//  201           return;
+//  202         }
+//  203         break;
+//  204       case K_ITEM_S:
+//  205         if(Channel == TRACK1){  
+//  206           if(Target <2) Target = 2;
+//  207           else          Target = 0;
+//  208         } else {
+//  209           if(Target <5) Target = 5;
+//  210           else          Target = 3;
+//  211         }
+//  212         break;
+//  213       case K_INDEX_S:
+//  214         if(Channel == TRACK1){  
+//  215           if((Target <1)&&(Range == 0)) Target = 1;
+//  216           else if(Target <2) Target = 0;
+//  217         } else {
+//  218           if((Target <4)&&(Range == 0)) Target = 4;
+//  219           else if(Target <5) Target = 3;
+//  220         }
+//  221         break;
+//  222       case K_ITEM_DEC:
+//  223         if(Range >0) Range--;
+//  224         if(Target == 1) Target = 0;  
+//  225         if(Target == 4) Target = 3;  
+//  226         break;
+//  227       case K_ITEM_INC:
+//  228         if(Range  <= G_Attr[0].Yp_Max) Range++;
+//  229         if(Target == 1) Target = 0;  
+//  230         if(Target == 4) Target = 3;  
+//  231         break;
+//  232       case K_INDEX_DEC:
+//  233         if(Range <= G_Attr[0].Yp_Max){
+//  234           if(Target == 0)  Ka1[Range]--;
+//  235           if((Target == 1)&&(Range == 0))  Ka3--;
+//  236           if(Target == 2)  Ka2[Range] -= 4;
+//  237           if(Target == 3)  Kb1[Range]--;
+//  238           if((Target == 4)&&(Range == 0))  Kb3--;
+//  239           if(Target == 5)  Kb2[Range] -= 4;;
+//  240         } else {
+//  241           if(Exit > 0) Exit--;
+//  242           else         Exit = 2;
+//  243         }
+//  244         break;
+//  245       case K_INDEX_INC:
+//  246         if(Range <= G_Attr[0].Yp_Max){
+//  247           if(Target == 0)  Ka1[Range]++;
+//  248           if((Target == 1)&&(Range == 0))  Ka3++;
+//  249           if(Target == 2)  Ka2[Range] += 4;
+//  250           if(Target == 3)  Kb1[Range]++;
+//  251           if((Target == 4)&&(Range == 0))  Kb3++;
+//  252           if(Target == 5)  Kb2[Range] += 4;;
+//  253           if(Range >= G_Attr[0].Yp_Max) Exit++;
+//  254         } else {
+//  255           if(Exit < 2) Exit++;
+//  256           else         Exit = 0;
+//  257         }
+//  258         break;
+//  259       }
+//  260       Key_Buffer = 0;
+//  261       if((Target == 1)||(Target == 4)){ 
+//  262         __Set(CH_A_OFFSET, (Ka3 * 195)/256);
+//  263         __Set(CH_B_OFFSET, (Kb3 * 195)/256);
+//  264       } else {
+//  265         __Set(CH_A_OFFSET, (Ka3 * 5)/256);
+//  266         __Set(CH_B_OFFSET, (Kb3 * 5)/256);
+//  267       }
+//  268       __Set(CH_A_RANGE, Range);
+//  269       __Set(CH_B_RANGE, Range);
+//  270       Delayms(200); 
+//  271     }
+//  272     __Set(FIFO_CLR, W_PTR); // FIFO写指针复位 
+//  273 //      __Set(CH_A_RANGE, Range);
+//  274 //      __Set(CH_B_RANGE, Range);
+//  275     
+//  276     if(Blink){ 
+//  277       Blink = 0;
+//  278       if(Range < G_Attr[0].Yp_Max +1){
+//  279         switch (Target){  
+//  280         case 0:
+//  281           Int32String_sign(&Num, A_Vdc);
+//  282           Print_Str( 45, 166-(Range*20), 0x0005, Twink, Num.str);
+//  283           Print_Str(  4*8, 216, 0x0605, PRN, "     Please connect");
+//  284           Print_Str( 23*8, 216, 0x0105, PRN, " CH_A ");
+//  285           Print_Str( 29*8, 216, 0x0605, PRN, "input to GND       ");
+//  286           Print_Str( 38*8, 216, 0x0605, Twink, "GND");
+//  287           if(Range != 0){
+//  288             Print_Str( 89, 166-(Range*20), 0x0005, PRN, " -- ");
+//  289           } 
+//  290           break;
+//  291         case 1:
+//  292           Int32String_sign(&Num, A_Vdc);
+//  293           Print_Str( 89, 166-(Range*20), 0x0005, Twink, Num.str);
+//  294           Print_Str( 38*8, 216, 0x0605, Twink, "GND");
+//  295           break;
+//  296         case 2:
+//  297           Int32String_sign(&Num, A_Vdc * Y_Attr[Range].SCALE);
+//  298           Print_Str(134, 166-(Range*20), 0x0005, Twink, Num.str);
+//  299           Print_Str(174, 166-(Range*20), 0x0005, Twink, V_Unit[Num.decPos]);
+//  300           Print_Str(  4*8, 216, 0x0605, PRN, " Input ");
+//  301           Print_Str( 11*8, 216, 0x0405, Twink, (u8*)VS_STR[Range]);
+//  302           Print_Str( 20*8, 216, 0x0605, PRN, " standard voltage to ");
+//  303           Print_Str( 41*8, 216, 0x0005, PRN, "CH_A  ");
+//  304           break;
+//  305         case 3:
+//  306           Int32String_sign(&Num, B_Vdc);
+//  307           Print_Str(245, 166-(Range*20), 0x0105, Twink, Num.str);
+//  308           Print_Str(  4*8, 216, 0x0605, PRN, "     Please connect");
+//  309           Print_Str( 23*8, 216, 0x0005, PRN, " CH_B ");
+//  310           Print_Str( 29*8, 216, 0x0605, PRN, "input to GND       ");
+//  311           Print_Str( 38*8, 216, 0x0605, Twink, "GND");
+//  312           if(Range != 0){
+//  313             Print_Str(289, 166-(Range*20), 0x0105, PRN, " -- ");
+//  314           } 
+//  315           break;
+//  316         case 4:
+//  317           Int32String_sign(&Num, B_Vdc);
+//  318           Print_Str(289, 166-(Range*20), 0x0105, Twink, Num.str);
+//  319           Print_Str( 38*8, 216, 0x0605, Twink, "GND");
+//  320           break;
+//  321         case 5:
+//  322           Int32String_sign(&Num, B_Vdc * Y_Attr[Range].SCALE);
+//  323           Print_Str(334, 166-(Range*20), 0x0105, Twink, Num.str);
+//  324           Print_Str(374, 166-(Range*20), 0x0105, Twink, V_Unit[Num.decPos]);
+//  325           Print_Str(  4*8, 216, 0x0605, PRN, " Input ");
+//  326           Print_Str( 11*8, 216, 0x0405, Twink, (u8*)VS_STR[Range]);
+//  327           Print_Str( 20*8, 216, 0x0605, PRN, " standard voltage to ");
+//  328           Print_Str( 41*8, 216, 0x0105, PRN, "CH_B  ");
+//  329         }
+//  330       } else Print_Str(10, 6, 0x0405, Twink, (u8*)ExitStr[Exit % 3]);
+??Calibrat_21:
+        MOVS     R0,R4
+        LDR.N    R2,??Calibrat_3+0x30  ;; 0x405
+        MOVS     R1,#+3
+        _BLF     ??div32_t,??rT??div32_t
+        MOVS     R1,#+30
+        MLA      R0,R0,R1,R8
+        MOVS     R1,#+6
+        ADDW     R0,R0,#+404
+        PUSH     {R0}
+        CFI CFA R13+96
+        LDRB     R3,[R7, #+0]
+        MOVS     R0,#+10
+??Calibrat_22:
+        _BLF     Print_Str,??Print_Str??rT
+        ADD      SP,SP,#+4
+        CFI CFA R13+92
+??Calibrat_19:
+        LDR.N    R7,??Calibrat_3+0x34  ;; PD_Cnt
+        LDRH     R0,[R7, #+0]
+        CBNZ     R0,??Calibrat_23
+        MOVS     R1,#+0
+        MOVS     R0,#+2
+        _BLF     __Set,??__Set??rT
+        MOVS     R1,#+1
+        MOVS     R0,#+20
+        _BLF     __Set,??__Set??rT
+        B.N      ??Calibrat_20
+        DATA
+??Calibrat_3:
+        DC32     Title
+        DC32     `?<Constant {"uV", "mV", "V ", "kV"}>`
+        DC32     Key_Buffer
+        DC32     Interlace
+        DC32     Beep_mS
+        DC32     X_Attr
+        DC32     0xffff
+        DC32     0x18f
+        DC32     0x105
+        DC32     0x125
+        DC32     G_Attr
+        DC32     Y_Attr
+        DC32     0x405
+        DC32     PD_Cnt
+        THUMB
+??Calibrat_23:
+        LDR.N    R0,??Calibrat_24  ;; JumpCnt
+        MOVS     R1,#+0
+        STRH     R1,[R0, #+0]
+        _BLF     Process,??Process??rT
+        LDR.N    R1,??Calibrat_24+0x4  ;; Kb2
+        MOVS     R0,R5
+        ADDS     R1,R1,R0, LSL #+1
+        STR      R1,[SP, #+12]
+        LDR.N    R1,??Calibrat_24+0x8  ;; Ka2
+        ADDS     R1,R1,R0, LSL #+1
+        STR      R1,[SP, #+8]
+        LDR.N    R1,??Calibrat_24+0xC  ;; Kb1
+        ADDS     R1,R1,R0
+        STR      R1,[SP, #+16]
+        LDR.N    R1,??Calibrat_24+0x10  ;; Ka1
+        ADDS     R1,R1,R0
+        STR      R1,[SP, #+4]
+        CMP      R6,#+1
+        BEQ.N    ??Calibrat_25
+        CMP      R6,#+4
+        BNE.N    ??Calibrat_26
+??Calibrat_25:
+        LDR      R1,[SP, #+8]
+        LDR.N    R2,??Calibrat_24+0x14  ;; a_Avg
+        LDRH     R1,[R1, #+0]
+        LDR      R2,[R2, #+0]
+        LDR.N    R3,??Calibrat_24+0x18  ;; b_Avg
+        LSRS     R2,R2,#+12
+        LDR      R3,[R3, #+0]
+        MULS     R1,R2,R1
+        LDR      R2,[SP, #+4]
+        LSRS     R1,R1,#+10
+        LSRS     R3,R3,#+12
+        LDRSB    R2,[R2, #+0]
+        ADDS     R1,R1,R2
+        LDR      R2,[SP, #+12]
+        SUBS     R1,R1,#+195
+        LDRH     R2,[R2, #+0]
+        MULS     R2,R3,R2
+        LDR      R3,[SP, #+16]
+        LSRS     R2,R2,#+10
+        LDRSB    R3,[R3, #+0]
+        ADDS     R2,R2,R3
+        SUBS     R2,R2,#+195
+        B.N      ??Calibrat_27
+??Calibrat_26:
+        LDR      R1,[SP, #+8]
+        LDR.N    R2,??Calibrat_24+0x14  ;; a_Avg
+        LDRH     R1,[R1, #+0]
+        LDR      R2,[R2, #+0]
+        LDR.N    R3,??Calibrat_24+0x18  ;; b_Avg
+        LSRS     R2,R2,#+12
+        LDR      R3,[R3, #+0]
+        MULS     R1,R2,R1
+        LDR      R2,[SP, #+4]
+        LSRS     R1,R1,#+10
+        LSRS     R3,R3,#+12
+        LDRSB    R2,[R2, #+0]
+        ADDS     R1,R1,R2
+        LDR      R2,[SP, #+12]
+        SUBS     R1,R1,#+5
+        LDRH     R2,[R2, #+0]
+        MULS     R2,R3,R2
+        LDR      R3,[SP, #+16]
+        LSRS     R2,R2,#+10
+        LDRSB    R3,[R3, #+0]
+        ADDS     R2,R2,R3
+        SUBS     R2,R2,#+5
+??Calibrat_27:
+        LDR.N    R3,??Calibrat_24+0x1C  ;; B_Vdc
+        STRH     R2,[R3, #+0]
+        LDR.N    R2,??Calibrat_24+0x20  ;; A_Vdc
+        STRH     R1,[R2, #+0]
+        LDR.N    R1,??Calibrat_24+0x24  ;; Key_Buffer
+        LDRB     R1,[R1, #+0]
+        CMP      R1,#+0
+        BEQ.W    ??Calibrat_28
+        MOVS     R1,#+600
+        STRH     R1,[R7, #+0]
+        LDR.N    R1,??Calibrat_24+0x28  ;; G_Attr
+        LDR      R1,[R1, #+0]
+        LDRH     R1,[R1, #+4]
+        CMP      R1,R5
+        BCC.W    ??Calibrat_29
+        MOVS     R1,#+20
+        MOVS     R2,R6
+        MULS     R0,R1,R0
+        MOVS     R1,#+166
+        SUBS     R7,R1,R0
+        LDR.N    R1,??Calibrat_24+0x2C  ;; Y_Attr
+        LDR      R1,[R1, #+0]
+        ADDS     R0,R1,R0
+        LDR.N    R1,??Calibrat_24+0x1C  ;; B_Vdc
+        STR      R0,[SP, #+20]
+        LDR.N    R0,??Calibrat_24+0x20  ;; A_Vdc
+        LDRSH    R1,[R1, #+0]
+        CMP      R2,#+5
+        LDRSH    R0,[R0, #+0]
+        BHI.N    ??Calibrat_29
+        TBB      [PC, R2]
+        DATA
+??Calibrat_0:
+        DC8      +3,+18,+30,+58
+        DC8      +69,+83
+        THUMB
+??Calibrat_30:
+        MOVS     R1,R0
+        ADD      R0,SP,#+24
+        _BLF     Int32String_sign,??Int32String_sign??rT
+        ADD      R0,SP,#+24
+        ADDS     R0,R0,#+2
+        PUSH     {R0}
+        CFI CFA R13+96
+        MOVS     R3,#+0
+        MOVS     R2,#+5
+        UXTH     R1,R7
+        MOVS     R0,#+45
+??Calibrat_31:
+        _BLF     Print_Str,??Print_Str??rT
+        ADD      SP,SP,#+4
+        CFI CFA R13+92
+        B.N      ??Calibrat_29
+??Calibrat_32:
+        MOVS     R1,R0
+        ADD      R0,SP,#+24
+        _BLF     Int32String_sign,??Int32String_sign??rT
+        ADD      R0,SP,#+24
+        ADDS     R0,R0,#+2
+        PUSH     {R0}
+        CFI CFA R13+96
+        MOVS     R3,#+0
+        MOVS     R2,#+5
+        UXTH     R1,R7
+        MOVS     R0,#+89
+        B.N      ??Calibrat_31
+        CFI CFA R13+92
+??Calibrat_33:
+        LDR      R1,[SP, #+20]
+        LDR      R1,[R1, #+16]
+        MULS     R0,R1,R0
+        MOVS     R1,R0
+        ADD      R0,SP,#+24
+        _BLF     Int32String_sign,??Int32String_sign??rT
+        ADD      R0,SP,#+24
+        ADDS     R0,R0,#+2
+        PUSH     {R0}
+        CFI CFA R13+96
+        MOVS     R3,#+0
+        MOVS     R2,#+5
+        UXTH     R1,R7
+        MOVS     R0,#+134
+        _BLF     Print_Str,??Print_Str??rT
+        LDRB     R0,[SP, #+28]
+        MOVS     R1,#+3
+        ADD      R2,SP,#+48
+        MOV      R3,R9
+        MLA      R0,R0,R1,R2
+        MOVS     R2,#+5
+        UXTH     R1,R7
+        PUSH     {R0}
+        CFI CFA R13+100
+        MOVS     R0,#+174
+        B.N      ??Calibrat_34
+        CFI CFA R13+92
+??Calibrat_35:
+        ADD      R0,SP,#+24
+        _BLF     Int32String_sign,??Int32String_sign??rT
+        ADD      R0,SP,#+24
+        ADDS     R0,R0,#+2
+        PUSH     {R0}
+        CFI CFA R13+96
+        MOVS     R3,#+0
+        MOV      R2,R11
+        UXTH     R1,R7
+        MOVS     R0,#+245
+        B.N      ??Calibrat_31
+        CFI CFA R13+92
+??Calibrat_36:
+        ADD      R0,SP,#+24
+        _BLF     Int32String_sign,??Int32String_sign??rT
+        ADD      R0,SP,#+24
+        ADDS     R0,R0,#+2
+        PUSH     {R0}
+        CFI CFA R13+96
+        LDR.N    R0,??Calibrat_24+0x30  ;; 0x121
+        MOVS     R3,#+0
+        MOV      R2,R11
+        UXTH     R1,R7
+        _BLF     Print_Str,??Print_Str??rT
+        ADD      SP,SP,#+4
+        CFI CFA R13+92
+        B.N      ??Calibrat_29
+??Calibrat_37:
+        LDR      R0,[SP, #+20]
+        LDR      R0,[R0, #+16]
+        MULS     R1,R0,R1
+        ADD      R0,SP,#+24
+        _BLF     Int32String_sign,??Int32String_sign??rT
+        ADD      R0,SP,#+24
+        ADDS     R0,R0,#+2
+        PUSH     {R0}
+        CFI CFA R13+96
+        MOVS     R3,#+0
+        MOV      R2,R11
+        UXTH     R1,R7
+        MOVS     R0,#+334
+        _BLF     Print_Str,??Print_Str??rT
+        LDRB     R0,[SP, #+28]
+        MOVS     R1,#+3
+        ADD      R2,SP,#+48
+        MOV      R3,R9
+        MLA      R0,R0,R1,R2
+        MOV      R2,R11
+        UXTH     R1,R7
+        PUSH     {R0}
+        CFI CFA R13+100
+        MOVS     R0,#+374
+??Calibrat_34:
+        _BLF     Print_Str,??Print_Str??rT
+        ADD      SP,SP,#+8
+        CFI CFA R13+92
+??Calibrat_29:
+        LDR.N    R0,??Calibrat_24+0x28  ;; G_Attr
+        LDR.N    R3,??Calibrat_24+0x24  ;; Key_Buffer
+        LDR      R0,[R0, #+0]
+        LDRH     R1,[R0, #+4]
+        LDRB     R3,[R3, #+0]
+        SUBS     R3,R3,#+2
+        CMP      R3,#+8
+        BHI.W    ??Calibrat_38
+        TBH      [PC, R3, LSL #+1]
+        DATA
+??Calibrat_1:
+        DC16     +9,+288,+288,+141
+        DC16     +231,+95,+131,+120
+        DC16     +82
+        THUMB
+??Calibrat_39:
+        CMP      R1,R5
+        BCS.W    ??Calibrat_38
+        CMP      R4,#+1
+        BNE.N    ??Calibrat_40
+        MOVS     R0,#+0
+        _BLF     Save_Parameter,??Save_Parameter??rT
+        LDR.N    R2,??Calibrat_24+0x34  ;; 0x405
+        MOV      R0,R8
+        ADDS     R0,R0,#+96
+        PUSH     {R0}
+        CFI CFA R13+96
+        MOV      R3,R9
+        MOVS     R1,#+216
+        MOVS     R0,#+32
+        _BLF     Print_Str,??Print_Str??rT
+        MOVS     R0,#+1000
+        _BLF     Delayms,??Delayms??rT
+        ADD      SP,SP,#+4
+        CFI CFA R13+92
+??Calibrat_40:
+        CMP      R4,#+2
+        BNE.N    ??Calibrat_41
+        MOVS     R7,#+0
+        B.N      ??Calibrat_42
+??Calibrat_43:
+        LDR.N    R1,??Calibrat_24+0x10  ;; Ka1
+        MOVS     R0,R7
+        MOVS     R2,#+0
+        ADDS     R7,R7,#+1
+        STRB     R2,[R1, R0]
+        LDR.N    R1,??Calibrat_24+0xC  ;; Kb1
+        UXTH     R7,R7
+        STRB     R2,[R1, R0]
+        LDR.N    R2,??Calibrat_24+0x8  ;; Ka2
+        MOVS     R1,#+1024
+        STRH     R1,[R2, R0, LSL #+1]
+        LDR.N    R2,??Calibrat_24+0x4  ;; Kb2
+        STRH     R1,[R2, R0, LSL #+1]
+??Calibrat_42:
+        LDR.N    R0,??Calibrat_24+0x28  ;; G_Attr
+        LDR      R0,[R0, #+0]
+        LDRH     R0,[R0, #+4]
+        CMP      R0,R7
+        BCS.N    ??Calibrat_43
+        LDR.N    R1,??Calibrat_24+0x38  ;; Ka3
+        MOVS     R0,#+256
+        STRH     R0,[R1, #+0]
+        LDR.N    R1,??Calibrat_24+0x3C  ;; Kb3
+        STRH     R0,[R1, #+0]
+        MOVS     R0,#+0
+        _BLF     Save_Parameter,??Save_Parameter??rT
+        LDR.N    R2,??Calibrat_24+0x34  ;; 0x405
+        MOV      R0,R8
+        ADDS     R0,R0,#+140
+        PUSH     {R0}
+        CFI CFA R13+96
+        MOV      R3,R9
+        MOVS     R1,#+216
+        MOVS     R0,#+32
+        _BLF     Print_Str,??Print_Str??rT
+        MOVS     R0,#+1000
+        _BLF     Delayms,??Delayms??rT
+        ADD      SP,SP,#+4
+        CFI CFA R13+92
+??Calibrat_41:
+        _BLF     App_init,??App_init??rT
+        B.N      ??Calibrat_20
+??Calibrat_44:
+        LDRB     R0,[SP, #+2]
+        CBNZ     R0,??Calibrat_45
+        CMP      R6,#+2
+        ITE     CS 
+        MOVCS    R6,#+0
+        MOVCC    R6,#+2
+        B.N      ??Calibrat_38
+??Calibrat_45:
+        CMP      R6,#+5
+        ITE     CS 
+        MOVCS    R6,#+3
+        MOVCC    R6,#+5
+        B.N      ??Calibrat_38
+??Calibrat_46:
+        LDRB     R0,[SP, #+2]
+        CBNZ     R0,??Calibrat_47
+        MOVS     R0,R6
+        BNE.N    ??Calibrat_48
+        MOVS     R0,R5
+        BNE.N    ??Calibrat_48
+        MOVS     R6,#+1
+        B.N      ??Calibrat_38
+??Calibrat_48:
+        CMP      R6,#+2
+        BCS.W    ??Calibrat_38
+??Calibrat_49:
+        MOVS     R6,#+0
+        B.N      ??Calibrat_38
+??Calibrat_47:
+        CMP      R6,#+4
+        BCS.N    ??Calibrat_50
+        MOVS     R0,R5
+        BNE.N    ??Calibrat_50
+        MOVS     R6,#+4
+        B.N      ??Calibrat_38
+??Calibrat_50:
+        CMP      R6,#+5
+        BCS.W    ??Calibrat_38
+??Calibrat_51:
+        MOVS     R6,#+3
+        B.N      ??Calibrat_38
+??Calibrat_52:
+        MOVS     R0,R5
+        ITTT    NE 
+        MOVNE    R0,R10
+        ADDNE    R5,R5,R0
+        UXTHNE   R5,R5
+        CMP      R6,#+1
+        BEQ.N    ??Calibrat_49
+??Calibrat_53:
+        CMP      R6,#+4
+        BNE.W    ??Calibrat_38
+        B.N      ??Calibrat_51
+??Calibrat_54:
+        CMP      R1,R5
+        ITT     CS 
+        ADDCS    R5,R5,#+1
+        UXTHCS   R5,R5
+        CMP      R6,#+1
+        BEQ.N    ??Calibrat_49
+??Calibrat_55:
+        CMP      R6,#+4
+        BNE.W    ??Calibrat_38
+        B.N      ??Calibrat_51
+??Calibrat_56:
+        CMP      R1,R5
+        BCC.N    ??Calibrat_57
+        MOVS     R0,R6
+        BNE.N    ??Calibrat_58
+        LDR      R0,[SP, #+4]
+        LDRSB    R1,[R0, #+0]
+        SUBS     R1,R1,#+1
+        STRB     R1,[R0, #+0]
+??Calibrat_58:
+        CMP      R6,#+1
+        BNE.N    ??Calibrat_59
+        MOVS     R0,R5
+        BNE.N    ??Calibrat_59
+        LDR.N    R1,??Calibrat_24+0x38  ;; Ka3
+        LDR.N    R0,??Calibrat_24+0x38  ;; Ka3
+        MOV      R2,R10
+        LDRH     R1,[R1, #+0]
+        ADDS     R1,R1,R2
+        STRH     R1,[R0, #+0]
+??Calibrat_59:
+        LDR.N    R0,??Calibrat_24+0x40  ;; 0xfffc
+        CMP      R6,#+2
+        BNE.N    ??Calibrat_60
+        LDR      R1,[SP, #+8]
+        LDRH     R2,[R1, #+0]
+        ADDS     R2,R2,R0
+        STRH     R2,[R1, #+0]
+??Calibrat_60:
+        CMP      R6,#+3
+        BNE.N    ??Calibrat_61
+        LDR      R1,[SP, #+16]
+        LDRSB    R2,[R1, #+0]
+        SUBS     R2,R2,#+1
+        STRB     R2,[R1, #+0]
+??Calibrat_61:
+        CMP      R6,#+4
+        BNE.N    ??Calibrat_62
+        MOVS     R1,R5
+        BNE.N    ??Calibrat_62
+        LDR.N    R2,??Calibrat_24+0x3C  ;; Kb3
+        LDR.N    R1,??Calibrat_24+0x3C  ;; Kb3
+        MOV      R3,R10
+        LDRH     R2,[R2, #+0]
+        ADDS     R2,R2,R3
+        STRH     R2,[R1, #+0]
+??Calibrat_62:
+        CMP      R6,#+5
+        BNE.N    ??Calibrat_38
+        LDR      R1,[SP, #+12]
+        LDRH     R2,[R1, #+0]
+        ADDS     R0,R2,R0
+        STRH     R0,[R1, #+0]
+        B.N      ??Calibrat_38
+??Calibrat_57:
+        MOVS     R0,R4
+        ITEE    EQ 
+        MOVEQ    R4,#+2
+        SUBNE    R4,R4,#+1
+        UXTBNE   R4,R4
+        B.N      ??Calibrat_38
+        DATA
+??Calibrat_24:
+        DC32     JumpCnt
+        DC32     Kb2
+        DC32     Ka2
+        DC32     Kb1
+        DC32     Ka1
+        DC32     a_Avg
+        DC32     b_Avg
+        DC32     B_Vdc
+        DC32     A_Vdc
+        DC32     Key_Buffer
+        DC32     G_Attr
+        DC32     Y_Attr
+        DC32     0x121
+        DC32     0x405
+        DC32     Ka3
+        DC32     Kb3
+        DC32     0xfffc
+        THUMB
+??Calibrat_63:
+        ADDS     R2,R4,#+1
+        UXTB     R2,R2
+        CMP      R1,R5
+        BCC.N    ??Calibrat_64
+        MOVS     R1,R6
+        BNE.N    ??Calibrat_65
+        LDR      R1,[SP, #+4]
+        LDRSB    R3,[R1, #+0]
+        ADDS     R3,R3,#+1
+        STRB     R3,[R1, #+0]
+??Calibrat_65:
+        CMP      R6,#+1
+        BNE.N    ??Calibrat_66
+        MOVS     R1,R5
+        BNE.N    ??Calibrat_66
+        LDR.N    R3,??Calibrat_67  ;; Ka3
+        LDR.N    R1,??Calibrat_67  ;; Ka3
+        LDRH     R3,[R3, #+0]
+        ADDS     R3,R3,#+1
+        STRH     R3,[R1, #+0]
+??Calibrat_66:
+        CMP      R6,#+2
+        BNE.N    ??Calibrat_68
+        LDR      R1,[SP, #+8]
+        LDRH     R3,[R1, #+0]
+        ADDS     R3,R3,#+4
+        STRH     R3,[R1, #+0]
+??Calibrat_68:
+        CMP      R6,#+3
+        BNE.N    ??Calibrat_69
+        LDR      R1,[SP, #+16]
+        LDRSB    R3,[R1, #+0]
+        ADDS     R3,R3,#+1
+        STRB     R3,[R1, #+0]
+??Calibrat_69:
+        CMP      R6,#+4
+        BNE.N    ??Calibrat_70
+        MOVS     R1,R5
+        BNE.N    ??Calibrat_70
+        LDR.N    R3,??Calibrat_67+0x4  ;; Kb3
+        LDR.N    R1,??Calibrat_67+0x4  ;; Kb3
+        LDRH     R3,[R3, #+0]
+        ADDS     R3,R3,#+1
+        STRH     R3,[R1, #+0]
+??Calibrat_70:
+        CMP      R6,#+5
+        BNE.N    ??Calibrat_71
+        LDR      R1,[SP, #+12]
+        LDRH     R3,[R1, #+0]
+        ADDS     R3,R3,#+4
+        STRH     R3,[R1, #+0]
+??Calibrat_71:
+        LDRH     R0,[R0, #+4]
+        CMP      R5,R0
+        BCC.N    ??Calibrat_38
+        MOVS     R4,R2
+        B.N      ??Calibrat_38
+??Calibrat_64:
+        CMP      R4,#+2
+        ITE     CS 
+        MOVCS    R4,#+0
+        MOVCC    R4,R2
+??Calibrat_38:
+        LDR.N    R0,??Calibrat_67+0x8  ;; Key_Buffer
+        MOVS     R1,#+0
+        CMP      R6,#+1
+        STRB     R1,[R0, #+0]
+        BEQ.N    ??Calibrat_72
+        CMP      R6,#+4
+        BNE.N    ??Calibrat_73
+??Calibrat_72:
+        LDR.N    R0,??Calibrat_67  ;; Ka3
+        MOVS     R1,#+195
+        LDRH     R0,[R0, #+0]
+        MULS     R0,R1,R0
+        ASRS     R1,R0,#+7
+        ADDS     R0,R0,R1, LSR #+24
+        ASRS     R1,R0,#+8
+        MOVS     R0,#+0
+        _BLF     __Set,??__Set??rT
+        LDR.N    R0,??Calibrat_67+0x4  ;; Kb3
+        MOVS     R1,#+195
+        LDRH     R0,[R0, #+0]
+        MULS     R0,R1,R0
+        ASRS     R1,R0,#+7
+        ADDS     R0,R0,R1, LSR #+24
+        B.N      ??Calibrat_74
+??Calibrat_73:
+        LDR.N    R0,??Calibrat_67  ;; Ka3
+        MOVS     R1,#+5
+        LDRH     R0,[R0, #+0]
+        MULS     R0,R1,R0
+        ASRS     R1,R0,#+7
+        ADDS     R0,R0,R1, LSR #+24
+        ASRS     R1,R0,#+8
+        MOVS     R0,#+0
+        _BLF     __Set,??__Set??rT
+        LDR.N    R0,??Calibrat_67+0x4  ;; Kb3
+        MOVS     R1,#+5
+        LDRH     R0,[R0, #+0]
+        MULS     R0,R1,R0
+        ASRS     R1,R0,#+7
+        ADDS     R0,R0,R1, LSR #+24
+??Calibrat_74:
+        ASRS     R1,R0,#+8
+        MOVS     R0,#+1
+        _BLF     __Set,??__Set??rT
+        MOVS     R1,R5
+        MOVS     R0,#+10
+        _BLF     __Set,??__Set??rT
+        MOVS     R1,R5
+        MOVS     R0,#+12
+        _BLF     __Set,??__Set??rT
+        MOVS     R0,#+200
+        _BLF     Delayms,??Delayms??rT
+??Calibrat_28:
+        MOVS     R1,#+1
+        MOVS     R0,#+6
+        _BLF     __Set,??__Set??rT
+        LDR.N    R0,??Calibrat_67+0xC  ;; Blink
+        LDRB     R1,[R0, #+0]
+        CMP      R1,#+0
+        BEQ.W    ??Calibrat_19
+        LDR.N    R7,??Calibrat_67+0x10  ;; Twink
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+0]
+        LDR.N    R1,??Calibrat_67+0x14  ;; G_Attr
+        MOVS     R0,R5
+        LDR      R1,[R1, #+0]
+        LDRH     R1,[R1, #+4]
+        ADDS     R1,R1,#+1
+        CMP      R0,R1
+        BGE.W    ??Calibrat_21
+        MOVS     R1,#+12
+        MOV      R2,R8
+        MLA      R1,R0,R1,R8
+        ADDS     R2,R2,#+232
+        ADDW     R1,R1,#+296
+        STR      R1,[SP, #+16]
+        MOVS     R1,#+20
+        MULS     R0,R1,R0
+        MOVS     R1,#+166
+        SUBS     R1,R1,R0
+        STRH     R1,[SP, #+0]
+        LDR.N    R1,??Calibrat_67+0x18  ;; Y_Attr
+        LDR      R1,[R1, #+0]
+        ADDS     R0,R1,R0
+        LDR.N    R1,??Calibrat_67+0x1C  ;; B_Vdc
+        STR      R0,[SP, #+20]
+        LDR.N    R0,??Calibrat_67+0x20  ;; A_Vdc
+        LDRSH    R1,[R1, #+0]
+        LDRSH    R0,[R0, #+0]
+        STR      R2,[SP, #+12]
+        MOV      R2,R8
+        ADDS     R2,R2,#+212
+        STR      R2,[SP, #+4]
+        MOV      R2,R8
+        ADDS     R2,R2,#+184
+        STR      R2,[SP, #+8]
+        MOV      R2,R8
+        ADDS     R2,R2,#+248
+        STR      R2,[SP, #+36]
+        MOV      R2,R8
+        ADDS     R2,R2,#+240
+        STR      R2,[SP, #+40]
+        MOVS     R2,R6
+        CMP      R2,#+5
+        BHI.W    ??Calibrat_19
+        ADR      R3,??Calibrat_2
+        LSLS     R2,R2,#+1
+        LDRSH    R3,[R3, R2]
+        ADD      PC,PC,R3
+        Nop      
+        DATA
+??Calibrat_2:
+        DC16     +12,+132,+182,+316
+        DC16     +434,+476
+        THUMB
+??Calibrat_75:
+        MOVS     R1,R0
+        ADD      R0,SP,#+24
+        _BLF     Int32String_sign,??Int32String_sign??rT
+        ADD      R0,SP,#+24
+        ADDS     R0,R0,#+2
+        PUSH     {R0}
+        CFI CFA R13+96
+        LDRB     R3,[R7, #+0]
+        LDRH     R1,[SP, #+4]
+        MOVS     R2,#+5
+        MOVS     R0,#+45
+        _BLF     Print_Str,??Print_Str??rT
+        LDR.N    R2,??Calibrat_67+0x24  ;; 0x605
+        LDR      R0,[SP, #+12]
+        MOVS     R3,#+0
+        MOVS     R1,#+216
+        PUSH     {R0}
+        CFI CFA R13+100
+        MOVS     R0,#+32
+        _BLF     Print_Str,??Print_Str??rT
+        MOV      R0,R8
+        ADDS     R0,R0,#+204
+        PUSH     {R0}
+        CFI CFA R13+104
+        MOV      R3,R9
+        MOV      R2,R11
+        MOVS     R1,#+216
+        MOVS     R0,#+184
+        _BLF     Print_Str,??Print_Str??rT
+        LDR.N    R2,??Calibrat_67+0x24  ;; 0x605
+        LDR      R0,[SP, #+16]
+        MOV      R3,R9
+        MOVS     R1,#+216
+        PUSH     {R0}
+        CFI CFA R13+108
+        MOVS     R0,#+232
+        _BLF     Print_Str,??Print_Str??rT
+        LDR.N    R2,??Calibrat_67+0x24  ;; 0x605
+        ADR.N    R0,??Calibrat_67+0x28  ;; "GND"
+        PUSH     {R0}
+        CFI CFA R13+112
+        LDRB     R3,[R7, #+0]
+        MOVS     R1,#+216
+        MOVS     R0,#+304
+        _BLF     Print_Str,??Print_Str??rT
+        MOVS     R0,R5
+        ADD      SP,SP,#+20
+        CFI CFA R13+92
+        BEQ.W    ??Calibrat_19
+        LDR      R0,[SP, #+12]
+        MOVS     R3,#+0
+        MOVS     R2,#+5
+        PUSH     {R0}
+        CFI CFA R13+96
+        LDRH     R1,[SP, #+4]
+        MOVS     R0,#+89
+        B.N      ??Calibrat_22
+        CFI CFA R13+92
+??Calibrat_76:
+        MOVS     R1,R0
+        ADD      R0,SP,#+24
+        _BLF     Int32String_sign,??Int32String_sign??rT
+        ADD      R0,SP,#+24
+        ADDS     R0,R0,#+2
+        PUSH     {R0}
+        CFI CFA R13+96
+        LDRB     R3,[R7, #+0]
+        LDRH     R1,[SP, #+4]
+        MOVS     R2,#+5
+        MOVS     R0,#+89
+        _BLF     Print_Str,??Print_Str??rT
+        LDR.N    R2,??Calibrat_67+0x24  ;; 0x605
+        ADR.N    R0,??Calibrat_67+0x28  ;; "GND"
+        PUSH     {R0}
+        CFI CFA R13+100
+        LDRB     R3,[R7, #+0]
+        MOVS     R1,#+216
+        MOVS     R0,#+304
+??Calibrat_77:
+        _BLF     Print_Str,??Print_Str??rT
+        ADD      SP,SP,#+8
+        CFI CFA R13+92
+        B.N      ??Calibrat_19
+??Calibrat_78:
+        LDR      R1,[SP, #+20]
+        LDR      R1,[R1, #+16]
+        MULS     R0,R1,R0
+        MOVS     R1,R0
+        ADD      R0,SP,#+24
+        _BLF     Int32String_sign,??Int32String_sign??rT
+        ADD      R0,SP,#+24
+        ADDS     R0,R0,#+2
+        PUSH     {R0}
+        CFI CFA R13+96
+        LDRB     R3,[R7, #+0]
+        LDRH     R1,[SP, #+4]
+        MOVS     R2,#+5
+        MOVS     R0,#+134
+        _BLF     Print_Str,??Print_Str??rT
+        LDRB     R0,[SP, #+28]
+        MOVS     R1,#+3
+        ADD      R2,SP,#+48
+        MLA      R0,R0,R1,R2
+        MOVS     R2,#+5
+        PUSH     {R0}
+        CFI CFA R13+100
+        LDRB     R3,[R7, #+0]
+        LDRH     R1,[SP, #+8]
+        MOVS     R0,#+174
+        _BLF     Print_Str,??Print_Str??rT
+        LDR.N    R2,??Calibrat_67+0x24  ;; 0x605
+        LDR      R0,[SP, #+48]
+        MOVS     R3,#+0
+        MOVS     R1,#+216
+        PUSH     {R0}
+        CFI CFA R13+104
+        MOVS     R0,#+32
+        _BLF     Print_Str,??Print_Str??rT
+        LDR.N    R2,??Calibrat_67+0x2C  ;; 0x405
+        LDR      R0,[SP, #+28]
+        MOVS     R1,#+216
+        PUSH     {R0}
+        CFI CFA R13+108
+        LDRB     R3,[R7, #+0]
+        MOVS     R0,#+88
+        _BLF     Print_Str,??Print_Str??rT
+        LDR.N    R2,??Calibrat_67+0x24  ;; 0x605
+        LDR      R0,[SP, #+52]
+        MOV      R3,R9
+        MOVS     R1,#+216
+        PUSH     {R0}
+        CFI CFA R13+112
+        MOVS     R0,#+160
+        _BLF     Print_Str,??Print_Str??rT
+        ADDW     R0,R8,#+272
+        PUSH     {R0}
+        CFI CFA R13+116
+        MOV      R3,R9
+        MOVS     R2,#+5
+        MOVS     R1,#+216
+        MOVS     R0,#+328
+??Calibrat_79:
+        _BLF     Print_Str,??Print_Str??rT
+        ADD      SP,SP,#+24
+        CFI CFA R13+92
+        B.N      ??Calibrat_19
+??Calibrat_80:
+        ADD      R0,SP,#+24
+        _BLF     Int32String_sign,??Int32String_sign??rT
+        ADD      R0,SP,#+24
+        ADDS     R0,R0,#+2
+        PUSH     {R0}
+        CFI CFA R13+96
+        LDRB     R3,[R7, #+0]
+        LDRH     R1,[SP, #+4]
+        MOV      R2,R11
+        MOVS     R0,#+245
+        _BLF     Print_Str,??Print_Str??rT
+        LDR.N    R2,??Calibrat_67+0x24  ;; 0x605
+        LDR      R0,[SP, #+12]
+        MOVS     R3,#+0
+        MOVS     R1,#+216
+        PUSH     {R0}
+        CFI CFA R13+100
+        MOVS     R0,#+32
+        _BLF     Print_Str,??Print_Str??rT
+        ADDW     R0,R8,#+280
+        PUSH     {R0}
+        CFI CFA R13+104
+        MOV      R3,R9
+        MOVS     R2,#+5
+        MOVS     R1,#+216
+        MOVS     R0,#+184
+        _BLF     Print_Str,??Print_Str??rT
+        LDR.N    R2,??Calibrat_67+0x24  ;; 0x605
+        LDR      R0,[SP, #+16]
+        MOV      R3,R9
+        MOVS     R1,#+216
+        PUSH     {R0}
+        CFI CFA R13+108
+        MOVS     R0,#+232
+        _BLF     Print_Str,??Print_Str??rT
+        LDR.N    R2,??Calibrat_67+0x24  ;; 0x605
+        ADR.N    R0,??Calibrat_67+0x28  ;; "GND"
+        PUSH     {R0}
+        CFI CFA R13+112
+        LDRB     R3,[R7, #+0]
+        MOVS     R1,#+216
+        MOVS     R0,#+304
+        _BLF     Print_Str,??Print_Str??rT
+        MOVS     R0,R5
+        ADD      SP,SP,#+20
+        CFI CFA R13+92
+        BEQ.W    ??Calibrat_19
+        LDR      R0,[SP, #+12]
+        MOVS     R3,#+0
+        MOV      R2,R11
+        PUSH     {R0}
+        CFI CFA R13+96
+        LDRH     R1,[SP, #+4]
+        LDR.N    R0,??Calibrat_67+0x30  ;; 0x121
+        B.N      ??Calibrat_22
+        CFI CFA R13+92
+??Calibrat_81:
+        ADD      R0,SP,#+24
+        _BLF     Int32String_sign,??Int32String_sign??rT
+        ADD      R0,SP,#+24
+        ADDS     R0,R0,#+2
+        PUSH     {R0}
+        CFI CFA R13+96
+        LDRB     R3,[R7, #+0]
+        LDRH     R1,[SP, #+4]
+        LDR.N    R0,??Calibrat_67+0x30  ;; 0x121
+        MOV      R2,R11
+        _BLF     Print_Str,??Print_Str??rT
+        LDR.N    R2,??Calibrat_67+0x24  ;; 0x605
+        ADR.N    R0,??Calibrat_67+0x28  ;; "GND"
+        PUSH     {R0}
+        CFI CFA R13+100
+        LDRB     R3,[R7, #+0]
+        MOVS     R1,#+216
+        MOVS     R0,#+304
+        B.N      ??Calibrat_77
+        CFI CFA R13+92
+??Calibrat_82:
+        LDR      R0,[SP, #+20]
+        LDR      R0,[R0, #+16]
+        MULS     R1,R0,R1
+        ADD      R0,SP,#+24
+        _BLF     Int32String_sign,??Int32String_sign??rT
+        ADD      R0,SP,#+24
+        ADDS     R0,R0,#+2
+        PUSH     {R0}
+        CFI CFA R13+96
+        LDRB     R3,[R7, #+0]
+        LDRH     R1,[SP, #+4]
+        MOV      R2,R11
+        MOVS     R0,#+334
+        _BLF     Print_Str,??Print_Str??rT
+        LDRB     R0,[SP, #+28]
+        MOVS     R1,#+3
+        ADD      R2,SP,#+48
+        MLA      R0,R0,R1,R2
+        MOV      R2,R11
+        PUSH     {R0}
+        CFI CFA R13+100
+        LDRB     R3,[R7, #+0]
+        LDRH     R1,[SP, #+8]
+        MOVS     R0,#+374
+        _BLF     Print_Str,??Print_Str??rT
+        LDR.N    R2,??Calibrat_67+0x24  ;; 0x605
+        LDR      R0,[SP, #+48]
+        MOVS     R3,#+0
+        MOVS     R1,#+216
+        PUSH     {R0}
+        CFI CFA R13+104
+        MOVS     R0,#+32
+        _BLF     Print_Str,??Print_Str??rT
+        LDR.N    R2,??Calibrat_67+0x2C  ;; 0x405
+        LDR      R0,[SP, #+28]
+        MOVS     R1,#+216
+        PUSH     {R0}
+        CFI CFA R13+108
+        LDRB     R3,[R7, #+0]
+        MOVS     R0,#+88
+        _BLF     Print_Str,??Print_Str??rT
+        LDR.N    R2,??Calibrat_67+0x24  ;; 0x605
+        LDR      R0,[SP, #+52]
+        MOV      R3,R9
+        MOVS     R1,#+216
+        PUSH     {R0}
+        CFI CFA R13+112
+        MOVS     R0,#+160
+        _BLF     Print_Str,??Print_Str??rT
+        ADDW     R0,R8,#+288
+        PUSH     {R0}
+        CFI CFA R13+116
+        MOV      R3,R9
+        MOV      R2,R11
+        MOVS     R1,#+216
+        MOVS     R0,#+328
+        B.N      ??Calibrat_79
+        Nop      
+        DATA
+??Calibrat_67:
+        DC32     Ka3
+        DC32     Kb3
+        DC32     Key_Buffer
+        DC32     Blink
+        DC32     Twink
+        DC32     G_Attr
+        DC32     Y_Attr
+        DC32     B_Vdc
+        DC32     A_Vdc
+        DC32     0x605
+        DC8      "GND"
+        DC32     0x405
+        DC32     0x121
+        CFI EndBlock cfiBlock1
+//  331     }
+//  332   }
+//  333 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__Set??rT:
+        LDR.N    R3,??Subroutine0_0  ;; __Set
+        BX       R3
+        DATA
+??Subroutine0_0:
+        DC32     __Set
+        CFI EndBlock cfiBlock2
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Delayms??rT:
+        LDR.N    R3,??Subroutine1_0  ;; Delayms
+        BX       R3
+        DATA
+??Subroutine1_0:
+        DC32     Delayms
+        CFI EndBlock cfiBlock3
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Process??rT:
+        LDR.N    R3,??Subroutine2_0  ;; Process
+        BX       R3
+        DATA
+??Subroutine2_0:
+        DC32     Process
+        CFI EndBlock cfiBlock4
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__Clear_Screen??rT:
+        LDR.N    R3,??Subroutine3_0  ;; __Clear_Screen
+        BX       R3
+        DATA
+??Subroutine3_0:
+        DC32     __Clear_Screen
+        CFI EndBlock cfiBlock5
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Load_Parameter??rT:
+        LDR.N    R3,??Subroutine4_0  ;; Load_Parameter
+        BX       R3
+        DATA
+??Subroutine4_0:
+        DC32     Load_Parameter
+        CFI EndBlock cfiBlock6
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__Point_SCR??rT:
+        LDR.N    R3,??Subroutine5_0  ;; __Point_SCR
+        BX       R3
+        DATA
+??Subroutine5_0:
+        DC32     __Point_SCR
+        CFI EndBlock cfiBlock7
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__LCD_SetPixl??rT:
+        LDR.N    R3,??Subroutine6_0  ;; __LCD_SetPixl
+        BX       R3
+        DATA
+??Subroutine6_0:
+        DC32     __LCD_SetPixl
+        CFI EndBlock cfiBlock8
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Print_Str??rT:
+        PUSH     {R3}
+        CFI CFA R13+4
+        LDR.N    R3,??Subroutine7_0  ;; Print_Str
+        MOV      R12,R3
+        POP      {R3}
+        CFI CFA R13+0
+        BX       R12
+        Nop      
+        DATA
+??Subroutine7_0:
+        DC32     Print_Str
+        CFI EndBlock cfiBlock9
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??App_init??rT:
+        LDR.N    R3,??Subroutine8_0  ;; App_init
+        BX       R3
+        DATA
+??Subroutine8_0:
+        DC32     App_init
+        CFI EndBlock cfiBlock10
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock11 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??rT??div32_t:
+        PUSH     {R3}
+        CFI CFA R13+4
+        LDR.N    R3,??Subroutine9_0  ;; ??div32_t
+        MOV      R12,R3
+        POP      {R3}
+        CFI CFA R13+0
+        BX       R12
+        Nop      
+        DATA
+??Subroutine9_0:
+        DC32     ??div32_t
+        CFI EndBlock cfiBlock11
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock12 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Int32String_sign??rT:
+        LDR.N    R3,??Subroutine10_0  ;; Int32String_sign
+        BX       R3
+        DATA
+??Subroutine10_0:
+        DC32     Int32String_sign
+        CFI EndBlock cfiBlock12
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock13 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Save_Parameter??rT:
+        LDR.N    R3,??Subroutine11_0  ;; Save_Parameter
+        BX       R3
+        DATA
+??Subroutine11_0:
+        DC32     Save_Parameter
+        CFI EndBlock cfiBlock13
+
+        END
+//  334 /*********************************  END OF FILE  ******************************/
+// 
+// 3 224 bytes in segment CODE
+//   500 bytes in segment DATA_C
+// 
+// 3 112 bytes of CODE  memory (+ 112 bytes shared)
+//   500 bytes of CONST memory
+//
+//Errors: none
+//Warnings: none

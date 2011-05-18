@@ -1,0 +1,214 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32 EVALUATION   25/Apr/2011  15:04:57 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  C:\Users\Administrator\Desktop\mini DSO             /
+//                       download\SYS_V1.34\USBLib\src\usb_init.c            /
+//    Command line    =  "C:\Users\Administrator\Desktop\mini DSO            /
+//                       download\SYS_V1.34\USBLib\src\usb_init.c" -lA       /
+//                       "C:\Users\Administrator\Desktop\mini DSO            /
+//                       download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\List\"  /
+//                       -o "C:\Users\Administrator\Desktop\mini DSO         /
+//                       download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\"   /
+//                       -s9 --no_inline --cpu_mode thumb --endian little    /
+//                       --cpu cortex-M3 --stack_align 4 -e --fpu None       /
+//                       --dlib_config "E:\IARWorkBench(Cracked)\Embedded    /
+//                       Workbench 4.0 Evaluation\ARM\LIB\dl7mptnnl8n.h" -I  /
+//                       "C:\Users\Administrator\Desktop\mini DSO            /
+//                       download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\..\..\F /
+//                       WLib\inc\" -I "C:\Users\Administrator\Desktop\mini  /
+//                       DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\..\ /
+//                       ..\USBLib\inc\" -I "C:\Users\Administrator\Desktop\ /
+//                       mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpjec /
+//                       t\..\include\" -I "E:\IARWorkBench(Cracked)\Embedde /
+//                       d Workbench 4.0 Evaluation\ARM\INC\"                /
+//    List file       =  C:\Users\Administrator\Desktop\mini DSO             /
+//                       download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\List\us /
+//                       b_init.s79                                          /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME usb_init
+
+        RTMODEL "StackAlign4", "USED"
+        RTMODEL "__cpu_mode", "__pcs__thumb"
+        RTMODEL "__data_model", "absolute"
+        RTMODEL "__endian", "little"
+        RTMODEL "__rt_version", "6"
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+        PUBWEAK ?init?tab?DATA_Z
+        PUBLIC Device_Info
+        PUBLIC EPindex
+        PUBLIC SaveState
+        PUBLIC USB_Init
+        FUNCTION USB_Init,0203H
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC pInformation
+        PUBLIC pProperty
+        PUBLIC pUser_Standard_Requests
+        PUBLIC wInterrupt_Mask
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA R13 HUGEDATA
+        CFI Resource R0:32, R1:32, R2:32, R3:32, R4:32, R5:32, R6:32, R7:32
+        CFI Resource R8:32, R9:32, R10:32, R11:32, R12:32, R13:32, R14:32
+        CFI VirtualResource ?RET:32
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 2
+        CFI DataAlign 4
+        CFI ReturnAddress ?RET CODE
+        CFI CFA R13+0
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI R8 SameValue
+        CFI R9 SameValue
+        CFI R10 SameValue
+        CFI R11 SameValue
+        CFI R12 Undefined
+        CFI R14 Undefined
+        CFI ?RET R14
+        CFI EndCommon cfiCommon0
+        
+        EXTERN Device_Property
+        EXTERN User_Standard_Requests
+
+// C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\USBLib\src\usb_init.c
+//    1 /******************** (C) COPYRIGHT 2008 STMicroelectronics ********************
+//    2 * File Name          : usb_init.c
+//    3 * Author             : MCD Application Team
+//    4 * Version            : V2.2.1
+//    5 * Date               : 09/22/2008
+//    6 * Description        : Initialization routines & global variables
+//    7 ********************************************************************************
+//    8 * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+//    9 * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+//   10 * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+//   11 * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+//   12 * CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+//   13 * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+//   14 *******************************************************************************/
+//   15 
+//   16 /* Includes ------------------------------------------------------------------*/
+//   17 #include "usb_lib.h"
+//   18 
+//   19 /* Private typedef -----------------------------------------------------------*/
+//   20 /* Private define ------------------------------------------------------------*/
+//   21 /* Private macro -------------------------------------------------------------*/
+//   22 /* Private variables ---------------------------------------------------------*/
+//   23 /*  The number of current endpoint, it will be used to specify an endpoint */
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(0)
+//   24  u8	EPindex;
+EPindex:
+        DS8 1
+//   25 /*  The number of current device, it is an index to the Device_Table */
+//   26 /* u8	Device_no; */
+//   27 /*  Points to the DEVICE_INFO structure of current device */
+//   28 /*  The purpose of this register is to speed up the execution */
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+//   29 DEVICE_INFO *pInformation;
+//   30 /*  Points to the DEVICE_PROP structure of current device */
+//   31 /*  The purpose of this register is to speed up the execution */
+//   32 DEVICE_PROP *pProperty;
+//   33 /*  Temporary save the state of Rx & Tx status. */
+//   34 /*  Whenever the Rx or Tx state is changed, its value is saved */
+//   35 /*  in this variable first and will be set to the EPRB or EPRA */
+//   36 /*  at the end of interrupt process */
+//   37 u16	SaveState ;
+//   38 u16  wInterrupt_Mask;
+//   39 DEVICE_INFO	Device_Info;
+Device_Info:
+        DS8 28
+pInformation:
+        DS8 4
+pProperty:
+        DS8 4
+//   40 USER_STANDARD_REQUESTS  *pUser_Standard_Requests;
+pUser_Standard_Requests:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(1)
+SaveState:
+        DS8 2
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(1)
+wInterrupt_Mask:
+        DS8 2
+//   41 
+//   42 /* Extern variables ----------------------------------------------------------*/
+//   43 /* Private function prototypes -----------------------------------------------*/
+//   44 /* Private functions ---------------------------------------------------------*/
+//   45 
+//   46 /*******************************************************************************
+//   47 * Function Name  : USB_Init
+//   48 * Description    : USB system initialization
+//   49 * Input          : None.
+//   50 * Output         : None.
+//   51 * Return         : None.
+//   52 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function USB_Init
+        THUMB
+//   53 void USB_Init(void)
+//   54 {
+//   55   pInformation = &Device_Info;
+USB_Init:
+        LDR.N    R0,??USB_Init_0  ;; Device_Info
+//   56   pInformation->ControlState = 2;
+//   57   pProperty = &Device_Property;
+//   58   pUser_Standard_Requests = &User_Standard_Requests;
+        LDR.N    R2,??USB_Init_0+0x4  ;; User_Standard_Requests
+        MOVS     R1,#+2
+        STRB     R1,[R0, #+8]
+        LDR.N    R1,??USB_Init_0+0x8  ;; Device_Property
+        STR      R0,[R0, #+28]
+        STR      R2,[R0, #+36]
+        STR      R1,[R0, #+32]
+//   59   /* Initialize devices one by one */
+//   60   pProperty->Init();
+        LDR      R0,[R1, #+0]
+        BX       R0
+        DATA
+??USB_Init_0:
+        DC32     Device_Info
+        DC32     User_Standard_Requests
+        DC32     Device_Property
+        CFI EndBlock cfiBlock0
+//   61 }
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_Z:
+        DCD      sfe(DATA_Z) - sfb(DATA_Z), sfb(DATA_Z), sfb(DATA_Z)
+
+        END
+//   62 
+//   63 /******************* (C) COPYRIGHT 2008 STMicroelectronics *****END OF FILE****/
+// 
+// 32 bytes in segment CODE
+// 45 bytes in segment DATA_Z
+// 12 bytes in segment INITTAB
+// 
+// 32 bytes of CODE memory (+ 12 bytes shared)
+// 45 bytes of DATA memory
+//
+//Errors: none
+//Warnings: none

@@ -1,0 +1,1244 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32 EVALUATION   25/Apr/2011  15:04:52 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  C:\Users\Administrator\Desktop\mini DSO             /
+//                       download\SYS_V1.34\SYS_V1.34\source\USB_bot.c       /
+//    Command line    =  "C:\Users\Administrator\Desktop\mini DSO            /
+//                       download\SYS_V1.34\SYS_V1.34\source\USB_bot.c" -lA  /
+//                       "C:\Users\Administrator\Desktop\mini DSO            /
+//                       download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\List\"  /
+//                       -o "C:\Users\Administrator\Desktop\mini DSO         /
+//                       download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\"   /
+//                       -s9 --no_inline --cpu_mode thumb --endian little    /
+//                       --cpu cortex-M3 --stack_align 4 -e --fpu None       /
+//                       --dlib_config "E:\IARWorkBench(Cracked)\Embedded    /
+//                       Workbench 4.0 Evaluation\ARM\LIB\dl7mptnnl8n.h" -I  /
+//                       "C:\Users\Administrator\Desktop\mini DSO            /
+//                       download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\..\..\F /
+//                       WLib\inc\" -I "C:\Users\Administrator\Desktop\mini  /
+//                       DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\..\ /
+//                       ..\USBLib\inc\" -I "C:\Users\Administrator\Desktop\ /
+//                       mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpjec /
+//                       t\..\include\" -I "E:\IARWorkBench(Cracked)\Embedde /
+//                       d Workbench 4.0 Evaluation\ARM\INC\"                /
+//    List file       =  C:\Users\Administrator\Desktop\mini DSO             /
+//                       download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\List\US /
+//                       B_bot.s79                                           /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME USB_bot
+
+        RTMODEL "StackAlign4", "USED"
+        RTMODEL "__cpu_mode", "__pcs__thumb"
+        RTMODEL "__data_model", "absolute"
+        RTMODEL "__endian", "little"
+        RTMODEL "__rt_version", "6"
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+??DataTable0 EQU 0
+??DataTable1 EQU 0
+??DataTable2 EQU 0
+??DataTable5 EQU 0
+??DataTable6 EQU 0
+        MULTWEAK ??GetEPRxCount??rT
+        MULTWEAK ??PMAToUserBufferCopy??rT
+        MULTWEAK ??SCSI_Format_Cmd??rT
+        MULTWEAK ??SCSI_Inquiry_Cmd??rT
+        MULTWEAK ??SCSI_Invalid_Cmd??rT
+        MULTWEAK ??SCSI_ModeSense10_Cmd??rT
+        MULTWEAK ??SCSI_ModeSense6_Cmd??rT
+        MULTWEAK ??SCSI_Read10_Cmd??rT
+        MULTWEAK ??SCSI_ReadCapacity10_Cmd??rT
+        MULTWEAK ??SCSI_ReadFormatCapacity_Cmd??rT
+        MULTWEAK ??SCSI_RequestSense_Cmd??rT
+        MULTWEAK ??SCSI_Start_Stop_Unit_Cmd??rT
+        MULTWEAK ??SCSI_TestUnitReady_Cmd??rT
+        MULTWEAK ??SCSI_Verify10_Cmd??rT
+        MULTWEAK ??SCSI_Write10_Cmd??rT
+        MULTWEAK ??SetEPRxStatus??rT
+        MULTWEAK ??SetEPTxCount??rT
+        MULTWEAK ??SetEPTxStatus??rT
+        MULTWEAK ??Set_Scsi_Sense_Data??rT
+        MULTWEAK ??UserToPMABufferCopy??rT
+        PUBWEAK ?init?tab?DATA_Z
+        PUBLIC Bot_Abort
+        FUNCTION Bot_Abort,0203H
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC Bot_State
+        PUBLIC Bulk_Data_Buff
+        PUBLIC CBW
+        PUBLIC CBW_Decode
+        FUNCTION CBW_Decode,0203H
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC CSW
+        PUBLIC Data_Len
+        PUBLIC Mass_Storage_In
+        FUNCTION Mass_Storage_In,0203H
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC Mass_Storage_Out
+        FUNCTION Mass_Storage_Out,0203H
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC SCSI_BlkLen
+        PUBLIC SCSI_LBA
+        PUBLIC Set_CSW
+        FUNCTION Set_CSW,0203H
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC Transfer_Data_Request
+        FUNCTION Transfer_Data_Request,0203H
+        LOCFRAME CSTACK, 8, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA R13 HUGEDATA
+        CFI Resource R0:32, R1:32, R2:32, R3:32, R4:32, R5:32, R6:32, R7:32
+        CFI Resource R8:32, R9:32, R10:32, R11:32, R12:32, R13:32, R14:32
+        CFI VirtualResource ?RET:32
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 2
+        CFI DataAlign 4
+        CFI ReturnAddress ?RET CODE
+        CFI CFA R13+0
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI R8 SameValue
+        CFI R9 SameValue
+        CFI R10 SameValue
+        CFI R11 SameValue
+        CFI R12 Undefined
+        CFI R14 Undefined
+        CFI ?RET R14
+        CFI EndCommon cfiCommon0
+        
+GetEPRxCount        SYMBOL "GetEPRxCount"
+PMAToUserBufferCopy SYMBOL "PMAToUserBufferCopy"
+SCSI_Format_Cmd     SYMBOL "SCSI_Format_Cmd"
+SCSI_Inquiry_Cmd    SYMBOL "SCSI_Inquiry_Cmd"
+SCSI_Invalid_Cmd    SYMBOL "SCSI_Invalid_Cmd"
+SCSI_ModeSense10_Cmd SYMBOL "SCSI_ModeSense10_Cmd"
+SCSI_ModeSense6_Cmd SYMBOL "SCSI_ModeSense6_Cmd"
+SCSI_Read10_Cmd     SYMBOL "SCSI_Read10_Cmd"
+SCSI_ReadCapacity10_Cmd SYMBOL "SCSI_ReadCapacity10_Cmd"
+SCSI_ReadFormatCapacity_Cmd SYMBOL "SCSI_ReadFormatCapacity_Cmd"
+SCSI_RequestSense_Cmd SYMBOL "SCSI_RequestSense_Cmd"
+SCSI_Start_Stop_Unit_Cmd SYMBOL "SCSI_Start_Stop_Unit_Cmd"
+SCSI_TestUnitReady_Cmd SYMBOL "SCSI_TestUnitReady_Cmd"
+SCSI_Verify10_Cmd   SYMBOL "SCSI_Verify10_Cmd"
+SCSI_Write10_Cmd    SYMBOL "SCSI_Write10_Cmd"
+SetEPRxStatus       SYMBOL "SetEPRxStatus"
+SetEPTxCount        SYMBOL "SetEPTxCount"
+SetEPTxStatus       SYMBOL "SetEPTxStatus"
+Set_Scsi_Sense_Data SYMBOL "Set_Scsi_Sense_Data"
+UserToPMABufferCopy SYMBOL "UserToPMABufferCopy"
+??GetEPRxCount??rT  SYMBOL "??rT", GetEPRxCount
+??PMAToUserBufferCopy??rT SYMBOL "??rT", PMAToUserBufferCopy
+??SCSI_Format_Cmd??rT SYMBOL "??rT", SCSI_Format_Cmd
+??SCSI_Inquiry_Cmd??rT SYMBOL "??rT", SCSI_Inquiry_Cmd
+??SCSI_Invalid_Cmd??rT SYMBOL "??rT", SCSI_Invalid_Cmd
+??SCSI_ModeSense10_Cmd??rT SYMBOL "??rT", SCSI_ModeSense10_Cmd
+??SCSI_ModeSense6_Cmd??rT SYMBOL "??rT", SCSI_ModeSense6_Cmd
+??SCSI_Read10_Cmd??rT SYMBOL "??rT", SCSI_Read10_Cmd
+??SCSI_ReadCapacity10_Cmd??rT SYMBOL "??rT", SCSI_ReadCapacity10_Cmd
+??SCSI_ReadFormatCapacity_Cmd??rT SYMBOL "??rT", SCSI_ReadFormatCapacity_Cmd
+??SCSI_RequestSense_Cmd??rT SYMBOL "??rT", SCSI_RequestSense_Cmd
+??SCSI_Start_Stop_Unit_Cmd??rT SYMBOL "??rT", SCSI_Start_Stop_Unit_Cmd
+??SCSI_TestUnitReady_Cmd??rT SYMBOL "??rT", SCSI_TestUnitReady_Cmd
+??SCSI_Verify10_Cmd??rT SYMBOL "??rT", SCSI_Verify10_Cmd
+??SCSI_Write10_Cmd??rT SYMBOL "??rT", SCSI_Write10_Cmd
+??SetEPRxStatus??rT SYMBOL "??rT", SetEPRxStatus
+??SetEPTxCount??rT  SYMBOL "??rT", SetEPTxCount
+??SetEPTxStatus??rT SYMBOL "??rT", SetEPTxStatus
+??Set_Scsi_Sense_Data??rT SYMBOL "??rT", Set_Scsi_Sense_Data
+??UserToPMABufferCopy??rT SYMBOL "??rT", UserToPMABufferCopy
+
+        EXTERN GetEPRxCount
+        FUNCTION GetEPRxCount,0202H
+        EXTERN Max_Lun
+        EXTERN PMAToUserBufferCopy
+        FUNCTION PMAToUserBufferCopy,0202H
+        EXTERN SCSI_Format_Cmd
+        FUNCTION SCSI_Format_Cmd,0202H
+        EXTERN SCSI_Inquiry_Cmd
+        FUNCTION SCSI_Inquiry_Cmd,0202H
+        EXTERN SCSI_Invalid_Cmd
+        FUNCTION SCSI_Invalid_Cmd,0202H
+        EXTERN SCSI_ModeSense10_Cmd
+        FUNCTION SCSI_ModeSense10_Cmd,0202H
+        EXTERN SCSI_ModeSense6_Cmd
+        FUNCTION SCSI_ModeSense6_Cmd,0202H
+        EXTERN SCSI_Read10_Cmd
+        FUNCTION SCSI_Read10_Cmd,0202H
+        EXTERN SCSI_ReadCapacity10_Cmd
+        FUNCTION SCSI_ReadCapacity10_Cmd,0202H
+        EXTERN SCSI_ReadFormatCapacity_Cmd
+        FUNCTION SCSI_ReadFormatCapacity_Cmd,0202H
+        EXTERN SCSI_RequestSense_Cmd
+        FUNCTION SCSI_RequestSense_Cmd,0202H
+        EXTERN SCSI_Start_Stop_Unit_Cmd
+        FUNCTION SCSI_Start_Stop_Unit_Cmd,0202H
+        EXTERN SCSI_TestUnitReady_Cmd
+        FUNCTION SCSI_TestUnitReady_Cmd,0202H
+        EXTERN SCSI_Verify10_Cmd
+        FUNCTION SCSI_Verify10_Cmd,0202H
+        EXTERN SCSI_Write10_Cmd
+        FUNCTION SCSI_Write10_Cmd,0202H
+        EXTERN SetEPRxStatus
+        FUNCTION SetEPRxStatus,0202H
+        EXTERN SetEPTxCount
+        FUNCTION SetEPTxCount,0202H
+        EXTERN SetEPTxStatus
+        FUNCTION SetEPTxStatus,0202H
+        EXTERN Set_Scsi_Sense_Data
+        FUNCTION Set_Scsi_Sense_Data,0202H
+        EXTERN UserToPMABufferCopy
+        FUNCTION UserToPMABufferCopy,0202H
+
+// C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\source\USB_bot.c
+//    1 /******************** (C) COPYRIGHT 2008 STMicroelectronics ********************
+//    2 * File Name          : usb_bot.c
+//    3 * Author             : MCD Application Team
+//    4 * Version            : V2.2.1
+//    5 * Date               : 09/22/2008
+//    6 * Description        : BOT State Machine management
+//    7 ********************************************************************************
+//    8 * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+//    9 * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+//   10 * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+//   11 * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+//   12 * CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+//   13 * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+//   14 *******************************************************************************/
+//   15 
+//   16 /* Includes ------------------------------------------------------------------*/
+//   17 #include "USB_scsi.h"
+//   18 #include "Config.h"
+//   19 #include "USB_regs.h"
+//   20 #include "USB_mem.h"
+//   21 #include "USB_conf.h"
+//   22 #include "USB_bot.h"
+//   23 #include "Memory.h"
+//   24 /* Private typedef -----------------------------------------------------------*/
+//   25 /* Private define ------------------------------------------------------------*/
+//   26 /* Private macro -------------------------------------------------------------*/
+//   27 /* Private variables ---------------------------------------------------------*/
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+//   28 u8 Bot_State;
+//   29 u8 Bulk_Data_Buff[BULK_MAX_PACKET_SIZE];  /* data buffer*/
+//   30 u16 Data_Len;
+//   31 Bulk_Only_CBW CBW;
+CBW:
+        DS8 32
+Bot_State:
+        DS8 1
+        DS8 1
+Data_Len:
+        DS8 2
+//   32 Bulk_Only_CSW CSW;
+//   33 u32 SCSI_LBA , SCSI_BlkLen;
+SCSI_LBA:
+        DS8 4
+SCSI_BlkLen:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+Bulk_Data_Buff:
+        DS8 64
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+CSW:
+        DS8 16
+//   34 extern u32 Max_Lun;
+//   35 /* Extern variables ----------------------------------------------------------*/
+//   36 /* Private function prototypes -----------------------------------------------*/
+//   37 /* Extern function prototypes ------------------------------------------------*/
+//   38 /* Private functions ---------------------------------------------------------*/
+//   39 
+//   40 /*******************************************************************************
+//   41 * Function Name  : Mass_Storage_In
+//   42 * Description    : Mass Storage IN transfer.
+//   43 * Input          : None.
+//   44 * Output         : None.
+//   45 * Return         : None.
+//   46 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function Mass_Storage_In
+        THUMB
+//   47 void Mass_Storage_In (void)
+//   48 {
+//   49   switch (Bot_State)
+Mass_Storage_In:
+        LDR.N    R0,??DataTable3  ;; CBW
+        PUSH     {LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI CFA R13+4
+        LDRB     R1,[R0, #+32]
+        SUBS     R1,R1,#+2
+        BEQ.N    ??Mass_Storage_In_0
+        SUBS     R1,R1,#+1
+        BEQ.N    ??Mass_Storage_In_1
+        SUBS     R1,R1,#+1
+        CMP      R1,#+1
+        BHI.N    ??Mass_Storage_In_2
+//   50   {
+//   51     case BOT_CSW_Send:
+//   52     case BOT_ERROR:
+//   53       Bot_State = BOT_IDLE;
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+32]!
+//   54       SetEPRxStatus(ENDP2, EP_RX_VALID);/* enable the Endpoint to recive the next cmd*/
+        MOVS     R1,#+12288
+        MOVS     R0,#+2
+        POP      {LR}             ;; Pop
+        CFI ?RET R14
+        CFI CFA R13+0
+        _BF.W    SetEPRxStatus,??SetEPRxStatus??rT
+        CFI ?RET Frame(CFA, -4)
+        CFI CFA R13+4
+//   55       break;
+//   56     case BOT_DATA_IN:
+//   57       switch (CBW.CB[0])
+??Mass_Storage_In_0:
+        LDRB     R1,[R0, #+15]
+        CMP      R1,#+40
+        BNE.N    ??Mass_Storage_In_2
+//   58       {
+//   59         case SCSI_READ10:
+//   60           SCSI_Read10_Cmd(SCSI_LBA , SCSI_BlkLen);
+        LDR      R1,[R0, #+40]
+        LDR      R0,[R0, #+36]
+        POP      {LR}             ;; Pop
+        CFI ?RET R14
+        CFI CFA R13+0
+        _BF.W    SCSI_Read10_Cmd,??SCSI_Read10_Cmd??rT
+        CFI ?RET Frame(CFA, -4)
+        CFI CFA R13+4
+//   61           break;
+//   62       }
+//   63       break;
+//   64     case BOT_DATA_IN_LAST:
+//   65       Set_CSW (CSW_CMD_PASSED, SEND_CSW_ENABLE);
+??Mass_Storage_In_1:
+        MOVS     R1,#+1
+        MOVS     R0,#+0
+        BL       Set_CSW
+//   66       SetEPRxStatus(ENDP2, EP_RX_VALID);
+        MOVS     R1,#+12288
+        MOVS     R0,#+2
+        _BLF     SetEPRxStatus,??SetEPRxStatus??rT
+//   67       break;
+//   68 
+//   69     default:
+//   70       break;
+//   71   }
+//   72 }
+??Mass_Storage_In_2:
+        POP      {PC}             ;; return
+        CFI EndBlock cfiBlock0
+//   73 
+//   74 /*******************************************************************************
+//   75 * Function Name  : Mass_Storage_Out
+//   76 * Description    : Mass Storage OUT transfer.
+//   77 * Input          : None.
+//   78 * Output         : None.
+//   79 * Return         : None.
+//   80 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function Mass_Storage_Out
+        THUMB
+//   81 void Mass_Storage_Out (void)
+//   82 {
+Mass_Storage_Out:
+        PUSH     {R4,R5,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R5 Frame(CFA, -8)
+        CFI R4 Frame(CFA, -12)
+        CFI CFA R13+12
+//   83   u8 CMD;
+//   84   CMD = CBW.CB[0];
+        LDR.N    R4,??DataTable3  ;; CBW
+//   85   Data_Len = GetEPRxCount(ENDP2);
+        MOVS     R0,#+2
+        LDRB     R5,[R4, #+15]
+        _BLF     GetEPRxCount,??GetEPRxCount??rT
+        STRH     R0,[R4, #+34]
+//   86 
+//   87   PMAToUserBufferCopy(Bulk_Data_Buff, ENDP2_RXADDR, Data_Len);
+        MOV      R2,R0
+        LDR.N    R0,??DataTable4  ;; Bulk_Data_Buff
+        MOVS     R1,#+216
+        _BLF     PMAToUserBufferCopy,??PMAToUserBufferCopy??rT
+//   88 
+//   89   switch (Bot_State)
+        LDRB     R0,[R4, #+32]
+        CBZ      R0,??Mass_Storage_Out_0
+        CMP      R0,#+1
+        BEQ.N    ??Mass_Storage_Out_1
+        B.N      ??Mass_Storage_Out_2
+//   90   {
+//   91     case BOT_IDLE:
+//   92       CBW_Decode();
+??Mass_Storage_Out_0:
+        POP      {R4,R5,LR}       ;; Pop
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI ?RET R14
+        CFI CFA R13+0
+        B.N      CBW_Decode
+        CFI R4 Frame(CFA, -12)
+        CFI R5 Frame(CFA, -8)
+        CFI ?RET Frame(CFA, -4)
+        CFI CFA R13+12
+//   93       break;
+//   94     case BOT_DATA_OUT:
+//   95       if (CMD == SCSI_WRITE10)
+??Mass_Storage_Out_1:
+        CMP      R5,#+42
+        BNE.N    ??Mass_Storage_Out_3
+//   96       {
+//   97         SCSI_Write10_Cmd(SCSI_LBA , SCSI_BlkLen);
+        LDR      R1,[R4, #+40]
+        LDR      R0,[R4, #+36]
+        POP      {R4,R5,LR}       ;; Pop
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI ?RET R14
+        CFI CFA R13+0
+        _BF.W    SCSI_Write10_Cmd,??SCSI_Write10_Cmd??rT
+        CFI R4 Frame(CFA, -12)
+        CFI R5 Frame(CFA, -8)
+        CFI ?RET Frame(CFA, -4)
+        CFI CFA R13+12
+//   98         break;
+//   99       }
+//  100       Bot_Abort(DIR_OUT);
+//  101       Set_Scsi_Sense_Data(ILLEGAL_REQUEST, INVALID_FIELED_IN_COMMAND);
+//  102       Set_CSW (CSW_PHASE_ERROR, SEND_CSW_DISABLE);
+//  103       break;
+//  104     default:
+//  105       Bot_Abort(BOTH_DIR);
+??Mass_Storage_Out_2:
+        MOVS     R0,#+2
+??Mass_Storage_Out_3:
+        BL       Bot_Abort
+//  106       Set_Scsi_Sense_Data(ILLEGAL_REQUEST, INVALID_FIELED_IN_COMMAND);
+        MOVS     R1,#+36
+        MOVS     R0,#+5
+        _BLF     Set_Scsi_Sense_Data,??Set_Scsi_Sense_Data??rT
+//  107       Set_CSW (CSW_PHASE_ERROR, SEND_CSW_DISABLE);
+        MOVS     R1,#+0
+        MOVS     R0,#+2
+        POP      {R4,R5,LR}       ;; Pop
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI ?RET R14
+        CFI CFA R13+0
+        B.N      Set_CSW
+        CFI EndBlock cfiBlock1
+//  108       break;
+//  109   }
+//  110 }
+//  111 
+//  112 /*******************************************************************************
+//  113 * Function Name  : CBW_Decode
+//  114 * Description    : Decode the received CBW and call the related SCSI command
+//  115 *                 routine.
+//  116 * Input          : None.
+//  117 * Output         : None.
+//  118 * Return         : None.
+//  119 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function CBW_Decode
+        THUMB
+//  120 void CBW_Decode(void)
+//  121 {
+CBW_Decode:
+        PUSH     {R4,R5,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R5 Frame(CFA, -8)
+        CFI R4 Frame(CFA, -12)
+        CFI CFA R13+12
+//  122   u32 Counter;
+//  123 
+//  124   for (Counter = 0; Counter < Data_Len; Counter++)
+        LDR.N    R4,??DataTable3  ;; CBW
+        MOVS     R1,#+0
+        MOVS     R5,#+0
+        LDRH     R0,[R4, #+34]
+        CBZ      R0,??CBW_Decode_1
+        B.N      ??CBW_Decode_2
+//  125   {
+//  126     *((u8 *)&CBW + Counter) = Bulk_Data_Buff[Counter];
+??CBW_Decode_3:
+        LDR.N    R3,??DataTable4  ;; Bulk_Data_Buff
+        LDRB     R3,[R3, R1]
+        STRB     R3,[R4, R1]
+//  127   }
+        ADDS     R1,R1,#+1
+??CBW_Decode_2:
+        CMP      R1,R0
+        BCC.N    ??CBW_Decode_3
+//  128   CSW.dTag = CBW.dTag;
+??CBW_Decode_1:
+        LDR.N    R1,??DataTable7  ;; CSW
+        LDR      R2,[R4, #+4]
+//  129   CSW.dDataResidue = CBW.dDataLength;
+//  130   if (Data_Len != BOT_CBW_PACKET_LENGTH)
+        CMP      R0,#+31
+        STR      R2,[R1, #+4]
+        LDR      R2,[R4, #+8]
+        STR      R2,[R1, #+8]
+        BEQ.N    ??CBW_Decode_4
+//  131   {
+//  132     Bot_Abort(BOTH_DIR);
+        MOVS     R0,#+2
+        BL       Bot_Abort
+//  133     /* reset the CBW.dSignature to desible the clear feature until receiving a Mass storage reset*/
+//  134     CBW.dSignature = 0;
+        STR      R5,[R4, #+0]
+//  135     Set_Scsi_Sense_Data(ILLEGAL_REQUEST, PARAMETER_LIST_LENGTH_ERROR);
+        MOVS     R1,#+26
+        B.N      ??CBW_Decode_5
+//  136     Set_CSW (CSW_CMD_FAILED, SEND_CSW_DISABLE);
+//  137     return;
+//  138   }
+//  139 
+//  140   if ((CBW.CB[0] == SCSI_READ10 ) || (CBW.CB[0] == SCSI_WRITE10 ))
+??CBW_Decode_4:
+        LDRB     R2,[R4, #+15]
+        CMP      R2,#+40
+        BEQ.N    ??CBW_Decode_6
+        CMP      R2,#+42
+        BNE.N    ??CBW_Decode_7
+//  141   {
+//  142     /* Calculate Logical Block Address */
+//  143     SCSI_LBA = (CBW.CB[2] << 24) | (CBW.CB[3] << 16) | (CBW.CB[4] <<  8) | CBW.CB[5];
+??CBW_Decode_6:
+        LDRB     R0,[R4, #+17]
+        LDRB     R1,[R4, #+18]
+        LSLS     R1,R1,#+16
+        ORRS     R0,R1,R0, LSL #+24
+        LDRB     R1,[R4, #+19]
+        ORRS     R0,R0,R1, LSL #+8
+        LDRB     R1,[R4, #+20]
+        ORRS     R1,R1,R0
+//  144     /* Calculate the Number of Blocks to transfer */
+//  145     SCSI_BlkLen = (CBW.CB[7] <<  8) | CBW.CB[8];
+        LDRB     R0,[R4, #+22]
+        STR      R1,[R4, #+36]
+        LDRB     R1,[R4, #+23]
+        ORRS     R0,R1,R0, LSL #+8
+        STR      R0,[R4, #+40]
+//  146   }
+//  147 
+//  148   if (CBW.dSignature == BOT_CBW_SIGNATURE)
+??CBW_Decode_7:
+        LDR      R0,[R4, #+0]
+        LDR.N    R1,??CBW_Decode_8  ;; 0x43425355
+        CMP      R0,R1
+        BNE.W    ??CBW_Decode_9
+//  149   {
+//  150     /* Valid CBW */
+//  151     if ((CBW.bLUN > Max_Lun) || (CBW.bCBLength < 1) || (CBW.bCBLength > 16))
+        LDR.N    R0,??CBW_Decode_8+0x4  ;; Max_Lun
+        LDRB     R1,[R4, #+13]
+        LDR      R0,[R0, #+0]
+        CMP      R0,R1
+        BCC.N    ??CBW_Decode_10
+        LDRB     R0,[R4, #+14]
+        CBZ      R0,??CBW_Decode_10
+        CMP      R0,#+17
+        BCC.N    ??CBW_Decode_11
+//  152     {
+//  153       Bot_Abort(BOTH_DIR);
+??CBW_Decode_10:
+        MOVS     R0,#+2
+        BL       Bot_Abort
+//  154       Set_Scsi_Sense_Data(ILLEGAL_REQUEST, INVALID_FIELED_IN_COMMAND);
+        MOVS     R1,#+36
+??CBW_Decode_5:
+        MOVS     R0,#+5
+        _BLF     Set_Scsi_Sense_Data,??Set_Scsi_Sense_Data??rT
+//  155       Set_CSW (CSW_CMD_FAILED, SEND_CSW_DISABLE);
+        MOVS     R1,#+0
+        MOVS     R0,#+1
+        BL       Set_CSW
+        POP      {R4,R5,PC}
+//  156     }
+//  157     else
+//  158     {
+//  159       switch (CBW.CB[0])
+??CBW_Decode_11:
+        LDR      R0,[R4, #+36]
+        LDR      R1,[R4, #+40]
+        CMP      R2,#+175
+        BHI.W    ??CBW_Decode_9
+        TBB      [PC, R2]
+        DATA
+??CBW_Decode_0:
+        DC8      +109,+127,+127,+88
+        DC8      +121,+127,+127,+127
+        DC8      +124,+127,+124,+127
+        DC8      +127,+127,+127,+127
+        DC8      +127,+127,+91,+127
+        DC8      +127,+124,+127,+127
+        DC8      +127,+127,+97,+94
+        DC8      +127,+124,+94,+127
+        DC8      +127,+127,+127,+103
+        DC8      +127,+106,+127,+127
+        DC8      +112,+127,+115,+127
+        DC8      +127,+127,+127,+118
+        DC8      +127,+127,+127,+127
+        DC8      +127,+127,+127,+127
+        DC8      +127,+127,+127,+127
+        DC8      +127,+127,+127,+127
+        DC8      +127,+127,+127,+127
+        DC8      +127,+127,+127,+127
+        DC8      +127,+127,+127,+127
+        DC8      +127,+127,+127,+127
+        DC8      +127,+127,+127,+127
+        DC8      +127,+124,+127,+127
+        DC8      +127,+127,+100,+127
+        DC8      +127,+127,+127,+127
+        DC8      +127,+127,+127,+127
+        DC8      +127,+127,+127,+127
+        DC8      +127,+127,+127,+127
+        DC8      +127,+127,+127,+127
+        DC8      +127,+127,+127,+127
+        DC8      +127,+127,+127,+127
+        DC8      +127,+127,+127,+127
+        DC8      +127,+127,+127,+127
+        DC8      +127,+127,+127,+127
+        DC8      +127,+127,+127,+127
+        DC8      +124,+127,+124,+127
+        DC8      +127,+127,+127,+124
+        DC8      +127,+127,+127,+127
+        DC8      +127,+127,+127,+127
+        DC8      +127,+127,+127,+127
+        DC8      +127,+127,+124,+127
+        DC8      +127,+127,+127,+127
+        DC8      +127,+127,+127,+127
+        DC8      +124,+127,+124,+127
+        DC8      +127,+127,+127,+124
+        THUMB
+//  160       {
+//  161         case SCSI_REQUEST_SENSE:
+//  162           SCSI_RequestSense_Cmd ();
+??CBW_Decode_12:
+        _BLF     SCSI_RequestSense_Cmd,??SCSI_RequestSense_Cmd??rT
+        POP      {R4,R5,PC}
+//  163           break;
+//  164         case SCSI_INQUIRY:
+//  165           SCSI_Inquiry_Cmd();
+??CBW_Decode_13:
+        _BLF     SCSI_Inquiry_Cmd,??SCSI_Inquiry_Cmd??rT
+        POP      {R4,R5,PC}
+//  166           break;
+//  167         case SCSI_START_STOP_UNIT:
+//  168           SCSI_Start_Stop_Unit_Cmd();
+??CBW_Decode_14:
+        _BLF     SCSI_Start_Stop_Unit_Cmd,??SCSI_Start_Stop_Unit_Cmd??rT
+        POP      {R4,R5,PC}
+//  169           break;
+//  170         case SCSI_ALLOW_MEDIUM_REMOVAL:
+//  171           SCSI_Start_Stop_Unit_Cmd();
+//  172           break;
+//  173         case SCSI_MODE_SENSE6:
+//  174           SCSI_ModeSense6_Cmd ();
+??CBW_Decode_15:
+        _BLF     SCSI_ModeSense6_Cmd,??SCSI_ModeSense6_Cmd??rT
+        POP      {R4,R5,PC}
+//  175           break;
+//  176         case SCSI_MODE_SENSE10:
+//  177           SCSI_ModeSense10_Cmd ();
+??CBW_Decode_16:
+        _BLF     SCSI_ModeSense10_Cmd,??SCSI_ModeSense10_Cmd??rT
+        POP      {R4,R5,PC}
+//  178           break;
+//  179         case SCSI_READ_FORMAT_CAPACITIES:
+//  180           SCSI_ReadFormatCapacity_Cmd();
+??CBW_Decode_17:
+        _BLF     SCSI_ReadFormatCapacity_Cmd,??SCSI_ReadFormatCapacity_Cmd??rT
+        POP      {R4,R5,PC}
+//  181           break;
+//  182         case SCSI_READ_CAPACITY10:
+//  183           SCSI_ReadCapacity10_Cmd();
+??CBW_Decode_18:
+        _BLF     SCSI_ReadCapacity10_Cmd,??SCSI_ReadCapacity10_Cmd??rT
+        POP      {R4,R5,PC}
+//  184           break;
+//  185         case SCSI_TEST_UNIT_READY:
+//  186           SCSI_TestUnitReady_Cmd();
+??CBW_Decode_19:
+        _BLF     SCSI_TestUnitReady_Cmd,??SCSI_TestUnitReady_Cmd??rT
+        POP      {R4,R5,PC}
+//  187           break;
+//  188         case SCSI_READ10:
+//  189           SCSI_Read10_Cmd(SCSI_LBA , SCSI_BlkLen);
+??CBW_Decode_20:
+        _BLF     SCSI_Read10_Cmd,??SCSI_Read10_Cmd??rT
+        POP      {R4,R5,PC}
+//  190           break;
+//  191         case SCSI_WRITE10:
+//  192           SCSI_Write10_Cmd(SCSI_LBA , SCSI_BlkLen);
+??CBW_Decode_21:
+        _BLF     SCSI_Write10_Cmd,??SCSI_Write10_Cmd??rT
+        POP      {R4,R5,PC}
+//  193           break;
+//  194         case SCSI_VERIFY10:
+//  195           SCSI_Verify10_Cmd();
+??CBW_Decode_22:
+        _BLF     SCSI_Verify10_Cmd,??SCSI_Verify10_Cmd??rT
+        POP      {R4,R5,PC}
+//  196           break;
+//  197         case SCSI_FORMAT_UNIT:
+//  198           SCSI_Format_Cmd();
+??CBW_Decode_23:
+        _BLF     SCSI_Format_Cmd,??SCSI_Format_Cmd??rT
+        POP      {R4,R5,PC}
+//  199           break;
+//  200           /*Unsupported command*/
+//  201 
+//  202         case SCSI_MODE_SELECT10:
+//  203           SCSI_Mode_Select10_Cmd();
+??CBW_Decode_24:
+        _BLF     SCSI_Invalid_Cmd,??SCSI_Invalid_Cmd??rT
+        POP      {R4,R5,PC}
+//  204           break;
+//  205         case SCSI_MODE_SELECT6:
+//  206           SCSI_Mode_Select6_Cmd();
+//  207           break;
+//  208 
+//  209         case SCSI_SEND_DIAGNOSTIC:
+//  210           SCSI_Send_Diagnostic_Cmd();
+//  211           break;
+//  212         case SCSI_READ6:
+//  213           SCSI_Read6_Cmd();
+//  214           break;
+//  215         case SCSI_READ12:
+//  216           SCSI_Read12_Cmd();
+//  217           break;
+//  218         case SCSI_READ16:
+//  219           SCSI_Read16_Cmd();
+//  220           break;
+//  221         case SCSI_READ_CAPACITY16:
+//  222           SCSI_READ_CAPACITY16_Cmd();
+//  223           break;
+//  224         case SCSI_WRITE6:
+//  225           SCSI_Write6_Cmd();
+//  226           break;
+//  227         case SCSI_WRITE12:
+//  228           SCSI_Write12_Cmd();
+//  229           break;
+//  230         case SCSI_WRITE16:
+//  231           SCSI_Write16_Cmd();
+//  232           break;
+//  233         case SCSI_VERIFY12:
+//  234           SCSI_Verify12_Cmd();
+//  235           break;
+//  236         case SCSI_VERIFY16:
+//  237           SCSI_Verify16_Cmd();
+//  238           break;
+//  239 
+//  240         default:
+//  241         {
+//  242           Bot_Abort(BOTH_DIR);
+??CBW_Decode_9:
+        MOVS     R0,#+2
+        BL       Bot_Abort
+//  243           Set_Scsi_Sense_Data(ILLEGAL_REQUEST, INVALID_COMMAND);
+        MOVS     R1,#+32
+        B.N      ??CBW_Decode_5
+        DATA
+??CBW_Decode_8:
+        DC32     0x43425355
+        DC32     Max_Lun
+        CFI EndBlock cfiBlock2
+//  244           Set_CSW (CSW_CMD_FAILED, SEND_CSW_DISABLE);
+//  245         }
+//  246       }
+//  247     }
+//  248   }
+//  249   else
+//  250   {
+//  251     /* Invalid CBW */
+//  252     Bot_Abort(BOTH_DIR);
+//  253     Set_Scsi_Sense_Data(ILLEGAL_REQUEST, INVALID_COMMAND);
+//  254     Set_CSW (CSW_CMD_FAILED, SEND_CSW_DISABLE);
+//  255   }
+//  256 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable3:
+        DC32     CBW
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable4:
+        DC32     Bulk_Data_Buff
+//  257 
+//  258 /*******************************************************************************
+//  259 * Function Name  : Transfer_Data_Request
+//  260 * Description    : Send the request response to the PC HOST.
+//  261 * Input          : u8* Data_Address : point to the data to transfer.
+//  262 *                  u16 Data_Length : the nember of Bytes to transfer.
+//  263 * Output         : None.
+//  264 * Return         : None.
+//  265 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function Transfer_Data_Request
+        THUMB
+//  266 void Transfer_Data_Request(u8* Data_Pointer, u16 Data_Len)
+//  267 {
+Transfer_Data_Request:
+        PUSH     {R4,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R4 Frame(CFA, -8)
+        CFI CFA R13+8
+        MOVS     R4,R1
+//  268   UserToPMABufferCopy(Data_Pointer, ENDP1_TXADDR, Data_Len);
+        MOVS     R2,R4
+        MOVS     R1,#+152
+        _BLF     UserToPMABufferCopy,??UserToPMABufferCopy??rT
+//  269 
+//  270   SetEPTxCount(ENDP1, Data_Len);
+        MOVS     R1,R4
+        MOVS     R0,#+1
+        _BLF     SetEPTxCount,??SetEPTxCount??rT
+//  271   SetEPTxStatus(ENDP1, EP_TX_VALID);
+        MOVS     R1,#+48
+        MOVS     R0,#+1
+        _BLF     SetEPTxStatus,??SetEPTxStatus??rT
+//  272   Bot_State = BOT_DATA_IN_LAST;
+        LDR.N    R0,??Transfer_Data_Request_0  ;; CBW + 32
+        MOVS     R1,#+3
+        STRB     R1,[R0, #+0]
+//  273   CSW.dDataResidue -= Data_Len;
+        LDR.N    R0,??DataTable7  ;; CSW
+        LDR      R1,[R0, #+8]
+        SUBS     R1,R1,R4
+        STR      R1,[R0, #+8]
+//  274   CSW.bStatus = CSW_CMD_PASSED;
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+12]
+//  275 }
+        POP      {R4,PC}          ;; return
+        DATA
+??Transfer_Data_Request_0:
+        DC32     CBW + 32
+        CFI EndBlock cfiBlock3
+//  276 
+//  277 /*******************************************************************************
+//  278 * Function Name  : Set_CSW
+//  279 * Description    : Set the SCW with the needed fields.
+//  280 * Input          : u8 CSW_Status this filed can be CSW_CMD_PASSED,CSW_CMD_FAILED,
+//  281 *                  or CSW_PHASE_ERROR.
+//  282 * Output         : None.
+//  283 * Return         : None.
+//  284 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function Set_CSW
+        THUMB
+//  285 void Set_CSW (u8 CSW_Status, u8 Send_Permission)
+//  286 {
+Set_CSW:
+        PUSH     {R4,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R4 Frame(CFA, -8)
+        CFI CFA R13+8
+        MOVS     R2,R0
+//  287   CSW.dSignature = BOT_CSW_SIGNATURE;
+        LDR.N    R0,??DataTable7  ;; CSW
+        MOVS     R4,R1
+        LDR.N    R1,??Set_CSW_0   ;; 0x53425355
+//  288   CSW.bStatus = CSW_Status;
+        STRB     R2,[R0, #+12]
+//  289 
+//  290   UserToPMABufferCopy(((u8 *)& CSW), ENDP1_TXADDR, CSW_DATA_LENGTH);
+        MOVS     R2,#+13
+        STR      R1,[R0, #+0]
+        MOVS     R1,#+152
+        _BLF     UserToPMABufferCopy,??UserToPMABufferCopy??rT
+//  291 
+//  292   SetEPTxCount(ENDP1, CSW_DATA_LENGTH);
+        MOVS     R1,#+13
+        MOVS     R0,#+1
+        _BLF     SetEPTxCount,??SetEPTxCount??rT
+//  293   Bot_State = BOT_ERROR;
+        LDR.N    R0,??Set_CSW_0+0x4  ;; CBW
+        MOVS     R1,#+5
+        STRB     R1,[R0, #+32]
+//  294   if (Send_Permission)
+        CBZ      R4,??Set_CSW_1
+//  295   {
+//  296     Bot_State = BOT_CSW_Send;
+        MOVS     R1,#+4
+        STRB     R1,[R0, #+32]!
+//  297     SetEPTxStatus(ENDP1, EP_TX_VALID);
+        MOVS     R1,#+48
+        MOVS     R0,#+1
+        _BLF     SetEPTxStatus,??SetEPTxStatus??rT
+//  298   }
+//  299 
+//  300 }
+??Set_CSW_1:
+        POP      {R4,PC}          ;; return
+        DATA
+??Set_CSW_0:
+        DC32     0x53425355
+        DC32     CBW
+        CFI EndBlock cfiBlock4
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable7:
+        DC32     CSW
+//  301 
+//  302 /*******************************************************************************
+//  303 * Function Name  : Bot_Abort
+//  304 * Description    : Stall the needed Endpoint according to the selected direction.
+//  305 * Input          : Endpoint direction IN, OUT or both directions
+//  306 * Output         : None.
+//  307 * Return         : None.
+//  308 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function Bot_Abort
+        THUMB
+//  309 void Bot_Abort(u8 Direction)
+//  310 {
+Bot_Abort:
+        PUSH     {LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI CFA R13+4
+//  311   switch (Direction)
+        CBZ      R0,??Bot_Abort_0
+        CMP      R0,#+1
+        BEQ.N    ??Bot_Abort_1
+        CMP      R0,#+2
+        BEQ.N    ??Bot_Abort_2
+        POP      {PC}
+//  312   {
+//  313     case DIR_IN :
+//  314       SetEPTxStatus(ENDP1, EP_TX_STALL);
+??Bot_Abort_0:
+        MOVS     R1,#+16
+        MOVS     R0,#+1
+        POP      {LR}             ;; Pop
+        CFI ?RET R14
+        CFI CFA R13+0
+        _BF.W    SetEPTxStatus,??SetEPTxStatus??rT
+        CFI ?RET Frame(CFA, -4)
+        CFI CFA R13+4
+//  315       break;
+//  316     case DIR_OUT :
+//  317       SetEPRxStatus(ENDP2, EP_RX_STALL);
+??Bot_Abort_1:
+        MOVS     R1,#+4096
+        B.N      ??Bot_Abort_3
+//  318       break;
+//  319     case BOTH_DIR :
+//  320       SetEPTxStatus(ENDP1, EP_TX_STALL);
+??Bot_Abort_2:
+        MOVS     R1,#+16
+        MOVS     R0,#+1
+        _BLF     SetEPTxStatus,??SetEPTxStatus??rT
+//  321       SetEPRxStatus(ENDP2, EP_RX_STALL);
+        MOVS     R1,#+4096
+??Bot_Abort_3:
+        MOVS     R0,#+2
+        POP      {LR}             ;; Pop
+        CFI ?RET R14
+        CFI CFA R13+0
+        _BF.W    SetEPRxStatus,??SetEPRxStatus??rT
+        CFI EndBlock cfiBlock5
+//  322       break;
+//  323     default:
+//  324       break;
+//  325   }
+//  326 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SetEPRxStatus??rT:
+        LDR.N    R3,??Subroutine0_0  ;; SetEPRxStatus
+        BX       R3
+        DATA
+??Subroutine0_0:
+        DC32     SetEPRxStatus
+        CFI EndBlock cfiBlock6
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SCSI_Read10_Cmd??rT:
+        LDR.N    R3,??Subroutine1_0  ;; SCSI_Read10_Cmd
+        BX       R3
+        DATA
+??Subroutine1_0:
+        DC32     SCSI_Read10_Cmd
+        CFI EndBlock cfiBlock7
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??GetEPRxCount??rT:
+        LDR.N    R3,??Subroutine2_0  ;; GetEPRxCount
+        BX       R3
+        DATA
+??Subroutine2_0:
+        DC32     GetEPRxCount
+        CFI EndBlock cfiBlock8
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??PMAToUserBufferCopy??rT:
+        LDR.N    R3,??Subroutine3_0  ;; PMAToUserBufferCopy
+        BX       R3
+        DATA
+??Subroutine3_0:
+        DC32     PMAToUserBufferCopy
+        CFI EndBlock cfiBlock9
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SCSI_Write10_Cmd??rT:
+        LDR.N    R3,??Subroutine4_0  ;; SCSI_Write10_Cmd
+        BX       R3
+        DATA
+??Subroutine4_0:
+        DC32     SCSI_Write10_Cmd
+        CFI EndBlock cfiBlock10
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock11 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Set_Scsi_Sense_Data??rT:
+        LDR.N    R3,??Subroutine5_0  ;; Set_Scsi_Sense_Data
+        BX       R3
+        DATA
+??Subroutine5_0:
+        DC32     Set_Scsi_Sense_Data
+        CFI EndBlock cfiBlock11
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock12 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SCSI_RequestSense_Cmd??rT:
+        LDR.N    R3,??Subroutine6_0  ;; SCSI_RequestSense_Cmd
+        BX       R3
+        DATA
+??Subroutine6_0:
+        DC32     SCSI_RequestSense_Cmd
+        CFI EndBlock cfiBlock12
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock13 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SCSI_Inquiry_Cmd??rT:
+        LDR.N    R3,??Subroutine7_0  ;; SCSI_Inquiry_Cmd
+        BX       R3
+        DATA
+??Subroutine7_0:
+        DC32     SCSI_Inquiry_Cmd
+        CFI EndBlock cfiBlock13
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock14 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SCSI_Start_Stop_Unit_Cmd??rT:
+        LDR.N    R3,??Subroutine8_0  ;; SCSI_Start_Stop_Unit_Cmd
+        BX       R3
+        DATA
+??Subroutine8_0:
+        DC32     SCSI_Start_Stop_Unit_Cmd
+        CFI EndBlock cfiBlock14
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock15 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SCSI_ModeSense6_Cmd??rT:
+        LDR.N    R3,??Subroutine9_0  ;; SCSI_ModeSense6_Cmd
+        BX       R3
+        DATA
+??Subroutine9_0:
+        DC32     SCSI_ModeSense6_Cmd
+        CFI EndBlock cfiBlock15
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock16 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SCSI_ModeSense10_Cmd??rT:
+        LDR.N    R3,??Subroutine10_0  ;; SCSI_ModeSense10_Cmd
+        BX       R3
+        DATA
+??Subroutine10_0:
+        DC32     SCSI_ModeSense10_Cmd
+        CFI EndBlock cfiBlock16
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock17 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SCSI_ReadFormatCapacity_Cmd??rT:
+        LDR.N    R3,??Subroutine11_0  ;; SCSI_ReadFormatCapacity_Cmd
+        BX       R3
+        DATA
+??Subroutine11_0:
+        DC32     SCSI_ReadFormatCapacity_Cmd
+        CFI EndBlock cfiBlock17
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock18 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SCSI_ReadCapacity10_Cmd??rT:
+        LDR.N    R3,??Subroutine12_0  ;; SCSI_ReadCapacity10_Cmd
+        BX       R3
+        DATA
+??Subroutine12_0:
+        DC32     SCSI_ReadCapacity10_Cmd
+        CFI EndBlock cfiBlock18
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock19 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SCSI_TestUnitReady_Cmd??rT:
+        LDR.N    R3,??Subroutine13_0  ;; SCSI_TestUnitReady_Cmd
+        BX       R3
+        DATA
+??Subroutine13_0:
+        DC32     SCSI_TestUnitReady_Cmd
+        CFI EndBlock cfiBlock19
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock20 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SCSI_Verify10_Cmd??rT:
+        LDR.N    R3,??Subroutine14_0  ;; SCSI_Verify10_Cmd
+        BX       R3
+        DATA
+??Subroutine14_0:
+        DC32     SCSI_Verify10_Cmd
+        CFI EndBlock cfiBlock20
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock21 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SCSI_Format_Cmd??rT:
+        LDR.N    R3,??Subroutine15_0  ;; SCSI_Format_Cmd
+        BX       R3
+        DATA
+??Subroutine15_0:
+        DC32     SCSI_Format_Cmd
+        CFI EndBlock cfiBlock21
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock22 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SCSI_Invalid_Cmd??rT:
+        LDR.N    R3,??Subroutine16_0  ;; SCSI_Invalid_Cmd
+        BX       R3
+        DATA
+??Subroutine16_0:
+        DC32     SCSI_Invalid_Cmd
+        CFI EndBlock cfiBlock22
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock23 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??UserToPMABufferCopy??rT:
+        LDR.N    R3,??Subroutine17_0  ;; UserToPMABufferCopy
+        BX       R3
+        DATA
+??Subroutine17_0:
+        DC32     UserToPMABufferCopy
+        CFI EndBlock cfiBlock23
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock24 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SetEPTxCount??rT:
+        LDR.N    R3,??Subroutine18_0  ;; SetEPTxCount
+        BX       R3
+        DATA
+??Subroutine18_0:
+        DC32     SetEPTxCount
+        CFI EndBlock cfiBlock24
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock25 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SetEPTxStatus??rT:
+        LDR.N    R3,??Subroutine19_0  ;; SetEPTxStatus
+        BX       R3
+        DATA
+??Subroutine19_0:
+        DC32     SetEPTxStatus
+        CFI EndBlock cfiBlock25
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_Z:
+        DCD      sfe(DATA_Z) - sfb(DATA_Z), sfb(DATA_Z), sfb(DATA_Z)
+
+        END
+//  327 
+//  328 /******************* (C) COPYRIGHT 2008 STMicroelectronics *****END OF FILE****/
+// 
+// 936 bytes in segment CODE
+// 124 bytes in segment DATA_Z
+//  12 bytes in segment INITTAB
+// 
+// 776 bytes of CODE memory (+ 172 bytes shared)
+// 124 bytes of DATA memory
+//
+//Errors: none
+//Warnings: none

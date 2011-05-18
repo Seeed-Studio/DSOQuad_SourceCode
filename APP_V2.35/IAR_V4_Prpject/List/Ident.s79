@@ -1,0 +1,897 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32 EVALUATION   14/May/2011  15:26:35 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  D:\Design\DS203\PRG\APP_V2.35\source\Ident.c        /
+//    Command line    =  D:\Design\DS203\PRG\APP_V2.35\source\Ident.c -lA    /
+//                       D:\Design\DS203\PRG\APP_V2.35\IAR_V4_Prpject\List\  /
+//                       -o D:\Design\DS203\PRG\APP_V2.35\IAR_V4_Prpject\Obj /
+//                       \ -s9 --debug --cpu_mode thumb --endian little      /
+//                       --cpu cortex-M3 --stack_align 4 --fpu None          /
+//                       --dlib_config "C:\Program Files\IAR                 /
+//                       Systems\Embedded Workbench 4.0                      /
+//                       Evaluation\arm\LIB\dl7mptnnl8f.h" -I                /
+//                       D:\Design\DS203\PRG\APP_V2.35\IAR_V4_Prpject\..\..\ /
+//                       FWLib\inc\ -I D:\Design\DS203\PRG\APP_V2.35\IAR_V4_ /
+//                       Prpject\..\..\USBLib\inc\ -I                        /
+//                       D:\Design\DS203\PRG\APP_V2.35\IAR_V4_Prpject\..\inc /
+//                       lude\ -I "C:\Program Files\IAR Systems\Embedded     /
+//                       Workbench 4.0 Evaluation\arm\INC\"                  /
+//                       --inline_threshold=16                               /
+//    List file       =  D:\Design\DS203\PRG\APP_V2.35\IAR_V4_Prpject\List\I /
+//                       dent.s79                                            /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME Ident
+
+        RTMODEL "StackAlign4", "USED"
+        RTMODEL "__cpu_mode", "__pcs__thumb"
+        RTMODEL "__data_model", "absolute"
+        RTMODEL "__endian", "little"
+        RTMODEL "__rt_version", "6"
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+??DataTable0 EQU 0
+??DataTable1 EQU 0
+??DataTable2 EQU 0
+??DataTable3 EQU 0
+??DataTable4 EQU 0
+??DataTable5 EQU 0
+        MULTWEAK ??Word2Hex??rT
+        MULTWEAK ??__Display_Str??rT
+        MULTWEAK ??__FLASH_Lock??rT
+        MULTWEAK ??__FLASH_Prog??rT
+        MULTWEAK ??__FLASH_Unlock??rT
+        PUBLIC Add_Cnt
+        FUNCTION Add_Cnt,0203H
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC Add_Lic
+        FUNCTION Add_Lic,0203H
+        LOCFRAME CSTACK, 16, STACK
+        PUBLIC Add_Proj
+        FUNCTION Add_Proj,0203H
+        LOCFRAME CSTACK, 16, STACK
+        PUBLIC Add_Str
+        FUNCTION Add_Str,0203H
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC Chk_DemoCnt
+        FUNCTION Chk_DemoCnt,0203H
+        PUBLIC Get_Cnt
+        FUNCTION Get_Cnt,0203H
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC Get_Lic
+        FUNCTION Get_Lic,0203H
+        PUBLIC Input_Lic
+        FUNCTION Input_Lic,0203H
+        LOCFRAME CSTACK, 68, STACK
+        PUBLIC Seek_Blank
+        FUNCTION Seek_Blank,0203H
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC Seek_Proj
+        FUNCTION Seek_Proj,0203H
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA R13 HUGEDATA
+        CFI Resource R0:32, R1:32, R2:32, R3:32, R4:32, R5:32, R6:32, R7:32
+        CFI Resource R8:32, R9:32, R10:32, R11:32, R12:32, R13:32, R14:32
+        CFI VirtualResource ?RET:32
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 2
+        CFI DataAlign 4
+        CFI ReturnAddress ?RET CODE
+        CFI CFA R13+0
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI R8 SameValue
+        CFI R9 SameValue
+        CFI R10 SameValue
+        CFI R11 SameValue
+        CFI R12 Undefined
+        CFI R14 Undefined
+        CFI ?RET R14
+        CFI EndCommon cfiCommon0
+        
+Word2Hex            SYMBOL "Word2Hex"
+__Display_Str       SYMBOL "__Display_Str"
+__FLASH_Lock        SYMBOL "__FLASH_Lock"
+__FLASH_Prog        SYMBOL "__FLASH_Prog"
+__FLASH_Unlock      SYMBOL "__FLASH_Unlock"
+??Word2Hex??rT      SYMBOL "??rT", Word2Hex
+??__Display_Str??rT SYMBOL "??rT", __Display_Str
+??__FLASH_Lock??rT  SYMBOL "??rT", __FLASH_Lock
+??__FLASH_Prog??rT  SYMBOL "??rT", __FLASH_Prog
+??__FLASH_Unlock??rT SYMBOL "??rT", __FLASH_Unlock
+
+        EXTERN Key_Buffer
+        EXTERN Twink
+        EXTERN Word2Hex
+        FUNCTION Word2Hex,0202H
+        EXTERN __Display_Str
+        FUNCTION __Display_Str,0202H
+        EXTERN __FLASH_Lock
+        FUNCTION __FLASH_Lock,0202H
+        EXTERN __FLASH_Prog
+        FUNCTION __FLASH_Prog,0202H
+        EXTERN __FLASH_Unlock
+        FUNCTION __FLASH_Unlock,0202H
+
+// D:\Design\DS203\PRG\APP_V2.35\source\Ident.c
+//    1 /********************* (C) COPYRIGHT 2010 e-Design Co.,Ltd. ********************
+//    2  File Name : Authenticate.c  
+//    3  Version   : DS203_APP Ver 2.3x                                  Author : bure
+//    4 *******************************************************************************/
+//    5 #include "Interrupt.h"
+//    6 #include "Function.h"
+//    7 #include <string.h>
+//    8 #include "Ident.h"
+//    9 #include "BIOS.h"
+//   10 
+//   11 /************************** Licence Block defination ***************************
+//   12 offset 0x00~0x03: ProjectID 4Bytes (example:  0x12345678)  
+//   13 offset 0x04~0x07: LicenceNo 4Bytes (example:  0x0A1B2C3D)
+//   14 offset 0x08~0x0B: DemoCnt   4Bytes (example:  0~0xFFFFFFFF Sec.)
+//   15 offset 0x0C~0x1F: Developer Str 20Bytes (example: "e-Design 2011.3")
+//   16 *******************************************************************************/
+//   17 
+//   18 /*******************************************************************************
+//   19  Chk_DemoCnt: Check demo counter limit                       RET: 1 = Time out
+//   20 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function Chk_DemoCnt
+        THUMB
+//   21 u8 Chk_DemoCnt(u16 Offset, u32 Sec_Cnt)
+//   22 {
+//   23   if((*(u32*)(REC_BASE + Offset + 8))>= Sec_Cnt) return 1;
+Chk_DemoCnt:
+        LDR.N    R2,??DataTable7  ;; 0x8003808
+        LDR      R0,[R0, R2]
+        CMP      R0,R1
+        ITT     CS 
+        MOVCS    R0,#+1
+        BXCS     LR
+//   24   else                                           return 0;
+        MOVS     R0,#+0
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock0
+//   25 }
+//   26 /*******************************************************************************
+//   27  Get_Cnt: Get demo counter value from recoed                    RET: Cnt value
+//   28 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function Get_Cnt
+        THUMB
+//   29 u8 Get_Cnt(u16 Offset)
+//   30 {
+Get_Cnt:
+        PUSH     {R4,R5}
+        CFI R5 Frame(CFA, -4)
+        CFI R4 Frame(CFA, -8)
+        CFI CFA R13+8
+        MOVS     R1,R0
+//   31   u8 i, Result = 0;
+        MOVS     R0,#+0
+//   32   
+//   33   for(i=0; i<32; i++){
+        MOVS     R2,#+0
+        B.N      ??Get_Cnt_0
+//   34     if(((*(u32*)(REC_BASE + Offset +  8))&(1<<i))!=0)  Result++;
+??Get_Cnt_1:
+        LDR.N    R5,??DataTable7  ;; 0x8003808
+        MOVS     R3,#+1
+        LSLS     R3,R3,R2
+        LDR      R5,[R1, R5]
+        ANDS     R5,R5,R3
+        ITT     NE 
+        ADDNE    R0,R0,#+1
+        UXTBNE   R0,R0
+//   35     if(((*(u32*)(REC_BASE + Offset + 12))&(1<<i))!=0)  Result++;
+        LDR.N    R5,??DataTable8  ;; 0x800380c
+        LDR      R4,[R1, R5]
+        ANDS     R3,R3,R4
+        ITT     NE 
+        ADDNE    R0,R0,#+1
+        UXTBNE   R0,R0
+//   36   }  
+        ADDS     R2,R2,#+1
+        UXTB     R2,R2
+??Get_Cnt_0:
+        CMP      R2,#+32
+        BCC.N    ??Get_Cnt_1
+//   37   return Result; 
+        POP      {R4,R5}
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI CFA R13+0
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock1
+//   38 }
+//   39 /*******************************************************************************
+//   40  Get_Lic: Get licence number from recoed                   RET: licence number
+//   41 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function Get_Lic
+        THUMB
+//   42 u32 Get_Lic(u16 Offset)
+//   43 {
+//   44       return *(u32*)(REC_BASE + Offset + 4); 
+Get_Lic:
+        LDR.N    R1,??DataTable9  ;; 0x8003804
+        LDR      R0,[R0, R1]
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock2
+//   45 }
+//   46 /*******************************************************************************
+//   47  Seek_Proj: Seek Project ID from recoeds         RET: offset, 2048 = Not found 
+//   48 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function Seek_Proj
+        THUMB
+//   49 u16 Seek_Proj(u32 Proj_ID)
+//   50 {
+Seek_Proj:
+        MOVS     R1,R0
+//   51   u16 i;
+//   52   for(i=32; i<2048; i+=32){
+        MOVS     R0,#+32
+//   53     if(Proj_ID ==(*(u32*)(REC_BASE+i)))  return i;
+??Seek_Proj_0:
+        LDR.N    R3,??DataTable6  ;; 0x8003800
+        LDR      R2,[R0, R3]
+        CMP      R1,R2
+        IT      EQ 
+        BXEQ     LR
+//   54   }
+        ADDS     R0,R0,#+32
+        UXTH     R0,R0
+        LSRS     R3,R3,#+16
+        CMP      R0,R3
+        BCC.N    ??Seek_Proj_0
+//   55   return 2048;
+        MOV      R0,R3
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock3
+//   56 }
+//   57 /*******************************************************************************
+//   58  Seek_Blank: Seek Blank from recoeds             RET: offset, 2048 = Not found 
+//   59 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function Seek_Blank
+        THUMB
+//   60 u16 Seek_Blank(void)
+//   61 {
+Seek_Blank:
+        PUSH     {R4}
+        CFI R4 Frame(CFA, -4)
+        CFI CFA R13+4
+//   62   u16 i, j;
+//   63   u32 Tmp;
+//   64   
+//   65   for(i=32; i<2048; i+=32){
+        MOVS     R0,#+32
+//   66     Tmp = 0xFFFFFFFF;
+??Seek_Blank_0:
+        MOVS     R2,#-1
+//   67     for(j=0; j<32; j+=4)  Tmp &= *(u32*)(REC_BASE+i+j);
+        MOVS     R1,#+0
+        B.N      ??Seek_Blank_1
+??Seek_Blank_2:
+        LDR.N    R3,??DataTable6  ;; 0x8003800
+        MOVS     R4,R2
+        ADDS     R2,R0,R1
+        LDR      R2,[R2, R3]
+        ADDS     R1,R1,#+4
+        UXTH     R1,R1
+        ANDS     R2,R2,R4
+??Seek_Blank_1:
+        CMP      R1,#+32
+        BCC.N    ??Seek_Blank_2
+//   68     if(Tmp == 0xFFFFFFFF)  return i;
+        MOVS     R1,#-1
+        CMP      R2,R1
+        BEQ.N    ??Seek_Blank_3
+//   69   }
+        ADDS     R0,R0,#+32
+        UXTH     R0,R0
+        MOVS     R2,#+2048
+        CMP      R0,R2
+        BCC.N    ??Seek_Blank_0
+//   70   return 2048;
+        MOV      R0,R2
+??Seek_Blank_3:
+        POP      {R4}
+        CFI R4 SameValue
+        CFI CFA R13+0
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock4
+//   71 }
+//   72 /*******************************************************************************
+//   73  Add_Proj: Add a Project ID into recoed                  RET: 1 = Ok, 0 = Fail
+//   74 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function Add_Proj
+        THUMB
+//   75 u8 Add_Proj(u32 ProjectID, u16 Offset) 
+//   76 {
+Add_Proj:
+        PUSH     {R4-R6,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R6 Frame(CFA, -8)
+        CFI R5 Frame(CFA, -12)
+        CFI R4 Frame(CFA, -16)
+        CFI CFA R13+16
+        MOVS     R6,R0
+        MOVS     R5,R1
+//   77   u16 Result;
+//   78   
+//   79   __FLASH_Unlock();
+        _BLF     __FLASH_Unlock,??__FLASH_Unlock??rT
+//   80   Result  = __FLASH_Prog(REC_BASE + Offset + 0, ProjectID & 0xFFFF);
+        LDR.N    R0,??DataTable6  ;; 0x8003800
+        UXTH     R1,R6
+        ADDS     R0,R5,R0
+        _BLF     __FLASH_Prog,??__FLASH_Prog??rT
+//   81   Result &= __FLASH_Prog(REC_BASE + Offset + 2, ProjectID >> 16);
+        MOVS     R4,R0
+        LDR.N    R0,??Add_Proj_0  ;; 0x8003802
+        LSRS     R1,R6,#+16
+        ADDS     R0,R5,R0
+        _BLF     __FLASH_Prog,??__FLASH_Prog??rT
+        MOVS     R5,R0
+        ANDS     R5,R5,R4
+//   82   __FLASH_Lock();
+        _BLF     __FLASH_Lock,??__FLASH_Lock??rT
+//   83   return Result;
+        MOVS     R0,R5
+        POP      {R4-R6,PC}       ;; return
+        DATA
+??Add_Proj_0:
+        DC32     0x8003802
+        CFI EndBlock cfiBlock5
+//   84 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable6:
+        DC32     0x8003800
+//   85 /*******************************************************************************
+//   86  Add_Str: Add a Project string into recoed               RET: 1 = Ok, 0 = Fail
+//   87 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function Add_Str
+        THUMB
+//   88 u8 Add_Str(u32 ProjStrAddr, u16 Offset) 
+//   89 {
+Add_Str:
+        PUSH     {R4-R7,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R7 Frame(CFA, -8)
+        CFI R6 Frame(CFA, -12)
+        CFI R5 Frame(CFA, -16)
+        CFI R4 Frame(CFA, -20)
+        CFI CFA R13+20
+        MOVS     R7,R0
+        MOVS     R4,R1
+//   90   u8 i, Result = FLASH_COMPLETE;
+        MOVS     R5,#+4
+//   91   u16 Data;
+//   92   __FLASH_Unlock();
+        _BLF     __FLASH_Unlock,??__FLASH_Unlock??rT
+//   93   for(i=0; i<16; i+=2){
+        MOVS     R6,#+0
+        B.N      ??Add_Str_0
+//   94     Data  = *(u8*)ProjStrAddr;
+//   95     (u8*)ProjStrAddr++;
+//   96     Data |= (*(u8*)ProjStrAddr)<<8;
+??Add_Str_1:
+        LDRB     R1,[R7, #+1]
+        LDRB     R0,[R7, #+0]
+//   97     (u8*)ProjStrAddr++;
+//   98     Result &= __FLASH_Prog(REC_BASE + Offset + i + 16, Data);
+        LDR.N    R2,??Add_Str_2   ;; 0x8003810
+        ADDS     R7,R7,#+2
+        ORRS     R1,R0,R1, LSL #+8
+        ADDS     R0,R4,R6
+        ADDS     R0,R0,R2
+        _BLF     __FLASH_Prog,??__FLASH_Prog??rT
+        ANDS     R0,R0,R5
+        MOVS     R5,R0
+//   99   }
+        ADDS     R6,R6,#+2
+        UXTB     R6,R6
+??Add_Str_0:
+        CMP      R6,#+16
+        BCC.N    ??Add_Str_1
+//  100   __FLASH_Lock();
+        _BLF     __FLASH_Lock,??__FLASH_Lock??rT
+//  101   return Result;
+        MOVS     R0,R5
+        POP      {R4-R7,PC}       ;; return
+        DATA
+??Add_Str_2:
+        DC32     0x8003810
+        CFI EndBlock cfiBlock6
+//  102 }
+//  103 /*******************************************************************************
+//  104  Add_Cnt: Add demo counter value into recoed             RET: 1 = Ok, 0 = Fail
+//  105 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function Add_Cnt
+        THUMB
+//  106 u8 Add_Cnt(u8 DemoCnt, u16 Offset)
+//  107 {
+Add_Cnt:
+        PUSH     {R4-R7,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R7 Frame(CFA, -8)
+        CFI R6 Frame(CFA, -12)
+        CFI R5 Frame(CFA, -16)
+        CFI R4 Frame(CFA, -20)
+        CFI CFA R13+20
+        MOVS     R4,R0
+        MOVS     R7,R1
+//  108   u32 TmpL, TmpH;
+//  109   u8  i, Result;
+//  110   
+//  111   __FLASH_Unlock();
+//  112   TmpH = 0;
+        MOVS     R5,#+0
+        _BLF     __FLASH_Unlock,??__FLASH_Unlock??rT
+        MOVS     R0,#+0
+//  113   TmpL = 0;
+        MOV      R6,R0
+//  114   if(DemoCnt != 0){
+        CBZ      R4,??Add_Cnt_0
+//  115     if(DemoCnt <= 32)  for(i=0; i<DemoCnt; i++)  TmpL |= 1<<i; 
+        CMP      R4,#+33
+        BCS.N    ??Add_Cnt_1
+??Add_Cnt_2:
+        CMP      R0,R4
+        BCS.N    ??Add_Cnt_0
+        MOVS     R1,R6
+        MOVS     R6,#+1
+        LSLS     R6,R6,R0
+        ORRS     R6,R6,R1
+        ADDS     R0,R0,#+1
+        UXTB     R0,R0
+        B.N      ??Add_Cnt_2
+//  116     else {
+//  117       TmpL = 0xFFFFFFFF;
+??Add_Cnt_1:
+        MOVS     R6,#-1
+//  118       for(i=0; i<(DemoCnt-32); i++)  TmpH |= 1<<i;
+        SUBS     R4,R4,#+32
+        CMP      R4,#+1
+        BGE.N    ??Add_Cnt_3
+        B.N      ??Add_Cnt_0
+??Add_Cnt_4:
+        MOVS     R1,R5
+        MOVS     R5,#+1
+        LSLS     R5,R5,R0
+        ORRS     R5,R5,R1
+        ADDS     R0,R0,#+1
+        UXTB     R0,R0
+??Add_Cnt_3:
+        CMP      R0,R4
+        BLT.N    ??Add_Cnt_4
+//  119     }
+//  120   }
+//  121   Result  = __FLASH_Prog(REC_BASE + Offset +  8, TmpL & 0xFFFF);
+??Add_Cnt_0:
+        LDR.N    R0,??DataTable7  ;; 0x8003808
+        UXTH     R1,R6
+        ADDS     R0,R7,R0
+        _BLF     __FLASH_Prog,??__FLASH_Prog??rT
+//  122   Result &= __FLASH_Prog(REC_BASE + Offset + 10, TmpL >> 16);
+        MOVS     R4,R0
+        LDR.N    R0,??Add_Cnt_5   ;; 0x800380a
+        LSRS     R1,R6,#+16
+        ADDS     R0,R7,R0
+        _BLF     __FLASH_Prog,??__FLASH_Prog??rT
+        MOVS     R6,R0
+//  123   Result &= __FLASH_Prog(REC_BASE + Offset + 12, TmpH & 0xFFFF);
+        LDR.N    R0,??DataTable8  ;; 0x800380c
+        ANDS     R6,R6,R4
+        UXTH     R1,R5
+        ADDS     R0,R7,R0
+        _BLF     __FLASH_Prog,??__FLASH_Prog??rT
+        MOVS     R4,R0
+//  124   Result &= __FLASH_Prog(REC_BASE + Offset + 14, TmpH >> 16);
+        LDR.N    R0,??Add_Cnt_5+0x4  ;; 0x800380e
+        ANDS     R4,R4,R6
+        LSRS     R1,R5,#+16
+        ADDS     R0,R7,R0
+        _BLF     __FLASH_Prog,??__FLASH_Prog??rT
+        MOVS     R5,R0
+        ANDS     R5,R5,R4
+//  125   __FLASH_Lock();
+        _BLF     __FLASH_Lock,??__FLASH_Lock??rT
+//  126   return Result;
+        MOVS     R0,R5
+        POP      {R4-R7,PC}       ;; return
+        Nop      
+        DATA
+??Add_Cnt_5:
+        DC32     0x800380a
+        DC32     0x800380e
+        CFI EndBlock cfiBlock7
+//  127 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable7:
+        DC32     0x8003808
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable8:
+        DC32     0x800380c
+//  128 /*******************************************************************************
+//  129  Add_Lic: Add Licence number into recoed                 RET: 1 = Ok, 0 = Fail
+//  130 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI Function Add_Lic
+        THUMB
+//  131 u8 Add_Lic(u32 LicenceNo, u32 Offsaet) 
+//  132 {
+Add_Lic:
+        PUSH     {R4-R6,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R6 Frame(CFA, -8)
+        CFI R5 Frame(CFA, -12)
+        CFI R4 Frame(CFA, -16)
+        CFI CFA R13+16
+        MOVS     R6,R0
+        MOVS     R5,R1
+//  133   u8 Result;
+//  134   
+//  135   __FLASH_Unlock();
+        _BLF     __FLASH_Unlock,??__FLASH_Unlock??rT
+//  136   Result  = __FLASH_Prog(REC_BASE+Offsaet+4, LicenceNo & 0xFFFF);
+        LDR.N    R0,??DataTable9  ;; 0x8003804
+        UXTH     R1,R6
+        ADDS     R0,R5,R0
+        _BLF     __FLASH_Prog,??__FLASH_Prog??rT
+//  137   Result &= __FLASH_Prog(REC_BASE+Offsaet+6, LicenceNo >> 16);
+        MOVS     R4,R0
+        LDR.N    R0,??Add_Lic_0   ;; 0x8003806
+        LSRS     R1,R6,#+16
+        ADDS     R0,R5,R0
+        _BLF     __FLASH_Prog,??__FLASH_Prog??rT
+        MOVS     R5,R0
+        ANDS     R5,R5,R4
+//  138   __FLASH_Lock();
+        _BLF     __FLASH_Lock,??__FLASH_Lock??rT
+//  139   return Result;
+        MOVS     R0,R5
+        POP      {R4-R6,PC}       ;; return
+        DATA
+??Add_Lic_0:
+        DC32     0x8003806
+        CFI EndBlock cfiBlock8
+//  140 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable9:
+        DC32     0x8003804
+//  141 /*******************************************************************************
+//  142  Input_Lic: Input 32 Bytes Licence                         RET: licence number
+//  143 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI Function Input_Lic
+        THUMB
+//  144 u32 Input_Lic(u16 x0, u8 y0) // Return: 32Bits Lic 
+//  145 {
+Input_Lic:
+        PUSH     {R4-R6,R8,R10,R11,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R11 Frame(CFA, -8)
+        CFI R10 Frame(CFA, -12)
+        CFI R8 Frame(CFA, -16)
+        CFI R6 Frame(CFA, -20)
+        CFI R5 Frame(CFA, -24)
+        CFI R4 Frame(CFA, -28)
+        CFI CFA R13+28
+        SUB      SP,SP,#+28
+        CFI CFA R13+56
+//  146   u8  i=0, j, n[2]={"0"};
+        MOVS     R4,#+0
+        MOVS     R6,R1
+        LDR.N    R1,??Input_Lic_0  ;; `?<Constant "0">`
+        MOV      R8,R0
+        MOV      R0,SP
+        LDRB     R2,[R1, #0]
+//  147   u32 Lic=0;
+        MOVS     R5,#+0
+//  148   u8  NumStr[9], Type;
+//  149   
+//  150   Word2Hex(NumStr, Lic);
+//  151   __Display_Str(x0, y0, 0xFFFF, 0, NumStr);
+        MOV      R10,R6
+        STRB     R2,[R0, #+0]
+        LDRB     R2,[R1, #+1]
+        MOV      R1,R4
+        STRB     R2,[R0, #+1]
+        ADD      R0,SP,#+16
+        _BLF     Word2Hex,??Word2Hex??rT
+        LDR.N    R0,??Input_Lic_0+0x4  ;; 0xffff
+        MOV      R3,R4
+        MOV      R1,R10
+        MOV      R11,R0
+        ADD      R0,SP,#+16
+        PUSH     {R0}
+        CFI CFA R13+60
+        MOV      R2,R11
+        MOV      R0,R8
+        _BLF     __Display_Str,??__Display_Str??rT
+        ADD      SP,SP,#+4
+        CFI CFA R13+56
+//  152   
+//  153   while (i<8){
+//  154     Word2Hex(NumStr, Lic);
+??Input_Lic_1:
+        MOVS     R1,R5
+        ADD      R0,SP,#+16
+        _BLF     Word2Hex,??Word2Hex??rT
+//  155     if( Type != Twink ){  // Blink current number each 0.5 Sec.
+        LDR.N    R0,??Input_Lic_0+0x8  ;; Twink
+        LDR      R1,[SP, #+4]
+        LDRB     R2,[R0, #+0]
+        UXTB     R1,R1
+        CMP      R1,R2
+        BEQ.N    ??Input_Lic_2
+//  156       Type = Twink;
+        LDRB     R0,[R0, #+0]
+//  157       for(j=0; j<8; ++j){ // 刷新显示8位数字，当前位闪烁
+        MOVS     R6,#+0
+        STR      R0,[SP, #+4]
+//  158         n[0] = NumStr[j];
+??Input_Lic_3:
+        ADD      R1,SP,#+16
+        LDRB     R1,[R1, R6]
+//  159         if(i==j) __Display_Str(j*8+ x0, y0, 0xFFFF, Type, n);
+        ADDS     R0,R8,R6, LSL #+3
+        CMP      R4,R6
+        STRB     R1,[SP, #+0]
+        MOV      R1,SP
+        PUSH     {R1}
+        CFI CFA R13+60
+        BNE.N    ??Input_Lic_4
+        LDR      R3,[SP, #+8]
+        MOV      R2,R11
+        MOV      R1,R10
+        UXTB     R3,R3
+        B.N      ??Input_Lic_5
+//  160         else     __Display_Str(j*8+ x0, y0, 0xFFFF, 0,  n);
+??Input_Lic_4:
+        MOVS     R3,#+0
+        MOV      R2,R11
+        MOV      R1,R10
+??Input_Lic_5:
+        UXTH     R0,R0
+        _BLF     __Display_Str,??__Display_Str??rT
+        ADD      SP,SP,#+4
+        CFI CFA R13+56
+//  161       }
+        ADDS     R6,R6,#+1
+        UXTB     R6,R6
+        CMP      R6,#+8
+        BCC.N    ??Input_Lic_3
+//  162     }
+//  163     if(Key_Buffer != 0){
+??Input_Lic_2:
+        LDR.N    R0,??Input_Lic_0+0xC  ;; Key_Buffer
+        LDRB     R1,[R0, #+0]
+        CMP      R1,#+0
+        BEQ.N    ??Input_Lic_6
+//  164       switch (Key_Buffer){  
+        LDRB     R6,[R0, #+0]
+        MOVS     R1,#+7
+        SUBS     R1,R1,R4
+        LSLS     R3,R1,#+2
+        MOVS     R1,#+1
+        LSLS     R1,R1,R3
+        MOVS     R2,#+15
+        LSLS     R2,R2,R3
+        LSRS     R3,R5,R3
+        CMP      R6,#+2
+        BEQ.N    ??Input_Lic_7
+        CMP      R6,#+5
+        BEQ.N    ??Input_Lic_8
+        CMP      R6,#+6
+        BEQ.N    ??Input_Lic_9
+        CMP      R6,#+8
+        BEQ.N    ??Input_Lic_10
+        CMP      R6,#+9
+        BEQ.N    ??Input_Lic_11
+        B.N      ??Input_Lic_12
+//  165       case K_INDEX_DEC:
+//  166         if(((Lic >>((7-i)*4))& 0x0F )> 0) Lic -= 0x01<<((7-i)*4);
+??Input_Lic_8:
+        LSLS     R3,R3,#+28
+        ITE     EQ 
+        ADDEQ    R5,R5,R2
+        SUBNE    R5,R5,R1
+        B.N      ??Input_Lic_12
+//  167         else                              Lic += 0x0F<<((7-i)*4);
+//  168         break;
+//  169       case K_INDEX_INC:
+//  170         if(((Lic >>((7-i)*4))& 0x0F )<15) Lic += 0x01<<((7-i)*4);
+??Input_Lic_9:
+        LSLS     R3,R3,#+28
+        LSRS     R3,R3,#+28
+        CMP      R3,#+15
+        ITE     CS 
+        SUBCS    R5,R5,R2
+        ADDCC    R5,R5,R1
+        B.N      ??Input_Lic_12
+//  171         else                              Lic -= 0x0F<<((7-i)*4);
+//  172         break;
+//  173       case K_ITEM_INC:
+//  174         if(i<7) i++;
+??Input_Lic_10:
+        CMP      R4,#+7
+        ITEE    CS 
+        MOVCS    R4,#+0
+        ADDCC    R4,R4,#+1
+        UXTBCC   R4,R4
+        B.N      ??Input_Lic_12
+//  175         else    i=0;
+//  176         break;
+//  177       case K_ITEM_DEC:
+//  178         if(i>0) i--;
+??Input_Lic_11:
+        MOVS     R1,R4
+        ITEE    EQ 
+        MOVEQ    R4,#+7
+        SUBNE    R4,R4,#+1
+        UXTBNE   R4,R4
+        B.N      ??Input_Lic_12
+//  179         else    i=7;
+//  180         break;
+//  181       case KEY2:
+//  182         i = 8;        // Exit 
+??Input_Lic_7:
+        MOVS     R4,#+8
+//  183         break;
+//  184       }
+//  185       Key_Buffer = NO_KEY;
+??Input_Lic_12:
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+0]
+//  186     }
+//  187   }
+??Input_Lic_6:
+        CMP      R4,#+8
+        BCC.N    ??Input_Lic_1
+//  188   return Lic;
+        MOVS     R0,R5
+        ADD      SP,SP,#+28
+        CFI CFA R13+28
+        POP      {R4-R6,R8,R10,R11,PC}
+        DATA
+??Input_Lic_0:
+        DC32     `?<Constant "0">`
+        DC32     0xffff
+        DC32     Twink
+        DC32     Key_Buffer
+        CFI EndBlock cfiBlock9
+//  189 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__FLASH_Unlock??rT:
+        LDR.N    R3,??Subroutine0_0  ;; __FLASH_Unlock
+        BX       R3
+        DATA
+??Subroutine0_0:
+        DC32     __FLASH_Unlock
+        CFI EndBlock cfiBlock10
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock11 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__FLASH_Prog??rT:
+        LDR.N    R3,??Subroutine1_0  ;; __FLASH_Prog
+        BX       R3
+        DATA
+??Subroutine1_0:
+        DC32     __FLASH_Prog
+        CFI EndBlock cfiBlock11
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock12 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__FLASH_Lock??rT:
+        LDR.N    R3,??Subroutine2_0  ;; __FLASH_Lock
+        BX       R3
+        DATA
+??Subroutine2_0:
+        DC32     __FLASH_Lock
+        CFI EndBlock cfiBlock12
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock13 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Word2Hex??rT:
+        LDR.N    R3,??Subroutine3_0  ;; Word2Hex
+        BX       R3
+        DATA
+??Subroutine3_0:
+        DC32     Word2Hex
+        CFI EndBlock cfiBlock13
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock14 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__Display_Str??rT:
+        PUSH     {R3}
+        CFI CFA R13+4
+        LDR.N    R3,??Subroutine4_0  ;; __Display_Str
+        MOV      R12,R3
+        POP      {R3}
+        CFI CFA R13+0
+        BX       R12
+        Nop      
+        DATA
+??Subroutine4_0:
+        DC32     __Display_Str
+        CFI EndBlock cfiBlock14
+
+        RSEG DATA_C:CONST:SORT:NOROOT(0)
+`?<Constant "0">`:
+        DATA
+        DC8 "0"
+
+        END
+//  190 /********************************* END OF FILE ********************************/
+// 
+// 784 bytes in segment CODE
+//   2 bytes in segment DATA_C
+// 
+// 736 bytes of CODE  memory (+ 48 bytes shared)
+//   2 bytes of CONST memory
+//
+//Errors: none
+//Warnings: none

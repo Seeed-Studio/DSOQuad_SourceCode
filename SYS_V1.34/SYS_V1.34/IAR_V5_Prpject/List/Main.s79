@@ -1,0 +1,848 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32 EVALUATION   30/Mar/2011  13:15:07 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  D:\Design\DS203_MiniDSO\SFW\SYS_V1.32\source\Main.c /
+//    Command line    =  D:\Design\DS203_MiniDSO\SFW\SYS_V1.32\source\Main.c /
+//                        -lA D:\Design\DS203_MiniDSO\SFW\SYS_V1.32\IAR_V4_P /
+//                       rpject\List\ -o D:\Design\DS203_MiniDSO\SFW\SYS_V1. /
+//                       32\IAR_V4_Prpject\Obj\ -s6 --no_unroll --no_inline  /
+//                       --no_tbaa --no_scheduling --cpu_mode thumb          /
+//                       --endian little --cpu cortex-M3 --stack_align 4 -e  /
+//                       --fpu None --dlib_config "C:\Program Files\IAR      /
+//                       Systems\Embedded Workbench 4.0                      /
+//                       Evaluation\arm\LIB\dl7mptnnl8n.h" -I                /
+//                       D:\Design\DS203_MiniDSO\SFW\SYS_V1.32\IAR_V4_Prpjec /
+//                       t\..\..\FWLib\inc\ -I D:\Design\DS203_MiniDSO\SFW\S /
+//                       YS_V1.32\IAR_V4_Prpject\..\..\USBLib\inc\ -I        /
+//                       D:\Design\DS203_MiniDSO\SFW\SYS_V1.32\IAR_V4_Prpjec /
+//                       t\..\include\ -I "C:\Program Files\IAR              /
+//                       Systems\Embedded Workbench 4.0 Evaluation\arm\INC\" /
+//    List file       =  D:\Design\DS203_MiniDSO\SFW\SYS_V1.32\IAR_V4_Prpjec /
+//                       t\List\Main.s79                                     /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME Main
+
+        RTMODEL "StackAlign4", "USED"
+        RTMODEL "__cpu_mode", "__pcs__thumb"
+        RTMODEL "__data_model", "absolute"
+        RTMODEL "__endian", "little"
+        RTMODEL "__rt_version", "6"
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+        MULTWEAK ??ADC_Config??rT
+        MULTWEAK ??Add_Lic??rT
+        MULTWEAK ??Beep??rT
+        MULTWEAK ??Clear_Screen??rT
+        MULTWEAK ??DAC_Config??rT
+        MULTWEAK ??DMA_Config??rT
+        MULTWEAK ??Display_Logo??rT
+        MULTWEAK ??Display_Str??rT
+        MULTWEAK ??FSMC_Config??rT
+        MULTWEAK ??GPIO_Config??rT
+        MULTWEAK ??Get_Lic??rT
+        MULTWEAK ??Input_Lic??rT
+        MULTWEAK ??LCD_Initial??rT
+        MULTWEAK ??NVIC_Config??rT
+        MULTWEAK ??SPI_Config??rT
+        MULTWEAK ??Set_System??rT
+        MULTWEAK ??Timer_Config??rT
+        MULTWEAK ??USB_Init??rT
+        MULTWEAK ??Word2Hex??rT
+        MULTWEAK ??__Chk_SYS??rT
+        MULTWEAK ??__Dev_SN??rT
+        MULTWEAK ??__MSR_MSP??rT
+        PUBWEAK ?init?tab?DATA_Z
+        PUBLIC JumpAddr
+        PUBLIC Jump_To_App
+        PUBLIC main
+        FUNCTION main,0a03H
+        LOCFRAME CSTACK, 52, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA R13 HUGEDATA
+        CFI Resource R0:32, R1:32, R2:32, R3:32, R4:32, R5:32, R6:32, R7:32
+        CFI Resource R8:32, R9:32, R10:32, R11:32, R12:32, R13:32, R14:32
+        CFI VirtualResource ?RET:32
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 2
+        CFI DataAlign 4
+        CFI ReturnAddress ?RET CODE
+        CFI CFA R13+0
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI R8 SameValue
+        CFI R9 SameValue
+        CFI R10 SameValue
+        CFI R11 SameValue
+        CFI R12 Undefined
+        CFI R14 Undefined
+        CFI ?RET R14
+        CFI EndCommon cfiCommon0
+        
+ADC_Config          SYMBOL "ADC_Config"
+Add_Lic             SYMBOL "Add_Lic"
+Beep                SYMBOL "Beep"
+Clear_Screen        SYMBOL "Clear_Screen"
+DAC_Config          SYMBOL "DAC_Config"
+DMA_Config          SYMBOL "DMA_Config"
+Display_Logo        SYMBOL "Display_Logo"
+Display_Str         SYMBOL "Display_Str"
+FSMC_Config         SYMBOL "FSMC_Config"
+GPIO_Config         SYMBOL "GPIO_Config"
+Get_Lic             SYMBOL "Get_Lic"
+Input_Lic           SYMBOL "Input_Lic"
+LCD_Initial         SYMBOL "LCD_Initial"
+NVIC_Config         SYMBOL "NVIC_Config"
+SPI_Config          SYMBOL "SPI_Config"
+Set_System          SYMBOL "Set_System"
+Timer_Config        SYMBOL "Timer_Config"
+USB_Init            SYMBOL "USB_Init"
+Word2Hex            SYMBOL "Word2Hex"
+__Chk_SYS           SYMBOL "__Chk_SYS"
+__Dev_SN            SYMBOL "__Dev_SN"
+__MSR_MSP           SYMBOL "__MSR_MSP"
+??ADC_Config??rT    SYMBOL "??rT", ADC_Config
+??Add_Lic??rT       SYMBOL "??rT", Add_Lic
+??Beep??rT          SYMBOL "??rT", Beep
+??Clear_Screen??rT  SYMBOL "??rT", Clear_Screen
+??DAC_Config??rT    SYMBOL "??rT", DAC_Config
+??DMA_Config??rT    SYMBOL "??rT", DMA_Config
+??Display_Logo??rT  SYMBOL "??rT", Display_Logo
+??Display_Str??rT   SYMBOL "??rT", Display_Str
+??FSMC_Config??rT   SYMBOL "??rT", FSMC_Config
+??GPIO_Config??rT   SYMBOL "??rT", GPIO_Config
+??Get_Lic??rT       SYMBOL "??rT", Get_Lic
+??Input_Lic??rT     SYMBOL "??rT", Input_Lic
+??LCD_Initial??rT   SYMBOL "??rT", LCD_Initial
+??NVIC_Config??rT   SYMBOL "??rT", NVIC_Config
+??SPI_Config??rT    SYMBOL "??rT", SPI_Config
+??Set_System??rT    SYMBOL "??rT", Set_System
+??Timer_Config??rT  SYMBOL "??rT", Timer_Config
+??USB_Init??rT      SYMBOL "??rT", USB_Init
+??Word2Hex??rT      SYMBOL "??rT", Word2Hex
+??__Chk_SYS??rT     SYMBOL "??rT", __Chk_SYS
+??__Dev_SN??rT      SYMBOL "??rT", __Dev_SN
+??__MSR_MSP??rT     SYMBOL "??rT", __MSR_MSP
+
+        EXTERN ADC_Config
+        FUNCTION ADC_Config,0202H
+        EXTERN Add_Lic
+        FUNCTION Add_Lic,0202H
+        EXTERN Beep
+        FUNCTION Beep,0202H
+        EXTERN Clear_Screen
+        FUNCTION Clear_Screen,0202H
+        EXTERN DAC_Config
+        FUNCTION DAC_Config,0202H
+        EXTERN DMA_Config
+        FUNCTION DMA_Config,0202H
+        EXTERN Display_Logo
+        FUNCTION Display_Logo,0202H
+        EXTERN Display_Str
+        FUNCTION Display_Str,0202H
+        EXTERN FSMC_Config
+        FUNCTION FSMC_Config,0202H
+        EXTERN GPIO_Config
+        FUNCTION GPIO_Config,0202H
+        EXTERN Get_Lic
+        FUNCTION Get_Lic,0202H
+        EXTERN Input_Lic
+        FUNCTION Input_Lic,0202H
+        EXTERN Key_Buffer
+        EXTERN LCD_Initial
+        FUNCTION LCD_Initial,0202H
+        EXTERN NVIC_Config
+        FUNCTION NVIC_Config,0202H
+        EXTERN SPI_Config
+        FUNCTION SPI_Config,0202H
+        EXTERN Set_System
+        FUNCTION Set_System,0202H
+        EXTERN Timer_Config
+        FUNCTION Timer_Config,0202H
+        EXTERN USB_Init
+        FUNCTION USB_Init,0202H
+        EXTERN Word2Hex
+        FUNCTION Word2Hex,0202H
+        EXTERN __Chk_SYS
+        FUNCTION __Chk_SYS,0202H
+        EXTERN __Dev_SN
+        FUNCTION __Dev_SN,0202H
+        EXTERN __MSR_MSP
+        FUNCTION __MSR_MSP,0202H
+
+// D:\Design\DS203_MiniDSO\SFW\SYS_V1.32\source\Main.c
+//    1 /********************* (C) COPYRIGHT 2010 e-Design Co.,Ltd. ********************
+//    2  File Name : main.c  
+//    3  Version   : DS203_SYS Ver 1.3x                                  Author : bure
+//    4 *******************************************************************************/
+//    5 #include "SPI_flash.h"
+//    6 #include "Function.h"
+//    7 #include "USB_lib.h"
+//    8 #include "Config.h"
+//    9 #include "Ident.h"
+//   10 #include "BIOS.h"
+//   11 #include "LCD.h"
+//   12 #include "ASM.h"
+//   13 #include "USB_pwr.h"
+//   14 
+//   15 typedef  void (*pFunc)(void);
+//   16 
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+//   17 pFunc Jump_To_App;
+Jump_To_App:
+        DS8 4
+//   18 u32 JumpAddr;
+JumpAddr:
+        DS8 4
+//   19 
+//   20 /*******************************************************************************
+//   21   版本修改说明
+//   22 SYS V1.24: 修改了144MHz交替采样模式下的插值系数(BIOS.C)
+//   23            修改了V2.6硬件电路下模拟输入量程档位(BIOS.C)
+//   24 SYS V1.30: 将Licence识别函数转移到了DFU模块中(ASM.s,Ident.c)
+//   25            修改了Licence权限控制力度(Main.c, Ident.c)
+//   26            修改了DFU,SYS库函数向量及其调用方式(ASM.s, VECTOR.c)
+//   27            添加了新的SYS库函数(BIOS.C)
+//   28 SYS V1.31: 将内部U盘的初始化推迟到Licence识别后进行(Main.c,Config.c)
+//   29            修改了U盘扇区读写程序(SPI_flash.c)
+//   30            修改了SYS库函数向量表存放起始地址
+//   31 SYS V1.32: 修改了Set(T_BASE_ARR, Value)函数中的BUG(BIOS.C)
+//   32 
+//   33 *******************************************************************************/
+//   34 
+//   35 /*******************************************************************************
+//   36   main : Main routine.
+//   37 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function main
+        THUMB
+//   38 int main(void)
+//   39 { 
+main:
+        PUSH     {R4-R8,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R8 Frame(CFA, -8)
+        CFI R7 Frame(CFA, -12)
+        CFI R6 Frame(CFA, -16)
+        CFI R5 Frame(CFA, -20)
+        CFI R4 Frame(CFA, -24)
+        CFI CFA R13+24
+        SUB      SP,SP,#+12
+        CFI CFA R13+36
+//   40   u32 Licence;
+//   41   u8  NumStr[9];
+//   42   
+//   43   Set_System();
+        _BLF     Set_System,??Set_System??rT
+//   44   NVIC_Config();
+        _BLF     NVIC_Config,??NVIC_Config??rT
+//   45   GPIO_Config();
+        _BLF     GPIO_Config,??GPIO_Config??rT
+//   46   Timer_Config();
+        _BLF     Timer_Config,??Timer_Config??rT
+//   47   FSMC_Config();
+        _BLF     FSMC_Config,??FSMC_Config??rT
+//   48   SPI_Config();
+        _BLF     SPI_Config,??SPI_Config??rT
+//   49 
+//   50   DMA_Config();
+        _BLF     DMA_Config,??DMA_Config??rT
+//   51   ADC_Config();
+        _BLF     ADC_Config,??ADC_Config??rT
+//   52   DAC_Config();
+        _BLF     DAC_Config,??DAC_Config??rT
+//   53   
+//   54   Beep(20, 500); 
+        MOVS     R1,#+500
+        MOVS     R0,#+20
+        _BLF     Beep,??Beep??rT
+//   55   LCD_Initial();
+        _BLF     LCD_Initial,??LCD_Initial??rT
+//   56   Clear_Screen(0x0000);
+        MOVS     R0,#+0
+        _BLF     Clear_Screen,??Clear_Screen??rT
+//   57   Display_Logo(70,150); 
+        MOVS     R1,#+150
+        MOVS     R0,#+70
+        _BLF     Display_Logo,??Display_Logo??rT
+//   58 
+//   59   Display_Str( 6*8, 90, GRN, PRN,  HDW_VERSION );
+        LDR.N    R4,??main_0      ;; `?<Constant "Hardware Ver 2.6  ">`
+        PUSH     {R4}
+        CFI CFA R13+40
+        MOVS     R3,#+0
+        MOVS     R2,#+2016
+        MOVS     R1,#+90
+        MOVS     R0,#+48
+        _BLF     Display_Str,??Display_Str??rT
+//   60   Display_Str(24*8, 90, GRN, PRN, "Serial No: ");
+        MOVS     R0,R4
+        ADDS     R0,R0,#+20
+        PUSH     {R0}
+        CFI CFA R13+44
+        MOVS     R3,#+0
+        MOVS     R2,#+2016
+        MOVS     R1,#+90
+        MOVS     R0,#+192
+        _BLF     Display_Str,??Display_Str??rT
+//   61   Word2Hex(NumStr, __Dev_SN());            
+        _BLF     __Dev_SN,??__Dev_SN??rT
+        MOVS     R1,R0
+        ADD      R0,SP,#+8
+        _BLF     Word2Hex,??Word2Hex??rT
+//   62   Display_Str(35*8, 90, YEL, PRN, NumStr);    // 显示读取到的设备序列号
+        LDR.N    R0,??main_0+0x4  ;; 0x7ff
+        MOV      R8,R0
+        ADD      R0,SP,#+8
+        PUSH     {R0}
+        CFI CFA R13+48
+        MOVS     R3,#+0
+        MOV      R2,R8
+        MOVS     R1,#+90
+        MOVS     R0,#+280
+        _BLF     Display_Str,??Display_Str??rT
+//   63   Display_Str(6*8, 70, GRN, PRN,   SYS_VERSION);
+        MOVS     R0,R4
+        ADDS     R0,R0,#+32
+        PUSH     {R0}
+        CFI CFA R13+52
+        MOVS     R3,#+0
+        MOVS     R2,#+2016
+        MOVS     R1,#+70
+        MOVS     R0,#+48
+        _BLF     Display_Str,??Display_Str??rT
+//   64 
+//   65   if((KEY2_OFF)&&(KEY3_OFF)&&(KEY4_OFF)){       // 开机无按键按下
+        LDR.N    R5,??main_0+0x8  ;; Jump_To_App
+        LDR.N    R0,??main_0+0xC  ;; 0x40011008
+        LDR      R1,[R0, #+0]
+        ADD      SP,SP,#+16
+        CFI CFA R13+36
+        LSLS     R1,R1,#+21
+        BPL.N    ??main_1
+        LDR      R1,[R0, #+0]
+        LSLS     R1,R1,#+22
+        BPL.N    ??main_1
+        LDR      R1,[R0, #+0]
+        LSLS     R1,R1,#+23
+        BPL.N    ??main_1
+//   66     Key_Buffer = 0;                             // 清除按键状态，开始等待新的按键
+        LDR.N    R6,??main_0+0x10  ;; Key_Buffer
+        MOVS     R0,#+0
+        STRB     R0,[R6, #+0]
+//   67     Licence = Get_Lic(SYS_LIC_OFFSET);          // Get master licence
+        _BLF     Get_Lic,??Get_Lic??rT
+//   68     if(__Chk_SYS(Licence)!= 1){                 // No master licence 
+        _BLF     __Chk_SYS,??__Chk_SYS??rT
+        CMP      R0,#+1
+        BEQ.N    ??main_2
+//   69       Display_Str(6*8,50,GRN,PRN,     "Please input master licence: 00000000");
+        MOVS     R0,R4
+        ADDS     R0,R0,#+72
+        PUSH     {R0}
+        CFI CFA R13+40
+        MOVS     R3,#+0
+        MOVS     R2,#+2016
+        MOVS     R1,#+50
+        MOVS     R0,#+48
+        _BLF     Display_Str,??Display_Str??rT
+//   70       Licence = Input_Lic(48+29*8, 50);         // Input Licence
+        MOVS     R1,#+50
+        MOVS     R0,#+280
+        _BLF     Input_Lic,??Input_Lic??rT
+        MOVS     R7,R0
+//   71       if(__Chk_SYS(Licence)!= 1){               // Licence error
+        _BLF     __Chk_SYS,??__Chk_SYS??rT
+        ADD      SP,SP,#+4
+        CFI CFA R13+36
+        CMP      R0,#+1
+        BEQ.N    ??main_3
+//   72         Display_Str(6*8,50,YEL,PRN,   "        Licence input error          ");
+        MOVS     R0,R4
+        ADDS     R0,R0,#+112
+        PUSH     {R0}
+        CFI CFA R13+40
+        MOVS     R3,#+0
+        MOV      R2,R8
+        MOVS     R1,#+50
+        MOVS     R0,#+48
+        _BLF     Display_Str,??Display_Str??rT
+        ADD      SP,SP,#+4
+        CFI CFA R13+36
+        B.N      ??main_4
+//   73       } else {                                  // Licence ok
+//   74         if(Add_Lic(Licence, SYS_LIC_OFFSET)== 1)// Licence writen ok
+??main_3:
+        MOVS     R1,#+0
+        MOVS     R0,R7
+        _BLF     Add_Lic,??Add_Lic??rT
+        CMP      R0,#+1
+        BNE.N    ??main_5
+//   75           Display_Str(6*8,50,GRN,PRN, "         Licence writen ok           ");
+        MOVS     R0,R4
+        ADDS     R0,R0,#+152
+        PUSH     {R0}
+        CFI CFA R13+40
+        MOVS     R3,#+0
+        MOVS     R2,#+2016
+        MOVS     R1,#+50
+        MOVS     R0,#+48
+        _BLF     Display_Str,??Display_Str??rT
+        ADD      SP,SP,#+4
+        CFI CFA R13+36
+        B.N      ??main_4
+//   76         else  
+//   77           Display_Str(6*8,50,GRN,PRN, "        Licence writen error         ");
+??main_5:
+        MOVS     R0,R4
+        ADDS     R0,R0,#+192
+        PUSH     {R0}
+        CFI CFA R13+40
+        MOVS     R3,#+0
+        MOVS     R2,#+2016
+        MOVS     R1,#+50
+        MOVS     R0,#+48
+        _BLF     Display_Str,??Display_Str??rT
+        ADD      SP,SP,#+4
+        CFI CFA R13+36
+//   78       }
+//   79       Display_Str(6*8,30,GRN,PRN,     "      Push any key to next step      ");
+??main_4:
+        ADDS     R4,R4,#+232
+        PUSH     {R4}
+        CFI CFA R13+40
+        MOVS     R3,#+0
+        MOVS     R2,#+2016
+        MOVS     R1,#+30
+        MOVS     R0,#+48
+        _BLF     Display_Str,??Display_Str??rT
+        ADD      SP,SP,#+4
+        CFI CFA R13+36
+//   80       while (Key_Buffer == 0){};
+??main_6:
+        LDRB     R0,[R6, #+0]
+        CMP      R0,#+0
+        BEQ.N    ??main_6
+//   81     }
+//   82     JumpAddr = *(vu32*) (APP1_BASE + 4);
+??main_2:
+        LDR.N    R0,??main_0+0x14  ;; 0x800c004
+        LDR      R0,[R0, #+0]
+        STR      R0,[R5, #+4]
+//   83     Jump_To_App = (pFunc) JumpAddr;
+        STR      R0,[R5, #+0]
+//   84     __MSR_MSP(*(vu32*) APP1_BASE);
+        LDR.N    R0,??main_0+0x18  ;; 0x800c000
+        LDR      R0,[R0, #+0]
+        _BLF     __MSR_MSP,??__MSR_MSP??rT
+        B.N      ??main_7
+//   85   } else if(KEY2_ON){                           // 开机按下K2键  
+??main_1:
+        LDR      R1,[R0, #+0]
+        LSLS     R1,R1,#+21
+        BMI.N    ??main_8
+//   86     JumpAddr = *(vu32*) (APP2_BASE + 4);
+        LDR.N    R0,??main_0+0x1C  ;; 0x8014004
+        LDR      R0,[R0, #+0]
+        STR      R0,[R5, #+4]
+//   87     Jump_To_App = (pFunc) JumpAddr;
+        STR      R0,[R5, #+0]
+//   88     __MSR_MSP(*(vu32*) APP2_BASE);
+        LDR.N    R0,??main_0+0x20  ;; 0x8014000
+        LDR      R0,[R0, #+0]
+        _BLF     __MSR_MSP,??__MSR_MSP??rT
+        B.N      ??main_7
+//   89   } else if(KEY3_ON){                           // 开机按下K3键 
+??main_8:
+        LDR      R1,[R0, #+0]
+        LSLS     R1,R1,#+22
+        BMI.N    ??main_9
+//   90     JumpAddr = *(vu32*) (APP3_BASE + 4);
+        LDR.N    R0,??main_0+0x24  ;; 0x801c004
+        LDR      R0,[R0, #+0]
+        STR      R0,[R5, #+4]
+//   91     Jump_To_App = (pFunc) JumpAddr;
+        STR      R0,[R5, #+0]
+//   92     __MSR_MSP(*(vu32*) APP3_BASE);
+        LDR.N    R0,??main_0+0x28  ;; 0x801c000
+        LDR      R0,[R0, #+0]
+        _BLF     __MSR_MSP,??__MSR_MSP??rT
+        B.N      ??main_7
+//   93   } else if(KEY4_ON){                           // 开机按下K4键 
+??main_9:
+        LDR      R0,[R0, #+0]
+        LSLS     R0,R0,#+23
+        BMI.N    ??main_7
+//   94     JumpAddr = *(vu32*) (APP4_BASE + 4);
+        LDR.N    R0,??main_0+0x2C  ;; 0x8024004
+        LDR      R0,[R0, #+0]
+        STR      R0,[R5, #+4]
+//   95     Jump_To_App = (pFunc) JumpAddr;
+        STR      R0,[R5, #+0]
+//   96     __MSR_MSP(*(vu32*) APP4_BASE);
+        LDR.N    R0,??main_0+0x30  ;; 0x8024000
+        LDR      R0,[R0, #+0]
+        _BLF     __MSR_MSP,??__MSR_MSP??rT
+//   97   }
+//   98   USB_EN();
+??main_7:
+        LDR.N    R0,??main_0+0x34  ;; 0x40010804
+        LDR.N    R1,??main_0+0x38  ;; 0xffffffff888bbbbb
+        STR      R1,[R0, #+0]
+//   99   USB_Init();  
+        _BLF     USB_Init,??USB_Init??rT
+//  100   Jump_To_App();
+        LDR      R0,[R5, #+0]
+        BLX      R0
+//  101 }
+        MOVS     R0,#+0
+        ADD      SP,SP,#+12
+        CFI CFA R13+24
+        POP      {R4-R8,PC}       ;; return
+        Nop      
+        DATA
+??main_0:
+        DC32     `?<Constant "Hardware Ver 2.6  ">`
+        DC32     0x7ff
+        DC32     Jump_To_App
+        DC32     0x40011008
+        DC32     Key_Buffer
+        DC32     0x800c004
+        DC32     0x800c000
+        DC32     0x8014004
+        DC32     0x8014000
+        DC32     0x801c004
+        DC32     0x801c000
+        DC32     0x8024004
+        DC32     0x8024000
+        DC32     0x40010804
+        DC32     0xffffffff888bbbbb
+        CFI EndBlock cfiBlock0
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Set_System??rT:
+        LDR.N    R3,??Subroutine0_0  ;; Set_System
+        BX       R3
+        DATA
+??Subroutine0_0:
+        DC32     Set_System
+        CFI EndBlock cfiBlock1
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??NVIC_Config??rT:
+        LDR.N    R3,??Subroutine1_0  ;; NVIC_Config
+        BX       R3
+        DATA
+??Subroutine1_0:
+        DC32     NVIC_Config
+        CFI EndBlock cfiBlock2
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??GPIO_Config??rT:
+        LDR.N    R3,??Subroutine2_0  ;; GPIO_Config
+        BX       R3
+        DATA
+??Subroutine2_0:
+        DC32     GPIO_Config
+        CFI EndBlock cfiBlock3
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Timer_Config??rT:
+        LDR.N    R3,??Subroutine3_0  ;; Timer_Config
+        BX       R3
+        DATA
+??Subroutine3_0:
+        DC32     Timer_Config
+        CFI EndBlock cfiBlock4
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??FSMC_Config??rT:
+        LDR.N    R3,??Subroutine4_0  ;; FSMC_Config
+        BX       R3
+        DATA
+??Subroutine4_0:
+        DC32     FSMC_Config
+        CFI EndBlock cfiBlock5
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SPI_Config??rT:
+        LDR.N    R3,??Subroutine5_0  ;; SPI_Config
+        BX       R3
+        DATA
+??Subroutine5_0:
+        DC32     SPI_Config
+        CFI EndBlock cfiBlock6
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??DMA_Config??rT:
+        LDR.N    R3,??Subroutine6_0  ;; DMA_Config
+        BX       R3
+        DATA
+??Subroutine6_0:
+        DC32     DMA_Config
+        CFI EndBlock cfiBlock7
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??ADC_Config??rT:
+        LDR.N    R3,??Subroutine7_0  ;; ADC_Config
+        BX       R3
+        DATA
+??Subroutine7_0:
+        DC32     ADC_Config
+        CFI EndBlock cfiBlock8
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??DAC_Config??rT:
+        LDR.N    R3,??Subroutine8_0  ;; DAC_Config
+        BX       R3
+        DATA
+??Subroutine8_0:
+        DC32     DAC_Config
+        CFI EndBlock cfiBlock9
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Beep??rT:
+        LDR.N    R3,??Subroutine9_0  ;; Beep
+        BX       R3
+        DATA
+??Subroutine9_0:
+        DC32     Beep
+        CFI EndBlock cfiBlock10
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock11 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??LCD_Initial??rT:
+        LDR.N    R3,??Subroutine10_0  ;; LCD_Initial
+        BX       R3
+        DATA
+??Subroutine10_0:
+        DC32     LCD_Initial
+        CFI EndBlock cfiBlock11
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock12 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Clear_Screen??rT:
+        LDR.N    R3,??Subroutine11_0  ;; Clear_Screen
+        BX       R3
+        DATA
+??Subroutine11_0:
+        DC32     Clear_Screen
+        CFI EndBlock cfiBlock12
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock13 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Display_Logo??rT:
+        LDR.N    R3,??Subroutine12_0  ;; Display_Logo
+        BX       R3
+        DATA
+??Subroutine12_0:
+        DC32     Display_Logo
+        CFI EndBlock cfiBlock13
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock14 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Display_Str??rT:
+        PUSH     {R3}
+        CFI CFA R13+4
+        LDR.N    R3,??Subroutine13_0  ;; Display_Str
+        MOV      R12,R3
+        POP      {R3}
+        CFI CFA R13+0
+        BX       R12
+        Nop      
+        DATA
+??Subroutine13_0:
+        DC32     Display_Str
+        CFI EndBlock cfiBlock14
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock15 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__Dev_SN??rT:
+        LDR.N    R3,??Subroutine14_0  ;; __Dev_SN
+        BX       R3
+        DATA
+??Subroutine14_0:
+        DC32     __Dev_SN
+        CFI EndBlock cfiBlock15
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock16 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Word2Hex??rT:
+        LDR.N    R3,??Subroutine15_0  ;; Word2Hex
+        BX       R3
+        DATA
+??Subroutine15_0:
+        DC32     Word2Hex
+        CFI EndBlock cfiBlock16
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock17 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Get_Lic??rT:
+        LDR.N    R3,??Subroutine16_0  ;; Get_Lic
+        BX       R3
+        DATA
+??Subroutine16_0:
+        DC32     Get_Lic
+        CFI EndBlock cfiBlock17
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock18 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__Chk_SYS??rT:
+        LDR.N    R3,??Subroutine17_0  ;; __Chk_SYS
+        BX       R3
+        DATA
+??Subroutine17_0:
+        DC32     __Chk_SYS
+        CFI EndBlock cfiBlock18
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock19 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Input_Lic??rT:
+        LDR.N    R3,??Subroutine18_0  ;; Input_Lic
+        BX       R3
+        DATA
+??Subroutine18_0:
+        DC32     Input_Lic
+        CFI EndBlock cfiBlock19
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock20 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Add_Lic??rT:
+        LDR.N    R3,??Subroutine19_0  ;; Add_Lic
+        BX       R3
+        DATA
+??Subroutine19_0:
+        DC32     Add_Lic
+        CFI EndBlock cfiBlock20
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock21 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__MSR_MSP??rT:
+        LDR.N    R3,??Subroutine20_0  ;; __MSR_MSP
+        BX       R3
+        DATA
+??Subroutine20_0:
+        DC32     __MSR_MSP
+        CFI EndBlock cfiBlock21
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock22 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??USB_Init??rT:
+        LDR.N    R3,??Subroutine21_0  ;; USB_Init
+        BX       R3
+        DATA
+??Subroutine21_0:
+        DC32     USB_Init
+        CFI EndBlock cfiBlock22
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_Z:
+        DCD      sfe(DATA_Z) - sfb(DATA_Z), sfb(DATA_Z), sfb(DATA_Z)
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+`?<Constant "Hardware Ver 2.6  ">`:
+        DATA
+        DC8 "Hardware Ver 2.6  "
+        DC8 0
+        DC8 "Serial No: "
+        DC8 "     DS203 Mini DSO SYS Ver 1.32       "
+        DC8 "Please input master licence: 00000000"
+        DC8 0, 0
+        DC8 "        Licence input error          "
+        DC8 0, 0
+        DC8 "         Licence writen ok           "
+        DC8 0, 0
+        DC8 "        Licence writen error         "
+        DC8 0, 0
+        DC8 "      Push any key to next step      "
+        DC8 0, 0
+
+        END
+//  102 /*********************************  END OF FILE  ******************************/
+// 
+// 708 bytes in segment CODE
+// 272 bytes in segment DATA_C
+//   8 bytes in segment DATA_Z
+//  12 bytes in segment INITTAB
+// 
+// 524 bytes of CODE  memory (+ 196 bytes shared)
+// 272 bytes of CONST memory
+//   8 bytes of DATA  memory
+//
+//Errors: none
+//Warnings: none

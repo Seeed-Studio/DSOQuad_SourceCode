@@ -1,0 +1,538 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32 EVALUATION   25/Apr/2011  15:04:53 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  C:\Users\Administrator\Desktop\mini DSO             /
+//                       download\SYS_V1.34\SYS_V1.34\source\USB_pwr.c       /
+//    Command line    =  "C:\Users\Administrator\Desktop\mini DSO            /
+//                       download\SYS_V1.34\SYS_V1.34\source\USB_pwr.c" -lA  /
+//                       "C:\Users\Administrator\Desktop\mini DSO            /
+//                       download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\List\"  /
+//                       -o "C:\Users\Administrator\Desktop\mini DSO         /
+//                       download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\"   /
+//                       -s9 --no_inline --cpu_mode thumb --endian little    /
+//                       --cpu cortex-M3 --stack_align 4 -e --fpu None       /
+//                       --dlib_config "E:\IARWorkBench(Cracked)\Embedded    /
+//                       Workbench 4.0 Evaluation\ARM\LIB\dl7mptnnl8n.h" -I  /
+//                       "C:\Users\Administrator\Desktop\mini DSO            /
+//                       download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\..\..\F /
+//                       WLib\inc\" -I "C:\Users\Administrator\Desktop\mini  /
+//                       DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\..\ /
+//                       ..\USBLib\inc\" -I "C:\Users\Administrator\Desktop\ /
+//                       mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpjec /
+//                       t\..\include\" -I "E:\IARWorkBench(Cracked)\Embedde /
+//                       d Workbench 4.0 Evaluation\ARM\INC\"                /
+//    List file       =  C:\Users\Administrator\Desktop\mini DSO             /
+//                       download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\List\US /
+//                       B_pwr.s79                                           /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME USB_pwr
+
+        RTMODEL "StackAlign4", "USED"
+        RTMODEL "__cpu_mode", "__pcs__thumb"
+        RTMODEL "__data_model", "absolute"
+        RTMODEL "__endian", "little"
+        RTMODEL "__rt_version", "6"
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+        PUBWEAK `?*?DATA_ID`
+??DataTable0 EQU 0
+??DataTable1 EQU 0
+??DataTable2 EQU 0
+??DataTable4 EQU 0
+??DataTable5 EQU 0
+        PUBWEAK ?init?tab?DATA_I
+        PUBWEAK ?init?tab?DATA_Z
+        PUBLIC PowerOff
+        FUNCTION PowerOff,0203H
+        PUBLIC PowerOn
+        FUNCTION PowerOn,0203H
+        PUBLIC Resume
+        FUNCTION Resume,0203H
+        LOCFRAME CSTACK, 16, STACK
+        PUBLIC ResumeS
+        PUBLIC Resume_Init
+        FUNCTION Resume_Init,0203H
+        PUBLIC Suspend
+        FUNCTION Suspend,0203H
+        PUBLIC bDeviceState
+        PUBLIC fSuspendEnabled
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA R13 HUGEDATA
+        CFI Resource R0:32, R1:32, R2:32, R3:32, R4:32, R5:32, R6:32, R7:32
+        CFI Resource R8:32, R9:32, R10:32, R11:32, R12:32, R13:32, R14:32
+        CFI VirtualResource ?RET:32
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 2
+        CFI DataAlign 4
+        CFI ReturnAddress ?RET CODE
+        CFI CFA R13+0
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI R8 SameValue
+        CFI R9 SameValue
+        CFI R10 SameValue
+        CFI R11 SameValue
+        CFI R12 Undefined
+        CFI R14 Undefined
+        CFI ?RET R14
+        CFI EndCommon cfiCommon0
+        
+        EXTERN wInterrupt_Mask
+
+// C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\source\USB_pwr.c
+//    1 /******************** (C) COPYRIGHT 2008 STMicroelectronics ********************
+//    2 * File Name          : usb_pwr.c
+//    3 * Author             : MCD Application Team
+//    4 * Version            : V2.2.1
+//    5 * Date               : 09/22/2008
+//    6 * Description        : Connection/disconnection & power management
+//    7 ********************************************************************************
+//    8 * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+//    9 * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+//   10 * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+//   11 * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+//   12 * CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+//   13 * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+//   14 *******************************************************************************/
+//   15 
+//   16 /* Includes ------------------------------------------------------------------*/
+//   17 #include "stm32f10x_lib.h"
+//   18 #include "USB_lib.h"
+//   19 #include "USB_conf.h"
+//   20 #include "USB_pwr.h"
+//   21 //#include "Config.h"
+//   22 
+//   23 /* Private typedef -----------------------------------------------------------*/
+//   24 /* Private define ------------------------------------------------------------*/
+//   25 /* Private macro -------------------------------------------------------------*/
+//   26 /* Private variables ---------------------------------------------------------*/
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+//   27 vu32 bDeviceState = UNCONNECTED; /* USB device status */
+bDeviceState:
+        DS8 4
+
+        RSEG DATA_I:DATA:SORT:NOROOT(0)
+//   28 volatile bool fSuspendEnabled = TRUE;  /* true when suspend is possible */
+fSuspendEnabled:
+        DS8 1
+        REQUIRE `?<Initializer for fSuspendEnabled>`
+//   29 
+//   30 struct
+//   31 {
+//   32   volatile RESUME_STATE eState;
+//   33   volatile u8 bESOFcnt;
+//   34 }
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(0)
+//   35 ResumeS;
+ResumeS:
+        DS8 2
+//   36 
+//   37 /* Extern variables ----------------------------------------------------------*/
+//   38 /* Private function prototypes -----------------------------------------------*/
+//   39 /* Extern function prototypes ------------------------------------------------*/
+//   40 /* Private functions ---------------------------------------------------------*/
+//   41 
+//   42 /*******************************************************************************
+//   43 * Function Name  : PowerOn
+//   44 * Description    :
+//   45 * Input          : None.
+//   46 * Output         : None.
+//   47 * Return         : USB_SUCCESS.
+//   48 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function PowerOn
+        THUMB
+//   49 RESULT PowerOn(void)
+//   50 {
+//   51   u16 wRegVal;
+//   52 
+//   53   /*** cable plugged-in ? ***/
+//   54   /*while(!CablePluggedIn());*/
+//   55 //  USB_Cable_Config(ENABLE);
+//   56 
+//   57   /*** CNTR_PWDN = 0 ***/
+//   58   wRegVal = CNTR_FRES;
+//   59   _SetCNTR(wRegVal);
+PowerOn:
+        LDR.N    R0,??DataTable6  ;; 0x40005c40
+//   60 
+//   61   /*** CNTR_FRES = 0 ***/
+//   62   wInterrupt_Mask = 0;
+//   63   _SetCNTR(wInterrupt_Mask);
+//   64   /*** Clear pending interrupts ***/
+//   65   _SetISTR(0);
+        LDR.N    R2,??DataTable3  ;; 0x40005c44
+        MOVS     R1,#+1
+        STR      R1,[R0, #+0]
+        MOVS     R1,#+0
+        STR      R1,[R0, #+0]
+        STR      R1,[R2, #+0]
+//   66   /*** Set interrupt mask ***/
+//   67   wInterrupt_Mask = CNTR_RESETM | CNTR_SUSPM | CNTR_WKUPM;
+        LDR.N    R2,??PowerOn_0   ;; wInterrupt_Mask
+        MOVS     R1,#+7168
+        STRH     R1,[R2, #+0]
+//   68   _SetCNTR(wInterrupt_Mask);
+        STR      R1,[R0, #+0]
+//   69 
+//   70   return USB_SUCCESS;
+        MOVS     R0,#+0
+        BX       LR               ;; return
+        DATA
+??PowerOn_0:
+        DC32     wInterrupt_Mask
+        CFI EndBlock cfiBlock0
+//   71 }
+//   72 
+//   73 /*******************************************************************************
+//   74 * Function Name  : PowerOff
+//   75 * Description    : handles switch-off conditions
+//   76 * Input          : None.
+//   77 * Output         : None.
+//   78 * Return         : USB_SUCCESS.
+//   79 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function PowerOff
+        THUMB
+//   80 RESULT PowerOff()
+//   81 {
+//   82   /* disable all ints and force USB reset */
+//   83   _SetCNTR(CNTR_FRES);
+PowerOff:
+        LDR.N    R0,??DataTable6  ;; 0x40005c40
+        MOVS     R1,#+1
+//   84   /* clear interrupt status register */
+//   85   _SetISTR(0);
+        MOVS     R2,#+0
+        STR      R1,[R0, #+0]
+        LDR.N    R1,??DataTable3  ;; 0x40005c44
+        STR      R2,[R1, #+0]
+//   86   /* Disable the Pull-Up*/
+//   87 //  USB_Cable_Config(DISABLE);
+//   88   /* switch-off device */
+//   89   _SetCNTR(CNTR_FRES + CNTR_PDWN);
+        MOVS     R1,#+3
+        STR      R1,[R0, #+0]
+//   90   /* sw variables reset */
+//   91   /* ... */
+//   92 
+//   93   return USB_SUCCESS;
+        MOVS     R0,#+0
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock1
+//   94 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable3:
+        DC32     0x40005c44
+//   95 
+//   96 /*******************************************************************************
+//   97 * Function Name  : Suspend
+//   98 * Description    : sets suspend mode operating conditions
+//   99 * Input          : None.
+//  100 * Output         : None.
+//  101 * Return         : USB_SUCCESS.
+//  102 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function Suspend
+        THUMB
+//  103 void Suspend(void)
+//  104 {
+//  105   u16 wCNTR;
+//  106   /* suspend preparation */
+//  107   /* ... */
+//  108 
+//  109   /* macrocell enters suspend mode */
+//  110   wCNTR = _GetCNTR();
+Suspend:
+        LDR.N    R0,??DataTable6  ;; 0x40005c40
+        LDR      R1,[R0, #+0]
+        UXTH     R1,R1
+//  111   wCNTR |= CNTR_FSUSP;
+//  112   _SetCNTR(wCNTR);
+        ORRS     R1,R1,#0x8
+        STR      R1,[R0, #+0]
+//  113 
+//  114   /* ------------------ ONLY WITH BUS-POWERED DEVICES ---------------------- */
+//  115   /* power reduction */
+//  116   /* ... on connected devices */
+//  117 
+//  118 
+//  119   /* force low-power mode in the macrocell */
+//  120   wCNTR = _GetCNTR();
+        LDR      R1,[R0, #+0]
+        UXTH     R1,R1
+//  121   wCNTR |= CNTR_LPMODE;
+//  122   _SetCNTR(wCNTR);
+        ORRS     R1,R1,#0x4
+        STR      R1,[R0, #+0]
+//  123 
+//  124   /* switch-off the clocks */
+//  125   /* ... */
+//  126 //  Enter_LowPowerMode();
+//  127 
+//  128 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock2
+//  129 
+//  130 /*******************************************************************************
+//  131 * Function Name  : Resume_Init
+//  132 * Description    : Handles wake-up restoring normal operations
+//  133 * Input          : None.
+//  134 * Output         : None.
+//  135 * Return         : USB_SUCCESS.
+//  136 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function Resume_Init
+        THUMB
+//  137 void Resume_Init(void)
+//  138 {
+//  139   u16 wCNTR;
+//  140   /* ------------------ ONLY WITH BUS-POWERED DEVICES ---------------------- */
+//  141   /* restart the clocks */
+//  142   /* ...  */
+//  143 
+//  144   /* CNTR_LPMODE = 0 */
+//  145   wCNTR = _GetCNTR();
+Resume_Init:
+        LDR.N    R0,??DataTable6  ;; 0x40005c40
+//  146   wCNTR &= (~CNTR_LPMODE);
+//  147   _SetCNTR(wCNTR);
+        LDR.N    R2,??Resume_Init_0  ;; 0xfffb
+        LDR      R1,[R0, #+0]
+        ANDS     R2,R2,R1
+        STR      R2,[R0, #+0]
+//  148 
+//  149   /* restore full power */
+//  150   /* ... on connected devices */
+//  151 //  Leave_LowPowerMode();
+//  152 
+//  153   /* reset FSUSP bit */
+//  154   _SetCNTR(IMR_MSK);
+        MOVS     R1,#+33792
+        STR      R1,[R0, #+0]
+//  155 
+//  156   /* reverse suspend preparation */
+//  157   /* ... */
+//  158 
+//  159 }
+        BX       LR               ;; return
+        Nop      
+        DATA
+??Resume_Init_0:
+        DC32     0xfffb
+        CFI EndBlock cfiBlock3
+//  160 
+//  161 /*******************************************************************************
+//  162 * Function Name  : Resume
+//  163 * Description    : This is the state machine handling resume operations and
+//  164 *                 timing sequence. The control is based on the Resume structure
+//  165 *                 variables and on the ESOF interrupt calling this subroutine
+//  166 *                 without changing machine state.
+//  167 * Input          : a state machine value (RESUME_STATE)
+//  168 *                  RESUME_ESOF doesn't change ResumeS.eState allowing
+//  169 *                  decrementing of the ESOF counter in different states.
+//  170 * Output         : None.
+//  171 * Return         : None.
+//  172 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function Resume
+        THUMB
+//  173 void Resume(RESUME_STATE eResumeSetVal)
+//  174 {
+Resume:
+        PUSH     {R4-R6,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R6 Frame(CFA, -8)
+        CFI R5 Frame(CFA, -12)
+        CFI R4 Frame(CFA, -16)
+        CFI CFA R13+16
+//  175   u16 wCNTR;
+//  176 
+//  177   if (eResumeSetVal != RESUME_ESOF)
+        LDR.N    R4,??Resume_1    ;; ResumeS
+        CMP      R0,#+7
+        IT      NE 
+//  178     ResumeS.eState = eResumeSetVal;
+        STRBNE   R0,[R4, #+0]
+//  179 
+//  180   switch (ResumeS.eState)
+        LDR.N    R0,??DataTable6  ;; 0x40005c40
+        LDRB     R1,[R4, #+0]
+        MOVS     R6,#+4
+        MOVS     R5,#+6
+        CMP      R1,#+5
+        BHI.N    ??Resume_2
+        TBB      [PC, R1]
+        DATA
+??Resume_0:
+        DC8      +3,+7,+11,+16
+        DC8      +23,+33
+        THUMB
+//  181   {
+//  182     case RESUME_EXTERNAL:
+//  183       Resume_Init();
+??Resume_3:
+        BL       Resume_Init
+//  184       ResumeS.eState = RESUME_OFF;
+        STRB     R5,[R4, #+0]
+        POP      {R4-R6,PC}
+//  185       break;
+//  186     case RESUME_INTERNAL:
+//  187       Resume_Init();
+??Resume_4:
+        BL       Resume_Init
+//  188       ResumeS.eState = RESUME_START;
+        STRB     R6,[R4, #+0]
+        POP      {R4-R6,PC}
+//  189       break;
+//  190     case RESUME_LATER:
+//  191       ResumeS.bESOFcnt = 2;
+??Resume_5:
+        MOVS     R0,#+2
+        STRB     R0,[R4, #+1]
+//  192       ResumeS.eState = RESUME_WAIT;
+        MOVS     R0,#+3
+        STRB     R0,[R4, #+0]
+        POP      {R4-R6,PC}
+//  193       break;
+//  194     case RESUME_WAIT:
+//  195       ResumeS.bESOFcnt--;
+??Resume_6:
+        LDRB     R0,[R4, #+1]
+        SUBS     R0,R0,#+1
+        STRB     R0,[R4, #+1]
+//  196       if (ResumeS.bESOFcnt == 0)
+        LDRB     R0,[R4, #+1]
+        CBNZ     R0,??Resume_7
+//  197         ResumeS.eState = RESUME_START;
+        STRB     R6,[R4, #+0]
+        POP      {R4-R6,PC}
+//  198       break;
+//  199     case RESUME_START:
+//  200       wCNTR = _GetCNTR();
+??Resume_8:
+        LDR      R1,[R0, #+0]
+        UXTH     R1,R1
+//  201       wCNTR |= CNTR_RESUME;
+//  202       _SetCNTR(wCNTR);
+        ORRS     R1,R1,#0x10
+        STR      R1,[R0, #+0]
+//  203       ResumeS.eState = RESUME_ON;
+        MOVS     R0,#+5
+        STRB     R0,[R4, #+0]
+//  204       ResumeS.bESOFcnt = 10;
+        MOVS     R0,#+10
+        STRB     R0,[R4, #+1]
+        POP      {R4-R6,PC}
+//  205       break;
+//  206     case RESUME_ON:
+//  207       ResumeS.bESOFcnt--;
+??Resume_9:
+        LDRB     R1,[R4, #+1]
+        SUBS     R1,R1,#+1
+        STRB     R1,[R4, #+1]
+//  208       if (ResumeS.bESOFcnt == 0)
+        LDRB     R1,[R4, #+1]
+        CBNZ     R1,??Resume_7
+//  209       {
+//  210         wCNTR = _GetCNTR();
+        LDR      R1,[R0, #+0]
+//  211         wCNTR &= (~CNTR_RESUME);
+//  212         _SetCNTR(wCNTR);
+        LDR.N    R2,??Resume_1+0x4  ;; 0xffef
+        ANDS     R2,R2,R1
+        STR      R2,[R0, #+0]
+//  213         ResumeS.eState = RESUME_OFF;
+        STRB     R5,[R4, #+0]
+        POP      {R4-R6,PC}
+//  214       }
+//  215       break;
+//  216     case RESUME_OFF:
+//  217     case RESUME_ESOF:
+//  218     default:
+//  219       ResumeS.eState = RESUME_OFF;
+??Resume_2:
+        STRB     R5,[R4, #+0]
+//  220       break;
+//  221   }
+//  222 }
+??Resume_7:
+        POP      {R4-R6,PC}       ;; return
+        Nop      
+        DATA
+??Resume_1:
+        DC32     ResumeS
+        DC32     0xffef
+        CFI EndBlock cfiBlock4
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable6:
+        DC32     0x40005c40
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for fSuspendEnabled>`:
+        DATA
+        DC8 1
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(2)
+`?*?DATA_ID`:
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_I:
+        DCD      sfe(DATA_I) - sfb(DATA_I), sfb(DATA_I), sfb(DATA_ID)
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_Z:
+        DCD      sfe(DATA_Z) - sfb(DATA_Z), sfb(DATA_Z), sfb(DATA_Z)
+
+        END
+//  223 
+//  224 /******************* (C) COPYRIGHT 2008 STMicroelectronics *****END OF FILE****/
+// 
+// 236 bytes in segment CODE
+//   1 byte  in segment DATA_I
+//   1 byte  in segment DATA_ID
+//   6 bytes in segment DATA_Z
+//  24 bytes in segment INITTAB
+// 
+// 236 bytes of CODE  memory (+ 24 bytes shared)
+//   1 byte  of CONST memory
+//   7 bytes of DATA  memory
+//
+//Errors: none
+//Warnings: none

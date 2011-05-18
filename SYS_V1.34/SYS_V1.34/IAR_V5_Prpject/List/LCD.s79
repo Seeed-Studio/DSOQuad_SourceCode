@@ -1,0 +1,1212 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32 EVALUATION   30/Mar/2011  13:15:07 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  D:\Design\DS203_MiniDSO\SFW\SYS_V1.32\source\LCD.c  /
+//    Command line    =  D:\Design\DS203_MiniDSO\SFW\SYS_V1.32\source\LCD.c  /
+//                       -lA D:\Design\DS203_MiniDSO\SFW\SYS_V1.32\IAR_V4_Pr /
+//                       pject\List\ -o D:\Design\DS203_MiniDSO\SFW\SYS_V1.3 /
+//                       2\IAR_V4_Prpject\Obj\ -s6 --no_unroll --no_inline   /
+//                       --no_tbaa --no_scheduling --cpu_mode thumb          /
+//                       --endian little --cpu cortex-M3 --stack_align 4 -e  /
+//                       --fpu None --dlib_config "C:\Program Files\IAR      /
+//                       Systems\Embedded Workbench 4.0                      /
+//                       Evaluation\arm\LIB\dl7mptnnl8n.h" -I                /
+//                       D:\Design\DS203_MiniDSO\SFW\SYS_V1.32\IAR_V4_Prpjec /
+//                       t\..\..\FWLib\inc\ -I D:\Design\DS203_MiniDSO\SFW\S /
+//                       YS_V1.32\IAR_V4_Prpject\..\..\USBLib\inc\ -I        /
+//                       D:\Design\DS203_MiniDSO\SFW\SYS_V1.32\IAR_V4_Prpjec /
+//                       t\..\include\ -I "C:\Program Files\IAR              /
+//                       Systems\Embedded Workbench 4.0 Evaluation\arm\INC\" /
+//    List file       =  D:\Design\DS203_MiniDSO\SFW\SYS_V1.32\IAR_V4_Prpjec /
+//                       t\List\LCD.s79                                      /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME LCD
+
+        RTMODEL "StackAlign4", "USED"
+        RTMODEL "__cpu_mode", "__pcs__thumb"
+        RTMODEL "__data_model", "absolute"
+        RTMODEL "__endian", "little"
+        RTMODEL "__rt_version", "6"
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+??DataTable0 EQU 0
+??DataTable1 EQU 0
+??DataTable10 EQU 0
+??DataTable2 EQU 0
+??DataTable3 EQU 0
+??DataTable4 EQU 0
+??DataTable5 EQU 0
+??DataTable6 EQU 0
+??DataTable7 EQU 0
+??DataTable8 EQU 0
+        MULTWEAK ??__LCD_DMA_Ready??rT
+        MULTWEAK ??__LCD_Fill??rT
+        MULTWEAK ??__LCD_SetPixl??rT
+        PUBWEAK ?init?tab?DATA_Z
+        PUBLIC Char_TAB_8x14
+        PUBLIC Clear_Screen
+        FUNCTION Clear_Screen,0203H
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC Delayms
+        FUNCTION Delayms,0203H
+        PUBLIC Display_Logo
+        FUNCTION Display_Logo,0203H
+        LOCFRAME CSTACK, 68, STACK
+        PUBLIC Display_Str
+        FUNCTION Display_Str,0203H
+        LOCFRAME CSTACK, 36, STACK
+        PUBLIC Fill_Buffer
+        PUBLIC Get_TAB_8x14
+        FUNCTION Get_TAB_8x14,0203H
+        PUBLIC LCD_Initial
+        FUNCTION LCD_Initial,0203H
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC LCD_Set_Block
+        FUNCTION LCD_Set_Block,0203H
+        LOCFRAME CSTACK, 16, STACK
+        PUBLIC LCD_WR_REG
+        FUNCTION LCD_WR_REG,0203H
+        PUBLIC Point_SCR
+        FUNCTION Point_SCR,0203H
+        LOCFRAME CSTACK, 12, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA R13 HUGEDATA
+        CFI Resource R0:32, R1:32, R2:32, R3:32, R4:32, R5:32, R6:32, R7:32
+        CFI Resource R8:32, R9:32, R10:32, R11:32, R12:32, R13:32, R14:32
+        CFI VirtualResource ?RET:32
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 2
+        CFI DataAlign 4
+        CFI ReturnAddress ?RET CODE
+        CFI CFA R13+0
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI R8 SameValue
+        CFI R9 SameValue
+        CFI R10 SameValue
+        CFI R11 SameValue
+        CFI R12 Undefined
+        CFI R14 Undefined
+        CFI ?RET R14
+        CFI EndCommon cfiCommon0
+        
+__LCD_DMA_Ready     SYMBOL "__LCD_DMA_Ready"
+__LCD_Fill          SYMBOL "__LCD_Fill"
+__LCD_SetPixl       SYMBOL "__LCD_SetPixl"
+??__LCD_DMA_Ready??rT SYMBOL "??rT", __LCD_DMA_Ready
+??__LCD_Fill??rT    SYMBOL "??rT", __LCD_Fill
+??__LCD_SetPixl??rT SYMBOL "??rT", __LCD_SetPixl
+
+        EXTERN Delay_Cnt
+        EXTERN __LCD_DMA_Ready
+        FUNCTION __LCD_DMA_Ready,0202H
+        EXTERN __LCD_Fill
+        FUNCTION __LCD_Fill,0202H
+        EXTERN __LCD_SetPixl
+        FUNCTION __LCD_SetPixl,0202H
+
+// D:\Design\DS203_MiniDSO\SFW\SYS_V1.32\source\LCD.c
+//    1 /********************* (C) COPYRIGHT 2010 e-Design Co.,Ltd. ********************
+//    2  File Name : LCD.c  
+//    3  Version   : DS203_SYS Ver 1.3x                                  Author : bure
+//    4 *******************************************************************************/
+//    5 #include "stm32f10x_lib.h"
+//    6 #include "Config.h"
+//    7 #include "BIOS.h"
+//    8 #include "LCD.h"
+//    9 #include "ASM.h"
+//   10 
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(1)
+//   11 u16 Fill_Buffer;
+Fill_Buffer:
+        DS8 2
+//   12 //================================ 字库定义 ====================================
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+//   13 uc16 Char_TAB_8x14[744] =
+Char_TAB_8x14:
+        DATA
+        DC16 0, 0, 0, 28, 32, 64, 64, 64, 64, 64, 32, 28, 0, 0, 0, 0, 0, 0, 0
+        DC16 57344, 4096, 2048, 2048, 2048, 3120, 3168, 192, 384, 768, 1584
+        DC16 3120, 0, 2048, 2048, 4096, 57344, 0, 0, 0, 0, 8208, 8208, 8208
+        DC16 8208, 8208, 8208, 16368, 0, 0, 0, 4032, 8160, 12336, 8208, 0, 0, 0
+        DC16 0, 8208, 12336, 8160, 4032, 0, 0, 0, 6336, 3456, 1792, 1792, 3456
+        DC16 6336, 0, 0, 256, 256, 1984, 1984, 256, 256, 0, 0, 0, 0, 65532, 0
+        DC16 0, 0, 0, 0, 256, 256, 256, 256, 256, 256, 0, 0, 0, 0, 48, 48, 0, 0
+        DC16 0, 48, 96, 192, 384, 768, 1536, 3072, 0, 8160, 16368, 8336, 8976
+        DC16 9232, 16368, 8160, 0, 0, 2064, 6160, 16368, 16368, 16, 16, 0, 4208
+        DC16 12528, 8592, 8976, 9744, 14384, 6192, 0, 4128, 12336, 8720, 8720
+        DC16 8720, 16368, 7648, 0, 768, 1792, 3328, 6416, 16368, 16368, 272, 0
+        DC16 15904, 15920, 8720, 8720, 8976, 9200, 8672, 0, 4064, 8176, 12816
+        DC16 8720, 8720, 1008, 480, 0, 12288, 12288, 8432, 8688, 8960, 15872
+        DC16 15360, 0, 7648, 16368, 8720, 8720, 8720, 16368, 7648, 0, 7168
+        DC16 15888, 8720, 8720, 8752, 16352, 8128, 0, 0, 0, 0, 3168, 3168, 0, 0
+        DC16 0, 64, 64, 64, 64, 64, 64, 64, 64, 0, 256, 896, 1728, 3168, 6192
+        DC16 4112, 0, 0, 144, 144, 144, 144, 144, 144, 0, 576, 576, 576, 576
+        DC16 576, 576, 576, 0, 0, 4112, 6192, 3168, 1728, 896, 256, 0, 4032
+        DC16 4128, 10128, 9360, 10192, 4176, 3968, 0, 2032, 4080, 6400, 12544
+        DC16 6400, 4080, 2032, 0, 8208, 16368, 16368, 8720, 8720, 16368, 7648
+        DC16 0, 4032, 8160, 12336, 8208, 8208, 12336, 6240, 0, 8208, 16368
+        DC16 16368, 8208, 12336, 8160, 4032, 0, 8208, 16368, 16368, 8720, 10000
+        DC16 12336, 14448, 0, 8208, 16368, 16368, 8720, 9984, 12288, 14336, 0
+        DC16 4032, 8160, 12336, 8464, 8464, 12768, 6640, 0, 16368, 16368, 512
+        DC16 512, 512, 16368, 16368, 0, 0, 0, 8208, 16368, 16368, 8208, 0, 0
+        DC16 224, 240, 16, 8208, 16368, 16352, 8192, 0, 8208, 16368, 16368, 768
+        DC16 3840, 15600, 12400, 0, 8208, 16368, 16368, 8208, 16, 48, 48, 0
+        DC16 16368, 16368, 7168, 3584, 7168, 16368, 16368, 0, 16368, 16368
+        DC16 7168, 3584, 1792, 16368, 16368, 0, 4032, 8160, 12336, 8208, 12336
+        DC16 8160, 4032, 0, 8208, 16368, 16368, 8720, 8704, 15872, 7168, 0
+        DC16 8160, 16368, 8208, 8304, 8240, 16376, 8168, 0, 8208, 16368, 16368
+        DC16 8704, 8960, 16368, 7408, 0, 6240, 15472, 9744, 8720, 8976, 14832
+        DC16 6368, 0, 0, 14336, 12304, 16368, 16368, 12304, 14336, 0, 16352
+        DC16 16368, 16, 16, 16, 16368, 16352, 0, 16256, 16320, 96, 48, 96
+        DC16 16320, 16256, 0, 16320, 16368, 112, 448, 112, 16368, 16320, 0
+        DC16 12336, 15600, 4032, 768, 4032, 15600, 12336, 0, 0, 15360, 15888
+        DC16 1008, 1008, 15888, 15360, 0, 14448, 12528, 8592, 8976, 9744, 15408
+        DC16 14448, 0, 16, 48, 80, 400, 784, 3088, 16368, 0, 2048, 2048, 2048
+        DC16 2048, 2048, 2048, 2048, 2048, 0, 0, 0, 64636, 640, 640, 256, 256
+        DC16 512, 1024, 3072, 8176, 16368, 3072, 1024, 512, 256, 128, 192
+        DC16 16352, 16368, 192, 128, 256, 8208, 8208, 8208, 8208, 8208, 8208
+        DC16 8208, 8208, 224, 1520, 1296, 1296, 2016, 1008, 16, 0, 8208, 16368
+        DC16 16352, 528, 528, 1008, 480, 0, 992, 2032, 1040, 1040, 1040, 1584
+        DC16 544, 0, 480, 1008, 1552, 9232, 16368, 16368, 16, 0, 992, 2032
+        DC16 1296, 1296, 1296, 1840, 800, 0, 0, 528, 8176, 16368, 8720, 12288
+        DC16 6144, 0, 968, 2028, 1060, 1060, 1020, 2040, 1024, 0, 8208, 16368
+        DC16 16368, 544, 1024, 2032, 1008, 0, 0, 0, 1040, 14320, 14320, 16, 0
+        DC16 0, 0, 24, 28, 1028, 14332, 14328, 1024, 0, 8208, 16368, 16368
+        DC16 8576, 960, 1648, 1072, 0, 0, 0, 8208, 16368, 16368, 16, 0, 0, 2032
+        DC16 2032, 1536, 1008, 1536, 2032, 2032, 0, 1024, 2032, 1008, 1024
+        DC16 1024, 2032, 1008, 0, 992, 2032, 1040, 1040, 1040, 2032, 992, 0
+        DC16 1028, 2044, 1020, 1092, 1088, 1984, 896, 0, 896, 1984, 1088, 1092
+        DC16 2044, 1020, 1028, 0, 1040, 2032, 1008, 1552, 1024, 1536, 768, 0, 0
+        DC16 544, 1840, 1424, 1168, 1776, 608, 0, 1024, 1024, 8160, 16368, 1040
+        DC16 1072, 32, 0, 2016, 2032, 16, 16, 2016, 2032, 16, 0, 0, 1984, 2016
+        DC16 48, 48, 2016, 1984, 0, 2016, 2032, 48, 224, 48, 2032, 2016, 0
+        DC16 1040, 1584, 992, 448, 992, 1584, 1040, 0, 1920, 1988, 68, 68, 68
+        DC16 2040, 2032, 0, 1584, 1648, 1232, 1424, 1808, 1584, 1072, 0, 1920
+        DC16 1152, 15600, 8208, 12240, 12240, 12240, 12240, 12240, 12240, 12240
+        DC16 12240, 12240, 12240, 12240, 12240, 12240, 12240, 12240, 12240
+        DC16 12240, 8208, 16368, 0, 1920, 1152, 15600, 8208, 8208, 8208, 8208
+        DC16 8208
+//   14 {
+//   15    0x0000,0x0000,0x0000,0x001C,0x0020,0x0040,0x0040,0x0040, // " 左上角
+//   16    0x0040,0x0040,0x0020,0x001C,0x0000,0x0000,0x0000,0x0000, // # 右上角
+//   17    0x0000,0x0000,0x0000,0xE000,0x1000,0x0800,0x0800,0x0800, // $ 左下角
+//   18    0x0C30,0x0C60,0x00C0,0x0180,0x0300,0x0630,0x0C30,0x0000, // %    
+//   19    0x0800,0x0800,0x1000,0xE000,0x0000,0x0000,0x0000,0x0000, // & 右下角
+//   20    0x2010,0x2010,0x2010,0x2010,0x2010,0x2010,0x3FF0,0x0000, // ' 电池尾空
+//   21    0x0000,0x0000,0x0FC0,0x1FE0,0x3030,0x2010,0x0000,0x0000, // (    
+//   22    0x0000,0x0000,0x2010,0x3030,0x1FE0,0x0FC0,0x0000,0x0000, // )    
+//   23    0x0000,0x18C0,0x0D80,0x0700,0x0700,0x0D80,0x18C0,0x0000, // *  ×
+//   24    0x0000,0x0100,0x0100,0x07C0,0x07C0,0x0100,0x0100,0x0000, // +    
+//   25    0x0000,0x0000,0x0000,0xFFFC,0x0000,0x0000,0x0000,0x0000, // , 竖线
+//   26    0x0000,0x0100,0x0100,0x0100,0x0100,0x0100,0x0100,0x0000, // -    
+//   27    0x0000,0x0000,0x0000,0x0030,0x0030,0x0000,0x0000,0x0000, // .    
+//   28    0x0030,0x0060,0x00C0,0x0180,0x0300,0x0600,0x0C00,0x0000, // /    
+//   29    0x1FE0,0x3FF0,0x2090,0x2310,0x2410,0x3FF0,0x1FE0,0x0000, // 0    
+//   30    0x0000,0x0810,0x1810,0x3FF0,0x3FF0,0x0010,0x0010,0x0000, // 1    
+//   31    0x1070,0x30F0,0x2190,0x2310,0x2610,0x3830,0x1830,0x0000, // 2    
+//   32    0x1020,0x3030,0x2210,0x2210,0x2210,0x3FF0,0x1DE0,0x0000, // 3    
+//   33    0x0300,0x0700,0x0D00,0x1910,0x3FF0,0x3FF0,0x0110,0x0000, // 4    
+//   34    0x3E20,0x3E30,0x2210,0x2210,0x2310,0x23F0,0x21E0,0x0000, // 5    
+//   35    0x0FE0,0x1FF0,0x3210,0x2210,0x2210,0x03F0,0x01E0,0x0000, // 6    
+//   36    0x3000,0x3000,0x20F0,0x21F0,0x2300,0x3E00,0x3C00,0x0000, // 7    
+//   37    0x1DE0,0x3FF0,0x2210,0x2210,0x2210,0x3FF0,0x1DE0,0x0000, // 8    
+//   38    0x1C00,0x3E10,0x2210,0x2210,0x2230,0x3FE0,0x1FC0,0x0000, // 9    
+//   39    0x0000,0x0000,0x0000,0x0C60,0x0C60,0x0000,0x0000,0x0000, // :    
+//   40    0x0040,0x0040,0x0040,0x0040,0x0040,0x0040,0x0040,0x0040, // ; 上横线
+//   41    0x0000,0x0100,0x0380,0x06C0,0x0C60,0x1830,0x1010,0x0000, // <    
+//   42    0x0000,0x0090,0x0090,0x0090,0x0090,0x0090,0x0090,0x0000, // =    
+//   43    0x0240,0x0240,0x0240,0x0240,0x0240,0x0240,0x0240,0x0000, // >    
+//   44    0x0000,0x1010,0x1830,0x0C60,0x06C0,0x0380,0x0100,0x0000, // ?    
+//   45    0x0FC0,0x1020,0x2790,0x2490,0x27D0,0x1050,0x0F80,0x0000, // @    
+//   46    0x07F0,0x0FF0,0x1900,0x3100,0x1900,0x0FF0,0x07F0,0x0000, // A    
+//   47    0x2010,0x3FF0,0x3FF0,0x2210,0x2210,0x3FF0,0x1DE0,0x0000, // B    
+//   48    0x0FC0,0x1FE0,0x3030,0x2010,0x2010,0x3030,0x1860,0x0000, // C    
+//   49    0x2010,0x3FF0,0x3FF0,0x2010,0x3030,0x1FE0,0x0FC0,0x0000, // D    
+//   50    0x2010,0x3FF0,0x3FF0,0x2210,0x2710,0x3030,0x3870,0x0000, // E    
+//   51    0x2010,0x3FF0,0x3FF0,0x2210,0x2700,0x3000,0x3800,0x0000, // F    
+//   52    0x0FC0,0x1FE0,0x3030,0x2110,0x2110,0x31E0,0x19F0,0x0000, // G    
+//   53    0x3FF0,0x3FF0,0x0200,0x0200,0x0200,0x3FF0,0x3FF0,0x0000, // H    
+//   54    0x0000,0x0000,0x2010,0x3FF0,0x3FF0,0x2010,0x0000,0x0000, // I    
+//   55    0x00E0,0x00F0,0x0010,0x2010,0x3FF0,0x3FE0,0x2000,0x0000, // J    
+//   56    0x2010,0x3FF0,0x3FF0,0x0300,0x0F00,0x3CF0,0x3070,0x0000, // K    
+//   57    0x2010,0x3FF0,0x3FF0,0x2010,0x0010,0x0030,0x0030,0x0000, // L    
+//   58    0x3FF0,0x3FF0,0x1C00,0x0E00,0x1C00,0x3FF0,0x3FF0,0x0000, // M    
+//   59    0x3FF0,0x3FF0,0x1C00,0x0E00,0x0700,0x3FF0,0x3FF0,0x0000, // N    
+//   60    0x0FC0,0x1FE0,0x3030,0x2010,0x3030,0x1FE0,0x0FC0,0x0000, // O    
+//   61    0x2010,0x3FF0,0x3FF0,0x2210,0x2200,0x3E00,0x1C00,0x0000, // P    
+//   62    0x1FE0,0x3FF0,0x2010,0x2070,0x2030,0x3FF8,0x1FE8,0x0000, // Q    
+//   63    0x2010,0x3FF0,0x3FF0,0x2200,0x2300,0x3FF0,0x1CF0,0x0000, // R    
+//   64    0x1860,0x3C70,0x2610,0x2210,0x2310,0x39F0,0x18E0,0x0000, // S    
+//   65    0x0000,0x3800,0x3010,0x3FF0,0x3FF0,0x3010,0x3800,0x0000, // T    
+//   66    0x3FE0,0x3FF0,0x0010,0x0010,0x0010,0x3FF0,0x3FE0,0x0000, // U    
+//   67    0x3F80,0x3FC0,0x0060,0x0030,0x0060,0x3FC0,0x3F80,0x0000, // V    
+//   68    0x3FC0,0x3FF0,0x0070,0x01C0,0x0070,0x3FF0,0x3FC0,0x0000, // W    
+//   69    0x3030,0x3CF0,0x0FC0,0x0300,0x0FC0,0x3CF0,0x3030,0x0000, // X    
+//   70    0x0000,0x3C00,0x3E10,0x03F0,0x03F0,0x3E10,0x3C00,0x0000, // Y    
+//   71    0x3870,0x30F0,0x2190,0x2310,0x2610,0x3C30,0x3870,0x0000, // Z    
+//   72    0x0010,0x0030,0x0050,0x0190,0x0310,0x0C10,0x3FF0,0x0000, // [ 三角
+//   73    0x0800,0x0800,0x0800,0x0800,0x0800,0x0800,0x0800,0x0800, // \ 下横线
+//   74    0x0000,0x0000,0x0000,0xFC7C,0x0280,0x0280,0x0100,0x0100, // ] 指针
+//   75    0x0200,0x0400,0x0C00,0x1FF0,0x3FF0,0x0C00,0x0400,0x0200, // ^ 上升沿
+//   76    0x0100,0x0080,0x00C0,0x3FE0,0x3FF0,0x00C0,0x0080,0x0100, // _ 下降沿
+//   77    0x2010,0x2010,0x2010,0x2010,0x2010,0x2010,0x2010,0x2010, // ` 电池身空
+//   78    0x00E0,0x05F0,0x0510,0x0510,0x07E0,0x03F0,0x0010,0x0000, // a    
+//   79    0x2010,0x3FF0,0x3FE0,0x0210,0x0210,0x03F0,0x01E0,0x0000, // b    
+//   80    0x03E0,0x07F0,0x0410,0x0410,0x0410,0x0630,0x0220,0x0000, // c    
+//   81    0x01E0,0x03F0,0x0610,0x2410,0x3FF0,0x3FF0,0x0010,0x0000, // d    
+//   82    0x03E0,0x07F0,0x0510,0x0510,0x0510,0x0730,0x0320,0x0000, // e    
+//   83    0x0000,0x0210,0x1FF0,0x3FF0,0x2210,0x3000,0x1800,0x0000, // f    
+//   84    0x03C8,0x07EC,0x0424,0x0424,0x03FC,0x07F8,0x0400,0x0000, // g    
+//   85    0x2010,0x3FF0,0x3FF0,0x0220,0x0400,0x07F0,0x03F0,0x0000, // h    
+//   86    0x0000,0x0000,0x0410,0x37F0,0x37F0,0x0010,0x0000,0x0000, // i    
+//   87    0x0000,0x0018,0x001C,0x0404,0x37FC,0x37F8,0x0400,0x0000, // j    
+//   88    0x2010,0x3FF0,0x3FF0,0x2180,0x03C0,0x0670,0x0430,0x0000, // k    
+//   89    0x0000,0x0000,0x2010,0x3FF0,0x3FF0,0x0010,0x0000,0x0000, // l    
+//   90    0x07F0,0x07F0,0x0600,0x03F0,0x0600,0x07F0,0x07F0,0x0000, // m    
+//   91    0x0400,0x07F0,0x03F0,0x0400,0x0400,0x07F0,0x03F0,0x0000, // n    
+//   92    0x03E0,0x07F0,0x0410,0x0410,0x0410,0x07F0,0x03E0,0x0000, // o    
+//   93    0x0404,0x07FC,0x03FC,0x0444,0x0440,0x07C0,0x0380,0x0000, // p    
+//   94    0x0380,0x07C0,0x0440,0x0444,0x07FC,0x03FC,0x0404,0x0000, // q    
+//   95    0x0410,0x07F0,0x03F0,0x0610,0x0400,0x0600,0x0300,0x0000, // r    
+//   96    0x0000,0x0220,0x0730,0x0590,0x0490,0x06F0,0x0260,0x0000, // s    
+//   97    0x0400,0x0400,0x1FE0,0x3FF0,0x0410,0x0430,0x0020,0x0000, // t    
+//   98    0x07E0,0x07F0,0x0010,0x0010,0x07E0,0x07F0,0x0010,0x0000, // u    
+//   99    0x0000,0x07C0,0x07E0,0x0030,0x0030,0x07E0,0x07C0,0x0000, // v    
+//  100    0x07E0,0x07F0,0x0030,0x00E0,0x0030,0x07F0,0x07E0,0x0000, // w    
+//  101    0x0410,0x0630,0x03E0,0x01C0,0x03E0,0x0630,0x0410,0x0000, // x    
+//  102    0x0780,0x07C4,0x0044,0x0044,0x0044,0x07F8,0x07F0,0x0000, // y    
+//  103    0x0630,0x0670,0x04D0,0x0590,0x0710,0x0630,0x0430,0x0000, // z    
+//  104    0x0780,0x0480,0x3CF0,0x2010,0x2FD0,0x2FD0,0x2FD0,0x2FD0, // { 电池头
+//  105    0x2FD0,0x2FD0,0x2FD0,0x2FD0,0x2FD0,0x2FD0,0x2FD0,0x2FD0, // | 电池身
+//  106    0x2FD0,0x2FD0,0x2FD0,0x2FD0,0x2FD0,0x2010,0x3FF0,0x0000, // } 电池尾
+//  107    0x0780,0x0480,0x3CF0,0x2010,0x2010,0x2010,0x2010,0x2010 // ~ 空电池头
+//  108 };
+//  109 
+//  110 /*******************************************************************************
+//  111  LCD_Initial: R61509V_CPT30_Initial 400x240 LCD显示模块初始化。 
+//  112 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function LCD_Initial
+        THUMB
+//  113 void LCD_Initial(void)
+//  114 {   
+LCD_Initial:
+        PUSH     {R4-R7,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R7 Frame(CFA, -8)
+        CFI R6 Frame(CFA, -12)
+        CFI R5 Frame(CFA, -16)
+        CFI R4 Frame(CFA, -20)
+        CFI CFA R13+20
+//  115   //------------------------- Reset LCD Driver ---------------------//
+//  116   LCD_RS_HIGH();
+        LDR.N    R4,??DataTable11  ;; 0x40011410
+        LSRS     R5,R4,#+18
+        STR      R5,[R4, #+0]
+//  117   LCD_nRST_HIGH(); 
+        LSRS     R7,R4,#+19
+        STR      R7,[R4, #+0]
+//  118   Delayms(1);           //RST=1，Delay 1ms      
+        MOVS     R0,#+1
+        BL       Delayms
+//  119   LCD_nRST_LOW(); 
+        LDR.N    R6,??DataTable9  ;; 0x40011414
+        STR      R7,[R6, #+0]
+//  120   Delayms(10);          //RST=0 Reset LCD，Delay 1ms      
+        MOVS     R0,#+10
+        BL       Delayms
+//  121   LCD_nRST_HIGH(); 
+        STR      R7,[R4, #+0]
+//  122   Delayms(50);          //RST=1，Delay 5 ms  
+        MOVS     R0,#+50
+        BL       Delayms
+//  123  //----------------R61509V_CPT30 Internal Register Initial------------//         
+//  124   LCD_WR_REG(0x0000, 0x0000); 
+        MOVS     R1,#+0
+        MOV      R0,R1
+        BL       LCD_WR_REG
+//  125   LCD_WR_REG(0x0000, 0x0000); 
+        MOVS     R1,#+0
+        MOV      R0,R1
+        BL       LCD_WR_REG
+//  126   LCD_WR_REG(0x0000, 0x0000); 
+        MOVS     R1,#+0
+        MOV      R0,R1
+        BL       LCD_WR_REG
+//  127   LCD_WR_REG(0x0000, 0x0000); 
+        MOVS     R1,#+0
+        MOV      R0,R1
+        BL       LCD_WR_REG
+//  128   Delayms(10); 
+        MOVS     R0,#+10
+        BL       Delayms
+//  129   LCD_WR_REG(0x0600, 0x0001);
+        MOVS     R1,#+1
+        MOVS     R0,#+1536
+        BL       LCD_WR_REG
+//  130   Delayms(10);
+        MOVS     R0,#+10
+        BL       Delayms
+//  131   LCD_WR_REG(0x06f0, 0x0040);
+        MOVS     R1,#+64
+        MOVS     R0,#+1776
+        BL       LCD_WR_REG
+//  132   Delayms(10);
+        MOVS     R0,#+10
+        BL       Delayms
+//  133   LCD_WR_REG(0x0400, 0x6200); 
+        MOVS     R1,#+25088
+        LSRS     R0,R4,#+20
+        BL       LCD_WR_REG
+//  134   LCD_WR_REG(0x0008, 0x0808); 
+        LDR.N    R1,??LCD_Initial_0  ;; 0x808
+        MOVS     R0,#+8
+        BL       LCD_WR_REG
+//  135   LCD_WR_REG(0x0001, 0x0100); 
+        LSRS     R1,R4,#+22
+        MOVS     R0,#+1
+        BL       LCD_WR_REG
+//  136   LCD_WR_REG(0x0002, 0x0100); 
+        LSRS     R1,R4,#+22
+        MOVS     R0,#+2
+        BL       LCD_WR_REG
+//  137   LCD_WR_REG(0x0003, 0x0030);   //LCD_WR_REG(0x0003, 0x1030); 
+        MOVS     R1,#+48
+        MOVS     R0,#+3
+        BL       LCD_WR_REG
+//  138   LCD_WR_REG(0x0009, 0x0001); 
+        MOVS     R1,#+1
+        MOVS     R0,#+9
+        BL       LCD_WR_REG
+//  139   LCD_WR_REG(0x000C, 0x0000);
+        MOVS     R1,#+0
+        MOVS     R0,#+12
+        BL       LCD_WR_REG
+//  140   LCD_WR_REG(0x0090, 0x8000);
+        LSLS     R1,R5,#+3
+        MOVS     R0,#+144
+        BL       LCD_WR_REG
+//  141   LCD_WR_REG(0x000F, 0x0000);
+        MOVS     R1,#+0
+        MOVS     R0,#+15
+        BL       LCD_WR_REG
+//  142   LCD_WR_REG(0x0010, 0x0016);
+        MOVS     R1,#+22
+        MOVS     R0,#+16
+        BL       LCD_WR_REG
+//  143   LCD_WR_REG(0x0011, 0x0101);
+        LDR.N    R7,??LCD_Initial_0+0x4  ;; 0x101
+        MOVS     R1,R7
+        MOVS     R0,#+17
+        BL       LCD_WR_REG
+//  144   LCD_WR_REG(0x0012, 0x0000);
+        MOVS     R1,#+0
+        MOVS     R0,#+18
+        BL       LCD_WR_REG
+//  145   LCD_WR_REG(0x0013, 0x0001);
+        MOVS     R1,#+1
+        MOVS     R0,#+19
+        BL       LCD_WR_REG
+//  146   LCD_WR_REG(0x0100, 0x0330);
+        MOVS     R1,#+816
+        LSRS     R0,R4,#+22
+        BL       LCD_WR_REG
+//  147   LCD_WR_REG(0x0101, 0x0237);
+        LDR.N    R1,??LCD_Initial_0+0x8  ;; 0x237
+        MOVS     R0,R7
+        BL       LCD_WR_REG
+//  148   LCD_WR_REG(0x0103, 0x0F00); 
+        MOVS     R1,#+3840
+        ADDS     R0,R7,#+2
+        BL       LCD_WR_REG
+//  149   LCD_WR_REG(0x0280, 0x6B00); 
+        MOVS     R1,#+27392
+        MOVS     R0,#+640
+        BL       LCD_WR_REG
+//  150   LCD_WR_REG(0x0102, 0xC1B0);
+        LDR.N    R1,??LCD_Initial_0+0xC  ;; 0xc1b0
+        ADDS     R0,R7,#+1
+        BL       LCD_WR_REG
+//  151   Delayms(100); 
+        MOVS     R0,#+100
+        BL       Delayms
+//  152   LCD_WR_REG(0x0300, 0x0C00); 
+        MOVS     R1,#+3072
+        LSRS     R0,R1,#+2
+        BL       LCD_WR_REG
+//  153   LCD_WR_REG(0x0301, 0x5A0B); 
+        LDR.N    R1,??LCD_Initial_0+0x10  ;; 0x5a0b
+        LDR.N    R0,??LCD_Initial_0+0x14  ;; 0x301
+        BL       LCD_WR_REG
+//  154   LCD_WR_REG(0x0302, 0x0906); 
+        LDR.N    R1,??LCD_Initial_0+0x18  ;; 0x906
+        LDR.N    R0,??LCD_Initial_0+0x1C  ;; 0x302
+        BL       LCD_WR_REG
+//  155   LCD_WR_REG(0x0303, 0x1017); 
+        LDR.N    R1,??LCD_Initial_0+0x20  ;; 0x1017
+        LDR.N    R0,??LCD_Initial_0+0x24  ;; 0x303
+        BL       LCD_WR_REG
+//  156   LCD_WR_REG(0x0304, 0x2300); 
+        MOVS     R1,#+8960
+        MOVS     R0,#+772
+        BL       LCD_WR_REG
+//  157   LCD_WR_REG(0x0305, 0x1700); 
+        MOVS     R1,#+5888
+        LDR.N    R0,??LCD_Initial_0+0x28  ;; 0x305
+        BL       LCD_WR_REG
+//  158   LCD_WR_REG(0x0306, 0x6309);
+        LDR.N    R1,??LCD_Initial_0+0x2C  ;; 0x6309
+        LDR.N    R0,??LCD_Initial_0+0x30  ;; 0x306
+        BL       LCD_WR_REG
+//  159   LCD_WR_REG(0x0307, 0x0C09);
+        LDR.N    R1,??LCD_Initial_0+0x34  ;; 0xc09
+        LDR.N    R0,??LCD_Initial_0+0x38  ;; 0x307
+        BL       LCD_WR_REG
+//  160   LCD_WR_REG(0x0308, 0x100C);
+        LDR.N    R1,??LCD_Initial_0+0x3C  ;; 0x100c
+        MOVS     R0,#+776
+        BL       LCD_WR_REG
+//  161   LCD_WR_REG(0x0309, 0x2232);
+        LDR.N    R1,??LCD_Initial_0+0x40  ;; 0x2232
+        LDR.N    R0,??LCD_Initial_0+0x44  ;; 0x309
+        BL       LCD_WR_REG
+//  162   
+//  163   LCD_WR_REG(0x0210, 0x0000);
+        MOVS     R1,#+0
+        MOVS     R0,#+528
+        BL       LCD_WR_REG
+//  164   LCD_WR_REG(0x0211, 0x00EF);
+        MOVS     R1,#+239
+        LDR.N    R0,??DataTable12  ;; 0x211
+        BL       LCD_WR_REG
+//  165   LCD_WR_REG(0x0212, 0x0000);
+        MOVS     R1,#+0
+        LDR.N    R0,??DataTable14  ;; 0x212
+        BL       LCD_WR_REG
+//  166   LCD_WR_REG(0x0213, 0x018F);
+        LDR.N    R1,??LCD_Initial_0+0x48  ;; 0x18f
+        LDR.N    R0,??DataTable13  ;; 0x213
+        BL       LCD_WR_REG
+//  167   LCD_WR_REG(0x0500, 0x0000);
+        MOVS     R1,#+0
+        MOVS     R0,#+1280
+        BL       LCD_WR_REG
+//  168   LCD_WR_REG(0x0501, 0x0000);
+        MOVS     R1,#+0
+        LDR.N    R0,??LCD_Initial_0+0x4C  ;; 0x501
+        BL       LCD_WR_REG
+//  169   LCD_WR_REG(0x0502, 0x0005);
+        MOVS     R1,#+5
+        LDR.N    R0,??LCD_Initial_0+0x50  ;; 0x502
+        BL       LCD_WR_REG
+//  170   LCD_WR_REG(0x0401, 0x0001);
+        MOVS     R1,#+1
+        LDR.N    R0,??LCD_Initial_0+0x54  ;; 0x401
+        BL       LCD_WR_REG
+//  171   LCD_WR_REG(0x0404, 0x0000);
+        MOVS     R1,#+0
+        LSLS     R0,R7,#+2
+        BL       LCD_WR_REG
+//  172   Delayms(100);
+        MOVS     R0,#+100
+        BL       Delayms
+//  173   LCD_WR_REG(0x0007, 0x0100);
+        LSRS     R1,R4,#+22
+        MOVS     R0,#+7
+        BL       LCD_WR_REG
+//  174   Delayms(100);
+        MOVS     R0,#+100
+        BL       Delayms
+//  175   LCD_WR_REG(0x0200, 0x0000);
+        MOVS     R1,#+0
+        LSRS     R0,R4,#+21
+        BL       LCD_WR_REG
+//  176   LCD_WR_REG(0x0201, 0x0000); 
+        MOVS     R1,#+0
+        LDR.N    R0,??DataTable15  ;; 0x201
+        BL       LCD_WR_REG
+//  177 
+//  178   LCD_RS_LOW();
+        STR      R5,[R6, #+0]
+//  179   LCD_PORT = 0x0202;     //Reg. Addr.
+        MOVS     R0,#+1610612736
+        LSLS     R1,R7,#+1
+        STRH     R1,[R0, #+0]
+//  180   LCD_RS_HIGH();
+        STR      R5,[R4, #+0]
+//  181 }
+        POP      {R4-R7,PC}       ;; return
+        DATA
+??LCD_Initial_0:
+        DC32     0x808
+        DC32     0x101
+        DC32     0x237
+        DC32     0xc1b0
+        DC32     0x5a0b
+        DC32     0x301
+        DC32     0x906
+        DC32     0x302
+        DC32     0x1017
+        DC32     0x303
+        DC32     0x305
+        DC32     0x6309
+        DC32     0x306
+        DC32     0xc09
+        DC32     0x307
+        DC32     0x100c
+        DC32     0x2232
+        DC32     0x309
+        DC32     0x18f
+        DC32     0x501
+        DC32     0x502
+        DC32     0x401
+        CFI EndBlock cfiBlock0
+//  182 /*******************************************************************************
+//  183  LCD_WR_REG: 设置LCD模块上指定寄存器的值。 输入: 寄存器地址、寄存器值。
+//  184 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function LCD_WR_REG
+        THUMB
+//  185 void LCD_WR_REG(u16 Reg, u16 Data) 
+//  186 {
+//  187   LCD_RS_LOW();
+LCD_WR_REG:
+        MOVS     R2,#+4096
+        LDR.N    R3,??DataTable9  ;; 0x40011414
+        STR      R2,[R3, #+0]
+//  188   LCD_PORT = Reg;        //Reg. Addr.
+        MOVS     R3,#+1610612736
+        STRH     R0,[R3, #+0]
+//  189   LCD_RS_HIGH();
+        LDR.N    R0,??DataTable11  ;; 0x40011410
+        STR      R2,[R0, #+0]
+//  190   LCD_PORT  = Data;       //Reg. Data 
+        STRH     R1,[R3, #+0]
+//  191 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock1
+//  192 
+//  193 /*******************************************************************************
+//  194  delayms: 毫秒（mS）延时程序。 输入: 延时等待的毫秒数值（在72MHz主频情况下）
+//  195 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function Delayms
+        THUMB
+//  196 void Delayms(u16 mS) 
+//  197 { 
+//  198   Delay_Cnt = mS;
+Delayms:
+        LDR.N    R1,??Delayms_0   ;; Delay_Cnt
+        STRH     R0,[R1, #+0]
+//  199   while (Delay_Cnt > 0){}
+??Delayms_1:
+        LDRH     R0,[R1, #+0]
+        CMP      R0,#+0
+        BNE.N    ??Delayms_1
+//  200 }
+        BX       LR               ;; return
+        DATA
+??Delayms_0:
+        DC32     Delay_Cnt
+        CFI EndBlock cfiBlock2
+//  201 /*******************************************************************************
+//  202  Point_SCR : 指定显示位置 for R61509V LCD   输入: X、Y坐标  
+//  203 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function Point_SCR
+        THUMB
+//  204 void Point_SCR(u16 x0, u16 y0)						
+//  205 { 
+Point_SCR:
+        PUSH     {R4,R5,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R5 Frame(CFA, -8)
+        CFI R4 Frame(CFA, -12)
+        CFI CFA R13+12
+        MOVS     R4,R0
+        MOVS     R5,R1
+//  206   __LCD_DMA_Ready();
+        _BLF     __LCD_DMA_Ready,??__LCD_DMA_Ready??rT
+//  207   LCD_WR_REG(0x0200,y0);             
+        MOVS     R1,R5
+        MOVS     R0,#+512
+        BL       LCD_WR_REG
+//  208   LCD_WR_REG(0x0201,x0);             
+        MOVS     R1,R4
+        LDR.N    R0,??DataTable15  ;; 0x201
+        BL       LCD_WR_REG
+//  209   LCD_RS_LOW();
+        MOVS     R0,#+4096
+        LDR.N    R1,??DataTable9  ;; 0x40011414
+        STR      R0,[R1, #+0]
+//  210   LCD_PORT = 0x0202;     //Reg. Addr.
+        MOVS     R1,#+1610612736
+        LDR.N    R2,??DataTable17  ;; 0x202
+        STRH     R2,[R1, #+0]
+//  211   LCD_RS_HIGH();
+        LDR.N    R1,??DataTable11  ;; 0x40011410
+        STR      R0,[R1, #+0]
+//  212 }
+        POP      {R4,R5,PC}       ;; return
+        CFI EndBlock cfiBlock3
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable9:
+        DC32     0x40011414
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable11:
+        DC32     0x40011410
+//  213 /*******************************************************************************
+//  214  Clear_Screen: 清LCD显示器屏幕。 
+//  215 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function Clear_Screen
+        THUMB
+//  216 void Clear_Screen(u16 Color)						
+//  217 { 
+Clear_Screen:
+        PUSH     {R4,R5,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R5 Frame(CFA, -8)
+        CFI R4 Frame(CFA, -12)
+        CFI CFA R13+12
+//  218   Fill_Buffer = Color;
+        LDR.N    R4,??Clear_Screen_0  ;; Fill_Buffer
+        STRH     R0,[R4, #+0]
+//  219   Point_SCR(0, 0); 
+        MOVS     R1,#+0
+        MOV      R0,R1
+        BL       Point_SCR
+//  220   __LCD_Fill(&Fill_Buffer,240*200);//Clear Half Screen
+        LDR.N    R5,??Clear_Screen_0+0x4  ;; 0xbb80
+        MOVS     R1,R5
+        MOVS     R0,R4
+        _BLF     __LCD_Fill,??__LCD_Fill??rT
+//  221   __LCD_DMA_Ready();
+        _BLF     __LCD_DMA_Ready,??__LCD_DMA_Ready??rT
+//  222   __LCD_Fill(&Fill_Buffer,240*200);//Clear Half Screen
+        MOVS     R1,R5
+        MOVS     R0,R4
+        _BLF     __LCD_Fill,??__LCD_Fill??rT
+//  223 }
+        POP      {R4,R5,PC}       ;; return
+        Nop      
+        DATA
+??Clear_Screen_0:
+        DC32     Fill_Buffer
+        DC32     0xbb80
+        CFI EndBlock cfiBlock4
+//  224 /*******************************************************************************
+//  225  Display_Str: 在指定位置显示字符串   输入: X、Y坐标，颜色值，显示模式，字符串 
+//  226 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function Get_TAB_8x14
+        THUMB
+//  227 u16 Get_TAB_8x14(u8 Code, u16 Row)
+//  228 {
+//  229   return Char_TAB_8x14[((Code-0x22)*8)+Row];
+Get_TAB_8x14:
+        LDR.N    R2,??Get_TAB_8x14_0  ;; 0xfffffffffffffde0
+        ADDS     R0,R1,R0, LSL #+3
+        LDR.N    R1,??Get_TAB_8x14_0+0x4  ;; Char_TAB_8x14
+        ADDS     R0,R1,R0, LSL #+1
+        LDRH     R0,[R0, R2]
+        BX       LR               ;; return
+        DATA
+??Get_TAB_8x14_0:
+        DC32     0xfffffffffffffde0
+        DC32     Char_TAB_8x14
+        CFI EndBlock cfiBlock5
+//  230 }
+//  231 
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function Display_Str
+        THUMB
+//  232 void Display_Str(u16 x0, u16 y0, u16 Color, u8 Mode, u8 *s)
+//  233 { 
+Display_Str:
+        PUSH     {R4-R11,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R11 Frame(CFA, -8)
+        CFI R10 Frame(CFA, -12)
+        CFI R9 Frame(CFA, -16)
+        CFI R8 Frame(CFA, -20)
+        CFI R7 Frame(CFA, -24)
+        CFI R6 Frame(CFA, -28)
+        CFI R5 Frame(CFA, -32)
+        CFI R4 Frame(CFA, -36)
+        CFI CFA R13+36
+        MOV      R8,R1
+        MOV      R9,R2
+        MOVS     R6,R0
+        MOVS     R4,R3
+//  234   signed short i, j, b; 
+//  235   Point_SCR(x0, y0);
+        BL       Point_SCR
+//  236   for (j=0; j<14;++j){ 
+        MOVS     R0,#+0
+        MOV      R10,R0
+        MOV      R5,R10
+        B.N      ??Display_Str_0
+//  237     if(Mode==0) __LCD_SetPixl(BLACK);   //Normal replace Display
+??Display_Str_1:
+        CMP      R4,#+0
+        BNE.N    ??Display_Str_2
+        MOV      R0,R10
+        _BLF     __LCD_SetPixl,??__LCD_SetPixl??rT
+//  238     if(Mode==1) __LCD_SetPixl(Color);   //Inverse replace Display
+??Display_Str_2:
+        CMP      R4,#+1
+        BNE.N    ??Display_Str_3
+        MOV      R0,R9
+        _BLF     __LCD_SetPixl,??__LCD_SetPixl??rT
+//  239   }
+??Display_Str_3:
+        ADDS     R5,R5,#+1
+??Display_Str_0:
+        CMP      R5,#+14
+        BLT.N    ??Display_Str_1
+//  240   x0++;                            // 每一个字符串前增加一空白列 
+        ADDS     R6,R6,#+1
+        MOV      R11,R6
+        B.N      ??Display_Str_4
+//  241   while (*s!=0) {
+//  242     for(i=0;i<8;++i){
+//  243       Point_SCR(x0+i, y0);
+//  244       if((*s==0x20)||(*s==0x21)) b=0x0000;
+//  245       else                       b=Get_TAB_8x14(*s, i);
+//  246       if((*s==0x21)&&(i==4)) break;
+//  247       for(j=0;j<14;++j){
+//  248         if(b&0x04) {
+//  249           if(Mode==0) __LCD_SetPixl(Color);
+//  250           if(Mode==1) __LCD_SetPixl(BLACK);
+//  251         } else {
+//  252           if(Mode==0) __LCD_SetPixl(BLACK);
+//  253           if(Mode==1) __LCD_SetPixl(Color);
+//  254         }
+//  255         b>>=1;
+//  256       }
+//  257     }
+//  258     if(*s==0x21) x0 +=4;           //显示位置水平方向+4
+//  259     else  x0 += 8;                 //显示位置水平方向+8
+??Display_Str_5:
+        ADDW     R11,R11,#+8
+//  260     ++s;                           //字符串指针+1
+??Display_Str_6:
+        LDR      R0,[SP, #+36]
+        ADDS     R0,R0,#+1
+        STR      R0,[SP, #+36]
+??Display_Str_4:
+        LDR      R0,[SP, #+36]
+        LDRB     R0,[R0, #+0]
+        CMP      R0,#+0
+        BEQ.N    ??Display_Str_7
+        MOV      R6,R10
+        B.N      ??Display_Str_8
+??Display_Str_9:
+        ADDS     R6,R6,#+1
+        SXTH     R6,R6
+??Display_Str_8:
+        CMP      R6,#+8
+        BGE.N    ??Display_Str_10
+        MOV      R1,R8
+        MOV      R0,R11
+        MOVS     R2,R6
+        ADDS     R0,R0,R2
+        UXTH     R0,R0
+        BL       Point_SCR
+        LDR      R0,[SP, #+36]
+        LDRB     R0,[R0, #+0]
+        CMP      R0,#+32
+        BEQ.N    ??Display_Str_11
+        LDR      R0,[SP, #+36]
+        LDRB     R0,[R0, #+0]
+        CMP      R0,#+33
+        BNE.N    ??Display_Str_12
+??Display_Str_11:
+        MOV      R7,R10
+        B.N      ??Display_Str_13
+??Display_Str_12:
+        MOVS     R1,R6
+        UXTH     R1,R1
+        LDR      R0,[SP, #+36]
+        LDRB     R0,[R0, #+0]
+        BL       Get_TAB_8x14
+        MOVS     R7,R0
+??Display_Str_13:
+        LDR      R0,[SP, #+36]
+        LDRB     R0,[R0, #+0]
+        CMP      R0,#+33
+        BNE.N    ??Display_Str_14
+        CMP      R6,#+4
+        BEQ.N    ??Display_Str_10
+??Display_Str_14:
+        MOV      R5,R10
+        B.N      ??Display_Str_15
+??Display_Str_16:
+        CMP      R4,#+0
+        BNE.N    ??Display_Str_17
+        MOV      R0,R10
+        _BLF     __LCD_SetPixl,??__LCD_SetPixl??rT
+??Display_Str_17:
+        CMP      R4,#+1
+        BNE.N    ??Display_Str_18
+        MOV      R0,R9
+        _BLF     __LCD_SetPixl,??__LCD_SetPixl??rT
+??Display_Str_18:
+        SXTH     R7,R7
+        ASRS     R7,R7,#+1
+        ADDS     R5,R5,#+1
+??Display_Str_15:
+        CMP      R5,#+14
+        BGE.N    ??Display_Str_9
+        LSLS     R0,R7,#+29
+        BPL.N    ??Display_Str_16
+        CMP      R4,#+0
+        BNE.N    ??Display_Str_19
+        MOV      R0,R9
+        _BLF     __LCD_SetPixl,??__LCD_SetPixl??rT
+??Display_Str_19:
+        CMP      R4,#+1
+        BNE.N    ??Display_Str_18
+        MOV      R0,R10
+        _BLF     __LCD_SetPixl,??__LCD_SetPixl??rT
+        B.N      ??Display_Str_18
+??Display_Str_10:
+        LDR      R0,[SP, #+36]
+        LDRB     R0,[R0, #+0]
+        CMP      R0,#+33
+        BNE.N    ??Display_Str_5
+        ADDW     R11,R11,#+4
+        B.N      ??Display_Str_6
+//  261   }
+//  262 }
+??Display_Str_7:
+        POP      {R4-R11,PC}      ;; return
+        CFI EndBlock cfiBlock6
+//  263 /*******************************************************************************
+//  264  Display_Logo: 在指定位置显示商标图案   输入: X、Y坐标 
+//  265 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function Display_Logo
+        THUMB
+//  266 void Display_Logo(u16 x0, u16 y0)
+//  267 { 
+Display_Logo:
+        PUSH     {R4-R11,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R11 Frame(CFA, -8)
+        CFI R10 Frame(CFA, -12)
+        CFI R9 Frame(CFA, -16)
+        CFI R8 Frame(CFA, -20)
+        CFI R7 Frame(CFA, -24)
+        CFI R6 Frame(CFA, -28)
+        CFI R5 Frame(CFA, -32)
+        CFI R4 Frame(CFA, -36)
+        CFI CFA R13+36
+        SUB      SP,SP,#+32
+        CFI CFA R13+68
+        MOV      R8,R0
+//  268   u8 *Ptr;
+//  269   u16 i, x, y, Color[16];
+//  270 //  u32 b;
+//  271   
+//  272   Ptr = (u8*)INF_BASE;
+//  273   x = x0;
+        MOV      R9,R0
+        MOV      R4,R9
+//  274   y = y0;
+        MOVS     R5,R1
+//  275   for(i=0; i<16; i++){        // 0x36~0x75: 调色板(每色4B,顺序为B,G,R,Alpha)
+        MOVS     R1,#+0
+        MOVS     R2,R1
+        MOV      R7,SP
+        B.N      ??Display_Logo_0
+//  276     Color[i]=((Ptr[0x36 + i*4]>>3)<<11)+
+//  277       ((Ptr[0x37 + i*4]>>2)<<5)+(Ptr[0x38 + i*4]>>3);
+??Display_Logo_1:
+        LDR.N    R3,??Display_Logo_2  ;; 0x803d800
+        ADDS     R3,R3,R0, LSL #+2
+        ADDS     R3,R3,#+54
+        MOV      R12,R0
+        LDRB     R0,[R3, #+0]
+        LSRS     R0,R0,#+3
+        LDRB     R6,[R3, #+1]
+        LSRS     R6,R6,#+2
+        LSLS     R6,R6,#+5
+        ADDS     R6,R6,R0, LSL #+11
+        LDRB     R0,[R3, #+2]
+        LSRS     R0,R0,#+3
+        ADDS     R3,R6,R0
+        MOV      R0,R12
+        STRH     R3,[R7, R0, LSL #+1]
+//  278   }      
+        ADDS     R2,R2,#+1
+        UXTH     R2,R2
+??Display_Logo_0:
+        MOVS     R0,R2
+        CMP      R0,#+16
+        BCC.N    ??Display_Logo_1
+//  279   for(i=0; i<256*64/2; ++i){
+        MOVS     R6,R1
+        B.N      ??Display_Logo_3
+//  280     Point_SCR(x, y);
+??Display_Logo_4:
+        MOVS     R1,R5
+        MOVS     R0,R4
+        BL       Point_SCR
+//  281     LCD_PORT = Color[(Ptr[0x76 + i]&0xF0)>>4]; // 高半字节   
+        MOVS     R0,R6
+        LDR.N    R1,??Display_Logo_2  ;; 0x803d800
+        ADDS     R0,R1,R0
+        MOV      R10,R0
+        MOVS     R0,#+1610612736
+        MOV      R11,R0
+        LDRB     R0,[R10, #+118]
+        ASRS     R0,R0,#+4
+        MOV      R1,SP
+        LDRH     R0,[R1, R0, LSL #+1]
+        STRH     R0,[R11, #+0]
+//  282     x++;
+        ADDS     R4,R4,#+1
+        UXTH     R4,R4
+//  283     if(x > x0+255) { x = x0; y++;}
+        MOV      R7,R8
+        ADDS     R7,R7,#+255
+        MOVS     R0,R4
+        CMP      R7,R0
+        BGE.N    ??Display_Logo_5
+        MOV      R4,R9
+        ADDS     R5,R5,#+1
+        UXTH     R5,R5
+//  284     Point_SCR(x, y);
+??Display_Logo_5:
+        MOVS     R1,R5
+        MOVS     R0,R4
+        BL       Point_SCR
+//  285     LCD_PORT = Color[Ptr[0x76 + i]&0x0F];      // 低半字节
+        LDRB     R0,[R10, #+118]
+        LSLS     R0,R0,#+28
+        LSRS     R0,R0,#+28
+        MOV      R1,SP
+        LDRH     R0,[R1, R0, LSL #+1]
+        STRH     R0,[R11, #+0]
+//  286     x++;
+        ADDS     R4,R4,#+1
+        UXTH     R4,R4
+//  287     if(x > x0+255) { x = x0; y++;}
+        MOVS     R0,R4
+        CMP      R7,R0
+        BGE.N    ??Display_Logo_6
+        MOV      R4,R9
+        ADDS     R5,R5,#+1
+        UXTH     R5,R5
+//  288   }
+??Display_Logo_6:
+        ADDS     R6,R6,#+1
+        UXTH     R6,R6
+??Display_Logo_3:
+        MOVS     R0,R6
+        MOVS     R1,#+8192
+        CMP      R0,R1
+        BCC.N    ??Display_Logo_4
+//  289 }
+        ADD      SP,SP,#+32
+        CFI CFA R13+36
+        POP      {R4-R11,PC}      ;; return
+        DATA
+??Display_Logo_2:
+        DC32     0x803d800
+        CFI EndBlock cfiBlock7
+//  290 /*******************************************************************************
+//  291  LCD_Set_Block: 
+//  292 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI Function LCD_Set_Block
+        THUMB
+//  293 void LCD_Set_Block(u16 x1, u16 x2, u16 y1, u16 y2) 
+//  294 {
+LCD_Set_Block:
+        PUSH     {R4-R6,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R6 Frame(CFA, -8)
+        CFI R5 Frame(CFA, -12)
+        CFI R4 Frame(CFA, -16)
+        CFI CFA R13+16
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R6,R2
+        MOVS     R1,R3
+//  295   LCD_WR_REG(0x0211, y2);      // Block End X Address
+        LDR.N    R0,??DataTable12  ;; 0x211
+        BL       LCD_WR_REG
+//  296   LCD_WR_REG(0x0213, x2);      // Block End Y Address
+        MOVS     R1,R5
+        LDR.N    R0,??DataTable13  ;; 0x213
+        BL       LCD_WR_REG
+//  297 
+//  298   LCD_WR_REG(0x0210, y1);      // Block Start X Address
+        MOVS     R1,R6
+        MOVS     R0,#+528
+        BL       LCD_WR_REG
+//  299   LCD_WR_REG(0x0212, x1);      // Block Start Y Address
+        MOVS     R1,R4
+        LDR.N    R0,??DataTable14  ;; 0x212
+        BL       LCD_WR_REG
+//  300   
+//  301   LCD_WR_REG(0x0200, y1);
+        MOVS     R1,R6
+        MOVS     R0,#+512
+        BL       LCD_WR_REG
+//  302   LCD_WR_REG(0x0201, x1);
+        MOVS     R1,R4
+        LDR.N    R0,??DataTable15  ;; 0x201
+        BL       LCD_WR_REG
+//  303   
+//  304   LCD_RS_LOW();
+        MOVS     R0,#+4096
+        LDR.N    R1,??DataTable16  ;; 0x40011414
+        STR      R0,[R1, #+0]
+//  305   LCD_PORT = 0x0202;             //GRAM Reg. Addr.
+        MOVS     R1,#+1610612736
+        LDR.N    R2,??DataTable17  ;; 0x202
+        STRH     R2,[R1, #+0]
+//  306   LCD_RS_HIGH();
+        LDR.N    R1,??DataTable18  ;; 0x40011410
+        STR      R0,[R1, #+0]
+//  307 }
+        POP      {R4-R6,PC}       ;; return
+        CFI EndBlock cfiBlock8
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable12:
+        DC32     0x211
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable13:
+        DC32     0x213
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable14:
+        DC32     0x212
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable15:
+        DC32     0x201
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable16:
+        DC32     0x40011414
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable17:
+        DC32     0x202
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable18:
+        DC32     0x40011410
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__LCD_DMA_Ready??rT:
+        LDR.N    R3,??Subroutine0_0  ;; __LCD_DMA_Ready
+        BX       R3
+        DATA
+??Subroutine0_0:
+        DC32     __LCD_DMA_Ready
+        CFI EndBlock cfiBlock9
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__LCD_Fill??rT:
+        LDR.N    R3,??Subroutine1_0  ;; __LCD_Fill
+        BX       R3
+        DATA
+??Subroutine1_0:
+        DC32     __LCD_Fill
+        CFI EndBlock cfiBlock10
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock11 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__LCD_SetPixl??rT:
+        LDR.N    R3,??Subroutine2_0  ;; __LCD_SetPixl
+        BX       R3
+        DATA
+??Subroutine2_0:
+        DC32     __LCD_SetPixl
+        CFI EndBlock cfiBlock11
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_Z:
+        DCD      sfe(DATA_Z) - sfb(DATA_Z), sfb(DATA_Z), sfb(DATA_Z)
+
+        END
+//  308 /******************************** END OF FILE *********************************/
+// 
+// 1 294 bytes in segment CODE
+// 1 488 bytes in segment DATA_C
+//     2 bytes in segment DATA_Z
+//    12 bytes in segment INITTAB
+// 
+// 1 270 bytes of CODE  memory (+ 36 bytes shared)
+// 1 488 bytes of CONST memory
+//     2 bytes of DATA  memory
+//
+//Errors: none
+//Warnings: none

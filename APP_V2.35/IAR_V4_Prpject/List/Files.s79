@@ -1,0 +1,1663 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32 EVALUATION   16/May/2011  10:43:05 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  D:\Design\DS203\PRG\APP_V2.35\source\Files.c        /
+//    Command line    =  D:\Design\DS203\PRG\APP_V2.35\source\Files.c -lA    /
+//                       D:\Design\DS203\PRG\APP_V2.35\IAR_V4_Prpject\List\  /
+//                       -o D:\Design\DS203\PRG\APP_V2.35\IAR_V4_Prpject\Obj /
+//                       \ -s9 --debug --cpu_mode thumb --endian little      /
+//                       --cpu cortex-M3 --stack_align 4 --fpu None          /
+//                       --dlib_config "C:\Program Files\IAR                 /
+//                       Systems\Embedded Workbench 4.0                      /
+//                       Evaluation\arm\LIB\dl7mptnnl8f.h" -I                /
+//                       D:\Design\DS203\PRG\APP_V2.35\IAR_V4_Prpject\..\..\ /
+//                       FWLib\inc\ -I D:\Design\DS203\PRG\APP_V2.35\IAR_V4_ /
+//                       Prpject\..\..\USBLib\inc\ -I                        /
+//                       D:\Design\DS203\PRG\APP_V2.35\IAR_V4_Prpject\..\inc /
+//                       lude\ -I "C:\Program Files\IAR Systems\Embedded     /
+//                       Workbench 4.0 Evaluation\arm\INC\"                  /
+//                       --inline_threshold=16                               /
+//    List file       =  D:\Design\DS203\PRG\APP_V2.35\IAR_V4_Prpject\List\F /
+//                       iles.s79                                            /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME Files
+
+        RTMODEL "StackAlign4", "USED"
+        RTMODEL "__cpu_mode", "__pcs__thumb"
+        RTMODEL "__data_model", "absolute"
+        RTMODEL "__endian", "little"
+        RTMODEL "__rt_version", "6"
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+        PUBWEAK `?*?DATA_ID`
+??DataTable0 EQU 0
+??DataTable1 EQU 0
+??DataTable10 EQU 0
+??DataTable11 EQU 0
+??DataTable13 EQU 0
+??DataTable14 EQU 0
+??DataTable15 EQU 0
+??DataTable16 EQU 0
+??DataTable17 EQU 0
+??DataTable18 EQU 0
+??DataTable19 EQU 0
+??DataTable2 EQU 0
+??DataTable20 EQU 0
+??DataTable3 EQU 0
+??DataTable4 EQU 0
+??DataTable6 EQU 0
+??DataTable9 EQU 0
+        MULTWEAK ??Print_Clk??rT
+        MULTWEAK ??__Disk_Buff_RD??rT
+        MULTWEAK ??__Disk_Buff_WR??rT
+        MULTWEAK ??__LCD_GetPixl??rT
+        MULTWEAK ??__Param_Area_RD??rT
+        MULTWEAK ??__Param_Area_WR??rT
+        MULTWEAK ??__Point_SCR??rT
+        MULTWEAK ??memset??rT
+        MULTWEAK ??u8ToDec3??rT
+        PUBWEAK ?init?tab?DATA_I
+        PUBWEAK ?init?tab?DATA_Z
+        PUBLIC BMP_Color
+        PUBLIC ClusterNum
+        PUBLIC Color_Num
+        FUNCTION Color_Num,0203H
+        PUBLIC Count
+        PUBLIC DirSecNum
+        PUBLIC DiskStart
+        PUBLIC FAT_Size16
+        PUBLIC FAT_Size32
+        PUBLIC FileBuff
+        PUBLIC File_Addr
+        PUBLIC File_Size
+        PUBLIC Hidden_Sec
+        PUBLIC Load_Dat
+        FUNCTION Load_Dat,0203H
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC Load_Parameter
+        FUNCTION Load_Parameter,0203H
+        LOCFRAME CSTACK, 16, STACK
+        PUBLIC MaxNum
+        PUBLIC Offset
+        PUBLIC Open_File
+        FUNCTION Open_File,0203H
+        LOCFRAME CSTACK, 52, STACK
+        PUBLIC Root_Addr
+        PUBLIC RsvdSecCnt
+        PUBLIC Save_Bmp
+        FUNCTION Save_Bmp,0203H
+        LOCFRAME CSTACK, 40, STACK
+        PUBLIC Save_Dat
+        FUNCTION Save_Dat,0203H
+        LOCFRAME CSTACK, 24, STACK
+        PUBLIC Save_Parameter
+        FUNCTION Save_Parameter,0203H
+        LOCFRAME CSTACK, 24, STACK
+        PUBLIC SecBuff
+        PUBLIC SecPerClus
+        PUBLIC SectorSize
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA R13 HUGEDATA
+        CFI Resource R0:32, R1:32, R2:32, R3:32, R4:32, R5:32, R6:32, R7:32
+        CFI Resource R8:32, R9:32, R10:32, R11:32, R12:32, R13:32, R14:32
+        CFI VirtualResource ?RET:32
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 2
+        CFI DataAlign 4
+        CFI ReturnAddress ?RET CODE
+        CFI CFA R13+0
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI R8 SameValue
+        CFI R9 SameValue
+        CFI R10 SameValue
+        CFI R11 SameValue
+        CFI R12 Undefined
+        CFI R14 Undefined
+        CFI ?RET R14
+        CFI EndCommon cfiCommon0
+        
+Print_Clk           SYMBOL "Print_Clk"
+__Disk_Buff_RD      SYMBOL "__Disk_Buff_RD"
+__Disk_Buff_WR      SYMBOL "__Disk_Buff_WR"
+__LCD_GetPixl       SYMBOL "__LCD_GetPixl"
+__Param_Area_RD     SYMBOL "__Param_Area_RD"
+__Param_Area_WR     SYMBOL "__Param_Area_WR"
+__Point_SCR         SYMBOL "__Point_SCR"
+memset              SYMBOL "memset"
+u8ToDec3            SYMBOL "u8ToDec3"
+??Print_Clk??rT     SYMBOL "??rT", Print_Clk
+??__Disk_Buff_RD??rT SYMBOL "??rT", __Disk_Buff_RD
+??__Disk_Buff_WR??rT SYMBOL "??rT", __Disk_Buff_WR
+??__LCD_GetPixl??rT SYMBOL "??rT", __LCD_GetPixl
+??__Param_Area_RD??rT SYMBOL "??rT", __Param_Area_RD
+??__Param_Area_WR??rT SYMBOL "??rT", __Param_Area_WR
+??__Point_SCR??rT   SYMBOL "??rT", __Point_SCR
+??memset??rT        SYMBOL "??rT", memset
+??u8ToDec3??rT      SYMBOL "??rT", u8ToDec3
+
+        EXTERN Current
+        EXTERN Detail
+        EXTERN Ka1
+        EXTERN Ka2
+        EXTERN Ka3
+        EXTERN Kb1
+        EXTERN Kb2
+        EXTERN Kb3
+        EXTERN Meter
+        EXTERN Print_Clk
+        FUNCTION Print_Clk,0202H
+        EXTERN Title
+        EXTERN TrackBuff
+        EXTERN V_Trigg
+        EXTERN __Disk_Buff_RD
+        FUNCTION __Disk_Buff_RD,0202H
+        EXTERN __Disk_Buff_WR
+        FUNCTION __Disk_Buff_WR,0202H
+        EXTERN __LCD_GetPixl
+        FUNCTION __LCD_GetPixl,0202H
+        EXTERN __Param_Area_RD
+        FUNCTION __Param_Area_RD,0202H
+        EXTERN __Param_Area_WR
+        FUNCTION __Param_Area_WR,0202H
+        EXTERN __Point_SCR
+        FUNCTION __Point_SCR,0202H
+        EXTERN memset
+        FUNCTION memset,010202H
+        EXTERN u8ToDec3
+        FUNCTION u8ToDec3,0202H
+
+// D:\Design\DS203\PRG\APP_V2.35\source\Files.c
+//    1 /********************* (C) COPYRIGHT 2010 e-Design Co.,Ltd. ********************
+//    2  File Name : file.c  
+//    3  Version   : DS203_APP Ver 2.3x                                  Author : bure
+//    4 *******************************************************************************/
+//    5 #include <string.h>
+//    6 #include "Interrupt.h"
+//    7 #include "Function.h"
+//    8 #include "Process.h"
+//    9 #include "BIOS.h"
+//   10 #include "File.h"
+//   11 #include "Draw.h"
+//   12 #include "Menu.h"
+//   13 
+//   14 /*******************************************************************************
+//   15 
+//   16 U盘导引扇区内容：0x00      如果为 0xEB 或 0xE9 则表示该扇区同时也是逻辑分区零扇区
+//   17                  0x01C6~0x01C9 4字节为逻辑分区开始位置（高位在后）  DiskStart    
+//   18 
+//   19 分区零扇区内容：0x000B,0x000C 2字节该盘扇区字节长度（高位在后）    SectorsLen   
+//   20                        0x000D 1字节该盘每簇的扇区数（2的整数次幂） SecPerClus   
+//   21                 0x000E,0x000F 2字节该盘的保留扇区数（高位在后）    RsvdSecCnt    
+//   22 （FAT16）       0x0016,0x0017 2字节 FAT占用的扇区数（高位在后）    FAT_Size16   FAT32时该值为 0x0000
+//   23                 0x001C~0x001F 4字节该盘的隐藏扇区数（高位在后）    Hidden_Sec    
+//   24 （FAT32）       0x0024,0x0025 2字节 FAT占用的扇区数（高位在后）    FAT_Size32   
+//   25 
+//   26 FAT表的长度   ：FAT_LEN   = FAT_Size16 ×SectorsLen           
+//   27 FAT1开始扇区  ：FAT1_Sect = DiskStart + RsvdSecCnt           
+//   28 FAT2开始扇区  ：FAT2_Sect = FAT1_Sect + FAT_Size16           
+//   29 根目录开始扇区：Root_Sect = FAT2_Sect + FAT_Size16           
+//   30 根目录开始地址：Root_Addr = Root_Sect ×SectorsLen   
+//   31 
+//   32 根目录扇区内容：Root_Addr + 0x0020 开始，每条目录项长度为 0x20，
+//   33                 FAT16根目录占用扇区数 SecPerRoot = 0x20 
+//   34                 FAT32根目录占用扇区数 SecPerRoot = 0x01 × SecPerClus 
+//   35 
+//   36 目录项中的内容：0x00~0x07 8字节文件名   
+//   37                 0x08~0x0A 3字节扩展名
+//   38                 0x16,0x17 2字节最近修改时间（ = Hour << 11 + Minute << 5 + Second >> 1 ）
+//   39                 0x18,0x19 2字节最近修改日期（ =（ Year - 1980 ）<< 9 + Month << 5 + Day ）
+//   40 （FAT32）       0x14,0x15 文件开始簇号Bit 16~31（高位字节在后）Cluster_Hi
+//   41 （FAT16）       0x1A,0x1B 文件开始簇号Bit  0~15（高位字节在后）Cluster     0x12E5
+//   42                 0x1C-0x1F 4字节的文件字节长度 （高位在后）
+//   43                   
+//   44 文件开始地址  ：File_Addr =（ Root_Sect + SecPerRoot +（Cluster -0x02）×SecPerClus ）×Sectors_LEN
+//   45 
+//   46 *******************************************************************************/
+//   47 u32 DiskStart, Hidden_Sec, Root_Addr, ClusterNum, File_Addr, File_Size; 
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(1)
+//   48 u16 RsvdSecCnt, SectorSize, FAT_Size16, FAT_Size32; 
+FAT_Size32:
+        DS8 2
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(1)
+//   49 u16 SecPerClus, /*DirFliePtr, DirFlieSec, */DirSecNum, MaxNum;
+MaxNum:
+        DS8 2
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+//   50 u8  SecBuff[512];
+SecBuff:
+        DS8 512
+//   51 u8  FileBuff[1200];
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+//   52 u32 Offset, Count;
+Offset:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+Count:
+        DS8 4
+
+        RSEG DATA_I:DATA:SORT:NOROOT(2)
+RsvdSecCnt:
+        DS8 2
+        REQUIRE `?<Initializer for RsvdSecCnt>`
+SectorSize:
+        DS8 2
+        REQUIRE `?<Initializer for SectorSize>`
+FAT_Size16:
+        DS8 2
+        REQUIRE `?<Initializer for FAT_Size16>`
+SecPerClus:
+        DS8 2
+        REQUIRE `?<Initializer for SecPerClus>`
+DirSecNum:
+        DS8 2
+        REQUIRE `?<Initializer for DirSecNum>`
+        DS8 2
+//   53 u16 BMP_Color[16] = { WHT,  CYAN,  CYAN_,  YEL,   
+BMP_Color:
+        DS8 32
+        REQUIRE `?<Initializer for BMP_Color>`
+DiskStart:
+        DS8 4
+        REQUIRE `?<Initializer for DiskStart>`
+Hidden_Sec:
+        DS8 4
+        REQUIRE `?<Initializer for Hidden_Sec>`
+Root_Addr:
+        DS8 4
+        REQUIRE `?<Initializer for Root_Addr>`
+ClusterNum:
+        DS8 4
+        REQUIRE `?<Initializer for ClusterNum>`
+File_Addr:
+        DS8 4
+        REQUIRE `?<Initializer for File_Addr>`
+File_Size:
+        DS8 4
+        REQUIRE `?<Initializer for File_Size>`
+FileBuff:
+        DS8 1200
+        REQUIRE `?<Initializer for FileBuff>`
+//   54                       YEL_, PURPL, PURPL_, GRN,    
+//   55                       GRN_, GRAY,  ORANGE, BLUE,    
+//   56                       RED,  BLACK, BLACK,  BLACK,}; 
+//   57 
+//   58   
+//   59 #define WHT        0xFFFF
+//   60 #define CYAN       0xFFE0
+//   61 #define CYAN_      0xBDE0
+//   62 #define YEL        0x07FF
+//   63 #define YEL_       0x05F7
+//   64 #define PURPL      0xF81F
+//   65 #define PURPL_     0xB817
+//   66 #define GRN        0x07E0
+//   67 #define GRN_       0x05E0
+//   68 #define GRAY       0x7BEF   
+//   69 #define ORANGE     0x051F
+//   70 #define BLUE       0xF800
+//   71 #define RED        0x001F
+//   72 #define BLACK      0x0000
+//   73 
+//   74 /*******************************************************************************
+//   75  打开指定扩展名的文件            输入：文件扩展名             返回值：0x00=成功 
+//   76 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function Open_File
+        THUMB
+//   77 u8 Open_File(u8 FileNum, u8 *ExtName)
+//   78 {
+//   79   u8 i, j, k; 
+//   80   u16 SectorCnt;
+//   81   u8 FileName[12]="FILE    BMP", Num[4];
+Open_File:
+        LDR.N    R2,??Open_File_0  ;; `?<Constant "FILE    BMP">`
+        PUSH     {R4-R6,R8,R9,R11,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R11 Frame(CFA, -8)
+        CFI R9 Frame(CFA, -12)
+        CFI R8 Frame(CFA, -16)
+        CFI R6 Frame(CFA, -20)
+        CFI R5 Frame(CFA, -24)
+        CFI R4 Frame(CFA, -28)
+        CFI CFA R13+28
+        SUB      SP,SP,#+16
+        CFI CFA R13+44
+        MOVS     R4,R1
+        ADD      R1,SP,#+4
+        MOVS     R5,#+12
+??Open_File_1:
+        SUBS     R5,R5,#+1
+        LDRB     R3,[R2, R5]
+        STRB     R3,[R1, R5]
+        BNE.N    ??Open_File_1
+//   82   
+//   83                // ------------生成文件名------------ //      
+//   84   u8ToDec3(Num, FileNum);
+//   85   FileName[4] = Num[0];
+//   86   FileName[5] = Num[1];
+//   87   FileName[6] = Num[2];
+//   88   FileName[8] = ExtName[0];
+//   89   FileName[9] = ExtName[1];
+//   90   FileName[10]= ExtName[2];
+//   91   
+//   92                // ------------读取U盘参数----------- //      
+//   93   DiskStart =0;
+//   94   DirSecNum = 0x20;             
+//   95   __Disk_Buff_RD(SecBuff, 0, 256);
+        LDR.N    R5,??DataTable7  ;; SecBuff
+        MOVS     R1,R0
+        MOV      R0,SP
+        _BLF     u8ToDec3,??u8ToDec3??rT
+        LDRB     R0,[SP, #+0]
+        MOVS     R1,#+0
+        STRB     R0,[SP, #+8]
+        LDRB     R0,[SP, #+1]
+        STRB     R0,[SP, #+9]
+        LDRB     R0,[SP, #+2]
+        STRB     R0,[SP, #+10]
+        LDRB     R0,[R4, #+0]
+        STRB     R0,[SP, #+12]
+        LDRB     R0,[R4, #+1]
+        STRB     R0,[SP, #+13]
+        LDRB     R0,[R4, #+2]
+        LDR.N    R4,??Open_File_0+0x4  ;; RsvdSecCnt
+        STRB     R0,[SP, #+14]
+        MOVS     R0,#+0
+        MOV      R8,R0
+        STR      R8,[R4, #+44]
+        MOVS     R0,#+32
+        STRH     R0,[R4, #+8]
+        LSLS     R2,R0,#+3
+        MOVS     R0,R5
+        _BLF     __Disk_Buff_RD,??__Disk_Buff_RD??rT
+//   96   SectorSize =(SecBuff[0x0C]<<8)+(SecBuff[0x0B]);     // 0200
+        LDRB     R0,[R5, #+12]
+        LDRB     R1,[R5, #+11]
+//   97   SecPerClus = SecBuff[0x0D];                            // 01
+//   98   RsvdSecCnt =(SecBuff[0x0F]<<8)+(SecBuff[0x0E]);     // 0008
+//   99   FAT_Size16 =(SecBuff[0x17]<<8)+(SecBuff[0x16]);     // 000C
+//  100   Hidden_Sec =(SecBuff[0x1F]<<24)+(SecBuff[0x1E]<<16)
+//  101     +(SecBuff[0x1D]<<8)+(SecBuff[0x1C]);              // 0000
+//  102 
+//  103                // ------------读取根目录----------- //      
+//  104   Root_Addr =(DiskStart + RsvdSecCnt + 2*FAT_Size16)*SectorSize; // 4000 
+//  105   __Disk_Buff_RD(SecBuff, Root_Addr, 512);
+        MOVS     R2,#+512
+//  106 
+//  107                // ------------查找文件名----------- //      
+//  108   for(SectorCnt =0; SectorCnt < DirSecNum; SectorCnt++){
+        MOV      R9,R8
+        ADDS     R0,R1,R0, LSL #+8
+        LDRB     R1,[R5, #+14]
+        STRH     R0,[R4, #+2]
+        LDRB     R0,[R5, #+13]
+        STRH     R0,[R4, #+6]
+        LDRB     R0,[R5, #+15]
+        ADDS     R0,R1,R0, LSL #+8
+        LDRB     R1,[R5, #+22]
+        STRH     R0,[R4, #+0]
+        LDRB     R0,[R5, #+23]
+        ADDS     R0,R1,R0, LSL #+8
+        LDRB     R1,[R5, #+30]
+        STRH     R0,[R4, #+4]
+        LDRB     R0,[R5, #+31]
+        LSLS     R1,R1,#+16
+        ADDS     R0,R1,R0, LSL #+24
+        LDRB     R1,[R5, #+29]
+        ADDS     R0,R0,R1, LSL #+8
+        LDRB     R1,[R5, #+28]
+        ADDS     R0,R0,R1
+        LDRH     R1,[R4, #+0]
+        STR      R0,[R4, #+48]
+        LDR      R0,[R4, #+44]
+        ADDS     R0,R0,R1
+        LDRH     R1,[R4, #+4]
+        ADDS     R1,R0,R1, LSL #+1
+        LDRH     R0,[R4, #+2]
+        MULS     R1,R0,R1
+        STR      R1,[R4, #+52]
+        MOVS     R0,R5
+        _BLF     __Disk_Buff_RD,??__Disk_Buff_RD??rT
+        B.N      ??Open_File_2
+//  109     __Disk_Buff_RD(SecBuff, Root_Addr + SectorCnt*512, 512);
+//  110     for(i=0; i<16; i++){
+??Open_File_3:
+        ADDS     R0,R0,#+1
+        UXTB     R0,R0
+        CMP      R0,#+16
+        BCC.N    ??Open_File_4
+        MOV      R0,R9
+        ADDS     R0,R0,#+1
+        UXTH     R0,R0
+        MOV      R9,R0
+??Open_File_2:
+        LDRH     R1,[R4, #+8]
+        CMP      R9,R1
+        BCS.N    ??Open_File_5
+        LDR      R0,[R4, #+52]
+        MOVS     R2,#+512
+        ADDS     R1,R0,R9, LSL #+9
+        MOVS     R0,R5
+        _BLF     __Disk_Buff_RD,??__Disk_Buff_RD??rT
+        MOVS     R0,#+0
+//  111       if(SecBuff[i*32] == 0xE5)  k = 0xFF;  // 已删除的文件项
+??Open_File_4:
+        ADDS     R11,R5,R0, LSL #+5
+        LDRB     R2,[R11, #+0]
+        CMP      R2,#+229
+        ITE     NE 
+        MOVNE    R2,#+0
+        MOVEQ    R2,#+255
+//  112       else                       k = 0;     // 正常的文件项
+//  113       for(j=0; j<11; j++){
+        MOVS     R3,#+0
+//  114         if(SecBuff[i*32+j] != FileName[j])  k |= 0xFF; // 
+??Open_File_6:
+        ADDS     R6,R3,R0, LSL #+5
+        LDRB     R6,[R5, R6]
+        MOV      R12,R6
+        ADD      R6,SP,#+4
+        LDRB     R6,[R6, R3]
+        CMP      R12,R6
+        IT      NE 
+        MOVNE    R2,#+255
+//  115       }
+        ADDS     R3,R3,#+1
+        UXTB     R3,R3
+        CMP      R3,#+11
+        BCC.N    ??Open_File_6
+//  116       if(k == 0) {                              // File is found
+        CMP      R2,#+0
+        BNE.N    ??Open_File_3
+//  117         
+//  118                // ------计算文件大小及存放地址----- //      
+//  119         ClusterNum =((SecBuff[i*32+0x1B]<<8)+(SecBuff[i*32+0x1A])); // 00E5
+        LDRB     R0,[R11, #+27]
+        LDRB     R1,[R11, #+26]
+//  120         File_Addr  = Root_Addr +(DirSecNum +(ClusterNum -2)*SecPerClus)*512;// 4000+(20+(E5-2))*200
+        LDRH     R3,[R4, #+6]
+        ADDS     R0,R1,R0, LSL #+8
+        LDRH     R1,[R4, #+8]
+        STR      R0,[R4, #+56]
+        LDR      R2,[R4, #+56]
+        LDR      R0,[R4, #+52]
+        SUBS     R2,R2,#+2
+        MLA      R1,R2,R3,R1
+        ADDS     R0,R0,R1, LSL #+9
+        STR      R0,[R4, #+60]
+//  121         File_Size  =((SecBuff[i*32+0x1C])+(SecBuff[i*32+0x1D]<<8)+
+//  122                     (SecBuff[i*32+0x1E]<<16)+(SecBuff[i*32+0x1F]<<24));
+        LDRB     R1,[R11, #+29]
+        LDRB     R0,[R11, #+28]
+        ADDS     R0,R0,R1, LSL #+8
+        LDRB     R1,[R11, #+30]
+        ADDS     R0,R0,R1, LSL #+16
+        LDRB     R1,[R11, #+31]
+        ADDS     R0,R0,R1, LSL #+24
+        STR      R0,[R4, #+64]
+//  123         return 0;
+        MOVS     R0,#+0
+        B.N      ??Open_File_7
+//  124       }
+//  125     }
+//  126   }
+//  127   return 0xFF;
+??Open_File_5:
+        MOVS     R0,#+255
+??Open_File_7:
+        ADD      SP,SP,#+16
+        CFI CFA R13+28
+        POP      {R4-R6,R8,R9,R11,PC}
+        Nop      
+        DATA
+??Open_File_0:
+        DC32     `?<Constant "FILE    BMP">`
+        DC32     RsvdSecCnt
+        CFI EndBlock cfiBlock0
+//  128 }
+//  129 /*******************************************************************************
+//  130 Save_Dat: 保存当前屏幕显示图像原始数据    输入：文件编号     返回值：0x00=成功 
+//  131 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function Save_Dat
+        THUMB
+//  132 u8 Save_Dat(u8 FileNum)
+//  133 {
+Save_Dat:
+        PUSH     {R4-R7,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R7 Frame(CFA, -8)
+        CFI R6 Frame(CFA, -12)
+        CFI R5 Frame(CFA, -16)
+        CFI R4 Frame(CFA, -20)
+        CFI CFA R13+20
+//  134   u16 i, j, Rvalue; 
+//  135   
+//  136   Rvalue = Open_File(FileNum, "DAT");  // 2 KB data lenght : 4 *300 = 1.2KBytes
+        ADR.N    R1,??DataTable5  ;; "DAT"
+        BL       Open_File
+//  137   if(Rvalue != 0) return Rvalue;
+        MOVS     R1,R0
+        BNE.N    ??Save_Dat_0
+//  138   
+//  139   for(j=0; j<4; j++){
+        LDR.N    R5,??DataTable7  ;; SecBuff
+        LDR.N    R7,??DataTable8  ;; RsvdSecCnt
+        MOVS     R4,#+0
+//  140     for(i=0; i<299; i++){
+??Save_Dat_1:
+        LDR.N    R6,??Save_Dat_2  ;; TrackBuff
+        MOVS     R1,#+0
+//  141       SecBuff[i] = TrackBuff[i*4 + j];
+??Save_Dat_3:
+        ADDS     R3,R4,R1, LSL #+2
+        LDRB     R3,[R6, R3]
+        STRB     R3,[R5, R1]
+//  142     }
+        LDR.N    R3,??Save_Dat_2+0x4  ;; 0x12b
+        ADDS     R1,R1,#+1
+        UXTH     R1,R1
+        CMP      R1,R3
+        BCC.N    ??Save_Dat_3
+//  143     SecBuff[299] = Title[j][POSI].Value;
+        LDR.N    R2,??DataTable12  ;; Title
+//  144     __Disk_Buff_WR(SecBuff, File_Addr + j*512);
+        LDR      R0,[R7, #+60]
+        MOVS     R1,#+80
+        LSLS     R6,R4,#+9
+        MLA      R1,R4,R1,R2
+//  145     __Disk_Buff_WR(SecBuff + 256, File_Addr + 256 +j*512);
+//  146   }
+        ADDS     R4,R4,#+1
+        UXTH     R4,R4
+        ADDS     R1,R1,#+76
+        LDRH     R1,[R1, #+0]
+        STRB     R1,[R5, #+299]
+        ADDS     R1,R0,R6
+        MOVS     R0,R5
+        _BLF     __Disk_Buff_WR,??__Disk_Buff_WR??rT
+        LDR      R0,[R7, #+60]
+        ADDS     R0,R6,R0
+        ADDW     R1,R0,#+256
+        ADDW     R0,R5,#+256
+        _BLF     __Disk_Buff_WR,??__Disk_Buff_WR??rT
+        CMP      R4,#+4
+        BCC.N    ??Save_Dat_1
+//  147   
+//  148   return 0;
+        MOVS     R0,#+0
+??Save_Dat_0:
+        POP      {R4-R7,PC}
+        DATA
+??Save_Dat_2:
+        DC32     TrackBuff
+        DC32     0x12b
+        CFI EndBlock cfiBlock1
+//  149 }
+//  150 /*******************************************************************************
+//  151 Load_Dat: 加载保存过的屏幕图像原始数据    输入：文件编号     返回值：0x00=成功 
+//  152 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function Load_Dat
+        THUMB
+//  153 u8 Load_Dat(u8 FileNum)
+//  154 {
+Load_Dat:
+        PUSH     {R4,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R4 Frame(CFA, -8)
+        CFI CFA R13+8
+//  155   u16  Rvalue;
+//  156 
+//  157   Rvalue = Open_File(FileNum, "DAT");  // 2 KB data lenght : 4 *300 = 1.2KBytes
+        ADR.N    R1,??DataTable5  ;; "DAT"
+        BL       Open_File
+//  158   if(Rvalue != 0) return Rvalue;
+        MOVS     R1,R0
+        IT      NE 
+        POPNE    {R4,PC}
+//  159   
+//  160   __Disk_Buff_RD(FileBuff,         File_Addr,     300);
+        LDR.N    R4,??DataTable8  ;; RsvdSecCnt
+        MOVS     R2,#+300
+        LDR      R1,[R4, #+60]
+        MOVS     R0,R4
+        ADDS     R0,R0,#+68
+        _BLF     __Disk_Buff_RD,??__Disk_Buff_RD??rT
+//  161   
+//  162   __Disk_Buff_RD(FileBuff+300,     File_Addr+2*256, 300);
+        LDR      R0,[R4, #+60]
+        MOVS     R2,#+300
+        ADDW     R1,R0,#+512
+        ADDW     R0,R4,#+368
+        _BLF     __Disk_Buff_RD,??__Disk_Buff_RD??rT
+//  163 
+//  164   __Disk_Buff_RD(FileBuff+600,     File_Addr+4*256, 300);
+        LDR      R0,[R4, #+60]
+        MOVS     R2,#+300
+        ADDS     R1,R0,#+1024
+        ADDW     R0,R4,#+668
+        _BLF     __Disk_Buff_RD,??__Disk_Buff_RD??rT
+//  165 
+//  166   __Disk_Buff_RD(FileBuff+900,     File_Addr+6*256, 300);
+        LDR      R0,[R4, #+60]
+        MOVS     R2,#+300
+        ADDS     R1,R0,#+1536
+        ADDW     R0,R4,#+968
+        _BLF     __Disk_Buff_RD,??__Disk_Buff_RD??rT
+//  167   
+//  168   return 0;
+        MOVS     R0,#+0
+        POP      {R4,PC}          ;; return
+        CFI EndBlock cfiBlock2
+//  169 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable5:
+        DC8      "DAT"
+//  170 /*******************************************************************************
+//  171 Save_Bmp: 保存当前屏幕显示图像为BMP格式    输入：文件编号     返回值：0x00=成功 
+//  172 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function Save_Bmp
+        THUMB
+//  173 u8 Save_Bmp(u8 FileNum)
+//  174 {
+Save_Bmp:
+        PUSH     {R4-R9,R11,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R11 Frame(CFA, -8)
+        CFI R9 Frame(CFA, -12)
+        CFI R8 Frame(CFA, -16)
+        CFI R7 Frame(CFA, -20)
+        CFI R6 Frame(CFA, -24)
+        CFI R5 Frame(CFA, -28)
+        CFI R4 Frame(CFA, -32)
+        CFI CFA R13+32
+        SUB      SP,SP,#+4
+        CFI CFA R13+36
+//  175   u16  x=0, y=0, ColorH, ColorL, Rvalue;
+//  176   u8   i, j, k; 
+//  177 
+//  178   Rvalue = Open_File(FileNum, "BMP");  // 47 KB data lenght = 256*188 = 48128 Bytes
+        ADR.N    R1,??Save_Bmp_0  ;; "BMP"
+        BL       Open_File
+//  179   if(Rvalue != 0) return Rvalue;
+        MOVS     R1,R0
+        BNE.N    ??Save_Bmp_1
+//  180   __Disk_Buff_RD(SecBuff, File_Addr, 256);
+        LDR.N    R0,??DataTable7  ;; SecBuff
+        MOVS     R2,#+256
+        MOV      R8,R0
+        LDR.N    R0,??DataTable8  ;; RsvdSecCnt
+        MOV      R9,R0
+        LDR      R1,[R9, #+60]
+        MOV      R0,R8
+        _BLF     __Disk_Buff_RD,??__Disk_Buff_RD??rT
+//  181   
+//  182   i = 0x0036; // 调色板存放开始地址
+//  183   for(j=0; j<16; ++j){
+        MOVS     R0,#+0
+        MOV      R11,R0
+//  184     SecBuff[j*4 +i+0]=(BMP_Color[j]& 0xF800)>>8; // Bule
+??Save_Bmp_2:
+        ADDS     R1,R9,R0, LSL #+1
+        LDRH     R1,[R1, #+12]
+        ADDS     R3,R8,R0, LSL #+2
+//  185     SecBuff[j*4 +i+1]=(BMP_Color[j]& 0x07E0)>>3; // Green
+        LSLS     R2,R0,#+2
+        ADDS     R2,R2,#+54
+        ADD      R2,R2,R8
+        ANDS     R4,R1,#0xF800
+        LSRS     R4,R4,#+8
+        STRB     R4,[R3, #+54]!
+        ANDS     R3,R1,#0x7E0
+        ASRS     R3,R3,#+3
+        STRB     R3,[R2, #+1]
+//  186     SecBuff[j*4 +i+2]=(BMP_Color[j]& 0x001F)<<3; // Red
+        LSLS     R1,R1,#+3
+        STRB     R1,[R2, #+2]
+//  187     SecBuff[j*4 +i+3]= 0;                        // Alpha
+        MOVS     R1,#+0
+        STRB     R1,[R2, #+3]
+//  188   }
+        ADDS     R0,R0,#+1
+        UXTB     R0,R0
+        CMP      R0,#+16
+        BCC.N    ??Save_Bmp_2
+//  189   i = 0x0076; // 图像数据开始存放地址
+        MOVS     R0,#+118
+        STR      R0,[SP, #+0]
+//  190   k = 0;
+        MOVS     R4,#+0
+//  191   for(y=0; y<240; y++){
+//  192     for(x=0; x<400 ; x+=2){  
+??Save_Bmp_3:
+        MOVS     R5,#+0
+//  193       __Point_SCR(x, y);
+??Save_Bmp_4:
+        MOV      R1,R11
+        MOVS     R0,R5
+        _BLF     __Point_SCR,??__Point_SCR??rT
+//  194       ColorH =__LCD_GetPixl();
+        _BLF     __LCD_GetPixl,??__LCD_GetPixl??rT
+        MOVS     R7,R0
+//  195       __Point_SCR(x+1, y);
+        MOV      R1,R11
+        ADDS     R0,R5,#+1
+        UXTH     R0,R0
+        _BLF     __Point_SCR,??__Point_SCR??rT
+//  196       ColorL =__LCD_GetPixl();
+        _BLF     __LCD_GetPixl,??__LCD_GetPixl??rT
+        MOVS     R6,R0
+//  197       SecBuff[i] =(Color_Num(ColorH)<<4)+ Color_Num(ColorL);
+        MOVS     R0,R7
+        BL       Color_Num
+        MOVS     R7,R0
+        MOVS     R0,R6
+        BL       Color_Num
+        LDR      R1,[SP, #+0]
+        MOV      R2,R8
+        ADDS     R0,R0,R7, LSL #+4
+        UXTB     R1,R1
+        STRB     R0,[R2, R1]
+//  198       i++;
+        LDR      R0,[SP, #+0]
+        ADDS     R0,R0,#+1
+        UXTB     R0,R0
+        CMP      R0,#+0
+        STR      R0,[SP, #+0]
+//  199       if(i==0){
+        BNE.N    ??Save_Bmp_5
+//  200         __Disk_Buff_WR(SecBuff, File_Addr +(k <<8));
+        LDR      R0,[R9, #+60]
+        ADDS     R1,R0,R4, LSL #+8
+        MOV      R0,R8
+        _BLF     __Disk_Buff_WR,??__Disk_Buff_WR??rT
+//  201         Print_Clk(254, 0, (SCRN<<8)+ TEXT1, (k >>2)& 3);    // 进度指示
+        LDR.N    R2,??Save_Bmp_0+0x4  ;; 0x50a
+        ASRS     R0,R4,#+2
+        LSLS     R3,R0,#+30
+        LSRS     R3,R3,#+30
+        MOVS     R1,#+0
+        MOVS     R0,#+254
+        _BLF     Print_Clk,??Print_Clk??rT
+//  202         k++;
+        ADDS     R4,R4,#+1
+        UXTB     R4,R4
+//  203       }
+//  204     }
+??Save_Bmp_5:
+        ADDS     R5,R5,#+2
+        UXTH     R5,R5
+        MOVS     R1,#+400
+        CMP      R5,R1
+        BCC.N    ??Save_Bmp_4
+//  205   }
+        MOV      R0,R11
+        ADDS     R0,R0,#+1
+        UXTH     R0,R0
+        MOV      R11,R0
+        CMP      R0,#+240
+        BCC.N    ??Save_Bmp_3
+//  206   __Disk_Buff_WR(SecBuff, File_Addr +(k <<8));
+        LDR      R0,[R9, #+60]
+        ADDS     R1,R0,R4, LSL #+8
+        MOV      R0,R8
+        _BLF     __Disk_Buff_WR,??__Disk_Buff_WR??rT
+//  207   return 0;
+        MOVS     R0,#+0
+??Save_Bmp_1:
+        ADD      SP,SP,#+4
+        CFI CFA R13+32
+        POP      {R4-R9,R11,PC}
+        DATA
+??Save_Bmp_0:
+        DC8      "BMP"
+        DC32     0x50a
+        CFI EndBlock cfiBlock3
+//  208 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable7:
+        DC32     SecBuff
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable8:
+        DC32     RsvdSecCnt
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function Color_Num
+        THUMB
+//  209 u8 Color_Num(u16 Color)
+//  210 {
+//  211   if(Color == WHT)                   return 0;
+Color_Num:
+        LDR.N    R1,??Color_Num_0  ;; 0xffff
+        CMP      R0,R1
+        ITT     EQ 
+        MOVEQ    R0,#+0
+        BXEQ     LR
+//  212   else if((Color & CYAN  )== CYAN  ) return 1;
+        SUBS     R1,R1,#+31
+        MOVS     R2,R1
+        ANDS     R2,R2,R0
+        CMP      R2,R1
+        ITT     EQ 
+        MOVEQ    R0,#+1
+        BXEQ     LR
+//  213   else if((Color & YEL   )== YEL   ) return 3;
+        LSRS     R1,R1,#+5
+        MOVS     R2,R1
+        ANDS     R2,R2,R0
+        CMP      R2,R1
+        ITT     EQ 
+        MOVEQ    R0,#+3
+        BXEQ     LR
+//  214   else if((Color & PURPL )== PURPL ) return 5;
+        LDR.N    R1,??Color_Num_0+0x4  ;; 0xf81f
+        MOVS     R2,R1
+        ANDS     R2,R2,R0
+        CMP      R2,R1
+        ITT     EQ 
+        MOVEQ    R0,#+5
+        BXEQ     LR
+//  215   else if((Color & GRN   )== GRN   ) return 7;
+        ANDS     R1,R0,#0x7E0
+        CMP      R1,#+2016
+        ITT     EQ 
+        MOVEQ    R0,#+7
+        BXEQ     LR
+//  216   else if((Color & CYAN_ )== CYAN_ ) return 2;
+        LDR.N    R1,??Color_Num_0+0x8  ;; 0xbde0
+        MOVS     R2,R1
+        ANDS     R2,R2,R0
+        CMP      R2,R1
+        ITT     EQ 
+        MOVEQ    R0,#+2
+        BXEQ     LR
+//  217   else if((Color & YEL_  )== YEL_  ) return 4;
+        LDR.N    R1,??Color_Num_0+0xC  ;; 0x5f7
+        MOVS     R2,R1
+        ANDS     R2,R2,R0
+        CMP      R2,R1
+        ITT     EQ 
+        MOVEQ    R0,#+4
+        BXEQ     LR
+//  218   else if((Color & PURPL_)== PURPL_) return 6;
+        LDR.N    R1,??Color_Num_0+0x10  ;; 0xb817
+        MOVS     R2,R1
+        ANDS     R2,R2,R0
+        CMP      R2,R1
+        ITT     EQ 
+        MOVEQ    R0,#+6
+        BXEQ     LR
+//  219   else if((Color & GRN_  )== GRN_  ) return 8;
+        ANDS     R1,R0,#0x5E0
+        CMP      R1,#+1504
+        ITT     EQ 
+        MOVEQ    R0,#+8
+        BXEQ     LR
+//  220   else if((Color & GRAY  )== GRAY  ) return 9;
+        LDR.N    R1,??Color_Num_0+0x14  ;; 0x7bef
+        MOVS     R2,R1
+        ANDS     R2,R2,R0
+        CMP      R2,R1
+        ITT     EQ 
+        MOVEQ    R0,#+9
+        BXEQ     LR
+//  221   else if((Color & ORANGE)== ORANGE) return 10;
+        LDR.N    R1,??Color_Num_0+0x18  ;; 0x51f
+        MOVS     R2,R1
+        ANDS     R2,R2,R0
+        CMP      R2,R1
+        ITT     EQ 
+        MOVEQ    R0,#+10
+        BXEQ     LR
+//  222   else if((Color & BLUE  )== BLUE  ) return 11;
+        ANDS     R1,R0,#0xF800
+        CMP      R1,#+63488
+        ITT     EQ 
+        MOVEQ    R0,#+11
+        BXEQ     LR
+//  223   else if((Color & RED   )== RED   ) return 12;
+        LSLS     R0,R0,#+27
+        LSRS     R0,R0,#+27
+        CMP      R0,#+31
+        ITT     EQ 
+        MOVEQ    R0,#+12
+        BXEQ     LR
+//  224   else                               return 13;
+        MOVS     R0,#+13
+        BX       LR               ;; return
+        DATA
+??Color_Num_0:
+        DC32     0xffff
+        DC32     0xf81f
+        DC32     0xbde0
+        DC32     0x5f7
+        DC32     0xb817
+        DC32     0x7bef
+        DC32     0x51f
+        CFI EndBlock cfiBlock4
+//  225 }
+//  226 /*******************************************************************************
+//  227 Load_Parameter: 加载之前的工作参数                           Return: 0= Success
+//  228 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function Load_Parameter
+        THUMB
+//  229 u8 Load_Parameter(void)            // 参数区共有4页，每页 256 Byte
+//  230 { 
+Load_Parameter:
+        PUSH     {R4,R6,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R6 Frame(CFA, -8)
+        CFI R4 Frame(CFA, -12)
+        CFI CFA R13+12
+//  231   u8 Versions =0x03, Sum =0;
+//  232   u16 i;
+//  233   u16* p = (u16*)SecBuff;
+//  234   
+//  235   __Param_Area_RD(SecBuff, PAGE_0);
+        LDR.N    R4,??DataTable21  ;; SecBuff
+        MOVS     R1,#+0
+        MOVS     R6,#+0
+        MOVS     R0,R4
+        _BLF     __Param_Area_RD,??__Param_Area_RD??rT
+//  236  
+//  237   if(Versions !=(*p & 0xFF)) return 1;          // 版本出错返回
+        LDRH     R0,[R4, #+0]
+        UXTB     R0,R0
+        CMP      R0,#+3
+        ITT     NE 
+        MOVNE    R0,#+1
+        POPNE    {R4,R6,PC}
+//  238   for(i=0; i<256; ++i) Sum += SecBuff[i];
+        MOVS     R0,#+0
+        MOVS     R2,#+256
+        B.N      ??Load_Parameter_0
+??Load_Parameter_1:
+        LDRB     R1,[R4, R0]
+        ADDS     R0,R0,#+1
+        UXTH     R0,R0
+        ADDS     R6,R6,R1
+        UXTB     R6,R6
+??Load_Parameter_0:
+        CMP      R0,R2
+        BCC.N    ??Load_Parameter_1
+//  239   if(Sum != 0) return 2;                  // 校验和出错返回
+        CBZ      R6,??Load_Parameter_2
+        MOVS     R0,#+2
+        POP      {R4,R6,PC}
+//  240   
+//  241   Current =(*p++ >>8);                    // 加载之前的 Current Title
+??Load_Parameter_2:
+        LDR.N    R0,??DataTable22  ;; Current
+        LDRH     R1,[R4], #+2
+        LSRS     R1,R1,#+8
+        STRB     R1,[R0, #+0]
+//  242   
+//  243   for(i=0; i<7; i++){ 
+        MOVS     R0,#+0
+        B.N      ??Load_Parameter_3
+??Load_Parameter_4:
+        LDR.N    R2,??DataTable23  ;; Detail
+        ADDS     R1,R2,R0, LSL #+1
+        LDRH     R2,[R4, #+0]
+//  244     Detail[i*2]  = *p;
+//  245     Detail[i*2+1]= (*p++ >>8);             // 加载之前的 Detail
+        ADDS     R0,R0,#+1
+        UXTH     R0,R0
+        STRB     R2,[R1, #+0]
+        LDRH     R2,[R4], #+2
+        LSRS     R2,R2,#+8
+        STRB     R2,[R1, #+1]
+??Load_Parameter_3:
+        CMP      R0,#+7
+        BCC.N    ??Load_Parameter_4
+//  246   }
+//  247   for(i=0; i<13; i++){
+        LDR.N    R3,??DataTable12  ;; Title
+        MOVS     R0,#+0
+        B.N      ??Load_Parameter_5
+//  248     Title[i][0].Value = *p++;             // 加载之前的显示菜单中各个对应项的值
+??Load_Parameter_6:
+        MOVS     R2,#+80
+//  249     Title[i][1].Value = *p++;
+//  250     Title[i][2].Value = *p++;
+//  251     Title[i][3].Value = *p++;
+//  252   }
+        ADDS     R0,R0,#+1
+        MLA      R1,R1,R2,R3
+        LDRH     R2,[R4, #+0]
+        UXTH     R0,R0
+        STRH     R2,[R1, #+16]!
+        LDRH     R2,[R4, #+2]
+        STRH     R2,[R1, #+20]
+        LDRH     R2,[R4, #+4]
+        STRH     R2,[R1, #+40]
+        LDRH     R2,[R4, #+6]
+        ADDS     R4,R4,#+8
+        STRH     R2,[R1, #+60]
+??Load_Parameter_5:
+        MOVS     R1,R0
+        CMP      R1,#+13
+        BCC.N    ??Load_Parameter_6
+//  253   for(i=0; i<9; i++){
+        LDR.N    R3,??DataTable25  ;; Meter
+        MOVS     R0,#+0
+        B.N      ??Load_Parameter_7
+//  254     Meter[i].Item     = *p;
+??Load_Parameter_8:
+        MOVS     R2,#+12
+//  255     Meter[i].Track    =(*p++ >>8);        // 加载之前的测量项目及测量对象
+//  256   }
+        ADDS     R0,R0,#+1
+        MLA      R1,R1,R2,R3
+        LDRH     R2,[R4, #+0]
+        UXTH     R0,R0
+        STRB     R2,[R1, #+5]
+        LDRH     R2,[R4], #+2
+        LSRS     R2,R2,#+8
+        STRB     R2,[R1, #+4]
+??Load_Parameter_7:
+        MOVS     R1,R0
+        CMP      R1,#+9
+        BCC.N    ??Load_Parameter_8
+//  257   for(i=0; i<10; i++){
+        MOVS     R0,#+0
+        B.N      ??Load_Parameter_9
+//  258     Ka1[i] = *p;                         // 恢复原来的 A 通道零点误差校正系数
+??Load_Parameter_10:
+        LDR.N    R2,??DataTable27  ;; Ka1
+        LDRH     R3,[R4, #+0]
+//  259     Kb1[i] =(*p++ >>8);                  // 恢复原来的 B 通道零点误差校正系数
+//  260     Ka2[i] = *p++;                       // 恢复原来的 A 通道增益误差校正系数
+//  261     Kb2[i] = *p++;                       // 加载之前的 B 通道增益误差校正系数
+//  262   }
+        ADDS     R0,R0,#+1
+        UXTH     R0,R0
+        STRB     R3,[R2, R1]
+        LDR.N    R2,??DataTable26  ;; Kb1
+        LDRH     R3,[R4, #+0]
+        LSRS     R3,R3,#+8
+        STRB     R3,[R2, R1]
+        LDR.N    R2,??DataTable28  ;; Ka2
+        LDRH     R3,[R4, #+2]
+        STRH     R3,[R2, R1, LSL #+1]
+        LDR.N    R2,??DataTable29  ;; Kb2
+        LDRH     R3,[R4, #+4]
+        ADDS     R4,R4,#+6
+        STRH     R3,[R2, R1, LSL #+1]
+??Load_Parameter_9:
+        MOVS     R1,R0
+        CMP      R1,#+10
+        BCC.N    ??Load_Parameter_10
+//  263   Ka3 = *p++;                            // 恢复原来的 A 通道位移误差校正系数
+        LDR.N    R0,??DataTable30  ;; Ka3
+        LDRH     R1,[R4, #+0]
+        STRH     R1,[R0, #+0]
+//  264   Kb3 = *p++;                            // 恢复原来的 B 通道位移误差校正系数
+        LDR.N    R0,??DataTable31  ;; Kb3
+        LDRH     R1,[R4, #+2]
+        STRH     R1,[R0, #+0]
+//  265 
+//  266   V_Trigg[A].Value = *p++;
+        LDR.N    R0,??DataTable32  ;; V_Trigg
+        LDRH     R1,[R4, #+4]
+        STRH     R1,[R0, #+0]
+//  267   V_Trigg[B].Value = *p++;               // 恢复原来A,B通道触发阈值
+        LDRH     R1,[R4, #+6]!
+        STRH     R1,[R0, #+4]
+//  268   
+//  269   return 0;
+        MOVS     R0,#+0
+        POP      {R4,R6,PC}
+        CFI EndBlock cfiBlock5
+//  270 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable12:
+        DC32     Title
+//  271 /*******************************************************************************
+//  272  Save_Parameter: 保存当前的工作参数                          Return: 0= Success
+//  273 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function Save_Parameter
+        THUMB
+//  274 u8 Save_Parameter(u8 Default)             // 参数区共有4页，每页 256 Byte
+//  275 {                                          // 目前只用了第0页
+Save_Parameter:
+        PUSH     {R4-R8,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R8 Frame(CFA, -8)
+        CFI R7 Frame(CFA, -12)
+        CFI R6 Frame(CFA, -16)
+        CFI R5 Frame(CFA, -20)
+        CFI R4 Frame(CFA, -24)
+        CFI CFA R13+24
+//  276   u8 Versions =0x03, Sum =0;
+//  277   u16* p =(u16*)SecBuff;
+//  278   u16  i;
+//  279   
+//  280   memset(SecBuff,0,256);  
+        LDR.N    R6,??DataTable21  ;; SecBuff
+        MOVS     R4,#+0
+        MOVS     R2,#+256
+        MOVS     R7,R0
+        MOVS     R0,#+3
+        MOV      R8,R0
+        MOV      R1,R4
+        MOVS     R0,R6
+        _BLF     memset,??memset??rT
+        MOVS     R5,#+0
+//  281   
+//  282   if(Default) Versions =0xFF;
+        CBZ      R7,??Save_Parameter_0
+        MOVS     R0,#+255
+        MOV      R8,R0
+//  283   *p++ =(Current <<8)+ Versions;            // 保存参数版本号及当前的 Title
+??Save_Parameter_0:
+        LDR.N    R0,??DataTable22  ;; Current
+//  284   
+//  285   for(i=0; i<7; i++) 
+        MOVS     R1,#+0
+        LDRB     R0,[R0, #+0]
+        ADDS     R0,R8,R0, LSL #+8
+        STRH     R0,[R6, #+0]
+        ADDS     R0,R6,#+2
+        B.N      ??Save_Parameter_1
+??Save_Parameter_2:
+        LDR.N    R3,??DataTable23  ;; Detail
+        ADDS     R2,R3,R1, LSL #+1
+        LDRB     R3,[R2, #+1]
+        LDRB     R2,[R2, #+0]
+//  286     *p++ =(Detail[i*2+1]<<8)+ Detail[i*2]; // 保存当前的 Detail
+        ADDS     R1,R1,#+1
+        UXTH     R1,R1
+        ADDS     R2,R2,R3, LSL #+8
+        STRH     R2,[R0], #+2
+??Save_Parameter_1:
+        CMP      R1,#+7
+        BCC.N    ??Save_Parameter_2
+//  287   
+//  288   for(i=0; i<13; i++){                     // 保存显示菜单中各个对应项的值
+        LDR.N    R7,??DataTable24  ;; Title
+        MOVS     R1,#+0
+        B.N      ??Save_Parameter_3
+//  289     *p++ = Title[i][0].Value;
+??Save_Parameter_4:
+        MOVS     R3,#+80
+//  290     *p++ = Title[i][1].Value;
+//  291     *p++ = Title[i][2].Value;
+//  292     *p++ = Title[i][3].Value;
+//  293   }
+        ADDS     R1,R1,#+1
+        MLA      R2,R2,R3,R7
+        UXTH     R1,R1
+        LDRH     R3,[R2, #+16]
+        STRH     R3,[R0, #+0]
+        LDRH     R3,[R2, #+36]
+        STRH     R3,[R0, #+2]
+        LDRH     R3,[R2, #+56]
+        ADDS     R2,R2,#+76
+        STRH     R3,[R0, #+4]
+        LDRH     R2,[R2, #+0]
+        STRH     R2,[R0, #+6]
+        ADDS     R0,R0,#+8
+??Save_Parameter_3:
+        MOVS     R2,R1
+        CMP      R2,#+13
+        BCC.N    ??Save_Parameter_4
+//  294   for(i=0; i<9; i++){
+        LDR.N    R7,??DataTable25  ;; Meter
+        MOVS     R1,#+0
+        B.N      ??Save_Parameter_5
+//  295     *p++ =(Meter[i].Track<<8)+ Meter[i].Item; // 保存测量项目及测量对象
+??Save_Parameter_6:
+        MOVS     R3,#+12
+//  296   }
+        ADDS     R1,R1,#+1
+        MLA      R2,R2,R3,R7
+        UXTH     R1,R1
+        LDRB     R3,[R2, #+4]
+        LDRB     R2,[R2, #+5]
+        ADDS     R2,R2,R3, LSL #+8
+        STRH     R2,[R0], #+2
+??Save_Parameter_5:
+        MOVS     R2,R1
+        CMP      R2,#+9
+        BCC.N    ??Save_Parameter_6
+//  297   for(i=0; i<10; i++){
+        MOVS     R1,#+0
+        B.N      ??Save_Parameter_7
+//  298     *p++ =(Kb1[i]<<8)+ Ka1[i];             // 保存当前 A,B 通道零点误差校正系数
+??Save_Parameter_8:
+        LDR.N    R3,??DataTable26  ;; Kb1
+        LDR.N    R7,??DataTable27  ;; Ka1
+//  299     *p++ = Ka2[i];                         // 保存当前 A 通道增益误差校正系数
+//  300     *p++ = Kb2[i];                         // 保存当前 B 通道增益误差校正系数
+//  301   }
+        ADDS     R1,R1,#+1
+        LDRSB    R3,[R3, R2]
+        LDRSB    R7,[R7, R2]
+        UXTH     R1,R1
+        ADDS     R3,R7,R3, LSL #+8
+        STRH     R3,[R0, #+0]
+        LDR.N    R3,??DataTable28  ;; Ka2
+        LDRH     R3,[R3, R2, LSL #+1]
+        STRH     R3,[R0, #+2]
+        LDR.N    R3,??DataTable29  ;; Kb2
+        LDRH     R2,[R3, R2, LSL #+1]
+        STRH     R2,[R0, #+4]
+        ADDS     R0,R0,#+6
+??Save_Parameter_7:
+        MOVS     R2,R1
+        CMP      R2,#+10
+        BCC.N    ??Save_Parameter_8
+//  302   *p++ = Ka3;                              // 保存当前 A 通道位移误差校正系数
+        LDR.N    R1,??DataTable30  ;; Ka3
+        LDRH     R1,[R1, #+0]
+        STRH     R1,[R0, #+0]
+//  303   *p++ = Kb3;                              // 保存当前 B 通道位移误差校正系数
+        LDR.N    R1,??DataTable31  ;; Kb3
+        LDRH     R1,[R1, #+0]
+        STRH     R1,[R0, #+2]
+//  304   
+//  305   *p++ = V_Trigg[A].Value;
+        LDR.N    R1,??DataTable32  ;; V_Trigg
+        LDRH     R2,[R1, #+0]
+        STRH     R2,[R0, #+4]
+//  306   *p++ = V_Trigg[B].Value;                 // 保存当前A,B通道触发阈值   
+        LDRH     R1,[R1, #+4]
+        STRH     R1,[R0, #+6]!
+//  307   
+//  308   for(i=0; i<255; i++)  Sum += SecBuff[i]; //计算参数区校验和
+        B.N      ??Save_Parameter_9
+??Save_Parameter_10:
+        LDRB     R0,[R6, R4]
+        ADDS     R4,R4,#+1
+        UXTH     R4,R4
+        ADDS     R5,R5,R0
+        UXTB     R5,R5
+??Save_Parameter_9:
+        CMP      R4,#+255
+        BCC.N    ??Save_Parameter_10
+//  309   SecBuff[255] = (~Sum)+ 1;
+        MVNS     R0,R5
+        ADDS     R0,R0,#+1
+        STRB     R0,[R6, #+255]
+//  310   __Param_Area_WR(SecBuff, PAGE_0); 
+        MOVS     R1,#+0
+        MOVS     R0,R6
+        _BLF     __Param_Area_WR,??__Param_Area_WR??rT
+//  311   return 0;
+        MOVS     R0,#+0
+        POP      {R4-R8,PC}       ;; return
+        CFI EndBlock cfiBlock6
+//  312 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable21:
+        DC32     SecBuff
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable22:
+        DC32     Current
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable23:
+        DC32     Detail
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable24:
+        DC32     Title
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable25:
+        DC32     Meter
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable26:
+        DC32     Kb1
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable27:
+        DC32     Ka1
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable28:
+        DC32     Ka2
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable29:
+        DC32     Kb2
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable30:
+        DC32     Ka3
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable31:
+        DC32     Kb3
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable32:
+        DC32     V_Trigg
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??u8ToDec3??rT:
+        LDR.N    R3,??Subroutine0_0  ;; u8ToDec3
+        BX       R3
+        DATA
+??Subroutine0_0:
+        DC32     u8ToDec3
+        CFI EndBlock cfiBlock7
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__Disk_Buff_RD??rT:
+        LDR.N    R3,??Subroutine1_0  ;; __Disk_Buff_RD
+        BX       R3
+        DATA
+??Subroutine1_0:
+        DC32     __Disk_Buff_RD
+        CFI EndBlock cfiBlock8
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__Disk_Buff_WR??rT:
+        LDR.N    R3,??Subroutine2_0  ;; __Disk_Buff_WR
+        BX       R3
+        DATA
+??Subroutine2_0:
+        DC32     __Disk_Buff_WR
+        CFI EndBlock cfiBlock9
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__Point_SCR??rT:
+        LDR.N    R3,??Subroutine3_0  ;; __Point_SCR
+        BX       R3
+        DATA
+??Subroutine3_0:
+        DC32     __Point_SCR
+        CFI EndBlock cfiBlock10
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock11 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__LCD_GetPixl??rT:
+        LDR.N    R3,??Subroutine4_0  ;; __LCD_GetPixl
+        BX       R3
+        DATA
+??Subroutine4_0:
+        DC32     __LCD_GetPixl
+        CFI EndBlock cfiBlock11
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock12 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Print_Clk??rT:
+        PUSH     {R3}
+        CFI CFA R13+4
+        LDR.N    R3,??Subroutine5_0  ;; Print_Clk
+        MOV      R12,R3
+        POP      {R3}
+        CFI CFA R13+0
+        BX       R12
+        Nop      
+        DATA
+??Subroutine5_0:
+        DC32     Print_Clk
+        CFI EndBlock cfiBlock12
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock13 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__Param_Area_RD??rT:
+        LDR.N    R3,??Subroutine6_0  ;; __Param_Area_RD
+        BX       R3
+        DATA
+??Subroutine6_0:
+        DC32     __Param_Area_RD
+        CFI EndBlock cfiBlock13
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock14 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??memset??rT:
+        LDR.N    R3,??Subroutine7_0  ;; memset
+        BX       R3
+        DATA
+??Subroutine7_0:
+        DC32     memset
+        CFI EndBlock cfiBlock14
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock15 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__Param_Area_WR??rT:
+        LDR.N    R3,??Subroutine8_0  ;; __Param_Area_WR
+        BX       R3
+        DATA
+??Subroutine8_0:
+        DC32     __Param_Area_WR
+        CFI EndBlock cfiBlock15
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(2)
+`?<Initializer for RsvdSecCnt>`:
+        DATA
+        DC8 0, 0
+`?<Initializer for SectorSize>`:
+        DC8 0, 0
+`?<Initializer for FAT_Size16>`:
+        DC8 0, 0
+`?<Initializer for SecPerClus>`:
+        DC8 0, 0
+`?<Initializer for DirSecNum>`:
+        DC8 0, 0
+        DC8 0, 0
+`?<Initializer for BMP_Color>`:
+        DC16 65535, 65504, 48608, 2047, 1527, 63519, 47127, 2016, 1504, 31727
+        DC16 1311, 63488, 31, 0, 0, 0
+`?<Initializer for DiskStart>`:
+        DC8 0, 0, 0, 0
+`?<Initializer for Hidden_Sec>`:
+        DC8 0, 0, 0, 0
+`?<Initializer for Root_Addr>`:
+        DC8 0, 0, 0, 0
+`?<Initializer for ClusterNum>`:
+        DC8 0, 0, 0, 0
+`?<Initializer for File_Addr>`:
+        DC8 0, 0, 0, 0
+`?<Initializer for File_Size>`:
+        DC8 0, 0, 0, 0
+`?<Initializer for FileBuff>`:
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_Z:
+        DCD      sfe(DATA_Z) - sfb(DATA_Z), sfb(DATA_Z), sfb(DATA_Z)
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(2)
+`?*?DATA_ID`:
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_I:
+        DCD      sfe(DATA_I) - sfb(DATA_I), sfb(DATA_I), sfb(DATA_ID)
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+`?<Constant "FILE    BMP">`:
+        DATA
+        DC8 "FILE    BMP"
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+        DATA
+        DC8 "DAT"
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+        DATA
+        DC8 "BMP"
+
+        END
+//  313 
+//  314 /******************************** END OF FILE *********************************/
+//  315 
+// 
+// 1 664 bytes in segment CODE
+//    20 bytes in segment DATA_C
+// 1 268 bytes in segment DATA_I
+// 1 268 bytes in segment DATA_ID
+//   524 bytes in segment DATA_Z
+//    24 bytes in segment INITTAB
+// 
+// 1 584 bytes of CODE  memory (+ 104 bytes shared)
+// 1 288 bytes of CONST memory
+// 1 792 bytes of DATA  memory
+//
+//Errors: none
+//Warnings: none

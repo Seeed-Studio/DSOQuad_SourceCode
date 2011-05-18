@@ -1,0 +1,1274 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32 EVALUATION   25/Apr/2011  15:04:53 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  C:\Users\Administrator\Desktop\mini DSO             /
+//                       download\SYS_V1.34\SYS_V1.34\source\USB_prop.c      /
+//    Command line    =  "C:\Users\Administrator\Desktop\mini DSO            /
+//                       download\SYS_V1.34\SYS_V1.34\source\USB_prop.c"     /
+//                       -lA "C:\Users\Administrator\Desktop\mini DSO        /
+//                       download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\List\"  /
+//                       -o "C:\Users\Administrator\Desktop\mini DSO         /
+//                       download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\"   /
+//                       -s9 --no_inline --cpu_mode thumb --endian little    /
+//                       --cpu cortex-M3 --stack_align 4 -e --fpu None       /
+//                       --dlib_config "E:\IARWorkBench(Cracked)\Embedded    /
+//                       Workbench 4.0 Evaluation\ARM\LIB\dl7mptnnl8n.h" -I  /
+//                       "C:\Users\Administrator\Desktop\mini DSO            /
+//                       download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\..\..\F /
+//                       WLib\inc\" -I "C:\Users\Administrator\Desktop\mini  /
+//                       DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\..\ /
+//                       ..\USBLib\inc\" -I "C:\Users\Administrator\Desktop\ /
+//                       mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpjec /
+//                       t\..\include\" -I "E:\IARWorkBench(Cracked)\Embedde /
+//                       d Workbench 4.0 Evaluation\ARM\INC\"                /
+//    List file       =  C:\Users\Administrator\Desktop\mini DSO             /
+//                       download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\List\US /
+//                       B_prop.s79                                          /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME USB_prop
+
+        RTMODEL "StackAlign4", "USED"
+        RTMODEL "__cpu_mode", "__pcs__thumb"
+        RTMODEL "__data_model", "absolute"
+        RTMODEL "__endian", "little"
+        RTMODEL "__rt_version", "6"
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+        PUBWEAK `?*?DATA_ID`
+        MULTWEAK ??Bot_Abort??rT
+        MULTWEAK ??ClearDTOG_RX??rT
+        MULTWEAK ??ClearDTOG_TX??rT
+        MULTWEAK ??Clear_Status_Out??rT
+??DataTable0 EQU 0
+??DataTable1 EQU 0
+??DataTable10 EQU 0
+??DataTable11 EQU 0
+??DataTable13 EQU 0
+??DataTable14 EQU 0
+??DataTable18 EQU 0
+??DataTable2 EQU 0
+??DataTable3 EQU 0
+??DataTable4 EQU 0
+??DataTable5 EQU 0
+??DataTable6 EQU 0
+??DataTable7 EQU 0
+??DataTable8 EQU 0
+??DataTable9 EQU 0
+        MULTWEAK ??Get_SerialNum??rT
+        MULTWEAK ??PowerOn??rT
+        MULTWEAK ??SetBTABLE??rT
+        MULTWEAK ??SetDeviceAddress??rT
+        MULTWEAK ??SetEPRxAddr??rT
+        MULTWEAK ??SetEPRxCount??rT
+        MULTWEAK ??SetEPRxStatus??rT
+        MULTWEAK ??SetEPRxValid??rT
+        MULTWEAK ??SetEPTxAddr??rT
+        MULTWEAK ??SetEPTxStatus??rT
+        MULTWEAK ??SetEPType??rT
+        MULTWEAK ??Standard_GetDescriptorData??rT
+        PUBWEAK ?init?tab?DATA_I
+        PUBWEAK ?init?tab?DATA_Z
+        PUBLIC Config_Descriptor
+        PUBLIC Device_Descriptor
+        PUBLIC Device_Property
+        PUBLIC Device_Table
+        PUBLIC Get_Max_Lun
+        FUNCTION Get_Max_Lun,0603H
+        PUBLIC MASS_Data_Setup
+        FUNCTION MASS_Data_Setup,0603H
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC MASS_GetConfigDescriptor
+        FUNCTION MASS_GetConfigDescriptor,0603H
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC MASS_GetDeviceDescriptor
+        FUNCTION MASS_GetDeviceDescriptor,0603H
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC MASS_GetStringDescriptor
+        FUNCTION MASS_GetStringDescriptor,0603H
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC MASS_Get_Interface_Setting
+        FUNCTION MASS_Get_Interface_Setting,0603H
+        PUBLIC MASS_NoData_Setup
+        FUNCTION MASS_NoData_Setup,0603H
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC MASS_Reset
+        FUNCTION MASS_Reset,0603H
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC MASS_Status_In
+        FUNCTION MASS_Status_In,0603H
+        PUBLIC MASS_Status_Out
+        FUNCTION MASS_Status_Out,0603H
+        PUBLIC MASS_init
+        FUNCTION MASS_init,0603H
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC Mass_Storage_ClearFeature
+        FUNCTION Mass_Storage_ClearFeature,0603H
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC Mass_Storage_SetConfiguration
+        FUNCTION Mass_Storage_SetConfiguration,0603H
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC Mass_Storage_SetDeviceAddress
+        FUNCTION Mass_Storage_SetDeviceAddress,0603H
+        PUBLIC Max_Lun
+        PUBLIC String_Descriptor
+        PUBLIC User_Standard_Requests
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA R13 HUGEDATA
+        CFI Resource R0:32, R1:32, R2:32, R3:32, R4:32, R5:32, R6:32, R7:32
+        CFI Resource R8:32, R9:32, R10:32, R11:32, R12:32, R13:32, R14:32
+        CFI VirtualResource ?RET:32
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 2
+        CFI DataAlign 4
+        CFI ReturnAddress ?RET CODE
+        CFI CFA R13+0
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI R8 SameValue
+        CFI R9 SameValue
+        CFI R10 SameValue
+        CFI R11 SameValue
+        CFI R12 Undefined
+        CFI R14 Undefined
+        CFI ?RET R14
+        CFI EndCommon cfiCommon0
+        
+Bot_Abort           SYMBOL "Bot_Abort"
+ClearDTOG_RX        SYMBOL "ClearDTOG_RX"
+ClearDTOG_TX        SYMBOL "ClearDTOG_TX"
+Clear_Status_Out    SYMBOL "Clear_Status_Out"
+Get_SerialNum       SYMBOL "Get_SerialNum"
+PowerOn             SYMBOL "PowerOn"
+SetBTABLE           SYMBOL "SetBTABLE"
+SetDeviceAddress    SYMBOL "SetDeviceAddress"
+SetEPRxAddr         SYMBOL "SetEPRxAddr"
+SetEPRxCount        SYMBOL "SetEPRxCount"
+SetEPRxStatus       SYMBOL "SetEPRxStatus"
+SetEPRxValid        SYMBOL "SetEPRxValid"
+SetEPTxAddr         SYMBOL "SetEPTxAddr"
+SetEPTxStatus       SYMBOL "SetEPTxStatus"
+SetEPType           SYMBOL "SetEPType"
+Standard_GetDescriptorData SYMBOL "Standard_GetDescriptorData"
+??Bot_Abort??rT     SYMBOL "??rT", Bot_Abort
+??ClearDTOG_RX??rT  SYMBOL "??rT", ClearDTOG_RX
+??ClearDTOG_TX??rT  SYMBOL "??rT", ClearDTOG_TX
+??Clear_Status_Out??rT SYMBOL "??rT", Clear_Status_Out
+??Get_SerialNum??rT SYMBOL "??rT", Get_SerialNum
+??PowerOn??rT       SYMBOL "??rT", PowerOn
+??SetBTABLE??rT     SYMBOL "??rT", SetBTABLE
+??SetDeviceAddress??rT SYMBOL "??rT", SetDeviceAddress
+??SetEPRxAddr??rT   SYMBOL "??rT", SetEPRxAddr
+??SetEPRxCount??rT  SYMBOL "??rT", SetEPRxCount
+??SetEPRxStatus??rT SYMBOL "??rT", SetEPRxStatus
+??SetEPRxValid??rT  SYMBOL "??rT", SetEPRxValid
+??SetEPTxAddr??rT   SYMBOL "??rT", SetEPTxAddr
+??SetEPTxStatus??rT SYMBOL "??rT", SetEPTxStatus
+??SetEPType??rT     SYMBOL "??rT", SetEPType
+??Standard_GetDescriptorData??rT SYMBOL "??rT", Standard_GetDescriptorData
+
+        EXTERN Bot_Abort
+        FUNCTION Bot_Abort,0202H
+        EXTERN Bot_State
+        EXTERN CBW
+        EXTERN ClearDTOG_RX
+        FUNCTION ClearDTOG_RX,0202H
+        EXTERN ClearDTOG_TX
+        FUNCTION ClearDTOG_TX,0202H
+        EXTERN Clear_Status_Out
+        FUNCTION Clear_Status_Out,0202H
+        EXTERN Device_Info
+        EXTERN Get_SerialNum
+        FUNCTION Get_SerialNum,0202H
+        EXTERN MASS_ConfigDescriptor
+        EXTERN MASS_DeviceDescriptor
+        EXTERN MASS_StringInterface
+        EXTERN MASS_StringLangID
+        EXTERN MASS_StringProduct
+        EXTERN MASS_StringSerial
+        EXTERN MASS_StringVendor
+        EXTERN NOP_Process
+        FUNCTION NOP_Process,0602H
+        EXTERN PowerOn
+        FUNCTION PowerOn,0202H
+        EXTERN SetBTABLE
+        FUNCTION SetBTABLE,0202H
+        EXTERN SetDeviceAddress
+        FUNCTION SetDeviceAddress,0202H
+        EXTERN SetEPRxAddr
+        FUNCTION SetEPRxAddr,0202H
+        EXTERN SetEPRxCount
+        FUNCTION SetEPRxCount,0202H
+        EXTERN SetEPRxStatus
+        FUNCTION SetEPRxStatus,0202H
+        EXTERN SetEPRxValid
+        FUNCTION SetEPRxValid,0202H
+        EXTERN SetEPTxAddr
+        FUNCTION SetEPTxAddr,0202H
+        EXTERN SetEPTxStatus
+        FUNCTION SetEPTxStatus,0202H
+        EXTERN SetEPType
+        FUNCTION SetEPType,0202H
+        EXTERN Standard_GetDescriptorData
+        FUNCTION Standard_GetDescriptorData,0202H
+        EXTERN bDeviceState
+        EXTERN pInformation
+        EXTERN wInterrupt_Mask
+
+// C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\source\USB_prop.c
+//    1 /******************** (C) COPYRIGHT 2008 STMicroelectronics ********************
+//    2 * File Name          : usb_prop.c
+//    3 * Author             : MCD Application Team
+//    4 * Version            : V2.2.1
+//    5 * Date               : 09/22/2008
+//    6 * Description        : All processing related to Mass Storage Demo
+//    7 *******************************************************************************/
+//    8 
+//    9 #include "Config.h"
+//   10 #include "Memory.h"
+//   11 //#include "Mass_mal.h"
+//   12 #include "USB_desc.h"
+//   13 #include "USB_pwr.h"
+//   14 #include "USB_bot.h"
+//   15 #include "USB_prop.h"
+//   16 #include "USB_lib.h"
+//   17 
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+//   18 u32 Max_Lun = 0;
+Max_Lun:
+        DS8 4
+//   19 
+
+        RSEG DATA_I:DATA:SORT:NOROOT(0)
+//   20 DEVICE Device_Table =
+Device_Table:
+        DS8 2
+        REQUIRE `?<Initializer for Device_Table>`
+//   21   {
+//   22     EP_NUM,
+//   23     1
+//   24   };
+//   25 
+
+        RSEG DATA_I:DATA:SORT:NOROOT(2)
+//   26 DEVICE_PROP Device_Property =
+Device_Property:
+        DS8 48
+        REQUIRE `?<Initializer for Device_Property>`
+//   27   {
+//   28     MASS_init,
+//   29     MASS_Reset,
+//   30     MASS_Status_In,
+//   31     MASS_Status_Out,
+//   32     MASS_Data_Setup,
+//   33     MASS_NoData_Setup,
+//   34     MASS_Get_Interface_Setting,
+//   35     MASS_GetDeviceDescriptor,
+//   36     MASS_GetConfigDescriptor,
+//   37     MASS_GetStringDescriptor,
+//   38     0,
+//   39     0x40 /*MAX PACKET SIZE*/
+//   40   };
+//   41 
+
+        RSEG DATA_I:DATA:SORT:NOROOT(2)
+//   42 USER_STANDARD_REQUESTS User_Standard_Requests =
+User_Standard_Requests:
+        DS8 36
+        REQUIRE `?<Initializer for User_Standard_Requests>`
+//   43   {
+//   44     Mass_Storage_GetConfiguration,
+//   45     Mass_Storage_SetConfiguration,
+//   46     Mass_Storage_GetInterface,
+//   47     Mass_Storage_SetInterface,
+//   48     Mass_Storage_GetStatus,
+//   49     Mass_Storage_ClearFeature,
+//   50     Mass_Storage_SetEndPointFeature,
+//   51     Mass_Storage_SetDeviceFeature,
+//   52     Mass_Storage_SetDeviceAddress
+//   53   };
+//   54 
+
+        RSEG DATA_I:DATA:SORT:NOROOT(2)
+//   55 ONE_DESCRIPTOR Device_Descriptor =
+Device_Descriptor:
+        DS8 8
+        REQUIRE `?<Initializer for Device_Descriptor>`
+//   56   {
+//   57     (u8*)MASS_DeviceDescriptor,
+//   58     MASS_SIZ_DEVICE_DESC
+//   59   };
+//   60 
+
+        RSEG DATA_I:DATA:SORT:NOROOT(2)
+//   61 ONE_DESCRIPTOR Config_Descriptor =
+Config_Descriptor:
+        DS8 8
+        REQUIRE `?<Initializer for Config_Descriptor>`
+//   62   {
+//   63     (u8*)MASS_ConfigDescriptor,
+//   64     MASS_SIZ_CONFIG_DESC
+//   65   };
+//   66 
+
+        RSEG DATA_I:DATA:SORT:NOROOT(2)
+//   67 ONE_DESCRIPTOR String_Descriptor[5] =
+String_Descriptor:
+        DS8 40
+        REQUIRE `?<Initializer for String_Descriptor>`
+//   68   {
+//   69     {(u8*)MASS_StringLangID, MASS_SIZ_STRING_LANGID},
+//   70     {(u8*)MASS_StringVendor, MASS_SIZ_STRING_VENDOR},
+//   71     {(u8*)MASS_StringProduct, MASS_SIZ_STRING_PRODUCT},
+//   72     {(u8*)MASS_StringSerial, MASS_SIZ_STRING_SERIAL},
+//   73     {(u8*)MASS_StringInterface, MASS_SIZ_STRING_INTERFACE},
+//   74   };
+//   75 
+//   76 extern unsigned char Bot_State;
+//   77 extern Bulk_Only_CBW CBW;
+//   78 
+//   79 /*******************************************************************************
+//   80 * Function Name  : MASS_init
+//   81 * Description    : Mass Storage init routine.
+//   82 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function MASS_init
+        THUMB
+//   83 void MASS_init()
+//   84 {
+MASS_init:
+        PUSH     {R4,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R4 Frame(CFA, -8)
+        CFI CFA R13+8
+//   85   /* Update the serial number string descriptor with the data from the unique
+//   86   ID*/
+//   87   Get_SerialNum();
+        _BLF     Get_SerialNum,??Get_SerialNum??rT
+//   88 
+//   89   pInformation->Current_Configuration = 0;
+        LDR.N    R0,??DataTable19  ;; pInformation
+        MOVS     R4,#+0
+        LDR      R0,[R0, #+0]
+        STRB     R4,[R0, #+10]
+//   90 
+//   91   /* Connect the device */
+//   92   PowerOn();
+        _BLF     PowerOn,??PowerOn??rT
+//   93 
+//   94   /* USB interrupts initialization */
+//   95   /* clear pending interrupts */
+//   96   _SetISTR(0);
+        LDR.N    R0,??MASS_init_0  ;; 0x40005c44
+//   97   wInterrupt_Mask = IMR_MSK;
+        LDR.N    R1,??MASS_init_0+0x4  ;; wInterrupt_Mask
+        STR      R4,[R0, #+0]
+        MOVS     R0,#+33792
+        STRH     R0,[R1, #+0]
+//   98   /* set interrupts mask */
+//   99   _SetCNTR(wInterrupt_Mask);
+        LDR.N    R1,??MASS_init_0+0x8  ;; 0x40005c40
+        STR      R0,[R1, #+0]
+//  100 
+//  101   bDeviceState = UNCONNECTED;
+        LDR.N    R0,??DataTable12  ;; bDeviceState
+        STR      R4,[R0, #+0]
+//  102 }
+        POP      {R4,PC}          ;; return
+        DATA
+??MASS_init_0:
+        DC32     0x40005c44
+        DC32     wInterrupt_Mask
+        DC32     0x40005c40
+        CFI EndBlock cfiBlock0
+//  103 
+//  104 /*******************************************************************************
+//  105 * Function Name  : MASS_Reset
+//  106 * Description    : Mass Storage reset routine.
+//  107 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function MASS_Reset
+        THUMB
+//  108 void MASS_Reset()
+//  109 {
+//  110   /* Set the device as not configured */
+//  111   Device_Info.Current_Configuration = 0;
+MASS_Reset:
+        LDR.N    R0,??MASS_Reset_0  ;; Device_Info + 10
+//  112 
+//  113   /* Current Feature initialization */
+//  114   pInformation->Current_Feature = MASS_ConfigDescriptor[7];
+        LDR.N    R1,??MASS_Reset_0+0x4  ;; MASS_ConfigDescriptor + 7
+        PUSH     {R4,R5,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R5 Frame(CFA, -8)
+        CFI R4 Frame(CFA, -12)
+        CFI CFA R13+12
+//  115 
+//  116   SetBTABLE(BTABLE_ADDRESS);
+//  117 
+//  118   /* Initialize Endpoint 0 */
+//  119   SetEPType(ENDP0, EP_CONTROL);
+//  120   SetEPTxStatus(ENDP0, EP_TX_NAK);
+//  121   SetEPRxAddr(ENDP0, ENDP0_RXADDR);
+//  122   SetEPRxCount(ENDP0, Device_Property.MaxPacketSize);
+        LDR.N    R5,??MASS_Reset_0+0x8  ;; Device_Property
+        LDRB     R1,[R1, #+0]
+        MOVS     R4,#+0
+        STRB     R4,[R0, #+0]
+        LDR.N    R0,??DataTable19  ;; pInformation
+        LDR      R0,[R0, #+0]
+        STRB     R1,[R0, #+9]
+        MOVS     R0,#+0
+        _BLF     SetBTABLE,??SetBTABLE??rT
+        MOVS     R1,#+512
+        MOV      R0,R4
+        _BLF     SetEPType,??SetEPType??rT
+        MOVS     R1,#+32
+        MOV      R0,R4
+        _BLF     SetEPTxStatus,??SetEPTxStatus??rT
+        MOVS     R1,#+24
+        MOV      R0,R4
+        _BLF     SetEPRxAddr,??SetEPRxAddr??rT
+        LDRB     R1,[R5, #+44]
+        MOV      R0,R4
+        _BLF     SetEPRxCount,??SetEPRxCount??rT
+//  123   SetEPTxAddr(ENDP0, ENDP0_TXADDR);
+        MOVS     R1,#+88
+        MOV      R0,R4
+        _BLF     SetEPTxAddr,??SetEPTxAddr??rT
+//  124   Clear_Status_Out(ENDP0);
+        MOV      R0,R4
+        _BLF     Clear_Status_Out,??Clear_Status_Out??rT
+//  125   SetEPRxValid(ENDP0);
+        MOV      R0,R4
+        _BLF     SetEPRxValid,??SetEPRxValid??rT
+//  126 
+//  127   /* Initialize Endpoint 1 */
+//  128   SetEPType(ENDP1, EP_BULK);
+        MOV      R1,R4
+        MOVS     R0,#+1
+        _BLF     SetEPType,??SetEPType??rT
+//  129   SetEPTxAddr(ENDP1, ENDP1_TXADDR);
+        MOVS     R1,#+152
+        MOVS     R0,#+1
+        _BLF     SetEPTxAddr,??SetEPTxAddr??rT
+//  130   SetEPTxStatus(ENDP1, EP_TX_NAK);
+        MOVS     R1,#+32
+        MOVS     R0,#+1
+        _BLF     SetEPTxStatus,??SetEPTxStatus??rT
+//  131   SetEPRxStatus(ENDP1, EP_RX_DIS);
+        MOV      R1,R4
+        MOVS     R0,#+1
+        _BLF     SetEPRxStatus,??SetEPRxStatus??rT
+//  132 
+//  133   /* Initialize Endpoint 2 */
+//  134   SetEPType(ENDP2, EP_BULK);
+        MOV      R1,R4
+        MOVS     R0,#+2
+        _BLF     SetEPType,??SetEPType??rT
+//  135   SetEPRxAddr(ENDP2, ENDP2_RXADDR);
+        MOVS     R1,#+216
+        MOVS     R0,#+2
+        _BLF     SetEPRxAddr,??SetEPRxAddr??rT
+//  136   SetEPRxCount(ENDP2, Device_Property.MaxPacketSize);
+        LDRB     R1,[R5, #+44]
+        MOVS     R0,#+2
+        _BLF     SetEPRxCount,??SetEPRxCount??rT
+//  137   SetEPRxStatus(ENDP2, EP_RX_VALID);
+        MOVS     R1,#+12288
+        MOVS     R0,#+2
+        _BLF     SetEPRxStatus,??SetEPRxStatus??rT
+//  138   SetEPTxStatus(ENDP2, EP_TX_DIS);
+        MOV      R1,R4
+        MOVS     R0,#+2
+        _BLF     SetEPTxStatus,??SetEPTxStatus??rT
+//  139 
+//  140 
+//  141   SetEPRxCount(ENDP0, Device_Property.MaxPacketSize);
+        LDRB     R1,[R5, #+44]!
+        MOV      R0,R4
+        _BLF     SetEPRxCount,??SetEPRxCount??rT
+//  142   SetEPRxValid(ENDP0);
+        MOV      R0,R4
+        _BLF     SetEPRxValid,??SetEPRxValid??rT
+//  143 
+//  144   /* Set the device to response on default address */
+//  145   SetDeviceAddress(0);
+        MOV      R0,R4
+        _BLF     SetDeviceAddress,??SetDeviceAddress??rT
+//  146 
+//  147   bDeviceState = ATTACHED;
+        LDR.N    R0,??DataTable12  ;; bDeviceState
+        MOVS     R1,#+1
+        STR      R1,[R0, #+0]
+//  148 
+//  149   CBW.dSignature = BOT_CBW_SIGNATURE;
+        LDR.N    R0,??DataTable15  ;; CBW
+        LDR.N    R1,??DataTable16  ;; 0x43425355
+        STR      R1,[R0, #+0]
+//  150   Bot_State = BOT_IDLE;
+        LDR.N    R0,??DataTable17  ;; Bot_State
+        STRB     R4,[R0, #+0]
+//  151 //  USB_NotConfigured_LED();
+//  152 }
+        POP      {R4,R5,PC}       ;; return
+        Nop      
+        DATA
+??MASS_Reset_0:
+        DC32     Device_Info + 10
+        DC32     MASS_ConfigDescriptor + 7
+        DC32     Device_Property
+        CFI EndBlock cfiBlock1
+//  153 
+//  154 /*******************************************************************************
+//  155 * Function Name  : Mass_Storage_SetConfiguration
+//  156 * Description    : Handle the SetConfiguration request.
+//  157 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function Mass_Storage_SetConfiguration
+        THUMB
+//  158 void Mass_Storage_SetConfiguration(void)
+//  159 {
+//  160   if (pInformation->Current_Configuration != 0)
+Mass_Storage_SetConfiguration:
+        LDR.N    R0,??DataTable19  ;; pInformation
+        PUSH     {LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI CFA R13+4
+        LDR      R0,[R0, #+0]
+        LDRB     R0,[R0, #+10]
+        CBZ      R0,??Mass_Storage_SetConfiguration_0
+//  161   {
+//  162     /* Device configured */
+//  163     bDeviceState = CONFIGURED;
+        LDR.N    R0,??DataTable12  ;; bDeviceState
+        MOVS     R1,#+5
+        STR      R1,[R0, #+0]
+//  164 
+//  165     ClearDTOG_TX(ENDP1);
+        MOVS     R0,#+1
+        _BLF     ClearDTOG_TX,??ClearDTOG_TX??rT
+//  166     ClearDTOG_RX(ENDP2);
+        MOVS     R0,#+2
+        _BLF     ClearDTOG_RX,??ClearDTOG_RX??rT
+//  167     Bot_State = BOT_IDLE; /* set the Bot state machine to the IDLE state */
+        LDR.N    R0,??DataTable17  ;; Bot_State
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+0]
+//  168   }
+//  169 }
+??Mass_Storage_SetConfiguration_0:
+        POP      {PC}             ;; return
+        CFI EndBlock cfiBlock2
+//  170 
+//  171 /*******************************************************************************
+//  172 * Function Name  : Mass_Storage_ClearFeature
+//  173 * Description    : Handle the ClearFeature request.
+//  174 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function Mass_Storage_ClearFeature
+        THUMB
+//  175 void Mass_Storage_ClearFeature(void)
+//  176 {
+//  177   /* when the host send a CBW with invalid signature or invalid length the two
+//  178      Endpoints (IN & OUT) shall stall until receiving a Mass Storage Reset     */
+//  179   if (CBW.dSignature != BOT_CBW_SIGNATURE)
+Mass_Storage_ClearFeature:
+        LDR.N    R0,??DataTable15  ;; CBW
+        LDR.N    R1,??DataTable16  ;; 0x43425355
+        PUSH     {LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI CFA R13+4
+        LDR      R0,[R0, #+0]
+        CMP      R0,R1
+        ITT     NE 
+//  180     Bot_Abort(BOTH_DIR);
+        MOVNE    R0,#+2
+        _BLFNE   Bot_Abort,??Bot_Abort??rT
+//  181 }
+        POP      {PC}             ;; return
+        CFI EndBlock cfiBlock3
+//  182 
+//  183 /*******************************************************************************
+//  184 * Function Name  : Mass_Storage_SetConfiguration.
+//  185 * Description    : Udpade the device state to addressed.
+//  186 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function Mass_Storage_SetDeviceAddress
+        THUMB
+//  187 void Mass_Storage_SetDeviceAddress (void)
+//  188 {
+//  189   bDeviceState = ADDRESSED;
+Mass_Storage_SetDeviceAddress:
+        LDR.N    R0,??DataTable12  ;; bDeviceState
+        MOVS     R1,#+4
+        STR      R1,[R0, #+0]
+//  190 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock4
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable12:
+        DC32     bDeviceState
+//  191 /*******************************************************************************
+//  192 * Function Name  : MASS_Status_In
+//  193 * Description    : Mass Storage Status IN routine.
+//  194 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function MASS_Status_In
+        THUMB
+//  195 void MASS_Status_In(void)
+//  196 {
+//  197   return;
+MASS_Status_In:
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock5
+//  198 }
+//  199 
+//  200 /*******************************************************************************
+//  201 * Function Name  : MASS_Status_Out
+//  202 * Description    : Mass Storage Status OUT routine.
+//  203 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function MASS_Status_Out
+        THUMB
+//  204 void MASS_Status_Out(void)
+//  205 {
+//  206   return;
+MASS_Status_Out:
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock6
+//  207 }
+//  208 
+//  209 /*******************************************************************************
+//  210 * Function Name  : MASS_Data_Setup.
+//  211 * Description    : Handle the data class specific requests..
+//  212 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function MASS_Data_Setup
+        THUMB
+//  213 RESULT MASS_Data_Setup(u8 RequestNo)
+//  214 {
+//  215   u8    *(*CopyRoutine)(u16);
+//  216 
+//  217   CopyRoutine = NULL;
+//  218   if ((Type_Recipient == (CLASS_REQUEST | INTERFACE_RECIPIENT))
+//  219       && (RequestNo == GET_MAX_LUN) && (pInformation->USBwValue == 0)
+//  220       && (pInformation->USBwIndex == 0) && (pInformation->USBwLength == 0x01))
+MASS_Data_Setup:
+        LDR.N    R1,??DataTable19  ;; pInformation
+        PUSH     {LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI CFA R13+4
+        LDR      R1,[R1, #+0]
+        LDRB     R2,[R1, #+0]
+        LSLS     R2,R2,#+25
+        LSRS     R2,R2,#+25
+        CMP      R2,#+33
+        BNE.N    ??MASS_Data_Setup_0
+        CMP      R0,#+254
+        BNE.N    ??MASS_Data_Setup_0
+        LDRH     R0,[R1, #+2]
+        CBNZ     R0,??MASS_Data_Setup_0
+        LDRH     R0,[R1, #+4]
+        CBNZ     R0,??MASS_Data_Setup_0
+        LDRH     R0,[R1, #+6]
+        CMP      R0,#+1
+        BNE.N    ??MASS_Data_Setup_0
+//  221   {
+//  222     CopyRoutine = Get_Max_Lun;
+//  223   }
+//  224   else
+//  225   {
+//  226     return USB_UNSUPPORT;
+//  227   }
+//  228 
+//  229   if (CopyRoutine == NULL)
+        LDR.N    R0,??MASS_Data_Setup_1  ;; Get_Max_Lun
+        MOVS     R2,R0
+        BNE.N    ??MASS_Data_Setup_2
+//  230   {
+//  231     return USB_UNSUPPORT;
+        MOVS     R0,#+2
+        POP      {PC}
+//  232   }
+??MASS_Data_Setup_0:
+        MOVS     R0,#+2
+        POP      {PC}
+//  233 
+//  234   pInformation->Ctrl_Info.CopyData = CopyRoutine;
+??MASS_Data_Setup_2:
+        STR      R0,[R1, #+24]
+//  235   pInformation->Ctrl_Info.Usb_wOffset = 0;
+        MOVS     R0,#+0
+        STRH     R0,[R1, #+18]
+//  236   (*CopyRoutine)(0);
+        BL       Get_Max_Lun
+//  237 
+//  238   return USB_SUCCESS;
+        MOVS     R0,#+0
+        POP      {PC}             ;; return
+        Nop      
+        DATA
+??MASS_Data_Setup_1:
+        DC32     Get_Max_Lun
+        CFI EndBlock cfiBlock7
+//  239 
+//  240 }
+//  241 
+//  242 /*******************************************************************************
+//  243 * Function Name  : MASS_NoData_Setup.
+//  244 * Description    : Handle the no data class specific requests.
+//  245 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI Function MASS_NoData_Setup
+        THUMB
+//  246 RESULT MASS_NoData_Setup(u8 RequestNo)
+//  247 {
+//  248   if ((Type_Recipient == (CLASS_REQUEST | INTERFACE_RECIPIENT))
+//  249       && (RequestNo == MASS_STORAGE_RESET) && (pInformation->USBwValue == 0)
+//  250       && (pInformation->USBwIndex == 0) && (pInformation->USBwLength == 0x00))
+MASS_NoData_Setup:
+        LDR.N    R1,??DataTable19  ;; pInformation
+        PUSH     {LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI CFA R13+4
+        LDR      R1,[R1, #+0]
+        LDRB     R2,[R1, #+0]
+        LSLS     R2,R2,#+25
+        LSRS     R2,R2,#+25
+        CMP      R2,#+33
+        BNE.N    ??MASS_NoData_Setup_0
+        CMP      R0,#+255
+        BNE.N    ??MASS_NoData_Setup_0
+        LDRH     R0,[R1, #+2]
+        CBNZ     R0,??MASS_NoData_Setup_0
+        LDRH     R0,[R1, #+4]
+        CBNZ     R0,??MASS_NoData_Setup_0
+        LDRH     R0,[R1, #+6]
+        CBNZ     R0,??MASS_NoData_Setup_0
+//  251   {
+//  252     /* Initialize Endpoint 1 */
+//  253     ClearDTOG_TX(ENDP1);
+        MOVS     R0,#+1
+        _BLF     ClearDTOG_TX,??ClearDTOG_TX??rT
+//  254 
+//  255     /* Initialize Endpoint 2 */
+//  256     ClearDTOG_RX(ENDP2);
+        MOVS     R0,#+2
+        _BLF     ClearDTOG_RX,??ClearDTOG_RX??rT
+//  257 
+//  258     /*intialise the CBW signature to enable the clear feature*/
+//  259     CBW.dSignature = BOT_CBW_SIGNATURE;
+        LDR.N    R0,??DataTable15  ;; CBW
+        LDR.N    R1,??DataTable16  ;; 0x43425355
+        STR      R1,[R0, #+0]
+//  260     Bot_State = BOT_IDLE;
+        LDR.N    R0,??DataTable17  ;; Bot_State
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+0]
+//  261 
+//  262     return USB_SUCCESS;
+        MOVS     R0,#+0
+        POP      {PC}
+//  263   }
+//  264   return USB_UNSUPPORT;
+??MASS_NoData_Setup_0:
+        MOVS     R0,#+2
+        POP      {PC}             ;; return
+        CFI EndBlock cfiBlock8
+//  265 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable15:
+        DC32     CBW
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable16:
+        DC32     0x43425355
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable17:
+        DC32     Bot_State
+//  266 
+//  267 /*******************************************************************************
+//  268 * Function Name  : MASS_Get_Interface_Setting
+//  269 * Description    : Test the interface and the alternate setting according to the
+//  270 *                  supported one.
+//  271 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI Function MASS_Get_Interface_Setting
+        THUMB
+//  272 RESULT MASS_Get_Interface_Setting(u8 Interface, u8 AlternateSetting)
+//  273 {
+//  274   if (AlternateSetting > 0)
+MASS_Get_Interface_Setting:
+        CBZ      R1,??MASS_Get_Interface_Setting_0
+//  275   {
+//  276     return USB_UNSUPPORT;/* in this application we don't have AlternateSetting*/
+        MOVS     R0,#+2
+        BX       LR
+//  277   }
+//  278   else if (Interface > 0)
+??MASS_Get_Interface_Setting_0:
+        CBZ      R0,??MASS_Get_Interface_Setting_1
+//  279   {
+//  280     return USB_UNSUPPORT;/*in this application we have only 1 interfaces*/
+        MOVS     R0,#+2
+//  281   }
+//  282   return USB_SUCCESS;
+??MASS_Get_Interface_Setting_1:
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock9
+//  283 }
+//  284 
+//  285 /*******************************************************************************
+//  286 * Function Name  : MASS_GetDeviceDescriptor
+//  287 * Description    : Get the device descriptor.
+//  288 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI Function MASS_GetDeviceDescriptor
+        THUMB
+//  289 u8 *MASS_GetDeviceDescriptor(u16 Length)
+//  290 {
+//  291   return Standard_GetDescriptorData(Length, &Device_Descriptor );
+MASS_GetDeviceDescriptor:
+        LDR.N    R1,??MASS_GetDeviceDescriptor_0  ;; Device_Descriptor
+        _BF.W    Standard_GetDescriptorData,??Standard_GetDescriptorData??rT
+        Nop      
+        DATA
+??MASS_GetDeviceDescriptor_0:
+        DC32     Device_Descriptor
+        CFI EndBlock cfiBlock10
+//  292 }
+//  293 
+//  294 /*******************************************************************************
+//  295 * Function Name  : MASS_GetConfigDescriptor
+//  296 * Description    : Get the configuration descriptor.
+//  297 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock11 Using cfiCommon0
+        CFI Function MASS_GetConfigDescriptor
+        THUMB
+//  298 u8 *MASS_GetConfigDescriptor(u16 Length)
+//  299 {
+//  300   return Standard_GetDescriptorData(Length, &Config_Descriptor );
+MASS_GetConfigDescriptor:
+        LDR.N    R1,??MASS_GetConfigDescriptor_0  ;; Config_Descriptor
+        _BF.W    Standard_GetDescriptorData,??Standard_GetDescriptorData??rT
+        Nop      
+        DATA
+??MASS_GetConfigDescriptor_0:
+        DC32     Config_Descriptor
+        CFI EndBlock cfiBlock11
+//  301 }
+//  302 
+//  303 /*******************************************************************************
+//  304 * Function Name  : MASS_GetStringDescriptor
+//  305 * Description    : Get the string descriptors according to the needed index.
+//  306 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock12 Using cfiCommon0
+        CFI Function MASS_GetStringDescriptor
+        THUMB
+//  307 u8 *MASS_GetStringDescriptor(u16 Length)
+//  308 {
+//  309   u8 wValue0 = pInformation->USBwValue0;
+MASS_GetStringDescriptor:
+        LDR.N    R1,??DataTable19  ;; pInformation
+        PUSH     {LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI CFA R13+4
+        LDR      R1,[R1, #+0]
+        LDRB     R1,[R1, #+3]
+//  310 
+//  311   if (wValue0 > 5)
+        CMP      R1,#+6
+        ITT     CS 
+//  312   {
+//  313     return NULL;
+        MOVCS    R0,#+0
+        POPCS    {PC}
+//  314   }
+//  315   else
+//  316   {
+//  317     return Standard_GetDescriptorData(Length, &String_Descriptor[wValue0]);
+        LDR.N    R2,??MASS_GetStringDescriptor_0  ;; String_Descriptor
+        ADDS     R1,R2,R1, LSL #+3
+        POP      {LR}             ;; Pop
+        CFI ?RET R14
+        CFI CFA R13+0
+        _BF.W    Standard_GetDescriptorData,??Standard_GetDescriptorData??rT
+        Nop      
+        DATA
+??MASS_GetStringDescriptor_0:
+        DC32     String_Descriptor
+        CFI EndBlock cfiBlock12
+//  318   }
+//  319 }
+//  320 
+//  321 /*******************************************************************************
+//  322 * Function Name  : Get_Max_Lun
+//  323 * Description    : Handle the Get Max Lun request.
+//  324 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock13 Using cfiCommon0
+        CFI Function Get_Max_Lun
+        THUMB
+//  325 u8 *Get_Max_Lun(u16 Length)
+//  326 {
+//  327   if (Length == 0)
+Get_Max_Lun:
+        CBNZ     R0,??Get_Max_Lun_0
+//  328   {
+//  329     pInformation->Ctrl_Info.Usb_wLength = LUN_DATA_LENGTH;
+        LDR.N    R0,??DataTable19  ;; pInformation
+        MOVS     R1,#+1
+        LDR      R0,[R0, #+0]
+        STRH     R1,[R0, #+16]
+//  330     return 0;
+        MOVS     R0,#+0
+        BX       LR
+//  331   }
+//  332   else
+//  333   {
+//  334     return((u8*)(&Max_Lun));
+??Get_Max_Lun_0:
+        LDR.N    R0,??Get_Max_Lun_1  ;; Max_Lun
+        BX       LR               ;; return
+        Nop      
+        DATA
+??Get_Max_Lun_1:
+        DC32     Max_Lun
+        CFI EndBlock cfiBlock13
+//  335   }
+//  336 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable19:
+        DC32     pInformation
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock14 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Get_SerialNum??rT:
+        LDR.N    R3,??Subroutine0_0  ;; Get_SerialNum
+        BX       R3
+        DATA
+??Subroutine0_0:
+        DC32     Get_SerialNum
+        CFI EndBlock cfiBlock14
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock15 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??PowerOn??rT:
+        LDR.N    R3,??Subroutine1_0  ;; PowerOn
+        BX       R3
+        DATA
+??Subroutine1_0:
+        DC32     PowerOn
+        CFI EndBlock cfiBlock15
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock16 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SetBTABLE??rT:
+        LDR.N    R3,??Subroutine2_0  ;; SetBTABLE
+        BX       R3
+        DATA
+??Subroutine2_0:
+        DC32     SetBTABLE
+        CFI EndBlock cfiBlock16
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock17 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SetEPType??rT:
+        LDR.N    R3,??Subroutine3_0  ;; SetEPType
+        BX       R3
+        DATA
+??Subroutine3_0:
+        DC32     SetEPType
+        CFI EndBlock cfiBlock17
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock18 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SetEPTxStatus??rT:
+        LDR.N    R3,??Subroutine4_0  ;; SetEPTxStatus
+        BX       R3
+        DATA
+??Subroutine4_0:
+        DC32     SetEPTxStatus
+        CFI EndBlock cfiBlock18
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock19 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SetEPRxAddr??rT:
+        LDR.N    R3,??Subroutine5_0  ;; SetEPRxAddr
+        BX       R3
+        DATA
+??Subroutine5_0:
+        DC32     SetEPRxAddr
+        CFI EndBlock cfiBlock19
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock20 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SetEPRxCount??rT:
+        LDR.N    R3,??Subroutine6_0  ;; SetEPRxCount
+        BX       R3
+        DATA
+??Subroutine6_0:
+        DC32     SetEPRxCount
+        CFI EndBlock cfiBlock20
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock21 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SetEPTxAddr??rT:
+        LDR.N    R3,??Subroutine7_0  ;; SetEPTxAddr
+        BX       R3
+        DATA
+??Subroutine7_0:
+        DC32     SetEPTxAddr
+        CFI EndBlock cfiBlock21
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock22 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Clear_Status_Out??rT:
+        LDR.N    R3,??Subroutine8_0  ;; Clear_Status_Out
+        BX       R3
+        DATA
+??Subroutine8_0:
+        DC32     Clear_Status_Out
+        CFI EndBlock cfiBlock22
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock23 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SetEPRxValid??rT:
+        LDR.N    R3,??Subroutine9_0  ;; SetEPRxValid
+        BX       R3
+        DATA
+??Subroutine9_0:
+        DC32     SetEPRxValid
+        CFI EndBlock cfiBlock23
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock24 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SetEPRxStatus??rT:
+        LDR.N    R3,??Subroutine10_0  ;; SetEPRxStatus
+        BX       R3
+        DATA
+??Subroutine10_0:
+        DC32     SetEPRxStatus
+        CFI EndBlock cfiBlock24
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock25 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SetDeviceAddress??rT:
+        LDR.N    R3,??Subroutine11_0  ;; SetDeviceAddress
+        BX       R3
+        DATA
+??Subroutine11_0:
+        DC32     SetDeviceAddress
+        CFI EndBlock cfiBlock25
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock26 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??ClearDTOG_TX??rT:
+        LDR.N    R3,??Subroutine12_0  ;; ClearDTOG_TX
+        BX       R3
+        DATA
+??Subroutine12_0:
+        DC32     ClearDTOG_TX
+        CFI EndBlock cfiBlock26
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock27 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??ClearDTOG_RX??rT:
+        LDR.N    R3,??Subroutine13_0  ;; ClearDTOG_RX
+        BX       R3
+        DATA
+??Subroutine13_0:
+        DC32     ClearDTOG_RX
+        CFI EndBlock cfiBlock27
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock28 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Bot_Abort??rT:
+        LDR.N    R3,??Subroutine14_0  ;; Bot_Abort
+        BX       R3
+        DATA
+??Subroutine14_0:
+        DC32     Bot_Abort
+        CFI EndBlock cfiBlock28
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock29 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Standard_GetDescriptorData??rT:
+        LDR.N    R3,??Subroutine15_0  ;; Standard_GetDescriptorData
+        BX       R3
+        DATA
+??Subroutine15_0:
+        DC32     Standard_GetDescriptorData
+        CFI EndBlock cfiBlock29
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for Device_Table>`:
+        DATA
+        DC8 3, 1
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(2)
+`?<Initializer for Device_Property>`:
+        DATA
+        DC32 MASS_init, MASS_Reset, MASS_Status_In, MASS_Status_Out
+        DC32 MASS_Data_Setup, MASS_NoData_Setup, MASS_Get_Interface_Setting
+        DC32 MASS_GetDeviceDescriptor, MASS_GetConfigDescriptor
+        DC32 MASS_GetStringDescriptor, 0H
+        DC8 64, 0, 0, 0
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(2)
+`?<Initializer for User_Standard_Requests>`:
+        DATA
+        DC32 NOP_Process, Mass_Storage_SetConfiguration, NOP_Process
+        DC32 NOP_Process, NOP_Process, Mass_Storage_ClearFeature, NOP_Process
+        DC32 NOP_Process, Mass_Storage_SetDeviceAddress
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(2)
+`?<Initializer for Device_Descriptor>`:
+        DATA
+        DC32 MASS_DeviceDescriptor
+        DC16 18
+        DC8 0, 0
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(2)
+`?<Initializer for Config_Descriptor>`:
+        DATA
+        DC32 MASS_ConfigDescriptor
+        DC16 32
+        DC8 0, 0
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(2)
+`?<Initializer for String_Descriptor>`:
+        DATA
+        DC32 MASS_StringLangID
+        DC16 4
+        DC8 0, 0
+        DC32 MASS_StringVendor
+        DC16 38
+        DC8 0, 0
+        DC32 MASS_StringProduct
+        DC16 38
+        DC8 0, 0
+        DC32 MASS_StringSerial
+        DC16 26
+        DC8 0, 0
+        DC32 MASS_StringInterface
+        DC16 16
+        DC8 0, 0
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(2)
+`?*?DATA_ID`:
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_I:
+        DCD      sfe(DATA_I) - sfb(DATA_I), sfb(DATA_I), sfb(DATA_ID)
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_Z:
+        DCD      sfe(DATA_Z) - sfb(DATA_Z), sfb(DATA_Z), sfb(DATA_Z)
+
+        END
+//  337 
+//  338 /******************* (C) COPYRIGHT 2008 STMicroelectronics *****END OF FILE****/
+// 
+// 708 bytes in segment CODE
+// 142 bytes in segment DATA_I
+// 142 bytes in segment DATA_ID
+//   4 bytes in segment DATA_Z
+//  24 bytes in segment INITTAB
+// 
+// 580 bytes of CODE  memory (+ 152 bytes shared)
+// 142 bytes of CONST memory
+// 146 bytes of DATA  memory
+//
+//Errors: none
+//Warnings: none

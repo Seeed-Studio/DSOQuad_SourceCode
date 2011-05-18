@@ -1,0 +1,201 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32 EVALUATION   25/Apr/2011  15:04:54 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  C:\Users\Administrator\Desktop\mini DSO             /
+//                       download\SYS_V1.34\SYS_V1.34\source\scsi_data.c     /
+//    Command line    =  "C:\Users\Administrator\Desktop\mini DSO            /
+//                       download\SYS_V1.34\SYS_V1.34\source\scsi_data.c"    /
+//                       -lA "C:\Users\Administrator\Desktop\mini DSO        /
+//                       download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\List\"  /
+//                       -o "C:\Users\Administrator\Desktop\mini DSO         /
+//                       download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\Obj\"   /
+//                       -s9 --no_inline --cpu_mode thumb --endian little    /
+//                       --cpu cortex-M3 --stack_align 4 -e --fpu None       /
+//                       --dlib_config "E:\IARWorkBench(Cracked)\Embedded    /
+//                       Workbench 4.0 Evaluation\ARM\LIB\dl7mptnnl8n.h" -I  /
+//                       "C:\Users\Administrator\Desktop\mini DSO            /
+//                       download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\..\..\F /
+//                       WLib\inc\" -I "C:\Users\Administrator\Desktop\mini  /
+//                       DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\..\ /
+//                       ..\USBLib\inc\" -I "C:\Users\Administrator\Desktop\ /
+//                       mini DSO download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpjec /
+//                       t\..\include\" -I "E:\IARWorkBench(Cracked)\Embedde /
+//                       d Workbench 4.0 Evaluation\ARM\INC\"                /
+//    List file       =  C:\Users\Administrator\Desktop\mini DSO             /
+//                       download\SYS_V1.34\SYS_V1.34\IAR_V4_Prpject\List\sc /
+//                       si_data.s79                                         /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME scsi_data
+
+        RTMODEL "StackAlign4", "USED"
+        RTMODEL "__cpu_mode", "__pcs__thumb"
+        RTMODEL "__data_model", "absolute"
+        RTMODEL "__endian", "little"
+        RTMODEL "__rt_version", "6"
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+        PUBWEAK `?*?DATA_ID`
+        PUBWEAK ?init?tab?DATA_I
+        PUBWEAK ?init?tab?DATA_Z
+        PUBLIC Mode_Sense10_data
+        PUBLIC Mode_Sense6_data
+        PUBLIC Page00_Inquiry_Data
+        PUBLIC ReadCapacity10_Data
+        PUBLIC ReadFormatCapacity_Data
+        PUBLIC Scsi_Sense_Data
+        PUBLIC Standard_Inquiry_Data
+// C:\Users\Administrator\Desktop\mini DSO download\SYS_V1.34\SYS_V1.34\source\scsi_data.c
+//    1 /********************* (C) COPYRIGHT 2010 e-Design Co.,Ltd. ********************
+//    2  File Name : SCSI_data.c  
+//    3  Version   : DS203_SYS Ver 1.3x                                 Author : bure
+//    4 *******************************************************************************/
+//    5 #include "USB_scsi.h"
+//    6 #include "Memory.h"
+//    7 
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+//    8 u8 Page00_Inquiry_Data[] ={    // PERIPHERAL QUALIFIER & PERIPHERAL DEVICE TYPE
+Page00_Inquiry_Data:
+        DS8 8
+//    9     0x00, 0x00, 0x00, 0x00,
+//   10     0x00 };                    // Supported Pages 00
+//   11   
+
+        RSEG DATA_I:DATA:SORT:NOROOT(2)
+//   12 u8 Standard_Inquiry_Data[] ={
+Standard_Inquiry_Data:
+        DS8 36
+        REQUIRE `?<Initializer for Standard_Inquiry_Data>`
+//   13     0x00,                      // Direct Access Device 
+//   14     0x80,                      // RMB = 1: Removable Medium 
+//   15     0x02,                      // Version: No conformance claim to standard 
+//   16     0x02,
+//   17     36 - 4,                    // Additional Length 
+//   18     0x00,                      // SCCS = 1: Storage Controller Component 
+//   19     0x00,
+//   20     0x00,
+//   21     'M', 'i', 'n', 'i', '_', 'D', 'S', 'O',           // Vendor Identification 
+//   22     'F', 'l', 'a', 's', 'h', ' ', 'D', 'i', 's', 'k', // Product Identification
+//   23     ' ', ' ', ' ', ' ', ' ', ' ', ' ' 
+//   24 };
+//   25 
+
+        RSEG DATA_I:DATA:SORT:NOROOT(2)
+//   26 u8 Mode_Sense6_data[] ={
+Mode_Sense6_data:
+        DS8 4
+        REQUIRE `?<Initializer for Mode_Sense6_data>`
+//   27     0x03, 0x00, 0x00, 0x00};
+//   28 
+
+        RSEG DATA_I:DATA:SORT:NOROOT(2)
+//   29 u8 Mode_Sense10_data[] ={
+Mode_Sense10_data:
+        DS8 8
+        REQUIRE `?<Initializer for Mode_Sense10_data>`
+//   30     0x00, 0x06, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+//   31 
+
+        RSEG DATA_I:DATA:SORT:NOROOT(2)
+//   32 u8 Scsi_Sense_Data[] ={
+Scsi_Sense_Data:
+        DS8 20
+        REQUIRE `?<Initializer for Scsi_Sense_Data>`
+//   33     0x70,               //RespCode
+//   34     0x00,               //SegmentNumber
+//   35     NO_SENSE,           // Sens_Key
+//   36     0x00, 0x00, 0x00,
+//   37     0x00,               //Information
+//   38     0x0A,               //AdditionalSenseLength
+//   39     0x00, 0x00, 0x00,
+//   40     0x00,               //CmdInformation
+//   41     NO_SENSE,           //Asc
+//   42     0x00,               //ASCQ
+//   43     0x00,               //FRUC
+//   44     0x00,               //TBD
+//   45     0x00,
+//   46     0x00 };             //SenseKeySpecific
+//   47   
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+//   48 u8 ReadCapacity10_Data[] ={    // Last Logical Block 
+ReadCapacity10_Data:
+        DS8 8
+//   49     0, 0, 0, 0,                // Block Length 
+//   50     0, 0, 0, 0};
+//   51   
+
+        RSEG DATA_I:DATA:SORT:NOROOT(2)
+//   52 u8 ReadFormatCapacity_Data [] ={
+ReadFormatCapacity_Data:
+        DS8 12
+        REQUIRE `?<Initializer for ReadFormatCapacity_Data>`
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(2)
+`?<Initializer for Standard_Inquiry_Data>`:
+        DATA
+        DC8 0, 128, 2, 2, 32, 0, 0, 0, 77, 105, 110, 105, 95, 68, 83, 79, 70
+        DC8 108, 97, 115, 104, 32, 68, 105, 115, 107, 32, 32, 32, 32, 32, 32
+        DC8 32, 0, 0, 0
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(2)
+`?<Initializer for Mode_Sense6_data>`:
+        DATA
+        DC8 3, 0, 0, 0
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(2)
+`?<Initializer for Mode_Sense10_data>`:
+        DATA
+        DC8 0, 6, 0, 0, 0, 0, 0, 0
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(2)
+`?<Initializer for Scsi_Sense_Data>`:
+        DATA
+        DC8 112, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(2)
+`?<Initializer for ReadFormatCapacity_Data>`:
+        DATA
+        DC8 0, 0, 0, 8, 0, 0, 0, 0, 2, 0, 0, 0
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(2)
+`?*?DATA_ID`:
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_I:
+        DCD      sfe(DATA_I) - sfb(DATA_I), sfb(DATA_I), sfb(DATA_ID)
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_Z:
+        DCD      sfe(DATA_Z) - sfb(DATA_Z), sfb(DATA_Z), sfb(DATA_Z)
+
+        END
+//   53     0x00, 0x00, 0x00, 0x08,    // Capacity List Length 
+//   54     0, 0, 0, 0,                // Block Count 
+//   55     0x02,// Block Length 
+//   56     0, 0, 0};// Descriptor Code: Formatted Media 
+//   57 
+//   58 /*********************************  END OF FILE  ******************************/
+// 
+// 80 bytes in segment DATA_I
+// 80 bytes in segment DATA_ID
+// 16 bytes in segment DATA_Z
+// 24 bytes in segment INITTAB
+// 
+//  0 bytes of CODE  memory (+ 24 bytes shared)
+// 80 bytes of CONST memory
+// 96 bytes of DATA  memory
+//
+//Errors: none
+//Warnings: none

@@ -1,0 +1,616 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32 EVALUATION   26/Mar/2011  17:01:28 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  D:\Design\DS203_MiniDSO\SFW\SYS_V1.3\source\Memory. /
+//                       c                                                   /
+//    Command line    =  D:\Design\DS203_MiniDSO\SFW\SYS_V1.3\source\Memory. /
+//                       c -lA D:\Design\DS203_MiniDSO\SFW\SYS_V1.3\IAR_V4_P /
+//                       rpject\List\ -o D:\Design\DS203_MiniDSO\SFW\SYS_V1. /
+//                       3\IAR_V4_Prpject\Obj\ -s6 --no_unroll --no_inline   /
+//                       --no_tbaa --no_scheduling --cpu_mode thumb          /
+//                       --endian little --cpu cortex-M3 --stack_align 4 -e  /
+//                       --fpu None --dlib_config "C:\Program Files\IAR      /
+//                       Systems\Embedded Workbench 4.0                      /
+//                       Evaluation\arm\LIB\dl7mptnnl8n.h" -I                /
+//                       D:\Design\DS203_MiniDSO\SFW\SYS_V1.3\IAR_V4_Prpject /
+//                       \..\..\FWLib\inc\ -I D:\Design\DS203_MiniDSO\SFW\SY /
+//                       S_V1.3\IAR_V4_Prpject\..\..\USBLib\inc\ -I          /
+//                       D:\Design\DS203_MiniDSO\SFW\SYS_V1.3\IAR_V4_Prpject /
+//                       \..\include\ -I "C:\Program Files\IAR               /
+//                       Systems\Embedded Workbench 4.0 Evaluation\arm\INC\" /
+//    List file       =  D:\Design\DS203_MiniDSO\SFW\SYS_V1.3\IAR_V4_Prpject /
+//                       \List\Memory.s79                                    /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME Memory
+
+        RTMODEL "StackAlign4", "USED"
+        RTMODEL "__cpu_mode", "__pcs__thumb"
+        RTMODEL "__data_model", "absolute"
+        RTMODEL "__endian", "little"
+        RTMODEL "__rt_version", "6"
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+        EXTERN ??divu32_t
+
+??DataTable0 EQU 0
+??DataTable1 EQU 0
+??DataTable2 EQU 0
+??DataTable3 EQU 0
+??DataTable4 EQU 0
+        MULTWEAK ??SPI_FLASH_BufferRead??rT
+        MULTWEAK ??SPI_FLASH_PageWrite??rT
+        MULTWEAK ??SetEPRxStatus??rT
+        MULTWEAK ??SetEPTxCount??rT
+        MULTWEAK ??SetEPTxStatus??rT
+        MULTWEAK ??Set_CSW??rT
+        MULTWEAK ??UserToPMABufferCopy??rT
+        MULTWEAK ??rT??divu32_t
+        PUBWEAK ?init?tab?DATA_Z
+        PUBLIC Block_Read_count
+        PUBLIC Block_offset
+        PUBLIC Counter
+        PUBLIC Data_Buffer
+        PUBLIC Idx
+        PUBLIC Read_Memory
+        FUNCTION Read_Memory,0203H
+        LOCFRAME CSTACK, 16, STACK
+        PUBLIC TransferState
+        PUBLIC Write_Memory
+        FUNCTION Write_Memory,0203H
+        LOCFRAME CSTACK, 20, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA R13 HUGEDATA
+        CFI Resource R0:32, R1:32, R2:32, R3:32, R4:32, R5:32, R6:32, R7:32
+        CFI Resource R8:32, R9:32, R10:32, R11:32, R12:32, R13:32, R14:32
+        CFI VirtualResource ?RET:32
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 2
+        CFI DataAlign 4
+        CFI ReturnAddress ?RET CODE
+        CFI CFA R13+0
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI R8 SameValue
+        CFI R9 SameValue
+        CFI R10 SameValue
+        CFI R11 SameValue
+        CFI R12 Undefined
+        CFI R14 Undefined
+        CFI ?RET R14
+        CFI EndCommon cfiCommon0
+        
+SPI_FLASH_BufferRead SYMBOL "SPI_FLASH_BufferRead"
+SPI_FLASH_PageWrite SYMBOL "SPI_FLASH_PageWrite"
+SetEPRxStatus       SYMBOL "SetEPRxStatus"
+SetEPTxCount        SYMBOL "SetEPTxCount"
+SetEPTxStatus       SYMBOL "SetEPTxStatus"
+Set_CSW             SYMBOL "Set_CSW"
+UserToPMABufferCopy SYMBOL "UserToPMABufferCopy"
+??SPI_FLASH_BufferRead??rT SYMBOL "??rT", SPI_FLASH_BufferRead
+??SPI_FLASH_PageWrite??rT SYMBOL "??rT", SPI_FLASH_PageWrite
+??SetEPRxStatus??rT SYMBOL "??rT", SetEPRxStatus
+??SetEPTxCount??rT  SYMBOL "??rT", SetEPTxCount
+??SetEPTxStatus??rT SYMBOL "??rT", SetEPTxStatus
+??Set_CSW??rT       SYMBOL "??rT", Set_CSW
+??UserToPMABufferCopy??rT SYMBOL "??rT", UserToPMABufferCopy
+
+        EXTERN Bot_State
+        EXTERN Bulk_Data_Buff
+        EXTERN CSW
+        EXTERN Data_Len
+        EXTERN Mass_Block_Size
+        EXTERN SPI_FLASH_BufferRead
+        FUNCTION SPI_FLASH_BufferRead,0202H
+        EXTERN SPI_FLASH_PageWrite
+        FUNCTION SPI_FLASH_PageWrite,0202H
+        EXTERN SetEPRxStatus
+        FUNCTION SetEPRxStatus,0202H
+        EXTERN SetEPTxCount
+        FUNCTION SetEPTxCount,0202H
+        EXTERN SetEPTxStatus
+        FUNCTION SetEPTxStatus,0202H
+        EXTERN Set_CSW
+        FUNCTION Set_CSW,0202H
+        EXTERN UserToPMABufferCopy
+        FUNCTION UserToPMABufferCopy,0202H
+
+// D:\Design\DS203_MiniDSO\SFW\SYS_V1.3\source\Memory.c
+//    1 /********************* (C) COPYRIGHT 2010 e-Design Co.,Ltd. ********************
+//    2  File Name : Memory.c  
+//    3  Version   : DS203_SYS Ver 1.3x                                  Author : bure
+//    4 *******************************************************************************/
+//    5 #include "SPI_flash.h"
+//    6 #include "USB_scsi.h"
+//    7 #include "USB_regs.h"
+//    8 #include "USB_conf.h"
+//    9 #include "USB_bot.h"
+//   10 #include "USB_mem.h"
+//   11 #include "Config.h"
+//   12 #include "Memory.h"
+//   13 
+//   14 vu32 Block_Read_count = 0;
+//   15 vu32 Block_offset;
+//   16 vu32 Counter = 0;
+//   17 u32  Idx;
+//   18 u8 Data_Buffer[512]; 
+//   19 u8 TransferState = TXFR_IDLE;
+//   20 
+//   21 extern u8 Bulk_Data_Buff[BULK_MAX_PACKET_SIZE];  /* data buffer*/
+//   22 extern u16 Data_Len;
+//   23 extern u8 Bot_State;
+//   24 extern Bulk_Only_CBW CBW;
+//   25 extern Bulk_Only_CSW CSW;
+//   26 extern u32 Mass_Memory_Size;
+//   27 extern u32 Mass_Block_Size;
+//   28 
+//   29 /*******************************************************************************
+//   30 * Function Name  : Read_Memory
+//   31 * Description    : Handle the Read operation from the microSD card.
+//   32 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function Read_Memory
+        THUMB
+//   33 void Read_Memory(u32 Memory_Offset, u32 Transfer_Length)
+//   34 {
+Read_Memory:
+        PUSH     {R4-R6,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R6 Frame(CFA, -8)
+        CFI R5 Frame(CFA, -12)
+        CFI R4 Frame(CFA, -16)
+        CFI CFA R13+16
+//   35   static u32 Offset, Length;
+//   36 
+//   37   if (TransferState == TXFR_IDLE )
+        LDR.N    R4,??DataTable6  ;; Mass_Block_Size
+        LDR      R2,[R4, #+0]
+        LDR.N    R5,??DataTable5  ;; TransferState
+        LDRB     R3,[R5, #+0]
+        CMP      R3,#+0
+        BNE.N    ??Read_Memory_0
+//   38   {
+//   39     Offset = Memory_Offset * Mass_Block_Size;
+        MULS     R0,R2,R0
+        STR      R0,[R5, #+20]
+//   40     Length = Transfer_Length * Mass_Block_Size;
+        MULS     R1,R2,R1
+        STR      R1,[R5, #+24]
+//   41     TransferState = TXFR_ONGOING;
+        MOVS     R0,#+1
+        STRB     R0,[R5, #+0]
+//   42   }
+//   43 
+//   44   if (TransferState == TXFR_ONGOING )
+??Read_Memory_0:
+        LDRB     R0,[R5, #+0]
+        CMP      R0,#+1
+        BNE.N    ??Read_Memory_1
+//   45   {
+//   46     if (!Block_Read_count)
+        LDR.N    R6,??DataTable7  ;; Data_Buffer
+        LDR      R0,[R5, #+4]
+        CMP      R0,#+0
+        BNE.N    ??Read_Memory_2
+//   47     {
+//   48       SPI_FLASH_BufferRead(Data_Buffer, Offset, Mass_Block_Size);           
+        UXTH     R2,R2
+        LDR      R1,[R5, #+20]
+        MOVS     R0,R6
+        _BLF     SPI_FLASH_BufferRead,??SPI_FLASH_BufferRead??rT
+//   49       UserToPMABufferCopy((u8 *)Data_Buffer, ENDP1_TXADDR, BULK_MAX_PACKET_SIZE);
+        MOVS     R2,#+64
+        MOVS     R1,#+152
+        MOVS     R0,R6
+        _BLF     UserToPMABufferCopy,??UserToPMABufferCopy??rT
+//   50       Block_Read_count = Mass_Block_Size - BULK_MAX_PACKET_SIZE;
+        LDR      R0,[R4, #+0]
+        SUBS     R0,R0,#+64
+        STR      R0,[R5, #+4]
+//   51       Block_offset = BULK_MAX_PACKET_SIZE;
+        MOVS     R0,#+64
+        STR      R0,[R5, #+8]
+        B.N      ??Read_Memory_3
+//   52     }
+//   53     else
+//   54     {
+//   55       UserToPMABufferCopy((u8 *)Data_Buffer + Block_offset, ENDP1_TXADDR, BULK_MAX_PACKET_SIZE);
+??Read_Memory_2:
+        MOVS     R2,#+64
+        MOVS     R1,#+152
+        LDR      R0,[R5, #+8]
+        ADDS     R0,R6,R0
+        _BLF     UserToPMABufferCopy,??UserToPMABufferCopy??rT
+//   56       Block_Read_count -= BULK_MAX_PACKET_SIZE;
+        LDR      R0,[R5, #+4]
+        SUBS     R0,R0,#+64
+        STR      R0,[R5, #+4]
+//   57       Block_offset += BULK_MAX_PACKET_SIZE;
+        LDR      R0,[R5, #+8]
+        ADDS     R0,R0,#+64
+        STR      R0,[R5, #+8]
+//   58     }
+//   59 
+//   60     SetEPTxCount(ENDP1, BULK_MAX_PACKET_SIZE);
+??Read_Memory_3:
+        MOVS     R1,#+64
+        MOVS     R0,#+1
+        _BLF     SetEPTxCount,??SetEPTxCount??rT
+//   61     SetEPTxStatus(ENDP1, EP_TX_VALID);
+        MOVS     R1,#+48
+        MOVS     R0,#+1
+        _BLF     SetEPTxStatus,??SetEPTxStatus??rT
+//   62     Offset += BULK_MAX_PACKET_SIZE;
+        LDR      R0,[R5, #+20]
+        ADDS     R0,R0,#+64
+        STR      R0,[R5, #+20]
+//   63     Length -= BULK_MAX_PACKET_SIZE;
+        LDR      R0,[R5, #+24]
+        SUBS     R0,R0,#+64
+        STR      R0,[R5, #+24]
+//   64 
+//   65     CSW.dDataResidue -= BULK_MAX_PACKET_SIZE;
+        LDR.N    R0,??DataTable8  ;; CSW
+        LDR      R1,[R0, #+8]
+        SUBS     R1,R1,#+64
+        STR      R1,[R0, #+8]
+//   66   }
+//   67   if (Length == 0)
+??Read_Memory_1:
+        LDR      R0,[R5, #+24]
+        CMP      R0,#+0
+        BNE.N    ??Read_Memory_4
+//   68   {
+//   69     Block_Read_count = 0;
+        STR      R0,[R5, #+4]
+//   70     Block_offset = 0;
+        STR      R0,[R5, #+8]
+//   71     Offset = 0;
+        STR      R0,[R5, #+20]
+//   72     Bot_State = BOT_DATA_IN_LAST;
+        LDR.N    R1,??DataTable9  ;; Bot_State
+        MOVS     R2,#+3
+        STRB     R2,[R1, #+0]
+//   73     TransferState = TXFR_IDLE;
+        STRB     R0,[R5, #+0]
+//   74   }
+//   75 }
+??Read_Memory_4:
+        POP      {R4-R6,PC}       ;; return
+        CFI EndBlock cfiBlock0
+//   76 /*******************************************************************************
+//   77 * Function Name  : Write_Memory
+//   78 * Description    : Handle the Write operation to the microSD card.
+//   79 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function Write_Memory
+        THUMB
+//   80 void Write_Memory (u32 Memory_Offset, u32 Transfer_Length)
+//   81 {
+Write_Memory:
+        PUSH     {R4-R7,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R7 Frame(CFA, -8)
+        CFI R6 Frame(CFA, -12)
+        CFI R5 Frame(CFA, -16)
+        CFI R4 Frame(CFA, -20)
+        CFI CFA R13+20
+//   82 
+//   83   static u32 W_Offset, W_Length;
+//   84 
+//   85   u32 temp =  Counter + 64;
+        LDR.N    R5,??DataTable5  ;; TransferState
+        LDR      R3,[R5, #+12]
+        ADDS     R3,R3,#+64
+//   86 
+//   87   if (TransferState == TXFR_IDLE )
+        LDR.N    R2,??DataTable6  ;; Mass_Block_Size
+        LDR      R2,[R2, #+0]
+        LDRB     R4,[R5, #+0]
+        CMP      R4,#+0
+        BNE.N    ??Write_Memory_0
+//   88   {
+//   89     W_Offset = Memory_Offset * Mass_Block_Size;
+        MULS     R0,R2,R0
+        STR      R0,[R5, #+28]
+//   90     W_Length = Transfer_Length * Mass_Block_Size;
+        MULS     R1,R2,R1
+        STR      R1,[R5, #+32]
+//   91     TransferState = TXFR_ONGOING;
+        MOVS     R0,#+1
+        STRB     R0,[R5, #+0]
+//   92   }
+//   93 
+//   94   if (TransferState == TXFR_ONGOING )
+??Write_Memory_0:
+        MOVS     R6,#+0
+        LDRB     R0,[R5, #+0]
+        CMP      R0,#+1
+        BNE.N    ??Write_Memory_1
+//   95   {
+//   96 
+//   97     for (Idx = 0 ; Counter < temp; Counter++)
+        STR      R6,[R5, #+16]
+        LDR.N    R4,??DataTable7  ;; Data_Buffer
+        B.N      ??Write_Memory_2
+//   98     {
+//   99       *((u8 *)Data_Buffer + Counter) = Bulk_Data_Buff[Idx++];
+??Write_Memory_3:
+        LDR      R0,[R5, #+16]
+        LDR      R1,[R5, #+12]
+        LDR.N    R7,??Write_Memory_4  ;; Bulk_Data_Buff
+        LDRB     R7,[R7, R0]
+        STRB     R7,[R4, R1]
+        ADDS     R0,R0,#+1
+        STR      R0,[R5, #+16]
+//  100     }
+        LDR      R0,[R5, #+12]
+        ADDS     R0,R0,#+1
+        STR      R0,[R5, #+12]
+??Write_Memory_2:
+        LDR      R0,[R5, #+12]
+        CMP      R0,R3
+        BCC.N    ??Write_Memory_3
+//  101 
+//  102     W_Offset += Data_Len;
+        LDR.N    R7,??Write_Memory_4+0x4  ;; Data_Len
+        LDRH     R0,[R7, #+0]
+        LDR      R1,[R5, #+28]
+        ADDS     R3,R1,R0
+        STR      R3,[R5, #+28]
+//  103     W_Length -= Data_Len;
+        LDR      R1,[R5, #+32]
+        SUBS     R0,R1,R0
+        STR      R0,[R5, #+32]
+//  104 
+//  105     if (!(W_Length % Mass_Block_Size))
+        MOVS     R1,R2
+        _BLF     ??divu32_t,??rT??divu32_t
+        CMP      R0,#+0
+        BNE.N    ??Write_Memory_5
+//  106     {
+//  107       Counter = 0;
+        STR      R6,[R5, #+12]
+//  108       SPI_FLASH_PageWrite(Data_Buffer, W_Offset - Mass_Block_Size);  
+        SUBS     R1,R3,R2
+        MOVS     R0,R4
+        _BLF     SPI_FLASH_PageWrite,??SPI_FLASH_PageWrite??rT
+//  109       SPI_FLASH_PageWrite(Data_Buffer + SPI_FLASH_PageSize, W_Offset - SPI_FLASH_PageSize);  
+        LDR      R0,[R5, #+28]
+        MVNS     R1,#+255
+        ADDS     R1,R0,R1
+        ADDW     R0,R4,#+256
+        _BLF     SPI_FLASH_PageWrite,??SPI_FLASH_PageWrite??rT
+//  110     }
+//  111 
+//  112     CSW.dDataResidue -= Data_Len;
+??Write_Memory_5:
+        LDR.N    R0,??DataTable8  ;; CSW
+        LDR      R1,[R0, #+8]
+        LDRH     R2,[R7, #+0]
+        SUBS     R1,R1,R2
+        STR      R1,[R0, #+8]
+//  113     SetEPRxStatus(ENDP2, EP_RX_VALID); /* enable the next transaction*/
+        MOVS     R1,#+12288
+        MOVS     R0,#+2
+        _BLF     SetEPRxStatus,??SetEPRxStatus??rT
+//  114 
+//  115   }
+//  116 
+//  117   if ((W_Length == 0) || (Bot_State == BOT_CSW_Send))
+??Write_Memory_1:
+        LDR      R0,[R5, #+32]
+        CMP      R0,#+0
+        BEQ.N    ??Write_Memory_6
+        LDR.N    R0,??DataTable9  ;; Bot_State
+        LDRB     R0,[R0, #+0]
+        CMP      R0,#+4
+        BNE.N    ??Write_Memory_7
+//  118   {
+//  119     Counter = 0;
+??Write_Memory_6:
+        STR      R6,[R5, #+12]
+//  120     Set_CSW (CSW_CMD_PASSED, SEND_CSW_ENABLE);
+        MOVS     R1,#+1
+        MOV      R0,R6
+        _BLF     Set_CSW,??Set_CSW??rT
+//  121     TransferState = TXFR_IDLE;
+        STRB     R6,[R5, #+0]
+//  122   }
+//  123 }
+??Write_Memory_7:
+        POP      {R4-R7,PC}       ;; return
+        Nop      
+        DATA
+??Write_Memory_4:
+        DC32     Bulk_Data_Buff
+        DC32     Data_Len
+        CFI EndBlock cfiBlock1
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable5:
+        DC32     TransferState
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable6:
+        DC32     Mass_Block_Size
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable7:
+        DC32     Data_Buffer
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable8:
+        DC32     CSW
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable9:
+        DC32     Bot_State
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SPI_FLASH_BufferRead??rT:
+        LDR.N    R3,??Subroutine0_0  ;; SPI_FLASH_BufferRead
+        BX       R3
+        DATA
+??Subroutine0_0:
+        DC32     SPI_FLASH_BufferRead
+        CFI EndBlock cfiBlock2
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??UserToPMABufferCopy??rT:
+        LDR.N    R3,??Subroutine1_0  ;; UserToPMABufferCopy
+        BX       R3
+        DATA
+??Subroutine1_0:
+        DC32     UserToPMABufferCopy
+        CFI EndBlock cfiBlock3
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SetEPTxCount??rT:
+        LDR.N    R3,??Subroutine2_0  ;; SetEPTxCount
+        BX       R3
+        DATA
+??Subroutine2_0:
+        DC32     SetEPTxCount
+        CFI EndBlock cfiBlock4
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SetEPTxStatus??rT:
+        LDR.N    R3,??Subroutine3_0  ;; SetEPTxStatus
+        BX       R3
+        DATA
+??Subroutine3_0:
+        DC32     SetEPTxStatus
+        CFI EndBlock cfiBlock5
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??rT??divu32_t:
+        PUSH     {R3}
+        CFI CFA R13+4
+        LDR.N    R3,??Subroutine4_0  ;; ??divu32_t
+        MOV      R12,R3
+        POP      {R3}
+        CFI CFA R13+0
+        BX       R12
+        Nop      
+        DATA
+??Subroutine4_0:
+        DC32     ??divu32_t
+        CFI EndBlock cfiBlock6
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SPI_FLASH_PageWrite??rT:
+        LDR.N    R3,??Subroutine5_0  ;; SPI_FLASH_PageWrite
+        BX       R3
+        DATA
+??Subroutine5_0:
+        DC32     SPI_FLASH_PageWrite
+        CFI EndBlock cfiBlock7
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SetEPRxStatus??rT:
+        LDR.N    R3,??Subroutine6_0  ;; SetEPRxStatus
+        BX       R3
+        DATA
+??Subroutine6_0:
+        DC32     SetEPRxStatus
+        CFI EndBlock cfiBlock8
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Set_CSW??rT:
+        LDR.N    R3,??Subroutine7_0  ;; Set_CSW
+        BX       R3
+        DATA
+??Subroutine7_0:
+        DC32     Set_CSW
+        CFI EndBlock cfiBlock9
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+TransferState:
+        DS8 1
+        DS8 3
+Block_Read_count:
+        DS8 4
+Block_offset:
+        DS8 4
+Counter:
+        DS8 4
+Idx:
+        DS8 4
+        DS8 4
+        DS8 4
+        DS8 4
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+Data_Buffer:
+        DS8 512
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_Z:
+        DCD      sfe(DATA_Z) - sfb(DATA_Z), sfb(DATA_Z), sfb(DATA_Z)
+
+        END
+//  124 /******************************* END OF FILE **********************************/
+//  125 
+// 
+// 426 bytes in segment CODE
+// 548 bytes in segment DATA_Z
+//  12 bytes in segment INITTAB
+// 
+// 354 bytes of CODE memory (+ 84 bytes shared)
+// 548 bytes of DATA memory
+//
+//Errors: none
+//Warnings: none
