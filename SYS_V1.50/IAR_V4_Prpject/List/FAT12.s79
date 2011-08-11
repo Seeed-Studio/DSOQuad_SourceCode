@@ -1,0 +1,955 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32 EVALUATION   04/Jul/2011  11:50:42 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  D:\Design\DS203\PRG\SYS_V1.50\source\FAT12.c        /
+//    Command line    =  D:\Design\DS203\PRG\SYS_V1.50\source\FAT12.c -lA    /
+//                       D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_Prpject\List\  /
+//                       -o D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_Prpject\Obj /
+//                       \ -s9 --no_inline --cpu_mode thumb --endian little  /
+//                       --cpu cortex-M3 --stack_align 4 -e --fpu None       /
+//                       --dlib_config "C:\Program Files\IAR                 /
+//                       Systems\Embedded Workbench 4.0                      /
+//                       Evaluation\arm\LIB\dl7mptnnl8n.h" -I                /
+//                       D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_Prpject\..\..\ /
+//                       FWLib\inc\ -I D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_ /
+//                       Prpject\..\..\USBLib\inc\ -I                        /
+//                       D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_Prpject\..\inc /
+//                       lude\ -I "C:\Program Files\IAR Systems\Embedded     /
+//                       Workbench 4.0 Evaluation\arm\INC\"                  /
+//    List file       =  D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_Prpject\List\F /
+//                       AT12.s79                                            /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME FAT12
+
+        RTMODEL "StackAlign4", "USED"
+        RTMODEL "__cpu_mode", "__pcs__thumb"
+        RTMODEL "__data_model", "absolute"
+        RTMODEL "__endian", "little"
+        RTMODEL "__rt_version", "6"
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+??DataTable0 EQU 0
+??DataTable2 EQU 0
+??DataTable3 EQU 0
+        MULTWEAK ??__ExtFlash_PageRD??rT
+        MULTWEAK ??__ExtFlash_PageWR??rT
+        MULTWEAK ??__ProgDiskPage??rT
+        MULTWEAK ??__ReadDiskData??rT
+        PUBLIC CloseFile
+        FUNCTION CloseFile,0203H
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC NextCluster
+        FUNCTION NextCluster,0203H
+        LOCFRAME CSTACK, 16, STACK
+        PUBLIC OpenFileRd
+        FUNCTION OpenFileRd,0203H
+        LOCFRAME CSTACK, 32, STACK
+        PUBLIC OpenFileWr
+        FUNCTION OpenFileWr,0203H
+        LOCFRAME CSTACK, 28, STACK
+        PUBLIC ProgDiskPage
+        FUNCTION ProgDiskPage,0203H
+        LOCFRAME CSTACK, 24, STACK
+        PUBLIC ProgFileSec
+        FUNCTION ProgFileSec,0203H
+        LOCFRAME CSTACK, 16, STACK
+        PUBLIC ReadDiskData
+        FUNCTION ReadDiskData,0203H
+        LOCFRAME CSTACK, 28, STACK
+        PUBLIC ReadFileSec
+        FUNCTION ReadFileSec,0203H
+        LOCFRAME CSTACK, 16, STACK
+        PUBLIC SeekBlank
+        FUNCTION SeekBlank,0203H
+        LOCFRAME CSTACK, 16, STACK
+        PUBLIC SetCluster
+        FUNCTION SetCluster,0203H
+        LOCFRAME CSTACK, 24, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA R13 HUGEDATA
+        CFI Resource R0:32, R1:32, R2:32, R3:32, R4:32, R5:32, R6:32, R7:32
+        CFI Resource R8:32, R9:32, R10:32, R11:32, R12:32, R13:32, R14:32
+        CFI VirtualResource ?RET:32
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 2
+        CFI DataAlign 4
+        CFI ReturnAddress ?RET CODE
+        CFI CFA R13+0
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI R8 SameValue
+        CFI R9 SameValue
+        CFI R10 SameValue
+        CFI R11 SameValue
+        CFI R12 Undefined
+        CFI R14 Undefined
+        CFI ?RET R14
+        CFI EndCommon cfiCommon0
+        
+__ExtFlash_PageRD   SYMBOL "__ExtFlash_PageRD"
+__ExtFlash_PageWR   SYMBOL "__ExtFlash_PageWR"
+__ProgDiskPage      SYMBOL "__ProgDiskPage"
+__ReadDiskData      SYMBOL "__ReadDiskData"
+??__ExtFlash_PageRD??rT SYMBOL "??rT", __ExtFlash_PageRD
+??__ExtFlash_PageWR??rT SYMBOL "??rT", __ExtFlash_PageWR
+??__ProgDiskPage??rT SYMBOL "??rT", __ProgDiskPage
+??__ReadDiskData??rT SYMBOL "??rT", __ReadDiskData
+
+        EXTERN Clash
+        EXTERN __ExtFlash_PageRD
+        FUNCTION __ExtFlash_PageRD,0202H
+        EXTERN __ExtFlash_PageWR
+        FUNCTION __ExtFlash_PageWR,0202H
+        EXTERN __ProgDiskPage
+        FUNCTION __ProgDiskPage,0202H
+        EXTERN __ReadDiskData
+        FUNCTION __ReadDiskData,0202H
+
+// D:\Design\DS203\PRG\SYS_V1.50\source\FAT12.c
+//    1 /********************* (C) COPYRIGHT 2011 e-Design Co.,Ltd. ********************
+//    2  File Name : FAT12.c  
+//    3  Version   : DS203_SYS Ver 1.5x                                  Author : bure
+//    4 *******************************************************************************/
+//    5 #include <string.h>
+//    6 #include "FAT12.h"
+//    7 #include "BIOS.h"
+//    8 #include "ASM.h"
+//    9 #include "Function.h"
+//   10 
+//   11 #define FAT_LEN      0x1800 
+//   12 #define FAT1_BASE    0x00001000   // FAT1区开始地址
+//   13 #define FAT2_BASE    0x00002800   // FAT2区开始地址
+//   14 #define ROOT_BASE    0x00004000   // 根目录开始地址
+//   15 #define FILE_BASE    0x00008000   // 文件区开始地址
+//   16 #define SEC_LEN      0x200        // 扇区长度
+//   17 #define FAT1_SEC     0x0C         // FAT1扇区数
+//   18 #define FAT2_SEC     0x0C         // FAT2扇区数
+//   19 
+//   20 #define OK           0            // 操作完成
+//   21 #define SEC_ERR      1            // 扇区读写错误
+//   22 #define FAT_ERR      2            // FAT表读写错误
+//   23 #define OVER         3            // 操作溢出
+//   24 #define NEW          4            // 新目录项
+//   25 #define END          0xFFF        // 链接结束
+//   26 
+//   27 #define OW           0            // 或写(数据从0变1改写)
+//   28 #define RW           1            // 重写
+//   29 
+//   30 
+//   31 /*******************************************************************************
+//   32  读磁盘页面(256 Bytes)  包含USB读写冲突后重读
+//   33 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function ReadDiskData
+        THUMB
+//   34 u8 ReadDiskData(u8* pBuffer, u32 ReadAddr, u16 Lenght)
+//   35 {
+ReadDiskData:
+        PUSH     {R4-R9,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R9 Frame(CFA, -8)
+        CFI R8 Frame(CFA, -12)
+        CFI R7 Frame(CFA, -16)
+        CFI R6 Frame(CFA, -20)
+        CFI R5 Frame(CFA, -24)
+        CFI R4 Frame(CFA, -28)
+        CFI CFA R13+28
+//   36   u8 n = 0;
+        LDR.N    R6,??DataTable1  ;; Clash
+        MOVS     R4,R2
+        MOVS     R5,#+0
+        MOV      R8,R0
+        MOV      R9,R1
+        MOVS     R7,#+0
+//   37   
+//   38   while(1){
+//   39     Clash = 0;
+//   40     __ExtFlash_PageRD(pBuffer, ReadAddr, Lenght);
+??ReadDiskData_0:
+        MOVS     R2,R4
+        MOV      R1,R9
+        STRB     R5,[R6, #+0]
+        MOV      R0,R8
+        _BLF     __ExtFlash_PageRD,??__ExtFlash_PageRD??rT
+//   41     if(n++ > 6) return SEC_ERR;     // 超时出错返回
+        MOVS     R0,R7
+        ADDW     R7,R0,#+1
+        UXTB     R0,R0
+        CMP      R0,#+7
+        BCC.N    ??ReadDiskData_1
+        MOVS     R0,#+1
+        B.N      ??ReadDiskData_2
+//   42     if(Clash == 0) return OK;       // 无冲突产生则返回
+??ReadDiskData_1:
+        LDRB     R0,[R6, #+0]
+        CMP      R0,#+0
+        BNE.N    ??ReadDiskData_0
+??ReadDiskData_2:
+        POP      {R4-R9,PC}       ;; return
+        CFI EndBlock cfiBlock0
+//   43   }
+//   44 }
+//   45 /*******************************************************************************
+//   46  写磁盘页面(256 Bytes)  包含USB读写冲突后重写
+//   47 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function ProgDiskPage
+        THUMB
+//   48 u8 ProgDiskPage(u8* pBuffer, u32 ProgAddr)
+//   49 {                         
+ProgDiskPage:
+        PUSH     {R4-R8,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R8 Frame(CFA, -8)
+        CFI R7 Frame(CFA, -12)
+        CFI R6 Frame(CFA, -16)
+        CFI R5 Frame(CFA, -20)
+        CFI R4 Frame(CFA, -24)
+        CFI CFA R13+24
+//   50   u8   n = 0; 
+        LDR.N    R6,??DataTable1  ;; Clash
+        MOVS     R4,R1
+        MOVS     R5,#+0
+        MOV      R8,R0
+        MOVS     R7,#+0
+//   51   
+//   52   while(1){
+//   53     Clash = 0;
+//   54     __ExtFlash_PageWR(pBuffer, ProgAddr);
+??ProgDiskPage_0:
+        MOVS     R1,R4
+        MOV      R0,R8
+        STRB     R5,[R6, #+0]
+        _BLF     __ExtFlash_PageWR,??__ExtFlash_PageWR??rT
+//   55     if(n++ > 6) return SEC_ERR;     // 超时出错返回
+        MOVS     R0,R7
+        ADDW     R7,R0,#+1
+        UXTB     R0,R0
+        CMP      R0,#+7
+        BCC.N    ??ProgDiskPage_1
+        MOVS     R0,#+1
+        B.N      ??ProgDiskPage_2
+//   56     if(Clash == 0) return OK;       // 无冲突产生则返回
+??ProgDiskPage_1:
+        LDRB     R0,[R6, #+0]
+        CMP      R0,#+0
+        BNE.N    ??ProgDiskPage_0
+??ProgDiskPage_2:
+        POP      {R4-R8,PC}       ;; return
+        CFI EndBlock cfiBlock1
+//   57   }
+//   58 } 
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable1:
+        DC32     Clash
+//   59 /*******************************************************************************
+//   60  查找下一个链接簇号后返回，当前簇号保存在指针+1的位置
+//   61 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function NextCluster
+        THUMB
+//   62 u8 NextCluster(u16* pCluster)
+//   63 {
+NextCluster:
+        PUSH     {R4,R5,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R5 Frame(CFA, -8)
+        CFI R4 Frame(CFA, -12)
+        CFI CFA R13+12
+//   64   u16 FatNum;
+//   65   u32 Addr = FAT1_BASE +(*pCluster + *pCluster/2);
+//   66   
+//   67   *(pCluster+1)= *pCluster;                                   // 保存前一个簇号
+//   68   *pCluster = 0;
+//   69   if((*(pCluster+1) >= END)||(*(pCluster+1)< 2)) return OK;
+        LDR.N    R5,??DataTable4  ;; 0xfff
+        MOVS     R4,R0
+        SUB      SP,SP,#+4
+        CFI CFA R13+16
+        LDRH     R0,[R4, #+0]
+        LSRS     R1,R0,#+1
+        ADDS     R0,R0,R1
+        ADDS     R1,R0,#+4096
+        LDRH     R0,[R4, #+0]
+        STRH     R0,[R4, #+2]
+        MOVS     R0,#+0
+        STRH     R0,[R4, #+0]
+        LDRH     R0,[R4, #+2]
+        CMP      R0,R5
+        BCS.N    ??NextCluster_0
+        CMP      R0,#+2
+        BCS.N    ??NextCluster_1
+??NextCluster_2:
+        B.N      ??NextCluster_0
+//   70   if(__ReadDiskData((u8*)&FatNum, Addr, 2)!= OK) return SEC_ERR;
+??NextCluster_1:
+        MOVS     R2,#+2
+        MOV      R0,SP
+        _BLF     __ReadDiskData,??__ReadDiskData??rT
+        CBZ      R0,??NextCluster_3
+        MOVS     R0,#+1
+        B.N      ??NextCluster_4
+//   71   *pCluster= (*(pCluster+1) & 1)?(FatNum >>4):(FatNum & 0x0FFF); // 指向下一个簇号
+??NextCluster_3:
+        LDRH     R0,[R4, #+2]
+        LSLS     R0,R0,#+31
+        ITTEE   PL 
+        LDRHPL   R0,[SP, #+0]
+        ANDPL    R5,R5,R0
+        LDRHMI   R0,[SP, #+0]
+        LSRMI    R5,R0,#+4
+        STRH     R5,[R4, #+0]
+//   72   return OK; 
+??NextCluster_0:
+        MOVS     R0,#+0
+??NextCluster_4:
+        ADD      SP,SP,#+4
+        CFI CFA R13+12
+        POP      {R4,R5,PC}       ;; return
+        CFI EndBlock cfiBlock2
+//   73 }
+//   74 /*******************************************************************************
+//   75  读文件扇区(512 Bytes), 返回时指针指向下一个簇号，当前簇号保存在指针+1的位置
+//   76 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function ReadFileSec
+        THUMB
+//   77 u8 ReadFileSec(u8* pBuffer, u16* pCluster)
+//   78 {
+ReadFileSec:
+        PUSH     {R4-R6,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R6 Frame(CFA, -8)
+        CFI R5 Frame(CFA, -12)
+        CFI R4 Frame(CFA, -16)
+        CFI CFA R13+16
+//   79   u32 ReadAddr = FILE_BASE + SEC_LEN*(*pCluster-2);
+//   80   
+//   81   if(__ReadDiskData(pBuffer, ReadAddr, 256)!=OK) return SEC_ERR; // 读前半扇区
+        MOVS     R2,#+256
+        MOVS     R4,R0
+        MOVS     R5,R1
+        LDRH     R0,[R5, #+0]
+        LSLS     R0,R0,#+9
+        ADDS     R6,R0,#+31744
+        MOVS     R1,R6
+        MOVS     R0,R4
+        _BLF     __ReadDiskData,??__ReadDiskData??rT
+        CBZ      R0,??ReadFileSec_0
+??ReadFileSec_1:
+        MOVS     R0,#+1
+        POP      {R4-R6,PC}
+//   82   pBuffer += 256;  ReadAddr += 256;
+//   83   if(__ReadDiskData(pBuffer, ReadAddr, 256)!=OK) return SEC_ERR; // 读后半扇区
+??ReadFileSec_0:
+        MOVS     R2,#+256
+        ADDW     R1,R6,#+256
+        ADDW     R0,R4,#+256
+        _BLF     __ReadDiskData,??__ReadDiskData??rT
+        CMP      R0,#+0
+        BNE.N    ??ReadFileSec_1
+//   84   if(NextCluster(pCluster)!=0) return FAT_ERR;                 // 取下一个簇号
+        MOVS     R0,R5
+        BL       NextCluster
+        CBZ      R0,??ReadFileSec_2
+        MOVS     R0,#+2
+//   85   return OK;
+??ReadFileSec_2:
+        POP      {R4-R6,PC}       ;; return
+        CFI EndBlock cfiBlock3
+//   86 } 
+//   87 /*******************************************************************************
+//   88  写文件扇区(512 Bytes)，填写当前FAT表及返回查找到的下一个簇号
+//   89 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function ProgFileSec
+        THUMB
+//   90 u8 ProgFileSec(u8* pBuffer, u16* pCluster)
+//   91 {
+ProgFileSec:
+        PUSH     {R4-R6,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R6 Frame(CFA, -8)
+        CFI R5 Frame(CFA, -12)
+        CFI R4 Frame(CFA, -16)
+        CFI CFA R13+16
+        MOVS     R5,R1
+        MOVS     R4,R0
+//   92   u16 Tmp;
+//   93   u32 ProgAddr = FILE_BASE + SEC_LEN*(*pCluster-2);
+        LDRH     R0,[R5, #+0]
+        LSLS     R0,R0,#+9
+        ADDS     R6,R0,#+31744
+//   94   
+//   95   if(__ProgDiskPage(pBuffer, ProgAddr)!= OK) return SEC_ERR; // 写前半扇区
+        MOVS     R1,R6
+        MOVS     R0,R4
+        _BLF     __ProgDiskPage,??__ProgDiskPage??rT
+        CBZ      R0,??ProgFileSec_0
+??ProgFileSec_1:
+        MOVS     R0,#+1
+        POP      {R4-R6,PC}
+//   96   pBuffer += 256;  ProgAddr += 256;
+??ProgFileSec_0:
+        ADDW     R4,R4,#+256
+//   97   if(__ProgDiskPage(pBuffer, ProgAddr)!= OK) return SEC_ERR; // 写后半扇区
+        ADDW     R1,R6,#+256
+        MOVS     R0,R4
+        _BLF     __ProgDiskPage,??__ProgDiskPage??rT
+        CMP      R0,#+0
+        BNE.N    ??ProgFileSec_1
+//   98   if(NextCluster(pCluster)!=0) return FAT_ERR;                 // 取下一个簇号
+        MOVS     R0,R5
+        BL       NextCluster
+        CBZ      R0,??ProgFileSec_2
+        MOVS     R0,#+2
+        POP      {R4-R6,PC}
+//   99   Tmp = *(pCluster+1);
+//  100   if(*pCluster == 0){
+??ProgFileSec_2:
+        LDRH     R0,[R5, #+0]
+        CBNZ     R0,??ProgFileSec_3
+//  101     *pCluster = Tmp;
+        LDRH     R0,[R5, #+2]
+//  102     if(SeekBlank (pBuffer, pCluster )!= OK) return OVER;
+        MOVS     R1,R5
+        STRH     R0,[R5, #+0]
+        MOVS     R0,R4
+        BL       SeekBlank
+        CBZ      R0,??ProgFileSec_4
+        MOVS     R0,#+3
+        POP      {R4-R6,PC}
+//  103     if(SetCluster(pBuffer, pCluster )!= OK) return SEC_ERR;
+??ProgFileSec_4:
+        MOVS     R1,R5
+        MOVS     R0,R4
+        BL       SetCluster
+        CMP      R0,#+0
+        BNE.N    ??ProgFileSec_1
+//  104   }
+//  105   return OK;
+??ProgFileSec_3:
+        MOVS     R0,#+0
+        POP      {R4-R6,PC}       ;; return
+        CFI EndBlock cfiBlock4
+//  106 }
+//  107 /*******************************************************************************
+//  108  查找空闲簇号，返回时指针指向下一个空闲簇号，当前簇号保存在指针+1的位置
+//  109 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function SeekBlank
+        THUMB
+//  110 u8 SeekBlank(u8* pBuffer, u16* pCluster)
+//  111 {
+SeekBlank:
+        PUSH     {R4,R5,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R5 Frame(CFA, -8)
+        CFI R4 Frame(CFA, -12)
+        CFI CFA R13+12
+//  112   u16  Tmp;
+//  113   u8   Buffer[2];
+//  114 
+//  115   *(pCluster+1)= *pCluster;                                    // 保存当前簇号
+//  116   for(*pCluster=0; (*pCluster)<4095; (*pCluster)++){
+        LDR.N    R5,??DataTable4  ;; 0xfff
+        MOVS     R4,R1
+        SUB      SP,SP,#+4
+        CFI CFA R13+16
+        LDRH     R0,[R4, #+0]
+        STRH     R0,[R4, #+2]
+        MOVS     R0,#+0
+        B.N      ??SeekBlank_0
+??SeekBlank_1:
+        LDRH     R0,[R4, #+0]
+        ADDS     R0,R0,#+1
+??SeekBlank_0:
+        STRH     R0,[R4, #+0]
+        LDRH     R0,[R4, #+0]
+        CMP      R0,R5
+        BCS.N    ??SeekBlank_2
+//  117     if(__ReadDiskData(Buffer, FAT1_BASE +(*pCluster)+(*pCluster)/2, 2)!= 0) return SEC_ERR;
+        LDRH     R1,[R4, #+0]
+        MOVS     R2,#+2
+        LSRS     R0,R0,#+1
+        ADDS     R0,R0,R1
+        ADDS     R1,R0,#+4096
+        MOV      R0,SP
+        _BLF     __ReadDiskData,??__ReadDiskData??rT
+        CBZ      R0,??SeekBlank_3
+        MOVS     R0,#+1
+        B.N      ??SeekBlank_4
+//  118     Tmp = ((*pCluster)& 1)?((*(u16*)Buffer)>>4):((*(u16*)Buffer)& 0xFFF);
+??SeekBlank_3:
+        LDRH     R0,[R4, #+0]
+        LSLS     R0,R0,#+31
+        ITTEE   PL 
+        LDRHPL   R0,[SP, #+0]
+        ANDPL    R0,R0,R5
+        LDRHMI   R0,[SP, #+0]
+        LSRMI    R0,R0,#+4
+//  119     if((Tmp == 0)&&((*pCluster)!= *(pCluster+1))) return OK;
+        CMP      R0,#+0
+        BNE.N    ??SeekBlank_1
+        LDRH     R0,[R4, #+0]
+        LDRH     R1,[R4, #+2]
+        CMP      R0,R1
+        BEQ.N    ??SeekBlank_1
+??SeekBlank_2:
+        MOVS     R0,#+0
+??SeekBlank_4:
+        ADD      SP,SP,#+4
+        CFI CFA R13+12
+        POP      {R4,R5,PC}       ;; return
+        CFI EndBlock cfiBlock5
+//  120   }
+//  121   return OK;
+//  122 }         
+//  123 /*******************************************************************************
+//  124  将下一簇号写入FAT表当前簇链接位，返回时指针指向下一簇号，指针+1为当前簇号
+//  125 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function SetCluster
+        THUMB
+//  126 u8 SetCluster(u8* pBuffer, u16* pCluster)
+//  127 {
+SetCluster:
+        PUSH     {R4-R8,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R8 Frame(CFA, -8)
+        CFI R7 Frame(CFA, -12)
+        CFI R6 Frame(CFA, -16)
+        CFI R5 Frame(CFA, -20)
+        CFI R4 Frame(CFA, -24)
+        CFI CFA R13+24
+//  128   u16  Offset, i, k;
+//  129   u32  SecAddr;
+//  130 
+//  131   i = *(pCluster+1);                    // 提取原当前簇号
+        LDRH     R4,[R1, #+2]
+//  132   k = *pCluster;                        // 提取下一簇号
+        LDRH     R5,[R1, #+0]
+//  133   Offset = i + i/2;
+//  134   SecAddr = FAT1_BASE +(Offset & 0xFF00);
+//  135   Offset &=  0x00FF;
+//  136   if(__ReadDiskData(pBuffer, SecAddr, 258)!= 0) return SEC_ERR; 
+        MOVS     R2,#+258
+        MOV      R8,R0
+        ADDS     R0,R4,R4, LSR #+1
+        UXTH     R0,R0
+        ANDS     R1,R0,#0xFF00
+        ADDS     R6,R1,#+4096
+        UXTB     R7,R0
+        MOVS     R1,R6
+        MOV      R0,R8
+        _BLF     __ReadDiskData,??__ReadDiskData??rT
+        CBNZ     R0,??SetCluster_0
+//  137   if(i & 1){
+??SetCluster_1:
+        ADDS     R0,R7,R8
+        LSLS     R1,R4,#+31
+        BPL.N    ??SetCluster_2
+//  138     pBuffer[Offset  ]=(pBuffer[Offset]& 0x0F)+((k <<4)& 0xF0);
+        LDRB     R1,[R0, #+0]
+        LSLS     R1,R1,#+28
+        LSRS     R1,R1,#+28
+        ADDS     R1,R1,R5, LSL #+4
+        STRB     R1,[R0, #+0]
+//  139     pBuffer[Offset+1]= k >>4;
+        ASRS     R1,R5,#+4
+        B.N      ??SetCluster_3
+//  140   } else {
+//  141     pBuffer[Offset  ]= k & 0xFF;
+??SetCluster_2:
+        STRB     R5,[R0, #+0]
+//  142     pBuffer[Offset+1]=(pBuffer[Offset+1]& 0xF0)+((k>>8)& 0x0F);
+        LDRB     R1,[R0, #+1]
+        ASRS     R2,R5,#+8
+        LSLS     R2,R2,#+28
+        ANDS     R1,R1,#0xF0
+        LSRS     R2,R2,#+28
+        ADDS     R1,R1,R2
+??SetCluster_3:
+        STRB     R1,[R0, #+1]
+//  143   }
+//  144   if(__ProgDiskPage(pBuffer,     SecAddr    )!= 0) return SEC_ERR;
+        MOVS     R1,R6
+        MOV      R0,R8
+        _BLF     __ProgDiskPage,??__ProgDiskPage??rT
+        CBNZ     R0,??SetCluster_0
+//  145   if(__ProgDiskPage(pBuffer+256, SecAddr+256)!= 0) return SEC_ERR;
+??SetCluster_4:
+        ADDW     R1,R6,#+256
+        ADDW     R0,R8,#+256
+        _BLF     __ProgDiskPage,??__ProgDiskPage??rT
+        CBZ      R0,??SetCluster_5
+??SetCluster_0:
+        MOVS     R0,#+1
+//  146   return OK;
+??SetCluster_5:
+        POP      {R4-R8,PC}       ;; return
+        CFI EndBlock cfiBlock6
+//  147 }
+//  148 /*******************************************************************************
+//  149  读模式打开文件：返回文件第一个簇号及目录项地址或 0簇号及第一个空白目录项地址
+//  150 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function OpenFileRd
+        THUMB
+//  151 u8 OpenFileRd(u8* pBuffer, u8* pFileName, u16* pCluster, u32* pDirAddr)
+//  152 {
+OpenFileRd:
+        PUSH     {R4-R9,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R9 Frame(CFA, -8)
+        CFI R8 Frame(CFA, -12)
+        CFI R7 Frame(CFA, -16)
+        CFI R6 Frame(CFA, -20)
+        CFI R5 Frame(CFA, -24)
+        CFI R4 Frame(CFA, -28)
+        CFI CFA R13+28
+        MOV      R9,R2
+        MOVS     R4,R0
+        MOVS     R5,R3
+        MOV      R8,R1
+//  153   u16 i, n;
+//  154   
+//  155   *pCluster = 0;
+        MOVS     R0,#+0
+        STRH     R0,[R9, #+0]
+//  156   for(*pDirAddr=ROOT_BASE; *pDirAddr<FILE_BASE; ){
+        MOVS     R0,#+16384
+        STR      R0,[R5, #+0]
+//  157     if(__ReadDiskData(pBuffer, *pDirAddr, 256)!= OK) return SEC_ERR;
+??OpenFileRd_0:
+        LDR      R1,[R5, #+0]
+        MOVS     R2,#+256
+        MOVS     R0,R4
+        _BLF     __ReadDiskData,??__ReadDiskData??rT
+        CBZ      R0,??OpenFileRd_1
+        MOVS     R0,#+1
+        B.N      ??OpenFileRd_2
+//  158     for(n=0; n<256; n+=32){
+//  159       for(i=0; i<11; i++){
+??OpenFileRd_1:
+        MOVS     R1,#+0
+        B.N      ??OpenFileRd_3
+//  160         if(pBuffer[n + i]!= 0){
+//  161           if(pBuffer[n + i]!= pFileName[i]) break;
+//  162           if(i == 10){                             // 找到文件名
+//  163             *pCluster = *(u16*)(pBuffer + n + 0x1A); // 文件第一个簇号
+//  164             return OK;         
+//  165           }
+//  166         } else return NEW;               // 遇到第一个空白目录项后返回
+//  167       }
+//  168       *pDirAddr += 32;
+??OpenFileRd_4:
+        LDR      R1,[R5, #+0]
+        ADDS     R0,R0,#+32
+        UXTH     R0,R0
+        ADDS     R1,R1,#+32
+        STR      R1,[R5, #+0]
+        MOVS     R3,#+256
+        CMP      R0,R3
+        BCC.N    ??OpenFileRd_1
+        CMP      R1,#+32768
+        BCC.N    ??OpenFileRd_0
+//  169     }
+//  170   }
+//  171   return OVER;
+        MOVS     R0,#+3
+??OpenFileRd_2:
+        POP      {R4-R9,PC}
+??OpenFileRd_5:
+        ADDS     R1,R1,#+1
+        UXTH     R1,R1
+        CMP      R1,#+11
+        BCS.N    ??OpenFileRd_4
+??OpenFileRd_3:
+        ADDS     R6,R0,R1
+        ADDS     R6,R4,R6
+        LDRB     R7,[R6, #+0]
+        CBZ      R7,??OpenFileRd_6
+        MOV      R6,R7
+        MOV      R7,R8
+        LDRB     R3,[R7, R1]
+        CMP      R6,R3
+        BNE.N    ??OpenFileRd_4
+        CMP      R1,#+10
+        BNE.N    ??OpenFileRd_5
+        ADDS     R0,R4,R0
+        LDRH     R0,[R0, #+26]
+        STRH     R0,[R9, #+0]
+        MOVS     R0,#+0
+        B.N      ??OpenFileRd_2
+??OpenFileRd_6:
+        MOVS     R0,#+4
+        B.N      ??OpenFileRd_2
+        CFI EndBlock cfiBlock7
+//  172 }
+//  173 /*******************************************************************************
+//  174  写模式打开文件：返回文件第一个簇号及目录项地址
+//  175 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI Function OpenFileWr
+        THUMB
+//  176 u8 OpenFileWr(u8* pBuffer, u8* pFileName, u16* pCluster, u32* pDirAddr)
+//  177 {
+OpenFileWr:
+        PUSH     {R4-R6,R8,R9,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R9 Frame(CFA, -8)
+        CFI R8 Frame(CFA, -12)
+        CFI R6 Frame(CFA, -16)
+        CFI R5 Frame(CFA, -20)
+        CFI R4 Frame(CFA, -24)
+        CFI CFA R13+24
+        MOV      R8,R1
+        MOVS     R4,R0
+        MOVS     R5,R3
+        MOV      R9,R2
+//  178   u16 i, n;
+//  179   
+//  180   i = OpenFileRd(pBuffer, pFileName, pCluster, pDirAddr);
+        BL       OpenFileRd
+//  181   if(i != NEW) return i;
+        CMP      R0,#+4
+        BNE.N    ??OpenFileWr_0
+//  182   else{                                                    // 当前项为空白目录项
+//  183     if(SeekBlank(pBuffer, pCluster)!= OK) return OVER;     // 若FAT表满返回
+        MOV      R1,R9
+        MOVS     R0,R4
+        BL       SeekBlank
+        CBZ      R0,??OpenFileWr_1
+        MOVS     R0,#+3
+        B.N      ??OpenFileWr_0
+//  184     n =*pDirAddr & 0xFF;                                   // n为当前页目录号
+??OpenFileWr_1:
+        LDR      R0,[R5, #+0]
+//  185     if(__ReadDiskData(pBuffer,(*pDirAddr)-n, 256)!= OK) return SEC_ERR;
+        MOVS     R2,#+256
+        UXTB     R6,R0
+        SUBS     R1,R0,R6
+        MOVS     R0,R4
+        _BLF     __ReadDiskData,??__ReadDiskData??rT
+        CBNZ     R0,??OpenFileWr_2
+//  186     for(i=0; i<11; i++) pBuffer[n + i]= pFileName[i];      // 创建新目录项
+??OpenFileWr_3:
+        MOV      R3,R8
+        B.N      ??OpenFileWr_4
+??OpenFileWr_5:
+        LDRB     R1,[R3, R0]
+        ADDS     R2,R6,R0
+        ADDS     R0,R0,#+1
+        STRB     R1,[R4, R2]
+        UXTH     R0,R0
+??OpenFileWr_4:
+        CMP      R0,#+11
+        BCC.N    ??OpenFileWr_5
+//  187     *(u16*)(pBuffer + n + 0x1A)= *pCluster;
+        LDRH     R1,[R9, #+0]
+        ADDS     R0,R4,R6
+        STRH     R1,[R0, #+26]
+//  188     if(__ProgDiskPage(pBuffer,(*pDirAddr)-n)!= OK) return SEC_ERR;
+        LDR      R0,[R5, #+0]
+        SUBS     R1,R0,R6
+        MOVS     R0,R4
+        _BLF     __ProgDiskPage,??__ProgDiskPage??rT
+        CBZ      R0,??OpenFileWr_0
+??OpenFileWr_2:
+        MOVS     R0,#+1
+//  189     return OK;
+??OpenFileWr_0:
+        POP      {R4-R6,R8,R9,PC}
+        CFI EndBlock cfiBlock8
+//  190   }
+//  191 }                
+//  192 /*******************************************************************************
+//  193  关闭文件，将结束符写入FAT表，将文件长度写入目录项，复制FAT1到FAT2
+//  194 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI Function CloseFile
+        THUMB
+//  195 u8 CloseFile(u8* pBuffer, u32 Lenght, u16* pCluster, u32* pDirAddr)
+//  196 {
+CloseFile:
+        PUSH     {R4-R7,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R7 Frame(CFA, -8)
+        CFI R6 Frame(CFA, -12)
+        CFI R5 Frame(CFA, -16)
+        CFI R4 Frame(CFA, -20)
+        CFI CFA R13+20
+        MOVS     R4,R0
+//  197   u16 n;
+//  198   
+//  199   *pCluster = 0xFFF;
+        LDR.N    R0,??DataTable4  ;; 0xfff
+        MOVS     R5,R1
+        MOVS     R1,R2
+        MOVS     R6,R3
+        STRH     R0,[R1, #+0]
+//  200   SetCluster(pBuffer, pCluster); 
+        MOVS     R0,R4
+        BL       SetCluster
+//  201   if(__ReadDiskData(pBuffer, (*pDirAddr &(~0xFF)), 256)!= OK) return SEC_ERR;
+        LDR      R1,[R6, #+0]
+        MVNS     R7,#+255
+        RSBS     R2,R7,#+0
+        ANDS     R1,R1,R7
+        MOVS     R0,R4
+        _BLF     __ReadDiskData,??__ReadDiskData??rT
+        CBZ      R0,??CloseFile_0
+??CloseFile_1:
+        MOVS     R0,#+1
+        POP      {R4-R7,PC}
+//  202   *(u8* )(pBuffer +(*pDirAddr & 0xFF)+ 0x0B)= 0x20;
+??CloseFile_0:
+        LDR      R0,[R6, #+0]
+        MOVS     R1,#+32
+        UXTB     R0,R0
+        ADDS     R0,R4,R0
+        STRB     R1,[R0, #+11]
+//  203   *(u32*)(pBuffer +(*pDirAddr & 0xFF)+ 0x1C)= Lenght;
+        LDR      R0,[R6, #+0]
+        UXTB     R0,R0
+        ADDS     R0,R4,R0
+        STR      R5,[R0, #+28]
+//  204   if(__ProgDiskPage(pBuffer, (*pDirAddr &(~0xFF)))!= OK) return SEC_ERR;
+        LDR      R0,[R6, #+0]
+        ANDS     R7,R7,R0
+        MOVS     R1,R7
+        MOVS     R0,R4
+        _BLF     __ProgDiskPage,??__ProgDiskPage??rT
+        CMP      R0,#+0
+        BNE.N    ??CloseFile_1
+//  205   for(n=0; n<FAT1_SEC; n++){
+        MOVS     R5,#+0
+        B.N      ??CloseFile_2
+//  206     if(__ReadDiskData(pBuffer, FAT1_BASE+n*256, 256)!= OK) return SEC_ERR;
+??CloseFile_3:
+        LSLS     R6,R5,#+8
+        MOVS     R2,#+256
+        ADDS     R1,R6,#+4096
+        MOVS     R0,R4
+        _BLF     __ReadDiskData,??__ReadDiskData??rT
+        CMP      R0,#+0
+        BNE.N    ??CloseFile_1
+//  207     if(__ProgDiskPage(pBuffer, FAT2_BASE+n*256     )!= OK) return SEC_ERR;
+        ADDS     R1,R6,#+10240
+        MOVS     R0,R4
+        _BLF     __ProgDiskPage,??__ProgDiskPage??rT
+        CMP      R0,#+0
+        BNE.N    ??CloseFile_1
+//  208   } 
+        ADDS     R5,R5,#+1
+        UXTH     R5,R5
+??CloseFile_2:
+        CMP      R5,#+12
+        BCC.N    ??CloseFile_3
+//  209   return OK;
+        POP      {R4-R7,PC}       ;; return
+        CFI EndBlock cfiBlock9
+//  210 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable4:
+        DC32     0xfff
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__ExtFlash_PageRD??rT:
+        LDR.N    R3,??Subroutine0_0  ;; __ExtFlash_PageRD
+        BX       R3
+        DATA
+??Subroutine0_0:
+        DC32     __ExtFlash_PageRD
+        CFI EndBlock cfiBlock10
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock11 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__ExtFlash_PageWR??rT:
+        LDR.N    R3,??Subroutine1_0  ;; __ExtFlash_PageWR
+        BX       R3
+        DATA
+??Subroutine1_0:
+        DC32     __ExtFlash_PageWR
+        CFI EndBlock cfiBlock11
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock12 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__ReadDiskData??rT:
+        LDR.N    R3,??Subroutine2_0  ;; __ReadDiskData
+        BX       R3
+        DATA
+??Subroutine2_0:
+        DC32     __ReadDiskData
+        CFI EndBlock cfiBlock12
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock13 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__ProgDiskPage??rT:
+        LDR.N    R3,??Subroutine3_0  ;; __ProgDiskPage
+        BX       R3
+        DATA
+??Subroutine3_0:
+        DC32     __ProgDiskPage
+        CFI EndBlock cfiBlock13
+
+        END
+// 
+// 924 bytes in segment CODE
+// 
+// 892 bytes of CODE memory (+ 32 bytes shared)
+//
+//Errors: none
+//Warnings: none

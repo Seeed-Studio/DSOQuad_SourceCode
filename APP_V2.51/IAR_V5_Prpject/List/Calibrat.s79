@@ -1,0 +1,2975 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32 EVALUATION   08/Aug/2011  16:45:28 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  D:\Design\DS203\PRG\APP_V2.51\source\Calibrat.c     /
+//    Command line    =  D:\Design\DS203\PRG\APP_V2.51\source\Calibrat.c     /
+//                       -lA D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Li /
+//                       st\ -o D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject /
+//                       \Obj\ -s9 --debug --cpu_mode thumb --endian little  /
+//                       --cpu cortex-M3 --stack_align 4 --fpu None          /
+//                       --dlib_config "C:\Program Files\IAR                 /
+//                       Systems\Embedded Workbench 4.0                      /
+//                       Evaluation\arm\LIB\dl7mptnnl8f.h" -I                /
+//                       D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\..\..\ /
+//                       FWLib\inc\ -I D:\Design\DS203\PRG\APP_V2.51\IAR_V4_ /
+//                       Prpject\..\..\USBLib\inc\ -I                        /
+//                       D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\..\inc /
+//                       lude\ -I "C:\Program Files\IAR Systems\Embedded     /
+//                       Workbench 4.0 Evaluation\arm\INC\"                  /
+//                       --inline_threshold=16                               /
+//    List file       =  D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\List\C /
+//                       alibrat.s79                                         /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME Calibrat
+
+        RTMODEL "StackAlign4", "USED"
+        RTMODEL "__cpu_mode", "__pcs__thumb"
+        RTMODEL "__data_model", "absolute"
+        RTMODEL "__endian", "little"
+        RTMODEL "__rt_version", "6"
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+        MULTWEAK ??App_init??rT
+        MULTWEAK ??Delayms??rT
+        MULTWEAK ??Int2Str??rT
+        MULTWEAK ??Print_Str??rT
+        MULTWEAK ??Save_Param??rT
+        MULTWEAK ??Update_Trig??rT
+        MULTWEAK ??__Clear_Screen??rT
+        MULTWEAK ??__LCD_SetPixl??rT
+        MULTWEAK ??__Point_SCR??rT
+        MULTWEAK ??__Read_FIFO??rT
+        MULTWEAK ??__Set??rT
+        MULTWEAK ??s8ToPercen??rT
+        PUBLIC Balance
+        FUNCTION Balance,0203H
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC Calibrat
+        FUNCTION Calibrat,0203H
+        LOCFRAME CSTACK, 212, STACK
+        PUBLIC ExitStr
+        PUBLIC VS_STR
+        PUBLIC V_UNIT1
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA R13 HUGEDATA
+        CFI Resource R0:32, R1:32, R2:32, R3:32, R4:32, R5:32, R6:32, R7:32
+        CFI Resource R8:32, R9:32, R10:32, R11:32, R12:32, R13:32, R14:32
+        CFI VirtualResource ?RET:32
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 2
+        CFI DataAlign 4
+        CFI ReturnAddress ?RET CODE
+        CFI CFA R13+0
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI R8 SameValue
+        CFI R9 SameValue
+        CFI R10 SameValue
+        CFI R11 SameValue
+        CFI R12 Undefined
+        CFI R14 Undefined
+        CFI ?RET R14
+        CFI EndCommon cfiCommon0
+        
+App_init            SYMBOL "App_init"
+Delayms             SYMBOL "Delayms"
+Int2Str             SYMBOL "Int2Str"
+Print_Str           SYMBOL "Print_Str"
+Save_Param          SYMBOL "Save_Param"
+Update_Trig         SYMBOL "Update_Trig"
+__Clear_Screen      SYMBOL "__Clear_Screen"
+__LCD_SetPixl       SYMBOL "__LCD_SetPixl"
+__Point_SCR         SYMBOL "__Point_SCR"
+__Read_FIFO         SYMBOL "__Read_FIFO"
+__Set               SYMBOL "__Set"
+s8ToPercen          SYMBOL "s8ToPercen"
+??App_init??rT      SYMBOL "??rT", App_init
+??Delayms??rT       SYMBOL "??rT", Delayms
+??Int2Str??rT       SYMBOL "??rT", Int2Str
+??Print_Str??rT     SYMBOL "??rT", Print_Str
+??Save_Param??rT    SYMBOL "??rT", Save_Param
+??Update_Trig??rT   SYMBOL "??rT", Update_Trig
+??__Clear_Screen??rT SYMBOL "??rT", __Clear_Screen
+??__LCD_SetPixl??rT SYMBOL "??rT", __LCD_SetPixl
+??__Point_SCR??rT   SYMBOL "??rT", __Point_SCR
+??__Read_FIFO??rT   SYMBOL "??rT", __Read_FIFO
+??__Set??rT         SYMBOL "??rT", __Set
+??s8ToPercen??rT    SYMBOL "??rT", s8ToPercen
+
+        EXTERN App_init
+        FUNCTION App_init,0202H
+        EXTERN Beep_mS
+        EXTERN Blink
+        EXTERN DataBuf
+        EXTERN Delayms
+        FUNCTION Delayms,0202H
+        EXTERN G_Attr
+        EXTERN Int2Str
+        FUNCTION Int2Str,0202H
+        EXTERN Interlace
+        EXTERN Ka1
+        EXTERN Ka2
+        EXTERN Ka3
+        EXTERN Kab
+        EXTERN Kb1
+        EXTERN Kb2
+        EXTERN Kb3
+        EXTERN Key_Buffer
+        EXTERN PD_Cnt
+        EXTERN Print_Str
+        FUNCTION Print_Str,0202H
+        EXTERN Save_Param
+        FUNCTION Save_Param,0202H
+        EXTERN Title
+        EXTERN Twink
+        EXTERN Update_Trig
+        FUNCTION Update_Trig,0202H
+        EXTERN V_UNIT
+        EXTERN X_Attr
+        EXTERN Y_Attr
+        EXTERN __Clear_Screen
+        FUNCTION __Clear_Screen,0202H
+        EXTERN __LCD_SetPixl
+        FUNCTION __LCD_SetPixl,0202H
+        EXTERN __Point_SCR
+        FUNCTION __Point_SCR,0202H
+        EXTERN __Read_FIFO
+        FUNCTION __Read_FIFO,0202H
+        EXTERN __Set
+        FUNCTION __Set,0202H
+        EXTERN a_Avg
+        EXTERN b_Avg
+        EXTERN s8ToPercen
+        FUNCTION s8ToPercen,0202H
+
+// D:\Design\DS203\PRG\APP_V2.51\source\Calibrat.c
+//    1 /********************* (C) COPYRIGHT 2010 e-Design Co.,Ltd. ********************
+//    2  File Name : Calibrat.c  
+//    3  Version   : DS203_APP Ver 2.3x                                  Author : bure
+//    4 *******************************************************************************/
+//    5 #include "Interrupt.h"
+//    6 #include "Function.h"
+//    7 #include "Calibrat.h"
+//    8 #include "Process.h"
+//    9 #include "File.h"
+//   10 #include "BIOS.h"
+//   11 #include "Menu.h"
+//   12 
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+`?<Constant "DIFF">`:
+        DATA
+        DC8 "DIFF"
+        DC8 0, 0, 0
+        DC8 "                                                "
+        DC8 0, 0, 0
+        DC8 "          SAVING THE CALIBRATION DATA           "
+        DC8 0, 0, 0
+        DC8 "CH_A"
+        DC8 0, 0, 0
+        DC8 "ZERO"
+        DC8 0, 0, 0
+        DC8 "GND      "
+        DC8 0, 0
+        DC8 "VOLTAGE"
+        DC8 "CH_B"
+        DC8 0, 0, 0
+        DC8 "        PLEASE CONNECT"
+        DC8 0
+        DC8 "INPUT TO "
+        DC8 0, 0
+        DC8 "       RESTORE DEFAULTS CALIBRATION DATA        "
+        DC8 0, 0, 0
+        DC8 "   PRESS   KEY TO CONFIRM THE INPUT VOLTAGE   "
+        DC8 0
+        DC8 " CH_A "
+        DC8 0
+        DC8 " CH_B "
+        DC8 0
+        DC8 "   AUTOMATIC CALIBRATION IN PROGRESS...       "
+        DC8 0
+        DC8 " INPUT "
+        DC8 " STANDARD VOLTAGE TO "
+        DC8 0, 0
+        DC8 "MODIFY VOLTAGE:   ...    "
+        DC8 0, 0
+        DC8 "SELECT RANGE:   ---   "
+        DC8 0
+        DC8 "CH_A  "
+        DC8 0
+        DC8 "CH_B  "
+        DC8 0
+        DC8 "    PRESS   ---  "
+        DC8 0, 0
+        DC8 " TO SELECT THE NEXT OPERATION   "
+        DC8 0, 0, 0
+        DC8 "  PRESS   TO "
+        DC8 0, 0
+        DC8 "CONFIRM THE RE-CALIBRATION "
+        DC8 "CH_A "
+        DC8 0, 0
+        DC8 "CH_B "
+        DC8 0, 0
+        DC8 "SELECT THE CALIBRATION "
+        DC8 "CH_B     "
+        DC8 0, 0
+        DC8 "CH_A     "
+        DC8 0, 0
+        DC8 "Exit WITHOUT SAVE RESULTS        "
+        DC8 0, 0
+        DC8 "Exit AND SAVE CALIBRATION RESULTS"
+        DC8 0, 0
+        DC8 "Exit AND RESTORE SYSTEM DEFAULTS "
+        DC8 0, 0
+        DC8 "     "
+        DC8 0, 0
+        DC8 "       "
+//   13 uc8 VS_STR[9][12]  ={"250-300mV", "!0.5-0.6V!","!1.0-1.2V!","!2.5-3.0V!",
+VS_STR:
+        DC8 "250-300mV"
+        DC8 0, 0
+        DC8 "!0.5-0.6V!"
+        DC8 0
+        DC8 "!1.0-1.2V!"
+        DC8 0
+        DC8 "!2.5-3.0V!"
+        DC8 0
+        DC8 "!5.0-6.0V!"
+        DC8 0
+        DC8 " !10-12V! "
+        DC8 0
+        DC8 " !25-30V! "
+        DC8 0
+        DC8 " !50-60V! "
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+        RSEG DATA_C:CONST:SORT:NOROOT(0)
+        DATA
+        DC8 " "
+
+        RSEG DATA_C:CONST:SORT:NOROOT(0)
+        DATA
+        DC8 "-"
+
+        RSEG DATA_C:CONST:SORT:NOROOT(0)
+        DATA
+        DC8 "+"
+
+        RSEG DATA_C:CONST:SORT:NOROOT(0)
+        DATA
+        DC8 "<"
+
+        RSEG DATA_C:CONST:SORT:NOROOT(0)
+        DATA
+        DC8 ">"
+//   14                      "!5.0-6.0V!"," !10-12V! "," !25-30V! "," !50-60V! "};
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+//   15 uc8 ExitStr[3][50] ={" PRESS (#) KEY TO Exit WITH RESTORE DEFAULTS ",
+ExitStr:
+        DATA
+        DC8 " PRESS (#) KEY TO Exit WITH RESTORE DEFAULTS "
+        DC8 0, 0, 0, 0
+        DC8 " PRESS (#) KEY TO Exit WITH SAVE CALIBRATION "
+        DC8 0, 0, 0, 0
+        DC8 " PRESS (#) KEY TO Exit WITHOUT CALIBRATION   "
+        DC8 0, 0, 0, 0, 0, 0
+//   16                      " PRESS (#) KEY TO Exit WITH SAVE CALIBRATION ",
+//   17                      " PRESS (#) KEY TO Exit WITHOUT CALIBRATION   "};
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+//   18 uc8 V_UNIT1[8] ={'m','V','m','V','V',' ','k','V'};
+V_UNIT1:
+        DATA
+        DC8 109, 86, 109, 86, 86, 32, 107, 86
+//   19 
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function Balance
+        THUMB
+//   20 void Balance(void)
+//   21 {
+Balance:
+        PUSH     {R4-R7,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R7 Frame(CFA, -8)
+        CFI R6 Frame(CFA, -12)
+        CFI R5 Frame(CFA, -16)
+        CFI R4 Frame(CFA, -20)
+        CFI CFA R13+20
+//   22   u16 i;
+//   23   
+//   24   __Set(STANDBY, DN);                          // 退出省电状态
+//   25   __Set(ADC_CTRL, EN );       
+//   26   __Set(T_BASE_PSC, X_Attr[_2uS].PSC);         // T_BASE = 2uS
+        LDR.N    R4,??DataTable0  ;; X_Attr
+        MOVS     R1,#+0
+//   27   __Set(T_BASE_ARR, X_Attr[_2uS].ARR);
+//   28   __Set(CH_A_COUPLE, AC);
+//   29   __Set(CH_B_COUPLE, AC);
+//   30   __Set(CH_A_OFFSET, 100);
+//   31   __Set(CH_B_OFFSET, 100);
+//   32   __Set(CH_A_RANGE,  G_Attr[0].Yp_Max);        // 10V/Div
+//   33   __Set(CH_B_RANGE,  G_Attr[0].Yp_Max+1);      // B通道合并到A通道
+//   34   __Set(ADC_MODE, INTERLACE);                  // Set Interlace mode
+//   35   Update_Trig();
+//   36   __Set(TRIGG_MODE, UNCONDITION);              // 设任意触发
+//   37   Delayms(2000); 
+//   38   
+//   39   __Set(FIFO_CLR, W_PTR); 
+//   40   Delayms(20); 
+//   41   a_Avg = 2048;               
+//   42   b_Avg = 2048;            
+        LDR.N    R5,??DataTable1  ;; b_Avg
+        MOVS     R0,#+20
+        _BLF     __Set,??__Set??rT
+        MOVS     R1,#+1
+        MOVS     R0,#+36
+        _BLF     __Set,??__Set??rT
+        LDR      R0,[R4, #+0]
+//   43   for(i=0; i <4096; i++){
+        MOVS     R6,#+0
+        LDRSH    R1,[R0, #+348]
+        MOVS     R0,#+7
+        _BLF     __Set,??__Set??rT
+        LDR      R1,[R4, #+0]
+        LDR.N    R4,??DataTable2  ;; G_Attr
+        MOVS     R0,#+350
+        LDRH     R1,[R1, R0]
+        MOVS     R0,#+8
+        _BLF     __Set,??__Set??rT
+        MOVS     R1,#+1
+        MOVS     R0,#+9
+        _BLF     __Set,??__Set??rT
+        MOVS     R1,#+1
+        MOVS     R0,#+11
+        _BLF     __Set,??__Set??rT
+        MOVS     R1,#+100
+        MOVS     R0,#+0
+        _BLF     __Set,??__Set??rT
+        MOVS     R1,#+100
+        MOVS     R0,#+1
+        _BLF     __Set,??__Set??rT
+        LDR      R0,[R4, #+0]
+        LDRH     R1,[R0, #+4]
+        MOVS     R0,#+10
+        _BLF     __Set,??__Set??rT
+        LDR      R0,[R4, #+0]
+        LDR.N    R4,??DataTable3  ;; a_Avg
+        LDRH     R1,[R0, #+4]
+        MOVS     R0,#+12
+        ADDS     R1,R1,#+1
+        _BLF     __Set,??__Set??rT
+        MOVS     R1,#+1
+        MOVS     R0,#+5
+        _BLF     __Set,??__Set??rT
+        _BLF     Update_Trig,??Update_Trig??rT
+        MOVS     R1,#+32
+        MOVS     R0,#+32
+        _BLF     __Set,??__Set??rT
+        MOVS     R0,#+2000
+        _BLF     Delayms,??Delayms??rT
+        MOVS     R1,#+1
+        MOVS     R0,#+6
+        _BLF     __Set,??__Set??rT
+        MOVS     R0,#+20
+        _BLF     Delayms,??Delayms??rT
+        MOVS     R0,#+2048
+        STR      R0,[R4, #+0]
+        STR      R0,[R5, #+0]
+        B.N      ??Balance_0
+??Balance_1:
+        LDR.N    R1,??DataTable4  ;; DataBuf
+        ADDS     R7,R1,R6, LSL #+2
+//   44     DataBuf[i] = __Read_FIFO();         // 读入32位FIFO数据, 读后指针+1
+        _BLF     __Read_FIFO,??__Read_FIFO??rT
+        STR      R0,[R7, #+0]
+//   45     a_Avg += (DataBuf[i] & 0xFF );      // 累计直流平均值                
+        LDR      R1,[R4, #+0]
+        UXTB     R2,R0
+//   46     b_Avg += ((DataBuf[i]>>8) & 0xFF );              
+        LSLS     R0,R0,#+16
+        ADDS     R1,R1,R2
+        STR      R1,[R4, #+0]
+        LDR      R1,[R5, #+0]
+        LSRS     R0,R0,#+24
+//   47   }
+        ADDS     R6,R6,#+1
+        ADDS     R0,R1,R0
+        STR      R0,[R5, #+0]
+        UXTH     R6,R6
+??Balance_0:
+        MOVS     R1,#+4096
+        CMP      R6,R1
+        BCC.N    ??Balance_1
+//   48   Kab = (a_Avg - b_Avg)/4096;
+        LDR.N    R0,??Balance_2   ;; Kab
+        LDR      R1,[R4, #+0]
+        LDR      R2,[R5, #+0]
+        SUBS     R1,R1,R2
+        LSRS     R1,R1,#+12
+        STRB     R1,[R0, #+0]
+//   49 }
+        POP      {R4-R7,PC}       ;; return
+        DATA
+??Balance_2:
+        DC32     Kab
+        CFI EndBlock cfiBlock0
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable0:
+        DC32     X_Attr
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable1:
+        DC32     b_Avg
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable2:
+        DC32     G_Attr
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable3:
+        DC32     a_Avg
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable4:
+        DC32     DataBuf
+//   50 /*******************************************************************************
+//   51   Calibrat : Calibrat routine
+//   52 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function Calibrat
+        THUMB
+//   53 void Calibrat(u8 Channel)
+//   54 { 
+Calibrat:
+        PUSH     {R4-R11,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R11 Frame(CFA, -8)
+        CFI R10 Frame(CFA, -12)
+        CFI R9 Frame(CFA, -16)
+        CFI R8 Frame(CFA, -20)
+        CFI R7 Frame(CFA, -24)
+        CFI R6 Frame(CFA, -28)
+        CFI R5 Frame(CFA, -32)
+        CFI R4 Frame(CFA, -36)
+        CFI CFA R13+36
+//   55   s8  Ma1[10], Mb1[10], Ma3[10], Mb3[10];
+//   56   u16 Ma2[10], Mb2[10], i, j;
+//   57   s16 TmpA, TmpB;
+//   58   u8  Range, n[10], k, m, Step;
+//   59   
+//   60   Key_Buffer = 0; 
+//   61   __Set(STANDBY, DN);                                   // 退出省电状态
+//   62   __Set(BACKLIGHT, 10*(Title[BK_LIGHT][CLASS].Value+1));
+        LDR.N    R4,??Calibrat_1  ;; Title
+        SUB      SP,SP,#+140
+        CFI CFA R13+176
+        MOVS     R1,#+0
+        MOV      R8,R0
+        MOVS     R0,#+0
+        MOV      R9,R0
+        LDR.N    R0,??Calibrat_1+0x4  ;; Key_Buffer
+        ADDW     R5,R4,#+916
+//   63   __Clear_Screen(BLACK);                                // 清屏幕
+//   64   
+//   65   Interlace = 0;
+//   66   __Set(ADC_MODE, SEPARATE);                            // Set Separate mode
+//   67   __Set(ADC_CTRL, EN);       
+//   68   __Set(TRIGG_MODE, UNCONDITION);                       // 设任意触发
+//   69   _Status = RUN;
+//   70   __Set(BEEP_VOLUME, 5*(Title[VOLUME][CLASS].Value-1)); // Reload volume
+//   71   Beep_mS = 500;                                        // 蜂鸣器响500mS
+//   72   Range = 0;
+//   73   Step  = 0;
+        MOV      R6,R9
+//   74   m     = 0;
+//   75   
+//   76   __Set(T_BASE_PSC, X_Attr[_100uS].PSC);                // T_BASE = 100uS
+//   77   __Set(T_BASE_ARR, X_Attr[_100uS].ARR);
+//   78 
+//   79   __Set(CH_A_COUPLE, DC);
+//   80   __Set(CH_B_COUPLE, DC);
+//   81   
+//   82   for(j=0; j<220; j+=20){                               // 画表格  
+        MOV      R10,R9
+        STRB     R1,[R0, #+0]
+        MOVS     R0,#+20
+        _BLF     __Set,??__Set??rT
+        LDRSH    R1,[R5, #+0]
+        MOVS     R0,#+10
+        ADDS     R1,R1,#+1
+        MULS     R1,R0,R1
+        MOVS     R0,#+2
+        _BLF     __Set,??__Set??rT
+        MOV      R0,R9
+        _BLF     __Clear_Screen,??__Clear_Screen??rT
+        LDR.N    R0,??Calibrat_1+0x8  ;; Interlace
+        MOV      R1,R9
+        STRB     R1,[R0, #+0]
+        MOVS     R0,#+5
+        _BLF     __Set,??__Set??rT
+        MOVS     R1,#+1
+        MOVS     R0,#+36
+        _BLF     __Set,??__Set??rT
+        MOVS     R1,#+32
+        MOV      R0,R1
+        _BLF     __Set,??__Set??rT
+        LDRSH    R1,[R5, #+80]
+        MOV      R0,R9
+        STRH     R0,[R4, #+336]
+        SUBS     R1,R1,#+1
+        LDR.N    R4,??Calibrat_1+0xC  ;; X_Attr
+        MOVS     R0,#+5
+        MOV      R5,R9
+        MULS     R1,R0,R1
+        MOVS     R0,#+3
+        _BLF     __Set,??__Set??rT
+        LDR.N    R0,??Calibrat_1+0x10  ;; Beep_mS
+        MOVS     R1,#+500
+        STRH     R1,[R0, #+0]
+        MOV      R0,R9
+        STRB     R0,[SP, #+1]
+        LDR      R0,[R4, #+0]
+        LDRSH    R1,[R0, #+248]
+        MOVS     R0,#+7
+        _BLF     __Set,??__Set??rT
+        LDR      R0,[R4, #+0]
+        LDR.N    R4,??Calibrat_1+0x14  ;; 0xffff
+        LDRH     R1,[R0, #+250]!
+        MOVS     R0,#+8
+        _BLF     __Set,??__Set??rT
+        MOV      R1,R5
+        MOVS     R0,#+9
+        _BLF     __Set,??__Set??rT
+        MOV      R1,R5
+        MOVS     R0,#+11
+        _BLF     __Set,??__Set??rT
+//   83     for(i=0; i<399; i++){
+??Calibrat_2:
+        LDR.N    R0,??Calibrat_1+0x18  ;; 0x18f
+        MOVS     R7,#+0
+        MOV      R11,R0
+//   84       __Point_SCR(i, j);
+??Calibrat_3:
+        MOV      R1,R10
+        MOVS     R0,R7
+        _BLF     __Point_SCR,??__Point_SCR??rT
+//   85       __LCD_SetPixl(WHT);
+        MOVS     R0,R4
+        _BLF     __LCD_SetPixl,??__LCD_SetPixl??rT
+//   86     }
+        ADDS     R7,R7,#+1
+        UXTH     R7,R7
+        CMP      R7,R11
+        BCC.N    ??Calibrat_3
+//   87   }
+        MOV      R0,R10
+        ADDS     R0,R0,#+20
+        UXTH     R0,R0
+        MOV      R10,R0
+        CMP      R0,#+220
+        BCC.N    ??Calibrat_2
+//   88   for(i=0; i<399; i++){
+        MOVS     R7,#+0
+//   89     __Point_SCR(i, 239);
+??Calibrat_4:
+        MOVS     R1,#+239
+        MOVS     R0,R7
+        _BLF     __Point_SCR,??__Point_SCR??rT
+//   90     __LCD_SetPixl(WHT);
+        MOVS     R0,R4
+        _BLF     __LCD_SetPixl,??__LCD_SetPixl??rT
+//   91   }
+        ADDS     R7,R7,#+1
+        UXTH     R7,R7
+        CMP      R7,R11
+        BCC.N    ??Calibrat_4
+//   92   __Point_SCR(  0,  0);
+        MOVS     R1,#+0
+        MOV      R0,R1
+        _BLF     __Point_SCR,??__Point_SCR??rT
+//   93   for(j= 0; j<239; j++)  __LCD_SetPixl(WHT); 
+        MOV      R7,R5
+??Calibrat_5:
+        MOVS     R0,R4
+        _BLF     __LCD_SetPixl,??__LCD_SetPixl??rT
+        ADDS     R7,R7,#+1
+        UXTH     R7,R7
+        CMP      R7,#+239
+        BCC.N    ??Calibrat_5
+//   94   __Point_SCR( 44, 20);
+        MOVS     R1,#+20
+        MOVS     R0,#+44
+        _BLF     __Point_SCR,??__Point_SCR??rT
+//   95   for(j=20; j<201; j++)  __LCD_SetPixl(WHT); 
+        MOVS     R7,#+20
+??Calibrat_6:
+        MOVS     R0,R4
+        _BLF     __LCD_SetPixl,??__LCD_SetPixl??rT
+        ADDS     R7,R7,#+1
+        UXTH     R7,R7
+        CMP      R7,#+201
+        BCC.N    ??Calibrat_6
+//   96   __Point_SCR( 88, 20);
+        MOVS     R1,#+20
+        MOVS     R0,#+88
+        _BLF     __Point_SCR,??__Point_SCR??rT
+//   97   for(j=20; j<201; j++)  __LCD_SetPixl(WHT); 
+        MOVS     R7,#+20
+??Calibrat_7:
+        MOVS     R0,R4
+        _BLF     __LCD_SetPixl,??__LCD_SetPixl??rT
+        ADDS     R7,R7,#+1
+        UXTH     R7,R7
+        CMP      R7,#+201
+        BCC.N    ??Calibrat_7
+//   98   __Point_SCR(132, 20);
+        MOVS     R1,#+20
+        MOVS     R0,#+132
+        _BLF     __Point_SCR,??__Point_SCR??rT
+//   99   for(j=20; j<201; j++)  __LCD_SetPixl(WHT); 
+        MOVS     R7,#+20
+??Calibrat_8:
+        MOVS     R0,R4
+        _BLF     __LCD_SetPixl,??__LCD_SetPixl??rT
+        ADDS     R7,R7,#+1
+        UXTH     R7,R7
+        CMP      R7,#+201
+        BCC.N    ??Calibrat_8
+//  100   __Point_SCR(200, 20);
+        MOVS     R1,#+20
+        MOVS     R0,#+200
+        _BLF     __Point_SCR,??__Point_SCR??rT
+//  101   for(j=20; j<201; j++)  __LCD_SetPixl(WHT); 
+        MOVS     R7,#+20
+??Calibrat_9:
+        MOVS     R0,R4
+        _BLF     __LCD_SetPixl,??__LCD_SetPixl??rT
+        ADDS     R7,R7,#+1
+        UXTH     R7,R7
+        CMP      R7,#+201
+        BCC.N    ??Calibrat_9
+//  102   __Point_SCR(244, 20);
+        MOVS     R1,#+20
+        MOVS     R0,#+244
+        _BLF     __Point_SCR,??__Point_SCR??rT
+//  103   for(j=20; j<201; j++)  __LCD_SetPixl(WHT); 
+        MOVS     R7,#+20
+??Calibrat_10:
+        MOVS     R0,R4
+        _BLF     __LCD_SetPixl,??__LCD_SetPixl??rT
+        ADDS     R7,R7,#+1
+        UXTH     R7,R7
+        CMP      R7,#+201
+        BCC.N    ??Calibrat_10
+//  104   __Point_SCR(288, 20);
+        MOVS     R1,#+20
+        MOVS     R0,#+288
+        _BLF     __Point_SCR,??__Point_SCR??rT
+//  105   for(j=20; j<201; j++)  __LCD_SetPixl(WHT); 
+        MOVS     R7,#+20
+??Calibrat_11:
+        MOVS     R0,R4
+        _BLF     __LCD_SetPixl,??__LCD_SetPixl??rT
+        ADDS     R7,R7,#+1
+        UXTH     R7,R7
+        CMP      R7,#+201
+        BCC.N    ??Calibrat_11
+//  106   __Point_SCR(332, 20);
+        MOVS     R1,#+20
+        MOVS     R0,#+332
+        _BLF     __Point_SCR,??__Point_SCR??rT
+//  107   for(j=20; j<201; j++)  __LCD_SetPixl(WHT); 
+        MOVS     R7,#+20
+??Calibrat_12:
+        MOVS     R0,R4
+        _BLF     __LCD_SetPixl,??__LCD_SetPixl??rT
+        ADDS     R7,R7,#+1
+        UXTH     R7,R7
+        CMP      R7,#+201
+        BCC.N    ??Calibrat_12
+//  108   __Point_SCR(398, 0);
+        MOVS     R1,#+0
+        MOVS     R0,#+398
+        _BLF     __Point_SCR,??__Point_SCR??rT
+//  109   for(j= 0; j<239; j++)  __LCD_SetPixl(WHT); 
+        MOV      R7,R5
+??Calibrat_13:
+        MOVS     R0,R4
+        _BLF     __LCD_SetPixl,??__LCD_SetPixl??rT
+        ADDS     R7,R7,#+1
+        UXTH     R7,R7
+        CMP      R7,#+239
+        BCC.N    ??Calibrat_13
+//  110  
+//  111   Print_Str(  6, 185, 0x0005, PRN, "CH_A");              // 显示表格标题栏
+        LDR.N    R0,??Calibrat_1+0x1C  ;; `?<Constant "DIFF">`
+        MOVS     R3,#+0
+        MOVS     R2,#+5
+        MOV      R10,R0
+        ADDS     R0,R0,#+112
+        PUSH     {R0}
+        CFI CFA R13+180
+        MOVS     R1,#+185
+        MOVS     R0,#+6
+        _BLF     Print_Str,??Print_Str??rT
+//  112   Print_Str( 49, 185, 0x0005, PRN, "ZERO");
+        MOV      R0,R10
+        ADDS     R0,R0,#+120
+        PUSH     {R0}
+        CFI CFA R13+184
+        MOV      R3,R5
+        MOVS     R2,#+5
+        MOVS     R1,#+185
+        MOVS     R0,#+49
+        _BLF     Print_Str,??Print_Str??rT
+//  113   Print_Str( 93, 185, 0x0005, PRN, "DIFF");
+        MOV      R0,R10
+        PUSH     {R0}
+        CFI CFA R13+188
+        MOV      R3,R5
+        MOVS     R2,#+5
+        MOVS     R1,#+185
+        MOVS     R0,#+93
+        _BLF     Print_Str,??Print_Str??rT
+//  114   Print_Str(137, 185, 0x0005, PRN, "VOLTAGE");
+        MOV      R4,R10
+        ADDS     R4,R4,#+140
+        PUSH     {R4}
+        CFI CFA R13+192
+        MOV      R3,R5
+        MOVS     R2,#+5
+        MOVS     R1,#+185
+        MOVS     R0,#+137
+        _BLF     Print_Str,??Print_Str??rT
+        LDR.N    R2,??Calibrat_1+0x20  ;; 0x105
+        MOV      R0,R10
+        ADDS     R0,R0,#+148
+        PUSH     {R0}
+        CFI CFA R13+196
+        MOV      R3,R5
+        MOVS     R1,#+185
+        MOVS     R0,#+206
+//  115   Print_Str(206, 185, 0x0105, PRN, "CH_B");
+        _BLF     Print_Str,??Print_Str??rT
+//  116   Print_Str(249, 185, 0x0105, PRN, "ZERO");
+        LDR.N    R2,??Calibrat_1+0x20  ;; 0x105
+        MOV      R0,R10
+        ADDS     R0,R0,#+120
+        PUSH     {R0}
+        CFI CFA R13+200
+        MOV      R3,R5
+        MOVS     R1,#+185
+        MOVS     R0,#+249
+        _BLF     Print_Str,??Print_Str??rT
+//  117   Print_Str(293, 185, 0x0105, PRN, "DIFF");
+        LDR.N    R2,??Calibrat_1+0x20  ;; 0x105
+        MOV      R0,R10
+        PUSH     {R0}
+        CFI CFA R13+204
+        LDR.N    R0,??Calibrat_1+0x24  ;; 0x125
+        MOV      R3,R5
+        MOVS     R1,#+185
+        _BLF     Print_Str,??Print_Str??rT
+//  118   Print_Str(338, 185, 0x0105, PRN, "VOLTAGE");
+        LDR.N    R2,??Calibrat_1+0x20  ;; 0x105
+        PUSH     {R4}
+        CFI CFA R13+208
+        MOV      R3,R5
+        MOVS     R1,#+185
+        MOVS     R0,#+338
+        _BLF     Print_Str,??Print_Str??rT
+//  119     
+//  120   for(i=0; i<=G_Attr[0].Yp_Max; i++){
+        MOV      R7,R5
+        ADD      SP,SP,#+32
+        CFI CFA R13+176
+        B.N      ??Calibrat_14
+//  121     Print_Str(  6, 166-(i*20), 0x0005, PRN, Y_Attr[i].STR); // 显示量程
+??Calibrat_15:
+        LDR.N    R1,??Calibrat_1+0x28  ;; Y_Attr
+        MOVS     R4,R7
+        MOVS     R0,#+20
+        MOVS     R3,#+0
+        MUL      R11,R4,R0
+        MOVS     R2,#+5
+//  122     Print_Str(206, 166-(i*20), 0x0105, PRN, Y_Attr[i].STR);
+//  123     Ma1[i] = Ka1[i];  Ma2[i] = Ka2[i];  Ma3[i] = Ka3[i];    // 备份校准前的参数
+//  124     Mb1[i] = Kb1[i];  Mb2[i] = Kb2[i];  Mb3[i] = Kb3[i];
+//  125   }
+        ADDS     R7,R7,#+1
+        RSBS     R0,R11,#+166
+        STRH     R0,[SP, #+30]
+        LDR      R1,[R1, #+0]
+        MOV      R0,R11
+        UXTH     R7,R7
+        ADDS     R0,R1,R0
+        PUSH     {R0}
+        CFI CFA R13+180
+        LDRH     R1,[SP, #+34]
+        MOVS     R0,#+6
+        _BLF     Print_Str,??Print_Str??rT
+        LDR.N    R1,??Calibrat_1+0x28  ;; Y_Attr
+        LDR.N    R2,??Calibrat_1+0x20  ;; 0x105
+        MOV      R0,R11
+        LDR      R1,[R1, #+0]
+        MOV      R3,R5
+        ADDS     R0,R1,R0
+        PUSH     {R0}
+        CFI CFA R13+184
+        LDRH     R1,[SP, #+38]
+        MOVS     R0,#+206
+        _BLF     Print_Str,??Print_Str??rT
+        LDR.N    R1,??Calibrat_1+0x2C  ;; Ka1
+        ADD      R0,SP,#+60
+        LDRB     R1,[R1, R4]
+        STRB     R1,[R0, R4]
+        LDR.N    R1,??Calibrat_1+0x30  ;; Ka2
+        ADD      R0,SP,#+108
+        LDRH     R1,[R1, R4, LSL #+1]
+        STRH     R1,[R0, R4, LSL #+1]
+        LDR.N    R1,??Calibrat_1+0x34  ;; Ka3
+        ADD      R0,SP,#+84
+        LDRB     R1,[R1, R4]
+        STRB     R1,[R0, R4]
+        LDR.N    R1,??Calibrat_1+0x38  ;; Kb1
+        ADD      R0,SP,#+72
+        LDRB     R1,[R1, R4]
+        STRB     R1,[R0, R4]
+        LDR.N    R1,??Calibrat_1+0x3C  ;; Kb2
+        ADD      R0,SP,#+128
+        LDRH     R1,[R1, R4, LSL #+1]
+        STRH     R1,[R0, R4, LSL #+1]
+        LDR.N    R1,??Calibrat_1+0x40  ;; Kb3
+        ADD      R0,SP,#+96
+        LDRB     R1,[R1, R4]
+        STRB     R1,[R0, R4]
+        ADD      SP,SP,#+8
+        CFI CFA R13+176
+??Calibrat_14:
+        LDR.N    R0,??Calibrat_1+0x44  ;; G_Attr
+        LDR      R0,[R0, #+0]
+        LDRH     R0,[R0, #+4]
+        CMP      R0,R7
+        BCS.N    ??Calibrat_15
+??Calibrat_16:
+        LDR.N    R0,??Calibrat_1+0x48  ;; PD_Cnt
+        LDRH     R0,[R0, #+0]
+        CBNZ     R0,??Calibrat_17
+//  126 
+//  127   while (1){
+//  128     if(PD_Cnt == 0){
+//  129       __Set(BACKLIGHT, 0);                               // 关闭背光
+        MOVS     R1,#+0
+        MOVS     R0,#+2
+        _BLF     __Set,??__Set??rT
+//  130       __Set(STANDBY, EN);                                // 进入省电状态
+        MOVS     R1,#+1
+        MOVS     R0,#+20
+        _BLF     __Set,??__Set??rT
+//  131       return;
+??Calibrat_18:
+        ADD      SP,SP,#+140
+        CFI CFA R13+36
+        POP      {R4-R11,PC}      ;; return
+        Nop      
+        DATA
+??Calibrat_1:
+        DC32     Title
+        DC32     Key_Buffer
+        DC32     Interlace
+        DC32     X_Attr
+        DC32     Beep_mS
+        DC32     0xffff
+        DC32     0x18f
+        DC32     `?<Constant "DIFF">`
+        DC32     0x105
+        DC32     0x125
+        DC32     Y_Attr
+        DC32     Ka1
+        DC32     Ka2
+        DC32     Ka3
+        DC32     Kb1
+        DC32     Kb2
+        DC32     Kb3
+        DC32     G_Attr
+        DC32     PD_Cnt
+        CFI CFA R13+176
+        THUMB
+//  132     }
+//  133     __Set(CH_A_RANGE, Range);  __Set(CH_B_RANGE, Range);
+??Calibrat_17:
+        UXTB     R4,R5
+        MOVS     R1,R4
+        MOVS     R0,#+10
+        _BLF     __Set,??__Set??rT
+        MOVS     R1,R4
+        MOVS     R0,#+12
+        _BLF     __Set,??__Set??rT
+//  134     Delayms(20); 
+        MOVS     R0,#+20
+        _BLF     Delayms,??Delayms??rT
+//  135     __Set(FIFO_CLR, W_PTR);
+        MOVS     R1,#+1
+        MOVS     R0,#+6
+        _BLF     __Set,??__Set??rT
+//  136     Delayms(20); 
+        MOVS     R0,#+20
+        _BLF     Delayms,??Delayms??rT
+//  137     a_Avg = 2048;  b_Avg = 2048;               
+        LDR.N    R0,??Calibrat_19  ;; a_Avg
+        LDR.N    R1,??Calibrat_19+0x4  ;; b_Avg
+//  138     for(i=0; i <4096; i++){
+        MOVS     R7,#+0
+        MOV      R11,R0
+        MOVS     R0,#+2048
+        STR      R0,[R11, #+0]
+        STR      R0,[R1, #+0]
+??Calibrat_20:
+        LDR.N    R1,??Calibrat_19+0x8  ;; DataBuf
+        ADDS     R4,R1,R7, LSL #+2
+//  139       DataBuf[i] = __Read_FIFO();         // 读入32位FIFO数据
+        _BLF     __Read_FIFO,??__Read_FIFO??rT
+        STR      R0,[R4, #+0]
+//  140       a_Avg += (DataBuf[i] & 0xFF );      // 累计直流平均值                
+        LDR      R1,[R11, #+0]
+        UXTB     R2,R0
+//  141       b_Avg += ((DataBuf[i]>>8) & 0xFF );              
+        LSLS     R0,R0,#+16
+        ADDS     R1,R1,R2
+        LDR.N    R2,??Calibrat_19+0x4  ;; b_Avg
+        LSRS     R0,R0,#+24
+        STR      R1,[R11, #+0]
+        LDR      R2,[R2, #+0]
+//  142     }
+        ADDS     R7,R7,#+1
+        UXTH     R7,R7
+        ADDS     R0,R2,R0
+        LDR.N    R2,??Calibrat_19+0x4  ;; b_Avg
+        MOVS     R3,#+4096
+        CMP      R7,R3
+        STR      R0,[R2, #+0]
+        BCC.N    ??Calibrat_20
+        LDR.N    R3,??Calibrat_19+0xC  ;; Ka1
+        LDR.N    R4,??Calibrat_19+0x10  ;; Ka2
+        UXTB     R2,R5
+        ADDS     R2,R3,R2
+        STR      R2,[SP, #+32]
+        LDR      R2,[SP, #+32]
+        UXTB     R3,R5
+        LDRH     R3,[R4, R3, LSL #+1]
+        LDRSB    R2,[R2, #+0]
+        LSRS     R1,R1,#+12
+//  143     TmpA  = Ka1[Range] +(Ka2[Range]*(a_Avg/4096)+ 512)/1024;
+//  144     TmpB  = Kb1[Range] +(Kb2[Range]*(b_Avg/4096)+ 512)/1024;
+        LSRS     R0,R0,#+12
+        MULS     R3,R1,R3
+        ADDW     R1,R3,#+512
+        LDR.N    R3,??Calibrat_19+0x14  ;; Kb2
+        LSRS     R1,R1,#+10
+        ADDS     R1,R2,R1
+        LDR.N    R2,??Calibrat_19+0x18  ;; Kb1
+        SXTH     R1,R1
+        STR      R1,[SP, #+4]
+        UXTB     R1,R5
+        ADDS     R1,R2,R1
+        STR      R1,[SP, #+36]
+        LDR      R1,[SP, #+36]
+        UXTB     R2,R5
+        LDRH     R2,[R3, R2, LSL #+1]
+        LDRSB    R1,[R1, #+0]
+        MULS     R2,R0,R2
+        ADDW     R0,R2,#+512
+        LSRS     R0,R0,#+10
+        ADDS     R4,R1,R0
+        LDR.N    R0,??Calibrat_19+0x1C  ;; 0x405
+        SXTH     R4,R4
+        MOV      R11,R0
+        LDR.N    R0,??Calibrat_19+0x20  ;; Blink
+        LDRB     R1,[R0, #+0]
+        CMP      R1,#+0
+        BEQ.W    ??Calibrat_21
+//  145 
+//  146     if(Blink){ 
+//  147       Blink = 0;
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+0]
+//  148       switch (Step){  
+        UXTB     R0,R5
+        MOVS     R1,#+20
+        MULS     R0,R1,R0
+        STR      R0,[SP, #+48]
+        LDR      R1,[SP, #+48]
+        MOVS     R0,#+166
+        SUBS     R7,R0,R1
+        LDR.N    R1,??Calibrat_19+0x24  ;; Ka3
+        ADDS     R0,R5,#+1
+        UXTB     R0,R0
+        STR      R0,[SP, #+44]
+        UXTB     R0,R5
+        ADDS     R0,R1,R0
+        LDR.N    R1,??Calibrat_19+0x28  ;; Kb3
+        STR      R0,[SP, #+40]
+        UXTB     R0,R5
+        ADDS     R0,R1,R0
+        STR      R0,[SP, #+8]
+        ADDS     R0,R6,#+1
+        UXTB     R0,R0
+        STR      R0,[SP, #+12]
+        LDR      R0,[SP, #+4]
+        SUBS     R0,R0,#+40
+        STRB     R0,[SP, #+3]
+        MOVS     R0,R4
+        SUBS     R0,R0,#+40
+        STRB     R0,[SP, #+28]
+        LDR      R1,[SP, #+4]
+        LDRB     R2,[SP, #+0]
+        MOVS     R0,R4
+        ADDS     R1,R1,#+96
+        ADDS     R0,R0,#+96
+        ADDS     R2,R2,#+1
+        STRB     R2,[SP, #+2]
+        UXTB     R2,R6
+        CMP      R2,#+12
+        BHI.W    ??Calibrat_21
+        TBH      [PC, R2, LSL #+1]
+        DATA
+??Calibrat_0:
+        DC16     +13,+155,+251,+393
+        DC16     +448,+538,+627,+747
+        DC16     +933,+1028,+1075,+1092
+        DC16     +1109
+        THUMB
+//  149       case 0:
+//  150         Range = 0;
+//  151         __Set(CH_A_OFFSET, ((1024+Ka3[Range])*40 + 512)/1024);
+??Calibrat_22:
+        LDR.N    R0,??Calibrat_19+0x24  ;; Ka3
+        MOVS     R5,#+0
+        MOVS     R1,#+40
+        LDRSB    R0,[R0, R5]
+        MULS     R0,R1,R0
+        ADDS     R0,R0,#+41472
+        ASRS     R1,R0,#+9
+        ADDS     R0,R0,R1, LSR #+22
+        ASRS     R1,R0,#+10
+        MOV      R0,R5
+        _BLF     __Set,??__Set??rT
+//  152         __Set(CH_B_OFFSET, ((1024+Kb3[Range])*40 + 512)/1024);
+        LDR.N    R0,??Calibrat_19+0x28  ;; Kb3
+        MOVS     R1,#+40
+        LDRSB    R0,[R0, R5]
+        MULS     R0,R1,R0
+        ADDS     R0,R0,#+41472
+        ASRS     R1,R0,#+9
+        ADDS     R0,R0,R1, LSR #+22
+        ASRS     R1,R0,#+10
+        MOVS     R0,#+1
+        _BLF     __Set,??__Set??rT
+//  153         Print_Str(   8, 216, 0x0305, PRN,   "        PLEASE CONNECT");
+        LDR.N    R2,??Calibrat_19+0x2C  ;; 0x305
+        MOV      R0,R10
+        ADDS     R0,R0,#+156
+        PUSH     {R0}
+        CFI CFA R13+180
+        MOV      R3,R5
+        MOVS     R1,#+216
+        MOVS     R0,#+8
+        _BLF     Print_Str,??Print_Str??rT
+//  154         Print_Str(29*8, 216, 0x0305, PRN,   "INPUT TO ");
+        LDR.N    R2,??Calibrat_19+0x2C  ;; 0x305
+        MOV      R0,R10
+        ADDS     R0,R0,#+180
+        PUSH     {R0}
+        CFI CFA R13+184
+        MOV      R3,R5
+        MOVS     R1,#+216
+        MOVS     R0,#+232
+        _BLF     Print_Str,??Print_Str??rT
+//  155         Print_Str(38*8, 216, 0x0405, PRN,   "GND      ");
+        MOV      R0,R10
+        ADDS     R0,R0,#+128
+        PUSH     {R0}
+        CFI CFA R13+188
+        MOV      R3,R5
+        MOV      R2,R11
+        MOVS     R1,#+216
+        MOVS     R0,#+304
+        _BLF     Print_Str,??Print_Str??rT
+//  156         Print_Str(   8,   6, 0x0305, PRN,   "   PRESS   KEY TO CONFIRM THE INPUT VOLTAGE   ");
+        LDR.N    R2,??Calibrat_19+0x2C  ;; 0x305
+        MOV      R0,R10
+        ADDS     R0,R0,#+244
+        PUSH     {R0}
+        CFI CFA R13+192
+        MOV      R3,R5
+        MOVS     R1,#+6
+        MOVS     R0,#+8
+        _BLF     Print_Str,??Print_Str??rT
+//  157         Print_Str(10*8,   6, 0x0405, Twink, " ");
+        ADR.N    R0,??Calibrat_19+0x30  ;; " "
+        PUSH     {R0}
+        CFI CFA R13+196
+        LDR.N    R0,??Calibrat_19+0x34  ;; Twink
+        MOV      R2,R11
+        MOVS     R1,#+6
+        LDRB     R3,[R0, #+0]
+        MOVS     R0,#+80
+        _BLF     Print_Str,??Print_Str??rT
+//  158         if(Channel == TRACK1){
+        MOV      R0,R8
+        ADD      SP,SP,#+20
+        CFI CFA R13+176
+        LSLS     R0,R0,#+24
+        BNE.N    ??Calibrat_23
+//  159           Print_Str( 23*8, 216, 0x0005, PRN, " CH_A ");
+        ADDW     R0,R10,#+292
+        PUSH     {R0}
+        CFI CFA R13+180
+        MOVS     R3,#+0
+        MOVS     R2,#+5
+        MOVS     R1,#+216
+        MOVS     R0,#+184
+        _BLF     Print_Str,??Print_Str??rT
+//  160           for(i=0; i<=G_Attr[0].Yp_Max; i++){
+        MOV      R7,R5
+        ADD      SP,SP,#+4
+        CFI CFA R13+176
+??Calibrat_24:
+        LDR.N    R0,??Calibrat_19+0x38  ;; G_Attr
+        LDR      R0,[R0, #+0]
+        LDRH     R0,[R0, #+4]
+        CMP      R0,R7
+        BCC.W    ??Calibrat_21
+//  161             Ka1[i] = 0; Ka2[i] = 1024; Ka3[i] = 0;         // 设置校准参数初值
+        LDR.N    R1,??Calibrat_19+0xC  ;; Ka1
+        MOVS     R0,R7
+        MOVS     R2,#+1024
+//  162           }
+        ADDS     R7,R7,#+1
+        STRB     R5,[R1, R0]
+        LDR.N    R1,??Calibrat_19+0x10  ;; Ka2
+        UXTH     R7,R7
+        STRH     R2,[R1, R0, LSL #+1]
+        LDR.N    R1,??Calibrat_19+0x24  ;; Ka3
+        STRB     R5,[R1, R0]
+        B.N      ??Calibrat_24
+//  163         }
+//  164         if(Channel == TRACK2){
+??Calibrat_23:
+        MOV      R0,R8
+        UXTB     R0,R0
+        CMP      R0,#+1
+        BNE.W    ??Calibrat_21
+//  165           Print_Str( 23*8, 216, 0x0105, PRN, " CH_B ");
+        LDR.N    R2,??Calibrat_19+0x3C  ;; 0x105
+        ADDW     R0,R10,#+300
+        PUSH     {R0}
+        CFI CFA R13+180
+        MOVS     R3,#+0
+        MOVS     R1,#+216
+        MOVS     R0,#+184
+        _BLF     Print_Str,??Print_Str??rT
+//  166           for(i=0; i<=G_Attr[0].Yp_Max; i++){
+        MOV      R7,R5
+        ADD      SP,SP,#+4
+        CFI CFA R13+176
+??Calibrat_25:
+        LDR.N    R0,??Calibrat_19+0x38  ;; G_Attr
+        LDR      R0,[R0, #+0]
+        LDRH     R0,[R0, #+4]
+        CMP      R0,R7
+        BCC.W    ??Calibrat_21
+//  167             Kb1[i] = 0; Kb2[i] = 1024; Kb3[i] = 0;         // 设置校准参数初值
+        LDR.N    R1,??Calibrat_19+0x18  ;; Kb1
+        MOVS     R0,R7
+        MOVS     R2,#+1024
+//  168           }
+        ADDS     R7,R7,#+1
+        STRB     R5,[R1, R0]
+        LDR.N    R1,??Calibrat_19+0x14  ;; Kb2
+        UXTH     R7,R7
+        STRH     R2,[R1, R0, LSL #+1]
+        LDR.N    R1,??Calibrat_19+0x28  ;; Kb3
+        STRB     R5,[R1, R0]
+        B.N      ??Calibrat_25
+//  169         }
+//  170         break;
+//  171       case 1:
+//  172         Print_Str(   8,   6, 0x0305, PRN,   "   AUTOMATIC CALIBRATION IN PROGRESS...       ");
+??Calibrat_26:
+        LDR.N    R2,??Calibrat_19+0x2C  ;; 0x305
+        ADDW     R0,R10,#+308
+        PUSH     {R0}
+        CFI CFA R13+180
+        MOVS     R3,#+0
+        MOVS     R1,#+6
+        MOVS     R0,#+8
+        _BLF     Print_Str,??Print_Str??rT
+//  173         if(Channel == TRACK1){
+        MOV      R0,R8
+        ADD      SP,SP,#+4
+        CFI CFA R13+176
+        LSLS     R0,R0,#+24
+        BNE.N    ??Calibrat_27
+//  174           s8ToPercen(n, TmpA - 40);
+        LDRSB    R1,[SP, #+3]
+        ADD      R0,SP,#+16
+        _BLF     s8ToPercen,??s8ToPercen??rT
+//  175           Print_Str( 45, 166-(Range*20), 0x0005, INV, n);
+        ADD      R0,SP,#+16
+        PUSH     {R0}
+        CFI CFA R13+180
+        MOVS     R3,#+1
+        MOVS     R2,#+5
+        UXTH     R1,R7
+        MOVS     R0,#+45
+        _BLF     Print_Str,??Print_Str??rT
+//  176           Ka1[Range] -= TmpA - 40; 
+        LDR      R0,[SP, #+36]
+        LDR      R2,[SP, #+8]
+        LDRSB    R1,[R0, #+0]
+        SUBS     R1,R1,R2
+        B.N      ??Calibrat_28
+        CFI CFA R13+176
+//  177         } 
+//  178         if(Channel == TRACK2){
+??Calibrat_27:
+        MOV      R0,R8
+        UXTB     R0,R0
+        CMP      R0,#+1
+        BNE.N    ??Calibrat_29
+//  179           s8ToPercen(n, TmpB - 40);
+        LDRSB    R1,[SP, #+28]
+        ADD      R0,SP,#+16
+        _BLF     s8ToPercen,??s8ToPercen??rT
+//  180           Print_Str(245, 166-(Range*20), 0x0105, INV, n);
+        LDR.N    R2,??Calibrat_19+0x3C  ;; 0x105
+        ADD      R0,SP,#+16
+        PUSH     {R0}
+        CFI CFA R13+180
+        MOVS     R3,#+1
+        UXTH     R1,R7
+        MOVS     R0,#+245
+        _BLF     Print_Str,??Print_Str??rT
+//  181           Kb1[Range] -= TmpB - 40; 
+        LDR      R0,[SP, #+40]
+        LDRSB    R1,[R0, #+0]
+        SUBS     R1,R1,R4
+??Calibrat_28:
+        ADDS     R1,R1,#+40
+        STRB     R1,[R0, #+0]
+        ADD      SP,SP,#+4
+        CFI CFA R13+176
+//  182         }
+//  183         Range++;
+//  184         if(Range > G_Attr[0].Yp_Max){ 
+??Calibrat_29:
+        LDR.N    R0,??Calibrat_19+0x38  ;; G_Attr
+        LDR      R5,[SP, #+44]
+        LDR      R0,[R0, #+0]
+        UXTB     R1,R5
+        LDRH     R0,[R0, #+4]
+        CMP      R0,R1
+        ITT     CC 
+//  185           Range = 0;  Step++;
+        MOVCC    R5,#+0
+        LDRCC    R6,[SP, #+12]
+//  186         } 
+//  187         __Set(CH_A_OFFSET, ((1024+Ka3[Range])*40 + 512)/1024);
+        LDR.N    R0,??Calibrat_19+0x24  ;; Ka3
+        UXTB     R7,R5
+        MOVS     R1,#+40
+        LDRSB    R0,[R0, R7]
+        MULS     R0,R1,R0
+        ADDS     R0,R0,#+41472
+        ASRS     R1,R0,#+9
+        ADDS     R0,R0,R1, LSR #+22
+        ASRS     R1,R0,#+10
+        MOVS     R0,#+0
+        _BLF     __Set,??__Set??rT
+//  188         __Set(CH_B_OFFSET, ((1024+Kb3[Range])*40 + 512)/1024);
+        LDR.N    R0,??Calibrat_19+0x28  ;; Kb3
+        MOVS     R1,#+40
+        LDRSB    R0,[R0, R7]
+        MULS     R0,R1,R0
+        ADDS     R0,R0,#+41472
+        ASRS     R1,R0,#+9
+        ADDS     R0,R0,R1, LSR #+22
+        ASRS     R1,R0,#+10
+        MOVS     R0,#+1
+        _BLF     __Set,??__Set??rT
+//  189         k = 0;
+        MOV      R0,R9
+        STRB     R0,[SP, #+0]
+        B.N      ??Calibrat_21
+//  190         break;
+//  191       case 2:
+//  192         k++;
+??Calibrat_30:
+        LDRB     R0,[SP, #+2]
+        STRB     R0,[SP, #+0]
+//  193         if(k >= 8) k = 0;
+        CMP      R0,#+8
+        ITT     CS 
+        MOVCS    R0,#+0
+        STRBCS   R0,[SP, #+0]
+//  194         if(Channel == TRACK1){
+        MOV      R0,R8
+        LSLS     R0,R0,#+24
+        BNE.N    ??Calibrat_31
+//  195           s8ToPercen(n, TmpA - 40);
+        LDRSB    R1,[SP, #+3]
+        ADD      R0,SP,#+16
+        _BLF     s8ToPercen,??s8ToPercen??rT
+//  196           Print_Str( 45, 166-(Range*20), 0x0005, PRN, n);
+        ADD      R0,SP,#+16
+        PUSH     {R0}
+        CFI CFA R13+180
+        MOVS     R3,#+0
+        MOVS     R2,#+5
+        UXTH     R1,R7
+        MOVS     R0,#+45
+        _BLF     Print_Str,??Print_Str??rT
+//  197           if(TmpA - 40 != 0)  Ka1[Range] -= TmpA - 40;
+        LDR      R0,[SP, #+8]
+        ADD      SP,SP,#+4
+        CFI CFA R13+176
+        SUBS     R0,R0,#+40
+        BEQ.N    ??Calibrat_32
+        LDR      R0,[SP, #+32]
+        LDR      R2,[SP, #+4]
+        LDRSB    R1,[R0, #+0]
+        SUBS     R1,R1,R2
+??Calibrat_33:
+        ADDS     R1,R1,#+40
+        STRB     R1,[R0, #+0]
+//  198           else                k = 0;           
+//  199         } 
+//  200         if(Channel == TRACK2){
+//  201           s8ToPercen(n, TmpB - 40);
+//  202           Print_Str(245, 166-(Range*20), 0x0105, PRN, n);
+//  203           if(TmpB - 40 != 0)  Kb1[Range] -= TmpB - 40;
+//  204           else                k = 0; 
+//  205         }
+//  206         if(k == 0)  Range++;
+??Calibrat_34:
+        LDRB     R0,[SP, #+0]
+        CBNZ     R0,??Calibrat_35
+??Calibrat_36:
+        LDR      R5,[SP, #+44]
+//  207         if(Range > G_Attr[0].Yp_Max){ 
+??Calibrat_35:
+        LDR.N    R0,??Calibrat_19+0x38  ;; G_Attr
+        UXTB     R1,R5
+        LDR      R0,[R0, #+0]
+        LDRH     R0,[R0, #+4]
+        CMP      R0,R1
+        ITT     CC 
+//  208           Range = 0;  Step++;
+        MOVCC    R5,#+0
+        LDRCC    R6,[SP, #+12]
+//  209         } 
+//  210         __Set(CH_A_OFFSET, ((1024+Ka3[Range])*40 + 512)/1024);
+        LDR.N    R0,??Calibrat_19+0x24  ;; Ka3
+        UXTB     R7,R5
+        MOVS     R1,#+40
+        LDRSB    R0,[R0, R7]
+        MULS     R0,R1,R0
+        ADDS     R0,R0,#+41472
+        ASRS     R1,R0,#+9
+        ADDS     R0,R0,R1, LSR #+22
+        ASRS     R1,R0,#+10
+        MOVS     R0,#+0
+        _BLF     __Set,??__Set??rT
+//  211         __Set(CH_B_OFFSET, ((1024+Kb3[Range])*40 + 512)/1024);
+        LDR.N    R0,??Calibrat_19+0x28  ;; Kb3
+        MOVS     R1,#+40
+        LDRSB    R0,[R0, R7]
+        MULS     R0,R1,R0
+        ADDS     R0,R0,#+41472
+        ASRS     R1,R0,#+9
+        ADDS     R0,R0,R1, LSR #+22
+??Calibrat_37:
+        ASRS     R1,R0,#+10
+        MOVS     R0,#+1
+        _BLF     __Set,??__Set??rT
+        B.N      ??Calibrat_21
+??Calibrat_32:
+        MOVS     R0,#+0
+        STRB     R0,[SP, #+0]
+        B.N      ??Calibrat_36
+        DATA
+??Calibrat_19:
+        DC32     a_Avg
+        DC32     b_Avg
+        DC32     DataBuf
+        DC32     Ka1
+        DC32     Ka2
+        DC32     Kb2
+        DC32     Kb1
+        DC32     0x405
+        DC32     Blink
+        DC32     Ka3
+        DC32     Kb3
+        DC32     0x305
+        DC8      " ",+0,+0
+        DC32     Twink
+        DC32     G_Attr
+        DC32     0x105
+        THUMB
+??Calibrat_31:
+        MOV      R0,R8
+        UXTB     R0,R0
+        CMP      R0,#+1
+        BNE.N    ??Calibrat_34
+        LDRSB    R1,[SP, #+28]
+        ADD      R0,SP,#+16
+        _BLF     s8ToPercen,??s8ToPercen??rT
+        LDR.N    R2,??Calibrat_38  ;; 0x105
+        ADD      R0,SP,#+16
+        PUSH     {R0}
+        CFI CFA R13+180
+        MOVS     R3,#+0
+        UXTH     R1,R7
+        MOVS     R0,#+245
+        _BLF     Print_Str,??Print_Str??rT
+        MOVS     R0,R4
+        SUBS     R0,R0,#+40
+        ADD      SP,SP,#+4
+        CFI CFA R13+176
+        BEQ.N    ??Calibrat_39
+        LDR      R0,[SP, #+36]
+        LDRSB    R1,[R0, #+0]
+        SUBS     R1,R1,R4
+        B.N      ??Calibrat_33
+??Calibrat_39:
+        MOVS     R0,#+0
+        STRB     R0,[SP, #+0]
+        B.N      ??Calibrat_36
+//  212         break;
+//  213       case 3:
+//  214         k++;
+??Calibrat_40:
+        LDRB     R0,[SP, #+2]
+//  215         __Set(CH_A_OFFSET, ((1024+Ka3[Range])*160 + 512)/1024);
+        LDR.N    R2,??Calibrat_38+0x4  ;; 0x28200
+        MOVS     R1,#+160
+        STRB     R0,[SP, #+0]
+        LDR      R0,[SP, #+40]
+        LDRSB    R0,[R0, #+0]
+        MLA      R0,R0,R1,R2
+        ASRS     R1,R0,#+9
+        ADDS     R0,R0,R1, LSR #+22
+        ASRS     R1,R0,#+10
+        MOVS     R0,#+0
+        _BLF     __Set,??__Set??rT
+//  216         __Set(CH_B_OFFSET, ((1024+Kb3[Range])*160 + 512)/1024);
+        LDR      R0,[SP, #+8]
+        LDR.N    R2,??Calibrat_38+0x4  ;; 0x28200
+        MOVS     R1,#+160
+        LDRSB    R0,[R0, #+0]
+        MLA      R0,R0,R1,R2
+        ASRS     R1,R0,#+9
+        ADDS     R0,R0,R1, LSR #+22
+        ASRS     R1,R0,#+10
+        MOVS     R0,#+1
+        _BLF     __Set,??__Set??rT
+//  217         if((Channel == TRACK1)&&(TmpA > 140))  Step++;
+        MOV      R0,R8
+        LSLS     R0,R0,#+24
+        BNE.N    ??Calibrat_41
+        LDR      R0,[SP, #+4]
+        CMP      R0,#+141
+        BLT.N    ??Calibrat_42
+        LDR      R6,[SP, #+12]
+        B.N      ??Calibrat_42
+//  218         if((Channel == TRACK2)&&(TmpB > 140))  Step++;
+??Calibrat_41:
+        MOV      R0,R8
+        UXTB     R0,R0
+        CMP      R0,#+1
+        BNE.N    ??Calibrat_42
+        CMP      R4,#+141
+        IT      GE 
+        LDRGE    R6,[SP, #+12]
+//  219         if(k > 20)  Step++;
+??Calibrat_42:
+        LDRB     R0,[SP, #+0]
+        CMP      R0,#+21
+        BCC.W    ??Calibrat_21
+        ADDS     R6,R6,#+1
+        UXTB     R6,R6
+        B.N      ??Calibrat_21
+//  220         break;
+//  221       case 4:
+//  222         k = 0;
+??Calibrat_43:
+        MOVS     R2,#+0
+        STRB     R2,[SP, #+0]
+//  223         if(Channel == TRACK1){
+        MOV      R2,R8
+        LSLS     R2,R2,#+24
+        BNE.N    ??Calibrat_44
+//  224           s8ToPercen(n, TmpA - 160);
+        SXTB     R1,R1
+        ADD      R0,SP,#+16
+        _BLF     s8ToPercen,??s8ToPercen??rT
+//  225           Print_Str( 89, 166-(Range*20), 0x0005, INV, n);
+        ADD      R0,SP,#+16
+        PUSH     {R0}
+        CFI CFA R13+180
+        MOVS     R3,#+1
+        MOVS     R2,#+5
+        UXTH     R1,R7
+        MOVS     R0,#+89
+        _BLF     Print_Str,??Print_Str??rT
+//  226           Ka3[Range] -= (1024*(TmpA-160)+80)/160;
+        LDR.N    R3,??Calibrat_38+0x8  ;; 0xfffffffffffd8050
+        LDR      R0,[SP, #+44]
+        LDR      R2,[SP, #+8]
+        LDRSB    R1,[R0, #+0]
+        ADDS     R2,R3,R2, LSL #+10
+        MOVS     R3,#+160
+        SDIV     R2,R2,R3
+        B.N      ??Calibrat_45
+        CFI CFA R13+176
+//  227         } 
+//  228         if(Channel == TRACK2){
+??Calibrat_44:
+        MOV      R1,R8
+        UXTB     R1,R1
+        CMP      R1,#+1
+        BNE.N    ??Calibrat_46
+//  229           s8ToPercen(n, TmpB - 160);
+        SXTB     R1,R0
+        ADD      R0,SP,#+16
+        _BLF     s8ToPercen,??s8ToPercen??rT
+//  230           Print_Str(289, 166-(Range*20), 0x0105, INV, n);
+        LDR.N    R2,??Calibrat_38  ;; 0x105
+        ADD      R0,SP,#+16
+        PUSH     {R0}
+        CFI CFA R13+180
+        LDR.N    R0,??Calibrat_38+0xC  ;; 0x121
+        MOVS     R3,#+1
+        UXTH     R1,R7
+        _BLF     Print_Str,??Print_Str??rT
+//  231           Kb3[Range] -= (1024*(TmpB-160)+80)/160;
+        LDR.N    R2,??Calibrat_38+0x8  ;; 0xfffffffffffd8050
+        LDR      R0,[SP, #+12]
+        MOVS     R3,#+160
+        ADDS     R2,R2,R4, LSL #+10
+        LDRSB    R1,[R0, #+0]
+        SDIV     R2,R2,R3
+??Calibrat_45:
+        SUBS     R1,R1,R2
+        STRB     R1,[R0, #+0]
+        ADD      SP,SP,#+4
+        CFI CFA R13+176
+//  232         }
+//  233         Range++;
+//  234         if(Range > G_Attr[0].Yp_Max){ 
+??Calibrat_46:
+        LDR.N    R0,??Calibrat_38+0x10  ;; G_Attr
+        LDR      R5,[SP, #+44]
+        LDR      R0,[R0, #+0]
+        UXTB     R1,R5
+        LDRH     R0,[R0, #+4]
+        CMP      R0,R1
+        BCS.N    ??Calibrat_47
+//  235           Range = 0;  Step++;
+??Calibrat_48:
+        LDR      R6,[SP, #+12]
+        MOVS     R5,#+0
+//  236         } 
+//  237         __Set(CH_A_OFFSET, ((1024+Ka3[Range])* 160 + 512)/1024);
+??Calibrat_47:
+        LDR.N    R0,??Calibrat_38+0x14  ;; Ka3
+        LDR.N    R2,??Calibrat_38+0x4  ;; 0x28200
+        UXTB     R7,R5
+        LDRSB    R0,[R0, R7]
+        MOVS     R1,#+160
+        MLA      R0,R0,R1,R2
+        ASRS     R1,R0,#+9
+        ADDS     R0,R0,R1, LSR #+22
+        ASRS     R1,R0,#+10
+        MOVS     R0,#+0
+        _BLF     __Set,??__Set??rT
+//  238         __Set(CH_B_OFFSET, ((1024+Kb3[Range])* 160 + 512)/1024);
+        LDR.N    R0,??Calibrat_38+0x18  ;; Kb3
+        LDR.N    R2,??Calibrat_38+0x4  ;; 0x28200
+        MOVS     R1,#+160
+        LDRSB    R0,[R0, R7]
+        MLA      R0,R0,R1,R2
+        ASRS     R1,R0,#+9
+        ADDS     R0,R0,R1, LSR #+22
+        B.N      ??Calibrat_37
+//  239         break;
+//  240       case 5:
+//  241         k++;
+??Calibrat_49:
+        LDRB     R2,[SP, #+2]
+        STRB     R2,[SP, #+0]
+//  242         if(k >= 8) k = 0;
+        CMP      R2,#+8
+        ITT     CS 
+        MOVCS    R2,#+0
+        STRBCS   R2,[SP, #+0]
+//  243         if(Channel == TRACK1){
+        MOV      R2,R8
+        LSLS     R2,R2,#+24
+        BNE.N    ??Calibrat_50
+//  244           s8ToPercen(n, TmpA - 160);
+        SXTB     R1,R1
+        ADD      R0,SP,#+16
+        _BLF     s8ToPercen,??s8ToPercen??rT
+//  245           Print_Str( 89, 166-(Range*20), 0x0005, PRN, n);
+        ADD      R0,SP,#+16
+        PUSH     {R0}
+        CFI CFA R13+180
+        MOVS     R3,#+0
+        MOVS     R2,#+5
+        UXTH     R1,R7
+        MOVS     R0,#+89
+        _BLF     Print_Str,??Print_Str??rT
+//  246           if(TmpA - 160 != 0) Ka3[Range] -= (1024*(TmpA-160)+80)/160;
+        LDR      R0,[SP, #+8]
+        ADD      SP,SP,#+4
+        CFI CFA R13+176
+        SUBS     R0,R0,#+160
+        BEQ.N    ??Calibrat_51
+        LDR      R0,[SP, #+40]
+        LDR      R2,[SP, #+4]
+        LDR.N    R3,??Calibrat_38+0x8  ;; 0xfffffffffffd8050
+        LDRSB    R1,[R0, #+0]
+        ADDS     R2,R3,R2, LSL #+10
+        MOVS     R3,#+160
+        SDIV     R2,R2,R3
+??Calibrat_52:
+        SUBS     R1,R1,R2
+        STRB     R1,[R0, #+0]
+//  247           else                k = 0;           
+//  248         } 
+//  249         if(Channel == TRACK2){
+//  250           s8ToPercen(n, TmpB - 160);
+//  251           Print_Str(289, 166-(Range*20), 0x0105, PRN, n);
+//  252           if(TmpB - 160 != 0) Kb3[Range] -= (1024*(TmpB-160)+80)/160;
+//  253           else                k = 0; 
+//  254         }
+//  255         if(k == 0)  Range++;
+??Calibrat_53:
+        LDRB     R0,[SP, #+0]
+        CBNZ     R0,??Calibrat_54
+??Calibrat_55:
+        LDR      R5,[SP, #+44]
+//  256         if(Range > G_Attr[0].Yp_Max){ 
+??Calibrat_54:
+        LDR.N    R0,??Calibrat_38+0x10  ;; G_Attr
+        UXTB     R1,R5
+        LDR      R0,[R0, #+0]
+        LDRH     R0,[R0, #+4]
+        CMP      R0,R1
+        BCS.N    ??Calibrat_47
+        B.N      ??Calibrat_48
+??Calibrat_51:
+        MOVS     R0,#+0
+        STRB     R0,[SP, #+0]
+        B.N      ??Calibrat_55
+??Calibrat_50:
+        MOV      R1,R8
+        UXTB     R1,R1
+        CMP      R1,#+1
+        BNE.N    ??Calibrat_53
+        SXTB     R1,R0
+        ADD      R0,SP,#+16
+        _BLF     s8ToPercen,??s8ToPercen??rT
+        LDR.N    R2,??Calibrat_38  ;; 0x105
+        ADD      R0,SP,#+16
+        PUSH     {R0}
+        CFI CFA R13+180
+        LDR.N    R0,??Calibrat_38+0xC  ;; 0x121
+        MOVS     R3,#+0
+        UXTH     R1,R7
+        _BLF     Print_Str,??Print_Str??rT
+        MOVS     R0,R4
+        SUBS     R0,R0,#+160
+        ADD      SP,SP,#+4
+        CFI CFA R13+176
+        BEQ.N    ??Calibrat_56
+        LDR      R0,[SP, #+8]
+        LDR.N    R2,??Calibrat_38+0x8  ;; 0xfffffffffffd8050
+        MOVS     R3,#+160
+        LDRSB    R1,[R0, #+0]
+        ADDS     R2,R2,R4, LSL #+10
+        SDIV     R2,R2,R3
+        B.N      ??Calibrat_52
+??Calibrat_56:
+        MOVS     R0,#+0
+        STRB     R0,[SP, #+0]
+        B.N      ??Calibrat_55
+//  257           Range = 0;  Step++;
+//  258         } 
+//  259         __Set(CH_A_OFFSET, ((1024+Ka3[Range])* 160 + 512)/1024);
+//  260         __Set(CH_B_OFFSET, ((1024+Kb3[Range])* 160 + 512)/1024);
+//  261         break;
+//  262       case 6:
+//  263         k++;
+??Calibrat_57:
+        LDRB     R0,[SP, #+2]
+        STRB     R0,[SP, #+0]
+//  264         if(k > 20)  Step++;
+        CMP      R0,#+21
+        IT      CS 
+        LDRCS    R6,[SP, #+12]
+//  265         Range = 0;
+        LDR.N    R0,??Calibrat_38+0x14  ;; Ka3
+        LDRB     R1,[SP, #+1]
+        MOVS     R5,#+0
+        LDRSB    R0,[R0, R5]
+        CMP      R1,#+2
+        BCS.N    ??Calibrat_58
+//  266         if(m < 2){
+//  267           __Set(CH_A_OFFSET, ((1024+Ka3[Range])*40 + 512)/1024);
+        MOVS     R1,#+40
+        MULS     R0,R1,R0
+        ADDS     R0,R0,#+41472
+        ASRS     R1,R0,#+9
+        ADDS     R0,R0,R1, LSR #+22
+        ASRS     R1,R0,#+10
+        MOVS     R0,#+0
+        _BLF     __Set,??__Set??rT
+//  268           __Set(CH_B_OFFSET, ((1024+Kb3[Range])*40 + 512)/1024);
+        LDR.N    R0,??Calibrat_38+0x18  ;; Kb3
+        MOVS     R1,#+40
+        LDRSB    R0,[R0, R5]
+        MULS     R0,R1,R0
+        ADDS     R0,R0,#+41472
+        ASRS     R1,R0,#+9
+        ADDS     R0,R0,R1, LSR #+22
+        ASRS     R1,R0,#+10
+        MOVS     R0,#+1
+        _BLF     __Set,??__Set??rT
+//  269           if((Channel == TRACK1)&&(TmpA < 50)){
+        LDRB     R0,[SP, #+1]
+        MOV      R2,R8
+        ADDS     R0,R0,#+1
+        LSLS     R2,R2,#+24
+        BNE.N    ??Calibrat_59
+        LDR      R2,[SP, #+4]
+        CMP      R2,#+50
+        BGE.W    ??Calibrat_21
+//  270             Step = 1;
+        MOVS     R6,#+1
+//  271             m++;
+        STRB     R0,[SP, #+1]
+        B.N      ??Calibrat_21
+//  272           }
+//  273           if((Channel == TRACK2)&&(TmpB < 50)){
+??Calibrat_59:
+        MOV      R2,R8
+        UXTB     R2,R2
+        CMP      R2,#+1
+        BNE.W    ??Calibrat_21
+        CMP      R4,#+50
+        BGE.W    ??Calibrat_21
+//  274             Step = 1;
+        MOVS     R6,#+1
+//  275             m++;
+        STRB     R0,[SP, #+1]
+        B.N      ??Calibrat_21
+//  276           }
+//  277         } else {
+//  278           __Set(CH_A_OFFSET, ((1024+Ka3[Range])* 25 + 512)/1024);
+??Calibrat_58:
+        MOVS     R1,#+25
+        MULS     R0,R1,R0
+        ADDS     R0,R0,#+26112
+        ASRS     R1,R0,#+9
+        ADDS     R0,R0,R1, LSR #+22
+        ASRS     R1,R0,#+10
+        MOVS     R0,#+0
+        _BLF     __Set,??__Set??rT
+//  279           __Set(CH_B_OFFSET, ((1024+Kb3[Range])* 25 + 512)/1024);
+        LDR.N    R0,??Calibrat_38+0x18  ;; Kb3
+        MOVS     R1,#+25
+        LDRSB    R0,[R0, R5]
+        MULS     R0,R1,R0
+        ADDS     R0,R0,#+26112
+        ASRS     R1,R0,#+9
+        ADDS     R0,R0,R1, LSR #+22
+        ASRS     R1,R0,#+10
+        MOVS     R0,#+1
+        _BLF     __Set,??__Set??rT
+//  280           if((Channel == TRACK1)&&(TmpA < 55))  Step++;
+        ADDS     R0,R6,#+1
+        UXTB     R0,R0
+        MOV      R1,R8
+        LSLS     R1,R1,#+24
+        BNE.N    ??Calibrat_60
+        LDR      R1,[SP, #+4]
+        CMP      R1,#+55
+??Calibrat_61:
+        BGE.W    ??Calibrat_21
+        MOVS     R6,R0
+        B.N      ??Calibrat_21
+//  281           if((Channel == TRACK2)&&(TmpB < 55))  Step++;
+??Calibrat_60:
+        MOV      R1,R8
+        UXTB     R1,R1
+        CMP      R1,#+1
+        BNE.W    ??Calibrat_21
+        CMP      R4,#+55
+        B.N      ??Calibrat_61
+        DATA
+??Calibrat_38:
+        DC32     0x105
+        DC32     0x28200
+        DC32     0xfffffffffffd8050
+        DC32     0x121
+        DC32     G_Attr
+        DC32     Ka3
+        DC32     Kb3
+        THUMB
+//  282         }
+//  283         break;
+//  284       case 7:
+//  285         Print_Str( 4*8, 216, 0x0305, PRN,   " INPUT ");
+??Calibrat_62:
+        LDR.N    R2,??Calibrat_63  ;; 0x305
+        ADDW     R0,R10,#+356
+        PUSH     {R0}
+        CFI CFA R13+180
+        MOVS     R3,#+0
+        MOVS     R1,#+216
+        MOVS     R0,#+32
+        _BLF     Print_Str,??Print_Str??rT
+//  286         Print_Str(11*8, 216, 0x0405, Twink, (u8*)VS_STR[Range]);
+        UXTB     R0,R5
+        MOVS     R1,#+12
+        MOV      R2,R11
+        MLA      R0,R0,R1,R10
+        MOVS     R1,#+216
+        ADDW     R0,R0,#+744
+        PUSH     {R0}
+        CFI CFA R13+184
+        LDR.N    R0,??Calibrat_63+0x4  ;; Twink
+        LDRB     R3,[R0, #+0]
+        MOVS     R0,#+88
+        _BLF     Print_Str,??Print_Str??rT
+//  287         Print_Str(20*8, 216, 0x0305, PRN,   " STANDARD VOLTAGE TO ");
+        LDR.N    R2,??Calibrat_63  ;; 0x305
+        ADDW     R0,R10,#+364
+        PUSH     {R0}
+        CFI CFA R13+188
+        MOV      R3,R9
+        MOVS     R1,#+216
+        MOVS     R0,#+160
+        _BLF     Print_Str,??Print_Str??rT
+//  288         Print_Str(   8,   6, 0x0305, PRN,   "MODIFY VOLTAGE:   ...    ");
+        LDR.N    R2,??Calibrat_63  ;; 0x305
+        ADDW     R0,R10,#+388
+        PUSH     {R0}
+        CFI CFA R13+192
+        MOV      R3,R9
+        MOVS     R1,#+6
+        MOVS     R0,#+8
+        _BLF     Print_Str,??Print_Str??rT
+//  289         Print_Str(18*8,   6, 0x0405, Twink, "-");
+        ADR.N    R0,??Calibrat_63+0x8  ;; "-"
+        PUSH     {R0}
+        CFI CFA R13+196
+        LDR.N    R0,??Calibrat_63+0x4  ;; Twink
+        MOV      R2,R11
+        MOVS     R1,#+6
+        LDRB     R3,[R0, #+0]
+        MOVS     R0,#+144
+        _BLF     Print_Str,??Print_Str??rT
+//  290         Print_Str(22*8,   6, 0x0405, Twink, "+");
+        ADR.N    R0,??Calibrat_63+0xC  ;; "+"
+        PUSH     {R0}
+        CFI CFA R13+200
+        LDR.N    R0,??Calibrat_63+0x4  ;; Twink
+        MOV      R2,R11
+        MOVS     R1,#+6
+        LDRB     R3,[R0, #+0]
+        MOVS     R0,#+176
+        _BLF     Print_Str,??Print_Str??rT
+//  291         Print_Str(27*8,   6, 0x0305, PRN,   "SELECT RANGE:   ---   ");
+        LDR.N    R2,??Calibrat_63  ;; 0x305
+        ADDW     R0,R10,#+416
+        PUSH     {R0}
+        CFI CFA R13+204
+        MOV      R3,R9
+        MOVS     R1,#+6
+        MOVS     R0,#+216
+        _BLF     Print_Str,??Print_Str??rT
+//  292         Print_Str(42*8,   6, 0x0405, Twink, "<");
+        ADR.N    R0,??Calibrat_63+0x10  ;; "<"
+        PUSH     {R0}
+        CFI CFA R13+208
+        LDR.N    R0,??Calibrat_63+0x4  ;; Twink
+        MOV      R2,R11
+        MOVS     R1,#+6
+        LDRB     R3,[R0, #+0]
+        MOVS     R0,#+336
+        _BLF     Print_Str,??Print_Str??rT
+//  293         Print_Str(46*8,   6, 0x0405, Twink, ">");
+        ADR.N    R0,??Calibrat_63+0x14  ;; ">"
+        PUSH     {R0}
+        CFI CFA R13+212
+        LDR.N    R0,??Calibrat_63+0x4  ;; Twink
+        MOV      R2,R11
+        MOVS     R1,#+6
+        LDRB     R3,[R0, #+0]
+        MOVS     R0,#+368
+        _BLF     Print_Str,??Print_Str??rT
+//  294         if(Channel == TRACK1){
+        LDR.N    R2,??Calibrat_63+0x18  ;; V_UNIT
+        ADD      SP,SP,#+36
+        CFI CFA R13+176
+        MOV      R0,R8
+        LSLS     R0,R0,#+24
+        BNE.N    ??Calibrat_64
+//  295           if(TmpA > 35){
+        LDR      R0,[SP, #+4]
+        CMP      R0,#+36
+        BLT.N    ??Calibrat_65
+//  296             Int2Str(n, (TmpA - 25)* Y_Attr[Range].SCALE, V_UNIT, 3, SIGN);
+        LDR.N    R1,??Calibrat_63+0x1C  ;; Y_Attr
+        MOVS     R0,#+0
+        PUSH     {R0}
+        CFI CFA R13+180
+        LDR      R0,[SP, #+52]
+        LDR      R1,[R1, #+0]
+        MOV      R12,R2
+        LDR      R2,[SP, #+8]
+        ADDS     R0,R1,R0
+        LDR      R0,[R0, #+16]
+        SUBS     R2,R2,#+25
+        MOVS     R3,#+3
+        MULS     R2,R0,R2
+        MOVS     R1,R2
+        MOV      R2,R12
+        B.N      ??Calibrat_66
+        CFI CFA R13+176
+//  297           } else {
+//  298             Int2Str(n, 0, V_UNIT, 3, SIGN);
+??Calibrat_65:
+        MOVS     R0,#+0
+        PUSH     {R0}
+        CFI CFA R13+180
+        MOVS     R3,#+3
+        MOV      R1,R0
+??Calibrat_66:
+        ADD      R0,SP,#+20
+        _BLF     Int2Str,??Int2Str??rT
+        ADD      SP,SP,#+4
+        CFI CFA R13+176
+//  299           }
+//  300           Print_Str( 134, 166-(Range*20), 0x0005, Twink, n);
+        ADD      R0,SP,#+16
+        PUSH     {R0}
+        CFI CFA R13+180
+        LDR.N    R0,??Calibrat_63+0x4  ;; Twink
+        MOVS     R2,#+5
+        UXTH     R1,R7
+        LDRB     R3,[R0, #+0]
+        MOVS     R0,#+134
+        _BLF     Print_Str,??Print_Str??rT
+//  301           Print_Str(41*8, 216,            0x0005, PRN,   "CH_A  ");
+        ADDW     R0,R10,#+440
+        PUSH     {R0}
+        CFI CFA R13+184
+        MOVS     R3,#+0
+        MOVS     R2,#+5
+        MOVS     R1,#+216
+        MOVS     R0,#+328
+        B.N      ??Calibrat_67
+        CFI CFA R13+176
+//  302         } 
+//  303         if(Channel == TRACK2){
+??Calibrat_64:
+        MOV      R0,R8
+        UXTB     R0,R0
+        CMP      R0,#+1
+        BNE.W    ??Calibrat_21
+//  304           if(TmpB > 35){
+        CMP      R4,#+36
+        BLT.N    ??Calibrat_68
+//  305             Int2Str(n, (TmpB - 25)* Y_Attr[Range].SCALE, V_UNIT, 3, SIGN);
+        LDR.N    R1,??Calibrat_63+0x1C  ;; Y_Attr
+        MOVS     R0,#+0
+        PUSH     {R0}
+        CFI CFA R13+180
+        LDR      R0,[SP, #+52]
+        LDR      R1,[R1, #+0]
+        MOV      R12,R2
+        MOVS     R2,R4
+        ADDS     R0,R1,R0
+        LDR      R0,[R0, #+16]
+        SUBS     R2,R2,#+25
+        MOVS     R3,#+3
+        MULS     R2,R0,R2
+        MOVS     R1,R2
+        MOV      R2,R12
+        B.N      ??Calibrat_69
+        CFI CFA R13+176
+//  306           } else {
+//  307             Int2Str(n, 0, V_UNIT, 3, SIGN);
+??Calibrat_68:
+        MOVS     R0,#+0
+        PUSH     {R0}
+        CFI CFA R13+180
+        MOVS     R3,#+3
+        MOV      R1,R0
+??Calibrat_69:
+        ADD      R0,SP,#+20
+        _BLF     Int2Str,??Int2Str??rT
+        ADD      SP,SP,#+4
+        CFI CFA R13+176
+//  308           }
+//  309           Print_Str( 334, 166-(Range*20), 0x0105, Twink, n);
+        LDR.N    R2,??Calibrat_63+0x20  ;; 0x105
+        ADD      R0,SP,#+16
+        PUSH     {R0}
+        CFI CFA R13+180
+        LDR.N    R0,??Calibrat_63+0x4  ;; Twink
+        UXTH     R1,R7
+        LDRB     R3,[R0, #+0]
+        MOVS     R0,#+334
+        _BLF     Print_Str,??Print_Str??rT
+//  310           Print_Str(41*8, 216,            0x0105, PRN,   "CH_B  ");
+        LDR.N    R2,??Calibrat_63+0x20  ;; 0x105
+        ADDW     R0,R10,#+448
+        PUSH     {R0}
+        CFI CFA R13+184
+        MOVS     R3,#+0
+        MOVS     R1,#+216
+        MOVS     R0,#+328
+        B.N      ??Calibrat_67
+        CFI CFA R13+176
+//  311         }
+//  312         break;
+//  313       case 8:                             //"    PRESS   ---   TO SELECT THE NEXT OPERATION"
+//  314         m = 0;
+//  315         Print_Str(   8,   6, 0x0305, PRN,   "    PRESS   ---  ");
+??Calibrat_70:
+        LDR.N    R2,??Calibrat_63  ;; 0x305
+        MOVS     R0,#+0
+        STRB     R0,[SP, #+1]
+        ADDW     R0,R10,#+456
+        PUSH     {R0}
+        CFI CFA R13+180
+        MOV      R3,R9
+        MOVS     R1,#+6
+        MOVS     R0,#+8
+        _BLF     Print_Str,??Print_Str??rT
+//  316         Print_Str(12*8,   6, 0x0405, Twink, "<");
+        ADR.N    R0,??Calibrat_63+0x10  ;; "<"
+        PUSH     {R0}
+        CFI CFA R13+184
+        LDR.N    R0,??Calibrat_63+0x4  ;; Twink
+        MOV      R2,R11
+        MOVS     R1,#+6
+        LDRB     R3,[R0, #+0]
+        MOVS     R0,#+96
+        _BLF     Print_Str,??Print_Str??rT
+//  317         Print_Str(16*8,   6, 0x0405, Twink, ">");
+        ADR.N    R0,??Calibrat_63+0x14  ;; ">"
+        PUSH     {R0}
+        CFI CFA R13+188
+        LDR.N    R0,??Calibrat_63+0x4  ;; Twink
+        MOV      R2,R11
+        MOVS     R1,#+6
+        LDRB     R3,[R0, #+0]
+        MOVS     R0,#+128
+        _BLF     Print_Str,??Print_Str??rT
+//  318         Print_Str(17*8,   6, 0x0305, PRN,   " TO SELECT THE NEXT OPERATION   ");
+        LDR.N    R2,??Calibrat_63  ;; 0x305
+        ADDW     R0,R10,#+476
+        PUSH     {R0}
+        CFI CFA R13+192
+        MOV      R3,R9
+        MOVS     R1,#+6
+        MOVS     R0,#+136
+        _BLF     Print_Str,??Print_Str??rT
+//  319         Print_Str(   8, 216, 0x0305, PRN,   "  PRESS   TO ");
+        LDR.N    R2,??Calibrat_63  ;; 0x305
+        ADDW     R0,R10,#+512
+        PUSH     {R0}
+        CFI CFA R13+196
+        MOV      R3,R9
+        MOVS     R1,#+216
+        MOVS     R0,#+8
+        _BLF     Print_Str,??Print_Str??rT
+//  320         Print_Str(14*8, 216, 0x0405, PRN,   "CONFIRM THE RE-CALIBRATION ");
+        ADDW     R0,R10,#+528
+        PUSH     {R0}
+        CFI CFA R13+200
+        MOV      R3,R9
+        MOV      R2,R11
+        MOVS     R1,#+216
+        MOVS     R0,#+112
+        _BLF     Print_Str,??Print_Str??rT
+//  321         Print_Str( 9*8, 216, 0x0405, Twink, " ");       
+        ADR.N    R0,??Calibrat_63+0x24  ;; " "
+        PUSH     {R0}
+        CFI CFA R13+204
+        LDR.N    R0,??Calibrat_63+0x4  ;; Twink
+        MOV      R2,R11
+        MOVS     R1,#+216
+        LDRB     R3,[R0, #+0]
+        MOVS     R0,#+72
+        _BLF     Print_Str,??Print_Str??rT
+//  322         if(Channel == TRACK1)  Print_Str(41*8, 216, 0x0005, PRN, "CH_A "); 
+        MOV      R0,R8
+        ADD      SP,SP,#+28
+        CFI CFA R13+176
+        LSLS     R0,R0,#+24
+        BNE.N    ??Calibrat_71
+        ADDW     R0,R10,#+556
+        PUSH     {R0}
+        CFI CFA R13+180
+        MOVS     R3,#+0
+        MOVS     R2,#+5
+        MOVS     R1,#+216
+        MOVS     R0,#+328
+??Calibrat_72:
+        _BLF     Print_Str,??Print_Str??rT
+        ADD      SP,SP,#+4
+        CFI CFA R13+176
+        B.N      ??Calibrat_21
+//  323         if(Channel == TRACK2)  Print_Str(41*8, 216, 0x0105, PRN, "CH_B ");
+??Calibrat_71:
+        MOV      R0,R8
+        UXTB     R0,R0
+        CMP      R0,#+1
+        BNE.N    ??Calibrat_21
+        LDR.N    R2,??Calibrat_63+0x20  ;; 0x105
+        ADDW     R0,R10,#+564
+        PUSH     {R0}
+        CFI CFA R13+180
+        MOVS     R3,#+0
+        MOVS     R1,#+216
+        MOVS     R0,#+328
+        B.N      ??Calibrat_72
+        CFI CFA R13+176
+//  324         break;                            //"  PRESS   TO CONFIRM THE RE-CALIBRATION CH_A  "
+//  325       case 9:                             //             "SELECT THE CALIBRATION CH_A      "
+//  326         Print_Str( 9*8, 216, 0x0405, Twink, " ");       
+??Calibrat_73:
+        ADR.N    R0,??Calibrat_63+0x24  ;; " "
+        PUSH     {R0}
+        CFI CFA R13+180
+        LDR.N    R0,??Calibrat_63+0x4  ;; Twink
+        MOV      R2,R11
+        MOVS     R1,#+216
+        LDRB     R3,[R0, #+0]
+        MOVS     R0,#+72
+        _BLF     Print_Str,??Print_Str??rT
+//  327         Print_Str(14*8, 216, 0x0405, PRN,   "SELECT THE CALIBRATION ");
+        ADDW     R0,R10,#+572
+        PUSH     {R0}
+        CFI CFA R13+184
+        MOVS     R3,#+0
+        MOV      R2,R11
+        MOVS     R1,#+216
+        MOVS     R0,#+112
+        _BLF     Print_Str,??Print_Str??rT
+//  328         if(Channel == TRACK1)  Print_Str(37*8, 216, 0x0105, PRN, "CH_B     "); 
+        MOV      R0,R8
+        ADD      SP,SP,#+8
+        CFI CFA R13+176
+        LSLS     R0,R0,#+24
+        BNE.N    ??Calibrat_74
+        LDR.N    R2,??Calibrat_63+0x20  ;; 0x105
+        ADDW     R0,R10,#+596
+        PUSH     {R0}
+        CFI CFA R13+180
+        MOVS     R3,#+0
+        MOVS     R1,#+216
+        MOVS     R0,#+296
+        _BLF     Print_Str,??Print_Str??rT
+        ADD      SP,SP,#+4
+        CFI CFA R13+176
+        B.N      ??Calibrat_21
+//  329         if(Channel == TRACK2)  Print_Str(37*8, 216, 0x0005, PRN, "CH_A     ");
+??Calibrat_74:
+        MOV      R0,R8
+        UXTB     R0,R0
+        CMP      R0,#+1
+        BNE.N    ??Calibrat_21
+        ADDW     R0,R10,#+608
+        PUSH     {R0}
+        CFI CFA R13+180
+        MOVS     R3,#+0
+        MOVS     R2,#+5
+        MOVS     R1,#+216
+        MOVS     R0,#+296
+        B.N      ??Calibrat_72
+        CFI CFA R13+176
+//  330         break;
+//  331       case 10:                            //             "Exit WITHOUT SAVE RESULTS        "
+//  332         Print_Str( 9*8, 216, 0x0405, Twink, " ");       
+??Calibrat_75:
+        ADR.N    R0,??Calibrat_63+0x24  ;; " "
+        PUSH     {R0}
+        CFI CFA R13+180
+        LDR.N    R0,??Calibrat_63+0x4  ;; Twink
+        MOV      R2,R11
+        MOVS     R1,#+216
+        LDRB     R3,[R0, #+0]
+        MOVS     R0,#+72
+        _BLF     Print_Str,??Print_Str??rT
+//  333         Print_Str(14*8, 216, 0x0405, PRN,   "Exit WITHOUT SAVE RESULTS        ");
+        ADDW     R0,R10,#+620
+        PUSH     {R0}
+        CFI CFA R13+184
+        MOVS     R3,#+0
+        MOV      R2,R11
+        MOVS     R1,#+216
+        MOVS     R0,#+112
+        B.N      ??Calibrat_67
+        CFI CFA R13+176
+//  334         break;
+//  335       case 11:                            //             "Exit AND SAVE CALIBRATION RESULTS"
+//  336         Print_Str( 9*8, 216, 0x0405, Twink, " ");       
+??Calibrat_76:
+        ADR.N    R0,??Calibrat_63+0x24  ;; " "
+        PUSH     {R0}
+        CFI CFA R13+180
+        LDR.N    R0,??Calibrat_63+0x4  ;; Twink
+        MOV      R2,R11
+        MOVS     R1,#+216
+        LDRB     R3,[R0, #+0]
+        MOVS     R0,#+72
+        _BLF     Print_Str,??Print_Str??rT
+//  337         Print_Str(14*8, 216, 0x0405, PRN,   "Exit AND SAVE CALIBRATION RESULTS");
+        ADDW     R0,R10,#+656
+        PUSH     {R0}
+        CFI CFA R13+184
+        MOVS     R3,#+0
+        MOV      R2,R11
+        MOVS     R1,#+216
+        MOVS     R0,#+112
+        B.N      ??Calibrat_67
+        CFI CFA R13+176
+//  338         break;
+//  339       case 12:                            //             "Exit AND RESTORE SYSTEM DEFAULTS "
+//  340         Print_Str( 9*8, 216, 0x0405, Twink, " ");       
+??Calibrat_77:
+        ADR.N    R0,??Calibrat_63+0x24  ;; " "
+        PUSH     {R0}
+        CFI CFA R13+180
+        LDR.N    R0,??Calibrat_63+0x4  ;; Twink
+        MOV      R2,R11
+        MOVS     R1,#+216
+        LDRB     R3,[R0, #+0]
+        MOVS     R0,#+72
+        _BLF     Print_Str,??Print_Str??rT
+//  341         Print_Str(14*8, 216, 0x0405, PRN,   "Exit AND RESTORE SYSTEM DEFAULTS ");
+        ADDW     R0,R10,#+692
+        PUSH     {R0}
+        CFI CFA R13+184
+        MOVS     R3,#+0
+        MOV      R2,R11
+        MOVS     R1,#+216
+        MOVS     R0,#+112
+??Calibrat_67:
+        _BLF     Print_Str,??Print_Str??rT
+        ADD      SP,SP,#+8
+        CFI CFA R13+176
+//  342         break;
+//  343       }
+//  344     }
+//  345     if(Key_Buffer){ 
+??Calibrat_21:
+        LDR.N    R0,??Calibrat_78  ;; Key_Buffer
+        LDRB     R0,[R0, #+0]
+        CMP      R0,#+0
+        BEQ.W    ??Calibrat_16
+//  346       PD_Cnt = 600;                               // 重新设定等待时间600秒
+        LDR.N    R0,??Calibrat_78+0x4  ;; PD_Cnt
+        MOVS     R1,#+600
+//  347       if((Range <= G_Attr[0].Yp_Max)&&(Step == 7)){
+        UXTB     R7,R5
+        STRH     R1,[R0, #+0]
+        LDR.N    R0,??Calibrat_78+0x8  ;; G_Attr
+        UXTB     R1,R5
+        LDR      R0,[R0, #+0]
+        LDRH     R0,[R0, #+4]
+        CMP      R0,R1
+        BCC.N    ??Calibrat_79
+        UXTB     R0,R6
+        CMP      R0,#+7
+        BNE.N    ??Calibrat_79
+//  348         if(Channel == TRACK1){
+        MOVS     R0,#+166
+        MOVS     R1,#+20
+        MLS      R1,R7,R1,R0
+        MOV      R0,R8
+        LSLS     R0,R0,#+24
+        BNE.N    ??Calibrat_80
+//  349           Print_Str(134, 166-(Range*20), 0x0005, PRN, n);
+        ADD      R0,SP,#+16
+        PUSH     {R0}
+        CFI CFA R13+180
+        MOVS     R3,#+0
+        MOVS     R2,#+5
+        UXTH     R1,R1
+        MOVS     R0,#+134
+        B.N      ??Calibrat_81
+        CFI CFA R13+176
+//  350         }
+//  351         if(Channel == TRACK2){
+??Calibrat_80:
+        MOV      R0,R8
+        UXTB     R0,R0
+        CMP      R0,#+1
+        BNE.N    ??Calibrat_79
+//  352           Print_Str(334, 166-(Range*20), 0x0105, PRN, n);
+        LDR.N    R2,??Calibrat_63+0x20  ;; 0x105
+        ADD      R0,SP,#+16
+        PUSH     {R0}
+        CFI CFA R13+180
+        MOVS     R3,#+0
+        UXTH     R1,R1
+        MOVS     R0,#+334
+??Calibrat_81:
+        _BLF     Print_Str,??Print_Str??rT
+        ADD      SP,SP,#+4
+        CFI CFA R13+176
+//  353         }
+//  354       } 
+//  355       switch (Key_Buffer){  
+??Calibrat_79:
+        LDR.N    R2,??Calibrat_78  ;; Key_Buffer
+        LDR.N    R0,??Calibrat_78+0xC  ;; Ka2
+        ADDS     R1,R6,#+1
+        UXTB     R1,R1
+        ADDS     R0,R0,R7, LSL #+1
+        STR      R0,[SP, #+8]
+        LDR.N    R0,??Calibrat_78+0x10  ;; Kb2
+        LDRB     R2,[R2, #+0]
+        ADDS     R0,R0,R7, LSL #+1
+        CMP      R2,#+2
+        BEQ.N    ??Calibrat_82
+        CMP      R2,#+5
+        BEQ.W    ??Calibrat_83
+        CMP      R2,#+6
+        BEQ.W    ??Calibrat_84
+        CMP      R2,#+8
+        BEQ.W    ??Calibrat_85
+        CMP      R2,#+9
+        BEQ.W    ??Calibrat_86
+        B.N      ??Calibrat_87
+        DATA
+??Calibrat_63:
+        DC32     0x305
+        DC32     Twink
+        DC8      "-",+0,+0
+        DC8      "+",+0,+0
+        DC8      "<",+0,+0
+        DC8      ">",+0,+0
+        DC32     V_UNIT
+        DC32     Y_Attr
+        DC32     0x105
+        DC8      " ",+0,+0
+        THUMB
+//  356       case KEY2:
+//  357         if(Step == 0)  Step++;
+??Calibrat_82:
+        LSLS     R0,R6,#+24
+        IT      EQ 
+        MOVEQ    R6,R1
+//  358         if((Step == 8)||(Step == 9)){
+        UXTB     R0,R6
+        CMP      R0,#+8
+        BEQ.N    ??Calibrat_88
+        CMP      R0,#+9
+        BNE.N    ??Calibrat_89
+//  359           if(Step == 9) Channel = 1 - Channel;
+??Calibrat_88:
+        UXTB     R6,R6
+        CMP      R6,#+9
+        IT      EQ 
+        RSBSEQ   R8,R8,#+1
+//  360           for(i=0; i<=G_Attr[0].Yp_Max; i++){
+        MOVS     R7,#+0
+        ADDW     R6,R10,#+728
+        B.N      ??Calibrat_90
+//  361             if(Channel == TRACK1){
+//  362               Print_Str( 45, 166-(i*20), 0x0005, PRN, "     ");   
+//  363               Print_Str( 89, 166-(i*20), 0x0005, PRN, "     ");   
+//  364               Print_Str(134, 166-(i*20), 0x0005, PRN, "       ");  
+//  365             }
+//  366             if(Channel == TRACK2){
+??Calibrat_91:
+        MOV      R0,R8
+        UXTB     R0,R0
+        CMP      R0,#+1
+        BNE.N    ??Calibrat_92
+//  367               Print_Str(245, 166-(i*20), 0x0105, PRN, "     ");
+        PUSH     {R6}
+        CFI CFA R13+180
+        MOVS     R3,#+0
+        ADDS     R2,R2,#+241
+        UXTH     R1,R4
+        MOVS     R0,#+245
+        _BLF     Print_Str,??Print_Str??rT
+//  368               Print_Str(289, 166-(i*20), 0x0105, PRN, "     ");
+        LDR.N    R2,??Calibrat_78+0x14  ;; 0x105
+        LDR.N    R0,??Calibrat_78+0x18  ;; 0x121
+        PUSH     {R6}
+        CFI CFA R13+184
+        MOV      R3,R9
+        UXTH     R1,R4
+        _BLF     Print_Str,??Print_Str??rT
+//  369               Print_Str(334, 166-(i*20), 0x0105, PRN, "       ");
+        LDR.N    R2,??Calibrat_78+0x14  ;; 0x105
+        LDR      R0,[SP, #+20]
+        MOV      R3,R9
+        UXTH     R1,R4
+        PUSH     {R0}
+        CFI CFA R13+188
+        MOVS     R0,#+334
+??Calibrat_93:
+        _BLF     Print_Str,??Print_Str??rT
+        ADD      SP,SP,#+12
+        CFI CFA R13+176
+//  370             }
+??Calibrat_92:
+        ADDS     R7,R7,#+1
+        UXTH     R7,R7
+??Calibrat_90:
+        LDR.N    R0,??Calibrat_78+0x8  ;; G_Attr
+        LDR      R0,[R0, #+0]
+        LDRH     R0,[R0, #+4]
+        CMP      R0,R7
+        BCC.N    ??Calibrat_94
+        MOVS     R0,#+166
+        MOVS     R2,#+20
+        MLS      R4,R7,R2,R0
+        ADDW     R0,R10,#+736
+        STR      R0,[SP, #+12]
+        MOV      R0,R8
+        LSLS     R0,R0,#+24
+        BNE.N    ??Calibrat_91
+        PUSH     {R6}
+        CFI CFA R13+180
+        MOVS     R3,#+0
+        MOVS     R2,#+5
+        UXTH     R1,R4
+        MOVS     R0,#+45
+        _BLF     Print_Str,??Print_Str??rT
+        PUSH     {R6}
+        CFI CFA R13+184
+        MOV      R3,R9
+        MOVS     R2,#+5
+        UXTH     R1,R4
+        MOVS     R0,#+89
+        _BLF     Print_Str,??Print_Str??rT
+        LDR      R0,[SP, #+20]
+        MOV      R3,R9
+        MOVS     R2,#+5
+        PUSH     {R0}
+        CFI CFA R13+188
+        UXTH     R1,R4
+        MOVS     R0,#+134
+        B.N      ??Calibrat_93
+        CFI CFA R13+176
+//  371           }
+//  372           Step = 0;; 
+??Calibrat_94:
+        MOVS     R6,#+0
+        B.N      ??Calibrat_87
+//  373         } 
+//  374         if(Step >= 10){
+??Calibrat_89:
+        CMP      R0,#+10
+        BCC.W    ??Calibrat_87
+//  375           if(Step == 10){
+        BNE.N    ??Calibrat_95
+//  376             for(i=0; i<=G_Attr[0].Yp_Max; i++){
+        MOVS     R7,#+0
+        B.N      ??Calibrat_96
+//  377               Ka1[i] = Ma1[i];  Ka2[i] = Ma2[i];  Ka3[i] = Ma3[i];
+??Calibrat_97:
+        LDR.N    R1,??Calibrat_78+0x1C  ;; Ka1
+        MOVS     R0,R7
+        ADD      R2,SP,#+52
+        LDRB     R2,[R2, R0]
+//  378               Kb1[i] = Mb1[i];  Kb2[i] = Mb2[i];  Kb3[i] = Mb3[i];
+//  379             }
+        ADDS     R7,R7,#+1
+        UXTH     R7,R7
+        STRB     R2,[R1, R0]
+        LDR.N    R1,??Calibrat_78+0xC  ;; Ka2
+        ADD      R2,SP,#+100
+        LDRH     R2,[R2, R0, LSL #+1]
+        STRH     R2,[R1, R0, LSL #+1]
+        LDR.N    R1,??Calibrat_78+0x20  ;; Ka3
+        ADD      R2,SP,#+76
+        LDRB     R2,[R2, R0]
+        STRB     R2,[R1, R0]
+        LDR.N    R1,??Calibrat_78+0x24  ;; Kb1
+        ADD      R2,SP,#+64
+        LDRB     R2,[R2, R0]
+        STRB     R2,[R1, R0]
+        LDR.N    R1,??Calibrat_78+0x10  ;; Kb2
+        ADD      R2,SP,#+120
+        LDRH     R2,[R2, R0, LSL #+1]
+        STRH     R2,[R1, R0, LSL #+1]
+        LDR.N    R1,??Calibrat_78+0x28  ;; Kb3
+        ADD      R2,SP,#+88
+        LDRB     R2,[R2, R0]
+        STRB     R2,[R1, R0]
+??Calibrat_96:
+        LDR.N    R0,??Calibrat_78+0x8  ;; G_Attr
+        LDR      R0,[R0, #+0]
+        LDRH     R0,[R0, #+4]
+        CMP      R0,R7
+        BCS.N    ??Calibrat_97
+//  380             Save_Param();                         // 不保存校正后的参数
+        _BLF     Save_Param,??Save_Param??rT
+//  381             Print_Str( 8, 216, 0x0405, PRN, "                                                ");
+        MOV      R0,R10
+        ADDS     R0,R0,#+8
+        PUSH     {R0}
+        CFI CFA R13+180
+        MOVS     R3,#+0
+        MOV      R2,R11
+        MOVS     R1,#+216
+        MOVS     R0,#+8
+        _BLF     Print_Str,??Print_Str??rT
+        ADD      SP,SP,#+4
+        CFI CFA R13+176
+//  382           } 
+//  383           if(Step == 11){
+??Calibrat_95:
+        UXTB     R0,R6
+        CMP      R0,#+11
+        BNE.N    ??Calibrat_98
+//  384             Save_Param();                         // 保存校正后的参数
+        _BLF     Save_Param,??Save_Param??rT
+//  385             Print_Str( 8, 216, 0x0405, PRN, "          SAVING THE CALIBRATION DATA           ");
+        MOV      R0,R10
+        ADDS     R0,R0,#+60
+        PUSH     {R0}
+        CFI CFA R13+180
+        MOVS     R3,#+0
+        MOV      R2,R11
+        MOVS     R1,#+216
+        MOVS     R0,#+8
+        _BLF     Print_Str,??Print_Str??rT
+        ADD      SP,SP,#+4
+        CFI CFA R13+176
+//  386           }  
+//  387           if(Step == 12){ 
+??Calibrat_98:
+        UXTB     R6,R6
+        CMP      R6,#+12
+        BNE.N    ??Calibrat_99
+//  388             for(i=0; i<=G_Attr[0].Yp_Max; i++){
+        MOVS     R7,#+0
+        B.N      ??Calibrat_100
+//  389               Ka1[i] = 0; Ka2[i] = 1024; Ka3[i] = 0;         // 设置校准参数初值
+??Calibrat_101:
+        LDR.N    R1,??Calibrat_78+0x1C  ;; Ka1
+        MOVS     R0,R7
+        MOVS     R2,#+0
+//  390               Kb1[i] = 0; Kb2[i] = 1024; Kb3[i] = 0;
+//  391             }
+        ADDS     R7,R7,#+1
+        STRB     R2,[R1, R0]
+        LDR.N    R1,??Calibrat_78+0xC  ;; Ka2
+        MOVS     R2,#+1024
+        UXTH     R7,R7
+        STRH     R2,[R1, R0, LSL #+1]
+        LDR.N    R1,??Calibrat_78+0x20  ;; Ka3
+        MOV      R2,R9
+        STRB     R2,[R1, R0]
+        LDR.N    R1,??Calibrat_78+0x24  ;; Kb1
+        STRB     R2,[R1, R0]
+        LDR.N    R1,??Calibrat_78+0x10  ;; Kb2
+        MOVS     R2,#+1024
+        STRH     R2,[R1, R0, LSL #+1]
+        LDR.N    R1,??Calibrat_78+0x28  ;; Kb3
+        MOV      R2,R9
+        STRB     R2,[R1, R0]
+??Calibrat_100:
+        LDR.N    R0,??Calibrat_78+0x8  ;; G_Attr
+        LDR      R0,[R0, #+0]
+        LDRH     R0,[R0, #+4]
+        CMP      R0,R7
+        BCS.N    ??Calibrat_101
+//  392             Save_Param();  // 清除校准参数，保存缺省值 
+        _BLF     Save_Param,??Save_Param??rT
+//  393             Print_Str( 8, 216, 0x0405, PRN, "       RESTORE DEFAULTS CALIBRATION DATA        ");
+        MOV      R0,R10
+        ADDS     R0,R0,#+192
+        PUSH     {R0}
+        CFI CFA R13+180
+        MOVS     R3,#+0
+        MOV      R2,R11
+        MOVS     R1,#+216
+        MOVS     R0,#+8
+        _BLF     Print_Str,??Print_Str??rT
+        ADD      SP,SP,#+4
+        CFI CFA R13+176
+//  394           }
+//  395           Delayms(1000);                                      
+??Calibrat_99:
+        MOVS     R0,#+1000
+        _BLF     Delayms,??Delayms??rT
+//  396           App_init();
+        _BLF     App_init,??App_init??rT
+//  397           return;
+        B.W      ??Calibrat_18
+//  398         }
+//  399         break;
+//  400       case KEY3:
+//  401         break;
+//  402       case K_ITEM_DEC:
+//  403         if((Step == 7)&&(Range > 0)) Range--;  
+??Calibrat_86:
+        UXTB     R0,R6
+        CMP      R0,#+7
+        BNE.N    ??Calibrat_102
+        LSLS     R0,R5,#+24
+        ITT     NE 
+        SUBNE    R5,R5,#+1
+        UXTBNE   R5,R5
+//  404         if( Step >= 9)               Step--;
+??Calibrat_102:
+        UXTB     R0,R6
+        CMP      R0,#+9
+        ITT     CS 
+        SUBCS    R6,R6,#+1
+        UXTBCS   R6,R6
+//  405         if( Step == 8)               Step = 12;
+        UXTB     R0,R6
+        CMP      R0,#+8
+        BNE.N    ??Calibrat_87
+        MOVS     R6,#+12
+        B.N      ??Calibrat_87
+//  406         break;
+//  407       case K_ITEM_INC:
+//  408         if(Step >= 8)  Step++;
+??Calibrat_85:
+        UXTB     R0,R6
+        CMP      R0,#+8
+        IT      CS 
+        MOVCS    R6,R1
+//  409         if(Step > 12)  Step = 8;
+        UXTB     R0,R6
+        CMP      R0,#+13
+        BCC.N    ??Calibrat_103
+        MOVS     R6,#+8
+        B.N      ??Calibrat_104
+//  410         if(Step == 7)  Range++;  
+??Calibrat_103:
+        CMP      R0,#+7
+        ITT     EQ 
+        ADDEQ    R5,R5,#+1
+        UXTBEQ   R5,R5
+//  411         if(Range  > G_Attr[0].Yp_Max){  
+??Calibrat_104:
+        LDR.N    R0,??Calibrat_78+0x8  ;; G_Attr
+        UXTB     R1,R5
+        LDR      R0,[R0, #+0]
+        LDRH     R0,[R0, #+4]
+        CMP      R0,R1
+        BCS.N    ??Calibrat_87
+//  412           Range = 0;        
+        MOVS     R5,#+0
+//  413           Step++;
+        ADDS     R6,R6,#+1
+        UXTB     R6,R6
+        B.N      ??Calibrat_87
+//  414         } 
+//  415         break;
+//  416       case K_INDEX_DEC:
+//  417         if(Step == 7){  
+??Calibrat_83:
+        UXTB     R1,R6
+        CMP      R1,#+7
+        BNE.N    ??Calibrat_87
+//  418           if((Channel == TRACK1)&&(TmpA > 35))  Ka2[Range] -= 2;
+        LDR.N    R1,??Calibrat_78+0x2C  ;; 0xfffe
+        MOV      R2,R8
+        LSLS     R2,R2,#+24
+        BNE.N    ??Calibrat_105
+        LDR      R0,[SP, #+4]
+        CMP      R0,#+36
+        BLT.N    ??Calibrat_87
+        LDR      R0,[SP, #+8]
+??Calibrat_106:
+        LDRH     R2,[R0, #+0]
+        ADDS     R1,R2,R1
+??Calibrat_107:
+        STRH     R1,[R0, #+0]
+        B.N      ??Calibrat_87
+//  419           if((Channel == TRACK2)&&(TmpB > 35))  Kb2[Range] -= 2;
+??Calibrat_105:
+        MOV      R2,R8
+        UXTB     R2,R2
+        CMP      R2,#+1
+        BNE.N    ??Calibrat_87
+        CMP      R4,#+36
+        BLT.N    ??Calibrat_87
+        B.N      ??Calibrat_106
+//  420         }
+//  421         break;
+//  422       case K_INDEX_INC:
+//  423         if(Step == 7){  
+??Calibrat_84:
+        UXTB     R1,R6
+        CMP      R1,#+7
+        BNE.N    ??Calibrat_87
+//  424           if((Channel == TRACK1)&&(TmpA > 35))  Ka2[Range] += 2;
+        MOV      R1,R8
+        LSLS     R1,R1,#+24
+        BNE.N    ??Calibrat_108
+        LDR      R0,[SP, #+4]
+        CMP      R0,#+36
+        BLT.N    ??Calibrat_87
+        LDR      R0,[SP, #+8]
+        LDRH     R1,[R0, #+0]
+        ADDS     R1,R1,#+2
+        B.N      ??Calibrat_107
+//  425           if((Channel == TRACK2)&&(TmpB > 35))  Kb2[Range] += 2;
+??Calibrat_108:
+        MOV      R1,R8
+        UXTB     R1,R1
+        CMP      R1,#+1
+        BNE.N    ??Calibrat_87
+        CMP      R4,#+36
+        ITTT    GE 
+        LDRHGE   R1,[R0, #+0]
+        ADDGE    R1,R1,#+2
+        STRHGE   R1,[R0, #+0]
+//  426         }
+//  427         break;
+//  428       }
+//  429       Key_Buffer = 0;
+??Calibrat_87:
+        LDR.N    R0,??Calibrat_78  ;; Key_Buffer
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+0]
+        B.W      ??Calibrat_16
+        Nop      
+        DATA
+??Calibrat_78:
+        DC32     Key_Buffer
+        DC32     PD_Cnt
+        DC32     G_Attr
+        DC32     Ka2
+        DC32     Kb2
+        DC32     0x105
+        DC32     0x121
+        DC32     Ka1
+        DC32     Ka3
+        DC32     Kb1
+        DC32     Kb3
+        DC32     0xfffe
+        CFI EndBlock cfiBlock1
+//  430     }
+//  431   }
+//  432 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__Set??rT:
+        LDR.N    R3,??Subroutine0_0  ;; __Set
+        BX       R3
+        DATA
+??Subroutine0_0:
+        DC32     __Set
+        CFI EndBlock cfiBlock2
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Update_Trig??rT:
+        LDR.N    R3,??Subroutine1_0  ;; Update_Trig
+        BX       R3
+        DATA
+??Subroutine1_0:
+        DC32     Update_Trig
+        CFI EndBlock cfiBlock3
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Delayms??rT:
+        LDR.N    R3,??Subroutine2_0  ;; Delayms
+        BX       R3
+        DATA
+??Subroutine2_0:
+        DC32     Delayms
+        CFI EndBlock cfiBlock4
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__Read_FIFO??rT:
+        LDR.N    R3,??Subroutine3_0  ;; __Read_FIFO
+        BX       R3
+        DATA
+??Subroutine3_0:
+        DC32     __Read_FIFO
+        CFI EndBlock cfiBlock5
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__Clear_Screen??rT:
+        LDR.N    R3,??Subroutine4_0  ;; __Clear_Screen
+        BX       R3
+        DATA
+??Subroutine4_0:
+        DC32     __Clear_Screen
+        CFI EndBlock cfiBlock6
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__Point_SCR??rT:
+        LDR.N    R3,??Subroutine5_0  ;; __Point_SCR
+        BX       R3
+        DATA
+??Subroutine5_0:
+        DC32     __Point_SCR
+        CFI EndBlock cfiBlock7
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__LCD_SetPixl??rT:
+        LDR.N    R3,??Subroutine6_0  ;; __LCD_SetPixl
+        BX       R3
+        DATA
+??Subroutine6_0:
+        DC32     __LCD_SetPixl
+        CFI EndBlock cfiBlock8
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Print_Str??rT:
+        PUSH     {R3}
+        CFI CFA R13+4
+        LDR.N    R3,??Subroutine7_0  ;; Print_Str
+        MOV      R12,R3
+        POP      {R3}
+        CFI CFA R13+0
+        BX       R12
+        Nop      
+        DATA
+??Subroutine7_0:
+        DC32     Print_Str
+        CFI EndBlock cfiBlock9
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??s8ToPercen??rT:
+        LDR.N    R3,??Subroutine8_0  ;; s8ToPercen
+        BX       R3
+        DATA
+??Subroutine8_0:
+        DC32     s8ToPercen
+        CFI EndBlock cfiBlock10
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock11 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Int2Str??rT:
+        PUSH     {R3}
+        CFI CFA R13+4
+        LDR.N    R3,??Subroutine9_0  ;; Int2Str
+        MOV      R12,R3
+        POP      {R3}
+        CFI CFA R13+0
+        BX       R12
+        Nop      
+        DATA
+??Subroutine9_0:
+        DC32     Int2Str
+        CFI EndBlock cfiBlock11
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock12 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Save_Param??rT:
+        LDR.N    R3,??Subroutine10_0  ;; Save_Param
+        BX       R3
+        DATA
+??Subroutine10_0:
+        DC32     Save_Param
+        CFI EndBlock cfiBlock12
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock13 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??App_init??rT:
+        LDR.N    R3,??Subroutine11_0  ;; App_init
+        BX       R3
+        DATA
+??Subroutine11_0:
+        DC32     App_init
+        CFI EndBlock cfiBlock13
+
+        END
+//  433 /*********************************  END OF FILE  ******************************/
+// 
+// 4 564 bytes in segment CODE
+// 1 022 bytes in segment DATA_C
+// 
+// 4 452 bytes of CODE  memory (+ 112 bytes shared)
+// 1 022 bytes of CONST memory
+//
+//Errors: none
+//Warnings: none

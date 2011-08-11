@@ -1,0 +1,660 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32 EVALUATION   01/Jul/2011  16:19:29 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  D:\Design\DS203\PRG\SYS_V1.50\source\Ext_Flash.c    /
+//    Command line    =  D:\Design\DS203\PRG\SYS_V1.50\source\Ext_Flash.c    /
+//                       -lA D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_Prpject\Li /
+//                       st\ -o D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_Prpject /
+//                       \Obj\ -s9 --no_inline --cpu_mode thumb --endian     /
+//                       little --cpu cortex-M3 --stack_align 4 -e --fpu     /
+//                       None --dlib_config "C:\Program Files\IAR            /
+//                       Systems\Embedded Workbench 4.0                      /
+//                       Evaluation\arm\LIB\dl7mptnnl8n.h" -I                /
+//                       D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_Prpject\..\..\ /
+//                       FWLib\inc\ -I D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_ /
+//                       Prpject\..\..\USBLib\inc\ -I                        /
+//                       D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_Prpject\..\inc /
+//                       lude\ -I "C:\Program Files\IAR Systems\Embedded     /
+//                       Workbench 4.0 Evaluation\arm\INC\"                  /
+//    List file       =  D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_Prpject\List\E /
+//                       xt_Flash.s79                                        /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME Ext_Flash
+
+        RTMODEL "StackAlign4", "USED"
+        RTMODEL "__cpu_mode", "__pcs__thumb"
+        RTMODEL "__data_model", "absolute"
+        RTMODEL "__endian", "little"
+        RTMODEL "__rt_version", "6"
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+??DataTable0 EQU 0
+??DataTable1 EQU 0
+??DataTable2 EQU 0
+??DataTable4 EQU 0
+??DataTable5 EQU 0
+??DataTable6 EQU 0
+        MULTWEAK ??GPIO_ResetBits??rT
+        MULTWEAK ??GPIO_SetBits??rT
+        MULTWEAK ??SPI_GetFlagStatus??rT
+        MULTWEAK ??SPI_ReceiveData??rT
+        MULTWEAK ??SPI_SendData??rT
+        PUBWEAK ?init?tab?DATA_Z
+        PUBLIC ExtFlash_PageRD
+        FUNCTION ExtFlash_PageRD,0203H
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC ExtFlash_PageWR
+        FUNCTION ExtFlash_PageWR,0203H
+        LOCFRAME CSTACK, 36, STACK
+        PUBLIC ExtFlash_ReadByte
+        FUNCTION ExtFlash_ReadByte,0203H
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC ExtFlash_SendByte
+        FUNCTION ExtFlash_SendByte,0203H
+        LOCFRAME CSTACK, 24, STACK
+        PUBLIC ExtFlash_WaitForWriteEnd
+        FUNCTION ExtFlash_WaitForWriteEnd,0203H
+        LOCFRAME CSTACK, 16, STACK
+        PUBLIC ExtFlash_WriteEnable
+        FUNCTION ExtFlash_WriteEnable,0203H
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC MAL_GetStatus
+        FUNCTION MAL_GetStatus,0203H
+        PUBLIC Mass_Block_Count
+        PUBLIC Mass_Block_Size
+        PUBLIC Mass_Memory_Size
+        PUBLIC Tout
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA R13 HUGEDATA
+        CFI Resource R0:32, R1:32, R2:32, R3:32, R4:32, R5:32, R6:32, R7:32
+        CFI Resource R8:32, R9:32, R10:32, R11:32, R12:32, R13:32, R14:32
+        CFI VirtualResource ?RET:32
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 2
+        CFI DataAlign 4
+        CFI ReturnAddress ?RET CODE
+        CFI CFA R13+0
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI R8 SameValue
+        CFI R9 SameValue
+        CFI R10 SameValue
+        CFI R11 SameValue
+        CFI R12 Undefined
+        CFI R14 Undefined
+        CFI ?RET R14
+        CFI EndCommon cfiCommon0
+        
+GPIO_ResetBits      SYMBOL "GPIO_ResetBits"
+GPIO_SetBits        SYMBOL "GPIO_SetBits"
+SPI_GetFlagStatus   SYMBOL "SPI_GetFlagStatus"
+SPI_ReceiveData     SYMBOL "SPI_ReceiveData"
+SPI_SendData        SYMBOL "SPI_SendData"
+??GPIO_ResetBits??rT SYMBOL "??rT", GPIO_ResetBits
+??GPIO_SetBits??rT  SYMBOL "??rT", GPIO_SetBits
+??SPI_GetFlagStatus??rT SYMBOL "??rT", SPI_GetFlagStatus
+??SPI_ReceiveData??rT SYMBOL "??rT", SPI_ReceiveData
+??SPI_SendData??rT  SYMBOL "??rT", SPI_SendData
+
+        EXTERN GPIO_ResetBits
+        FUNCTION GPIO_ResetBits,0202H
+        EXTERN GPIO_SetBits
+        FUNCTION GPIO_SetBits,0202H
+        EXTERN SPI_GetFlagStatus
+        FUNCTION SPI_GetFlagStatus,0202H
+        EXTERN SPI_ReceiveData
+        FUNCTION SPI_ReceiveData,0202H
+        EXTERN SPI_SendData
+        FUNCTION SPI_SendData,0202H
+
+// D:\Design\DS203\PRG\SYS_V1.50\source\Ext_Flash.c
+//    1 /********************* (C) COPYRIGHT 2010 e-Design Co.,Ltd. ********************
+//    2  File Name : EXT_Flash.c  
+//    3  Version   : DS203_SYS Ver 1.5x                                  Author : bure
+//    4 *******************************************************************************/
+//    5 #include "Ext_Flash.h"
+//    6 #include "BIOS.h"
+//    7 
+//    8 #define OK           0            // 操作完成
+//    9 #define SEC_ERR      1            // 扇区读写错误
+//   10 #define TMAX         100000       // 超时限制
+//   11 
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+//   12 u32 Mass_Memory_Size;
+Mass_Memory_Size:
+        DS8 4
+//   13 u32 Mass_Block_Size;
+Mass_Block_Size:
+        DS8 4
+//   14 u32 Mass_Block_Count;
+Mass_Block_Count:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+//   15 u32 Tout;
+Tout:
+        DS8 4
+//   16 
+//   17 /*******************************************************************************
+//   18  写FLASH页(256 Bytes)： Mode=0: 从0变1数据改写   Mode=1: 数据重写
+//   19 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function ExtFlash_PageWR
+        THUMB
+//   20 void ExtFlash_PageWR(u8* pBuffer, u32 WriteAddr)
+//   21 {
+ExtFlash_PageWR:
+        PUSH     {R4-R10,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R10 Frame(CFA, -8)
+        CFI R9 Frame(CFA, -12)
+        CFI R8 Frame(CFA, -16)
+        CFI R7 Frame(CFA, -20)
+        CFI R6 Frame(CFA, -24)
+        CFI R5 Frame(CFA, -28)
+        CFI R4 Frame(CFA, -32)
+        CFI CFA R13+32
+        SUB      SP,SP,#+4
+        CFI CFA R13+36
+//   22   u32  Data1, Data2;
+//   23   u16  i, Lenght = 256, Mode = 0; // Mode=0: 从0变1数据改写   Mode=1: 数据重写
+        MOVS     R4,#+0
+        MOVS     R5,R0
+        MOVS     R0,#+256
+        MOV      R8,R0
+//   24 
+//   25   ExtFlash_CS_HIGH();
+        LDR.N    R0,??DataTable7  ;; 0x40010c00
+        MOVS     R7,R1
+        MOVS     R6,#+0
+        MOV      R9,R0
+        MOVS     R1,#+128
+        _BLF     GPIO_SetBits,??GPIO_SetBits??rT
+//   26   ExtFlash_WaitForWriteEnd();
+        BL       ExtFlash_WaitForWriteEnd
+//   27 
+//   28   WriteAddr &= ~0xFF;
+        MOVS     R0,#+255
+        BICS     R7,R7,R0
+        MOV      R10,R7
+//   29   for(i=0; i<64; i++){
+//   30     ExtFlash_PageRD((u8*)&Data1, WriteAddr+i*4, 4);
+??ExtFlash_PageWR_0:
+        MOVS     R7,R4
+        MOVS     R2,#+4
+        ADDS     R1,R10,R7, LSL #+2
+        MOV      R0,SP
+        BL       ExtFlash_PageRD
+//   31     Data2 =*(u32*)(pBuffer+i*4);
+//   32     if((Data1 &(~Data2))!= 0)  Mode = 1; // 判断是否全部满足0->1
+        LDR      R1,[R5, R7, LSL #+2]
+        LDR      R0,[SP, #+0]
+        BICS     R0,R0,R1
+        IT      NE 
+        MOVNE    R6,#+1
+//   33   }
+        ADDS     R4,R4,#+1
+        UXTH     R4,R4
+        CMP      R4,#+64
+        BCC.N    ??ExtFlash_PageWR_0
+//   34   ExtFlash_WriteEnable();
+        BL       ExtFlash_WriteEnable
+//   35   ExtFlash_CS_LOW();
+        MOVS     R1,#+128
+        MOV      R0,R9
+        _BLF     GPIO_ResetBits,??GPIO_ResetBits??rT
+//   36   (Mode)?(ExtFlash_SendByte(PW)):(ExtFlash_SendByte(PP));
+        CBZ      R6,??ExtFlash_PageWR_1
+        MOVS     R0,#+10
+        B.N      ??ExtFlash_PageWR_2
+??ExtFlash_PageWR_1:
+        MOVS     R0,#+2
+??ExtFlash_PageWR_2:
+        BL       ExtFlash_SendByte
+//   37   ExtFlash_SendByte((WriteAddr & 0xFF0000) >> 16);
+//   38   ExtFlash_SendByte((WriteAddr & 0xFF00) >> 8);  
+//   39   ExtFlash_SendByte(WriteAddr & 0xFF);
+        LDR.N    R4,??DataTable3  ;; 0xffff
+        MOV      R0,R10
+        LSLS     R0,R0,#+8
+        LSRS     R0,R0,#+24
+        BL       ExtFlash_SendByte
+        MOV      R0,R10
+        LSLS     R0,R0,#+16
+        LSRS     R0,R0,#+24
+        BL       ExtFlash_SendByte
+        MOVS     R0,#+0
+        B.N      ??ExtFlash_PageWR_3
+//   40   while(Lenght--) {         // while there is data to be written on the FLASH 
+//   41     ExtFlash_SendByte(~(*pBuffer));
+??ExtFlash_PageWR_4:
+        LDRB     R1,[R5], #+1
+        MVNS     R0,R1
+        UXTB     R0,R0
+??ExtFlash_PageWR_3:
+        BL       ExtFlash_SendByte
+//   42     pBuffer++; 
+//   43   }
+        MOV      R0,R8
+        ADDS     R1,R0,R4
+        MOV      R8,R1
+        LSLS     R0,R0,#+16
+        BNE.N    ??ExtFlash_PageWR_4
+//   44   ExtFlash_CS_HIGH();
+        MOVS     R1,#+128
+        MOV      R0,R9
+        _BLF     GPIO_SetBits,??GPIO_SetBits??rT
+//   45   ExtFlash_WaitForWriteEnd();
+        BL       ExtFlash_WaitForWriteEnd
+//   46 }
+        ADD      SP,SP,#+4
+        CFI CFA R13+32
+        POP      {R4-R10,PC}      ;; return
+        CFI EndBlock cfiBlock0
+//   47 /*******************************************************************************
+//   48  SPI_FLASH_BufferRead
+//   49 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function ExtFlash_PageRD
+        THUMB
+//   50 void ExtFlash_PageRD(u8* pBuffer, u32 ReadAddr, u16 Lenght)
+//   51 {
+ExtFlash_PageRD:
+        PUSH     {R4-R7,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R7 Frame(CFA, -8)
+        CFI R6 Frame(CFA, -12)
+        CFI R5 Frame(CFA, -16)
+        CFI R4 Frame(CFA, -20)
+        CFI CFA R13+20
+//   52   ExtFlash_CS_HIGH();
+        LDR.N    R6,??DataTable7  ;; 0x40010c00
+        MOVS     R4,R0
+        MOVS     R5,R2
+        MOVS     R7,R1
+        MOVS     R1,#+128
+        MOVS     R0,R6
+        _BLF     GPIO_SetBits,??GPIO_SetBits??rT
+//   53   ExtFlash_WaitForWriteEnd();
+        BL       ExtFlash_WaitForWriteEnd
+//   54 
+//   55   ExtFlash_CS_LOW();
+        MOVS     R1,#+128
+        MOVS     R0,R6
+        _BLF     GPIO_ResetBits,??GPIO_ResetBits??rT
+//   56   ExtFlash_SendByte(READ);
+        MOVS     R0,#+3
+        BL       ExtFlash_SendByte
+//   57   ExtFlash_SendByte((ReadAddr & 0xFF0000) >> 16);
+        LSRS     R0,R7,#+16
+        UXTB     R0,R0
+        BL       ExtFlash_SendByte
+//   58   ExtFlash_SendByte((ReadAddr& 0xFF00) >> 8);
+        LSRS     R0,R7,#+8
+        UXTB     R0,R0
+        BL       ExtFlash_SendByte
+//   59   ExtFlash_SendByte(ReadAddr & 0xFF);
+        UXTB     R0,R7
+        LDR.N    R7,??DataTable3  ;; 0xffff
+        BL       ExtFlash_SendByte
+        B.N      ??ExtFlash_PageRD_0
+//   60 
+//   61   while(Lenght--){ // while there is data to be read 
+//   62     *pBuffer = ~(ExtFlash_SendByte(Dummy_Byte));
+??ExtFlash_PageRD_1:
+        MOVS     R0,#+165
+        BL       ExtFlash_SendByte
+        MVNS     R1,R0
+        STRB     R1,[R4], #+1
+//   63     pBuffer++;
+//   64   }
+??ExtFlash_PageRD_0:
+        MOVS     R0,R5
+        ADDS     R5,R0,R7
+        LSLS     R0,R0,#+16
+        BNE.N    ??ExtFlash_PageRD_1
+//   65   ExtFlash_CS_HIGH();
+        MOVS     R1,#+128
+        MOVS     R0,R6
+        POP      {R4-R7,LR}       ;; Pop
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI ?RET R14
+        CFI CFA R13+0
+        _BF.W    GPIO_SetBits,??GPIO_SetBits??rT
+        CFI EndBlock cfiBlock1
+//   66 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable3:
+        DC32     0xffff
+//   67 /*******************************************************************************
+//   68  SPI_FLASH_ReadByte
+//   69 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function ExtFlash_ReadByte
+        THUMB
+//   70 u8 ExtFlash_ReadByte(void)
+//   71 {
+//   72   return (ExtFlash_SendByte(Dummy_Byte));
+ExtFlash_ReadByte:
+        MOVS     R0,#+165
+        Nop      
+        CFI EndBlock cfiBlock2
+        REQUIRE ExtFlash_SendByte
+        ;; // Fall through to label ExtFlash_SendByte
+//   73 }
+//   74 
+//   75 /*******************************************************************************
+//   76  SPI_FLASH_SendByte
+//   77 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function ExtFlash_SendByte
+        THUMB
+//   78 u8 ExtFlash_SendByte(u8 byte)
+//   79 {
+ExtFlash_SendByte:
+        PUSH     {R4-R8,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R8 Frame(CFA, -8)
+        CFI R7 Frame(CFA, -12)
+        CFI R6 Frame(CFA, -16)
+        CFI R5 Frame(CFA, -20)
+        CFI R4 Frame(CFA, -24)
+        CFI CFA R13+24
+//   80   Tout = 0;
+        LDR.N    R5,??DataTable8  ;; Tout
+        LDR.N    R6,??ExtFlash_SendByte_0  ;; 0x40003c00
+        LDR.N    R7,??DataTable9  ;; 0x186a1
+        MOVS     R4,R0
+        MOVS     R0,#+0
+        MOV      R8,R0
+        STR      R8,[R5, #+0]
+//   81   while(SPI_GetFlagStatus(SPI3, SPI_FLAG_TXE) == RESET){
+??ExtFlash_SendByte_1:
+        MOVS     R1,#+2
+        MOVS     R0,R6
+        _BLF     SPI_GetFlagStatus,??SPI_GetFlagStatus??rT
+        CBNZ     R0,??ExtFlash_SendByte_2
+//   82     if(Tout++ > TMAX) return 255;
+        LDR      R1,[R5, #+0]
+        ADDS     R0,R1,#+1
+        STR      R0,[R5, #+0]
+        CMP      R1,R7
+        BCC.N    ??ExtFlash_SendByte_1
+??ExtFlash_SendByte_3:
+        MOVS     R0,#+255
+        B.N      ??ExtFlash_SendByte_4
+//   83   }
+//   84   SPI_SendData(SPI3, byte);
+??ExtFlash_SendByte_2:
+        MOVS     R1,R4
+        MOVS     R0,R6
+        _BLF     SPI_SendData,??SPI_SendData??rT
+//   85   Tout = 0;
+        STR      R8,[R5, #+0]
+        B.N      ??ExtFlash_SendByte_5
+//   86   while(SPI_GetFlagStatus(SPI3, SPI_FLAG_RXNE) == RESET){
+//   87     if(Tout++ > TMAX) return 255;
+??ExtFlash_SendByte_6:
+        LDR      R1,[R5, #+0]
+        ADDS     R0,R1,#+1
+        STR      R0,[R5, #+0]
+        CMP      R1,R7
+        BCS.N    ??ExtFlash_SendByte_3
+//   88   }
+??ExtFlash_SendByte_5:
+        MOVS     R1,#+1
+        MOVS     R0,R6
+        _BLF     SPI_GetFlagStatus,??SPI_GetFlagStatus??rT
+        CMP      R0,#+0
+        BEQ.N    ??ExtFlash_SendByte_6
+//   89   return SPI_ReceiveData(SPI3);
+        MOVS     R0,R6
+        _BLF     SPI_ReceiveData,??SPI_ReceiveData??rT
+        UXTB     R0,R0
+??ExtFlash_SendByte_4:
+        POP      {R4-R8,PC}       ;; return
+        DATA
+??ExtFlash_SendByte_0:
+        DC32     0x40003c00
+        CFI EndBlock cfiBlock3
+//   90 }
+//   91 /*******************************************************************************
+//   92  SPI_FLASH_WriteEnable
+//   93 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function ExtFlash_WriteEnable
+        THUMB
+//   94 void ExtFlash_WriteEnable(void)
+//   95 {
+ExtFlash_WriteEnable:
+        PUSH     {R4,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R4 Frame(CFA, -8)
+        CFI CFA R13+8
+//   96   ExtFlash_CS_LOW();
+        LDR.N    R4,??DataTable7  ;; 0x40010c00
+        MOVS     R1,#+128
+        MOVS     R0,R4
+        _BLF     GPIO_ResetBits,??GPIO_ResetBits??rT
+//   97   ExtFlash_SendByte(WREN);
+        MOVS     R0,#+6
+        BL       ExtFlash_SendByte
+//   98   ExtFlash_CS_HIGH();
+        MOVS     R1,#+128
+        MOVS     R0,R4
+        POP      {R4,LR}          ;; Pop
+        CFI R4 SameValue
+        CFI ?RET R14
+        CFI CFA R13+0
+        _BF.W    GPIO_SetBits,??GPIO_SetBits??rT
+        CFI EndBlock cfiBlock4
+//   99 }
+//  100 /*******************************************************************************
+//  101  SPI_FLASH_WaitForWriteEnd
+//  102 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function ExtFlash_WaitForWriteEnd
+        THUMB
+//  103 void ExtFlash_WaitForWriteEnd(void)
+//  104 {
+ExtFlash_WaitForWriteEnd:
+        PUSH     {R4-R6,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R6 Frame(CFA, -8)
+        CFI R5 Frame(CFA, -12)
+        CFI R4 Frame(CFA, -16)
+        CFI CFA R13+16
+//  105   u8 FLASH_Status = 0;
+//  106   
+//  107   ExtFlash_CS_LOW();
+        LDR.N    R4,??DataTable7  ;; 0x40010c00
+//  108   ExtFlash_SendByte(RDSR);
+//  109   Tout = 0;
+        LDR.N    R5,??DataTable8  ;; Tout
+        LDR.N    R6,??DataTable9  ;; 0x186a1
+        MOVS     R1,#+128
+        MOVS     R0,R4
+        _BLF     GPIO_ResetBits,??GPIO_ResetBits??rT
+        MOVS     R0,#+5
+        BL       ExtFlash_SendByte
+        MOVS     R0,#+0
+        STR      R0,[R5, #+0]
+//  110   do { FLASH_Status = ExtFlash_SendByte(Dummy_Byte);
+??ExtFlash_WaitForWriteEnd_0:
+        MOVS     R0,#+165
+        BL       ExtFlash_SendByte
+//  111        if(Tout++ > TMAX) return;
+        LDR      R2,[R5, #+0]
+        ADDS     R1,R2,#+1
+        STR      R1,[R5, #+0]
+        CMP      R2,R6
+        BCS.N    ??ExtFlash_WaitForWriteEnd_1
+//  112   } while((FLASH_Status & WIP_Flag) == SET);              // Write in progress
+        LSLS     R0,R0,#+31
+        BMI.N    ??ExtFlash_WaitForWriteEnd_0
+//  113   ExtFlash_CS_HIGH();
+        MOVS     R1,#+128
+        MOVS     R0,R4
+        _BLF     GPIO_SetBits,??GPIO_SetBits??rT
+//  114 }
+??ExtFlash_WaitForWriteEnd_1:
+        POP      {R4-R6,PC}       ;; return
+        CFI EndBlock cfiBlock5
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable7:
+        DC32     0x40010c00
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable8:
+        DC32     Tout
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable9:
+        DC32     0x186a1
+//  115 /*******************************************************************************
+//  116  MAL_GetStatus
+//  117 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function MAL_GetStatus
+        THUMB
+//  118 void MAL_GetStatus (void)
+//  119 {
+//  120     Mass_Block_Count = 4096;        //FLASH_SIZE/FLASH_PAGE_SIZE; 
+MAL_GetStatus:
+        LDR.N    R0,??MAL_GetStatus_0  ;; Mass_Memory_Size
+        MOVS     R1,#+4096
+        STR      R1,[R0, #+8]
+//  121     Mass_Block_Size  = 512;         //FLASH_PAGE_SIZE; 
+        LSRS     R1,R1,#+3
+        STR      R1,[R0, #+4]
+//  122     Mass_Memory_Size = 0x200000;    //FLASH_SIZE; 
+        LSLS     R1,R1,#+12
+        STR      R1,[R0, #+0]
+//  123 } 
+        BX       LR               ;; return
+        Nop      
+        DATA
+??MAL_GetStatus_0:
+        DC32     Mass_Memory_Size
+        CFI EndBlock cfiBlock6
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??GPIO_SetBits??rT:
+        LDR.N    R3,??Subroutine0_0  ;; GPIO_SetBits
+        BX       R3
+        DATA
+??Subroutine0_0:
+        DC32     GPIO_SetBits
+        CFI EndBlock cfiBlock7
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??GPIO_ResetBits??rT:
+        LDR.N    R3,??Subroutine1_0  ;; GPIO_ResetBits
+        BX       R3
+        DATA
+??Subroutine1_0:
+        DC32     GPIO_ResetBits
+        CFI EndBlock cfiBlock8
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SPI_GetFlagStatus??rT:
+        LDR.N    R3,??Subroutine2_0  ;; SPI_GetFlagStatus
+        BX       R3
+        DATA
+??Subroutine2_0:
+        DC32     SPI_GetFlagStatus
+        CFI EndBlock cfiBlock9
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SPI_SendData??rT:
+        LDR.N    R3,??Subroutine3_0  ;; SPI_SendData
+        BX       R3
+        DATA
+??Subroutine3_0:
+        DC32     SPI_SendData
+        CFI EndBlock cfiBlock10
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock11 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SPI_ReceiveData??rT:
+        LDR.N    R3,??Subroutine4_0  ;; SPI_ReceiveData
+        BX       R3
+        DATA
+??Subroutine4_0:
+        DC32     SPI_ReceiveData
+        CFI EndBlock cfiBlock11
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_Z:
+        DCD      sfe(DATA_Z) - sfb(DATA_Z), sfb(DATA_Z), sfb(DATA_Z)
+
+        END
+//  124 
+//  125 /*********************************  END OF FILE  ******************************/
+// 
+// 524 bytes in segment CODE
+//  16 bytes in segment DATA_Z
+//  12 bytes in segment INITTAB
+// 
+// 484 bytes of CODE memory (+ 52 bytes shared)
+//  16 bytes of DATA memory
+//
+//Errors: none
+//Warnings: none

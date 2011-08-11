@@ -1,0 +1,2196 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32 EVALUATION   01/Jul/2011  16:19:34 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  D:\Design\DS203\PRG\USBLib\src\usb_regs.c           /
+//    Command line    =  D:\Design\DS203\PRG\USBLib\src\usb_regs.c -lA       /
+//                       D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_Prpject\List\  /
+//                       -o D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_Prpject\Obj /
+//                       \ -s9 --no_inline --cpu_mode thumb --endian little  /
+//                       --cpu cortex-M3 --stack_align 4 -e --fpu None       /
+//                       --dlib_config "C:\Program Files\IAR                 /
+//                       Systems\Embedded Workbench 4.0                      /
+//                       Evaluation\arm\LIB\dl7mptnnl8n.h" -I                /
+//                       D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_Prpject\..\..\ /
+//                       FWLib\inc\ -I D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_ /
+//                       Prpject\..\..\USBLib\inc\ -I                        /
+//                       D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_Prpject\..\inc /
+//                       lude\ -I "C:\Program Files\IAR Systems\Embedded     /
+//                       Workbench 4.0 Evaluation\arm\INC\"                  /
+//    List file       =  D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_Prpject\List\u /
+//                       sb_regs.s79                                         /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME usb_regs
+
+        RTMODEL "StackAlign4", "USED"
+        RTMODEL "__cpu_mode", "__pcs__thumb"
+        RTMODEL "__data_model", "absolute"
+        RTMODEL "__endian", "little"
+        RTMODEL "__rt_version", "6"
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+??DataTable0 EQU 0
+??DataTable10 EQU 0
+??DataTable11 EQU 0
+??DataTable12 EQU 0
+??DataTable13 EQU 0
+??DataTable14 EQU 0
+??DataTable15 EQU 0
+??DataTable16 EQU 0
+??DataTable17 EQU 0
+??DataTable18 EQU 0
+??DataTable19 EQU 0
+??DataTable2 EQU 0
+??DataTable21 EQU 0
+??DataTable23 EQU 0
+??DataTable24 EQU 0
+??DataTable25 EQU 0
+??DataTable26 EQU 0
+??DataTable27 EQU 0
+??DataTable28 EQU 0
+??DataTable29 EQU 0
+??DataTable30 EQU 0
+??DataTable31 EQU 0
+??DataTable32 EQU 0
+??DataTable33 EQU 0
+??DataTable35 EQU 0
+??DataTable36 EQU 0
+??DataTable37 EQU 0
+??DataTable38 EQU 0
+??DataTable39 EQU 0
+??DataTable4 EQU 0
+??DataTable40 EQU 0
+??DataTable41 EQU 0
+??DataTable42 EQU 0
+??DataTable43 EQU 0
+??DataTable44 EQU 0
+??DataTable45 EQU 0
+??DataTable46 EQU 0
+??DataTable47 EQU 0
+??DataTable50 EQU 0
+??DataTable51 EQU 0
+??DataTable52 EQU 0
+??DataTable53 EQU 0
+??DataTable54 EQU 0
+??DataTable55 EQU 0
+??DataTable56 EQU 0
+??DataTable57 EQU 0
+??DataTable59 EQU 0
+??DataTable6 EQU 0
+??DataTable60 EQU 0
+??DataTable61 EQU 0
+??DataTable62 EQU 0
+??DataTable63 EQU 0
+??DataTable64 EQU 0
+??DataTable65 EQU 0
+??DataTable66 EQU 0
+??DataTable67 EQU 0
+??DataTable68 EQU 0
+??DataTable69 EQU 0
+??DataTable7 EQU 0
+??DataTable70 EQU 0
+??DataTable71 EQU 0
+??DataTable72 EQU 0
+??DataTable73 EQU 0
+??DataTable75 EQU 0
+??DataTable77 EQU 0
+??DataTable78 EQU 0
+??DataTable79 EQU 0
+??DataTable8 EQU 0
+??DataTable80 EQU 0
+??DataTable81 EQU 0
+??DataTable82 EQU 0
+??DataTable83 EQU 0
+??DataTable84 EQU 0
+??DataTable85 EQU 0
+??DataTable86 EQU 0
+??DataTable87 EQU 0
+??DataTable9 EQU 0
+        PUBLIC ByteSwap
+        FUNCTION ByteSwap,0203H
+        PUBLIC ClearDTOG_RX
+        FUNCTION ClearDTOG_RX,0203H
+        PUBLIC ClearDTOG_TX
+        FUNCTION ClearDTOG_TX,0203H
+        PUBLIC ClearEPDoubleBuff
+        FUNCTION ClearEPDoubleBuff,0203H
+        PUBLIC ClearEP_CTR_RX
+        FUNCTION ClearEP_CTR_RX,0203H
+        PUBLIC ClearEP_CTR_TX
+        FUNCTION ClearEP_CTR_TX,0203H
+        PUBLIC ClearEP_KIND
+        FUNCTION ClearEP_KIND,0203H
+        PUBLIC Clear_Status_Out
+        FUNCTION Clear_Status_Out,0203H
+        PUBLIC FreeUserBuffer
+        FUNCTION FreeUserBuffer,0203H
+        PUBLIC GetBTABLE
+        FUNCTION GetBTABLE,0203H
+        PUBLIC GetCNTR
+        FUNCTION GetCNTR,0203H
+        PUBLIC GetDADDR
+        FUNCTION GetDADDR,0203H
+        PUBLIC GetENDPOINT
+        FUNCTION GetENDPOINT,0203H
+        PUBLIC GetEPAddress
+        FUNCTION GetEPAddress,0203H
+        PUBLIC GetEPDblBuf0Addr
+        FUNCTION GetEPDblBuf0Addr,0203H
+        PUBLIC GetEPDblBuf0Count
+        FUNCTION GetEPDblBuf0Count,0203H
+        PUBLIC GetEPDblBuf1Addr
+        FUNCTION GetEPDblBuf1Addr,0203H
+        PUBLIC GetEPDblBuf1Count
+        FUNCTION GetEPDblBuf1Count,0203H
+        PUBLIC GetEPDblBufDir
+        FUNCTION GetEPDblBufDir,0203H
+        PUBLIC GetEPRxAddr
+        FUNCTION GetEPRxAddr,0203H
+        PUBLIC GetEPRxCount
+        FUNCTION GetEPRxCount,0203H
+        PUBLIC GetEPRxStatus
+        FUNCTION GetEPRxStatus,0203H
+        PUBLIC GetEPTxAddr
+        FUNCTION GetEPTxAddr,0203H
+        PUBLIC GetEPTxCount
+        FUNCTION GetEPTxCount,0203H
+        PUBLIC GetEPTxStatus
+        FUNCTION GetEPTxStatus,0203H
+        PUBLIC GetEPType
+        FUNCTION GetEPType,0203H
+        PUBLIC GetFNR
+        FUNCTION GetFNR,0203H
+        PUBLIC GetISTR
+        FUNCTION GetISTR,0203H
+        PUBLIC GetRxStallStatus
+        FUNCTION GetRxStallStatus,0203H
+        PUBLIC GetTxStallStatus
+        FUNCTION GetTxStallStatus,0203H
+        PUBLIC SetBTABLE
+        FUNCTION SetBTABLE,0203H
+        PUBLIC SetCNTR
+        FUNCTION SetCNTR,0203H
+        PUBLIC SetDADDR
+        FUNCTION SetDADDR,0203H
+        PUBLIC SetDouBleBuffEPStall
+        FUNCTION SetDouBleBuffEPStall,0203H
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC SetENDPOINT
+        FUNCTION SetENDPOINT,0203H
+        PUBLIC SetEPAddress
+        FUNCTION SetEPAddress,0203H
+        PUBLIC SetEPCountRxReg
+        FUNCTION SetEPCountRxReg,0203H
+        PUBLIC SetEPDblBuf0Addr
+        FUNCTION SetEPDblBuf0Addr,0203H
+        PUBLIC SetEPDblBuf0Count
+        FUNCTION SetEPDblBuf0Count,0203H
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC SetEPDblBuf1Addr
+        FUNCTION SetEPDblBuf1Addr,0203H
+        PUBLIC SetEPDblBuf1Count
+        FUNCTION SetEPDblBuf1Count,0203H
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC SetEPDblBuffAddr
+        FUNCTION SetEPDblBuffAddr,0203H
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC SetEPDblBuffCount
+        FUNCTION SetEPDblBuffCount,0203H
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC SetEPDoubleBuff
+        FUNCTION SetEPDoubleBuff,0203H
+        PUBLIC SetEPRxAddr
+        FUNCTION SetEPRxAddr,0203H
+        PUBLIC SetEPRxCount
+        FUNCTION SetEPRxCount,0203H
+        PUBLIC SetEPRxStatus
+        FUNCTION SetEPRxStatus,0203H
+        PUBLIC SetEPRxValid
+        FUNCTION SetEPRxValid,0203H
+        PUBLIC SetEPTxAddr
+        FUNCTION SetEPTxAddr,0203H
+        PUBLIC SetEPTxCount
+        FUNCTION SetEPTxCount,0203H
+        PUBLIC SetEPTxStatus
+        FUNCTION SetEPTxStatus,0203H
+        PUBLIC SetEPTxValid
+        FUNCTION SetEPTxValid,0203H
+        PUBLIC SetEPType
+        FUNCTION SetEPType,0203H
+        PUBLIC SetEP_KIND
+        FUNCTION SetEP_KIND,0203H
+        PUBLIC SetISTR
+        FUNCTION SetISTR,0203H
+        PUBLIC Set_Status_Out
+        FUNCTION Set_Status_Out,0203H
+        PUBLIC ToWord
+        FUNCTION ToWord,0203H
+        PUBLIC ToggleDTOG_RX
+        FUNCTION ToggleDTOG_RX,0203H
+        PUBLIC ToggleDTOG_TX
+        FUNCTION ToggleDTOG_TX,0203H
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA R13 HUGEDATA
+        CFI Resource R0:32, R1:32, R2:32, R3:32, R4:32, R5:32, R6:32, R7:32
+        CFI Resource R8:32, R9:32, R10:32, R11:32, R12:32, R13:32, R14:32
+        CFI VirtualResource ?RET:32
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 2
+        CFI DataAlign 4
+        CFI ReturnAddress ?RET CODE
+        CFI CFA R13+0
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI R8 SameValue
+        CFI R9 SameValue
+        CFI R10 SameValue
+        CFI R11 SameValue
+        CFI R12 Undefined
+        CFI R14 Undefined
+        CFI ?RET R14
+        CFI EndCommon cfiCommon0
+        
+// D:\Design\DS203\PRG\USBLib\src\usb_regs.c
+//    1 /******************** (C) COPYRIGHT 2008 STMicroelectronics ********************
+//    2 * File Name          : usb_regs.c
+//    3 * Author             : MCD Application Team
+//    4 * Version            : V2.2.1
+//    5 * Date               : 09/22/2008
+//    6 * Description        : Interface functions to USB cell registers
+//    7 ********************************************************************************
+//    8 * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+//    9 * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+//   10 * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+//   11 * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+//   12 * CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+//   13 * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+//   14 *******************************************************************************/
+//   15 
+//   16 /* Includes ------------------------------------------------------------------*/
+//   17 #include "usb_lib.h"
+//   18 
+//   19 /* Private typedef -----------------------------------------------------------*/
+//   20 /* Private define ------------------------------------------------------------*/
+//   21 /* Private macro -------------------------------------------------------------*/
+//   22 /* Private variables ---------------------------------------------------------*/
+//   23 /* Extern variables ----------------------------------------------------------*/
+//   24 /* Private function prototypes -----------------------------------------------*/
+//   25 /* Private functions ---------------------------------------------------------*/
+//   26 
+//   27 /*******************************************************************************
+//   28 * Function Name  : SetCNTR.
+//   29 * Description    : Set the CNTR register value.
+//   30 * Input          : wRegValue: new register value.
+//   31 * Output         : None.
+//   32 * Return         : None.
+//   33 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function SetCNTR
+        THUMB
+//   34 void SetCNTR(u16 wRegValue)
+//   35 {
+//   36   _SetCNTR(wRegValue);
+SetCNTR:
+        LDR.N    R1,??DataTable1  ;; 0x40005c40
+        STR      R0,[R1, #+0]
+//   37 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock0
+//   38 
+//   39 /*******************************************************************************
+//   40 * Function Name  : GetCNTR.
+//   41 * Description    : returns the CNTR register value.
+//   42 * Input          : None.
+//   43 * Output         : None.
+//   44 * Return         : CNTR register Value.
+//   45 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function GetCNTR
+        THUMB
+//   46 u16 GetCNTR(void)
+//   47 {
+//   48   return(_GetCNTR());
+GetCNTR:
+        LDR.N    R0,??DataTable1  ;; 0x40005c40
+        LDR      R0,[R0, #+0]
+        UXTH     R0,R0
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock1
+//   49 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable1:
+        DC32     0x40005c40
+//   50 
+//   51 /*******************************************************************************
+//   52 * Function Name  : SetISTR.
+//   53 * Description    : Set the ISTR register value.
+//   54 * Input          : wRegValue: new register value.
+//   55 * Output         : None.
+//   56 * Return         : None.
+//   57 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function SetISTR
+        THUMB
+//   58 void SetISTR(u16 wRegValue)
+//   59 {
+//   60   _SetISTR(wRegValue);
+SetISTR:
+        LDR.N    R1,??DataTable3  ;; 0x40005c44
+        STR      R0,[R1, #+0]
+//   61 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock2
+//   62 
+//   63 /*******************************************************************************
+//   64 * Function Name  : GetISTR
+//   65 * Description    : Returns the ISTR register value.
+//   66 * Input          : None.
+//   67 * Output         : None.
+//   68 * Return         : ISTR register Value
+//   69 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function GetISTR
+        THUMB
+//   70 u16 GetISTR(void)
+//   71 {
+//   72   return(_GetISTR());
+GetISTR:
+        LDR.N    R0,??DataTable3  ;; 0x40005c44
+        LDR      R0,[R0, #+0]
+        UXTH     R0,R0
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock3
+//   73 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable3:
+        DC32     0x40005c44
+//   74 
+//   75 /*******************************************************************************
+//   76 * Function Name  : GetFNR
+//   77 * Description    : Returns the FNR register value.
+//   78 * Input          : None.
+//   79 * Output         : None.
+//   80 * Return         : FNR register Value
+//   81 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function GetFNR
+        THUMB
+//   82 u16 GetFNR(void)
+//   83 {
+//   84   return(_GetFNR());
+GetFNR:
+        LDR.N    R0,??GetFNR_0    ;; 0x40005c48
+        LDR      R0,[R0, #+0]
+        UXTH     R0,R0
+        BX       LR               ;; return
+        DATA
+??GetFNR_0:
+        DC32     0x40005c48
+        CFI EndBlock cfiBlock4
+//   85 }
+//   86 
+//   87 /*******************************************************************************
+//   88 * Function Name  : SetDADDR
+//   89 * Description    : Set the DADDR register value.
+//   90 * Input          : wRegValue: new register value.
+//   91 * Output         : None.
+//   92 * Return         : None.
+//   93 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function SetDADDR
+        THUMB
+//   94 void SetDADDR(u16 wRegValue)
+//   95 {
+//   96   _SetDADDR(wRegValue);
+SetDADDR:
+        LDR.N    R1,??DataTable5  ;; 0x40005c4c
+        STR      R0,[R1, #+0]
+//   97 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock5
+//   98 
+//   99 /*******************************************************************************
+//  100 * Function Name  : GetDADDR
+//  101 * Description    : Returns the DADDR register value.
+//  102 * Input          : None.
+//  103 * Output         : None.
+//  104 * Return         : DADDR register Value
+//  105 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function GetDADDR
+        THUMB
+//  106 u16 GetDADDR(void)
+//  107 {
+//  108   return(_GetDADDR());
+GetDADDR:
+        LDR.N    R0,??DataTable5  ;; 0x40005c4c
+        LDR      R0,[R0, #+0]
+        UXTH     R0,R0
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock6
+//  109 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable5:
+        DC32     0x40005c4c
+//  110 
+//  111 /*******************************************************************************
+//  112 * Function Name  : SetBTABLE
+//  113 * Description    : Set the BTABLE.
+//  114 * Input          : wRegValue: New register value.
+//  115 * Output         : None.
+//  116 * Return         : None.
+//  117 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function SetBTABLE
+        THUMB
+//  118 void SetBTABLE(u16 wRegValue)
+//  119 {
+//  120   _SetBTABLE(wRegValue);
+SetBTABLE:
+        LDR.N    R1,??DataTable58  ;; 0x40005c50
+        LDR.N    R2,??SetBTABLE_0  ;; 0xfff8
+        ANDS     R2,R2,R0
+        STR      R2,[R1, #+0]
+//  121 }
+        BX       LR               ;; return
+        Nop      
+        DATA
+??SetBTABLE_0:
+        DC32     0xfff8
+        CFI EndBlock cfiBlock7
+//  122 
+//  123 /*******************************************************************************
+//  124 * Function Name  : GetBTABLE.
+//  125 * Description    : Returns the BTABLE register value.
+//  126 * Input          : None. 
+//  127 * Output         : None.
+//  128 * Return         : BTABLE address.
+//  129 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI Function GetBTABLE
+        THUMB
+//  130 u16 GetBTABLE(void)
+//  131 {
+//  132   return(_GetBTABLE());
+GetBTABLE:
+        LDR.N    R0,??DataTable58  ;; 0x40005c50
+        LDR      R0,[R0, #+0]
+        UXTH     R0,R0
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock8
+//  133 }
+//  134 
+//  135 /*******************************************************************************
+//  136 * Function Name  : SetENDPOINT
+//  137 * Description    : Setthe Endpoint register value.
+//  138 * Input          : bEpNum: Endpoint Number. 
+//  139 *                  wRegValue.
+//  140 * Output         : None.
+//  141 * Return         : None.
+//  142 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI Function SetENDPOINT
+        THUMB
+//  143 void SetENDPOINT(u8 bEpNum, u16 wRegValue)
+//  144 {
+//  145   _SetENDPOINT(bEpNum, wRegValue);
+SetENDPOINT:
+        LDR.N    R2,??DataTable49  ;; 0x40005c00
+        STR      R1,[R2, R0, LSL #+2]
+//  146 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock9
+//  147 
+//  148 /*******************************************************************************
+//  149 * Function Name  : GetENDPOINT
+//  150 * Description    : Return the Endpoint register value.
+//  151 * Input          : bEpNum: Endpoint Number. 
+//  152 * Output         : None.
+//  153 * Return         : Endpoint register value.
+//  154 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI Function GetENDPOINT
+        THUMB
+//  155 u16 GetENDPOINT(u8 bEpNum)
+//  156 {
+//  157   return(_GetENDPOINT(bEpNum));
+GetENDPOINT:
+        LDR.N    R1,??DataTable49  ;; 0x40005c00
+        LDR      R0,[R1, R0, LSL #+2]
+        UXTH     R0,R0
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock10
+//  158 }
+//  159 
+//  160 /*******************************************************************************
+//  161 * Function Name  : SetEPType
+//  162 * Description    : sets the type in the endpoint register.
+//  163 * Input          : bEpNum: Endpoint Number. 
+//  164 *                  wType: type definition.
+//  165 * Output         : None.
+//  166 * Return         : None.
+//  167 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock11 Using cfiCommon0
+        CFI Function SetEPType
+        THUMB
+//  168 void SetEPType(u8 bEpNum, u16 wType)
+//  169 {
+SetEPType:
+        LDR.N    R2,??DataTable49  ;; 0x40005c00
+        LDR.N    R3,??SetEPType_0  ;; 0x898f
+        ADDS     R0,R2,R0, LSL #+2
+        LDR      R2,[R0, #+0]
+        ANDS     R3,R3,R2
+        ORRS     R1,R1,R3
+        STR      R1,[R0, #+0]
+//  170   _SetEPType(bEpNum, wType);
+//  171 }
+        BX       LR               ;; return
+        Nop      
+        DATA
+??SetEPType_0:
+        DC32     0x898f
+        CFI EndBlock cfiBlock11
+//  172 
+//  173 /*******************************************************************************
+//  174 * Function Name  : GetEPType
+//  175 * Description    : Returns the endpoint type.
+//  176 * Input          : bEpNum: Endpoint Number. 
+//  177 * Output         : None.
+//  178 * Return         : Endpoint Type
+//  179 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock12 Using cfiCommon0
+        CFI Function GetEPType
+        THUMB
+//  180 u16 GetEPType(u8 bEpNum)
+//  181 {
+//  182   return(_GetEPType(bEpNum));
+GetEPType:
+        LDR.N    R1,??DataTable49  ;; 0x40005c00
+        LDR      R0,[R1, R0, LSL #+2]
+        ANDS     R0,R0,#0x600
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock12
+//  183 }
+//  184 
+//  185 /*******************************************************************************
+//  186 * Function Name  : SetEPTxStatus
+//  187 * Description    : Set the status of Tx endpoint.
+//  188 * Input          : bEpNum: Endpoint Number. 
+//  189 *                  wState: new state.
+//  190 * Output         : None.
+//  191 * Return         : None.
+//  192 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock13 Using cfiCommon0
+        CFI Function SetEPTxStatus
+        THUMB
+//  193 void SetEPTxStatus(u8 bEpNum, u16 wState)
+//  194 {
+SetEPTxStatus:
+        LDR.N    R2,??DataTable49  ;; 0x40005c00
+        ADDS     R0,R2,R0, LSL #+2
+        LDR.N    R2,??DataTable20  ;; 0x8fbf
+        LDR      R3,[R0, #+0]
+        ANDS     R2,R2,R3
+//  195   _SetEPTxStatus(bEpNum, wState);
+        LSLS     R3,R1,#+27
+        IT      MI 
+        EORSMI   R2,R2,#0x10
+        LSLS     R1,R1,#+26
+        BPL.N    ??SetEPTxStatus_0
+        EORS     R2,R2,#0x20
+        UXTH     R2,R2
+??SetEPTxStatus_0:
+        STR      R2,[R0, #+0]
+//  196 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock13
+//  197 
+//  198 /*******************************************************************************
+//  199 * Function Name  : SetEPRxStatus
+//  200 * Description    : Set the status of Rx endpoint.
+//  201 * Input          : bEpNum: Endpoint Number. 
+//  202 *                  wState: new state.
+//  203 * Output         : None.
+//  204 * Return         : None.
+//  205 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock14 Using cfiCommon0
+        CFI Function SetEPRxStatus
+        THUMB
+//  206 void SetEPRxStatus(u8 bEpNum, u16 wState)
+//  207 {
+SetEPRxStatus:
+        LDR.N    R2,??DataTable49  ;; 0x40005c00
+        ADDS     R0,R2,R0, LSL #+2
+        LDR.N    R2,??DataTable22  ;; 0xbf8f
+        LDR      R3,[R0, #+0]
+        ANDS     R2,R2,R3
+//  208   _SetEPRxStatus(bEpNum, wState);
+        LSLS     R3,R1,#+19
+        IT      MI 
+        EORSMI   R2,R2,#0x1000
+        LSLS     R1,R1,#+18
+        BPL.N    ??SetEPRxStatus_0
+        EORS     R2,R2,#0x2000
+        UXTH     R2,R2
+??SetEPRxStatus_0:
+        STR      R2,[R0, #+0]
+//  209 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock14
+//  210 
+//  211 /*******************************************************************************
+//  212 * Function Name  : SetDouBleBuffEPStall
+//  213 * Description    : sets the status for Double Buffer Endpoint to STALL
+//  214 * Input          : bEpNum: Endpoint Number. 
+//  215 *                  bDir: Endpoint direction.
+//  216 * Output         : None.
+//  217 * Return         : None.
+//  218 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock15 Using cfiCommon0
+        CFI Function SetDouBleBuffEPStall
+        THUMB
+//  219 void SetDouBleBuffEPStall(u8 bEpNum, u8 bDir)
+//  220 {
+SetDouBleBuffEPStall:
+        PUSH     {R4,R5,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R5 Frame(CFA, -8)
+        CFI R4 Frame(CFA, -12)
+        CFI CFA R13+12
+        MOVS     R4,R0
+        MOVS     R5,R1
+//  221   u16 Endpoint_DTOG_Status;
+//  222   Endpoint_DTOG_Status = GetENDPOINT(bEpNum);
+        BL       GetENDPOINT
+        LDR.N    R1,??DataTable49  ;; 0x40005c00
+        ADDS     R1,R1,R4, LSL #+2
+        CMP      R5,#+1
+        BNE.N    ??SetDouBleBuffEPStall_0
+//  223   if (bDir == EP_DBUF_OUT)
+//  224   { /* OUT double buffered endpoint */
+//  225     _SetENDPOINT(bEpNum, Endpoint_DTOG_Status & ~EPRX_DTOG1);
+        MVNS     R2,#+4096
+        ANDS     R2,R2,R0
+        STR      R2,[R1, #+0]
+        POP      {R4,R5,PC}
+//  226   }
+//  227   else if (bDir == EP_DBUF_IN)
+??SetDouBleBuffEPStall_0:
+        CMP      R5,#+2
+        ITTT    EQ 
+//  228   { /* IN double buffered endpoint */
+//  229     _SetENDPOINT(bEpNum, Endpoint_DTOG_Status & ~EPTX_DTOG1);
+        MOVEQ    R2,#+16
+        BICEQ    R0,R0,R2
+        STREQ    R0,[R1, #+0]
+//  230   }
+//  231 }
+        POP      {R4,R5,PC}       ;; return
+        CFI EndBlock cfiBlock15
+//  232 
+//  233 /*******************************************************************************
+//  234 * Function Name  : GetEPTxStatus
+//  235 * Description    : Returns the endpoint Tx status.
+//  236 * Input          : bEpNum: Endpoint Number. 
+//  237 * Output         : None.
+//  238 * Return         : Endpoint TX Status
+//  239 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock16 Using cfiCommon0
+        CFI Function GetEPTxStatus
+        THUMB
+//  240 u16 GetEPTxStatus(u8 bEpNum)
+//  241 {
+//  242   return(_GetEPTxStatus(bEpNum));
+GetEPTxStatus:
+        LDR.N    R1,??DataTable49  ;; 0x40005c00
+        LDR      R0,[R1, R0, LSL #+2]
+        ANDS     R0,R0,#0x30
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock16
+//  243 }
+//  244 
+//  245 /*******************************************************************************
+//  246 * Function Name  : GetEPRxStatus
+//  247 * Description    : Returns the endpoint Rx status.
+//  248 * Input          : bEpNum: Endpoint Number. 
+//  249 * Output         : None.
+//  250 * Return         : Endpoint RX Status
+//  251 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock17 Using cfiCommon0
+        CFI Function GetEPRxStatus
+        THUMB
+//  252 u16 GetEPRxStatus(u8 bEpNum)
+//  253 {
+//  254   return(_GetEPRxStatus(bEpNum));
+GetEPRxStatus:
+        LDR.N    R1,??DataTable49  ;; 0x40005c00
+        LDR      R0,[R1, R0, LSL #+2]
+        ANDS     R0,R0,#0x3000
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock17
+//  255 }
+//  256 
+//  257 /*******************************************************************************
+//  258 * Function Name  : SetEPTxValid
+//  259 * Description    : Valid the endpoint Tx Status.
+//  260 * Input          : bEpNum: Endpoint Number.  
+//  261 * Output         : None.
+//  262 * Return         : None.
+//  263 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock18 Using cfiCommon0
+        CFI Function SetEPTxValid
+        THUMB
+//  264 void SetEPTxValid(u8 bEpNum)
+//  265 {
+SetEPTxValid:
+        LDR.N    R1,??DataTable49  ;; 0x40005c00
+        ADDS     R0,R1,R0, LSL #+2
+        LDR.N    R1,??DataTable20  ;; 0x8fbf
+        LDR      R2,[R0, #+0]
+        ANDS     R1,R1,R2
+//  266   _SetEPTxStatus(bEpNum, EP_TX_VALID);
+        EORS     R1,R1,#0x30
+        STR      R1,[R0, #+0]
+//  267 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock18
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable20:
+        DC32     0x8fbf
+//  268 
+//  269 /*******************************************************************************
+//  270 * Function Name  : SetEPRxValid
+//  271 * Description    : Valid the endpoint Rx Status.
+//  272 * Input          : bEpNum: Endpoint Number. 
+//  273 * Output         : None.
+//  274 * Return         : None.
+//  275 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock19 Using cfiCommon0
+        CFI Function SetEPRxValid
+        THUMB
+//  276 void SetEPRxValid(u8 bEpNum)
+//  277 {
+SetEPRxValid:
+        LDR.N    R1,??DataTable49  ;; 0x40005c00
+        ADDS     R0,R1,R0, LSL #+2
+        LDR.N    R1,??DataTable22  ;; 0xbf8f
+        LDR      R2,[R0, #+0]
+        ANDS     R1,R1,R2
+//  278   _SetEPRxStatus(bEpNum, EP_RX_VALID);
+        EORS     R1,R1,#0x3000
+        STR      R1,[R0, #+0]
+//  279 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock19
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable22:
+        DC32     0xbf8f
+//  280 
+//  281 /*******************************************************************************
+//  282 * Function Name  : SetEP_KIND
+//  283 * Description    : Clear the EP_KIND bit.
+//  284 * Input          : bEpNum: Endpoint Number. 
+//  285 * Output         : None.
+//  286 * Return         : None.
+//  287 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock20 Using cfiCommon0
+        CFI Function SetEP_KIND
+        THUMB
+//  288 void SetEP_KIND(u8 bEpNum)
+//  289 {
+SetEP_KIND:
+        LDR.N    R1,??DataTable49  ;; 0x40005c00
+        LDR.N    R2,??DataTable48  ;; 0x8f8f
+        ADDS     R0,R1,R0, LSL #+2
+        LDR      R1,[R0, #+0]
+        ORRS     R1,R1,#0x100
+        ANDS     R2,R2,R1
+        STR      R2,[R0, #+0]
+//  290   _SetEP_KIND(bEpNum);
+//  291 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock20
+//  292 
+//  293 /*******************************************************************************
+//  294 * Function Name  : ClearEP_KIND
+//  295 * Description    : set the  EP_KIND bit.
+//  296 * Input          : bEpNum: Endpoint Number. 
+//  297 * Output         : None.
+//  298 * Return         : None.
+//  299 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock21 Using cfiCommon0
+        CFI Function ClearEP_KIND
+        THUMB
+//  300 void ClearEP_KIND(u8 bEpNum)
+//  301 {
+ClearEP_KIND:
+        LDR.N    R1,??DataTable49  ;; 0x40005c00
+        LDR.N    R2,??DataTable34  ;; 0x8e8f
+        ADDS     R0,R1,R0, LSL #+2
+        LDR      R1,[R0, #+0]
+        ANDS     R2,R2,R1
+        STR      R2,[R0, #+0]
+//  302   _ClearEP_KIND(bEpNum);
+//  303 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock21
+//  304 /*******************************************************************************
+//  305 * Function Name  : Clear_Status_Out
+//  306 * Description    : Clear the Status Out of the related Endpoint
+//  307 * Input          : bEpNum: Endpoint Number. 
+//  308 * Output         : None.
+//  309 * Return         : None.
+//  310 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock22 Using cfiCommon0
+        CFI Function Clear_Status_Out
+        THUMB
+//  311 void Clear_Status_Out(u8 bEpNum)
+//  312 {
+Clear_Status_Out:
+        LDR.N    R1,??DataTable49  ;; 0x40005c00
+        LDR.N    R2,??DataTable34  ;; 0x8e8f
+        ADDS     R0,R1,R0, LSL #+2
+        LDR      R1,[R0, #+0]
+        ANDS     R2,R2,R1
+        STR      R2,[R0, #+0]
+//  313   _ClearEP_KIND(bEpNum);
+//  314 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock22
+//  315 /*******************************************************************************
+//  316 * Function Name  : Set_Status_Out
+//  317 * Description    : Set the Status Out of the related Endpoint
+//  318 * Input          : bEpNum: Endpoint Number. 
+//  319 * Output         : None.
+//  320 * Return         : None.
+//  321 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock23 Using cfiCommon0
+        CFI Function Set_Status_Out
+        THUMB
+//  322 void Set_Status_Out(u8 bEpNum)
+//  323 {
+Set_Status_Out:
+        LDR.N    R1,??DataTable49  ;; 0x40005c00
+        LDR.N    R2,??DataTable48  ;; 0x8f8f
+        ADDS     R0,R1,R0, LSL #+2
+        LDR      R1,[R0, #+0]
+        ORRS     R1,R1,#0x100
+        ANDS     R2,R2,R1
+        STR      R2,[R0, #+0]
+//  324   _SetEP_KIND(bEpNum);
+//  325 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock23
+//  326 /*******************************************************************************
+//  327 * Function Name  : SetEPDoubleBuff
+//  328 * Description    : Enable the double buffer feature for the endpoint. 
+//  329 * Input          : bEpNum: Endpoint Number. 
+//  330 * Output         : None.
+//  331 * Return         : None.
+//  332 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock24 Using cfiCommon0
+        CFI Function SetEPDoubleBuff
+        THUMB
+//  333 void SetEPDoubleBuff(u8 bEpNum)
+//  334 {
+SetEPDoubleBuff:
+        LDR.N    R1,??DataTable49  ;; 0x40005c00
+        LDR.N    R2,??DataTable48  ;; 0x8f8f
+        ADDS     R0,R1,R0, LSL #+2
+        LDR      R1,[R0, #+0]
+        ORRS     R1,R1,#0x100
+        ANDS     R2,R2,R1
+        STR      R2,[R0, #+0]
+//  335   _SetEP_KIND(bEpNum);
+//  336 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock24
+//  337 /*******************************************************************************
+//  338 * Function Name  : ClearEPDoubleBuff
+//  339 * Description    : Disable the double buffer feature for the endpoint. 
+//  340 * Input          : bEpNum: Endpoint Number. 
+//  341 * Output         : None.
+//  342 * Return         : None.
+//  343 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock25 Using cfiCommon0
+        CFI Function ClearEPDoubleBuff
+        THUMB
+//  344 void ClearEPDoubleBuff(u8 bEpNum)
+//  345 {
+ClearEPDoubleBuff:
+        LDR.N    R1,??DataTable49  ;; 0x40005c00
+        LDR.N    R2,??DataTable34  ;; 0x8e8f
+        ADDS     R0,R1,R0, LSL #+2
+        LDR      R1,[R0, #+0]
+        ANDS     R2,R2,R1
+        STR      R2,[R0, #+0]
+//  346   _ClearEP_KIND(bEpNum);
+//  347 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock25
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable34:
+        DC32     0x8e8f
+//  348 /*******************************************************************************
+//  349 * Function Name  : GetTxStallStatus
+//  350 * Description    : Returns the Stall status of the Tx endpoint.
+//  351 * Input          : bEpNum: Endpoint Number. 
+//  352 * Output         : None.
+//  353 * Return         : Tx Stall status.
+//  354 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock26 Using cfiCommon0
+        CFI Function GetTxStallStatus
+        THUMB
+//  355 u16 GetTxStallStatus(u8 bEpNum)
+//  356 {
+//  357   return(_GetTxStallStatus(bEpNum));
+GetTxStallStatus:
+        LDR.N    R1,??DataTable49  ;; 0x40005c00
+        LDR      R0,[R1, R0, LSL #+2]
+        ANDS     R0,R0,#0x30
+        CMP      R0,#+16
+        ITT     EQ 
+        MOVEQ    R0,#+1
+        BXEQ     LR
+        MOVS     R0,#+0
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock26
+//  358 }
+//  359 /*******************************************************************************
+//  360 * Function Name  : GetRxStallStatus
+//  361 * Description    : Returns the Stall status of the Rx endpoint. 
+//  362 * Input          : bEpNum: Endpoint Number. 
+//  363 * Output         : None.
+//  364 * Return         : Rx Stall status.
+//  365 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock27 Using cfiCommon0
+        CFI Function GetRxStallStatus
+        THUMB
+//  366 u16 GetRxStallStatus(u8 bEpNum)
+//  367 {
+//  368   return(_GetRxStallStatus(bEpNum));
+GetRxStallStatus:
+        LDR.N    R1,??DataTable49  ;; 0x40005c00
+        LDR      R0,[R1, R0, LSL #+2]
+        ANDS     R0,R0,#0x3000
+        CMP      R0,#+4096
+        ITT     EQ 
+        MOVEQ    R0,#+1
+        BXEQ     LR
+        MOVS     R0,#+0
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock27
+//  369 }
+//  370 /*******************************************************************************
+//  371 * Function Name  : ClearEP_CTR_RX
+//  372 * Description    : Clear the CTR_RX bit.
+//  373 * Input          : bEpNum: Endpoint Number. 
+//  374 * Output         : None.
+//  375 * Return         : None.
+//  376 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock28 Using cfiCommon0
+        CFI Function ClearEP_CTR_RX
+        THUMB
+//  377 void ClearEP_CTR_RX(u8 bEpNum)
+//  378 {
+ClearEP_CTR_RX:
+        LDR.N    R1,??DataTable49  ;; 0x40005c00
+        LDR.N    R2,??ClearEP_CTR_RX_0  ;; 0xf8f
+        ADDS     R0,R1,R0, LSL #+2
+        LDR      R1,[R0, #+0]
+        ANDS     R2,R2,R1
+        STR      R2,[R0, #+0]
+//  379   _ClearEP_CTR_RX(bEpNum);
+//  380 }
+        BX       LR               ;; return
+        DATA
+??ClearEP_CTR_RX_0:
+        DC32     0xf8f
+        CFI EndBlock cfiBlock28
+//  381 /*******************************************************************************
+//  382 * Function Name  : ClearEP_CTR_TX
+//  383 * Description    : Clear the CTR_TX bit.
+//  384 * Input          : bEpNum: Endpoint Number. 
+//  385 * Output         : None.
+//  386 * Return         : None.
+//  387 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock29 Using cfiCommon0
+        CFI Function ClearEP_CTR_TX
+        THUMB
+//  388 void ClearEP_CTR_TX(u8 bEpNum)
+//  389 {
+ClearEP_CTR_TX:
+        LDR.N    R1,??DataTable49  ;; 0x40005c00
+        LDR.N    R2,??ClearEP_CTR_TX_0  ;; 0x8f0f
+        ADDS     R0,R1,R0, LSL #+2
+        LDR      R1,[R0, #+0]
+        ANDS     R2,R2,R1
+        STR      R2,[R0, #+0]
+//  390   _ClearEP_CTR_TX(bEpNum);
+//  391 }
+        BX       LR               ;; return
+        DATA
+??ClearEP_CTR_TX_0:
+        DC32     0x8f0f
+        CFI EndBlock cfiBlock29
+//  392 /*******************************************************************************
+//  393 * Function Name  : ToggleDTOG_RX
+//  394 * Description    : Toggle the DTOG_RX bit.
+//  395 * Input          : bEpNum: Endpoint Number. 
+//  396 * Output         : None.
+//  397 * Return         : None.
+//  398 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock30 Using cfiCommon0
+        CFI Function ToggleDTOG_RX
+        THUMB
+//  399 void ToggleDTOG_RX(u8 bEpNum)
+//  400 {
+ToggleDTOG_RX:
+        LDR.N    R1,??DataTable49  ;; 0x40005c00
+        LDR.N    R2,??DataTable48  ;; 0x8f8f
+        ADDS     R0,R1,R0, LSL #+2
+        LDR      R1,[R0, #+0]
+        ANDS     R2,R2,R1
+        ORRS     R1,R2,#0x4000
+        STR      R1,[R0, #+0]
+//  401   _ToggleDTOG_RX(bEpNum);
+//  402 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock30
+//  403 /*******************************************************************************
+//  404 * Function Name  : ToggleDTOG_TX
+//  405 * Description    : Toggle the DTOG_TX bit.
+//  406 * Input          : bEpNum: Endpoint Number. 
+//  407 * Output         : None.
+//  408 * Return         : None.
+//  409 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock31 Using cfiCommon0
+        CFI Function ToggleDTOG_TX
+        THUMB
+//  410 void ToggleDTOG_TX(u8 bEpNum)
+//  411 {
+ToggleDTOG_TX:
+        LDR.N    R1,??DataTable49  ;; 0x40005c00
+        LDR.N    R2,??DataTable48  ;; 0x8f8f
+        ADDS     R0,R1,R0, LSL #+2
+        LDR      R1,[R0, #+0]
+        ANDS     R2,R2,R1
+        ORRS     R1,R2,#0x40
+        STR      R1,[R0, #+0]
+//  412   _ToggleDTOG_TX(bEpNum);
+//  413 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock31
+//  414 /*******************************************************************************
+//  415 * Function Name  : ClearDTOG_RX.
+//  416 * Description    : Clear the DTOG_RX bit.
+//  417 * Input          : bEpNum: Endpoint Number. 
+//  418 * Output         : None.
+//  419 * Return         : None.
+//  420 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock32 Using cfiCommon0
+        CFI Function ClearDTOG_RX
+        THUMB
+//  421 void ClearDTOG_RX(u8 bEpNum)
+//  422 {
+ClearDTOG_RX:
+        LDR.N    R1,??DataTable49  ;; 0x40005c00
+        ADDS     R0,R1,R0, LSL #+2
+        LDR      R1,[R0, #+0]
+        LSLS     R1,R1,#+17
+        BPL.N    ??ClearDTOG_RX_0
+//  423   _ClearDTOG_RX(bEpNum);
+        LDR      R1,[R0, #+0]
+        LDR.N    R2,??DataTable48  ;; 0x8f8f
+        ANDS     R2,R2,R1
+        ORRS     R1,R2,#0x4000
+        STR      R1,[R0, #+0]
+//  424 }
+??ClearDTOG_RX_0:
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock32
+//  425 /*******************************************************************************
+//  426 * Function Name  : ClearDTOG_TX.
+//  427 * Description    : Clear the DTOG_TX bit.
+//  428 * Input          : bEpNum: Endpoint Number. 
+//  429 * Output         : None.
+//  430 * Return         : None.
+//  431 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock33 Using cfiCommon0
+        CFI Function ClearDTOG_TX
+        THUMB
+//  432 void ClearDTOG_TX(u8 bEpNum)
+//  433 {
+ClearDTOG_TX:
+        LDR.N    R1,??DataTable49  ;; 0x40005c00
+        ADDS     R0,R1,R0, LSL #+2
+        LDR      R1,[R0, #+0]
+        LSLS     R1,R1,#+25
+        BPL.N    ??ClearDTOG_TX_0
+//  434   _ClearDTOG_TX(bEpNum);
+        LDR      R1,[R0, #+0]
+        LDR.N    R2,??DataTable48  ;; 0x8f8f
+        ANDS     R2,R2,R1
+        ORRS     R1,R2,#0x40
+        STR      R1,[R0, #+0]
+//  435 }
+??ClearDTOG_TX_0:
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock33
+//  436 /*******************************************************************************
+//  437 * Function Name  : SetEPAddress
+//  438 * Description    : Set the endpoint address.
+//  439 * Input          : bEpNum: Endpoint Number.
+//  440 *                  bAddr: New endpoint address.
+//  441 * Output         : None.
+//  442 * Return         : None.
+//  443 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock34 Using cfiCommon0
+        CFI Function SetEPAddress
+        THUMB
+//  444 void SetEPAddress(u8 bEpNum, u8 bAddr)
+//  445 {
+SetEPAddress:
+        LDR.N    R2,??DataTable49  ;; 0x40005c00
+        LDR.N    R3,??DataTable48  ;; 0x8f8f
+        ADDS     R0,R2,R0, LSL #+2
+        LDR      R2,[R0, #+0]
+        ANDS     R3,R3,R2
+        ORRS     R1,R1,R3
+        STR      R1,[R0, #+0]
+//  446   _SetEPAddress(bEpNum, bAddr);
+//  447 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock34
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable48:
+        DC32     0x8f8f
+//  448 /*******************************************************************************
+//  449 * Function Name  : GetEPAddress
+//  450 * Description    : Get the endpoint address.
+//  451 * Input          : bEpNum: Endpoint Number. 
+//  452 * Output         : None.
+//  453 * Return         : Endpoint address.
+//  454 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock35 Using cfiCommon0
+        CFI Function GetEPAddress
+        THUMB
+//  455 u8 GetEPAddress(u8 bEpNum)
+//  456 {
+//  457   return(_GetEPAddress(bEpNum));
+GetEPAddress:
+        LDR.N    R1,??DataTable49  ;; 0x40005c00
+        LDR      R0,[R1, R0, LSL #+2]
+        LSLS     R0,R0,#+28
+        LSRS     R0,R0,#+28
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock35
+//  458 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable49:
+        DC32     0x40005c00
+//  459 /*******************************************************************************
+//  460 * Function Name  : SetEPTxAddr
+//  461 * Description    : Set the endpoint Tx buffer address.
+//  462 * Input          : bEpNum: Endpoint Number.
+//  463 *                  wAddr: new address. 
+//  464 * Output         : None.
+//  465 * Return         : None.
+//  466 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock36 Using cfiCommon0
+        CFI Function SetEPTxAddr
+        THUMB
+//  467 void SetEPTxAddr(u8 bEpNum, u16 wAddr)
+//  468 {
+//  469   _SetEPTxAddr(bEpNum, wAddr);
+SetEPTxAddr:
+        LDR.N    R2,??DataTable58  ;; 0x40005c50
+        LSRS     R1,R1,#+1
+        LSLS     R1,R1,#+1
+        LDR      R2,[R2, #+0]
+        UXTH     R2,R2
+        ADDS     R0,R2,R0, LSL #+3
+        LDR.N    R2,??DataTable74  ;; 0x40006000
+        STR      R1,[R2, R0, LSL #+1]
+//  470 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock36
+//  471 /*******************************************************************************
+//  472 * Function Name  : SetEPRxAddr
+//  473 * Description    : Set the endpoint Rx buffer address.
+//  474 * Input          : bEpNum: Endpoint Number.
+//  475 *                  wAddr: new address.
+//  476 * Output         : None.
+//  477 * Return         : None.
+//  478 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock37 Using cfiCommon0
+        CFI Function SetEPRxAddr
+        THUMB
+//  479 void SetEPRxAddr(u8 bEpNum, u16 wAddr)
+//  480 {
+//  481   _SetEPRxAddr(bEpNum, wAddr);
+SetEPRxAddr:
+        LDR.N    R2,??DataTable58  ;; 0x40005c50
+        LSRS     R1,R1,#+1
+        LSLS     R1,R1,#+1
+        LDR      R2,[R2, #+0]
+        UXTH     R2,R2
+        ADDS     R0,R2,R0, LSL #+3
+        LDR.N    R2,??DataTable76  ;; 0x40006008
+        STR      R1,[R2, R0, LSL #+1]
+//  482 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock37
+//  483 /*******************************************************************************
+//  484 * Function Name  : GetEPTxAddr
+//  485 * Description    : Returns the endpoint Tx buffer address.
+//  486 * Input          : bEpNum: Endpoint Number. 
+//  487 * Output         : None.
+//  488 * Return         : Rx buffer address. 
+//  489 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock38 Using cfiCommon0
+        CFI Function GetEPTxAddr
+        THUMB
+//  490 u16 GetEPTxAddr(u8 bEpNum)
+//  491 {
+//  492   return(_GetEPTxAddr(bEpNum));
+GetEPTxAddr:
+        LDR.N    R1,??DataTable58  ;; 0x40005c50
+        LDR      R1,[R1, #+0]
+        UXTH     R1,R1
+        ADDS     R0,R1,R0, LSL #+3
+        LDR.N    R1,??DataTable74  ;; 0x40006000
+        LDR      R0,[R1, R0, LSL #+1]
+        UXTH     R0,R0
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock38
+//  493 }
+//  494 /*******************************************************************************
+//  495 * Function Name  : GetEPRxAddr.
+//  496 * Description    : Returns the endpoint Rx buffer address.
+//  497 * Input          : bEpNum: Endpoint Number. 
+//  498 * Output         : None.
+//  499 * Return         : Rx buffer address.
+//  500 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock39 Using cfiCommon0
+        CFI Function GetEPRxAddr
+        THUMB
+//  501 u16 GetEPRxAddr(u8 bEpNum)
+//  502 {
+//  503   return(_GetEPRxAddr(bEpNum));
+GetEPRxAddr:
+        LDR.N    R1,??DataTable58  ;; 0x40005c50
+        LDR      R1,[R1, #+0]
+        UXTH     R1,R1
+        ADDS     R0,R1,R0, LSL #+3
+        LDR.N    R1,??DataTable76  ;; 0x40006008
+        LDR      R0,[R1, R0, LSL #+1]
+        UXTH     R0,R0
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock39
+//  504 }
+//  505 /*******************************************************************************
+//  506 * Function Name  : SetEPTxCount.
+//  507 * Description    : Set the Tx count.
+//  508 * Input          : bEpNum: Endpoint Number.
+//  509 *                  wCount: new count value.
+//  510 * Output         : None.
+//  511 * Return         : None.
+//  512 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock40 Using cfiCommon0
+        CFI Function SetEPTxCount
+        THUMB
+//  513 void SetEPTxCount(u8 bEpNum, u16 wCount)
+//  514 {
+//  515   _SetEPTxCount(bEpNum, wCount);
+SetEPTxCount:
+        LDR.N    R2,??DataTable58  ;; 0x40005c50
+        LDR      R2,[R2, #+0]
+        UXTH     R2,R2
+        ADDS     R0,R2,R0, LSL #+3
+        LDR.N    R2,??DataTable90  ;; 0x40006004
+        STR      R1,[R2, R0, LSL #+1]
+//  516 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock40
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable58:
+        DC32     0x40005c50
+//  517 /*******************************************************************************
+//  518 * Function Name  : SetEPCountRxReg.
+//  519 * Description    : Set the Count Rx Register value.
+//  520 * Input          : *pdwReg: point to the register.
+//  521 *                  wCount: the new register value.
+//  522 * Output         : None.
+//  523 * Return         : None.
+//  524 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock41 Using cfiCommon0
+        CFI Function SetEPCountRxReg
+        THUMB
+//  525 void SetEPCountRxReg(u32 *pdwReg, u16 wCount)
+//  526 {
+//  527   _SetEPCountRxReg(dwReg, wCount);
+SetEPCountRxReg:
+        CMP      R1,#+63
+        BCC.N    ??SetEPCountRxReg_0
+        LSRS     R2,R1,#+5
+        LSLS     R1,R1,#+27
+        ITT     EQ 
+        SUBEQ    R2,R2,#+1
+        UXTHEQ   R2,R2
+        LSLS     R1,R2,#+10
+        ORRS     R1,R1,#0x8000
+        B.N      ??SetEPCountRxReg_1
+??SetEPCountRxReg_0:
+        LSRS     R2,R1,#+1
+        LSLS     R1,R1,#+31
+        ITT     MI 
+        ADDMI    R2,R2,#+1
+        UXTHMI   R2,R2
+        LSLS     R1,R2,#+10
+??SetEPCountRxReg_1:
+        STR      R1,[R0, #+0]
+//  528 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock41
+//  529 /*******************************************************************************
+//  530 * Function Name  : SetEPRxCount
+//  531 * Description    : Set the Rx count.
+//  532 * Input          : bEpNum: Endpoint Number. 
+//  533 *                  wCount: the new count value.
+//  534 * Output         : None.
+//  535 * Return         : None.
+//  536 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock42 Using cfiCommon0
+        CFI Function SetEPRxCount
+        THUMB
+//  537 void SetEPRxCount(u8 bEpNum, u16 wCount)
+//  538 {
+//  539   _SetEPRxCount(bEpNum, wCount);
+SetEPRxCount:
+        LDR.N    R2,??DataTable88  ;; 0x40005c50
+        LDR      R2,[R2, #+0]
+        UXTH     R2,R2
+        ADDS     R0,R2,R0, LSL #+3
+        LDR.N    R2,??DataTable89  ;; 0x4000600c
+        ADDS     R0,R2,R0, LSL #+1
+        CMP      R1,#+63
+        BCC.N    ??SetEPRxCount_0
+        LSRS     R2,R1,#+5
+        LSLS     R1,R1,#+27
+        ITT     EQ 
+        SUBEQ    R2,R2,#+1
+        UXTHEQ   R2,R2
+        LSLS     R1,R2,#+10
+        ORRS     R1,R1,#0x8000
+        B.N      ??SetEPRxCount_1
+??SetEPRxCount_0:
+        LSRS     R2,R1,#+1
+        LSLS     R1,R1,#+31
+        ITT     MI 
+        ADDMI    R2,R2,#+1
+        UXTHMI   R2,R2
+        LSLS     R1,R2,#+10
+??SetEPRxCount_1:
+        STR      R1,[R0, #+0]
+//  540 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock42
+//  541 /*******************************************************************************
+//  542 * Function Name  : GetEPTxCount
+//  543 * Description    : Get the Tx count.
+//  544 * Input          : bEpNum: Endpoint Number. 
+//  545 * Output         : None
+//  546 * Return         : Tx count value.
+//  547 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock43 Using cfiCommon0
+        CFI Function GetEPTxCount
+        THUMB
+//  548 u16 GetEPTxCount(u8 bEpNum)
+//  549 {
+//  550   return(_GetEPTxCount(bEpNum));
+GetEPTxCount:
+        LDR.N    R1,??DataTable88  ;; 0x40005c50
+        LDR      R1,[R1, #+0]
+        UXTH     R1,R1
+        ADDS     R0,R1,R0, LSL #+3
+        LDR.N    R1,??DataTable90  ;; 0x40006004
+        LDR      R0,[R1, R0, LSL #+1]
+        LSLS     R0,R0,#+22
+        LSRS     R0,R0,#+22
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock43
+//  551 }
+//  552 /*******************************************************************************
+//  553 * Function Name  : GetEPRxCount
+//  554 * Description    : Get the Rx count.
+//  555 * Input          : bEpNum: Endpoint Number. 
+//  556 * Output         : None.
+//  557 * Return         : Rx count value.
+//  558 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock44 Using cfiCommon0
+        CFI Function GetEPRxCount
+        THUMB
+//  559 u16 GetEPRxCount(u8 bEpNum)
+//  560 {
+//  561   return(_GetEPRxCount(bEpNum));
+GetEPRxCount:
+        LDR.N    R1,??DataTable88  ;; 0x40005c50
+        LDR      R1,[R1, #+0]
+        UXTH     R1,R1
+        ADDS     R0,R1,R0, LSL #+3
+        LDR.N    R1,??DataTable89  ;; 0x4000600c
+        LDR      R0,[R1, R0, LSL #+1]
+        LSLS     R0,R0,#+22
+        LSRS     R0,R0,#+22
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock44
+//  562 }
+//  563 /*******************************************************************************
+//  564 * Function Name  : SetEPDblBuffAddr
+//  565 * Description    : Set the addresses of the buffer 0 and 1.
+//  566 * Input          : bEpNum: Endpoint Number.  
+//  567 *                  wBuf0Addr: new address of buffer 0. 
+//  568 *                  wBuf1Addr: new address of buffer 1.
+//  569 * Output         : None.
+//  570 * Return         : None.
+//  571 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock45 Using cfiCommon0
+        CFI Function SetEPDblBuffAddr
+        THUMB
+//  572 void SetEPDblBuffAddr(u8 bEpNum, u16 wBuf0Addr, u16 wBuf1Addr)
+//  573 {
+//  574   _SetEPDblBuffAddr(bEpNum, wBuf0Addr, wBuf1Addr);
+SetEPDblBuffAddr:
+        LDR.N    R3,??DataTable88  ;; 0x40005c50
+        PUSH     {R4,R5}
+        CFI R5 Frame(CFA, -4)
+        CFI R4 Frame(CFA, -8)
+        CFI CFA R13+8
+        LDR.N    R5,??DataTable74  ;; 0x40006000
+        LDR      R4,[R3, #+0]
+        LSLS     R0,R0,#+3
+        LSRS     R1,R1,#+1
+        UXTH     R4,R4
+        ADDS     R4,R4,R0
+        LSLS     R1,R1,#+1
+        STR      R1,[R5, R4, LSL #+1]
+        LDR      R1,[R3, #+0]
+        LSRS     R2,R2,#+1
+        LSLS     R2,R2,#+1
+        UXTH     R1,R1
+        ADDS     R0,R1,R0
+        LDR.N    R1,??DataTable76  ;; 0x40006008
+        STR      R2,[R1, R0, LSL #+1]
+//  575 }
+        POP      {R4,R5}
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI CFA R13+0
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock45
+//  576 /*******************************************************************************
+//  577 * Function Name  : SetEPDblBuf0Addr
+//  578 * Description    : Set the Buffer 1 address.
+//  579 * Input          : bEpNum: Endpoint Number
+//  580 *                  wBuf0Addr: new address.
+//  581 * Output         : None.
+//  582 * Return         : None.
+//  583 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock46 Using cfiCommon0
+        CFI Function SetEPDblBuf0Addr
+        THUMB
+//  584 void SetEPDblBuf0Addr(u8 bEpNum, u16 wBuf0Addr)
+//  585 {
+//  586   _SetEPDblBuf0Addr(bEpNum, wBuf0Addr);
+SetEPDblBuf0Addr:
+        LDR.N    R2,??DataTable88  ;; 0x40005c50
+        LSRS     R1,R1,#+1
+        LSLS     R1,R1,#+1
+        LDR      R2,[R2, #+0]
+        UXTH     R2,R2
+        ADDS     R0,R2,R0, LSL #+3
+        LDR.N    R2,??DataTable74  ;; 0x40006000
+        STR      R1,[R2, R0, LSL #+1]
+//  587 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock46
+//  588 /*******************************************************************************
+//  589 * Function Name  : SetEPDblBuf1Addr
+//  590 * Description    : Set the Buffer 1 address.
+//  591 * Input          : bEpNum: Endpoint Number
+//  592 *                  wBuf1Addr: new address.
+//  593 * Output         : None.
+//  594 * Return         : None.
+//  595 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock47 Using cfiCommon0
+        CFI Function SetEPDblBuf1Addr
+        THUMB
+//  596 void SetEPDblBuf1Addr(u8 bEpNum, u16 wBuf1Addr)
+//  597 {
+//  598   _SetEPDblBuf1Addr(bEpNum, wBuf1Addr);
+SetEPDblBuf1Addr:
+        LDR.N    R2,??DataTable88  ;; 0x40005c50
+        LSRS     R1,R1,#+1
+        LSLS     R1,R1,#+1
+        LDR      R2,[R2, #+0]
+        UXTH     R2,R2
+        ADDS     R0,R2,R0, LSL #+3
+        LDR.N    R2,??DataTable76  ;; 0x40006008
+        STR      R1,[R2, R0, LSL #+1]
+//  599 }
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock47
+//  600 /*******************************************************************************
+//  601 * Function Name  : GetEPDblBuf0Addr
+//  602 * Description    : Returns the address of the Buffer 0.
+//  603 * Input          : bEpNum: Endpoint Number.
+//  604 * Output         : None.
+//  605 * Return         : None.
+//  606 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock48 Using cfiCommon0
+        CFI Function GetEPDblBuf0Addr
+        THUMB
+//  607 u16 GetEPDblBuf0Addr(u8 bEpNum)
+//  608 {
+//  609   return(_GetEPDblBuf0Addr(bEpNum));
+GetEPDblBuf0Addr:
+        LDR.N    R1,??DataTable88  ;; 0x40005c50
+        LDR      R1,[R1, #+0]
+        UXTH     R1,R1
+        ADDS     R0,R1,R0, LSL #+3
+        LDR.N    R1,??DataTable74  ;; 0x40006000
+        LDR      R0,[R1, R0, LSL #+1]
+        UXTH     R0,R0
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock48
+//  610 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable74:
+        DC32     0x40006000
+//  611 /*******************************************************************************
+//  612 * Function Name  : GetEPDblBuf1Addr
+//  613 * Description    : Returns the address of the Buffer 1.
+//  614 * Input          : bEpNum: Endpoint Number.
+//  615 * Output         : None.
+//  616 * Return         : Address of the Buffer 1.
+//  617 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock49 Using cfiCommon0
+        CFI Function GetEPDblBuf1Addr
+        THUMB
+//  618 u16 GetEPDblBuf1Addr(u8 bEpNum)
+//  619 {
+//  620   return(_GetEPDblBuf1Addr(bEpNum));
+GetEPDblBuf1Addr:
+        LDR.N    R1,??DataTable88  ;; 0x40005c50
+        LDR      R1,[R1, #+0]
+        UXTH     R1,R1
+        ADDS     R0,R1,R0, LSL #+3
+        LDR.N    R1,??DataTable76  ;; 0x40006008
+        LDR      R0,[R1, R0, LSL #+1]
+        UXTH     R0,R0
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock49
+//  621 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable76:
+        DC32     0x40006008
+//  622 /*******************************************************************************
+//  623 * Function Name  : SetEPDblBuffCount
+//  624 * Description    : Set the number of bytes for a double Buffer 
+//  625 *                  endpoint.
+//  626 * Input          : bEpNum,bDir, wCount
+//  627 * Output         : None.
+//  628 * Return         : None.
+//  629 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock50 Using cfiCommon0
+        CFI Function SetEPDblBuffCount
+        THUMB
+//  630 void SetEPDblBuffCount(u8 bEpNum, u8 bDir, u16 wCount)
+//  631 {
+//  632   _SetEPDblBuffCount(bEpNum, bDir, wCount);
+SetEPDblBuffCount:
+        LDR.N    R3,??DataTable88  ;; 0x40005c50
+        PUSH     {R4-R8}
+        CFI R8 Frame(CFA, -4)
+        CFI R7 Frame(CFA, -8)
+        CFI R6 Frame(CFA, -12)
+        CFI R5 Frame(CFA, -16)
+        CFI R4 Frame(CFA, -20)
+        CFI CFA R13+20
+        LDR.N    R4,??DataTable89  ;; 0x4000600c
+        LSLS     R5,R0,#+3
+        LDR.N    R0,??DataTable90  ;; 0x40006004
+        CMP      R1,#+1
+        BNE.N    ??SetEPDblBuffCount_0
+        LDR      R1,[R3, #+0]
+        UXTH     R1,R1
+        ADDS     R1,R1,R5
+        ADDS     R8,R0,R1, LSL #+1
+        LSRS     R1,R2,#+5
+        LSRS     R0,R2,#+1
+        CMP      R2,#+63
+        BCC.N    ??SetEPDblBuffCount_1
+        MOVS     R6,R1
+        LSLS     R7,R2,#+27
+        ITT     EQ 
+        SUBEQ    R6,R6,#+1
+        UXTHEQ   R6,R6
+        LSLS     R6,R6,#+10
+        ORRS     R6,R6,#0x8000
+        STR      R6,[R8, #+0]
+??SetEPDblBuffCount_2:
+        LDR      R3,[R3, #+0]
+        UXTH     R3,R3
+        ADDS     R3,R3,R5
+        ADDS     R3,R4,R3, LSL #+1
+        CMP      R2,#+63
+        BCC.N    ??SetEPDblBuffCount_3
+        LSLS     R0,R2,#+27
+        ITT     EQ 
+        SUBEQ    R1,R1,#+1
+        UXTHEQ   R1,R1
+        LSLS     R0,R1,#+10
+        ORRS     R0,R0,#0x8000
+        B.N      ??SetEPDblBuffCount_4
+??SetEPDblBuffCount_1:
+        MOVS     R6,R0
+        LSLS     R7,R2,#+31
+        ITT     MI 
+        ADDMI    R6,R6,#+1
+        UXTHMI   R6,R6
+        LSLS     R6,R6,#+10
+        STR      R6,[R8, #+0]
+        B.N      ??SetEPDblBuffCount_2
+??SetEPDblBuffCount_0:
+        CMP      R1,#+2
+        BNE.N    ??SetEPDblBuffCount_5
+        LDR      R1,[R3, #+0]
+        UXTH     R1,R1
+        ADDS     R1,R1,R5
+        STR      R2,[R0, R1, LSL #+1]
+        LDR      R0,[R3, #+0]
+        UXTH     R0,R0
+        ADDS     R0,R0,R5
+        STR      R2,[R4, R0, LSL #+1]
+        B.N      ??SetEPDblBuffCount_5
+??SetEPDblBuffCount_3:
+        MOVS     R1,R0
+        LSLS     R0,R2,#+31
+        ITT     MI 
+        ADDMI    R1,R1,#+1
+        UXTHMI   R1,R1
+        LSLS     R0,R1,#+10
+??SetEPDblBuffCount_4:
+        STR      R0,[R3, #+0]
+//  633 }
+??SetEPDblBuffCount_5:
+        POP      {R4-R8}
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI R8 SameValue
+        CFI CFA R13+0
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock50
+//  634 /*******************************************************************************
+//  635 * Function Name  : SetEPDblBuf0Count
+//  636 * Description    : Set the number of bytes in the buffer 0 of a double Buffer 
+//  637 *                  endpoint.
+//  638 * Input          : bEpNum, bDir,  wCount
+//  639 * Output         : None.
+//  640 * Return         : None.
+//  641 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock51 Using cfiCommon0
+        CFI Function SetEPDblBuf0Count
+        THUMB
+//  642 void SetEPDblBuf0Count(u8 bEpNum, u8 bDir, u16 wCount)
+//  643 {
+SetEPDblBuf0Count:
+        PUSH     {R4}
+        CFI R4 Frame(CFA, -4)
+        CFI CFA R13+4
+//  644   _SetEPDblBuf0Count(bEpNum, bDir, wCount);
+        LDR.N    R4,??DataTable88  ;; 0x40005c50
+        LSLS     R3,R0,#+3
+        LDR.N    R0,??DataTable90  ;; 0x40006004
+        CMP      R1,#+1
+        BNE.N    ??SetEPDblBuf0Count_0
+        LDR      R1,[R4, #+0]
+        UXTH     R1,R1
+        ADDS     R1,R1,R3
+        ADDS     R0,R0,R1, LSL #+1
+        CMP      R2,#+63
+        BCC.N    ??SetEPDblBuf0Count_1
+        LSRS     R1,R2,#+5
+        LSLS     R2,R2,#+27
+        ITT     EQ 
+        SUBEQ    R1,R1,#+1
+        UXTHEQ   R1,R1
+        LSLS     R1,R1,#+10
+        ORRS     R1,R1,#0x8000
+??SetEPDblBuf0Count_2:
+        STR      R1,[R0, #+0]
+        B.N      ??SetEPDblBuf0Count_3
+??SetEPDblBuf0Count_1:
+        LSRS     R1,R2,#+1
+        LSLS     R2,R2,#+31
+        ITT     MI 
+        ADDMI    R1,R1,#+1
+        UXTHMI   R1,R1
+        LSLS     R1,R1,#+10
+        B.N      ??SetEPDblBuf0Count_2
+??SetEPDblBuf0Count_0:
+        CMP      R1,#+2
+        BNE.N    ??SetEPDblBuf0Count_3
+        LDR      R1,[R4, #+0]
+        UXTH     R1,R1
+        ADDS     R1,R1,R3
+        STR      R2,[R0, R1, LSL #+1]
+//  645 }
+??SetEPDblBuf0Count_3:
+        POP      {R4}
+        CFI R4 SameValue
+        CFI CFA R13+0
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock51
+//  646 /*******************************************************************************
+//  647 * Function Name  : SetEPDblBuf1Count
+//  648 * Description    : Set the number of bytes in the buffer 0 of a double Buffer 
+//  649 *                  endpoint.
+//  650 * Input          : bEpNum,  bDir,  wCount
+//  651 * Output         : None.
+//  652 * Return         : None.
+//  653 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock52 Using cfiCommon0
+        CFI Function SetEPDblBuf1Count
+        THUMB
+//  654 void SetEPDblBuf1Count(u8 bEpNum, u8 bDir, u16 wCount)
+//  655 {
+SetEPDblBuf1Count:
+        PUSH     {R4}
+        CFI R4 Frame(CFA, -4)
+        CFI CFA R13+4
+//  656   _SetEPDblBuf1Count(bEpNum, bDir, wCount);
+        LDR.N    R4,??DataTable88  ;; 0x40005c50
+        LSLS     R3,R0,#+3
+        LDR.N    R0,??DataTable89  ;; 0x4000600c
+        CMP      R1,#+1
+        BNE.N    ??SetEPDblBuf1Count_0
+        LDR      R1,[R4, #+0]
+        UXTH     R1,R1
+        ADDS     R1,R1,R3
+        ADDS     R0,R0,R1, LSL #+1
+        CMP      R2,#+63
+        BCC.N    ??SetEPDblBuf1Count_1
+        LSRS     R1,R2,#+5
+        LSLS     R2,R2,#+27
+        ITT     EQ 
+        SUBEQ    R1,R1,#+1
+        UXTHEQ   R1,R1
+        LSLS     R1,R1,#+10
+        ORRS     R1,R1,#0x8000
+??SetEPDblBuf1Count_2:
+        STR      R1,[R0, #+0]
+        B.N      ??SetEPDblBuf1Count_3
+??SetEPDblBuf1Count_1:
+        LSRS     R1,R2,#+1
+        LSLS     R2,R2,#+31
+        ITT     MI 
+        ADDMI    R1,R1,#+1
+        UXTHMI   R1,R1
+        LSLS     R1,R1,#+10
+        B.N      ??SetEPDblBuf1Count_2
+??SetEPDblBuf1Count_0:
+        CMP      R1,#+2
+        BNE.N    ??SetEPDblBuf1Count_3
+        LDR      R1,[R4, #+0]
+        UXTH     R1,R1
+        ADDS     R1,R1,R3
+        STR      R2,[R0, R1, LSL #+1]
+//  657 }
+??SetEPDblBuf1Count_3:
+        POP      {R4}
+        CFI R4 SameValue
+        CFI CFA R13+0
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock52
+//  658 /*******************************************************************************
+//  659 * Function Name  : GetEPDblBuf0Count
+//  660 * Description    : Returns the number of byte received in the buffer 0 of a double
+//  661 *                  Buffer endpoint.
+//  662 * Input          : bEpNum: Endpoint Number.
+//  663 * Output         : None.
+//  664 * Return         : Endpoint Buffer 0 count
+//  665 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock53 Using cfiCommon0
+        CFI Function GetEPDblBuf0Count
+        THUMB
+//  666 u16 GetEPDblBuf0Count(u8 bEpNum)
+//  667 {
+//  668   return(_GetEPDblBuf0Count(bEpNum));
+GetEPDblBuf0Count:
+        LDR.N    R1,??DataTable88  ;; 0x40005c50
+        LDR      R1,[R1, #+0]
+        UXTH     R1,R1
+        ADDS     R0,R1,R0, LSL #+3
+        LDR.N    R1,??DataTable90  ;; 0x40006004
+        LDR      R0,[R1, R0, LSL #+1]
+        LSLS     R0,R0,#+22
+        LSRS     R0,R0,#+22
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock53
+//  669 }
+//  670 /*******************************************************************************
+//  671 * Function Name  : GetEPDblBuf1Count
+//  672 * Description    : Returns the number of data received in the buffer 1 of a double
+//  673 *                  Buffer endpoint.
+//  674 * Input          : bEpNum: Endpoint Number.
+//  675 * Output         : None.
+//  676 * Return         : Endpoint Buffer 1 count.
+//  677 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock54 Using cfiCommon0
+        CFI Function GetEPDblBuf1Count
+        THUMB
+//  678 u16 GetEPDblBuf1Count(u8 bEpNum)
+//  679 {
+//  680   return(_GetEPDblBuf1Count(bEpNum));
+GetEPDblBuf1Count:
+        LDR.N    R1,??DataTable88  ;; 0x40005c50
+        LDR      R1,[R1, #+0]
+        UXTH     R1,R1
+        ADDS     R0,R1,R0, LSL #+3
+        LDR.N    R1,??DataTable89  ;; 0x4000600c
+        LDR      R0,[R1, R0, LSL #+1]
+        LSLS     R0,R0,#+22
+        LSRS     R0,R0,#+22
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock54
+//  681 }
+//  682 /*******************************************************************************
+//  683 * Function Name  : GetEPDblBufDir
+//  684 * Description    : gets direction of the double buffered endpoint
+//  685 * Input          : bEpNum: Endpoint Number. 
+//  686 * Output         : None.
+//  687 * Return         : EP_DBUF_OUT, EP_DBUF_IN,
+//  688 *                  EP_DBUF_ERR if the endpoint counter not yet programmed.
+//  689 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock55 Using cfiCommon0
+        CFI Function GetEPDblBufDir
+        THUMB
+//  690 EP_DBUF_DIR GetEPDblBufDir(u8 bEpNum)
+//  691 {
+//  692   if ((u16)(*_pEPRxCount(bEpNum) & 0xFC00) != 0)
+GetEPDblBufDir:
+        LDR.N    R1,??DataTable88  ;; 0x40005c50
+        LDR.N    R3,??DataTable89  ;; 0x4000600c
+        LSLS     R0,R0,#+3
+        LDR      R2,[R1, #+0]
+        UXTH     R2,R2
+        ADDS     R2,R2,R0
+        LDR      R2,[R3, R2, LSL #+1]
+        TST      R2,#0xFC00
+        ITT     NE 
+//  693     return(EP_DBUF_OUT);
+        MOVNE    R0,#+1
+        BXNE     LR
+//  694   else if (((u16)(*_pEPTxCount(bEpNum)) & 0x03FF) != 0)
+        LDR      R1,[R1, #+0]
+        UXTH     R1,R1
+        ADDS     R0,R1,R0
+        LDR.N    R1,??DataTable90  ;; 0x40006004
+        LDR      R0,[R1, R0, LSL #+1]
+        LSLS     R0,R0,#+22
+        ITT     NE 
+//  695     return(EP_DBUF_IN);
+        MOVNE    R0,#+2
+        BXNE     LR
+//  696   else
+//  697     return(EP_DBUF_ERR);
+        MOVS     R0,#+0
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock55
+//  698 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable88:
+        DC32     0x40005c50
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable89:
+        DC32     0x4000600c
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable90:
+        DC32     0x40006004
+//  699 /*******************************************************************************
+//  700 * Function Name  : FreeUserBuffer
+//  701 * Description    : free buffer used from the application realizing it to the line
+//  702                    toggles bit SW_BUF in the double buffered endpoint register
+//  703 * Input          : bEpNum, bDir
+//  704 * Output         : None.
+//  705 * Return         : None.
+//  706 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock56 Using cfiCommon0
+        CFI Function FreeUserBuffer
+        THUMB
+//  707 void FreeUserBuffer(u8 bEpNum, u8 bDir)
+//  708 {
+FreeUserBuffer:
+        LDR.N    R2,??DataTable91  ;; 0x40005c00
+        ADDS     R0,R2,R0, LSL #+2
+        LDR.N    R2,??DataTable92  ;; 0x8f8f
+        CMP      R1,#+1
+        BNE.N    ??FreeUserBuffer_0
+//  709   if (bDir == EP_DBUF_OUT)
+//  710   { /* OUT double buffered endpoint */
+//  711     _ToggleDTOG_TX(bEpNum);
+        LDR      R1,[R0, #+0]
+        ANDS     R2,R2,R1
+        ORRS     R1,R2,#0x40
+        STR      R1,[R0, #+0]
+        BX       LR
+//  712   }
+//  713   else if (bDir == EP_DBUF_IN)
+??FreeUserBuffer_0:
+        CMP      R1,#+2
+        BNE.N    ??FreeUserBuffer_1
+//  714   { /* IN double buffered endpoint */
+//  715     _ToggleDTOG_RX(bEpNum);
+        LDR      R1,[R0, #+0]
+        ANDS     R2,R2,R1
+        ORRS     R1,R2,#0x4000
+        STR      R1,[R0, #+0]
+//  716   }
+//  717 }
+??FreeUserBuffer_1:
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock56
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable91:
+        DC32     0x40005c00
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable92:
+        DC32     0x8f8f
+//  718 
+//  719 /*******************************************************************************
+//  720 * Function Name  : ToWord
+//  721 * Description    : merge two byte in a word.
+//  722 * Input          : bh: byte high, bl: bytes low.
+//  723 * Output         : None.
+//  724 * Return         : resulted word.
+//  725 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock57 Using cfiCommon0
+        CFI Function ToWord
+        THUMB
+//  726 u16 ToWord(u8 bh, u8 bl)
+//  727 {
+//  728   u16 wRet;
+//  729   wRet = (u16)bl | ((u16)bh << 8);
+//  730   return(wRet);
+ToWord:
+        ORRS     R0,R1,R0, LSL #+8
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock57
+//  731 }
+//  732 /*******************************************************************************
+//  733 * Function Name  : ByteSwap
+//  734 * Description    : Swap two byte in a word.
+//  735 * Input          : wSwW: word to Swap.
+//  736 * Output         : None.
+//  737 * Return         : resulted word.
+//  738 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock58 Using cfiCommon0
+        CFI Function ByteSwap
+        THUMB
+//  739 u16 ByteSwap(u16 wSwW)
+//  740 {
+//  741   u8 bTemp;
+//  742   u16 wRet;
+//  743   bTemp = (u8)(wSwW & 0xff);
+//  744   wRet =  (wSwW >> 8) | ((u16)bTemp << 8);
+//  745   return(wRet);
+ByteSwap:
+        LSLS     R1,R0,#+24
+        LSRS     R1,R1,#+16
+        ORRS     R0,R1,R0, LSR #+8
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock58
+//  746 }
+
+        END
+//  747 
+//  748 /******************* (C) COPYRIGHT 2008 STMicroelectronics *****END OF FILE****/
+// 
+// 1 504 bytes in segment CODE
+// 
+// 1 504 bytes of CODE memory
+//
+//Errors: none
+//Warnings: none

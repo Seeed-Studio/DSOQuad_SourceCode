@@ -1,0 +1,625 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32 EVALUATION   01/Jul/2011  16:19:31 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  D:\Design\DS203\PRG\SYS_V1.50\source\Memory.c       /
+//    Command line    =  D:\Design\DS203\PRG\SYS_V1.50\source\Memory.c -lA   /
+//                       D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_Prpject\List\  /
+//                       -o D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_Prpject\Obj /
+//                       \ -s9 --no_inline --cpu_mode thumb --endian little  /
+//                       --cpu cortex-M3 --stack_align 4 -e --fpu None       /
+//                       --dlib_config "C:\Program Files\IAR                 /
+//                       Systems\Embedded Workbench 4.0                      /
+//                       Evaluation\arm\LIB\dl7mptnnl8n.h" -I                /
+//                       D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_Prpject\..\..\ /
+//                       FWLib\inc\ -I D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_ /
+//                       Prpject\..\..\USBLib\inc\ -I                        /
+//                       D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_Prpject\..\inc /
+//                       lude\ -I "C:\Program Files\IAR Systems\Embedded     /
+//                       Workbench 4.0 Evaluation\arm\INC\"                  /
+//    List file       =  D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_Prpject\List\M /
+//                       emory.s79                                           /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME Memory
+
+        RTMODEL "StackAlign4", "USED"
+        RTMODEL "__cpu_mode", "__pcs__thumb"
+        RTMODEL "__data_model", "absolute"
+        RTMODEL "__endian", "little"
+        RTMODEL "__rt_version", "6"
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+        EXTERN ??divu32_t
+
+??DataTable0 EQU 0
+??DataTable1 EQU 0
+??DataTable2 EQU 0
+??DataTable3 EQU 0
+??DataTable4 EQU 0
+??DataTable5 EQU 0
+        MULTWEAK ??SetEPRxStatus??rT
+        MULTWEAK ??SetEPTxCount??rT
+        MULTWEAK ??SetEPTxStatus??rT
+        MULTWEAK ??Set_CSW??rT
+        MULTWEAK ??UserToPMABufferCopy??rT
+        MULTWEAK ??__ExtFlash_PageRD??rT
+        MULTWEAK ??__ExtFlash_PageWR??rT
+        MULTWEAK ??rT??divu32_t
+        PUBWEAK ?init?tab?DATA_Z
+        PUBLIC Block_Read_count
+        PUBLIC Block_offset
+        PUBLIC Counter
+        PUBLIC Data_Buffer
+        PUBLIC Idx
+        PUBLIC Read_Memory
+        FUNCTION Read_Memory,0203H
+        LOCFRAME CSTACK, 16, STACK
+        PUBLIC TransferState
+        PUBLIC Write_Memory
+        FUNCTION Write_Memory,0203H
+        LOCFRAME CSTACK, 24, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA R13 HUGEDATA
+        CFI Resource R0:32, R1:32, R2:32, R3:32, R4:32, R5:32, R6:32, R7:32
+        CFI Resource R8:32, R9:32, R10:32, R11:32, R12:32, R13:32, R14:32
+        CFI VirtualResource ?RET:32
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 2
+        CFI DataAlign 4
+        CFI ReturnAddress ?RET CODE
+        CFI CFA R13+0
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI R8 SameValue
+        CFI R9 SameValue
+        CFI R10 SameValue
+        CFI R11 SameValue
+        CFI R12 Undefined
+        CFI R14 Undefined
+        CFI ?RET R14
+        CFI EndCommon cfiCommon0
+        
+SetEPRxStatus       SYMBOL "SetEPRxStatus"
+SetEPTxCount        SYMBOL "SetEPTxCount"
+SetEPTxStatus       SYMBOL "SetEPTxStatus"
+Set_CSW             SYMBOL "Set_CSW"
+UserToPMABufferCopy SYMBOL "UserToPMABufferCopy"
+__ExtFlash_PageRD   SYMBOL "__ExtFlash_PageRD"
+__ExtFlash_PageWR   SYMBOL "__ExtFlash_PageWR"
+??SetEPRxStatus??rT SYMBOL "??rT", SetEPRxStatus
+??SetEPTxCount??rT  SYMBOL "??rT", SetEPTxCount
+??SetEPTxStatus??rT SYMBOL "??rT", SetEPTxStatus
+??Set_CSW??rT       SYMBOL "??rT", Set_CSW
+??UserToPMABufferCopy??rT SYMBOL "??rT", UserToPMABufferCopy
+??__ExtFlash_PageRD??rT SYMBOL "??rT", __ExtFlash_PageRD
+??__ExtFlash_PageWR??rT SYMBOL "??rT", __ExtFlash_PageWR
+
+        EXTERN Bot_State
+        EXTERN Bulk_Data_Buff
+        EXTERN CSW
+        EXTERN Clash
+        EXTERN Data_Len
+        EXTERN Mass_Block_Size
+        EXTERN SetEPRxStatus
+        FUNCTION SetEPRxStatus,0202H
+        EXTERN SetEPTxCount
+        FUNCTION SetEPTxCount,0202H
+        EXTERN SetEPTxStatus
+        FUNCTION SetEPTxStatus,0202H
+        EXTERN Set_CSW
+        FUNCTION Set_CSW,0202H
+        EXTERN UserToPMABufferCopy
+        FUNCTION UserToPMABufferCopy,0202H
+        EXTERN __ExtFlash_PageRD
+        FUNCTION __ExtFlash_PageRD,0202H
+        EXTERN __ExtFlash_PageWR
+        FUNCTION __ExtFlash_PageWR,0202H
+
+// D:\Design\DS203\PRG\SYS_V1.50\source\Memory.c
+//    1 /********************* (C) COPYRIGHT 2010 e-Design Co.,Ltd. ********************
+//    2  File Name : Memory.c  
+//    3  Version   : DS203_SYS Ver 1.5x                                  Author : bure
+//    4 *******************************************************************************/
+//    5 #include "Ext_Flash.h"
+//    6 #include "USB_scsi.h"
+//    7 #include "USB_regs.h"
+//    8 #include "USB_conf.h"
+//    9 #include "USB_bot.h"
+//   10 #include "USB_mem.h"
+//   11 #include "Config.h"
+//   12 #include "Memory.h"
+//   13 #include "BIOS.h"
+//   14 #include "ASM.h"
+//   15 
+//   16 vu32 Block_Read_count = 0;
+//   17 vu32 Block_offset;
+//   18 vu32 Counter = 0;
+//   19 u32  Idx;
+//   20 u8 Data_Buffer[512+256]; 
+//   21 u8 TransferState = TXFR_IDLE;
+//   22 
+//   23 extern u8 Bulk_Data_Buff[BULK_MAX_PACKET_SIZE];  /* data buffer*/
+//   24 extern u16 Data_Len;
+//   25 extern u8 Bot_State;
+//   26 extern Bulk_Only_CBW CBW;
+//   27 extern Bulk_Only_CSW CSW;
+//   28 extern u32 Mass_Memory_Size;
+//   29 extern u32 Mass_Block_Size;
+//   30 
+//   31 /*******************************************************************************
+//   32 * Function Name  : Read_Memory
+//   33 * Description    : Handle the Read operation from the microSD card.
+//   34 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function Read_Memory
+        THUMB
+//   35 void Read_Memory(u32 Memory_Offset, u32 Transfer_Length)
+//   36 {
+Read_Memory:
+        PUSH     {R4-R6,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R6 Frame(CFA, -8)
+        CFI R5 Frame(CFA, -12)
+        CFI R4 Frame(CFA, -16)
+        CFI CFA R13+16
+//   37   static u32 Offset, Length;
+//   38 
+//   39   if (TransferState == TXFR_IDLE )
+        LDR.N    R4,??DataTable6  ;; Mass_Block_Size
+        LDR.N    R5,??DataTable7  ;; TransferState
+        MOVS     R3,#+1
+        LDR      R2,[R4, #+0]
+        LDRB     R6,[R5, #+0]
+        CBNZ     R6,??Read_Memory_0
+//   40   {
+//   41     Offset = Memory_Offset * Mass_Block_Size;
+//   42     Length = Transfer_Length * Mass_Block_Size;
+//   43     TransferState = TXFR_ONGOING;
+        STRB     R3,[R5, #+0]
+        MULS     R0,R2,R0
+        STR      R0,[R5, #+20]
+        MULS     R1,R2,R1
+        STR      R1,[R5, #+24]
+        B.N      ??Read_Memory_1
+//   44   }
+//   45 
+//   46   if (TransferState == TXFR_ONGOING )
+??Read_Memory_0:
+        CMP      R6,#+1
+        BNE.N    ??Read_Memory_2
+//   47   {
+//   48     if (!Block_Read_count)
+??Read_Memory_1:
+        LDR.N    R6,??DataTable8  ;; Data_Buffer
+        LDR      R0,[R5, #+4]
+        CBNZ     R0,??Read_Memory_3
+//   49     {
+//   50       Clash = 1;
+        LDR.N    R0,??DataTable9  ;; Clash
+//   51       __ExtFlash_PageRD(Data_Buffer, Offset, Mass_Block_Size);           
+        LDR      R1,[R5, #+20]
+        UXTH     R2,R2
+        STRB     R3,[R0, #+0]
+        MOVS     R0,R6
+        _BLF     __ExtFlash_PageRD,??__ExtFlash_PageRD??rT
+//   52       UserToPMABufferCopy((u8 *)Data_Buffer, ENDP1_TXADDR, BULK_MAX_PACKET_SIZE);
+        MOVS     R2,#+64
+        MOVS     R1,#+152
+        MOVS     R0,R6
+        _BLF     UserToPMABufferCopy,??UserToPMABufferCopy??rT
+//   53       Block_Read_count = Mass_Block_Size - BULK_MAX_PACKET_SIZE;
+        LDR      R0,[R4, #+0]
+        SUBS     R0,R0,#+64
+        STR      R0,[R5, #+4]
+//   54       Block_offset = BULK_MAX_PACKET_SIZE;
+        MOVS     R0,#+64
+        B.N      ??Read_Memory_4
+//   55     }
+//   56     else
+//   57     {
+//   58       UserToPMABufferCopy((u8 *)Data_Buffer + Block_offset, ENDP1_TXADDR, BULK_MAX_PACKET_SIZE);
+??Read_Memory_3:
+        LDR      R0,[R5, #+8]
+        MOVS     R2,#+64
+        MOVS     R1,#+152
+        ADDS     R0,R6,R0
+        _BLF     UserToPMABufferCopy,??UserToPMABufferCopy??rT
+//   59       Block_Read_count -= BULK_MAX_PACKET_SIZE;
+        LDR      R0,[R5, #+4]
+        SUBS     R0,R0,#+64
+        STR      R0,[R5, #+4]
+//   60       Block_offset += BULK_MAX_PACKET_SIZE;
+        LDR      R0,[R5, #+8]
+        ADDS     R0,R0,#+64
+??Read_Memory_4:
+        STR      R0,[R5, #+8]
+//   61     }
+//   62 
+//   63     SetEPTxCount(ENDP1, BULK_MAX_PACKET_SIZE);
+        MOVS     R1,#+64
+        MOVS     R0,#+1
+        _BLF     SetEPTxCount,??SetEPTxCount??rT
+//   64     SetEPTxStatus(ENDP1, EP_TX_VALID);
+        MOVS     R1,#+48
+        MOVS     R0,#+1
+        _BLF     SetEPTxStatus,??SetEPTxStatus??rT
+//   65     Offset += BULK_MAX_PACKET_SIZE;
+        LDR      R0,[R5, #+20]
+        ADDS     R0,R0,#+64
+        STR      R0,[R5, #+20]
+//   66     Length -= BULK_MAX_PACKET_SIZE;
+        LDR      R0,[R5, #+24]
+        SUBS     R0,R0,#+64
+        STR      R0,[R5, #+24]
+//   67 
+//   68     CSW.dDataResidue -= BULK_MAX_PACKET_SIZE;
+        LDR.N    R0,??DataTable10  ;; CSW
+        LDR      R1,[R0, #+8]
+        SUBS     R1,R1,#+64
+        STR      R1,[R0, #+8]
+//   69   }
+//   70   if (Length == 0)
+??Read_Memory_2:
+        LDR      R0,[R5, #+24]
+        CBNZ     R0,??Read_Memory_5
+//   71   {
+//   72     Block_Read_count = 0;
+//   73     Block_offset = 0;
+//   74     Offset = 0;
+//   75     Bot_State = BOT_DATA_IN_LAST;
+        LDR.N    R1,??DataTable11  ;; Bot_State
+        MOVS     R2,#+3
+        STR      R0,[R5, #+4]
+        STR      R0,[R5, #+8]
+        STR      R0,[R5, #+20]
+        STRB     R2,[R1, #+0]
+//   76     TransferState = TXFR_IDLE;
+        STRB     R0,[R5, #+0]
+//   77   }
+//   78 }
+??Read_Memory_5:
+        POP      {R4-R6,PC}       ;; return
+        CFI EndBlock cfiBlock0
+//   79 /*******************************************************************************
+//   80 * Function Name  : Write_Memory
+//   81 * Description    : Handle the Write operation to the microSD card.
+//   82 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function Write_Memory
+        THUMB
+//   83 void Write_Memory (u32 Memory_Offset, u32 Transfer_Length)
+//   84 {
+//   85 
+//   86   static u32 W_Offset, W_Length;
+//   87 
+//   88   u32 temp =  Counter + 64;
+//   89 
+//   90   if (TransferState == TXFR_IDLE )
+Write_Memory:
+        LDR.N    R2,??DataTable6  ;; Mass_Block_Size
+        PUSH     {R4-R7,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R7 Frame(CFA, -8)
+        CFI R6 Frame(CFA, -12)
+        CFI R5 Frame(CFA, -16)
+        CFI R4 Frame(CFA, -20)
+        CFI CFA R13+20
+        LDR.N    R5,??DataTable7  ;; TransferState
+        MOVS     R6,#+0
+        LDR      R3,[R5, #+12]
+        LDR      R2,[R2, #+0]
+        LDRB     R4,[R5, #+0]
+        ADDS     R3,R3,#+64
+        CBNZ     R4,??Write_Memory_0
+//   91   {
+//   92     W_Offset = Memory_Offset * Mass_Block_Size;
+        MULS     R0,R2,R0
+        STR      R0,[R5, #+28]
+//   93     W_Length = Transfer_Length * Mass_Block_Size;
+        MULS     R1,R2,R1
+        STR      R1,[R5, #+32]
+//   94     TransferState = TXFR_ONGOING;
+        MOVS     R0,#+1
+        STRB     R0,[R5, #+0]
+        B.N      ??Write_Memory_1
+//   95   }
+//   96 
+//   97   if (TransferState == TXFR_ONGOING )
+??Write_Memory_0:
+        CMP      R4,#+1
+        BNE.N    ??Write_Memory_2
+//   98   {
+//   99 
+//  100     for (Idx = 0 ; Counter < temp; Counter++)
+??Write_Memory_1:
+        LDR.N    R4,??DataTable8  ;; Data_Buffer
+        STR      R6,[R5, #+16]
+        B.N      ??Write_Memory_3
+//  101     {
+//  102       *((u8 *)Data_Buffer + Counter) = Bulk_Data_Buff[Idx++];
+??Write_Memory_4:
+        LDR      R0,[R5, #+16]
+        LDR.N    R7,??Write_Memory_5  ;; Bulk_Data_Buff
+        LDR      R1,[R5, #+12]
+        LDRB     R7,[R7, R0]
+        ADDS     R0,R0,#+1
+        STRB     R7,[R4, R1]
+        STR      R0,[R5, #+16]
+//  103     }
+        LDR      R0,[R5, #+12]
+        ADDS     R0,R0,#+1
+        STR      R0,[R5, #+12]
+??Write_Memory_3:
+        LDR      R0,[R5, #+12]
+        CMP      R0,R3
+        BCC.N    ??Write_Memory_4
+//  104 
+//  105     W_Offset += Data_Len;
+        LDR.N    R7,??Write_Memory_5+0x4  ;; Data_Len
+        LDR      R1,[R5, #+28]
+        LDRH     R0,[R7, #+0]
+        ADDS     R3,R1,R0
+//  106     W_Length -= Data_Len;
+        LDR      R1,[R5, #+32]
+        STR      R3,[R5, #+28]
+        SUBS     R0,R1,R0
+        STR      R0,[R5, #+32]
+//  107 
+//  108     if (!(W_Length % Mass_Block_Size))
+        MOVS     R1,R2
+        _BLF     ??divu32_t,??rT??divu32_t
+        CBNZ     R0,??Write_Memory_6
+//  109     {
+//  110       Counter = 0;
+//  111       Clash = 1;
+        LDR.N    R0,??DataTable9  ;; Clash
+        STR      R6,[R5, #+12]
+        MOVS     R1,#+1
+        STRB     R1,[R0, #+0]
+//  112       __ExtFlash_PageWR(Data_Buffer, W_Offset - Mass_Block_Size);  
+        SUBS     R1,R3,R2
+        MOVS     R0,R4
+        _BLF     __ExtFlash_PageWR,??__ExtFlash_PageWR??rT
+//  113       __ExtFlash_PageWR(Data_Buffer + EXT_FLASH_PageSize, W_Offset - EXT_FLASH_PageSize);  
+        LDR      R0,[R5, #+28]
+        MVNS     R1,#+255
+        ADDS     R1,R0,R1
+        ADDW     R0,R4,#+256
+        _BLF     __ExtFlash_PageWR,??__ExtFlash_PageWR??rT
+//  114     }
+//  115 
+//  116     CSW.dDataResidue -= Data_Len;
+??Write_Memory_6:
+        LDR.N    R0,??DataTable10  ;; CSW
+        LDRH     R2,[R7, #+0]
+        LDR      R1,[R0, #+8]
+        SUBS     R1,R1,R2
+        STR      R1,[R0, #+8]
+//  117     SetEPRxStatus(ENDP2, EP_RX_VALID); /* enable the next transaction*/
+        MOVS     R1,#+12288
+        MOVS     R0,#+2
+        _BLF     SetEPRxStatus,??SetEPRxStatus??rT
+//  118 
+//  119   }
+//  120 
+//  121   if ((W_Length == 0) || (Bot_State == BOT_CSW_Send))
+??Write_Memory_2:
+        LDR      R0,[R5, #+32]
+        CBZ      R0,??Write_Memory_7
+        LDR.N    R0,??DataTable11  ;; Bot_State
+        LDRB     R0,[R0, #+0]
+        CMP      R0,#+4
+        BNE.N    ??Write_Memory_8
+//  122   {
+//  123     Counter = 0;
+??Write_Memory_7:
+        STR      R6,[R5, #+12]
+//  124     Set_CSW (CSW_CMD_PASSED, SEND_CSW_ENABLE);
+        MOVS     R1,#+1
+        MOVS     R0,#+0
+        _BLF     Set_CSW,??Set_CSW??rT
+//  125     TransferState = TXFR_IDLE;
+        STRB     R6,[R5, #+0]
+//  126   }
+//  127 }
+??Write_Memory_8:
+        POP      {R4-R7,PC}
+        Nop      
+        DATA
+??Write_Memory_5:
+        DC32     Bulk_Data_Buff
+        DC32     Data_Len
+        CFI EndBlock cfiBlock1
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable6:
+        DC32     Mass_Block_Size
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable7:
+        DC32     TransferState
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable8:
+        DC32     Data_Buffer
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable9:
+        DC32     Clash
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable10:
+        DC32     CSW
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable11:
+        DC32     Bot_State
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__ExtFlash_PageRD??rT:
+        LDR.N    R3,??Subroutine0_0  ;; __ExtFlash_PageRD
+        BX       R3
+        DATA
+??Subroutine0_0:
+        DC32     __ExtFlash_PageRD
+        CFI EndBlock cfiBlock2
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??UserToPMABufferCopy??rT:
+        LDR.N    R3,??Subroutine1_0  ;; UserToPMABufferCopy
+        BX       R3
+        DATA
+??Subroutine1_0:
+        DC32     UserToPMABufferCopy
+        CFI EndBlock cfiBlock3
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SetEPTxCount??rT:
+        LDR.N    R3,??Subroutine2_0  ;; SetEPTxCount
+        BX       R3
+        DATA
+??Subroutine2_0:
+        DC32     SetEPTxCount
+        CFI EndBlock cfiBlock4
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SetEPTxStatus??rT:
+        LDR.N    R3,??Subroutine3_0  ;; SetEPTxStatus
+        BX       R3
+        DATA
+??Subroutine3_0:
+        DC32     SetEPTxStatus
+        CFI EndBlock cfiBlock5
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??rT??divu32_t:
+        PUSH     {R3}
+        CFI CFA R13+4
+        LDR.N    R3,??Subroutine4_0  ;; ??divu32_t
+        MOV      R12,R3
+        POP      {R3}
+        CFI CFA R13+0
+        BX       R12
+        Nop      
+        DATA
+??Subroutine4_0:
+        DC32     ??divu32_t
+        CFI EndBlock cfiBlock6
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__ExtFlash_PageWR??rT:
+        LDR.N    R3,??Subroutine5_0  ;; __ExtFlash_PageWR
+        BX       R3
+        DATA
+??Subroutine5_0:
+        DC32     __ExtFlash_PageWR
+        CFI EndBlock cfiBlock7
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??SetEPRxStatus??rT:
+        LDR.N    R3,??Subroutine6_0  ;; SetEPRxStatus
+        BX       R3
+        DATA
+??Subroutine6_0:
+        DC32     SetEPRxStatus
+        CFI EndBlock cfiBlock8
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Set_CSW??rT:
+        LDR.N    R3,??Subroutine7_0  ;; Set_CSW
+        BX       R3
+        DATA
+??Subroutine7_0:
+        DC32     Set_CSW
+        CFI EndBlock cfiBlock9
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+TransferState:
+        DS8 1
+        DS8 3
+Block_Read_count:
+        DS8 4
+Block_offset:
+        DS8 4
+Counter:
+        DS8 4
+Idx:
+        DS8 4
+        DS8 4
+        DS8 4
+        DS8 4
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+Data_Buffer:
+        DS8 768
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_Z:
+        DCD      sfe(DATA_Z) - sfb(DATA_Z), sfb(DATA_Z), sfb(DATA_Z)
+
+        END
+//  128 /******************************* END OF FILE **********************************/
+//  129 
+// 
+// 426 bytes in segment CODE
+// 804 bytes in segment DATA_Z
+//  12 bytes in segment INITTAB
+// 
+// 354 bytes of CODE memory (+ 84 bytes shared)
+// 804 bytes of DATA memory
+//
+//Errors: none
+//Warnings: none

@@ -1,0 +1,253 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32 EVALUATION   01/Jul/2011  16:19:31 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  D:\Design\DS203\PRG\SYS_V1.50\source\USB_desc.c     /
+//    Command line    =  D:\Design\DS203\PRG\SYS_V1.50\source\USB_desc.c     /
+//                       -lA D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_Prpject\Li /
+//                       st\ -o D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_Prpject /
+//                       \Obj\ -s9 --no_inline --cpu_mode thumb --endian     /
+//                       little --cpu cortex-M3 --stack_align 4 -e --fpu     /
+//                       None --dlib_config "C:\Program Files\IAR            /
+//                       Systems\Embedded Workbench 4.0                      /
+//                       Evaluation\arm\LIB\dl7mptnnl8n.h" -I                /
+//                       D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_Prpject\..\..\ /
+//                       FWLib\inc\ -I D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_ /
+//                       Prpject\..\..\USBLib\inc\ -I                        /
+//                       D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_Prpject\..\inc /
+//                       lude\ -I "C:\Program Files\IAR Systems\Embedded     /
+//                       Workbench 4.0 Evaluation\arm\INC\"                  /
+//    List file       =  D:\Design\DS203\PRG\SYS_V1.50\IAR_V4_Prpject\List\U /
+//                       SB_desc.s79                                         /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME USB_desc
+
+        RTMODEL "StackAlign4", "USED"
+        RTMODEL "__cpu_mode", "__pcs__thumb"
+        RTMODEL "__data_model", "absolute"
+        RTMODEL "__endian", "little"
+        RTMODEL "__rt_version", "6"
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+        PUBWEAK `?*?DATA_ID`
+        PUBWEAK ?init?tab?DATA_I
+        PUBLIC MASS_ConfigDescriptor
+        PUBLIC MASS_DeviceDescriptor
+        PUBLIC MASS_StringInterface
+        PUBLIC MASS_StringLangID
+        PUBLIC MASS_StringProduct
+        PUBLIC MASS_StringSerial
+        PUBLIC MASS_StringVendor
+// D:\Design\DS203\PRG\SYS_V1.50\source\USB_desc.c
+//    1 /******************** (C) COPYRIGHT 2008 STMicroelectronics ********************
+//    2 * File Name          : usb_desc.c
+//    3 * Author             : MCD Application Team
+//    4 * Version            : V2.2.1
+//    5 * Date               : 09/22/2008
+//    6 * Description        : Descriptors for Mass Storage Device
+//    7 ********************************************************************************
+//    8 * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+//    9 * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+//   10 * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+//   11 * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+//   12 * CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+//   13 * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+//   14 *******************************************************************************/
+//   15 
+//   16 /* Includes ------------------------------------------------------------------*/
+//   17 #include "USB_desc.h"
+//   18 
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+//   19 const u8 MASS_DeviceDescriptor[MASS_SIZ_DEVICE_DESC] =
+MASS_DeviceDescriptor:
+        DATA
+        DC8 18, 1, 0, 2, 0, 0, 0, 64, 131, 4, 32, 87, 0, 2, 1, 2, 3, 1, 0, 0
+//   20   {
+//   21     0x12,   /* bLength  */
+//   22     0x01,   /* bDescriptorType */
+//   23     0x00,   /* bcdUSB, version 2.00 */
+//   24     0x02,
+//   25     0x00,   /* bDeviceClass : each interface define the device class */
+//   26     0x00,   /* bDeviceSubClass */
+//   27     0x00,   /* bDeviceProtocol */
+//   28     0x40,   /* bMaxPacketSize0 0x40 = 64 */
+//   29     0x83,   /* idVendor     (0483) */
+//   30     0x04,
+//   31     0x20,   /* idProduct */
+//   32     0x57,
+//   33     0x00,   /* bcdDevice 2.00*/
+//   34     0x02,
+//   35     1,              /* index of string Manufacturer  */
+//   36     /**/
+//   37     2,              /* index of string descriptor of product*/
+//   38     /* */
+//   39     3,              /* */
+//   40     /* */
+//   41     /* */
+//   42     0x01    /*bNumConfigurations */
+//   43   };
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+//   44 const u8 MASS_ConfigDescriptor[MASS_SIZ_CONFIG_DESC] =
+MASS_ConfigDescriptor:
+        DATA
+        DC8 9, 2, 32, 0, 1, 1, 0, 192, 50, 9, 4, 0, 0, 2, 8, 6, 80, 4, 7, 5
+        DC8 129, 2, 64, 0, 0, 7, 5, 2, 2, 64, 0, 0
+//   45   {
+//   46 
+//   47     0x09,   /* bLength: Configuation Descriptor size */
+//   48     0x02,   /* bDescriptorType: Configuration */
+//   49     MASS_SIZ_CONFIG_DESC,
+//   50 
+//   51     0x00,
+//   52     0x01,   /* bNumInterfaces: 1 interface */
+//   53     0x01,   /* bConfigurationValue: */
+//   54     /*      Configuration value */
+//   55     0x00,   /* iConfiguration: */
+//   56     /*      Index of string descriptor */
+//   57     /*      describing the configuration */
+//   58     0xC0,   /* bmAttributes: */
+//   59     /*      bus powered */
+//   60     0x32,   /* MaxPower 100 mA */
+//   61 
+//   62     /******************** Descriptor of Mass Storage interface ********************/
+//   63     /* 09 */
+//   64     0x09,   /* bLength: Interface Descriptor size */
+//   65     0x04,   /* bDescriptorType: */
+//   66     /*      Interface descriptor type */
+//   67     0x00,   /* bInterfaceNumber: Number of Interface */
+//   68     0x00,   /* bAlternateSetting: Alternate setting */
+//   69     0x02,   /* bNumEndpoints*/
+//   70     0x08,   /* bInterfaceClass: MASS STORAGE Class */
+//   71     0x06,   /* bInterfaceSubClass : SCSI transparent*/
+//   72     0x50,   /* nInterfaceProtocol */
+//   73     4,          /* iInterface: */
+//   74     /* 18 */
+//   75     0x07,   /*Endpoint descriptor length = 7*/
+//   76     0x05,   /*Endpoint descriptor type */
+//   77     0x81,   /*Endpoint address (IN, address 1) */
+//   78     0x02,   /*Bulk endpoint type */
+//   79     0x40,   /*Maximum packet size (64 bytes) */
+//   80     0x00,
+//   81     0x00,   /*Polling interval in milliseconds */
+//   82     /* 25 */
+//   83     0x07,   /*Endpoint descriptor length = 7 */
+//   84     0x05,   /*Endpoint descriptor type */
+//   85     0x02,   /*Endpoint address (OUT, address 2) */
+//   86     0x02,   /*Bulk endpoint type */
+//   87     0x40,   /*Maximum packet size (64 bytes) */
+//   88     0x00,
+//   89     0x00     /*Polling interval in milliseconds*/
+//   90     /*32*/
+//   91   };
+//   92 
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+//   93 const u8 MASS_StringLangID[MASS_SIZ_STRING_LANGID] =
+MASS_StringLangID:
+        DATA
+        DC8 4, 3, 9, 4
+//   94   {
+//   95     MASS_SIZ_STRING_LANGID,
+//   96     0x03,
+//   97     0x09,
+//   98     0x04
+//   99   }
+//  100   ;      // LangID = 0x0409: U.S. English //
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+//  101 const u8 MASS_StringVendor[MASS_SIZ_STRING_VENDOR] =
+MASS_StringVendor:
+        DATA
+        DC8 38, 3, 83, 0, 84, 0, 77, 0, 105, 0, 99, 0, 114, 0, 111, 0, 101, 0
+        DC8 108, 0, 101, 0, 99, 0, 116, 0, 114, 0, 111, 0, 110, 0, 105, 0, 99
+        DC8 0, 115, 0, 0, 0
+//  102   {
+//  103     MASS_SIZ_STRING_VENDOR, // Size of manufaturer string //
+//  104     0x03,           // bDescriptorType = String descriptor //
+//  105     // Manufacturer: "STMicroelectronics" //
+//  106     'S', 0, 'T', 0, 'M', 0, 'i', 0, 'c', 0, 'r', 0, 'o', 0, 'e', 0,
+//  107     'l', 0, 'e', 0, 'c', 0, 't', 0, 'r', 0, 'o', 0, 'n', 0, 'i', 0,
+//  108     'c', 0, 's', 0
+//  109   };
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+//  110 const u8 MASS_StringProduct[MASS_SIZ_STRING_PRODUCT] =
+MASS_StringProduct:
+        DATA
+        DC8 38, 3, 83, 0, 84, 0, 77, 0, 51, 0, 50, 0, 32, 0, 77, 0, 97, 0, 115
+        DC8 0, 115, 0, 32, 0, 83, 0, 116, 0, 111, 0, 114, 0, 97, 0, 103, 0, 101
+        DC8 0, 0, 0
+//  111   {
+//  112     MASS_SIZ_STRING_PRODUCT,
+//  113     0x03,
+//  114     // Product name: "STM32F10x:USB Mass Storage" //
+//  115     'S', 0, 'T', 0, 'M', 0, '3', 0, '2', 0, ' ', 0, 'M', 0, 'a', 0, 's', 0,
+//  116     's', 0, ' ', 0, 'S', 0, 't', 0, 'o', 0, 'r', 0, 'a', 0, 'g', 0, 'e', 0
+//  117 
+//  118   };
+//  119 
+
+        RSEG DATA_I:DATA:SORT:NOROOT(2)
+//  120 u8 MASS_StringSerial[MASS_SIZ_STRING_SERIAL] =
+MASS_StringSerial:
+        DS8 28
+        REQUIRE `?<Initializer for MASS_StringSerial>`
+//  121   {
+//  122     MASS_SIZ_STRING_SERIAL,
+//  123     0x03,
+//  124     // Serial number//
+//  125     'S', 0, 'T', 0, 'M', 0, '3', 0, '2', 0, '1', 0, '0', 0
+//  126   };
+//  127 
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+//  128 const u8 MASS_StringInterface[MASS_SIZ_STRING_INTERFACE] =
+MASS_StringInterface:
+        DATA
+        DC8 16, 3, 83, 0, 84, 0, 32, 0, 77, 0, 97, 0, 115, 0, 115, 0
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(2)
+`?<Initializer for MASS_StringSerial>`:
+        DATA
+        DC8 26, 3, 83, 0, 84, 0, 77, 0, 51, 0, 50, 0, 49, 0, 48, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(2)
+`?*?DATA_ID`:
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_I:
+        DCD      sfe(DATA_I) - sfb(DATA_I), sfb(DATA_I), sfb(DATA_ID)
+
+        END
+//  129   {
+//  130     MASS_SIZ_STRING_INTERFACE,
+//  131     0x03,
+//  132     // Interface 0: "ST Mass" //
+//  133     'S', 0, 'T', 0, ' ', 0, 'M', 0, 'a', 0, 's', 0, 's', 0
+//  134   };
+//  135 
+//  136 /******************* (C) COPYRIGHT 2008 STMicroelectronics *****END OF FILE****/
+// 
+// 152 bytes in segment DATA_C
+//  28 bytes in segment DATA_I
+//  28 bytes in segment DATA_ID
+//  12 bytes in segment INITTAB
+// 
+//   0 bytes of CODE  memory (+ 12 bytes shared)
+// 180 bytes of CONST memory
+//  28 bytes of DATA  memory
+//
+//Errors: none
+//Warnings: none

@@ -1,0 +1,3429 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32 EVALUATION   08/Aug/2011  16:45:32 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  D:\Design\DS203\PRG\APP_V2.51\source\Menu.c         /
+//    Command line    =  D:\Design\DS203\PRG\APP_V2.51\source\Menu.c -lA     /
+//                       D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\List\  /
+//                       -o D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj /
+//                       \ -s9 --debug --cpu_mode thumb --endian little      /
+//                       --cpu cortex-M3 --stack_align 4 --fpu None          /
+//                       --dlib_config "C:\Program Files\IAR                 /
+//                       Systems\Embedded Workbench 4.0                      /
+//                       Evaluation\arm\LIB\dl7mptnnl8f.h" -I                /
+//                       D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\..\..\ /
+//                       FWLib\inc\ -I D:\Design\DS203\PRG\APP_V2.51\IAR_V4_ /
+//                       Prpject\..\..\USBLib\inc\ -I                        /
+//                       D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\..\inc /
+//                       lude\ -I "C:\Program Files\IAR Systems\Embedded     /
+//                       Workbench 4.0 Evaluation\arm\INC\"                  /
+//                       --inline_threshold=16                               /
+//    List file       =  D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\List\M /
+//                       enu.s79                                             /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME Menu
+
+        RTMODEL "StackAlign4", "USED"
+        RTMODEL "__cpu_mode", "__pcs__thumb"
+        RTMODEL "__data_model", "absolute"
+        RTMODEL "__endian", "little"
+        RTMODEL "__rt_version", "6"
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+        EXTERN ??div32_t
+        EXTERN ??divu32_t
+
+        PUBWEAK `?*?DATA_ID`
+??DataTable6 EQU 0
+??DataTable7 EQU 0
+        MULTWEAK ??Int2Str??rT
+        MULTWEAK ??Int_sqrt??rT
+        MULTWEAK ??Power??rT
+        MULTWEAK ??Print_Str??rT
+        MULTWEAK ??__Get??rT
+        MULTWEAK ??rT??div32_t
+        MULTWEAK ??rT??divu32_t
+        MULTWEAK ??strcpy??rT
+        MULTWEAK ??u8ToDec3??rT
+        PUBWEAK ?init?tab?DATA_I
+        PUBWEAK ?init?tab?DATA_Z
+        PUBLIC BATT_STR
+        PUBLIC BL_Str
+        PUBLIC B_COLOR
+        PUBLIC BaseStr
+        PUBLIC CH_A_STR
+        PUBLIC CH_B_STR
+        PUBLIC CH_C_STR
+        PUBLIC CH_D_STR
+        PUBLIC Current
+        PUBLIC DELTA_T
+        PUBLIC DELTA_V
+        PUBLIC Detail
+        PUBLIC Display_Meter
+        FUNCTION Display_Meter,0203H
+        LOCFRAME CSTACK, 24, STACK
+        PUBLIC Display_Title
+        FUNCTION Display_Title,0203H
+        LOCFRAME CSTACK, 60, STACK
+        PUBLIC Display_Value
+        FUNCTION Display_Value,0203H
+        LOCFRAME CSTACK, 96, STACK
+        PUBLIC FO_STR
+        PUBLIC FO_TYPE
+        PUBLIC F_EXT
+        PUBLIC F_FUNC
+        PUBLIC F_INV
+        PUBLIC F_UNIT
+        PUBLIC Load_Attr
+        FUNCTION Load_Attr,0203H
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC METER
+        PUBLIC MODESTR
+        PUBLIC Meter
+        PUBLIC NO_DEF
+        PUBLIC NO_RANGE
+        PUBLIC N_UNIT
+        PUBLIC NumStr
+        PUBLIC O_COLOR
+        PUBLIC P_UNIT
+        PUBLIC Result_FPS
+        PUBLIC STATESTR
+        PUBLIC S_Inv
+        PUBLIC S_UNIT
+        PUBLIC TRIGSTR
+        PUBLIC TR_TYPE
+        PUBLIC T_COLOR
+        PUBLIC T_INV
+        PUBLIC T_UNIT
+        PUBLIC Title
+        PUBLIC TypeA
+        PUBLIC Update
+        PUBLIC Update_Battery
+        FUNCTION Update_Battery,0203H
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC VERNIE1
+        PUBLIC VERNIE2
+        PUBLIC VERNIE3
+        PUBLIC VERNIE4
+        PUBLIC VT_STR
+        PUBLIC V_COLOR
+        PUBLIC V_INV
+        PUBLIC V_UNIT
+        PUBLIC Vertical
+        PUBLIC Vol_Str
+        PUBLIC XCOLOR
+        PUBLIC XPOSISTR
+        PUBLIC YCOUPLE
+        PUBLIC YPOSISTR
+        PUBLIC Y_COLOR
+        PUBLIC Y_INV
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA R13 HUGEDATA
+        CFI Resource R0:32, R1:32, R2:32, R3:32, R4:32, R5:32, R6:32, R7:32
+        CFI Resource R8:32, R9:32, R10:32, R11:32, R12:32, R13:32, R14:32
+        CFI VirtualResource ?RET:32
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 2
+        CFI DataAlign 4
+        CFI ReturnAddress ?RET CODE
+        CFI CFA R13+0
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI R8 SameValue
+        CFI R9 SameValue
+        CFI R10 SameValue
+        CFI R11 SameValue
+        CFI R12 Undefined
+        CFI R14 Undefined
+        CFI ?RET R14
+        CFI EndCommon cfiCommon0
+        
+Int2Str             SYMBOL "Int2Str"
+Int_sqrt            SYMBOL "Int_sqrt"
+Power               SYMBOL "Power"
+Print_Str           SYMBOL "Print_Str"
+__Get               SYMBOL "__Get"
+strcpy              SYMBOL "strcpy"
+u8ToDec3            SYMBOL "u8ToDec3"
+??Int2Str??rT       SYMBOL "??rT", Int2Str
+??Int_sqrt??rT      SYMBOL "??rT", Int_sqrt
+??Power??rT         SYMBOL "??rT", Power
+??Print_Str??rT     SYMBOL "??rT", Print_Str
+??__Get??rT         SYMBOL "??rT", __Get
+??strcpy??rT        SYMBOL "??rT", strcpy
+??u8ToDec3??rT      SYMBOL "??rT", u8ToDec3
+
+        EXTERN Blink
+        EXTERN G_Attr
+        EXTERN Int2Str
+        FUNCTION Int2Str,0202H
+        EXTERN Int_sqrt
+        FUNCTION Int_sqrt,0202H
+        EXTERN Interlace
+        EXTERN Ka1
+        EXTERN Ka2
+        EXTERN Kb1
+        EXTERN Kb2
+        EXTERN PaS
+        EXTERN PbS
+        EXTERN PcS
+        EXTERN PdS
+        EXTERN Power
+        FUNCTION Power,0202H
+        EXTERN Print_Str
+        FUNCTION Print_Str,0202H
+        EXTERN TaN
+        EXTERN TaS
+        EXTERN TbN
+        EXTERN TbS
+        EXTERN TcN
+        EXTERN TcS
+        EXTERN TdN
+        EXTERN TdS
+        EXTERN Twink
+        EXTERN X_Attr
+        EXTERN Y_Attr
+        EXTERN __Get
+        FUNCTION __Get,0202H
+        EXTERN a_Avg
+        EXTERN a_Max
+        EXTERN a_Min
+        EXTERN a_Ssq
+        EXTERN b_Avg
+        EXTERN b_Max
+        EXTERN b_Min
+        EXTERN b_Ssq
+        EXTERN strcpy
+        FUNCTION strcpy,010202H
+        EXTERN u8ToDec3
+        FUNCTION u8ToDec3,0202H
+
+// D:\Design\DS203\PRG\APP_V2.51\source\Menu.c
+//    1 /********************* (C) COPYRIGHT 2010 e-Design Co.,Ltd. ********************
+//    2  File Name : Menu.c  
+//    3  Version   : DS203_APP Ver 2.5x                                  Author : bure
+//    4 *******************************************************************************/
+//    5 #include <string.h>
+//    6 #include "Interrupt.h"
+//    7 #include "Function.h"
+//    8 #include "Process.h"
+//    9 #include "Menu.h"
+//   10 #include "Draw.h"
+//   11 #include "BIOS.h"
+//   12 
+//   13 //I32STR_RES Num;
+//   14 
+//   15 u16 Result_FPS;
+//   16 
+//   17 //  u8 N[20];
+//   18 //uc8 T_UNIT[12] ={'A','B', 0 ,'C','D', 0 ,'E','F', 0 ,'G','H', 0 };
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+//   19 uc8 T_UNIT[12] ={'u','S', 0 ,'u','S', 0 ,'m','S', 0 ,'S',' ', 0 };
+//   20 uc8 V_UNIT[12] ={'m','V', 0 ,'m','V', 0 ,'V',' ', 0 ,'k','V', 0 };
+//   21 uc8 F_UNIT[12] ={'H','z', 0 ,'H','z', 0 ,'K','C', 0 ,'M','C', 0 };
+//   22 uc8 N_UNIT[12] ={ 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 };
+//   23 uc8 S_UNIT[12] ={'/','S','e','c', 0 ,'/','S','e','c', 0 , 0 , 0 };
+//   24 uc8 P_UNIT[12] ={'%',' ', 0 ,'%',' ', 0 ,'%',' ', 0 , 0 , 0 , 0 };
+//   25 //u8 V_Unit[4][3]={"uV","mV","V ","kV"};
+//   26 //u8 T_Unit[5][3]={"nS","uS","mS","S ","  "};
+//   27 //u8 F_Unit[5][4]={"Hz","Hz","KC","MC","  "};
+//   28 
+//   29 uc8 STATESTR[3][10] = {"!RUN!", "HOLD", "HOLD"};                  // Running state str
+//   30 
+//   31 uc16 S_Inv[3]       = {(SCRN<<8)+TEXT2, (SCRN<<8)+X_POSI, (SCRN<<8)+NOTE1};         // Running state Color
+//   32 
+//   33 uc8 BATT_STR[5][10] = {"~``'", "~``}", "~`;}", "~;;}", "{;;}"};   // Battery Status Str
+//   34 uc16 B_COLOR[5]     = {(NOTE1<<8)+SCRN, (SIDE <<8)+SCRN,
+//   35                        (TEXT2<<8)+SCRN, (TEXT2<<8)+SCRN,
+//   36                        (TEXT2<<8)+SCRN};                          // Battery Status Color
+//   37 
+//   38 uc8 CH_A_STR[2][10]  = {" HIDE ", "!CH(A)!"};
+//   39 uc8 CH_B_STR[2][10]  = {" HIDE ", "!CH(B)!"};
+//   40 uc8 CH_C_STR[2][10]  = {" HIDE ", "!CH(C)!"};
+//   41 uc8 CH_D_STR[10][10] = {" HIDE ", "!CH(D)!", "!(A+B)!", "!(A-B)!",  
+//   42                      "!(C&D)!", "!(C|D)!", "!REC_A!",  "!REC_B!",
+//   43                         "!REC_C!",  "!REC_D!"};                      // Track source Str
+//   44 uc8 NO_RANGE[5]      = " -- ";                       
+//   45 uc8 NO_DEF[5]        = "--";                       
+//   46 
+//   47 uc8  YCOUPLE[3][10]  = {"DC", "AC", "!-!"};                        // Track Couple Str                    
+//   48 u8   Vertical[15][10];                                             // Track Range Str
+//   49 uc8  YPOSISTR[5]    = {"YPOS"};                                    // Track Position Str 
+//   50 uc16 Y_INV[5]       = {(SCRN<<8)+TR_1, (SCRN<<8)+TR_2,
+//   51                        (SCRN<<8)+TR_3, (SCRN<<8)+TR_4,
+//   52                        (SCRN<<8)+VERNIE};                          // Track Color 1
+//   53 uc16 Y_COLOR[5]     = {(TR_1<<8)+SCRN, (TR_2<<8)+SCRN,
+Y_COLOR:
+        DATA
+        DC16 5, 261, 517, 773, 1029
+        DC8 0, 0
+T_UNIT:
+        DC8 117, 83, 0, 117, 83, 0, 109, 83, 0, 83, 32, 0
+V_UNIT:
+        DC8 109, 86, 0, 109, 86, 0, 86, 32, 0, 107, 86, 0
+F_UNIT:
+        DC8 72, 122, 0, 72, 122, 0, 75, 67, 0, 77, 67, 0
+S_UNIT:
+        DC8 47, 83, 101, 99, 0, 47, 83, 101, 99, 0, 0, 0
+P_UNIT:
+        DC8 37, 32, 0, 37, 32, 0, 37, 32, 0, 0, 0, 0
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+N_UNIT:
+        DATA
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+STATESTR:
+        DATA
+        DC8 "!RUN!"
+        DC8 0, 0, 0, 0
+        DC8 "HOLD"
+        DC8 0, 0, 0, 0, 0
+        DC8 "HOLD"
+        DC8 0, 0, 0, 0, 0, 0, 0
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+S_Inv:
+        DATA
+        DC16 1291, 1286, 1295
+        DC8 0, 0
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+BATT_STR:
+        DATA
+        DC8 "~``'"
+        DC8 0, 0, 0, 0, 0
+        DC8 "~``}"
+        DC8 0, 0, 0, 0, 0
+        DC8 "~`;}"
+        DC8 0, 0, 0, 0, 0
+        DC8 "~;;}"
+        DC8 0, 0, 0, 0, 0
+        DC8 "{;;}"
+        DC8 0, 0, 0, 0, 0, 0, 0
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+B_COLOR:
+        DATA
+        DC16 3845, 3589, 2821, 2821, 2821
+        DC8 0, 0
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+CH_A_STR:
+        DATA
+        DC8 " HIDE "
+        DC8 0, 0, 0
+        DC8 "!CH(A)!"
+        DC8 0, 0
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+CH_B_STR:
+        DATA
+        DC8 " HIDE "
+        DC8 0, 0, 0
+        DC8 "!CH(B)!"
+        DC8 0, 0
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+CH_C_STR:
+        DATA
+        DC8 " HIDE "
+        DC8 0, 0, 0
+        DC8 "!CH(C)!"
+        DC8 0, 0
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+CH_D_STR:
+        DATA
+        DC8 " HIDE "
+        DC8 0, 0, 0
+        DC8 "!CH(D)!"
+        DC8 0, 0
+        DC8 "!(A+B)!"
+        DC8 0, 0
+        DC8 "!(A-B)!"
+        DC8 0, 0
+        DC8 "!(C&D)!"
+        DC8 0, 0
+        DC8 "!(C|D)!"
+        DC8 0, 0
+        DC8 "!REC_A!"
+        DC8 0, 0
+        DC8 "!REC_B!"
+        DC8 0, 0
+        DC8 "!REC_C!"
+        DC8 0, 0
+        DC8 "!REC_D!"
+        DC8 0, 0
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+NO_RANGE:
+        DATA
+        DC8 " -- "
+        DC8 0, 0, 0
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+NO_DEF:
+        DATA
+        DC8 "--"
+        DC8 0, 0, 0, 0, 0
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+YCOUPLE:
+        DATA
+        DC8 "DC"
+        DC8 0, 0, 0, 0, 0, 0, 0
+        DC8 "AC"
+        DC8 0, 0, 0, 0, 0, 0, 0
+        DC8 "!-!"
+        DC8 0, 0, 0, 0, 0, 0, 0, 0
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+YPOSISTR:
+        DATA
+        DC8 "YPOS"
+        DC8 0, 0, 0
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+Y_INV:
+        DATA
+        DC16 1280, 1281, 1282, 1283, 1284
+        DC8 0, 0
+//   54                        (TR_3<<8)+SCRN, (TR_4<<8)+SCRN,
+//   55                        (VERNIE<<8)+SCRN};                          // Track Color 2
+//   56 
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+//   57 uc8 MODESTR[5][10]  = {"!AUTO!", "!NORM!", "SINGL", "!NONE!",
+MODESTR:
+        DATA
+        DC8 "!AUTO!"
+        DC8 0, 0, 0
+        DC8 "!NORM!"
+        DC8 0, 0, 0
+        DC8 "SINGL"
+        DC8 0, 0, 0, 0
+        DC8 "!NONE!"
+        DC8 0, 0, 0
+        DC8 "!SCAN!"
+        DC8 0, 0, 0, 0, 0
+//   58                        "!SCAN!"};                                  // Sync Mode Str
+//   59 u8   BaseStr[30][10];                                              // Time Base b Str
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+//   60 uc8  XPOSISTR[5]    = {"XPOS"};
+XPOSISTR:
+        DATA
+        DC8 "XPOS"
+        DC8 0, 0, 0
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+//   61 uc16 XCOLOR[2]      = {(SCRN<<8)+X_POSI, (X_POSI<<8)+SCRN};        // Time Base Color
+XCOLOR:
+        DATA
+        DC16 1286, 1541
+//   62 
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+//   63 uc8 FO_TYPE[4][10]  = {" SINE ",  "Triang",  " !Saw! ",  "Square"}; // Output Kind Str  "Kd=  %"
+FO_TYPE:
+        DATA
+        DC8 " SINE "
+        DC8 0, 0, 0
+        DC8 "Triang"
+        DC8 0, 0, 0
+        DC8 " !Saw! "
+        DC8 0, 0
+        DC8 "Square"
+        DC8 0, 0, 0
+//   64 
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+//   65 uc8 FO_STR[20][10]  = {" 10Hz ",  " 20Hz ",  " 50Hz ",   " 100Hz",
+FO_STR:
+        DATA
+        DC8 " 10Hz "
+        DC8 0, 0, 0
+        DC8 " 20Hz "
+        DC8 0, 0, 0
+        DC8 " 50Hz "
+        DC8 0, 0, 0
+        DC8 " 100Hz"
+        DC8 0, 0, 0
+        DC8 "!200Hz!"
+        DC8 0, 0
+        DC8 "!500Hz!"
+        DC8 0, 0
+        DC8 " 1KHz "
+        DC8 0, 0, 0
+        DC8 " 2KHz "
+        DC8 0, 0, 0
+        DC8 " 5KHz "
+        DC8 0, 0, 0
+        DC8 "!10KHz!"
+        DC8 0, 0
+        DC8 "!20KHz!"
+        DC8 0, 0
+        DC8 "!50KHz!"
+        DC8 0, 0
+        DC8 "100KHz"
+        DC8 0, 0, 0
+        DC8 "200KHz"
+        DC8 0, 0, 0
+        DC8 "500KHz"
+        DC8 0, 0, 0
+        DC8 " 1MHz "
+        DC8 0, 0, 0
+        DC8 " 2MHz "
+        DC8 0, 0, 0
+        DC8 " 4MHz "
+        DC8 0, 0, 0
+        DC8 " 6MHz "
+        DC8 0, 0, 0
+        DC8 " 8MHz "
+        DC8 0, 0, 0
+//   66                        "!200Hz!", "!500Hz!", " 1KHz ",   " 2KHz ",
+//   67                        " 5KHz ",  "!10KHz!", "!20KHz!",  "!50KHz!",
+//   68                        "100KHz",  "200KHz",  "500KHz",   " 1MHz ",
+//   69                        " 2MHz ",  " 4MHz ",  " 6MHz ",   " 8MHz "}; // Output Frequency Str
+//   70 
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+//   71 uc16 O_COLOR[2]     = {(SCRN<<8)+TEXT3, (TEXT3<<8)+SCRN};         // Output Frequency Color
+O_COLOR:
+        DATA
+        DC16 1292, 3077
+//   72 
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+//   73 uc8  TRIGSTR[8][10] = {"TRIGG", "TRIGG", "TRIGG", "TRIGG"};      // Trigger source Str
+TRIGSTR:
+        DATA
+        DC8 "TRIGG"
+        DC8 0, 0, 0, 0
+        DC8 "TRIGG"
+        DC8 0, 0, 0, 0
+        DC8 "TRIGG"
+        DC8 0, 0, 0, 0
+        DC8 "TRIGG"
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+//   74                           
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+//   75 uc8  TR_TYPE[8][10] = {":!\\!", ":!^!", "<Vt", ">Vt",            // Trigger Type Str
+TR_TYPE:
+        DATA
+        DC8 ":!\\!"
+        DC8 0, 0, 0, 0, 0
+        DC8 ":!^!"
+        DC8 0, 0, 0, 0, 0
+        DC8 "<Vt"
+        DC8 0, 0, 0, 0, 0, 0
+        DC8 ">Vt"
+        DC8 0, 0, 0, 0, 0, 0
+        DC8 "<TL"
+        DC8 0, 0, 0, 0, 0, 0
+        DC8 ">TL"
+        DC8 0, 0, 0, 0, 0, 0
+        DC8 "<TH"
+        DC8 0, 0, 0, 0, 0, 0
+        DC8 ">TH"
+        DC8 0, 0, 0, 0, 0, 0
+//   76                        "<TL",   ">TL",  "<TH", ">TH"};
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+//   77 uc8  VT_STR[9]      =  "THRESHOL";                                // Trigg Voltage Str
+VT_STR:
+        DATA
+        DC8 "THRESHOL"
+        DC8 0, 0, 0
+//   78                           
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+//   79 uc8  VERNIE1[5]     = {"!V1!"};          // V1 Vernie Str
+VERNIE1:
+        DATA
+        DC8 "!V1!"
+        DC8 0, 0, 0
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+//   80 uc8  VERNIE2[5]     = {"!V2!"};          // V2 Vernie Str
+VERNIE2:
+        DATA
+        DC8 "!V2!"
+        DC8 0, 0, 0
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+//   81 uc8  VERNIE3[5]     = {"!T1!"};          // T1 Vernie Str
+VERNIE3:
+        DATA
+        DC8 "!T1!"
+        DC8 0, 0, 0
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+//   82 uc8  VERNIE4[5]     = {"!T2!"};          // T2 Vernie Str
+VERNIE4:
+        DATA
+        DC8 "!T2!"
+        DC8 0, 0, 0
+
+        RSEG DATA_C:CONST:SORT:NOROOT(1)
+//   83 uc16 V_INV[1]       = {(SCRN<<8)+VERNIE};
+V_INV:
+        DATA
+        DC16 1284
+
+        RSEG DATA_C:CONST:SORT:NOROOT(1)
+//   84 uc16 V_COLOR[1]     = {(VERNIE<<8)+SCRN};                         // Y Vernie Color
+V_COLOR:
+        DATA
+        DC16 1029
+
+        RSEG DATA_C:CONST:SORT:NOROOT(1)
+//   85 uc16 T_INV[1]       = {(SCRN<<8)+VERNIE};
+T_INV:
+        DATA
+        DC16 1284
+
+        RSEG DATA_C:CONST:SORT:NOROOT(1)
+//   86 uc16 T_COLOR[1]        = {(VERNIE<<8)+SCRN};                         // X Vernie Color
+T_COLOR:
+        DATA
+        DC16 1029
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+//   87 uc8  F_FUNC[2][10]  = {"Save File", "Load File"};                 // File Function Str
+F_FUNC:
+        DATA
+        DC8 "Save File"
+        DC8 "Load File"
+//   88 
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+//   89 uc8  F_EXT[8][10]   = {".BMP?", ".DAT?", ".BUF?",".CSV?", " OK! ",
+F_EXT:
+        DATA
+        DC8 ".BMP?"
+        DC8 0, 0, 0, 0
+        DC8 ".DAT?"
+        DC8 0, 0, 0, 0
+        DC8 ".BUF?"
+        DC8 0, 0, 0, 0
+        DC8 ".CSV?"
+        DC8 0, 0, 0, 0
+        DC8 " OK! "
+        DC8 0, 0, 0, 0
+        DC8 " ERR!"
+        DC8 0, 0, 0, 0
+        DC8 ".HEX"
+        DC8 0, 0, 0, 0, 0
+        DC8 ".BIN"
+        DC8 0, 0, 0, 0, 0
+//   90                          " ERR!",".HEX", ".BIN",};                  // File Ext Name Str
+
+        RSEG DATA_C:CONST:SORT:NOROOT(1)
+//   91 uc16 F_INV[1]       = {(SCRN<<8)+TEXT1};                          //  File Color
+F_INV:
+        DATA
+        DC16 1290
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+//   92 uc8  DELTA_V[2][10] = {"[V:", "[V:"};
+DELTA_V:
+        DATA
+        DC8 "[V:"
+        DC8 0, 0, 0, 0, 0, 0
+        DC8 "[V:"
+        DC8 0, 0, 0, 0, 0, 0
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+//   93 uc8  DELTA_T[4]     = "[T:";
+DELTA_T:
+        DATA
+        DC8 "[T:"
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+//   94 uc8  METER[12][5]   = {"Vbt", "FPS", "Vpp", "Vdc", "RMS",  "Max", 
+METER:
+        DATA
+        DC8 "Vbt"
+        DC8 0
+        DC8 "FPS"
+        DC8 0
+        DC8 "Vpp"
+        DC8 0
+        DC8 "Vdc"
+        DC8 0
+        DC8 "RMS"
+        DC8 0
+        DC8 "Max"
+        DC8 0
+        DC8 "Min"
+        DC8 0
+        DC8 "FRQ"
+        DC8 0
+        DC8 "CIR"
+        DC8 0
+        DC8 "DUT"
+        DC8 0
+        DC8 "!TH!"
+        DC8 "!TL!"
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+//   95                        "Min", "FRQ", "CIR", "DUT", "!TH!", "!TL!"};
+//   96 
+//   97 u8   Detail[14], NumStr[12];
+//   98 u8   Current = 0, TypeA = 0, Update = 1;
+Current:
+        DS8 1
+        DS8 3
+Detail:
+        DS8 16
+NumStr:
+        DS8 12
+Result_FPS:
+        DS8 2
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(0)
+TypeA:
+        DS8 1
+
+        RSEG DATA_I:DATA:SORT:NOROOT(2)
+//   99 u8   BL_Str[5]="B.L", Vol_Str[5]="Vol";
+//  100 
+//  101 menu Title[13][4]=   
+Title:
+        DS8 1040
+        REQUIRE `?<Initializer for Title>`
+Vertical:
+        DS8 152
+        REQUIRE `?<Initializer for Vertical>`
+BaseStr:
+        DS8 300
+        REQUIRE `?<Initializer for BaseStr>`
+
+        RSEG DATA_I:DATA:SORT:NOROOT(0)
+Update:
+        DS8 1
+        REQUIRE `?<Initializer for Update>`
+
+        RSEG DATA_I:DATA:SORT:NOROOT(2)
+BL_Str:
+        DS8 8
+        REQUIRE `?<Initializer for BL_Str>`
+
+        RSEG DATA_I:DATA:SORT:NOROOT(2)
+Vol_Str:
+        DS8 8
+        REQUIRE `?<Initializer for Vol_Str>`
+//  102 {
+//  103   //     Item_String,   m_Color,   Limit, Mark, xPos, yPos, Value, Flag 
+//  104   {//============================ Title Track1 Group ===========================
+//  105     {(u8*)CH_A_STR,(u16*)Y_INV,     2-1, CIRC,   35,  228,     1, UPDAT}, //  Track source
+//  106     {(u8*)YCOUPLE, (u16*)Y_COLOR,   2-1, CIRC,   35,  216,     0, UPDAT}, //  Track Couple        
+//  107     {(u8*)Vertical,(u16*)Y_COLOR,   9-1,    0,   51,  216,     5, UPDAT}, //  Track Range 
+//  108     {(u8*)YPOSISTR,(u16*)Y_INV,     200,  FIX,    0,    0,   150, UPDAT}, //  Adj. Track Position 160
+//  109   },
+//  110   {//============================ Title Track2 Group ===========================
+//  111     {(u8*)CH_B_STR,(u16*)Y_INV+1,   2-1, CIRC,   86,  228,     1, UPDAT}, //  Track source
+//  112     {(u8*)YCOUPLE, (u16*)Y_COLOR+1, 2-1, CIRC,   86,  216,     1, UPDAT}, //  Track Couple        
+//  113     {(u8*)Vertical,(u16*)Y_COLOR+1, 9-1,    0,  102,  216,     1, UPDAT}, //  Track Range
+//  114     {(u8*)YPOSISTR,(u16*)Y_INV+1,   200,  FIX,    0,    0,   100, UPDAT}, //  Adj. Track Position
+//  115   },
+//  116   {//============================ Title Track3 Group ===========================
+//  117     {(u8*)CH_C_STR,(u16*)Y_INV+2,   2-1, CIRC,  137,  228,     1, UPDAT}, //  Track source
+//  118     {(u8*)NO_DEF , (u16*)Y_COLOR+2, 1-1, CIRC,  137,  216,     0, UPDAT}, //  Track Couple        
+//  119     {(u8*)NO_RANGE,(u16*)Y_COLOR+2, 1-1,    0,  153,  216,     0, UPDAT}, //  Track Range
+//  120     {(u8*)YPOSISTR,(u16*)Y_INV+2, 200-1,  FIX,    0,    0,    60, UPDAT}, //  Adj. Track Position
+//  121   },
+//  122   {//============================ Title Track4 Group ===========================
+//  123     {(u8*)CH_D_STR,(u16*)Y_INV+3,  10-1, CIRC,  188,  228,     1, UPDAT}, //  Track source
+//  124     {(u8*)NO_DEF , (u16*)Y_COLOR+3, 1-1, CIRC,  188,  216,     0, UPDAT}, //  Track Couple        
+//  125     {(u8*)NO_RANGE,(u16*)Y_COLOR+3, 1-1,    0,  204,  216,     0, UPDAT}, //  Track Range
+//  126     {(u8*)YPOSISTR,(u16*)Y_INV+3, 200-1,  FIX,    0,    0,    20, UPDAT}, //  Adj. Track Position
+//  127   },
+//  128   {//================== Running State & Battery Status Group ===================
+//  129     {(u8*)STATESTR,(u16*)S_Inv,     3-1,    0,    0,  228,     0, UPDAT}, //  Running state
+//  130     {(u8*)BATT_STR,(u16*)B_COLOR,   5-1,    0,    0,  216,     0, UPDAT}, //  Battery status
+//  131     {(u8*)BATT_STR,(u16*)B_COLOR,   5-1,  NOT,    0,    0,     0,   HID}, 
+//  132     {(u8*)BATT_STR,(u16*)B_COLOR,   5-1,  NOT,    0,    0,     0,   HID},
+//  133   },
+//  134   {//========================= Title Time Base Group ===========================
+//  135     {(u8*)MODESTR, (u16*)XCOLOR,    5-1, CIRC,  239,  228,     0, UPDAT}, //  Sync Mode
+//  136     {(u8*)BaseStr, (u16*)XCOLOR+1, 27-1,    0,  239,  216,    17, UPDAT}, //  Time Base Range
+//  137     {(u8*)XPOSISTR,(u16*)XCOLOR,   3795,  FIX,  366,    0,     0, UPDAT}, //  Adj. X position
+//  138     {(u8*)XPOSISTR,(u16*)XCOLOR,   3795,  NOT,   80,    0,     0, UPDAT}, //  View window rule
+//  139   },           
+//  140   {//======================= Title Output Signal Group =========================
+//  141     {(u8*)FO_TYPE, (u16*)O_COLOR,   4-1, CIRC,  282,  228,     3, UPDAT}, //  Output Wave Kind         
+//  142     {(u8*)FO_STR,  (u16*)O_COLOR+1,20-1,    0,  282,  216,    13, UPDAT}, //  Output Frequency         
+//  143     {(u8*)NumStr,  (u16*)O_COLOR,   100,  NOT,  306,  228,    50,   HID},        
+//  144     {(u8*)NumStr,  (u16*)O_COLOR,     0,  NOT,    0,    0,     0,   HID}, //  Duty value          
+//  145   },
+//  146   {//=====================;===== Title Trigger Group ====;======================
+//  147     {(u8*)TRIGSTR, (u16*)Y_INV,     4-1, CIRC,  333,  228,     1, UPDAT}, //  Trigger source         
+//  148     {(u8*)TR_TYPE, (u16*)Y_INV,     8-1, CIRC,  373,  228,     0, UPDAT}, //  Trigger Kine         
+//  149     {(u8*)VT_STR,  (u16*)Y_COLOR,   200,  FIX,  333,  216,     0, UPDAT}, //  Adj. Trigger threshold     
+//  150     {(u8*)VT_STR,  (u16*)Y_COLOR,     0,  NOT,  357,  216,     0,   HID}, //  Number position     
+//  151   },
+//  152   {//============================ Title Y Vernie Group =========================
+//  153     {(u8*)VERNIE1, (u16*)V_INV,   200-1,  FIX,   35,    0,   180, UPDAT}, //  V1 Vernie         
+//  154     {(u8*)VERNIE2, (u16*)V_INV,   200-1,  FIX,   62,    0,    40, UPDAT}, //  V2 Vernie     
+//  155     {(u8*)DELTA_V, (u16*)Y_INV,     2-1, CIRC,  314,  197,     0, UPDAT}, //  Measure Track    
+//  156     {(u8*)NumStr,  (u16*)Y_COLOR,   240, NUM3,  342,  197,    70, UPDAT}, //  Delta V value    
+//  157   },
+//  158   {//============================= Title File Group ============================
+//  159     {(u8*)F_FUNC,  (u16*)F_INV,     2-1, CIRC,  134,    0,     0,     0}, //  File function    
+//  160     {(u8*)NumStr,  (u16*)F_INV,   256-1, NUM3,  206,    0,     0,     1}, //  File number     
+//  161     {(u8*)F_EXT,   (u16*)F_INV,     4-1, CIRC,  230,    0,     0,     0}, //  Ext. name     
+//  162     {(u8*)F_EXT,   (u16*)F_INV,       0,  NOT,    0,    0,     0,   HID},  
+//  163   },
+//  164   {//============================ Title X Vernie Group =========================
+//  165     {(u8*)VERNIE3, (u16*)T_INV,     300,  FIX,  312,    0,    80, UPDAT}, //  T1 Vernie         
+//  166     {(u8*)VERNIE4, (u16*)T_INV,     300,  FIX,  339,    0,   280, UPDAT}, //  T2 Vernie     
+//  167     {(u8*)DELTA_T, (u16*)T_INV,       0,  NOT,  314,  182,     0, UPDAT}, //  Delta T Str     
+//  168     {(u8*)NumStr,  (u16*)T_COLOR,   300, NUM3,  342,  182,    80, UPDAT}, //  Delta T value    
+//  169   },
+//  170   {//=========================== Title BackLight Group =========================
+//  171     {(u8*)BL_Str,  (u16*)V_INV,     1-1,  FIX,  314,  167,     0, UPDAT}, //  BackLight    
+//  172     {(u8*)NumStr,  (u16*)V_COLOR,  10-1, NUM2,  342,  167,     5, UPDAT}, //  Class     
+//  173     {(u8*)NumStr,  (u16*)V_INV,       0,  NOT,    0,    0,     0,   HID},     
+//  174     {(u8*)NumStr,  (u16*)V_INV,       0,  NOT,    0,    0,     0,   HID},  
+//  175   },
+//  176   {//============================ Title Volume Group ===========================
+//  177     {(u8*)Vol_Str, (u16*)V_INV,     1-1,  FIX,  314,  152,     0, UPDAT}, //  Volume        
+//  178     {(u8*)NumStr,  (u16*)V_COLOR,  11-1, NUM2,  342,  152,     5, UPDAT}, //  Class     
+//  179     {(u8*)NumStr,  (u16*)V_INV,       0,  NOT,    0,    0,     0,   HID},    
+//  180     {(u8*)NumStr,  (u16*)V_INV,       0,  NOT,    0,    0,     0,   HID},    
+//  181   },
+//  182 };
+//  183 
+
+        RSEG DATA_I:DATA:SORT:NOROOT(2)
+//  184 meter Meter[9] =
+Meter:
+        DS8 108
+        REQUIRE `?<Initializer for Meter>`
+//  185 { {(u8*)METER,      4,    VBT,     314,    342,   137,  UPDAT}, //  Meter #0
+//  186   {(u8*)METER,      4,    FPS,     314,    342,   122,  UPDAT}, //  Meter #1
+//  187   {(u8*)METER, TRACK4,    FRQ,     314,    342,   107,  UPDAT}, //  Meter #2
+//  188   {(u8*)METER, TRACK3,    CIR,     314,    342,    92,  UPDAT}, //  Meter #3
+//  189   {(u8*)METER, TRACK3,    DUT,     314,    342,    77,  UPDAT}, //  Meter #4
+//  190   {(u8*)METER, TRACK2,    TH,      314,    342,    62,  UPDAT}, //  Meter #5
+//  191   {(u8*)METER, TRACK2,    TL,      314,    342,    47,  UPDAT}, //  Meter #6
+//  192   {(u8*)METER, TRACK1,    VPP,     314,    342,    32,  UPDAT}, //  Meter #7
+//  193   {(u8*)METER, TRACK1,    VDC,     314,    342,    17,  UPDAT}, //  Meter #8
+//  194 };         
+//  195 
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function Display_Meter
+        THUMB
+//  196 void Display_Meter(void)                  // 每次刷新显示一个测量项
+//  197 {
+Display_Meter:
+        PUSH     {R4-R7,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R7 Frame(CFA, -8)
+        CFI R6 Frame(CFA, -12)
+        CFI R5 Frame(CFA, -16)
+        CFI R4 Frame(CFA, -20)
+        CFI CFA R13+20
+//  198   u8  i;
+//  199   
+//  200   for(i=0; i<9; ++i){        
+        LDR.N    R5,??DataTable0  ;; Meter
+        LDR.N    R6,??Display_Meter_0  ;; Y_INV
+        MOVS     R4,#+0
+        MOVS     R7,#+0
+//  201     if(Meter[i].Flag & UPDAT){            //-----显示需刷新的测量项目名称
+??Display_Meter_1:
+        MOVS     R0,R7
+        MOVS     R1,#+12
+        MLA      R0,R0,R1,R5
+        LDRB     R1,[R0, #+11]
+        LSLS     R1,R1,#+30
+        BPL.N    ??Display_Meter_2
+//  202       Meter[i].Flag &= (!UPDAT & !BLINK);       // Clr Update & Blink flag
+        STRB     R4,[R0, #+11]
+//  203       Print_Str
+//  204         (Meter[i].XPOS1, Meter[i].YPOS,        // 需要显示的坐标
+//  205          Y_INV[Meter[i].Track],                // 需要显示的颜色(所属通道)
+//  206          PRN,                                  // 需要显示的方式
+//  207          Meter[i].Str +(Meter[i].Item * 5));   // 需要显示的项目名称
+        LDRB     R1,[R0, #+5]
+        LDR      R3,[R0, #+0]
+        MOVS     R2,#+5
+        MLA      R1,R1,R2,R3
+        MOVS     R3,#+0
+        PUSH     {R1}
+        CFI CFA R13+24
+        LDRB     R1,[R0, #+4]
+        LDRH     R2,[R6, R1, LSL #+1]
+        LDRB     R1,[R0, #+10]
+        LDRH     R0,[R0, #+6]
+        _BLF     Print_Str,??Print_Str??rT
+        ADD      SP,SP,#+4
+        CFI CFA R13+20
+//  208     } 
+//  209   }
+??Display_Meter_2:
+        ADDS     R7,R7,#+1
+        UXTB     R7,R7
+        CMP      R7,#+9
+        BCC.N    ??Display_Meter_1
+//  210   if((Current >= METER_0)&&(Current <= METER_8)){
+        LDR.N    R0,??DataTable1  ;; Current
+        LDRB     R7,[R0, #+0]
+        CMP      R7,#+13
+        BCC.N    ??Display_Meter_3
+        CMP      R7,#+22
+        BCS.N    ??Display_Meter_3
+//  211     if(Blink){                            //-----显示需闪烁的测量项目名称
+        LDR.N    R0,??DataTable2  ;; Blink
+        LDRB     R1,[R0, #+0]
+        CBZ      R1,??Display_Meter_3
+//  212       i = Current - METER_0;
+        ADDS     R7,R7,#+243
+        UXTB     R7,R7
+//  213       Blink = 0;                               // Clr Blink Ctrl flag 
+        STRB     R4,[R0, #+0]
+//  214       Print_Str(
+//  215         Meter[i].XPOS1, Meter[i].YPOS,         // 需要闪烁的坐标 
+//  216         Y_INV[Meter[i].Track],                 // 需要闪烁的颜色(所属通道)
+//  217         Twink,                                 // 闪烁方式
+//  218         Meter[i].Str +(Meter[i].Item *5));     // 需要闪烁的项目名称
+        MOVS     R0,#+12
+        MOVS     R2,#+5
+        MLA      R0,R7,R0,R5
+        LDRB     R1,[R0, #+5]
+        LDR      R3,[R0, #+0]
+        MLA      R1,R1,R2,R3
+        PUSH     {R1}
+        CFI CFA R13+24
+        LDR.N    R1,??DataTable3  ;; Twink
+        LDRB     R3,[R1, #+0]
+        LDRB     R1,[R0, #+4]
+        LDRH     R2,[R6, R1, LSL #+1]
+        LDRB     R1,[R0, #+10]
+        LDRH     R0,[R0, #+6]
+        _BLF     Print_Str,??Print_Str??rT
+        ADD      SP,SP,#+4
+        CFI CFA R13+20
+//  219     }
+//  220   }
+//  221 }
+??Display_Meter_3:
+        POP      {R4-R7,PC}       ;; return
+        DATA
+??Display_Meter_0:
+        DC32     Y_INV
+        CFI EndBlock cfiBlock0
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable0:
+        DC32     Meter
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable1:
+        DC32     Current
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable2:
+        DC32     Blink
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable3:
+        DC32     Twink
+//  222 
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function Display_Value
+        THUMB
+//  223 void Display_Value(u8 i)
+//  224 {
+Display_Value:
+        PUSH     {R4-R11,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R11 Frame(CFA, -8)
+        CFI R10 Frame(CFA, -12)
+        CFI R9 Frame(CFA, -16)
+        CFI R8 Frame(CFA, -20)
+        CFI R7 Frame(CFA, -24)
+        CFI R6 Frame(CFA, -28)
+        CFI R5 Frame(CFA, -32)
+        CFI R4 Frame(CFA, -36)
+        CFI CFA R13+36
+//  225   s32 Tmp = 0;
+//  226   u16 Kp;
+//  227   u32 k, n, m;
+//  228   
+//  229   if(Interlace == 0) Kp = _Kp1; // 独立采样模式
+        LDR.N    R5,??Display_Value_1  ;; Title
+        LDR.N    R6,??Display_Value_1+0x4  ;; X_Attr
+        SUB      SP,SP,#+56
+        CFI CFA R13+92
+        LDRSH    R7,[R5, #+436]
+        LDR      R1,[R6, #+0]
+        STRB     R0,[SP, #+52]
+        MOVS     R0,#+20
+        MOVS     R4,#+0
+        MLA      R0,R7,R0,R1
+        LDR.N    R1,??Display_Value_1+0x8  ;; Interlace
+        LDRB     R1,[R1, #+0]
+        CBNZ     R1,??Display_Value_2
+        LDRH     R0,[R0, #+14]
+        B.N      ??Display_Value_3
+//  230   else               Kp = _Kp2; // 交替采样模式  
+??Display_Value_2:
+        ADDS     R0,R0,#+114
+        LDRH     R0,[R0, #+0]
+??Display_Value_3:
+        MOV      R11,R0
+//  231   
+//  232   k = _T_Range; m = 1;  n = 1;
+        MOVS     R0,#+1
+        MOV      R8,R0
+        STR      R0,[SP, #+24]
+//  233   if(k < 9)  m = Power(10, (11-k)/3);
+        CMP      R7,#+9
+        BCS.N    ??Display_Value_4
+        MOVS     R0,#+11
+        SUBS     R0,R0,R7
+        MOVS     R1,#+3
+        UDIV     R1,R0,R1
+        UXTB     R1,R1
+        MOVS     R0,#+10
+        _BLF     Power,??Power??rT
+        MOV      R8,R0
+        B.N      ??Display_Value_5
+//  234   else       n = Power(10, (k- 9)/3);
+??Display_Value_4:
+        MOVS     R0,R7
+        SUBS     R0,R0,#+9
+        MOVS     R1,#+3
+        UDIV     R1,R0,R1
+        UXTB     R1,R1
+        MOVS     R0,#+10
+        _BLF     Power,??Power??rT
+        STR      R0,[SP, #+24]
+//  235   k = X_Attr[(k%3)+9].SCALE;
+??Display_Value_5:
+        LDR      R2,[R6, #+0]
+        MOVS     R0,R7
+//  236   
+//  237   switch (Meter[i].Item){  
+        LDR.N    R7,??Display_Value_1+0xC  ;; Meter
+        MOVS     R1,#+3
+        _BLF     ??divu32_t,??rT??divu32_t
+        MOVS     R1,#+20
+        ADDW     R9,R5,#+16
+        MLA      R0,R0,R1,R2
+        LDRSH    R1,[R9, #+80]
+        ADDS     R5,R5,#+156
+        ADDS     R0,R0,#+196
+        LDR      R0,[R0, #+0]
+        STR      R5,[SP, #+28]
+        LDRSH    R2,[R5, #+20]
+        LDRSH    R3,[R5, #+100]
+        LDRB     R5,[SP, #+52]
+        MOVS     R6,#+12
+        MLA      R10,R5,R6,R7
+        LDR.N    R5,??Display_Value_1+0x10  ;; a_Max
+        LDR.N    R6,??Display_Value_1+0x14  ;; TbN
+        LDRB     R5,[R5, #+0]
+        STR      R5,[SP, #+36]
+        LDR.N    R5,??Display_Value_1+0x18  ;; b_Max
+        LDRB     R5,[R5, #+0]
+        STR      R5,[SP, #+40]
+        LDR.N    R5,??Display_Value_1+0x1C  ;; a_Min
+        LDRB     R5,[R5, #+0]
+        STR      R5,[SP, #+44]
+        LDR.N    R5,??Display_Value_1+0x20  ;; b_Min
+        LDRB     R5,[R5, #+0]
+        STR      R5,[SP, #+48]
+        LDR.N    R5,??Display_Value_1+0x24  ;; TaS
+        LDRH     R5,[R5, #+0]
+        STRH     R5,[SP, #+2]
+        LDR.N    R5,??Display_Value_1+0x28  ;; TbS
+        LDRH     R5,[R5, #+0]
+        STRH     R5,[SP, #+4]
+        LDR.N    R5,??Display_Value_1+0x2C  ;; TcS
+        LDRH     R5,[R5, #+0]
+        STRH     R5,[SP, #+6]
+        LDR.N    R5,??Display_Value_1+0x30  ;; TdS
+        LDRH     R5,[R5, #+0]
+        STRH     R5,[SP, #+8]
+        MOV      R5,R11
+        STR      R5,[SP, #+32]
+        LDR.N    R5,??Display_Value_1+0x34  ;; TaN
+        LDRH     R5,[R5, #+0]
+        STRH     R5,[SP, #+0]
+        LDRH     R6,[R6, #+0]
+        LDRSH    R5,[R9, #+0]
+        STRH     R6,[SP, #+12]
+        LDR.N    R6,??Display_Value_1+0x38  ;; TcN
+        LDRH     R6,[R6, #+0]
+        STRH     R6,[SP, #+16]
+        LDR.N    R6,??Display_Value_1+0x3C  ;; TdN
+        LDRH     R6,[R6, #+0]
+        STRH     R6,[SP, #+20]
+        LDR.N    R6,??Display_Value_1+0x40  ;; PaS
+        LDRH     R6,[R6, #+0]
+        STRH     R6,[SP, #+10]
+        LDR.N    R6,??Display_Value_1+0x44  ;; PbS
+        LDRH     R6,[R6, #+0]
+        STRH     R6,[SP, #+14]
+        LDR.N    R6,??Display_Value_1+0x48  ;; PcS
+        LDRH     R6,[R6, #+0]
+        STRH     R6,[SP, #+18]
+        LDR.N    R6,??Display_Value_1+0x4C  ;; PdS
+        LDRH     R6,[R6, #+0]
+        STRH     R6,[SP, #+22]
+        LDR.N    R6,??Display_Value_1+0x50  ;; Current
+        MOV      R11,R6
+        LDRB     R6,[R10, #+5]
+        CMP      R6,#+11
+        BHI.N    ??Display_Value_6
+        TBH      [PC, R6, LSL #+1]
+        DATA
+??Display_Value_0:
+        DC16     +12,+46,+55,+121
+        DC16     +185,+258,+387,+449
+        DC16     +540,+612,+670,+748
+        THUMB
+//  238   case VBT://--------------- 计算和显示电池电压 ---------------
+//  239     Int2Str(NumStr, __Get(V_BATTERY)*1000, V_UNIT, 3, SIGN);
+??Display_Value_7:
+        MOVS     R0,#+6
+        _BLF     __Get,??__Get??rT
+        LDR.N    R2,??Display_Value_1+0x54  ;; Y_COLOR + 24
+        MOVS     R1,#+0
+        PUSH     {R1}
+        CFI CFA R13+96
+        MOVS     R3,#+3
+        MOVS     R1,#+1000
+        MULS     R0,R1,R0
+        MOVS     R1,R0
+??Display_Value_8:
+        MOV      R0,R11
+        ADDS     R0,R0,#+20
+        _BLF     Int2Str,??Int2Str??rT
+        ADD      SP,SP,#+4
+        CFI CFA R13+92
+//  240     break;
+//  241   case FPS://--------------- 计算和显示帧计数 ---------------
+//  242     Int2Str(NumStr, Result_FPS & 0x7F, S_UNIT, 2, STD);
+//  243     break;  
+//  244   case VPP:
+//  245     if((Meter[i].Track == TRACK1)&&(_1_source == CH_A)){
+//  246       Tmp = (Ka2[_A_Range]*(a_Max - a_Min)+ 512)/1024;
+//  247       if(Tmp <= 4) Tmp = 0;
+//  248       Tmp *= Y_Attr[_A_Range].SCALE;
+//  249     }
+//  250     if((Meter[i].Track == TRACK2)&&(_2_source == CH_B)){
+//  251       Tmp = (Kb2[_B_Range]*(b_Max - b_Min)+ 512)/1024;
+//  252       if(Tmp <= 4) Tmp = 0;
+//  253       Tmp *= Y_Attr[_B_Range].SCALE;
+//  254     }
+//  255     Int2Str(NumStr, Tmp, V_UNIT, 3, SIGN);
+//  256     break;
+//  257   case VDC:
+//  258     if((Meter[i].Track == TRACK1)&&(_1_source == CH_A)){
+//  259       Tmp = Ka1[_A_Range]+(Ka2[_A_Range]*(a_Avg/4096)+ 512)/1024 - _1_posi;
+//  260       if((Tmp >= -2)&&(Tmp <= 2)) Tmp = 0;
+//  261       Tmp *= Y_Attr[_A_Range].SCALE;
+//  262     }
+//  263     if((Meter[i].Track == TRACK2)&&(_2_source == CH_B)){
+//  264       Tmp = Kb1[_B_Range]+(Kb2[_B_Range]*(b_Avg/4096)+ 512)/1024 - _2_posi;
+//  265       if((Tmp >= -2)&&(Tmp <= 2)) Tmp = 0;
+//  266       Tmp *= Y_Attr[_B_Range].SCALE;
+//  267     }
+//  268     Int2Str(NumStr, Tmp, V_UNIT, 3, SIGN);
+//  269     break;
+//  270   case RMS:
+//  271     if((Meter[i].Track == TRACK1)&&(_1_source == CH_A)){
+//  272       Tmp = Ka1[_A_Range] +(Ka2[_A_Range]*Int_sqrt(a_Ssq/4096)+ 512)/1024;
+//  273       if(Tmp <= 2) Tmp = 0;
+//  274       Tmp *= Y_Attr[_A_Range].SCALE;
+//  275     }
+//  276     if((Meter[i].Track == TRACK2)&&(_2_source == CH_B)){
+//  277       Tmp = Kb1[_B_Range] +(Kb2[_B_Range]*Int_sqrt(b_Ssq/4096)+ 512)/1024;
+//  278       if(Tmp <= 2) Tmp = 0;
+//  279       Tmp *= Y_Attr[_B_Range].SCALE;
+//  280     }
+//  281     Int2Str(NumStr, Tmp, V_UNIT, 3, UNSIGN);
+//  282     break;
+//  283   case MAX:
+//  284     if((Meter[i].Track == TRACK1)&&(_1_source == CH_A))
+//  285       Tmp = (Ka1[_A_Range] +(Ka2[_A_Range]*a_Max + 512)/1024 - _1_posi)* Y_Attr[_A_Range].SCALE;
+//  286     if((Meter[i].Track == TRACK2)&&(_2_source == CH_B))
+//  287       Tmp = (Kb1[_B_Range] +(Kb2[_B_Range]*b_Max + 512)/1024 - _2_posi)* Y_Attr[_B_Range].SCALE;
+//  288     Int2Str(NumStr, Tmp, V_UNIT, 3, SIGN);
+//  289     break;
+//  290   case MIN:
+//  291     if((Meter[i].Track == TRACK1)&&(_1_source == CH_A))
+//  292       Tmp = (Ka1[_A_Range] +(Ka2[_A_Range]*a_Min + 512)/1024 - _1_posi)* Y_Attr[_A_Range].SCALE;
+//  293     if((Meter[i].Track == TRACK2)&&(_2_source == CH_B))
+//  294       Tmp = (Kb1[_B_Range] +(Kb2[_B_Range]*b_Min + 512)/1024 - _2_posi)* Y_Attr[_B_Range].SCALE;
+//  295     Int2Str(NumStr, Tmp, V_UNIT, 3, SIGN);
+//  296     break;
+//  297   case FRQ:
+//  298     if((Meter[i].Track == TRACK1)&&(_1_source == CH_A))
+//  299       Tmp = 2000*((500000 * TaN)/TaS);
+//  300     if((Meter[i].Track == TRACK2)&&(_2_source == CH_B))
+//  301       Tmp = 2000*((500000 * TbN)/TbS);
+//  302     if((Meter[i].Track == TRACK3)&&(_3_source == CH_C))
+//  303       Tmp = 2000*((500000 * TcN)/TcS);
+//  304     if((Meter[i].Track == TRACK4)&&(_4_source == CH_D))
+//  305       Tmp = 2000*((500000 * TdN)/TdS);
+//  306     if(n < 10) Int2Str(NumStr, ((250*(Tmp/(k/60)))/m)/15,   F_UNIT, 4, UNSIGN);
+//  307     else       Int2Str(NumStr, Kp*(n*(Tmp/(k/60))/240)/256, F_UNIT, 4, UNSIGN);
+//  308     break;  
+//  309   case CIR:
+//  310     if((Meter[i].Track == TRACK1)&&(_1_source == CH_A))
+//  311       Tmp = (k *TaS)/TaN;
+//  312     if((Meter[i].Track == TRACK2)&&(_2_source == CH_B))
+//  313       Tmp = (k *TbS)/TbN;
+//  314     if((Meter[i].Track == TRACK3)&&(_3_source == CH_C))
+//  315       Tmp = (k *TcS)/TcN;
+//  316     if((Meter[i].Track == TRACK4)&&(_4_source == CH_D))
+//  317       Tmp = (k *TdS)/TdN;
+//  318     if(Tmp <= 0x7FFFFFFF/m) Tmp = 1024*((m*Tmp)/Kp)/n;
+//  319     else                    Tmp = 0x80000000;
+//  320     Int2Str(NumStr, Tmp, T_UNIT, 4, UNSIGN);
+//  321     break;
+//  322   case DUT:
+//  323     if((Meter[i].Track == TRACK1)&&(_1_source == CH_A))
+//  324       Tmp = (100000*PaS)/TaS;
+//  325     if((Meter[i].Track == TRACK2)&&(_2_source == CH_B))
+//  326       Tmp = (100000*PbS)/TbS;
+//  327     if((Meter[i].Track == TRACK3)&&(_3_source == CH_C))
+//  328       Tmp = (100000*PcS)/TcS;
+//  329     if((Meter[i].Track == TRACK4)&&(_4_source == CH_D))
+//  330       Tmp = (100000*PdS)/TdS;
+//  331     Int2Str(NumStr, Tmp, P_UNIT, 4, UNSIGN);
+//  332     break;
+//  333   case TH:
+//  334     if((Meter[i].Track == TRACK1)&&(_1_source == CH_A))
+//  335       Tmp = (k*TaS)/TaN - (k*PaS)/TaN;
+//  336     if((Meter[i].Track == TRACK2)&&(_2_source == CH_B))
+//  337       Tmp = (100000*PbS)/TbS;
+//  338     if((Meter[i].Track == TRACK3)&&(_3_source == CH_C))
+//  339       Tmp = (100000*PcS)/TcS;
+//  340     if((Meter[i].Track == TRACK4)&&(_4_source == CH_D))
+//  341       Tmp = (100000*PdS)/TdS;
+//  342     if(Tmp <= 0x7FFFFFFF/m) Tmp = 1024*((m*Tmp)/Kp)/n;
+//  343     else                    Tmp = 0x80000000;
+//  344     Int2Str(NumStr, Tmp, T_UNIT, 4, UNSIGN);
+//  345     break;
+//  346   case TL:
+//  347     if((Meter[i].Track == TRACK1)&&(_1_source == CH_A))
+//  348       Tmp = (k*PaS)/TaN;
+//  349     if((Meter[i].Track == TRACK2)&&(_2_source == CH_B))
+//  350       Tmp = (k*PbS)/TbN;
+//  351     if((Meter[i].Track == TRACK3)&&(_3_source == CH_C))
+//  352       Tmp = (k*PcS)/TcN;
+//  353     if((Meter[i].Track == TRACK4)&&(_4_source == CH_D))
+//  354       Tmp = (k*PdS)/TdN;
+//  355     if(Tmp <= 0x7FFFFFFF/m) Tmp = 1024*((m*Tmp)/Kp)/n;
+//  356     else                    Tmp = 0x80000000;
+//  357     Int2Str(NumStr, Tmp, T_UNIT, 4, UNSIGN);
+//  358     break;
+//  359     }
+//  360   Print_Str(
+//  361     Meter[i].XPOS2, Meter[i].YPOS,
+//  362     Y_COLOR[Meter[i].Track], 
+//  363     PRN,
+//  364     NumStr);                              // 显示测量数值
+??Display_Value_6:
+        LDR.N    R1,??Display_Value_1+0x58  ;; Y_COLOR
+        MOV      R0,R11
+        ADDS     R0,R0,#+20
+        PUSH     {R0}
+        CFI CFA R13+96
+        LDRB     R0,[R10, #+4]
+        LDRH     R2,[R1, R0, LSL #+1]
+        LDRB     R1,[R10, #+10]
+        LDRH     R0,[R10, #+8]
+        MOVS     R3,#+0
+        _BLF     Print_Str,??Print_Str??rT
+//  365 }
+        ADD      SP,SP,#+60
+        CFI CFA R13+36
+        POP      {R4-R11,PC}      ;; return
+        CFI CFA R13+92
+??Display_Value_9:
+        LDR.N    R2,??Display_Value_1+0x5C  ;; Y_COLOR + 48
+        MOVS     R0,#+2
+        PUSH     {R0}
+        CFI CFA R13+96
+        LDRH     R0,[R11, #+32]
+        MOVS     R3,#+2
+        LSLS     R1,R0,#+25
+        LSRS     R1,R1,#+25
+        B.N      ??Display_Value_8
+        CFI CFA R13+92
+??Display_Value_10:
+        LDRB     R6,[R10, #+4]
+        CBNZ     R6,??Display_Value_11
+        CMP      R5,#+1
+        BNE.N    ??Display_Value_12
+        LDR.N    R1,??Display_Value_1+0x60  ;; Ka2
+        LDRSH    R0,[R9, #+40]
+        LDR      R2,[SP, #+36]
+        LDR      R3,[SP, #+44]
+        LDRH     R1,[R1, R0, LSL #+1]
+        SUBS     R2,R2,R3
+        MULS     R1,R2,R1
+        ADDW     R1,R1,#+512
+        ASRS     R2,R1,#+9
+        ADDS     R1,R1,R2, LSR #+22
+        ASRS     R4,R1,#+10
+        CMP      R4,#+5
+        IT      LT 
+        MOVLT    R4,#+0
+        LDR.N    R2,??Display_Value_1+0x64  ;; Y_Attr
+        MOVS     R1,#+20
+        LDR      R2,[R2, #+0]
+        MLA      R0,R0,R1,R2
+        B.N      ??Display_Value_13
+??Display_Value_11:
+        CMP      R6,#+1
+        BNE.N    ??Display_Value_12
+        CMP      R1,#+1
+        BNE.N    ??Display_Value_12
+        LDR.N    R1,??Display_Value_1+0x68  ;; Kb2
+        LDRSH    R0,[R9, #+120]
+        LDR      R2,[SP, #+48]
+        LDRH     R0,[R1, R0, LSL #+1]
+        LDR      R1,[SP, #+40]
+        SUBS     R1,R1,R2
+        MULS     R0,R1,R0
+        ADDW     R0,R0,#+512
+        ASRS     R1,R0,#+9
+        ADDS     R0,R0,R1, LSR #+22
+        ASRS     R4,R0,#+10
+        CMP      R4,#+5
+        IT      LT 
+        MOVLT    R4,#+0
+??Display_Value_14:
+        LDR.N    R2,??Display_Value_1+0x64  ;; Y_Attr
+        LDRSH    R0,[R9, #+120]
+        MOVS     R1,#+20
+        LDR      R2,[R2, #+0]
+        MLA      R0,R0,R1,R2
+??Display_Value_13:
+        LDR      R0,[R0, #+16]
+        MULS     R4,R0,R4
+??Display_Value_12:
+        LDR.N    R2,??Display_Value_1+0x54  ;; Y_COLOR + 24
+        MOVS     R0,#+0
+        PUSH     {R0}
+        CFI CFA R13+96
+        MOVS     R3,#+3
+        MOVS     R1,R4
+        B.N      ??Display_Value_8
+        CFI CFA R13+92
+??Display_Value_15:
+        LDRB     R6,[R10, #+4]
+        MVNS     R0,#+1
+        CBNZ     R6,??Display_Value_16
+        CMP      R5,#+1
+        BNE.N    ??Display_Value_12
+        LDR.N    R3,??Display_Value_1+0x60  ;; Ka2
+        LDR.N    R4,??Display_Value_1+0x6C  ;; a_Avg
+        LDRSH    R1,[R9, #+40]
+        LDR.N    R2,??Display_Value_1+0x70  ;; Ka1
+        LDRH     R3,[R3, R1, LSL #+1]
+        LDR      R4,[R4, #+0]
+        LDRSB    R2,[R2, R1]
+        LSRS     R4,R4,#+12
+        MULS     R3,R4,R3
+        ADDW     R3,R3,#+512
+        ADDS     R2,R2,R3, LSR #+10
+        LDRSH    R3,[R9, #+60]
+        SUBS     R4,R2,R3
+        CMP      R4,R0
+        BLT.N    ??Display_Value_17
+        CMP      R4,#+3
+        IT      LT 
+        MOVLT    R4,#+0
+??Display_Value_17:
+        LDR.N    R2,??Display_Value_1+0x64  ;; Y_Attr
+        MOVS     R0,#+20
+        LDR      R2,[R2, #+0]
+        MLA      R0,R1,R0,R2
+        B.N      ??Display_Value_13
+??Display_Value_16:
+        CMP      R6,#+1
+        BNE.N    ??Display_Value_12
+        CMP      R1,#+1
+        BNE.N    ??Display_Value_12
+        LDRSH    R2,[R9, #+120]
+        LDR.N    R1,??Display_Value_1+0x74  ;; Kb1
+        LDR.N    R3,??Display_Value_1+0x68  ;; Kb2
+        LDRSB    R1,[R1, R2]
+        LDRH     R2,[R3, R2, LSL #+1]
+        LDR.N    R3,??Display_Value_1+0x78  ;; b_Avg
+        LDR      R3,[R3, #+0]
+        LSRS     R3,R3,#+12
+        MULS     R2,R3,R2
+        ADDW     R2,R2,#+512
+        ADDS     R1,R1,R2, LSR #+10
+        LDR      R2,[SP, #+28]
+        LDRSH    R2,[R2, R4]
+        SUBS     R4,R1,R2
+        CMP      R4,R0
+        BLT.N    ??Display_Value_14
+        CMP      R4,#+3
+        BGE.N    ??Display_Value_14
+        MOVS     R4,#+0
+        B.N      ??Display_Value_14
+??Display_Value_18:
+        LDRB     R0,[R10, #+4]
+        CBNZ     R0,??Display_Value_19
+        CMP      R5,#+1
+        BNE.N    ??Display_Value_20
+        LDR.N    R0,??Display_Value_1+0x7C  ;; a_Ssq
+        LDR      R0,[R0, #+0]
+        LSRS     R0,R0,#+12
+        _BLF     Int_sqrt,??Int_sqrt??rT
+        LDR.N    R3,??Display_Value_1+0x60  ;; Ka2
+        LDRSH    R1,[R9, #+40]
+        LDR.N    R2,??Display_Value_1+0x70  ;; Ka1
+        LDRH     R3,[R3, R1, LSL #+1]
+        LDRSB    R2,[R2, R1]
+        MULS     R3,R0,R3
+        ADDW     R0,R3,#+512
+        ADDS     R4,R2,R0, LSR #+10
+        CMP      R4,#+3
+        IT      LT 
+        MOVLT    R4,#+0
+        LDR.N    R2,??Display_Value_1+0x64  ;; Y_Attr
+        MOVS     R0,#+20
+        LDR      R2,[R2, #+0]
+        MLA      R0,R1,R0,R2
+        LDR      R0,[R0, #+16]
+        MULS     R4,R0,R4
+??Display_Value_19:
+        LDRB     R0,[R10, #+4]
+        CMP      R0,#+1
+        BNE.N    ??Display_Value_20
+        LDRSH    R0,[R9, #+80]
+        CMP      R0,#+1
+        BNE.N    ??Display_Value_20
+        LDR.N    R0,??Display_Value_1+0x80  ;; b_Ssq
+        LDR      R0,[R0, #+0]
+        LSRS     R0,R0,#+12
+        _BLF     Int_sqrt,??Int_sqrt??rT
+        LDR.N    R3,??Display_Value_1+0x68  ;; Kb2
+        LDRSH    R1,[R9, #+120]
+        LDR.N    R2,??Display_Value_1+0x74  ;; Kb1
+        LDRH     R3,[R3, R1, LSL #+1]
+        LDRSB    R2,[R2, R1]
+        MULS     R3,R0,R3
+        ADDW     R0,R3,#+512
+        ADDS     R4,R2,R0, LSR #+10
+        CMP      R4,#+3
+        IT      LT 
+        MOVLT    R4,#+0
+        LDR.N    R2,??Display_Value_1+0x64  ;; Y_Attr
+        MOVS     R0,#+20
+        LDR      R2,[R2, #+0]
+        MLA      R0,R1,R0,R2
+        LDR      R0,[R0, #+16]
+        MULS     R4,R0,R4
+??Display_Value_20:
+        LDR.N    R2,??Display_Value_1+0x54  ;; Y_COLOR + 24
+        MOVS     R0,#+1
+        PUSH     {R0}
+        CFI CFA R13+96
+        MOVS     R3,#+3
+        MOVS     R1,R4
+        B.N      ??Display_Value_8
+        CFI CFA R13+92
+??Display_Value_21:
+        LDRB     R6,[R10, #+4]
+        CMP      R6,#+0
+        BNE.N    ??Display_Value_22
+        CMP      R5,#+1
+        BNE.W    ??Display_Value_12
+        LDR.N    R1,??Display_Value_1+0x60  ;; Ka2
+        LDRSH    R0,[R9, #+40]
+        LDR      R2,[SP, #+36]
+        LDRH     R1,[R1, R0, LSL #+1]
+        MULS     R1,R2,R1
+        LDR.N    R2,??Display_Value_1+0x70  ;; Ka1
+        ADDW     R1,R1,#+512
+        ASRS     R3,R1,#+9
+        LDRSB    R2,[R2, R0]
+        ADDS     R1,R1,R3, LSR #+22
+        ADDS     R1,R2,R1, ASR #+10
+        LDRSH    R2,[R9, #+60]
+        SUBS     R4,R1,R2
+        LDR.N    R2,??Display_Value_1+0x64  ;; Y_Attr
+        MOVS     R1,#+20
+        LDR      R2,[R2, #+0]
+        MLA      R0,R0,R1,R2
+        B.N      ??Display_Value_13
+        DATA
+??Display_Value_1:
+        DC32     Title
+        DC32     X_Attr
+        DC32     Interlace
+        DC32     Meter
+        DC32     a_Max
+        DC32     TbN
+        DC32     b_Max
+        DC32     a_Min
+        DC32     b_Min
+        DC32     TaS
+        DC32     TbS
+        DC32     TcS
+        DC32     TdS
+        DC32     TaN
+        DC32     TcN
+        DC32     TdN
+        DC32     PaS
+        DC32     PbS
+        DC32     PcS
+        DC32     PdS
+        DC32     Current
+        DC32     Y_COLOR + 24
+        DC32     Y_COLOR
+        DC32     Y_COLOR + 48
+        DC32     Ka2
+        DC32     Y_Attr
+        DC32     Kb2
+        DC32     a_Avg
+        DC32     Ka1
+        DC32     Kb1
+        DC32     b_Avg
+        DC32     a_Ssq
+        DC32     b_Ssq
+        THUMB
+??Display_Value_22:
+        CMP      R6,#+1
+        BNE.W    ??Display_Value_12
+        CMP      R1,#+1
+        BNE.W    ??Display_Value_12
+        LDR.N    R1,??Display_Value_23  ;; Kb2
+        LDRSH    R0,[R9, #+120]
+        LDR      R2,[SP, #+40]
+        LDRH     R1,[R1, R0, LSL #+1]
+        MULS     R1,R2,R1
+        LDR.N    R2,??Display_Value_23+0x4  ;; Kb1
+        ADDW     R1,R1,#+512
+        ASRS     R3,R1,#+9
+        LDRSB    R2,[R2, R0]
+        ADDS     R1,R1,R3, LSR #+22
+        ADDS     R1,R2,R1, ASR #+10
+        LDR      R2,[SP, #+28]
+        LDRSH    R2,[R2, R4]
+        SUBS     R4,R1,R2
+        LDR.N    R2,??Display_Value_23+0x8  ;; Y_Attr
+        MOVS     R1,#+20
+        LDR      R2,[R2, #+0]
+        MLA      R0,R0,R1,R2
+        B.N      ??Display_Value_13
+??Display_Value_24:
+        LDRB     R6,[R10, #+4]
+        CBNZ     R6,??Display_Value_25
+        CMP      R5,#+1
+        BNE.W    ??Display_Value_12
+        LDR.N    R1,??Display_Value_23+0xC  ;; Ka2
+        LDRSH    R0,[R9, #+40]
+        LDR      R2,[SP, #+44]
+        LDRH     R1,[R1, R0, LSL #+1]
+        MULS     R1,R2,R1
+        LDR.N    R2,??Display_Value_23+0x10  ;; Ka1
+        ADDW     R1,R1,#+512
+        ASRS     R3,R1,#+9
+        LDRSB    R2,[R2, R0]
+        ADDS     R1,R1,R3, LSR #+22
+        ADDS     R1,R2,R1, ASR #+10
+        LDRSH    R2,[R9, #+60]
+        SUBS     R4,R1,R2
+        LDR.N    R2,??Display_Value_23+0x8  ;; Y_Attr
+        MOVS     R1,#+20
+        LDR      R2,[R2, #+0]
+        MLA      R0,R0,R1,R2
+        B.N      ??Display_Value_13
+??Display_Value_25:
+        CMP      R6,#+1
+        BNE.W    ??Display_Value_12
+        CMP      R1,#+1
+        BNE.W    ??Display_Value_12
+        LDR.N    R1,??Display_Value_23  ;; Kb2
+        LDRSH    R0,[R9, #+120]
+        LDR      R2,[SP, #+48]
+        LDRH     R1,[R1, R0, LSL #+1]
+        MULS     R1,R2,R1
+        LDR.N    R2,??Display_Value_23+0x4  ;; Kb1
+        ADDW     R1,R1,#+512
+        ASRS     R3,R1,#+9
+        LDRSB    R2,[R2, R0]
+        ADDS     R1,R1,R3, LSR #+22
+        ADDS     R1,R2,R1, ASR #+10
+        LDR      R2,[SP, #+28]
+        LDRSH    R2,[R2, R4]
+        SUBS     R4,R1,R2
+        LDR.N    R2,??Display_Value_23+0x8  ;; Y_Attr
+        MOVS     R1,#+20
+        LDR      R2,[R2, #+0]
+        MLA      R0,R0,R1,R2
+        B.N      ??Display_Value_13
+??Display_Value_26:
+        LDRB     R6,[R10, #+4]
+        LDR.N    R7,??Display_Value_27  ;; 0x7a120
+        CBNZ     R6,??Display_Value_28
+        CMP      R5,#+1
+        BNE.N    ??Display_Value_29
+        LDRH     R1,[SP, #+0]
+        LDRH     R2,[SP, #+2]
+        MULS     R1,R7,R1
+        SDIV     R4,R1,R2
+        MOVS     R1,#+2000
+        B.N      ??Display_Value_30
+??Display_Value_28:
+        CMP      R6,#+1
+        BNE.N    ??Display_Value_31
+        CMP      R1,#+1
+        BNE.N    ??Display_Value_29
+        LDRH     R1,[SP, #+12]
+        LDRH     R2,[SP, #+4]
+        MULS     R1,R7,R1
+        SDIV     R4,R1,R2
+        MOVS     R1,#+2000
+        B.N      ??Display_Value_30
+??Display_Value_31:
+        CMP      R6,#+2
+        BNE.N    ??Display_Value_32
+        CMP      R2,#+1
+        BNE.N    ??Display_Value_29
+        LDRH     R1,[SP, #+16]
+        LDRH     R2,[SP, #+6]
+        MULS     R1,R7,R1
+        SDIV     R4,R1,R2
+        MOVS     R1,#+2000
+        B.N      ??Display_Value_30
+??Display_Value_32:
+        CMP      R6,#+3
+        BNE.N    ??Display_Value_29
+        CMP      R3,#+1
+        BNE.N    ??Display_Value_29
+        LDRH     R1,[SP, #+20]
+        LDRH     R2,[SP, #+8]
+        MULS     R1,R7,R1
+        SDIV     R4,R1,R2
+        MOVS     R1,#+2000
+??Display_Value_30:
+        MULS     R4,R1,R4
+??Display_Value_29:
+        MOVS     R1,#+60
+        UDIV     R0,R0,R1
+        LDR      R1,[SP, #+24]
+        UDIV     R0,R4,R0
+        CMP      R1,#+10
+        BCS.N    ??Display_Value_33
+        LDR.N    R2,??Display_Value_27+0x4  ;; Y_COLOR + 36
+        MOVS     R1,#+1
+        PUSH     {R1}
+        CFI CFA R13+96
+        MOVS     R3,#+4
+        MOVS     R1,#+250
+        MULS     R0,R1,R0
+        UDIV     R0,R0,R8
+        MOVS     R1,#+15
+        UDIV     R1,R0,R1
+        B.N      ??Display_Value_8
+        CFI CFA R13+92
+??Display_Value_33:
+        LDR.N    R2,??Display_Value_27+0x4  ;; Y_COLOR + 36
+        MOVS     R1,#+1
+        PUSH     {R1}
+        CFI CFA R13+96
+        LDR      R4,[SP, #+28]
+        LDR      R1,[SP, #+36]
+        MOVS     R3,#+4
+        MULS     R4,R0,R4
+        MOVS     R0,#+240
+        UDIV     R0,R4,R0
+        MULS     R1,R0,R1
+        LSRS     R1,R1,#+8
+        B.N      ??Display_Value_8
+        CFI CFA R13+92
+??Display_Value_34:
+        LDRB     R6,[R10, #+4]
+        CBNZ     R6,??Display_Value_35
+        CMP      R5,#+1
+        BNE.N    ??Display_Value_36
+        LDRH     R1,[SP, #+2]
+        MULS     R0,R1,R0
+        LDRH     R1,[SP, #+0]
+        UDIV     R4,R0,R1
+        B.N      ??Display_Value_36
+??Display_Value_35:
+        CMP      R6,#+1
+        BNE.N    ??Display_Value_37
+        CMP      R1,#+1
+        BNE.N    ??Display_Value_36
+        LDRH     R1,[SP, #+4]
+        MULS     R0,R1,R0
+        LDRH     R1,[SP, #+12]
+        UDIV     R4,R0,R1
+        B.N      ??Display_Value_36
+??Display_Value_37:
+        CMP      R6,#+2
+        BNE.N    ??Display_Value_38
+        CMP      R2,#+1
+        BNE.N    ??Display_Value_36
+        LDRH     R1,[SP, #+6]
+        MULS     R0,R1,R0
+        LDRH     R1,[SP, #+16]
+        UDIV     R4,R0,R1
+        B.N      ??Display_Value_36
+??Display_Value_38:
+        CMP      R6,#+3
+        BNE.N    ??Display_Value_36
+        CMP      R3,#+1
+        BNE.N    ??Display_Value_36
+        LDRH     R1,[SP, #+8]
+        MULS     R0,R1,R0
+        LDRH     R1,[SP, #+20]
+        UDIV     R4,R0,R1
+??Display_Value_36:
+        MVNS     R0,#-2147483648
+        UDIV     R0,R0,R8
+        CMP      R0,R4
+        BCC.N    ??Display_Value_39
+        LDR      R1,[SP, #+32]
+        MUL      R0,R8,R4
+        UDIV     R0,R0,R1
+        LDR      R1,[SP, #+24]
+        LSLS     R0,R0,#+10
+        UDIV     R4,R0,R1
+        B.N      ??Display_Value_40
+??Display_Value_39:
+        MOVS     R4,#-2147483648
+??Display_Value_40:
+        LDR.N    R2,??Display_Value_27+0x8  ;; Y_COLOR + 12
+        MOVS     R0,#+1
+        PUSH     {R0}
+        CFI CFA R13+96
+        MOVS     R3,#+4
+        MOVS     R1,R4
+        B.N      ??Display_Value_8
+        CFI CFA R13+92
+??Display_Value_41:
+        LDRB     R6,[R10, #+4]
+        CBNZ     R6,??Display_Value_42
+        CMP      R5,#+1
+        BNE.N    ??Display_Value_43
+        LDRH     R0,[SP, #+10]
+        LDR.N    R1,??Display_Value_27+0xC  ;; 0x186a0
+        MULS     R0,R1,R0
+        LDRH     R1,[SP, #+2]
+        SDIV     R4,R0,R1
+        B.N      ??Display_Value_43
+??Display_Value_42:
+        CMP      R6,#+1
+        BNE.N    ??Display_Value_44
+        CMP      R1,#+1
+        BNE.N    ??Display_Value_43
+        LDRH     R0,[SP, #+14]
+        LDR.N    R1,??Display_Value_27+0xC  ;; 0x186a0
+        MULS     R0,R1,R0
+        LDRH     R1,[SP, #+4]
+        SDIV     R4,R0,R1
+        B.N      ??Display_Value_43
+??Display_Value_44:
+        CMP      R6,#+2
+        BNE.N    ??Display_Value_45
+        CMP      R2,#+1
+        BNE.N    ??Display_Value_43
+        LDRH     R0,[SP, #+18]
+        LDR.N    R1,??Display_Value_27+0xC  ;; 0x186a0
+        MULS     R0,R1,R0
+        LDRH     R1,[SP, #+6]
+        SDIV     R4,R0,R1
+        B.N      ??Display_Value_43
+??Display_Value_45:
+        CMP      R6,#+3
+        BNE.N    ??Display_Value_43
+        CMP      R3,#+1
+        BNE.N    ??Display_Value_43
+        LDRH     R0,[SP, #+22]
+        LDR.N    R1,??Display_Value_27+0xC  ;; 0x186a0
+        MULS     R0,R1,R0
+        LDRH     R1,[SP, #+8]
+        SDIV     R4,R0,R1
+??Display_Value_43:
+        LDR.N    R2,??Display_Value_27+0x10  ;; Y_COLOR + 60
+        MOVS     R0,#+1
+        PUSH     {R0}
+        CFI CFA R13+96
+        MOVS     R3,#+4
+        MOVS     R1,R4
+        B.N      ??Display_Value_8
+        CFI CFA R13+92
+??Display_Value_46:
+        LDRB     R6,[R10, #+4]
+        CBNZ     R6,??Display_Value_47
+        CMP      R5,#+1
+        BNE.N    ??Display_Value_48
+        LDRH     R1,[SP, #+2]
+        LDRH     R2,[SP, #+0]
+        MULS     R1,R0,R1
+        UDIV     R1,R1,R2
+        LDRH     R2,[SP, #+10]
+        MULS     R0,R2,R0
+        LDRH     R2,[SP, #+0]
+        UDIV     R0,R0,R2
+        SUBS     R4,R1,R0
+        B.N      ??Display_Value_48
+??Display_Value_47:
+        CMP      R6,#+1
+        BNE.N    ??Display_Value_49
+        CMP      R1,#+1
+        BNE.N    ??Display_Value_48
+        LDRH     R0,[SP, #+14]
+        LDR.N    R1,??Display_Value_27+0xC  ;; 0x186a0
+        MULS     R0,R1,R0
+        LDRH     R1,[SP, #+4]
+        SDIV     R4,R0,R1
+        B.N      ??Display_Value_48
+??Display_Value_49:
+        CMP      R6,#+2
+        BNE.N    ??Display_Value_50
+        CMP      R2,#+1
+        BNE.N    ??Display_Value_48
+        LDRH     R0,[SP, #+18]
+        LDR.N    R1,??Display_Value_27+0xC  ;; 0x186a0
+        MULS     R0,R1,R0
+        LDRH     R1,[SP, #+6]
+        SDIV     R4,R0,R1
+        B.N      ??Display_Value_48
+??Display_Value_50:
+        CMP      R6,#+3
+        BNE.N    ??Display_Value_48
+        CMP      R3,#+1
+        BNE.N    ??Display_Value_48
+        LDRH     R0,[SP, #+22]
+        LDR.N    R1,??Display_Value_27+0xC  ;; 0x186a0
+        MULS     R0,R1,R0
+        LDRH     R1,[SP, #+8]
+        SDIV     R4,R0,R1
+??Display_Value_48:
+        MVNS     R0,#-2147483648
+        UDIV     R0,R0,R8
+        CMP      R0,R4
+        BCC.N    ??Display_Value_51
+        LDR      R1,[SP, #+32]
+        MUL      R0,R8,R4
+        UDIV     R0,R0,R1
+        LDR      R1,[SP, #+24]
+        LSLS     R0,R0,#+10
+        UDIV     R4,R0,R1
+        B.N      ??Display_Value_40
+??Display_Value_51:
+        MOVS     R4,#-2147483648
+        B.N      ??Display_Value_40
+??Display_Value_52:
+        LDRB     R6,[R10, #+4]
+        CBNZ     R6,??Display_Value_53
+        CMP      R5,#+1
+        BNE.N    ??Display_Value_54
+        LDRH     R1,[SP, #+10]
+        MULS     R0,R1,R0
+        LDRH     R1,[SP, #+0]
+        UDIV     R4,R0,R1
+        B.N      ??Display_Value_54
+??Display_Value_53:
+        CMP      R6,#+1
+        BNE.N    ??Display_Value_55
+        CMP      R1,#+1
+        BNE.N    ??Display_Value_54
+        LDRH     R1,[SP, #+14]
+        MULS     R0,R1,R0
+        LDRH     R1,[SP, #+12]
+        UDIV     R4,R0,R1
+        B.N      ??Display_Value_54
+        Nop      
+        DATA
+??Display_Value_23:
+        DC32     Kb2
+        DC32     Kb1
+        DC32     Y_Attr
+        DC32     Ka2
+        DC32     Ka1
+        THUMB
+??Display_Value_55:
+        CMP      R6,#+2
+        BNE.N    ??Display_Value_56
+        CMP      R2,#+1
+        BNE.N    ??Display_Value_54
+        LDRH     R1,[SP, #+18]
+        MULS     R0,R1,R0
+        LDRH     R1,[SP, #+16]
+        UDIV     R4,R0,R1
+        B.N      ??Display_Value_54
+??Display_Value_56:
+        CMP      R6,#+3
+        BNE.N    ??Display_Value_54
+        CMP      R3,#+1
+        BNE.N    ??Display_Value_54
+        LDRH     R1,[SP, #+22]
+        MULS     R0,R1,R0
+        LDRH     R1,[SP, #+20]
+        UDIV     R4,R0,R1
+??Display_Value_54:
+        MVNS     R0,#-2147483648
+        UDIV     R0,R0,R8
+        CMP      R0,R4
+        BCC.N    ??Display_Value_57
+        LDR      R1,[SP, #+32]
+        MUL      R0,R8,R4
+        UDIV     R0,R0,R1
+        LDR      R1,[SP, #+24]
+        LSLS     R0,R0,#+10
+        UDIV     R4,R0,R1
+        B.N      ??Display_Value_40
+??Display_Value_57:
+        MOVS     R4,#-2147483648
+        B.N      ??Display_Value_40
+        DATA
+??Display_Value_27:
+        DC32     0x7a120
+        DC32     Y_COLOR + 36
+        DC32     Y_COLOR + 12
+        DC32     0x186a0
+        DC32     Y_COLOR + 60
+        CFI EndBlock cfiBlock1
+//  366 
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function Display_Title
+        THUMB
+//  367 void Display_Title(void)
+//  368 {
+Display_Title:
+        PUSH     {R4-R11,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R11 Frame(CFA, -8)
+        CFI R10 Frame(CFA, -12)
+        CFI R9 Frame(CFA, -16)
+        CFI R8 Frame(CFA, -20)
+        CFI R7 Frame(CFA, -24)
+        CFI R6 Frame(CFA, -28)
+        CFI R5 Frame(CFA, -32)
+        CFI R4 Frame(CFA, -36)
+        CFI CFA R13+36
+        SUB      SP,SP,#+16
+        CFI CFA R13+52
+        MOVS     R4,#+0
+        B.N      ??Display_Title_0
+//  369   u16  i, j;
+//  370   s32  k, n, m;
+//  371   
+//  372   for(i = TRACK1; i <= VOLUME; ++i){
+??Display_Title_1:
+        ADDS     R4,R4,#+1
+        UXTH     R4,R4
+??Display_Title_0:
+        CMP      R4,#+13
+        BCS.W    ??Display_Title_2
+//  373     for(j = 0; j < 4; ++j){
+        MOVS     R0,#+0
+        B.N      ??Display_Title_3
+//  374       if(Title[i][j].Flag & UPDAT){   // 需要刷新的Item
+//  375         Title[i][j].Flag &= !UPDAT;   // Clr Update flag 
+//  376         if((i == BATTERY)||(i == TRIGG)){
+//  377           if(Title[i][j].MARK & FIX){                  // ---- Under fix mode
+//  378             Print_Str( 
+//  379               Title[i][j].XPOS, Title[i][j].YPOS,
+//  380               Title[i][j].Color[Title[i][0].Value],    // Color variable 
+//  381               PRN, 
+//  382               Title[i][j].Str                          // String fixed
+//  383             );                    
+//  384           } else if(!(Title[i][j].MARK & NOT)){        // ---- Under other mode
+//  385             Print_Str(
+//  386               Title[i][j].XPOS, Title[i][j].YPOS,
+//  387               Title[i][j].Color[Title[i][0].Value],    // Color variable 
+//  388               PRN, 
+//  389               Title[i][j].Str +(Title[i][j].Value * 10)// String variable
+//  390             ); 
+//  391           }
+//  392         } else {
+//  393           if(Title[i][j].MARK & FIX){                  // ---- Under fix mode
+//  394             Print_Str(
+//  395               Title[i][j].XPOS, Title[i][j].YPOS,
+//  396               Title[i][j].Color[0],                    // Color fixed 
+//  397               PRN, 
+//  398               Title[i][j].Str                          // String fixed
+//  399              );
+//  400           } else if(Title[i][j].MARK & NUM3){          // ---- Under NUM3 mode
+//  401             if(i == V_VERNIE){
+//  402               Int2Str(NumStr,(_V1_Vernie-_V2_Vernie)*_Meas_V_Scale, V_UNIT, 3, SIGN);
+//  403               Print_Str(
+//  404                 Title[i][j].XPOS, Title[i][j].YPOS,
+//  405                 Title[i][j].Color[_Meas_V_Track],      // Color fixed  
+//  406                 PRN, 
+//  407                 NumStr                                // String for numerical
+//  408               );
+//  409             }
+//  410             if(i == T_VERNIE){
+//  411               m = 1;  n = 1;
+//  412               k = _T_Range;
+//  413               if(k < 9)  m = Power(10, (11-k)/3);
+//  414               else       n = Power(10, (k- 9)/3);
+//  415               k = X_Attr[(k%3)+9].SCALE *(_T2 - _T1);
+//  416               if(k > 0){
+//  417                 if(k <=  0x7FFFFFFF/m)  k = (m * k)/n;
+//  418                 else                    k = 0x80000000;
+//  419               } else {
+//  420                 if((-k)> 0x7FFFFFFF/m)  k = (m * k)/n;
+//  421                 else                    k = 0x80000000;
+//  422               }
+//  423               Int2Str(NumStr, k, T_UNIT, 3, SIGN);
+//  424               Print_Str(
+//  425                 Title[i][j].XPOS, Title[i][j].YPOS,
+//  426                 Title[i][j].Color[0],                  // Color fixed  
+//  427                 PRN, 
+//  428                 NumStr                                // String for numerical
+//  429               );
+//  430             }
+//  431             if(i == FILE){
+//  432               u8ToDec3(Title[i][1].Str, Title[i][1].Value);
+//  433               Print_Str(
+//  434                 Title[i][1].XPOS, Title[i][1].YPOS,
+//  435                 Title[i][1].Color[0],                  // Color fixed  
+//  436                 PRN, 
+//  437                 Title[i][1].Str                        // String for numerical
+//  438               );
+//  439             }
+//  440           } else if(Title[i][j].MARK == NUM2){ 
+//  441                 NumStr[0]=' ';
+//  442             if(i == BK_LIGHT){                        // 背光百分比显示处理
+//  443               if(Title[i][j].Value == 9){
+//  444                 Int2Str(NumStr, 100, P_UNIT, 3, STD);
+//  445                 } else Int2Str(NumStr, 10*(Title[i][j].Value+1), P_UNIT, 2, STD);
+//  446             } else {                                  // 音量百分比显示处理
+//  447               if(Title[i][j].Value == 10){
+//  448                 Int2Str(NumStr, 100, P_UNIT, 3, STD);
+//  449               } else Int2Str(NumStr, 10*(Title[i][j].Value+1), P_UNIT, 2, STD);
+//  450             }
+//  451             Print_Str(
+//  452               Title[i][j].XPOS, Title[i][j].YPOS,
+//  453               Title[i][j].Color[0],                  // Color fixed  
+//  454               PRN, 
+//  455               NumStr                        // String for numerical
+//  456             );
+//  457           } else if(Title[i][j].MARK != NOT){
+//  458           
+//  459             if(i == V_VERNIE){
+//  460               Print_Str(
+//  461                 Title[i][j].XPOS, Title[i][j].YPOS,
+//  462                 Title[i][j].Color[_Meas_V_Track],         // Color variable 
+//  463                 PRN, 
+//  464                 Title[i][j].Str +(Title[i][j].Value * 10)// String variable
+//  465               ); 
+//  466             } else {
+//  467               Print_Str(
+//  468                 Title[i][j].XPOS, Title[i][j].YPOS,
+//  469                 Title[i][j].Color[0],                    // Color fixed 
+//  470                 PRN, 
+//  471                 Title[i][j].Str +(Title[i][j].Value * 10)// String variable
+//  472               ); 
+//  473             }
+//  474           } else if(i == T_VERNIE){
+//  475             Print_Str(
+//  476               Title[i][j].XPOS, Title[i][j].YPOS,
+//  477               Title[i][j].Color[0],                    // Color fixed 
+//  478               PRN, 
+//  479               Title[i][j].Str                          // String variable
+//  480             ); 
+//  481           }
+//  482         }
+//  483       } else if((Current == i)&&(Detail[i] == j)&&(Blink)){ // 当前光标位置的Item
+//  484         Blink = 0;
+//  485         if((i == BATTERY)||(i == TRIGG)){
+//  486           if((Title[i][j].MARK & FIX)){      // ---- Under fix mode
+//  487             Print_Str( 
+//  488               Title[i][j].XPOS, Title[i][j].YPOS,
+//  489               Title[i][j].Color[Title[i][0].Value],    // Color variable 
+//  490               Twink, 
+//  491               Title[i][j].Str                          // String fixed
+//  492             );                    
+//  493           } else {                                // ---- Under other mode
+//  494             Print_Str(
+//  495               Title[i][j].XPOS, Title[i][j].YPOS,
+//  496               Title[i][j].Color[Title[i][0].Value],    // Color variable 
+//  497               Twink, 
+//  498               Title[i][j].Str +(Title[i][j].Value * 10)// String variable
+//  499             ); 
+//  500           }
+//  501         } else {
+//  502           if(Title[i][j].MARK & FIX){             // ---- Under fix mode
+//  503             Print_Str(
+//  504               Title[i][j].XPOS, Title[i][j].YPOS,
+//  505               Title[i][j].Color[0],                    // Color fixed 
+//  506               Twink, 
+//  507               Title[i][j].Str                          // String fixed
+//  508             );
+//  509      } else if(Title[i][j].MARK != NUM3){
+//  510                  if(i == V_VERNIE){
+//  511               Print_Str(
+//  512                 Title[i][j].XPOS, Title[i][j].YPOS,
+//  513                 Title[i][j].Color[_Meas_V_Track],        // Color variable=
+//  514                 Twink, 
+//  515                 Title[i][j].Str +(Title[i][j].Value * 10)// String variable
+//  516               ); 
+//  517             } else {
+//  518               Print_Str(
+//  519                 Title[i][j].XPOS, Title[i][j].YPOS,
+//  520                 Title[i][j].Color[0],                    // Color fixed 
+//  521                 Twink, 
+//  522                 Title[i][j].Str +(Title[i][j].Value * 10)// String variable
+//  523               ); 
+??Display_Title_4:
+        LDRSH    R0,[R5, #+16]
+        LDR      R2,[R5, #+0]
+        MOVS     R1,#+10
+        MLA      R0,R0,R1,R2
+??Display_Title_5:
+        PUSH     {R0}
+        CFI CFA R13+56
+        LDRB     R3,[R7, #+0]
+        LDR      R0,[R5, #+4]
+        LDRB     R1,[R5, #+14]
+        LDRH     R2,[R0, #+0]
+??Display_Title_6:
+        LDRH     R0,[R5, #+12]
+        _BLF     Print_Str,??Print_Str??rT
+        ADD      SP,SP,#+4
+        CFI CFA R13+52
+//  524       }
+//  525                   }
+//  526             if((i == FILE)&&(Title[i][j].MARK & NUM3)){
+??Display_Title_7:
+        CMP      R4,#+9
+        BNE.N    ??Display_Title_8
+        LDRB     R0,[R5, #+10]
+        LSLS     R0,R0,#+30
+        BPL.N    ??Display_Title_8
+//  527               u8ToDec3(Title[i][1].Str, Title[i][1].Value);
+        LDRSH    R1,[R6, #+20]
+        LDR      R0,[R6, #+4]
+        UXTB     R1,R1
+        _BLF     u8ToDec3,??u8ToDec3??rT
+//  528               Print_Str(
+//  529                 Title[i][1].XPOS, Title[i][1].YPOS,
+//  530                 Title[i][1].Color[0],                  // Color fixed  
+//  531                 Twink, 
+//  532                 Title[i][1].Str                        // String for numerical
+//  533               );
+        LDR      R0,[R6, #+4]
+        PUSH     {R0}
+        CFI CFA R13+56
+        LDRB     R3,[R7, #+0]
+        LDR      R0,[R6, #+8]
+        LDRB     R1,[R6, #+18]
+        LDRH     R2,[R0, #+0]
+        LDRH     R0,[R6, #+16]
+??Display_Title_9:
+        _BLF     Print_Str,??Print_Str??rT
+        ADD      SP,SP,#+4
+        CFI CFA R13+52
+//  534             }
+??Display_Title_8:
+        MOV      R0,R8
+        ADDS     R0,R0,#+1
+        UXTH     R0,R0
+??Display_Title_3:
+        MOV      R8,R0
+        MOV      R0,R8
+        CMP      R0,#+4
+        BCS.N    ??Display_Title_1
+        LDR.N    R1,??DataTable4  ;; Title
+        LDR.N    R7,??DataTable5  ;; Current
+        MOVS     R3,#+20
+        MOV      R9,R1
+        MOVS     R1,#+80
+        ADDW     R10,R9,#+656
+        MLA      R1,R4,R1,R9
+        MLA      R5,R8,R3,R1
+        MOVS     R6,R1
+        ADDS     R6,R6,#+16
+        LDRB     R1,[R5, #+18]
+        LSLS     R1,R1,#+30
+        BPL.W    ??Display_Title_10
+        MOVS     R0,#+0
+        STRB     R0,[R5, #+18]
+        CMP      R4,#+4
+        BEQ.N    ??Display_Title_11
+        CMP      R4,#+7
+        BNE.N    ??Display_Title_12
+??Display_Title_11:
+        LDRB     R0,[R5, #+10]
+        LSLS     R0,R0,#+26
+        BPL.N    ??Display_Title_13
+        LDR      R0,[R5, #+0]
+        MOVS     R3,#+0
+        PUSH     {R0}
+        CFI CFA R13+56
+        LDR      R1,[R5, #+4]
+        LDRSH    R0,[R6, R3]
+        LDRH     R2,[R1, R0, LSL #+1]
+        LDRB     R1,[R5, #+14]
+        LDRH     R0,[R5, #+12]
+        B.N      ??Display_Title_9
+        CFI CFA R13+52
+??Display_Title_13:
+        LDRB     R0,[R5, #+10]
+        LSLS     R0,R0,#+24
+        BMI.N    ??Display_Title_8
+        LDRSH    R0,[R5, #+16]
+        LDR      R2,[R5, #+0]
+        MOVS     R1,#+10
+        MOVS     R3,#+0
+        MLA      R0,R0,R1,R2
+        PUSH     {R0}
+        CFI CFA R13+56
+        LDR      R1,[R5, #+4]
+        LDRSH    R0,[R6, R3]
+        LDRH     R2,[R1, R0, LSL #+1]
+        LDRB     R1,[R5, #+14]
+        LDRH     R0,[R5, #+12]
+        B.N      ??Display_Title_9
+        CFI CFA R13+52
+??Display_Title_12:
+        LDRB     R0,[R5, #+10]
+        LSLS     R0,R0,#+26
+        BPL.N    ??Display_Title_14
+        LDR      R0,[R5, #+0]
+        MOVS     R3,#+0
+        PUSH     {R0}
+        CFI CFA R13+56
+        LDRB     R1,[R5, #+14]
+        LDR      R0,[R5, #+4]
+        LDRH     R2,[R0, #+0]
+        LDRH     R0,[R5, #+12]
+        B.N      ??Display_Title_9
+        CFI CFA R13+52
+??Display_Title_14:
+        LDR.N    R1,??Display_Title_15  ;; Y_COLOR
+        LDRSH    R0,[R10, #+40]
+        MOV      R11,R1
+        LDRB     R1,[R5, #+10]
+        LSLS     R1,R1,#+30
+        BPL.W    ??Display_Title_16
+        CMP      R4,#+8
+        BNE.N    ??Display_Title_17
+        MOVS     R1,#+0
+        PUSH     {R1}
+        CFI CFA R13+56
+        MOV      R2,R11
+        ADDS     R2,R2,#+24
+        PUSH     {R2}
+        CFI CFA R13+60
+        LDRSH    R1,[R10, #+20]
+        LDRSH    R2,[R10, #+0]
+        SUBS     R3,R2,R1
+        MOVS     R1,#+80
+        MLA      R0,R0,R1,R9
+        LDR.N    R1,??DataTable11  ;; Y_Attr
+        LDRSH    R2,[R0, #+56]
+        LDR      R1,[R1, #+0]
+        MOVS     R0,#+20
+        MLA      R0,R2,R0,R1
+        MOVS     R1,R3
+        MOVS     R3,#+3
+        LDR      R0,[R0, #+16]
+        POP      {R2}
+        CFI CFA R13+56
+        MULS     R1,R0,R1
+        MOVS     R0,R7
+        ADDS     R0,R0,#+20
+        _BLF     Int2Str,??Int2Str??rT
+        MOVS     R0,R7
+        ADDS     R0,R0,#+20
+        PUSH     {R0}
+        CFI CFA R13+60
+        LDR      R1,[R5, #+4]
+        LDRSH    R0,[R10, #+40]
+        MOVS     R3,#+0
+        LDRH     R2,[R1, R0, LSL #+1]
+        LDRB     R1,[R5, #+14]
+        LDRH     R0,[R5, #+12]
+        _BLF     Print_Str,??Print_Str??rT
+        ADD      SP,SP,#+8
+        CFI CFA R13+52
+??Display_Title_17:
+        CMP      R4,#+10
+        BNE.N    ??Display_Title_18
+        MOVS     R0,#+1
+        STR      R0,[SP, #+4]
+        STR      R0,[SP, #+8]
+        LDRSH    R0,[R9, #+436]
+        STR      R0,[SP, #+0]
+        LDR      R0,[SP, #+0]
+        CMP      R0,#+9
+        BGE.N    ??Display_Title_19
+        LDR      R1,[SP, #+0]
+        MOVS     R0,#+11
+        SUBS     R0,R0,R1
+        MOVS     R1,#+3
+        SDIV     R1,R0,R1
+        UXTB     R1,R1
+        MOVS     R0,#+10
+        _BLF     Power,??Power??rT
+        STR      R0,[SP, #+4]
+        B.N      ??Display_Title_20
+??Display_Title_19:
+        SUBS     R0,R0,#+9
+        MOVS     R1,#+3
+        SDIV     R1,R0,R1
+        UXTB     R1,R1
+        MOVS     R0,#+10
+        _BLF     Power,??Power??rT
+        STR      R0,[SP, #+8]
+??Display_Title_20:
+        LDR.N    R2,??DataTable12  ;; X_Attr
+        ADDW     R0,R9,#+816
+        STR      R0,[SP, #+12]
+        LDR      R0,[SP, #+0]
+        LDR      R2,[R2, #+0]
+        MOVS     R1,#+3
+        _BLF     ??div32_t,??rT??div32_t
+        MOVS     R1,#+20
+        MLA      R0,R0,R1,R2
+        LDR      R1,[SP, #+12]
+        LDR      R2,[SP, #+12]
+        ADDS     R0,R0,#+196
+        LDRSH    R1,[R1, #+20]
+        LDR      R0,[R0, #+0]
+        LDRSH    R2,[R2, #+0]
+        SUBS     R1,R1,R2
+        LDR      R2,[SP, #+4]
+        MULS     R0,R1,R0
+        MVNS     R1,#-2147483648
+        SDIV     R2,R1,R2
+        MOVS     R1,#-2147483648
+        CMP      R0,#+1
+        BLT.N    ??Display_Title_21
+        CMP      R2,R0
+        BLT.N    ??Display_Title_22
+        LDR      R1,[SP, #+4]
+        MULS     R1,R0,R1
+        LDR      R0,[SP, #+8]
+        SDIV     R1,R1,R0
+        B.N      ??Display_Title_22
+??Display_Title_21:
+        RSBS     R3,R0,#+0
+        CMP      R2,R3
+        BGE.N    ??Display_Title_22
+        LDR      R1,[SP, #+4]
+        MULS     R1,R0,R1
+        LDR      R0,[SP, #+8]
+        SDIV     R1,R1,R0
+??Display_Title_22:
+        MOVS     R0,#+0
+        PUSH     {R0}
+        CFI CFA R13+56
+        MOVS     R3,#+3
+        MOV      R2,R11
+        ADDS     R2,R2,#+12
+        MOVS     R0,R7
+        ADDS     R0,R0,#+20
+        _BLF     Int2Str,??Int2Str??rT
+        ADDS     R7,R7,#+20
+        PUSH     {R7}
+        CFI CFA R13+60
+        LDR      R0,[R5, #+4]
+        LDRB     R1,[R5, #+14]
+        MOVS     R3,#+0
+        LDRH     R2,[R0, #+0]
+        LDRH     R0,[R5, #+12]
+        _BLF     Print_Str,??Print_Str??rT
+        ADD      SP,SP,#+8
+        CFI CFA R13+52
+??Display_Title_18:
+        CMP      R4,#+9
+        BNE.W    ??Display_Title_8
+        LDRSH    R1,[R6, #+20]
+        LDR      R0,[R6, #+4]
+        UXTB     R1,R1
+        _BLF     u8ToDec3,??u8ToDec3??rT
+        LDR      R0,[R6, #+4]
+        MOVS     R3,#+0
+        PUSH     {R0}
+        CFI CFA R13+56
+        LDRB     R1,[R6, #+18]
+        LDR      R0,[R6, #+8]
+        LDRH     R2,[R0, #+0]
+        LDRH     R0,[R6, #+16]
+        B.N      ??Display_Title_9
+        CFI CFA R13+52
+??Display_Title_16:
+        LDRB     R1,[R5, #+10]
+        CMP      R1,#+1
+        BNE.N    ??Display_Title_23
+        MOVS     R0,#+32
+        STRB     R0,[R7, #+20]
+        LDRSH    R1,[R5, #+16]
+        CMP      R4,#+11
+        BNE.N    ??Display_Title_24
+        CMP      R1,#+9
+        BNE.N    ??Display_Title_25
+        MOVS     R0,#+2
+        PUSH     {R0}
+        CFI CFA R13+56
+        MOVS     R3,#+3
+        MOV      R2,R11
+        ADDS     R2,R2,#+60
+        MOVS     R1,#+100
+        B.N      ??Display_Title_26
+        CFI CFA R13+52
+??Display_Title_25:
+        MOVS     R0,#+2
+        PUSH     {R0}
+        CFI CFA R13+56
+        ADDS     R1,R1,#+1
+        MOVS     R0,#+10
+        MOVS     R3,#+2
+        MOV      R2,R11
+        ADDS     R2,R2,#+60
+        MULS     R1,R0,R1
+        B.N      ??Display_Title_26
+        CFI CFA R13+52
+??Display_Title_24:
+        CMP      R1,#+10
+        BNE.N    ??Display_Title_27
+        MOVS     R0,#+2
+        PUSH     {R0}
+        CFI CFA R13+56
+        MOVS     R3,#+3
+        MOV      R2,R11
+        ADDS     R2,R2,#+60
+        MOVS     R1,#+100
+        B.N      ??Display_Title_26
+        CFI CFA R13+52
+??Display_Title_27:
+        MOVS     R0,#+2
+        PUSH     {R0}
+        CFI CFA R13+56
+        ADDS     R1,R1,#+1
+        MOVS     R0,#+10
+        MOVS     R3,#+2
+        MOV      R2,R11
+        ADDS     R2,R2,#+60
+        MULS     R1,R0,R1
+??Display_Title_26:
+        MOVS     R0,R7
+        ADDS     R0,R0,#+20
+        _BLF     Int2Str,??Int2Str??rT
+        ADD      SP,SP,#+4
+        CFI CFA R13+52
+        ADDS     R7,R7,#+20
+        PUSH     {R7}
+        CFI CFA R13+56
+        LDR      R0,[R5, #+4]
+        LDRB     R1,[R5, #+14]
+        MOVS     R3,#+0
+        LDRH     R2,[R0, #+0]
+        LDRH     R0,[R5, #+12]
+        B.N      ??Display_Title_9
+        CFI CFA R13+52
+??Display_Title_23:
+        CMP      R1,#+128
+        BEQ.N    ??Display_Title_28
+        CMP      R4,#+8
+        BNE.N    ??Display_Title_29
+        LDRSH    R1,[R5, #+16]
+        LDR      R3,[R5, #+0]
+        MOVS     R2,#+10
+        MLA      R1,R1,R2,R3
+        MOVS     R3,#+0
+        PUSH     {R1}
+        CFI CFA R13+56
+        LDR      R1,[R5, #+4]
+        LDRH     R2,[R1, R0, LSL #+1]
+        LDRB     R1,[R5, #+14]
+        LDRH     R0,[R5, #+12]
+        B.N      ??Display_Title_9
+        CFI CFA R13+52
+??Display_Title_29:
+        LDRSH    R0,[R5, #+16]
+        LDR      R2,[R5, #+0]
+        MOVS     R1,#+10
+        MOVS     R3,#+0
+        MLA      R0,R0,R1,R2
+        PUSH     {R0}
+        CFI CFA R13+56
+        LDRB     R1,[R5, #+14]
+        LDR      R0,[R5, #+4]
+        LDRH     R2,[R0, #+0]
+        LDRH     R0,[R5, #+12]
+        B.N      ??Display_Title_9
+        CFI CFA R13+52
+??Display_Title_28:
+        CMP      R4,#+10
+        BNE.W    ??Display_Title_8
+        LDR      R0,[R5, #+0]
+        MOVS     R3,#+0
+        PUSH     {R0}
+        CFI CFA R13+56
+        LDRB     R1,[R5, #+14]
+        LDR      R0,[R5, #+4]
+        LDRH     R2,[R0, #+0]
+        LDRH     R0,[R5, #+12]
+        B.N      ??Display_Title_9
+        CFI CFA R13+52
+??Display_Title_10:
+        LDRB     R1,[R7, #+0]
+        CMP      R1,R4
+        BNE.W    ??Display_Title_8
+        ADDS     R0,R7,R4
+        LDRB     R0,[R0, #+4]
+        CMP      R0,R8
+        BNE.W    ??Display_Title_8
+        LDR.N    R0,??DataTable8  ;; Blink
+        LDRB     R1,[R0, #+0]
+        CMP      R1,#+0
+        BEQ.W    ??Display_Title_8
+        LDR.N    R7,??DataTable9  ;; Twink
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+0]
+        CMP      R4,#+4
+        BEQ.N    ??Display_Title_30
+        CMP      R4,#+7
+        BNE.N    ??Display_Title_31
+??Display_Title_30:
+        LDRB     R0,[R5, #+10]
+        LSLS     R0,R0,#+26
+        BPL.N    ??Display_Title_32
+        LDR      R0,[R5, #+0]
+        PUSH     {R0}
+        CFI CFA R13+56
+        LDRB     R3,[R7, #+0]
+        LDRSH    R0,[R6, R1]
+        LDR      R1,[R5, #+4]
+        LDRH     R2,[R1, R0, LSL #+1]
+        LDRB     R1,[R5, #+14]
+        LDRH     R0,[R5, #+12]
+        B.N      ??Display_Title_9
+        CFI CFA R13+52
+??Display_Title_32:
+        LDRSH    R0,[R5, #+16]
+        LDR      R2,[R5, #+0]
+        MOVS     R1,#+10
+        MLA      R0,R0,R1,R2
+        PUSH     {R0}
+        CFI CFA R13+56
+        LDRB     R3,[R7, #+0]
+        LDR      R1,[R5, #+4]
+        LDRSH    R0,[R6, #+0]
+        LDRH     R2,[R1, R0, LSL #+1]
+        LDRB     R1,[R5, #+14]
+        LDRH     R0,[R5, #+12]
+        B.N      ??Display_Title_9
+        CFI CFA R13+52
+??Display_Title_31:
+        LDRB     R0,[R5, #+10]
+        LSLS     R0,R0,#+26
+        BPL.N    ??Display_Title_33
+        LDR      R0,[R5, #+0]
+        B.N      ??Display_Title_5
+??Display_Title_33:
+        LDRB     R0,[R5, #+10]
+        CMP      R0,#+2
+        BEQ.W    ??Display_Title_7
+        CMP      R4,#+8
+        BNE.W    ??Display_Title_4
+        LDRSH    R0,[R5, #+16]
+        LDR      R2,[R5, #+0]
+        MOVS     R1,#+10
+        MLA      R0,R0,R1,R2
+        PUSH     {R0}
+        CFI CFA R13+56
+        LDRB     R3,[R7, #+0]
+        LDR      R1,[R5, #+4]
+        LDRSH    R0,[R10, #+40]
+        LDRH     R2,[R1, R0, LSL #+1]
+        LDRB     R1,[R5, #+14]
+        B.N      ??Display_Title_6
+        CFI CFA R13+52
+//  535         }
+//  536       }
+//  537     }
+//  538   }
+//  539 }
+??Display_Title_2:
+        ADD      SP,SP,#+16
+        CFI CFA R13+36
+        POP      {R4-R11,PC}      ;; return
+        Nop      
+        DATA
+??Display_Title_15:
+        DC32     Y_COLOR
+        CFI EndBlock cfiBlock2
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable4:
+        DC32     Title
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable5:
+        DC32     Current
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable8:
+        DC32     Blink
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable9:
+        DC32     Twink
+//  540 /*******************************************************************************
+//  541  Load_Attr:  加载硬件属性
+//  542 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function Load_Attr
+        THUMB
+//  543 void Load_Attr(void)
+//  544 {
+Load_Attr:
+        PUSH     {R4-R7,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R7 Frame(CFA, -8)
+        CFI R6 Frame(CFA, -12)
+        CFI R5 Frame(CFA, -16)
+        CFI R4 Frame(CFA, -20)
+        CFI CFA R13+20
+//  545   u16 i;
+//  546   
+//  547   for(i=0; i<G_Attr[0].Yp_Max+1; ++i) 
+        LDR.N    R6,??Load_Attr_0  ;; G_Attr
+        LDR.N    R5,??DataTable10  ;; Title
+        MOVS     R4,#+0
+        LDR      R0,[R6, #+0]
+        MOVS     R7,#+0
+        LDRH     R0,[R0, #+4]
+        ADDS     R0,R0,#+1
+        CMP      R0,#+1
+        BGE.N    ??Load_Attr_1
+        B.N      ??Load_Attr_2
+//  548     strcpy(&Vertical[i][0], Y_Attr[i].STR);
+??Load_Attr_3:
+        LDR.N    R2,??DataTable11  ;; Y_Attr
+        MOVS     R1,#+20
+        ADDS     R7,R7,#+1
+        LDR      R2,[R2, #+0]
+        UXTH     R7,R7
+        MLA      R1,R0,R1,R2
+        MOVS     R2,#+10
+        MLA      R0,R0,R2,R5
+        ADDS     R0,R0,#+1040
+        _BLF     strcpy,??strcpy??rT
+??Load_Attr_1:
+        LDR      R1,[R6, #+0]
+        MOVS     R0,R7
+        LDRH     R1,[R1, #+4]
+        ADDS     R1,R1,#+1
+        CMP      R0,R1
+        BLT.N    ??Load_Attr_3
+//  549   Title[TRACK1][RANGE].Limit = G_Attr[0].Yp_Max;
+??Load_Attr_2:
+        LDR      R0,[R6, #+0]
+        LDRH     R1,[R0, #+4]
+        STRH     R1,[R5, #+48]
+//  550   Title[TRACK2][RANGE].Limit = G_Attr[0].Yp_Max;
+        LDRH     R1,[R0, #+4]
+        STRH     R1,[R5, #+128]
+//  551   Title[TRACK3][RANGE].Limit = 0;
+        MOVS     R1,#+0
+        STRH     R1,[R5, #+208]
+//  552   Title[TRACK4][RANGE].Limit = 0;
+        STRH     R1,[R5, #+288]
+//  553   
+//  554   for(i=0; i<G_Attr[0].Xp_Max+6; ++i) 
+        LDRH     R0,[R0, #+6]
+        ADDS     R0,R0,#+6
+        CMP      R0,#+1
+        BGE.N    ??Load_Attr_4
+        B.N      ??Load_Attr_5
+//  555     strcpy(&BaseStr[i][0], X_Attr[i].STR);
+??Load_Attr_6:
+        LDR.N    R2,??DataTable12  ;; X_Attr
+        MOVS     R1,#+20
+        ADDS     R4,R4,#+1
+        LDR      R2,[R2, #+0]
+        UXTH     R4,R4
+        MLA      R1,R0,R1,R2
+        MOVS     R2,#+10
+        MLA      R0,R0,R2,R5
+        ADDS     R0,R0,#+1192
+        _BLF     strcpy,??strcpy??rT
+??Load_Attr_4:
+        LDR      R1,[R6, #+0]
+        MOVS     R0,R4
+        LDRH     R1,[R1, #+6]
+        ADDS     R1,R1,#+6
+        CMP      R0,R1
+        BLT.N    ??Load_Attr_6
+//  556   Title[T_BASE][BASE].Limit = G_Attr[0].Xp_Max;
+??Load_Attr_5:
+        LDR      R0,[R6, #+0]
+        LDRH     R0,[R0, #+6]
+        STRH     R0,[R5, #+428]
+//  557   
+//  558 }
+        POP      {R4-R7,PC}       ;; return
+        DATA
+??Load_Attr_0:
+        DC32     G_Attr
+        CFI EndBlock cfiBlock3
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable10:
+        DC32     Title
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable11:
+        DC32     Y_Attr
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable12:
+        DC32     X_Attr
+//  559 /*******************************************************************************
+//  560  Update_Battery:  刷新电池电量指示
+//  561 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function Update_Battery
+        THUMB
+//  562 void Update_Battery(void)
+//  563 {
+Update_Battery:
+        PUSH     {LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI CFA R13+4
+//  564   u16 Vb, Level;
+//  565   
+//  566   Vb = __Get(V_BATTERY);
+        MOVS     R0,#+6
+        _BLF     __Get,??__Get??rT
+//  567   Level =0;
+//  568   if(Vb > 3000 ) Level +=1;
+        LDR.N    R3,??Update_Battery_0  ;; 0xbb9
+        UXTH     R0,R0
+        MOVS     R1,#+0
+        CMP      R0,R3
+        IT      CS 
+        MOVCS    R1,#+1
+//  569   if(Vb > 3500 ) Level +=1;
+        LDR.N    R3,??Update_Battery_0+0x4  ;; 0xdad
+        CMP      R0,R3
+        ITT     CS 
+        ADDCS    R1,R1,#+1
+        UXTHCS   R1,R1
+//  570   if(Vb > 3900 ) Level +=1;
+        LDR.N    R3,??Update_Battery_0+0x8  ;; 0xf3d
+        CMP      R0,R3
+        ITT     CS 
+        ADDCS    R1,R1,#+1
+        UXTHCS   R1,R1
+//  571   if(Vb > 4100 ) Level +=1;
+        LDR.N    R2,??Update_Battery_0+0xC  ;; 0x1005
+        CMP      R0,R2
+        ITT     CS 
+        ADDCS    R1,R1,#+1
+        UXTHCS   R1,R1
+//  572   Print_Str(
+//  573     Title[4][1].XPOS, Title[4][1].YPOS,
+//  574     Title[4][1].Color[Level], 
+//  575     PRN,
+//  576     (Title[4][1].Str + Level*10) 
+//  577   );    
+        LDR.N    R0,??Update_Battery_0+0x10  ;; Title + 340
+        MOVS     R2,#+10
+        LDR      R3,[R0, #+0]
+        MLA      R2,R1,R2,R3
+        MOVS     R3,#+0
+        PUSH     {R2}
+        CFI CFA R13+8
+        LDR      R2,[R0, #+4]
+        LDRH     R2,[R2, R1, LSL #+1]
+        LDRB     R1,[R0, #+14]
+        LDRH     R0,[R0, #+12]
+        _BLF     Print_Str,??Print_Str??rT
+//  578 }
+        ADD      SP,SP,#+4
+        CFI CFA R13+4
+        POP      {PC}             ;; return
+        Nop      
+        DATA
+??Update_Battery_0:
+        DC32     0xbb9
+        DC32     0xdad
+        DC32     0xf3d
+        DC32     0x1005
+        DC32     Title + 340
+        CFI EndBlock cfiBlock4
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Print_Str??rT:
+        PUSH     {R3}
+        CFI CFA R13+4
+        LDR.N    R3,??Subroutine0_0  ;; Print_Str
+        MOV      R12,R3
+        POP      {R3}
+        CFI CFA R13+0
+        BX       R12
+        Nop      
+        DATA
+??Subroutine0_0:
+        DC32     Print_Str
+        CFI EndBlock cfiBlock5
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Power??rT:
+        LDR.N    R3,??Subroutine1_0  ;; Power
+        BX       R3
+        DATA
+??Subroutine1_0:
+        DC32     Power
+        CFI EndBlock cfiBlock6
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??rT??divu32_t:
+        PUSH     {R3}
+        CFI CFA R13+4
+        LDR.N    R3,??Subroutine2_0  ;; ??divu32_t
+        MOV      R12,R3
+        POP      {R3}
+        CFI CFA R13+0
+        BX       R12
+        Nop      
+        DATA
+??Subroutine2_0:
+        DC32     ??divu32_t
+        CFI EndBlock cfiBlock7
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__Get??rT:
+        LDR.N    R3,??Subroutine3_0  ;; __Get
+        BX       R3
+        DATA
+??Subroutine3_0:
+        DC32     __Get
+        CFI EndBlock cfiBlock8
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Int2Str??rT:
+        PUSH     {R3}
+        CFI CFA R13+4
+        LDR.N    R3,??Subroutine4_0  ;; Int2Str
+        MOV      R12,R3
+        POP      {R3}
+        CFI CFA R13+0
+        BX       R12
+        Nop      
+        DATA
+??Subroutine4_0:
+        DC32     Int2Str
+        CFI EndBlock cfiBlock9
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Int_sqrt??rT:
+        LDR.N    R3,??Subroutine5_0  ;; Int_sqrt
+        BX       R3
+        DATA
+??Subroutine5_0:
+        DC32     Int_sqrt
+        CFI EndBlock cfiBlock10
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock11 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??u8ToDec3??rT:
+        LDR.N    R3,??Subroutine6_0  ;; u8ToDec3
+        BX       R3
+        DATA
+??Subroutine6_0:
+        DC32     u8ToDec3
+        CFI EndBlock cfiBlock11
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock12 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??rT??div32_t:
+        PUSH     {R3}
+        CFI CFA R13+4
+        LDR.N    R3,??Subroutine7_0  ;; ??div32_t
+        MOV      R12,R3
+        POP      {R3}
+        CFI CFA R13+0
+        BX       R12
+        Nop      
+        DATA
+??Subroutine7_0:
+        DC32     ??div32_t
+        CFI EndBlock cfiBlock12
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock13 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??strcpy??rT:
+        LDR.N    R3,??Subroutine8_0  ;; strcpy
+        BX       R3
+        DATA
+??Subroutine8_0:
+        DC32     strcpy
+        CFI EndBlock cfiBlock13
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(2)
+`?<Initializer for Title>`:
+        DATA
+        DC32 CH_A_STR, Y_INV
+        DC16 1
+        DC8 16, 0
+        DC16 35
+        DC8 228, 0
+        DC16 1
+        DC8 2, 0
+        DC32 YCOUPLE, Y_COLOR
+        DC16 1
+        DC8 16, 0
+        DC16 35
+        DC8 216, 0
+        DC16 0
+        DC8 2, 0
+        DC32 Vertical, Y_COLOR
+        DC16 8
+        DC8 0, 0
+        DC16 51
+        DC8 216, 0
+        DC16 5
+        DC8 2, 0
+        DC32 YPOSISTR, Y_INV
+        DC16 200
+        DC8 32, 0
+        DC16 0
+        DC8 0, 0
+        DC16 150
+        DC8 2, 0
+        DC32 CH_B_STR, Y_INV + 2H
+        DC16 1
+        DC8 16, 0
+        DC16 86
+        DC8 228, 0
+        DC16 1
+        DC8 2, 0
+        DC32 YCOUPLE, Y_COLOR + 2H
+        DC16 1
+        DC8 16, 0
+        DC16 86
+        DC8 216, 0
+        DC16 1
+        DC8 2, 0
+        DC32 Vertical, Y_COLOR + 2H
+        DC16 8
+        DC8 0, 0
+        DC16 102
+        DC8 216, 0
+        DC16 1
+        DC8 2, 0
+        DC32 YPOSISTR, Y_INV + 2H
+        DC16 200
+        DC8 32, 0
+        DC16 0
+        DC8 0, 0
+        DC16 100
+        DC8 2, 0
+        DC32 CH_C_STR, Y_INV + 4H
+        DC16 1
+        DC8 16, 0
+        DC16 137
+        DC8 228, 0
+        DC16 1
+        DC8 2, 0
+        DC32 NO_DEF, Y_COLOR + 4H
+        DC16 0
+        DC8 16, 0
+        DC16 137
+        DC8 216, 0
+        DC16 0
+        DC8 2, 0
+        DC32 NO_RANGE, Y_COLOR + 4H
+        DC16 0
+        DC8 0, 0
+        DC16 153
+        DC8 216, 0
+        DC16 0
+        DC8 2, 0
+        DC32 YPOSISTR, Y_INV + 4H
+        DC16 199
+        DC8 32, 0
+        DC16 0
+        DC8 0, 0
+        DC16 60
+        DC8 2, 0
+        DC32 CH_D_STR, Y_INV + 6H
+        DC16 9
+        DC8 16, 0
+        DC16 188
+        DC8 228, 0
+        DC16 1
+        DC8 2, 0
+        DC32 NO_DEF, Y_COLOR + 6H
+        DC16 0
+        DC8 16, 0
+        DC16 188
+        DC8 216, 0
+        DC16 0
+        DC8 2, 0
+        DC32 NO_RANGE, Y_COLOR + 6H
+        DC16 0
+        DC8 0, 0
+        DC16 204
+        DC8 216, 0
+        DC16 0
+        DC8 2, 0
+        DC32 YPOSISTR, Y_INV + 6H
+        DC16 199
+        DC8 32, 0
+        DC16 0
+        DC8 0, 0
+        DC16 20
+        DC8 2, 0
+        DC32 STATESTR, S_Inv
+        DC16 2
+        DC8 0, 0
+        DC16 0
+        DC8 228, 0
+        DC16 0
+        DC8 2, 0
+        DC32 BATT_STR, B_COLOR
+        DC16 4
+        DC8 0, 0
+        DC16 0
+        DC8 216, 0
+        DC16 0
+        DC8 2, 0
+        DC32 BATT_STR, B_COLOR
+        DC16 4
+        DC8 128, 0
+        DC16 0
+        DC8 0, 0
+        DC16 0
+        DC8 4, 0
+        DC32 BATT_STR, B_COLOR
+        DC16 4
+        DC8 128, 0
+        DC16 0
+        DC8 0, 0
+        DC16 0
+        DC8 4, 0
+        DC32 MODESTR, XCOLOR
+        DC16 4
+        DC8 16, 0
+        DC16 239
+        DC8 228, 0
+        DC16 0
+        DC8 2, 0
+        DC32 BaseStr, XCOLOR + 2H
+        DC16 26
+        DC8 0, 0
+        DC16 239
+        DC8 216, 0
+        DC16 17
+        DC8 2, 0
+        DC32 XPOSISTR, XCOLOR
+        DC16 3795
+        DC8 32, 0
+        DC16 366
+        DC8 0, 0
+        DC16 0
+        DC8 2, 0
+        DC32 XPOSISTR, XCOLOR
+        DC16 3795
+        DC8 128, 0
+        DC16 80
+        DC8 0, 0
+        DC16 0
+        DC8 2, 0
+        DC32 FO_TYPE, O_COLOR
+        DC16 3
+        DC8 16, 0
+        DC16 282
+        DC8 228, 0
+        DC16 3
+        DC8 2, 0
+        DC32 FO_STR, O_COLOR + 2H
+        DC16 19
+        DC8 0, 0
+        DC16 282
+        DC8 216, 0
+        DC16 13
+        DC8 2, 0
+        DC32 NumStr, O_COLOR
+        DC16 100
+        DC8 128, 0
+        DC16 306
+        DC8 228, 0
+        DC16 50
+        DC8 4, 0
+        DC32 NumStr, O_COLOR
+        DC16 0
+        DC8 128, 0
+        DC16 0
+        DC8 0, 0
+        DC16 0
+        DC8 4, 0
+        DC32 TRIGSTR, Y_INV
+        DC16 3
+        DC8 16, 0
+        DC16 333
+        DC8 228, 0
+        DC16 1
+        DC8 2, 0
+        DC32 TR_TYPE, Y_INV
+        DC16 7
+        DC8 16, 0
+        DC16 373
+        DC8 228, 0
+        DC16 0
+        DC8 2, 0
+        DC32 VT_STR, Y_COLOR
+        DC16 200
+        DC8 32, 0
+        DC16 333
+        DC8 216, 0
+        DC16 0
+        DC8 2, 0
+        DC32 VT_STR, Y_COLOR
+        DC16 0
+        DC8 128, 0
+        DC16 357
+        DC8 216, 0
+        DC16 0
+        DC8 4, 0
+        DC32 VERNIE1, V_INV
+        DC16 199
+        DC8 32, 0
+        DC16 35
+        DC8 0, 0
+        DC16 180
+        DC8 2, 0
+        DC32 VERNIE2, V_INV
+        DC16 199
+        DC8 32, 0
+        DC16 62
+        DC8 0, 0
+        DC16 40
+        DC8 2, 0
+        DC32 DELTA_V, Y_INV
+        DC16 1
+        DC8 16, 0
+        DC16 314
+        DC8 197, 0
+        DC16 0
+        DC8 2, 0
+        DC32 NumStr, Y_COLOR
+        DC16 240
+        DC8 2, 0
+        DC16 342
+        DC8 197, 0
+        DC16 70
+        DC8 2, 0
+        DC32 F_FUNC, F_INV
+        DC16 1
+        DC8 16, 0
+        DC16 134
+        DC8 0, 0
+        DC16 0
+        DC8 0, 0
+        DC32 NumStr, F_INV
+        DC16 255
+        DC8 2, 0
+        DC16 206
+        DC8 0, 0
+        DC16 0
+        DC8 1, 0
+        DC32 F_EXT, F_INV
+        DC16 3
+        DC8 16, 0
+        DC16 230
+        DC8 0, 0
+        DC16 0
+        DC8 0, 0
+        DC32 F_EXT, F_INV
+        DC16 0
+        DC8 128, 0
+        DC16 0
+        DC8 0, 0
+        DC16 0
+        DC8 4, 0
+        DC32 VERNIE3, T_INV
+        DC16 300
+        DC8 32, 0
+        DC16 312
+        DC8 0, 0
+        DC16 80
+        DC8 2, 0
+        DC32 VERNIE4, T_INV
+        DC16 300
+        DC8 32, 0
+        DC16 339
+        DC8 0, 0
+        DC16 280
+        DC8 2, 0
+        DC32 DELTA_T, T_INV
+        DC16 0
+        DC8 128, 0
+        DC16 314
+        DC8 182, 0
+        DC16 0
+        DC8 2, 0
+        DC32 NumStr, T_COLOR
+        DC16 300
+        DC8 2, 0
+        DC16 342
+        DC8 182, 0
+        DC16 80
+        DC8 2, 0
+        DC32 BL_Str, V_INV
+        DC16 0
+        DC8 32, 0
+        DC16 314
+        DC8 167, 0
+        DC16 0
+        DC8 2, 0
+        DC32 NumStr, V_COLOR
+        DC16 9
+        DC8 1, 0
+        DC16 342
+        DC8 167, 0
+        DC16 5
+        DC8 2, 0
+        DC32 NumStr, V_INV
+        DC16 0
+        DC8 128, 0
+        DC16 0
+        DC8 0, 0
+        DC16 0
+        DC8 4, 0
+        DC32 NumStr, V_INV
+        DC16 0
+        DC8 128, 0
+        DC16 0
+        DC8 0, 0
+        DC16 0
+        DC8 4, 0
+        DC32 Vol_Str, V_INV
+        DC16 0
+        DC8 32, 0
+        DC16 314
+        DC8 152, 0
+        DC16 0
+        DC8 2, 0
+        DC32 NumStr, V_COLOR
+        DC16 10
+        DC8 1, 0
+        DC16 342
+        DC8 152, 0
+        DC16 5
+        DC8 2, 0
+        DC32 NumStr, V_INV
+        DC16 0
+        DC8 128, 0
+        DC16 0
+        DC8 0, 0
+        DC16 0
+        DC8 4, 0
+        DC32 NumStr, V_INV
+        DC16 0
+        DC8 128, 0
+        DC16 0
+        DC8 0, 0
+        DC16 0
+        DC8 4, 0
+`?<Initializer for Vertical>`:
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0
+`?<Initializer for BaseStr>`:
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for Update>`:
+        DATA
+        DC8 1
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(2)
+`?<Initializer for BL_Str>`:
+        DATA
+        DC8 "B.L"
+        DC8 0, 0, 0, 0
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(2)
+`?<Initializer for Vol_Str>`:
+        DATA
+        DC8 "Vol"
+        DC8 0, 0, 0, 0
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(2)
+`?<Initializer for Meter>`:
+        DATA
+        DC32 METER
+        DC8 4, 0
+        DC16 314, 342
+        DC8 137, 2
+        DC32 METER
+        DC8 4, 1
+        DC16 314, 342
+        DC8 122, 2
+        DC32 METER
+        DC8 3, 7
+        DC16 314, 342
+        DC8 107, 2
+        DC32 METER
+        DC8 2, 8
+        DC16 314, 342
+        DC8 92, 2
+        DC32 METER
+        DC8 2, 9
+        DC16 314, 342
+        DC8 77, 2
+        DC32 METER
+        DC8 1, 10
+        DC16 314, 342
+        DC8 62, 2
+        DC32 METER
+        DC8 1, 11
+        DC16 314, 342
+        DC8 47, 2
+        DC32 METER
+        DC8 0, 2
+        DC16 314, 342
+        DC8 32, 2
+        DC32 METER
+        DC8 0, 3
+        DC16 314, 342
+        DC8 17, 2
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(2)
+`?*?DATA_ID`:
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_I:
+        DCD      sfe(DATA_I) - sfb(DATA_I), sfb(DATA_I), sfb(DATA_ID)
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_Z:
+        DCD      sfe(DATA_Z) - sfb(DATA_Z), sfb(DATA_Z), sfb(DATA_Z)
+
+        END
+//  579 /******************************** END OF FILE *********************************/
+// 
+// 3 436 bytes in segment CODE
+// 1 122 bytes in segment DATA_C
+// 1 617 bytes in segment DATA_I
+// 1 617 bytes in segment DATA_ID
+//    35 bytes in segment DATA_Z
+//    24 bytes in segment INITTAB
+// 
+// 3 332 bytes of CODE  memory (+ 128 bytes shared)
+// 2 739 bytes of CONST memory
+// 1 652 bytes of DATA  memory
+//
+//Errors: none
+//Warnings: 4

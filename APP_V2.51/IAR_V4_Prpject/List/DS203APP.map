@@ -1,0 +1,2526 @@
+################################################################################
+#                                                                              #
+#      IAR Universal Linker V4.60I/386                                         #
+#                                                                              #
+#           Link time     =  08/Aug/2011  16:46:15                             #
+#           Target CPU    =  ARM                                               #
+#           List file     =  D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\List #
+#                            \DS203APP.map                                     #
+#           Output file 1 =  D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Exe\ #
+#                            DS203APP.d79                                      #
+#                            Format: debug                                     #
+#                            UBROF version 10.0.2                              #
+#                            Using library modules for C-SPY (-rt)             #
+#           Output file 2 =  D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Exe\ #
+#                            DS203APP.hex                                      #
+#                            Format: intel-extended, variant: -y(CODE)         #
+#           Command line  =  D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\ #
+#                            BIOS.r79                                          #
+#                            D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\ #
+#                            Calibrat.r79                                      #
+#                            D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\ #
+#                            Draw.r79                                          #
+#                            D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\ #
+#                            Files.r79                                         #
+#                            D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\ #
+#                            Function.r79                                      #
+#                            D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\ #
+#                            Ident.r79                                         #
+#                            D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\ #
+#                            Interrupt.r79                                     #
+#                            D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\ #
+#                            Main.r79                                          #
+#                            D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\ #
+#                            Menu.r79                                          #
+#                            D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\ #
+#                            Process.r79                                       #
+#                            D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\ #
+#                            cortexm3_macro.r79                                #
+#                            D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\ #
+#                            stm32f10x_dma.r79                                 #
+#                            D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\ #
+#                            stm32f10x_flash.r79                               #
+#                            D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\ #
+#                            stm32f10x_fsmc.r79                                #
+#                            D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\ #
+#                            stm32f10x_gpio.r79                                #
+#                            D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\ #
+#                            stm32f10x_lib.r79                                 #
+#                            D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\ #
+#                            stm32f10x_nvic.r79                                #
+#                            D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\ #
+#                            stm32f10x_rcc.r79                                 #
+#                            D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\ #
+#                            stm32f10x_sdio.r79                                #
+#                            D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\ #
+#                            stm32f10x_spi.r79                                 #
+#                            D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\ #
+#                            stm32f10x_vector.r79                              #
+#                            -o                                                #
+#                            D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Exe\ #
+#                            DS203APP.d79                                      #
+#                            -l                                                #
+#                            D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\List #
+#                            \DS203APP.map                                     #
+#                            -xms                                              #
+#                            "-IC:\Program Files\IAR Systems\Embedded Workbenc #
+#                            h 4.0 Evaluation\arm\LIB\"                        #
+#                            -f                                                #
+#                            D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\lnka #
+#                            rm.xcl                                            #
+#                            (-DROMSTART=0x800C000 -DROMEND=0x803FFFF          #
+#                            -DRAMSTART=0x20003000 -DRAMEND=0x2000BFFF -carm   #
+#                            -Z(CODE)INTVEC=ROMSTART-ROMEND                    #
+#                            -Z(CODE)ICODE,DIFUNCT=ROMSTART-ROMEND             #
+#                            -Z(CODE)SWITAB=ROMSTART-ROMEND                    #
+#                            -Z(CODE)CODE=ROMSTART-ROMEND                      #
+#                            -Z(CONST)CODE_ID=ROMSTART-ROMEND                  #
+#                            -Z(CONST)INITTAB,DATA_ID,DATA_C=ROMSTART-ROMEND   #
+#                            -Z(CONST)CHECKSUM=ROMSTART-ROMEND                 #
+#                            -Z(DATA)DATA_I,DATA_Z,DATA_N=RAMSTART-RAMEND      #
+#                            -Z(DATA)CODE_I=RAMSTART-RAMEND -QCODE_I=CODE_ID   #
+#                            -D_CSTACK_SIZE=1000 -D_HEAP_SIZE=200              #
+#                            -Z(DATA)CSTACK+_CSTACK_SIZE=RAMSTART-RAMEND       #
+#                            -Z(DATA)HEAP+_HEAP_SIZE=RAMSTART-RAMEND           #
+#                            -Ointel-extended,(CODE)=.hex) -rt                 #
+#                            "C:\Program Files\IAR Systems\Embedded Workbench  #
+#                            4.0 Evaluation\arm\LIB\dl7mptnnl8f.r79"           #
+#                            -s __program_start                                #
+#                                                                              #
+#                        Copyright 1987-2007 IAR Systems. All rights reserved. #
+################################################################################
+
+
+
+
+
+                ****************************************
+                *                                      *
+                *           CROSS REFERENCE            *
+                *                                      *
+                ****************************************
+
+       Program entry at :           0800C165  Relocatable, from module : ?CMAIN
+
+
+
+
+                ****************************************
+                *                                      *
+                *            RUNTIME MODEL             *
+                *                                      *
+                ****************************************
+
+  StackAlign4            = USED
+  __cpu_mode             = __pcs__thumb
+  __data_model           = absolute
+  __dlib_file_descriptor = 1
+  __endian               = little
+  __rt_version           = 6
+
+
+
+                ****************************************
+                *                                      *
+                *              MODULE MAP              *
+                *                                      *
+                ****************************************
+
+
+  DEFINED ABSOLUTE ENTRIES
+    *************************************************************************
+
+  DEFINED ABSOLUTE ENTRIES
+  PROGRAM MODULE, NAME : ?ABS_ENTRY_MOD
+
+Absolute parts
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _HEAP_SIZE              00000200 
+           _CSTACK_SIZE            00001000 
+           RAMEND                  2000BFFF 
+           RAMSTART                20003000 
+           ROMEND                  0803FFFF 
+           ROMSTART                0800C000 
+    *************************************************************************
+
+  FILE NAME : D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\BIOS.r79
+  PROGRAM MODULE, NAME : BIOS
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 0800C194 - 0800C233 (0xa0 bytes), align: 2
+  Segment part 0. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __CTR_HP                0800C195        USB_HP_CAN_TX_IRQHandler (Interrupt)
+           __USB_Istr              0800C199        USB_LP_CAN_RX0_IRQHandler (Interrupt)
+           __LCD_Initial           0800C19D 
+           __Point_SCR             0800C1A1        Calibrat (Calibrat)
+                                                   Draw_Mark (Draw)
+                                                   Draw_Row (Draw)
+                                                   Save_Bmp (Files)
+                                                   Update_Mark (Draw)
+                                                   Update_View_Area (Draw)
+           __LCD_SetPixl           0800C1A5        Calibrat (Calibrat)
+                                                   Draw_Mark (Draw)
+                                                   Print_Clk (Draw)
+                                                   Print_Str (Draw)
+                                                   Update_Mark (Draw)
+                                                   Update_View_Area (Draw)
+           __Clear_Screen          0800C1A9        App_init (Process)
+                                                   Calibrat (Calibrat)
+           __Get_TAB_8x14          0800C1AD 
+           __LCD_Set_Block         0800C1B1        Print_Clk (Draw)
+                                                   Print_Str (Draw)
+           __LCD_DMA_Ready         0800C1B5        Draw_Window (Draw)
+           __LCD_Copy              0800C1B9        Draw_Row (Draw)
+           __LCD_Fill              0800C1BD 
+           __Row_DMA_Ready         0800C1C1        Draw_Row (Draw)
+                                                   Draw_Window (Draw)
+                                                   Update_Mark (Draw)
+           __Row_Copy              0800C1C5        Draw_Row (Draw)
+                                                   Draw_Window (Draw)
+           __Read_FIFO             0800C1C9        Balance (Calibrat)
+                                                   Calibrat (Calibrat)
+                                                   Process (Process)
+           __Input_Lic             0800C1CD 
+           __GetDev_SN             0800C1D1        Load_Param (Files)
+                                                   Save_Param (Files)
+           __Chk_SYS               0800C1D5 
+           __Ident                 0800C1D9 
+           __Display_Str           0800C1DD        main (Main)
+           __Set                   0800C1E1        App_init (Process)
+                                                   Balance (Calibrat)
+                                                   Calibrat (Calibrat)
+                                                   Synchro (Process)
+                                                   TIM3_IRQHandler (Interrupt)
+                                                   Update_Base (Process)
+                                                   Update_Output (Process)
+                                                   Update_Range (Process)
+                                                   Update_Trig (Process)
+                                                   main (Main)
+           __Set_Param             0800C1E5 
+           __Get                   0800C1E9        Display_Value (Menu)
+                                                   Process (Process)
+                                                   Read_Keys (Function)
+                                                   Synchro (Process)
+                                                   Update_Battery (Menu)
+                                                   main (Main)
+           __ExtFlash_PageWR       0800C1ED 
+           __ExtFlash_PageRD       0800C1F1 
+           __ReadDiskData          0800C1F5 
+           __ProgDiskPage          0800C1F9 
+           __LCD_GetPixl           0800C1FD        Save_Bmp (Files)
+           __USB_Init              0800C201        main (Main)
+           __FLASH_Erase           0800C205 
+           __FLASH_Prog            0800C209 
+           __FLASH_Unlock          0800C20D 
+           __FLASH_Lock            0800C211 
+           __Chk_DFU               0800C215 
+           __Chk_HDW               0800C219 
+           __OpenFileWr            0800C21D        Save_Bmp (Files)
+                                                   Save_Buf (Files)
+                                                   Save_Csv (Files)
+                                                   Save_Dat (Files)
+                                                   Save_Param (Files)
+           __OpenFileRd            0800C221        Load_Buf (Files)
+                                                   Load_Dat (Files)
+                                                   Load_Param (Files)
+                                                   Save_Param (Files)
+           __ReadFileSec           0800C225        Load_Buf (Files)
+                                                   Load_Dat (Files)
+                                                   Load_Param (Files)
+                                                   Save_Param (Files)
+           __ProgFileSec           0800C229        Save_Bmp (Files)
+                                                   Save_Buf (Files)
+                                                   Save_Csv (Files)
+                                                   Save_Dat (Files)
+                                                   Save_Param (Files)
+           __CloseFile             0800C22D        Save_Bmp (Files)
+                                                   Save_Buf (Files)
+                                                   Save_Csv (Files)
+                                                   Save_Dat (Files)
+                                                   Save_Param (Files)
+           __Row_Fill              0800C231 
+
+    *************************************************************************
+
+  FILE NAME : D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\Calibrat.r79
+  PROGRAM MODULE, NAME : Calibrat
+
+  SEGMENTS IN THE MODULE
+  ======================
+DATA_C
+  Relative segment, address: 080121FC - 0801254F (0x354 bytes), align: 2
+  Segment part 2.             Intra module refs:   Calibrat
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           VS_STR                  080124E4 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800C234 - 0800C30F (0xdc bytes), align: 2
+  Segment part 10.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Balance                 0800C235        main (Main)
+               stack 1 = 00000000 ( 00000014 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800C310 - 0800C313 (0x4 bytes), align: 2
+  Segment part 11.            Intra module refs:   Balance
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800C314 - 0800C317 (0x4 bytes), align: 2
+  Segment part 12.            Intra module refs:   Balance
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800C318 - 0800C31B (0x4 bytes), align: 2
+  Segment part 13.            Intra module refs:   Balance
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800C31C - 0800C31F (0x4 bytes), align: 2
+  Segment part 14.            Intra module refs:   Balance
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800C320 - 0800C323 (0x4 bytes), align: 2
+  Segment part 15.            Intra module refs:   Balance
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800C324 - 0800D397 (0x1074 bytes), align: 2
+  Segment part 16.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Calibrat                0800C325        main (Main)
+               stack 1 = 00000000 ( 000000D4 )
+
+    *************************************************************************
+
+  FILE NAME : D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\Draw.r79
+  PROGRAM MODULE, NAME : Draw
+
+  SEGMENTS IN THE MODULE
+  ======================
+DATA_C
+  Relative segment, address: 08012550 - 0801255F (0x10 bytes), align: 2
+  Segment part 2.             Intra module refs:   Update_View_Area
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           RULE_BASE               08012550 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 08012560 - 08012583 (0x24 bytes), align: 2
+  Segment part 8.             Intra module refs:   Draw_Mark
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Mark_TAB                08012560 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 08012584 - 080125DB (0x58 bytes), align: 2
+  Segment part 9.             Intra module refs:   Print_Clk
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           CLK_TAB                 08012584 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 080125DC - 08012BAB (0x5d0 bytes), align: 2
+  Segment part 10.            Intra module refs:   Segment part 32
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Char_TAB_8x11           080125DC 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 08012BAC - 080131FB (0x650 bytes), align: 2
+  Segment part 13.            Intra module refs:   Draw_Row
+                                                   Segment part 35
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Row_Base1               08012BAC 
+           Row_Base2               08012D40 
+           Row_Base3               08012ED4 
+           Row_Base4               08013068 
+    -------------------------------------------------------------------------
+DATA_I
+  Relative segment, address: 20003000 - 2000302F (0x30 bytes), align: 2
+  Segment part 14.            Intra module refs:   Draw_Row
+                                                   Segment part 30
+                                                   Segment part 39
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Color                   20003000 
+           V_Trigg                 20003020        Segment part 58 (Files)
+                                                   Update_Trig (Process)
+                                                   main (Main)
+    -------------------------------------------------------------------------
+DATA_Z
+  Relative segment, address: 200039E0 - 20003D9F (0x3c0 bytes), align: 2
+  Segment part 16.            Intra module refs:   Draw_Row
+                                                   Segment part 36
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           LCD_Buffer1             200039E0 
+           LCD_Buffer2             20003BC0 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800D398 - 0800D407 (0x70 bytes), align: 2
+  Segment part 27.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Print_Clk               0800D399        Save_Bmp (Files)
+                                                   Save_Buf (Files)
+                                                   Save_Csv (Files)
+                                                   Save_Dat (Files)
+               stack 1 = 00000000 ( 0000001C )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800D408 - 0800D4C5 (0xbe bytes), align: 2
+  Segment part 28.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Print_Str               0800D409        Calibrat (Calibrat)
+                                                   Display_Meter (Menu)
+                                                   Display_Title (Menu)
+                                                   Display_Value (Menu)
+                                                   Update_Battery (Menu)
+                                                   main (Main)
+               stack 1 = 00000000 ( 00000024 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800D4C8 - 0800D4CB (0x4 bytes), align: 2
+  Segment part 29.            Intra module refs:   Print_Clk
+                                                   Print_Str
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800D4CC - 0800D4CF (0x4 bytes), align: 2
+  Segment part 30.            Intra module refs:   Print_Clk
+                                                   Print_Str
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800D4D0 - 0800D4D3 (0x4 bytes), align: 2
+  Segment part 31.            Intra module refs:   Print_Str
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800D4D4 - 0800D4D7 (0x4 bytes), align: 2
+  Segment part 32.            Intra module refs:   Print_Str
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800D4D8 - 0800DCFB (0x824 bytes), align: 2
+  Segment part 33.            Intra module refs:   Draw_Window
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Draw_Row                0800D4D9 
+               stack 1 = 00000000 ( 0000006C )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800DCFC - 0800DD3F (0x44 bytes), align: 2
+  Segment part 34.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Draw_Window             0800DCFD        Synchro (Process)
+               stack 1 = 00000000 ( 0000000C )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800DD40 - 0800DD43 (0x4 bytes), align: 2
+  Segment part 35.            Intra module refs:   Draw_Window
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800DD44 - 0800DD47 (0x4 bytes), align: 2
+  Segment part 36.            Intra module refs:   Draw_Window
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800DD48 - 0800DE63 (0x11c bytes), align: 2
+  Segment part 37.            Intra module refs:   Update_Mark
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Draw_Mark               0800DD49 
+               stack 1 = 00000000 ( 0000002C )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800DE64 - 0800E083 (0x220 bytes), align: 2
+  Segment part 38.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Update_Mark             0800DE65        main (Main)
+               stack 1 = 00000000 ( 0000001C )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800E084 - 0800E087 (0x4 bytes), align: 2
+  Segment part 39.            Intra module refs:   Draw_Mark
+                                                   Update_Mark
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800E088 - 0800E08B (0x4 bytes), align: 2
+  Segment part 40.            Intra module refs:   Draw_Mark
+                                                   Update_Mark
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800E08C - 0800E1DB (0x150 bytes), align: 2
+  Segment part 41.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Update_View_Area        0800E08D        main (Main)
+               stack 1 = 00000000 ( 0000001C )
+    -------------------------------------------------------------------------
+DATA_ID
+  Relative segment, address: 0801181C - 0801184B (0x30 bytes), align: 2
+  Segment part 15.            Intra module refs:   Segment part 14
+    -------------------------------------------------------------------------
+INITTAB
+  Relative segment, address: 08011804 - 0801180F (0xc bytes), align: 2
+  Segment part 50. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?init?tab?DATA_Z        08011804 
+    -------------------------------------------------------------------------
+INITTAB
+  Relative segment, address: 08011810 - 0801181B (0xc bytes), align: 2
+  Segment part 52. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?init?tab?DATA_I        08011810 
+
+    *************************************************************************
+
+  FILE NAME : D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\Files.r79
+  PROGRAM MODULE, NAME : Files
+
+  SEGMENTS IN THE MODULE
+  ======================
+DATA_Z
+  Relative segment, address: 20003DA0 - 2000444F (0x6b0 bytes), align: 2
+  Segment part 11.            Intra module refs:   Segment part 20
+                                                   Segment part 25
+                                                   Segment part 37
+                                                   Segment part 47
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           FileBuff                20003FA0        Process (Process)
+                                                   Segment part 36 (Process)
+           SecBuff                 20003DA0 
+    -------------------------------------------------------------------------
+DATA_Z
+  Relative segment, address: 20004450 - 200044D3 (0x84 bytes), align: 2
+  Segment part 12.            Intra module refs:   Segment part 28
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TempPar                 20004450 
+    -------------------------------------------------------------------------
+DATA_I
+  Relative segment, address: 20003030 - 20003087 (0x58 bytes), align: 2
+  Segment part 13.            Intra module refs:   Save_Bmp
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           BMP_Color               20003030 
+           BmpHead                 20003050 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800E1DC - 0800E2AB (0xd0 bytes), align: 2
+  Segment part 16.            Intra module refs:   Save_Bmp
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Color_Num               0800E1DD 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800E2AC - 0800E327 (0x7c bytes), align: 2
+  Segment part 17.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Load_Dat                0800E2AD        main (Main)
+               stack 1 = 00000000 ( 00000028 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800E328 - 0800E3E3 (0xbc bytes), align: 2
+  Segment part 18.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Save_Dat                0800E329        main (Main)
+               stack 1 = 00000000 ( 00000034 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800E3E4 - 0800E51F (0x13c bytes), align: 2
+  Segment part 19.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Save_Bmp                0800E3E5        main (Main)
+               stack 1 = 00000000 ( 00000044 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800E520 - 0800E523 (0x4 bytes), align: 2
+  Segment part 20.            Intra module refs:   Load_Dat
+                                                   Save_Bmp
+                                                   Save_Dat
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800E524 - 0800E63F (0x11c bytes), align: 2
+  Segment part 21.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Save_Buf                0800E525        main (Main)
+               stack 1 = 00000000 ( 0000002C )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800E640 - 0800E643 (0x4 bytes), align: 2
+  Segment part 22.            Intra module refs:   Save_Bmp
+                                                   Save_Buf
+                                                   Save_Dat
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800E644 - 0800E647 (0x4 bytes), align: 2
+  Segment part 23.            Intra module refs:   Save_Buf
+                                                   Save_Dat
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800E648 - 0800E7C7 (0x180 bytes), align: 2
+  Segment part 24.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Load_Buf                0800E649        main (Main)
+               stack 1 = 00000000 ( 00000044 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800E7C8 - 0800E7CB (0x4 bytes), align: 2
+  Segment part 25.            Intra module refs:   Load_Buf
+                                                   Save_Buf
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800E7CC - 0800E7CF (0x4 bytes), align: 2
+  Segment part 26.            Intra module refs:   Load_Buf
+                                                   Save_Buf
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800E7D0 - 0800E859 (0x8a bytes), align: 2
+  Segment part 27.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           reset_parameter         0800E7D1        main (Main)
+               stack 1 = 00000000 ( 00000010 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800E85C - 0800E85F (0x4 bytes), align: 2
+  Segment part 28.            Intra module refs:   Load_Buf
+                                                   reset_parameter
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800E860 - 0800E863 (0x4 bytes), align: 2
+  Segment part 29.            Intra module refs:   Load_Buf
+                                                   reset_parameter
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800E864 - 0800E867 (0x4 bytes), align: 2
+  Segment part 30.            Intra module refs:   Load_Buf
+                                                   Save_Buf
+                                                   reset_parameter
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800E868 - 0800E86B (0x4 bytes), align: 2
+  Segment part 31.            Intra module refs:   Load_Buf
+                                                   Save_Buf
+                                                   reset_parameter
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800E86C - 0800E86F (0x4 bytes), align: 2
+  Segment part 32.            Intra module refs:   Load_Buf
+                                                   Save_Buf
+                                                   reset_parameter
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800E870 - 0800E873 (0x4 bytes), align: 2
+  Segment part 33.            Intra module refs:   Load_Buf
+                                                   Save_Buf
+                                                   reset_parameter
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800E874 - 0800E877 (0x4 bytes), align: 2
+  Segment part 35.            Intra module refs:   Load_Buf
+                                                   reset_parameter
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800E878 - 0800EB57 (0x2e0 bytes), align: 2
+  Segment part 36.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Save_Csv                0800E879        main (Main)
+               stack 1 = 00000000 ( 00000048 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800EB58 - 0800EB5B (0x4 bytes), align: 2
+  Segment part 37.            Intra module refs:   Save_Csv
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800EB5C - 0800EB5F (0x4 bytes), align: 2
+  Segment part 38.            Intra module refs:   Save_Csv
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800EB60 - 0800EB63 (0x4 bytes), align: 2
+  Segment part 39.            Intra module refs:   Save_Csv
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800EB64 - 0800EB67 (0x4 bytes), align: 2
+  Segment part 40.            Intra module refs:   Save_Csv
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800EB68 - 0800EC93 (0x12c bytes), align: 2
+  Segment part 41.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Load_Param              0800EB69        main (Main)
+               stack 1 = 00000000 ( 00000028 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800EC94 - 0800EC97 (0x4 bytes), align: 2
+  Segment part 42.            Intra module refs:   Load_Param
+                                                   Save_Csv
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800EC98 - 0800EC9B (0x4 bytes), align: 2
+  Segment part 43.            Intra module refs:   Load_Param
+                                                   Save_Csv
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800EC9C - 0800EC9F (0x4 bytes), align: 2
+  Segment part 44.            Intra module refs:   Load_Param
+                                                   Save_Csv
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800ECA0 - 0800ECA3 (0x4 bytes), align: 2
+  Segment part 45.            Intra module refs:   Load_Param
+                                                   Save_Csv
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800ECA4 - 0800EE67 (0x1c4 bytes), align: 2
+  Segment part 46.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Save_Param              0800ECA5        Calibrat (Calibrat)
+                                                   main (Main)
+               stack 1 = 00000000 ( 00000038 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800EE68 - 0800EE6B (0x4 bytes), align: 2
+  Segment part 47.            Intra module refs:   Load_Param
+                                                   Save_Param
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800EE6C - 0800EE6F (0x4 bytes), align: 2
+  Segment part 48.            Intra module refs:   Load_Param
+                                                   Save_Param
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800EE70 - 0800EE73 (0x4 bytes), align: 2
+  Segment part 49.            Intra module refs:   Load_Param
+                                                   Save_Param
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800EE74 - 0800EE77 (0x4 bytes), align: 2
+  Segment part 50.            Intra module refs:   Load_Param
+                                                   Save_Param
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800EE78 - 0800EE7B (0x4 bytes), align: 2
+  Segment part 51.            Intra module refs:   Load_Param
+                                                   Save_Param
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800EE7C - 0800EE7F (0x4 bytes), align: 2
+  Segment part 52.            Intra module refs:   Save_Param
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800EE80 - 0800EE83 (0x4 bytes), align: 2
+  Segment part 53.            Intra module refs:   Save_Param
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800EE84 - 0800EE87 (0x4 bytes), align: 2
+  Segment part 54.            Intra module refs:   Load_Param
+                                                   Save_Param
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800EE88 - 0800EE8B (0x4 bytes), align: 2
+  Segment part 55.            Intra module refs:   Save_Param
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800EE8C - 0800EE8F (0x4 bytes), align: 2
+  Segment part 56.            Intra module refs:   Save_Param
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800EE90 - 0800EE93 (0x4 bytes), align: 2
+  Segment part 57.            Intra module refs:   Load_Param
+                                                   Save_Param
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800EE94 - 0800EE97 (0x4 bytes), align: 2
+  Segment part 58.            Intra module refs:   Load_Param
+                                                   Save_Param
+    -------------------------------------------------------------------------
+DATA_ID
+  Relative segment, address: 0801184C - 080118A3 (0x58 bytes), align: 2
+  Segment part 14.            Intra module refs:   Segment part 13
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 080131FC - 08013207 (0xc bytes), align: 2
+  Segment part 2.             Intra module refs:   Load_Dat
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 08013208 - 08013217 (0x10 bytes), align: 2
+  Segment part 3.             Intra module refs:   Save_Dat
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 08013218 - 08013223 (0xc bytes), align: 2
+  Segment part 4.             Intra module refs:   Save_Bmp
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 08013224 - 0801322F (0xc bytes), align: 2
+  Segment part 5.             Intra module refs:   Save_Buf
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 08013230 - 0801323F (0x10 bytes), align: 2
+  Segment part 6.             Intra module refs:   Load_Buf
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 08013240 - 0801324B (0xc bytes), align: 2
+  Segment part 7.             Intra module refs:   Save_Csv
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 0801324C - 08013253 (0x8 bytes), align: 2
+  Segment part 8.             Intra module refs:   Save_Csv
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 08013254 - 0801325B (0x8 bytes), align: 2
+  Segment part 9.             Intra module refs:   Save_Csv
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 0801325C - 0801326F (0x14 bytes), align: 2
+  Segment part 10.            Intra module refs:   Save_Csv
+
+    *************************************************************************
+
+  FILE NAME : D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\Function.r79
+  PROGRAM MODULE, NAME : Function
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 0800EE98 - 0800EEAB (0x14 bytes), align: 2
+  Segment part 4.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Power                   0800EE99        Display_Title (Menu)
+                                                   Display_Value (Menu)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800EEAC - 0800EEBB (0x10 bytes), align: 2
+  Segment part 5.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Delayms                 0800EEAD        App_init (Process)
+                                                   Balance (Calibrat)
+                                                   Calibrat (Calibrat)
+                                                   main (Main)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800EEBC - 0800F021 (0x166 bytes), align: 2
+  Segment part 6.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Int2Str                 0800EEBD        Calibrat (Calibrat)
+                                                   Display_Title (Menu)
+                                                   Display_Value (Menu)
+               stack 1 = 00000000 ( 00000028 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F024 - 0800F057 (0x34 bytes), align: 2
+  Segment part 9.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           u8ToDec3                0800F025        Display_Title (Menu)
+                                                   Load_Buf (Files)
+                                                   Load_Dat (Files)
+                                                   Save_Bmp (Files)
+                                                   Save_Buf (Files)
+                                                   Save_Csv (Files)
+                                                   Save_Dat (Files)
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F058 - 0800F0A5 (0x4e bytes), align: 2
+  Segment part 10.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           s8ToPercen              0800F059        Calibrat (Calibrat)
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F0A8 - 0800F153 (0xac bytes), align: 2
+  Segment part 14.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Word2Hex                0800F0A9        Load_Param (Files)
+                                                   Save_Param (Files)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F154 - 0800F173 (0x20 bytes), align: 2
+  Segment part 15.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Int_sqrt                0800F155        Display_Value (Menu)
+               stack 1 = 00000000 ( 00000008 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F174 - 0800F20F (0x9c bytes), align: 2
+  Segment part 16.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Read_Keys               0800F175        TIM3_IRQHandler (Interrupt)
+               stack 1 = 00000000 ( 0000001C )
+
+    *************************************************************************
+
+  FILE NAME : D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\Ident.r79
+    *************************************************************************
+
+  FILE NAME : D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\Interrupt.r79
+  PROGRAM MODULE, NAME : Interrupt
+
+  SEGMENTS IN THE MODULE
+  ======================
+DATA_Z
+  Relative segment, address: 200044D4 - 200044E7 (0x14 bytes), align: 2
+  Segment part 2.             Intra module refs:   TIM3_IRQHandler
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Beep_mS                 200044DE        Calibrat (Calibrat)
+                                                   main (Main)
+           Blink                   200044DB        Calibrat (Calibrat)
+                                                   Segment part 55 (Menu)
+                                                   Segment part 61 (Menu)
+                                                   main (Main)
+           Cnt_20mS                200044D9 
+           Cnt_mS                  200044D8 
+           Cursor_Cnt              200044D4 
+           Delay_Cnt               200044DC        Delayms (Function)
+                                                   main (Main)
+           Key_Buffer              200044D7        Calibrat (Calibrat)
+                                                   main (Main)
+           Key_Repeat_Cnt          200044D6        Read_Keys (Function)
+           Key_Wait_Cnt            200044D5        Read_Keys (Function)
+           PD_Cnt                  200044E2        App_init (Process)
+                                                   Calibrat (Calibrat)
+                                                   main (Main)
+           Sec_Cnt                 200044E0        main (Main)
+           Twink                   200044DA        Calibrat (Calibrat)
+                                                   Segment part 56 (Menu)
+                                                   Segment part 62 (Menu)
+           Wait_Cnt                200044E4        Segment part 27 (Process)
+                                                   Segment part 40 (Process)
+    -------------------------------------------------------------------------
+DATA_Z
+  Relative segment, address: 200089E0 - 200089E1 (0x2 bytes), align: 1
+  Segment part 6.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Key_Status_Last         200089E0        Read_Keys (Function)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F210 - 0800F211 (0x2 bytes), align: 2
+  Segment part 7.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           NMIException            0800F211        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F214 - 0800F215 (0x2 bytes), align: 2
+  Segment part 8.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           HardFaultException      0800F215        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F218 - 0800F219 (0x2 bytes), align: 2
+  Segment part 9.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           MemManageException      0800F219        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F21C - 0800F21D (0x2 bytes), align: 2
+  Segment part 10.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           BusFaultException       0800F21D        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F220 - 0800F221 (0x2 bytes), align: 2
+  Segment part 11.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           UsageFaultException     0800F221        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F224 - 0800F225 (0x2 bytes), align: 2
+  Segment part 12.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DebugMonitor            0800F225        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F228 - 0800F229 (0x2 bytes), align: 2
+  Segment part 13.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SVCHandler              0800F229        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F22C - 0800F22D (0x2 bytes), align: 2
+  Segment part 14.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           PendSVC                 0800F22D        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F230 - 0800F231 (0x2 bytes), align: 2
+  Segment part 15.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SysTickHandler          0800F231        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F234 - 0800F235 (0x2 bytes), align: 2
+  Segment part 16.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           WWDG_IRQHandler         0800F235        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F238 - 0800F239 (0x2 bytes), align: 2
+  Segment part 17.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           PVD_IRQHandler          0800F239        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F23C - 0800F23D (0x2 bytes), align: 2
+  Segment part 18.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TAMPER_IRQHandler       0800F23D        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F240 - 0800F241 (0x2 bytes), align: 2
+  Segment part 19.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           RTC_IRQHandler          0800F241        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F244 - 0800F245 (0x2 bytes), align: 2
+  Segment part 20.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           FLASH_IRQHandler        0800F245        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F248 - 0800F249 (0x2 bytes), align: 2
+  Segment part 21.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           RCC_IRQHandler          0800F249        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F24C - 0800F24D (0x2 bytes), align: 2
+  Segment part 22.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           EXTI0_IRQHandler        0800F24D        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F250 - 0800F251 (0x2 bytes), align: 2
+  Segment part 23.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           EXTI1_IRQHandler        0800F251        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F254 - 0800F255 (0x2 bytes), align: 2
+  Segment part 24.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           EXTI2_IRQHandler        0800F255        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F258 - 0800F259 (0x2 bytes), align: 2
+  Segment part 25.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           EXTI3_IRQHandler        0800F259        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F25C - 0800F25D (0x2 bytes), align: 2
+  Segment part 26.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           EXTI4_IRQHandler        0800F25D        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F260 - 0800F261 (0x2 bytes), align: 2
+  Segment part 27.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMA1_Channel1_IRQHandler
+                                   0800F261        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F264 - 0800F265 (0x2 bytes), align: 2
+  Segment part 28.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMA1_Channel2_IRQHandler
+                                   0800F265        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F268 - 0800F269 (0x2 bytes), align: 2
+  Segment part 29.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMA1_Channel3_IRQHandler
+                                   0800F269        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F26C - 0800F26D (0x2 bytes), align: 2
+  Segment part 30.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMA1_Channel4_IRQHandler
+                                   0800F26D        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F270 - 0800F271 (0x2 bytes), align: 2
+  Segment part 31.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMA1_Channel5_IRQHandler
+                                   0800F271        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F274 - 0800F275 (0x2 bytes), align: 2
+  Segment part 32.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMA1_Channel6_IRQHandler
+                                   0800F275        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F278 - 0800F279 (0x2 bytes), align: 2
+  Segment part 33.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMA1_Channel7_IRQHandler
+                                   0800F279        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F27C - 0800F27D (0x2 bytes), align: 2
+  Segment part 34.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ADC1_2_IRQHandler       0800F27D        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F280 - 0800F283 (0x4 bytes), align: 2
+  Segment part 35.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           USB_HP_CAN_TX_IRQHandler
+                                   0800F281        __vector_table (stm32f10x_vector)
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F284 - 0800F287 (0x4 bytes), align: 2
+  Segment part 36.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           USB_LP_CAN_RX0_IRQHandler
+                                   0800F285        __vector_table (stm32f10x_vector)
+               stack 1 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F288 - 0800F289 (0x2 bytes), align: 2
+  Segment part 37.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           CAN_RX1_IRQHandler      0800F289        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F28C - 0800F28D (0x2 bytes), align: 2
+  Segment part 38.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           CAN_SCE_IRQHandler      0800F28D        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F290 - 0800F291 (0x2 bytes), align: 2
+  Segment part 39.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           EXTI9_5_IRQHandler      0800F291        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F294 - 0800F295 (0x2 bytes), align: 2
+  Segment part 40.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TIM1_BRK_IRQHandler     0800F295        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F298 - 0800F299 (0x2 bytes), align: 2
+  Segment part 41.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TIM1_UP_IRQHandler      0800F299        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F29C - 0800F29D (0x2 bytes), align: 2
+  Segment part 42.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TIM1_TRG_COM_IRQHandler
+                                   0800F29D        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F2A0 - 0800F2A1 (0x2 bytes), align: 2
+  Segment part 43.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TIM1_CC_IRQHandler      0800F2A1        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F2A4 - 0800F2A5 (0x2 bytes), align: 2
+  Segment part 44.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TIM2_IRQHandler         0800F2A5        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F2A8 - 0800F37B (0xd4 bytes), align: 2
+  Segment part 45.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TIM3_IRQHandler         0800F2A9        __vector_table (stm32f10x_vector)
+               stack 1 = 00000000 ( 0000000C )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F37C - 0800F37D (0x2 bytes), align: 2
+  Segment part 46.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TIM4_IRQHandler         0800F37D        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F380 - 0800F381 (0x2 bytes), align: 2
+  Segment part 47.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           I2C1_EV_IRQHandler      0800F381        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F384 - 0800F385 (0x2 bytes), align: 2
+  Segment part 48.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           I2C1_ER_IRQHandler      0800F385        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F388 - 0800F389 (0x2 bytes), align: 2
+  Segment part 49.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           I2C2_EV_IRQHandler      0800F389        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F38C - 0800F38D (0x2 bytes), align: 2
+  Segment part 50.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           I2C2_ER_IRQHandler      0800F38D        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F390 - 0800F391 (0x2 bytes), align: 2
+  Segment part 51.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SPI1_IRQHandler         0800F391        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F394 - 0800F395 (0x2 bytes), align: 2
+  Segment part 52.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SPI2_IRQHandler         0800F395        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F398 - 0800F399 (0x2 bytes), align: 2
+  Segment part 53.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           USART1_IRQHandler       0800F399        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F39C - 0800F39D (0x2 bytes), align: 2
+  Segment part 54.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           USART2_IRQHandler       0800F39D        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F3A0 - 0800F3A1 (0x2 bytes), align: 2
+  Segment part 55.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           USART3_IRQHandler       0800F3A1        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F3A4 - 0800F3A5 (0x2 bytes), align: 2
+  Segment part 56.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           EXTI15_10_IRQHandler    0800F3A5        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F3A8 - 0800F3A9 (0x2 bytes), align: 2
+  Segment part 57.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           RTCAlarm_IRQHandler     0800F3A9        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F3AC - 0800F3AD (0x2 bytes), align: 2
+  Segment part 58.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           USBWakeUp_IRQHandler    0800F3AD        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F3B0 - 0800F3B1 (0x2 bytes), align: 2
+  Segment part 59.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TIM8_BRK_IRQHandler     0800F3B1        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F3B4 - 0800F3B5 (0x2 bytes), align: 2
+  Segment part 60.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TIM8_UP_IRQHandler      0800F3B5        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F3B8 - 0800F3B9 (0x2 bytes), align: 2
+  Segment part 61.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TIM8_TRG_COM_IRQHandler
+                                   0800F3B9        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F3BC - 0800F3BD (0x2 bytes), align: 2
+  Segment part 62.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TIM8_CC_IRQHandler      0800F3BD        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F3C0 - 0800F3C1 (0x2 bytes), align: 2
+  Segment part 63.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ADC3_IRQHandler         0800F3C1        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F3C4 - 0800F3C5 (0x2 bytes), align: 2
+  Segment part 64.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           FSMC_IRQHandler         0800F3C5        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F3C8 - 0800F3C9 (0x2 bytes), align: 2
+  Segment part 65.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SDIO_IRQHandler         0800F3C9        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F3CC - 0800F3CD (0x2 bytes), align: 2
+  Segment part 66.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TIM5_IRQHandler         0800F3CD        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F3D0 - 0800F3D1 (0x2 bytes), align: 2
+  Segment part 67.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SPI3_IRQHandler         0800F3D1        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F3D4 - 0800F3D5 (0x2 bytes), align: 2
+  Segment part 68.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           UART4_IRQHandler        0800F3D5        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F3D8 - 0800F3D9 (0x2 bytes), align: 2
+  Segment part 69.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           UART5_IRQHandler        0800F3D9        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F3DC - 0800F3DD (0x2 bytes), align: 2
+  Segment part 70.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TIM6_IRQHandler         0800F3DD        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F3E0 - 0800F3E1 (0x2 bytes), align: 2
+  Segment part 71.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TIM7_IRQHandler         0800F3E1        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F3E4 - 0800F3E5 (0x2 bytes), align: 2
+  Segment part 72.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMA2_Channel1_IRQHandler
+                                   0800F3E5        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F3E8 - 0800F3E9 (0x2 bytes), align: 2
+  Segment part 73.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMA2_Channel2_IRQHandler
+                                   0800F3E9        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F3EC - 0800F3ED (0x2 bytes), align: 2
+  Segment part 74.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMA2_Channel3_IRQHandler
+                                   0800F3ED        __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F3F0 - 0800F3F1 (0x2 bytes), align: 2
+  Segment part 75.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMA2_Channel4_5_IRQHandler
+                                   0800F3F1        __vector_table (stm32f10x_vector)
+
+    *************************************************************************
+
+  FILE NAME : D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\Main.r79
+  PROGRAM MODULE, NAME : Main
+
+  SEGMENTS IN THE MODULE
+  ======================
+DATA_C
+  Relative segment, address: 08013270 - 08013357 (0xe8 bytes), align: 2
+  Segment part 2.             Intra module refs:   main
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800F3F4 - 0800FD23 (0x930 bytes), align: 2
+  Segment part 4.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           main                    0800F3F5        _main (?CMAIN)
+               stack 1 = 00000000 ( 00000044 )
+
+    *************************************************************************
+
+  FILE NAME : D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\Menu.r79
+  PROGRAM MODULE, NAME : Menu
+
+  SEGMENTS IN THE MODULE
+  ======================
+DATA_C
+  Relative segment, address: 08013358 - 0801339F (0x48 bytes), align: 2
+  Segment part 3.             Intra module refs:   Display_Title
+                                                   Display_Value
+                                                   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           F_UNIT                  0801337C 
+           P_UNIT                  08013394 
+           S_UNIT                  08013388 
+           T_UNIT                  08013364 
+           V_UNIT                  08013370        Calibrat (Calibrat)
+           Y_COLOR                 08013358 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 080133A0 - 080133BF (0x20 bytes), align: 2
+  Segment part 5.             Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           STATESTR                080133A0 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 080133C0 - 080133C7 (0x8 bytes), align: 2
+  Segment part 6.             Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           S_Inv                   080133C0 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 080133C8 - 080133FB (0x34 bytes), align: 2
+  Segment part 7.             Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           BATT_STR                080133C8 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 080133FC - 08013407 (0xc bytes), align: 2
+  Segment part 8.             Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           B_COLOR                 080133FC 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 08013408 - 0801341B (0x14 bytes), align: 2
+  Segment part 9.             Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           CH_A_STR                08013408 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 0801341C - 0801342F (0x14 bytes), align: 2
+  Segment part 10.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           CH_B_STR                0801341C 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 08013430 - 08013443 (0x14 bytes), align: 2
+  Segment part 11.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           CH_C_STR                08013430 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 08013444 - 080134A7 (0x64 bytes), align: 2
+  Segment part 12.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           CH_D_STR                08013444 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 080134A8 - 080134AF (0x8 bytes), align: 2
+  Segment part 13.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           NO_RANGE                080134A8 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 080134B0 - 080134B7 (0x8 bytes), align: 2
+  Segment part 14.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           NO_DEF                  080134B0 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 080134B8 - 080134D7 (0x20 bytes), align: 2
+  Segment part 15.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           YCOUPLE                 080134B8 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 080134D8 - 080134DF (0x8 bytes), align: 2
+  Segment part 18.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           YPOSISTR                080134D8 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 080134E0 - 080134EB (0xc bytes), align: 2
+  Segment part 19.            Intra module refs:   Display_Meter
+                                                   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Y_INV                   080134E0 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 080134EC - 0801351F (0x34 bytes), align: 2
+  Segment part 20.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           MODESTR                 080134EC 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 08013520 - 08013527 (0x8 bytes), align: 2
+  Segment part 21.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           XPOSISTR                08013520 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 08013528 - 0801352B (0x4 bytes), align: 2
+  Segment part 22.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           XCOLOR                  08013528 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 0801352C - 08013553 (0x28 bytes), align: 2
+  Segment part 23.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           FO_TYPE                 0801352C 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 08013554 - 0801361B (0xc8 bytes), align: 2
+  Segment part 24.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           FO_STR                  08013554 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 0801361C - 0801361F (0x4 bytes), align: 2
+  Segment part 25.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           O_COLOR                 0801361C 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 08013620 - 0801366F (0x50 bytes), align: 2
+  Segment part 26.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TRIGSTR                 08013620 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 08013670 - 080136BF (0x50 bytes), align: 2
+  Segment part 27.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TR_TYPE                 08013670 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 080136C0 - 080136CB (0xc bytes), align: 2
+  Segment part 28.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           VT_STR                  080136C0 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 080136CC - 080136D3 (0x8 bytes), align: 2
+  Segment part 29.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           VERNIE1                 080136CC 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 080136D4 - 080136DB (0x8 bytes), align: 2
+  Segment part 30.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           VERNIE2                 080136D4 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 080136DC - 080136E3 (0x8 bytes), align: 2
+  Segment part 31.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           VERNIE3                 080136DC 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 080136E4 - 080136EB (0x8 bytes), align: 2
+  Segment part 32.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           VERNIE4                 080136E4 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 080137DC - 080137DD (0x2 bytes), align: 1
+  Segment part 33.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           V_INV                   080137DC 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 080137DE - 080137DF (0x2 bytes), align: 1
+  Segment part 34.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           V_COLOR                 080137DE 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 080137E0 - 080137E1 (0x2 bytes), align: 1
+  Segment part 35.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           T_INV                   080137E0 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 080137E2 - 080137E3 (0x2 bytes), align: 1
+  Segment part 36.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           T_COLOR                 080137E2 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 080136EC - 080136FF (0x14 bytes), align: 2
+  Segment part 37.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           F_FUNC                  080136EC 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 08013700 - 0801374F (0x50 bytes), align: 2
+  Segment part 38.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           F_EXT                   08013700 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 080137E4 - 080137E5 (0x2 bytes), align: 1
+  Segment part 39.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           F_INV                   080137E4 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 08013750 - 08013763 (0x14 bytes), align: 2
+  Segment part 40.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DELTA_V                 08013750 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 08013764 - 08013767 (0x4 bytes), align: 2
+  Segment part 41.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DELTA_T                 08013764 
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 08013768 - 080137A3 (0x3c bytes), align: 2
+  Segment part 42.            Intra module refs:   Segment part 51
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           METER                   08013768 
+    -------------------------------------------------------------------------
+DATA_Z
+  Relative segment, address: 200044E8 - 20004509 (0x22 bytes), align: 2
+  Segment part 2.             Intra module refs:   Display_Value
+                                                   Segment part 17
+                                                   Segment part 54
+                                                   Segment part 60
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Current                 200044E8        App_init (Process)
+                                                   Segment part 48 (Files)
+                                                   main (Main)
+           Detail                  200044EC        Segment part 49 (Files)
+                                                   main (Main)
+           NumStr                  200044FC 
+           Result_FPS              20004508        main (Main)
+    -------------------------------------------------------------------------
+DATA_I
+  Relative segment, address: 20003088 - 2000365B (0x5d4 bytes), align: 2
+  Segment part 16.            Intra module refs:   Display_Value
+                                                   Segment part 17
+                                                   Segment part 59
+                                                   Segment part 64
+                                                   Update_Battery
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           BaseStr                 20003530 
+           Title                   20003088        Calibrat (Calibrat)
+                                                   Draw_Row (Draw)
+                                                   Process (Process)
+                                                   Save_Csv (Files)
+                                                   Segment part 23 (Files)
+                                                   Segment part 24 (Process)
+                                                   Segment part 30 (Process)
+                                                   Segment part 35 (Files)
+                                                   Segment part 38 (Process)
+                                                   Segment part 40 (Draw)
+                                                   Segment part 50 (Files)
+                                                   TIM3_IRQHandler (Interrupt)
+                                                   Update_Base (Process)
+                                                   Update_Output (Process)
+                                                   Update_View_Area (Draw)
+                                                   main (Main)
+           Vertical                20003498        Segment part 38 (Files)
+    -------------------------------------------------------------------------
+DATA_I
+  Relative segment, address: 200039DC - 200039DC (0x1 bytes), align: 0
+  Segment part 44.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Update                  200039DC        App_init (Process)
+                                                   main (Main)
+    -------------------------------------------------------------------------
+DATA_I
+  Relative segment, address: 2000365C - 20003663 (0x8 bytes), align: 2
+  Segment part 46.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           BL_Str                  2000365C 
+    -------------------------------------------------------------------------
+DATA_I
+  Relative segment, address: 20003664 - 2000366B (0x8 bytes), align: 2
+  Segment part 48.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Vol_Str                 20003664 
+    -------------------------------------------------------------------------
+DATA_I
+  Relative segment, address: 2000366C - 200036D7 (0x6c bytes), align: 2
+  Segment part 50.            Intra module refs:   Display_Value
+                                                   Segment part 53
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Meter                   2000366C        App_init (Process)
+                                                   Segment part 51 (Files)
+                                                   main (Main)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800FD24 - 0800FDA7 (0x84 bytes), align: 2
+  Segment part 52.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Display_Meter           0800FD25        main (Main)
+               stack 1 = 00000000 ( 00000018 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800FDA8 - 0800FDAB (0x4 bytes), align: 2
+  Segment part 53.            Intra module refs:   Display_Meter
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800FDAC - 0800FDAF (0x4 bytes), align: 2
+  Segment part 54.            Intra module refs:   Display_Meter
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800FDB0 - 0800FDB3 (0x4 bytes), align: 2
+  Segment part 55.            Intra module refs:   Display_Meter
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800FDB4 - 0800FDB7 (0x4 bytes), align: 2
+  Segment part 56.            Intra module refs:   Display_Meter
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0800FDB8 - 08010563 (0x7ac bytes), align: 2
+  Segment part 57.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Display_Value           0800FDB9        main (Main)
+               stack 1 = 00000000 ( 00000060 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08010564 - 0801090F (0x3ac bytes), align: 2
+  Segment part 58.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Display_Title           08010565        main (Main)
+               stack 1 = 00000000 ( 0000003C )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08010910 - 08010913 (0x4 bytes), align: 2
+  Segment part 59.            Intra module refs:   Display_Title
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08010914 - 08010917 (0x4 bytes), align: 2
+  Segment part 60.            Intra module refs:   Display_Title
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08010918 - 0801091B (0x4 bytes), align: 2
+  Segment part 61.            Intra module refs:   Display_Title
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 0801091C - 0801091F (0x4 bytes), align: 2
+  Segment part 62.            Intra module refs:   Display_Title
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08010920 - 080109B3 (0x94 bytes), align: 2
+  Segment part 63.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Load_Attr               08010921        main (Main)
+               stack 1 = 00000000 ( 00000014 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080109B4 - 080109B7 (0x4 bytes), align: 2
+  Segment part 64.            Intra module refs:   Load_Attr
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080109B8 - 080109BB (0x4 bytes), align: 2
+  Segment part 65.            Intra module refs:   Display_Title
+                                                   Load_Attr
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080109BC - 080109BF (0x4 bytes), align: 2
+  Segment part 66.            Intra module refs:   Display_Title
+                                                   Load_Attr
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080109C0 - 08010A27 (0x68 bytes), align: 2
+  Segment part 67.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Update_Battery          080109C1        main (Main)
+               stack 1 = 00000000 ( 00000008 )
+    -------------------------------------------------------------------------
+DATA_ID
+  Relative segment, address: 080118A4 - 08011E77 (0x5d4 bytes), align: 2
+  Segment part 17.            Intra module refs:   Segment part 16
+    -------------------------------------------------------------------------
+DATA_ID
+  Relative segment, address: 080121F8 - 080121F8 (0x1 bytes), align: 0
+  Segment part 45.            Intra module refs:   Update
+    -------------------------------------------------------------------------
+DATA_ID
+  Relative segment, address: 08011E78 - 08011E7F (0x8 bytes), align: 2
+  Segment part 47.            Intra module refs:   BL_Str
+    -------------------------------------------------------------------------
+DATA_ID
+  Relative segment, address: 08011E80 - 08011E87 (0x8 bytes), align: 2
+  Segment part 49.            Intra module refs:   Vol_Str
+    -------------------------------------------------------------------------
+DATA_ID
+  Relative segment, address: 08011E88 - 08011EF3 (0x6c bytes), align: 2
+  Segment part 51.            Intra module refs:   Meter
+
+    *************************************************************************
+
+  FILE NAME : D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\Process.r79
+  PROGRAM MODULE, NAME : Process
+
+  SEGMENTS IN THE MODULE
+  ======================
+DATA_Z
+  Relative segment, address: 200089E2 - 200089E2 (0x1 bytes), align: 0
+  Segment part 4.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Kab                     200089E2        Balance (Calibrat)
+    -------------------------------------------------------------------------
+DATA_C
+  Relative segment, address: 080137A4 - 080137DB (0x38 bytes), align: 2
+  Segment part 7.             Intra module refs:   Segment part 26
+                                                   Segment part 41
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Wait                    080137A4 
+    -------------------------------------------------------------------------
+DATA_Z
+  Relative segment, address: 2000450C - 2000450F (0x4 bytes), align: 2
+  Segment part 8.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Y_Attr                  2000450C        Calibrat (Calibrat)
+                                                   Display_Value (Menu)
+                                                   Segment part 65 (Menu)
+                                                   main (Main)
+    -------------------------------------------------------------------------
+DATA_Z
+  Relative segment, address: 20004510 - 20004513 (0x4 bytes), align: 2
+  Segment part 9.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           G_Attr                  20004510        Calibrat (Calibrat)
+                                                   Load_Attr (Menu)
+                                                   Segment part 13 (Calibrat)
+                                                   main (Main)
+    -------------------------------------------------------------------------
+DATA_Z
+  Relative segment, address: 20004514 - 20004517 (0x4 bytes), align: 2
+  Segment part 10.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           T_Attr                  20004514        main (Main)
+    -------------------------------------------------------------------------
+DATA_Z
+  Relative segment, address: 20004518 - 20008517 (0x4000 bytes), align: 2
+  Segment part 11.            Intra module refs:   Process
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DataBuf                 20004518        Calibrat (Calibrat)
+                                                   Segment part 15 (Calibrat)
+                                                   Segment part 26 (Files)
+                                                   Segment part 39 (Files)
+    -------------------------------------------------------------------------
+DATA_Z
+  Relative segment, address: 20008518 - 200089C7 (0x4b0 bytes), align: 2
+  Segment part 12.            Intra module refs:   Segment part 42
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TrackBuff               20008518        Draw_Row (Draw)
+                                                   Save_Dat (Files)
+                                                   main (Main)
+    -------------------------------------------------------------------------
+DATA_I
+  Relative segment, address: 200036D8 - 20003753 (0x7c bytes), align: 2
+  Segment part 2.             Intra module refs:   Process
+                                                   Segment part 31
+                                                   Segment part 39
+                                                   Update_Range
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           A_Posi                  2000370E 
+           B_Posi                  20003710 
+           Interlace               200036E0        Calibrat (Calibrat)
+                                                   Display_Value (Menu)
+           JumpCnt                 20003712 
+           Ka1                     20003728        Calibrat (Calibrat)
+                                                   Display_Value (Menu)
+                                                   Segment part 30 (Files)
+                                                   Segment part 42 (Files)
+                                                   Segment part 53 (Files)
+           Ka2                     20003714        Calibrat (Calibrat)
+                                                   Display_Value (Menu)
+                                                   Segment part 31 (Files)
+                                                   Segment part 44 (Files)
+                                                   Segment part 55 (Files)
+           Kb1                     20003734        Calibrat (Calibrat)
+                                                   Display_Value (Menu)
+                                                   Segment part 32 (Files)
+                                                   Segment part 43 (Files)
+                                                   Segment part 52 (Files)
+           PaS                     200036EA        Display_Value (Menu)
+           PbS                     200036EC        Display_Value (Menu)
+           PcS                     200036EE        Display_Value (Menu)
+           PdS                     200036F0        Display_Value (Menu)
+           Posi_41                 200036FC 
+           Posi_412                200036FA 
+           Posi_42                 200036FE 
+           Posi_4F1                20003702 
+           Posi_4F2                20003704 
+           Posi_4F3                20003706 
+           Posi_4F4                20003708 
+           Posi_4_2                20003700 
+           TaN                     200036F2        Display_Value (Menu)
+           TaS                     200036E2        Display_Value (Menu)
+           TbN                     200036F4        Display_Value (Menu)
+           TbS                     200036E4        Display_Value (Menu)
+           TcN                     200036F6        Display_Value (Menu)
+           TcS                     200036E6        Display_Value (Menu)
+           TdN                     200036F8        Display_Value (Menu)
+           TdS                     200036E8        Display_Value (Menu)
+           X_Attr                  20003750        Calibrat (Calibrat)
+                                                   Display_Value (Menu)
+                                                   Segment part 11 (Calibrat)
+                                                   Segment part 66 (Menu)
+                                                   main (Main)
+           a_Avg                   20003740        Calibrat (Calibrat)
+                                                   Display_Value (Menu)
+                                                   Segment part 14 (Calibrat)
+           a_Max                   200036DC        Display_Value (Menu)
+           a_Mid_H                 200036D8 
+           a_Mid_L                 200036D9 
+           a_Min                   200036DE        Display_Value (Menu)
+           a_Ssq                   20003748        Display_Value (Menu)
+           b_Avg                   20003744        Calibrat (Calibrat)
+                                                   Display_Value (Menu)
+                                                   Segment part 12 (Calibrat)
+           b_Max                   200036DD        Display_Value (Menu)
+           b_Mid_H                 200036DA 
+           b_Mid_L                 200036DB 
+           b_Min                   200036DF        Display_Value (Menu)
+           b_Ssq                   2000374C        Display_Value (Menu)
+           c_Max                   2000370A 
+           d_Max                   2000370C 
+    -------------------------------------------------------------------------
+DATA_I
+  Relative segment, address: 20003754 - 20003767 (0x14 bytes), align: 2
+  Segment part 13.            Intra module refs:   Process
+                                                   Segment part 32
+                                                   Segment part 34
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Kb2                     20003754        Calibrat (Calibrat)
+                                                   Display_Value (Menu)
+                                                   Segment part 33 (Files)
+                                                   Segment part 45 (Files)
+                                                   Segment part 56 (Files)
+    -------------------------------------------------------------------------
+DATA_Z
+  Relative segment, address: 200089C8 - 200089DF (0x18 bytes), align: 2
+  Segment part 15.            Intra module refs:   Update_Range
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Ka3                     200089C8        Calibrat (Calibrat)
+                                                   Segment part 54 (Files)
+           Kb3                     200089D4        Calibrat (Calibrat)
+                                                   Segment part 57 (Files)
+    -------------------------------------------------------------------------
+DATA_I
+  Relative segment, address: 20003768 - 2000387F (0x118 bytes), align: 2
+  Segment part 16.            Intra module refs:   Update_Output
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           D_Tab                   20003768 
+    -------------------------------------------------------------------------
+DATA_I
+  Relative segment, address: 20003880 - 200039DB (0x15c bytes), align: 2
+  Segment part 18.            Intra module refs:   Update_Output
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           A_Tab                   20003880 
+           SAW_DATA                20003994 
+           SIN_DATA                20003904 
+           TRG_DATA                2000394C 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08010A28 - 08010ACB (0xa4 bytes), align: 2
+  Segment part 20.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           App_init                08010A29        Calibrat (Calibrat)
+                                                   main (Main)
+               stack 1 = 00000000 ( 00000014 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08010ACC - 08010B73 (0xa8 bytes), align: 2
+  Segment part 23.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Update_Range            08010ACD        main (Main)
+               stack 1 = 00000000 ( 00000010 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08010B74 - 08010B77 (0x4 bytes), align: 2
+  Segment part 24.            Intra module refs:   App_init
+                                                   Update_Range
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08010B78 - 08010BD7 (0x60 bytes), align: 2
+  Segment part 25.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Update_Base             08010B79        main (Main)
+               stack 1 = 00000000 ( 00000010 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08010BD8 - 08010BDB (0x4 bytes), align: 2
+  Segment part 26.            Intra module refs:   Update_Base
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08010BDC - 08010BDF (0x4 bytes), align: 2
+  Segment part 27.            Intra module refs:   Update_Base
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08010BE0 - 08010CB7 (0xd8 bytes), align: 2
+  Segment part 28.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Update_Output           08010BE1        main (Main)
+               stack 1 = 00000000 ( 00000010 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08010CB8 - 08010D63 (0xac bytes), align: 2
+  Segment part 29.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Update_Trig             08010CB9        Balance (Calibrat)
+                                                   main (Main)
+               stack 1 = 00000000 ( 00000018 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08010D64 - 08010D67 (0x4 bytes), align: 2
+  Segment part 30.            Intra module refs:   Update_Trig
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08010D68 - 08010D6B (0x4 bytes), align: 2
+  Segment part 31.            Intra module refs:   Update_Base
+                                                   Update_Trig
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08010D6C - 08010D6F (0x4 bytes), align: 2
+  Segment part 32.            Intra module refs:   Update_Trig
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08010D70 - 08011453 (0x6e4 bytes), align: 2
+  Segment part 33.            Intra module refs:   Synchro
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Process                 08010D71 
+               stack 1 = 00000000 ( 00000078 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08011454 - 08011457 (0x4 bytes), align: 2
+  Segment part 34.            Intra module refs:   Process
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08011458 - 080115B1 (0x15a bytes), align: 2
+  Segment part 35.            Intra module refs:   Process
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Send_Data               08011459 
+               stack 1 = 00000000 ( 00000034 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080115B4 - 080115B7 (0x4 bytes), align: 2
+  Segment part 36.            Intra module refs:   Send_Data
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080115B8 - 080116E3 (0x12c bytes), align: 2
+  Segment part 37.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Synchro                 080115B9        main (Main)
+               stack 1 = 00000000 ( 00000020 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080116E4 - 080116E7 (0x4 bytes), align: 2
+  Segment part 38.            Intra module refs:   Send_Data
+                                                   Synchro
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080116E8 - 080116EB (0x4 bytes), align: 2
+  Segment part 39.            Intra module refs:   Send_Data
+                                                   Synchro
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080116EC - 080116EF (0x4 bytes), align: 2
+  Segment part 40.            Intra module refs:   Synchro
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080116F0 - 080116F3 (0x4 bytes), align: 2
+  Segment part 41.            Intra module refs:   Synchro
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080116F4 - 080116F7 (0x4 bytes), align: 2
+  Segment part 42.            Intra module refs:   Process
+                                                   Send_Data
+                                                   Synchro
+    -------------------------------------------------------------------------
+DATA_ID
+  Relative segment, address: 08011EF4 - 08011F6F (0x7c bytes), align: 2
+  Segment part 3.             Intra module refs:   Segment part 2
+    -------------------------------------------------------------------------
+DATA_ID
+  Relative segment, address: 08011F70 - 08011F83 (0x14 bytes), align: 2
+  Segment part 14.            Intra module refs:   Kb2
+    -------------------------------------------------------------------------
+DATA_ID
+  Relative segment, address: 08011F84 - 0801209B (0x118 bytes), align: 2
+  Segment part 17.            Intra module refs:   D_Tab
+    -------------------------------------------------------------------------
+DATA_ID
+  Relative segment, address: 0801209C - 080121F7 (0x15c bytes), align: 2
+  Segment part 19.            Intra module refs:   Segment part 18
+
+    *************************************************************************
+
+  FILE NAME : D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\cortexm3_macro.r79
+  PROGRAM MODULE, NAME : cortexm3_macro
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 080116F8 - 08011771 (0x7a bytes), align: 2
+  Segment part 0. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __WFI                   080116F9 
+           __WFE                   080116FD 
+           __SEV                   08011701 
+           __ISB                   08011705 
+           __DSB                   0801170B 
+           __DMB                   08011711 
+           __SVC                   08011717 
+           __MRS_CONTROL           0801171B 
+           __MSR_CONTROL           08011721 
+           __MRS_PSP               0801172B 
+           __MSR_PSP               08011731 
+           __MRS_MSP               08011737 
+           __MSR_MSP               0801173D 
+           __RESETPRIMASK          08011743 
+           __SETPRIMASK            08011747 
+           __READ_PRIMASK          0801174B 
+           __RESETFAULTMASK        08011751 
+           __SETFAULTMASK          08011755 
+           __READ_FAULTMASK        08011759 
+           __BASEPRICONFIG         0801175F 
+           __GetBASEPRI            08011765 
+           __REV_HalfWord          0801176B 
+           __REV_Word              0801176F 
+
+    *************************************************************************
+
+  FILE NAME : D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\stm32f10x_dma.r79
+    *************************************************************************
+
+  FILE NAME : D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\stm32f10x_flash.r79
+    *************************************************************************
+
+  FILE NAME : D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\stm32f10x_fsmc.r79
+    *************************************************************************
+
+  FILE NAME : D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\stm32f10x_gpio.r79
+    *************************************************************************
+
+  FILE NAME : D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\stm32f10x_lib.r79
+    *************************************************************************
+
+  FILE NAME : D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\stm32f10x_nvic.r79
+  PROGRAM MODULE, NAME : stm32f10x_nvic
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 08011774 - 08011783 (0x10 bytes), align: 2
+  Segment part 24.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           NVIC_SetVectorTable     08011775        main (Main)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 08011784 - 08011787 (0x4 bytes), align: 2
+  Segment part 25.            Intra module refs:   NVIC_SetVectorTable
+
+    *************************************************************************
+
+  FILE NAME : D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\stm32f10x_rcc.r79
+    *************************************************************************
+
+  FILE NAME : D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\stm32f10x_sdio.r79
+    *************************************************************************
+
+  FILE NAME : D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\stm32f10x_spi.r79
+    *************************************************************************
+
+  FILE NAME : D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj\stm32f10x_vector.r79
+  PROGRAM MODULE, NAME : stm32f10x_vector
+
+  SEGMENTS IN THE MODULE
+  ======================
+INTVEC
+  Relative segment, address: 0800C000 - 0800C12F (0x130 bytes), align: 2
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __vector_table          0800C000        __program_start (?CMAIN)
+    -------------------------------------------------------------------------
+CSTACK
+  Relative segment, address: 200089E4, align: 2
+  Segment part 1.
+
+    *************************************************************************
+
+  FILE NAME : C:\Program Files\IAR Systems\Embedded Workbench 4.0 Evaluation\arm\LIB\dl7mptnnl8f.r79
+  LIBRARY MODULE, NAME : ?low_level_init
+
+  SEGMENTS IN THE MODULE
+  ======================
+ICODE
+  Relative segment, address: 0800C130 - 0800C133 (0x4 bytes), align: 2
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __low_level_init        0800C131        __program_start (?CMAIN)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?segment_init
+
+  SEGMENTS IN THE MODULE
+  ======================
+ICODE
+  Relative segment, address: 0800C134 - 0800C163 (0x30 bytes), align: 2
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __segment_init          0800C135        __program_start (?CMAIN)
+               stack 1 = 00000000 ( 00000008 )
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?__dbg_break
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 08011788 - 08011789 (0x2 bytes), align: 2
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __DebugBreak            08011789        __exit (?__exit)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?__exit
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 0801178C - 0801179D (0x12 bytes), align: 2
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __exit                  0801178D        Segment part 5 (?_EXIT)
+               stack 1 = 00000000 ( 0000000C )
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?exit
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 080117A0 - 080117A3 (0x4 bytes), align: 2
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           exit                    080117A1        _main (?CMAIN)
+               stack 1 = 00000000 ( 00000004 )
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?memcpy
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 080117A4 - 080117B9 (0x16 bytes), align: 2
+  Segment part 3.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           memcpy                  080117A5        Load_Buf (Files)
+                                                   Load_Dat (Files)
+                                                   Save_Bmp (Files)
+                                                   Save_Buf (Files)
+                                                   Save_Csv (Files)
+                                                   __segment_init (?segment_init)
+               stack 1 = 00000000 ( 00000008 )
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?memset
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 080117BC - 080117CD (0x12 bytes), align: 2
+  Segment part 3.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           memset                  080117BD        Save_Buf (Files)
+                                                   Save_Csv (Files)
+                                                   Save_Dat (Files)
+                                                   Save_Param (Files)
+                                                   __segment_init (?segment_init)
+               stack 1 = 00000000 ( 00000008 )
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?strcpy
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 080117D0 - 080117DF (0x10 bytes), align: 2
+  Segment part 3.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           strcpy                  080117D1        Load_Attr (Menu)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?CMAIN
+
+  SEGMENTS IN THE MODULE
+  ======================
+DIFUNCT
+  Relative segment, address: 0800C194, align: 2
+  Segment part 0. ROOT.
+    -------------------------------------------------------------------------
+ICODE
+  Relative segment, address: 0800C164 - 0800C177 (0x14 bytes), align: 2
+  Segment part 1.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __program_start         0800C165        Absolute parts (?ABS_ENTRY_MOD)
+                                                   __vector_table (stm32f10x_vector)
+    -------------------------------------------------------------------------
+ICODE
+  Relative segment, address: 0800C178 - 0800C193 (0x1c bytes), align: 2
+  Segment part 3.             Intra module refs:   __program_start
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _main                   0800C181 
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?_EXIT
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 080117E0, align: 2
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _exit                   080117E1        _main (?CMAIN)
+                                                   exit (?exit)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080117E0 - 080117EB (0xc bytes), align: 2
+  Segment part 5.             Intra module refs:   _exit
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?div_module
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: 080117EC - 080117F7 (0xc bytes), align: 2
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ??divu32_t              080117ED        Display_Value (Menu)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: 080117F8 - 08011803 (0xc bytes), align: 2
+  Segment part 5.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ??div32_t               080117F9        Display_Title (Menu)
+                                                   Draw_Row (Draw)
+                                                   Int2Str (Function)
+                                                   s8ToPercen (Function)
+                                                   u8ToDec3 (Function)
+
+
+
+
+                ****************************************
+                *                                      *
+                *      SEGMENTS IN ADDRESS ORDER       *
+                *                                      *
+                ****************************************
+
+
+SEGMENT              SPACE    START ADDRESS   END ADDRESS     SIZE  TYPE  ALIGN
+=======              =====    =============   ===========     ====  ====  =====
+INTVEC                             0800C000 - 0800C12F         130   rel    2
+ICODE                              0800C130 - 0800C193          64   rel    2
+DIFUNCT                                 0800C194                     rel    2
+CODE                               0800C194 - 08011803        5670   rel    2
+INITTAB                            08011804 - 0801181B          18   rel    2
+DATA_ID                            0801181C - 080121F8         9DD   rel    2
+DATA_C                             080121FC - 080137E5        15EA   rel    2
+DATA_I                             20003000 - 200039DC         9DD   rel    2
+DATA_Z                             200039E0 - 200089E2        5003   rel    2
+CSTACK                             200089E4 - 200099E3        1000   rel    2
+
+                ****************************************
+                *                                      *
+                *        END OF CROSS REFERENCE        *
+                *                                      *
+                ****************************************
+
+ 22 532 bytes of CODE  memory
+ 27 104 bytes of DATA  memory
+  8 159 bytes of CONST memory
+
+Errors: none
+Warnings: none
+

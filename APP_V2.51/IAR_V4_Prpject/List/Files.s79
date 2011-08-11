@@ -1,0 +1,2840 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32 EVALUATION   08/Aug/2011  16:46:15 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  D:\Design\DS203\PRG\APP_V2.51\source\Files.c        /
+//    Command line    =  D:\Design\DS203\PRG\APP_V2.51\source\Files.c -lA    /
+//                       D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\List\  /
+//                       -o D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\Obj /
+//                       \ -s9 --debug --cpu_mode thumb --endian little      /
+//                       --cpu cortex-M3 --stack_align 4 --fpu None          /
+//                       --dlib_config "C:\Program Files\IAR                 /
+//                       Systems\Embedded Workbench 4.0                      /
+//                       Evaluation\arm\LIB\dl7mptnnl8f.h" -I                /
+//                       D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\..\..\ /
+//                       FWLib\inc\ -I D:\Design\DS203\PRG\APP_V2.51\IAR_V4_ /
+//                       Prpject\..\..\USBLib\inc\ -I                        /
+//                       D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\..\inc /
+//                       lude\ -I "C:\Program Files\IAR Systems\Embedded     /
+//                       Workbench 4.0 Evaluation\arm\INC\"                  /
+//                       --inline_threshold=16                               /
+//    List file       =  D:\Design\DS203\PRG\APP_V2.51\IAR_V4_Prpject\List\F /
+//                       iles.s79                                            /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME Files
+
+        RTMODEL "StackAlign4", "USED"
+        RTMODEL "__cpu_mode", "__pcs__thumb"
+        RTMODEL "__data_model", "absolute"
+        RTMODEL "__endian", "little"
+        RTMODEL "__rt_version", "6"
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+        PUBWEAK `?*?DATA_ID`
+??DataTable0 EQU 0
+??DataTable1 EQU 0
+??DataTable10 EQU 0
+??DataTable11 EQU 0
+??DataTable12 EQU 0
+??DataTable13 EQU 0
+??DataTable14 EQU 0
+??DataTable15 EQU 0
+??DataTable16 EQU 0
+??DataTable17 EQU 0
+??DataTable18 EQU 0
+??DataTable19 EQU 0
+??DataTable2 EQU 0
+??DataTable20 EQU 0
+??DataTable23 EQU 0
+??DataTable26 EQU 0
+??DataTable3 EQU 0
+??DataTable32 EQU 0
+??DataTable36 EQU 0
+??DataTable37 EQU 0
+??DataTable38 EQU 0
+??DataTable39 EQU 0
+??DataTable41 EQU 0
+??DataTable42 EQU 0
+??DataTable43 EQU 0
+??DataTable44 EQU 0
+??DataTable45 EQU 0
+??DataTable5 EQU 0
+??DataTable50 EQU 0
+??DataTable51 EQU 0
+??DataTable52 EQU 0
+??DataTable6 EQU 0
+??DataTable7 EQU 0
+        MULTWEAK ??Print_Clk??rT
+        MULTWEAK ??Word2Hex??rT
+        MULTWEAK ??__CloseFile??rT
+        MULTWEAK ??__GetDev_SN??rT
+        MULTWEAK ??__LCD_GetPixl??rT
+        MULTWEAK ??__OpenFileRd??rT
+        MULTWEAK ??__OpenFileWr??rT
+        MULTWEAK ??__Point_SCR??rT
+        MULTWEAK ??__ProgFileSec??rT
+        MULTWEAK ??__ReadFileSec??rT
+        MULTWEAK ??memcpy??rT
+        MULTWEAK ??memset??rT
+        MULTWEAK ??u8ToDec3??rT
+        PUBWEAK ?init?tab?DATA_I
+        PUBWEAK ?init?tab?DATA_Z
+        PUBLIC BMP_Color
+        PUBLIC BmpHead
+        PUBLIC Color_Num
+        FUNCTION Color_Num,0203H
+        PUBLIC FileBuff
+        PUBLIC Load_Buf
+        FUNCTION Load_Buf,0203H
+        LOCFRAME CSTACK, 68, STACK
+        PUBLIC Load_Dat
+        FUNCTION Load_Dat,0203H
+        LOCFRAME CSTACK, 40, STACK
+        PUBLIC Load_Param
+        FUNCTION Load_Param,0203H
+        LOCFRAME CSTACK, 40, STACK
+        PUBLIC Make_Filename
+        FUNCTION Make_Filename,0203H
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC Save_Bmp
+        FUNCTION Save_Bmp,0203H
+        LOCFRAME CSTACK, 68, STACK
+        PUBLIC Save_Buf
+        FUNCTION Save_Buf,0203H
+        LOCFRAME CSTACK, 44, STACK
+        PUBLIC Save_Csv
+        FUNCTION Save_Csv,0203H
+        LOCFRAME CSTACK, 72, STACK
+        PUBLIC Save_Dat
+        FUNCTION Save_Dat,0203H
+        LOCFRAME CSTACK, 52, STACK
+        PUBLIC Save_Param
+        FUNCTION Save_Param,0203H
+        LOCFRAME CSTACK, 56, STACK
+        PUBLIC SecBuff
+        PUBLIC TempPar
+        PUBLIC make_Vertical
+        FUNCTION make_Vertical,0203H
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC reset_parameter
+        FUNCTION reset_parameter,0203H
+        LOCFRAME CSTACK, 16, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA R13 HUGEDATA
+        CFI Resource R0:32, R1:32, R2:32, R3:32, R4:32, R5:32, R6:32, R7:32
+        CFI Resource R8:32, R9:32, R10:32, R11:32, R12:32, R13:32, R14:32
+        CFI VirtualResource ?RET:32
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 2
+        CFI DataAlign 4
+        CFI ReturnAddress ?RET CODE
+        CFI CFA R13+0
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI R8 SameValue
+        CFI R9 SameValue
+        CFI R10 SameValue
+        CFI R11 SameValue
+        CFI R12 Undefined
+        CFI R14 Undefined
+        CFI ?RET R14
+        CFI EndCommon cfiCommon0
+        
+Print_Clk           SYMBOL "Print_Clk"
+Word2Hex            SYMBOL "Word2Hex"
+__CloseFile         SYMBOL "__CloseFile"
+__GetDev_SN         SYMBOL "__GetDev_SN"
+__LCD_GetPixl       SYMBOL "__LCD_GetPixl"
+__OpenFileRd        SYMBOL "__OpenFileRd"
+__OpenFileWr        SYMBOL "__OpenFileWr"
+__Point_SCR         SYMBOL "__Point_SCR"
+__ProgFileSec       SYMBOL "__ProgFileSec"
+__ReadFileSec       SYMBOL "__ReadFileSec"
+memcpy              SYMBOL "memcpy"
+memset              SYMBOL "memset"
+u8ToDec3            SYMBOL "u8ToDec3"
+??Print_Clk??rT     SYMBOL "??rT", Print_Clk
+??Word2Hex??rT      SYMBOL "??rT", Word2Hex
+??__CloseFile??rT   SYMBOL "??rT", __CloseFile
+??__GetDev_SN??rT   SYMBOL "??rT", __GetDev_SN
+??__LCD_GetPixl??rT SYMBOL "??rT", __LCD_GetPixl
+??__OpenFileRd??rT  SYMBOL "??rT", __OpenFileRd
+??__OpenFileWr??rT  SYMBOL "??rT", __OpenFileWr
+??__Point_SCR??rT   SYMBOL "??rT", __Point_SCR
+??__ProgFileSec??rT SYMBOL "??rT", __ProgFileSec
+??__ReadFileSec??rT SYMBOL "??rT", __ReadFileSec
+??memcpy??rT        SYMBOL "??rT", memcpy
+??memset??rT        SYMBOL "??rT", memset
+??u8ToDec3??rT      SYMBOL "??rT", u8ToDec3
+
+        EXTERN Current
+        EXTERN DataBuf
+        EXTERN Detail
+        EXTERN Ka1
+        EXTERN Ka2
+        EXTERN Ka3
+        EXTERN Kb1
+        EXTERN Kb2
+        EXTERN Kb3
+        EXTERN Meter
+        EXTERN Print_Clk
+        FUNCTION Print_Clk,0202H
+        EXTERN Title
+        EXTERN TrackBuff
+        EXTERN V_Trigg
+        EXTERN Vertical
+        EXTERN Word2Hex
+        FUNCTION Word2Hex,0202H
+        EXTERN __CloseFile
+        FUNCTION __CloseFile,0202H
+        EXTERN __GetDev_SN
+        FUNCTION __GetDev_SN,0202H
+        EXTERN __LCD_GetPixl
+        FUNCTION __LCD_GetPixl,0202H
+        EXTERN __OpenFileRd
+        FUNCTION __OpenFileRd,0202H
+        EXTERN __OpenFileWr
+        FUNCTION __OpenFileWr,0202H
+        EXTERN __Point_SCR
+        FUNCTION __Point_SCR,0202H
+        EXTERN __ProgFileSec
+        FUNCTION __ProgFileSec,0202H
+        EXTERN __ReadFileSec
+        FUNCTION __ReadFileSec,0202H
+        EXTERN memcpy
+        FUNCTION memcpy,010202H
+        EXTERN memset
+        FUNCTION memset,010202H
+        EXTERN u8ToDec3
+        FUNCTION u8ToDec3,0202H
+
+// D:\Design\DS203\PRG\APP_V2.51\source\Files.c
+//    1 /********************* (C) COPYRIGHT 2010 e-Design Co.,Ltd. ********************
+//    2  File Name : File.c  
+//    3  Version   : DS203_APP Ver 2.5x                                  Author : bure
+//    4 *******************************************************************************/
+//    5 #include <string.h>
+//    6 #include "Function.h"
+//    7 #include "Process.h"
+//    8 #include "BIOS.h"
+//    9 #include "File.h"
+//   10 #include "Menu.h"
+//   11 
+//   12 
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+//   13 u8  SecBuff[512];
+SecBuff:
+        DS8 512
+//   14 u8  FileBuff[1200];
+FileBuff:
+        DS8 1200
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+//   15 u16 TempPar[66];
+TempPar:
+        DS8 132
+
+        RSEG DATA_I:DATA:SORT:NOROOT(2)
+//   16 u16 BMP_Color[16] = { WHT,  CYAN, CYAN_,  YEL,  YEL_, PURPL, PURPL_, GRN,   
+BMP_Color:
+        DS8 32
+        REQUIRE `?<Initializer for BMP_Color>`
+//   17                       GRN_, GRAY, ORANGE, BLUE, RED,  BLACK, BLACK,  BLACK};    
+//   18 u8  BmpHead[54]   = { 0X42, 0X4D, 0XF8, 0XB, 0X00, 0X00, 0X00, 0X00, 
+BmpHead:
+        DS8 56
+        REQUIRE `?<Initializer for BmpHead>`
+//   19                       0X00, 0X00, 0X76, 0X0, 0X00, 0X00, 0X28, 0X00,
+//   20                       0X00, 0X00, 0X90, 0X1, 0X00, 0X00, 0XF0, 0X00,
+//   21                       0X00, 0X00, 0X01, 0X0, 0X04, 0X00, 0X00, 0X00,
+//   22                       0X00, 0X00, 0X82, 0XB, 0X00, 0X00, 0X12, 0X0B,
+//   23                       0X00, 0X00, 0X12, 0XB, 0X00, 0X00, 0X00, 0X00,
+//   24                       0X00, 0X00, 0X00, 0X0, 0X00, 0X00};
+//   25 
+//   26 /*******************************************************************************
+//   27  打开指定扩展名的文件            输入：文件扩展名             返回值：0x00=成功 
+//   28 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function Make_Filename
+        THUMB
+//   29 u8 Make_Filename(u8 FileNum, u8* FileName)
+//   30 {
+Make_Filename:
+        PUSH     {R4,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R4 Frame(CFA, -8)
+        CFI CFA R13+8
+        SUB      SP,SP,#+4
+        CFI CFA R13+12
+        MOVS     R4,R1
+//   31   u8 Num[4];
+//   32   
+//   33   u8ToDec3(Num, FileNum);
+        MOVS     R1,R0
+        MOV      R0,SP
+        _BLF     u8ToDec3,??u8ToDec3??rT
+//   34   FileName[4]  = Num[0];
+        LDRB     R0,[SP, #+0]
+        STRB     R0,[R4, #+4]
+//   35   FileName[5]  = Num[1];
+        LDRB     R0,[SP, #+1]
+        STRB     R0,[R4, #+5]
+//   36   FileName[6]  = Num[2];
+        LDRB     R0,[SP, #+2]
+        STRB     R0,[R4, #+6]
+//   37 //  FileName[12] = 0;
+//   38   return 0;
+        MOVS     R0,#+0
+        ADD      SP,SP,#+4
+        CFI CFA R13+8
+        POP      {R4,PC}          ;; return
+        CFI EndBlock cfiBlock0
+//   39 } 
+//   40 /*******************************************************************************
+//   41  求出当前颜色的对应调色板编号
+//   42 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function Color_Num
+        THUMB
+//   43 u8 Color_Num(u16 Color)
+//   44 {
+//   45   if(Color == WHT)                   return 0;
+Color_Num:
+        LDR.N    R1,??Color_Num_0  ;; 0xffff
+        CMP      R0,R1
+        ITT     EQ 
+        MOVEQ    R0,#+0
+        BXEQ     LR
+//   46   else if((Color & CYAN  )== CYAN  ) return 1;
+        SUBS     R1,R1,#+31
+        MOVS     R2,R1
+        ANDS     R2,R2,R0
+        CMP      R2,R1
+        ITT     EQ 
+        MOVEQ    R0,#+1
+        BXEQ     LR
+//   47   else if((Color & YEL   )== YEL   ) return 3;
+        LSRS     R1,R1,#+5
+        MOVS     R2,R1
+        ANDS     R2,R2,R0
+        CMP      R2,R1
+        ITT     EQ 
+        MOVEQ    R0,#+3
+        BXEQ     LR
+//   48   else if((Color & PURPL )== PURPL ) return 5;
+        LDR.N    R1,??Color_Num_0+0x4  ;; 0xf81f
+        MOVS     R2,R1
+        ANDS     R2,R2,R0
+        CMP      R2,R1
+        ITT     EQ 
+        MOVEQ    R0,#+5
+        BXEQ     LR
+//   49   else if((Color & GRN   )== GRN   ) return 7;
+        ANDS     R1,R0,#0x7E0
+        CMP      R1,#+2016
+        ITT     EQ 
+        MOVEQ    R0,#+7
+        BXEQ     LR
+//   50   else if((Color & CYAN_ )== CYAN_ ) return 2;
+        LDR.N    R1,??Color_Num_0+0x8  ;; 0xbde0
+        MOVS     R2,R1
+        ANDS     R2,R2,R0
+        CMP      R2,R1
+        ITT     EQ 
+        MOVEQ    R0,#+2
+        BXEQ     LR
+//   51   else if((Color & YEL_  )== YEL_  ) return 4;
+        LDR.N    R1,??Color_Num_0+0xC  ;; 0x5f7
+        MOVS     R2,R1
+        ANDS     R2,R2,R0
+        CMP      R2,R1
+        ITT     EQ 
+        MOVEQ    R0,#+4
+        BXEQ     LR
+//   52   else if((Color & PURPL_)== PURPL_) return 6;
+        LDR.N    R1,??Color_Num_0+0x10  ;; 0xb817
+        MOVS     R2,R1
+        ANDS     R2,R2,R0
+        CMP      R2,R1
+        ITT     EQ 
+        MOVEQ    R0,#+6
+        BXEQ     LR
+//   53   else if((Color & GRN_  )== GRN_  ) return 8;
+        ANDS     R1,R0,#0x5E0
+        CMP      R1,#+1504
+        ITT     EQ 
+        MOVEQ    R0,#+8
+        BXEQ     LR
+//   54   else if((Color & GRAY  )== GRAY  ) return 9;
+        LDR.N    R1,??Color_Num_0+0x14  ;; 0x7bef
+        MOVS     R2,R1
+        ANDS     R2,R2,R0
+        CMP      R2,R1
+        ITT     EQ 
+        MOVEQ    R0,#+9
+        BXEQ     LR
+//   55   else if((Color & ORANGE)== ORANGE) return 10;
+        LDR.N    R1,??Color_Num_0+0x18  ;; 0x51f
+        MOVS     R2,R1
+        ANDS     R2,R2,R0
+        CMP      R2,R1
+        ITT     EQ 
+        MOVEQ    R0,#+10
+        BXEQ     LR
+//   56   else if((Color & BLUE  )== BLUE  ) return 11;
+        ANDS     R1,R0,#0xF800
+        CMP      R1,#+63488
+        ITT     EQ 
+        MOVEQ    R0,#+11
+        BXEQ     LR
+//   57   else if((Color & RED   )== RED   ) return 12;
+        LSLS     R0,R0,#+27
+        LSRS     R0,R0,#+27
+        CMP      R0,#+31
+        ITT     EQ 
+        MOVEQ    R0,#+12
+        BXEQ     LR
+//   58   else                               return 13;
+        MOVS     R0,#+13
+        BX       LR               ;; return
+        DATA
+??Color_Num_0:
+        DC32     0xffff
+        DC32     0xf81f
+        DC32     0xbde0
+        DC32     0x5f7
+        DC32     0xb817
+        DC32     0x7bef
+        DC32     0x51f
+        CFI EndBlock cfiBlock1
+//   59 }
+//   60 /*******************************************************************************
+//   61 Load_Dat: 加载保存过的屏幕图像原始数据    输入：文件编号     返回值：0x00=成功 
+//   62 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function Load_Dat
+        THUMB
+//   63 u8 Load_Dat(u8 FileNum)
+//   64 {
+//   65   u8  Filename[12] = "FILE    DAT"; 
+Load_Dat:
+        LDR.N    R2,??Load_Dat_0  ;; `?<Constant "FILE    DAT">`
+        PUSH     {R4,R5,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R5 Frame(CFA, -8)
+        CFI R4 Frame(CFA, -12)
+        CFI CFA R13+12
+        SUB      SP,SP,#+28
+        CFI CFA R13+40
+        ADD      R1,SP,#+8
+        MOVS     R4,#+12
+??Load_Dat_1:
+        SUBS     R4,R4,#+1
+        LDRB     R3,[R2, R4]
+        STRB     R3,[R1, R4]
+        BNE.N    ??Load_Dat_1
+//   66   u16 i;
+//   67   
+//   68   u16 pCluster[3];
+//   69   u32 pDirAddr[1]; 
+//   70   
+//   71   Make_Filename(FileNum, Filename);
+//   72   i = __OpenFileRd(SecBuff, Filename, pCluster, pDirAddr);
+        LDR.N    R4,??DataTable4  ;; SecBuff
+        MOVS     R1,R0
+        MOV      R0,SP
+        _BLF     u8ToDec3,??u8ToDec3??rT
+        LDRB     R0,[SP, #+0]
+        ADD      R3,SP,#+4
+        ADD      R2,SP,#+20
+        STRB     R0,[SP, #+12]
+        LDRB     R0,[SP, #+1]
+        ADD      R1,SP,#+8
+        STRB     R0,[SP, #+13]
+        LDRB     R0,[SP, #+2]
+        STRB     R0,[SP, #+14]
+        MOVS     R0,R4
+        _BLF     __OpenFileRd,??__OpenFileRd??rT
+        MOVS     R5,R0
+//   73   if(i != OK) return i;
+        BNE.N    ??Load_Dat_2
+//   74   for(i=0; i<4; i++){
+        MOVS     R5,#+0
+//   75     if(__ReadFileSec(SecBuff, pCluster)!= OK) return RD_ERR;
+??Load_Dat_3:
+        ADD      R1,SP,#+20
+        MOVS     R0,R4
+        _BLF     __ReadFileSec,??__ReadFileSec??rT
+        CBZ      R0,??Load_Dat_4
+        MOVS     R0,#+8
+        B.N      ??Load_Dat_2
+//   76     memcpy(&FileBuff[i*300], SecBuff,300);
+??Load_Dat_4:
+        MOVS     R2,#+300
+        MOVS     R0,R5
+        MOVS     R1,R4
+        MLA      R0,R0,R2,R4
+//   77   }
+        ADDS     R5,R5,#+1
+        UXTH     R5,R5
+        ADDW     R0,R0,#+512
+        _BLF     memcpy,??memcpy??rT
+        CMP      R5,#+4
+        BCC.N    ??Load_Dat_3
+//   78   return 0;
+        MOVS     R0,#+0
+??Load_Dat_2:
+        ADD      SP,SP,#+28
+        CFI CFA R13+12
+        POP      {R4,R5,PC}       ;; return
+        Nop      
+        DATA
+??Load_Dat_0:
+        DC32     `?<Constant "FILE    DAT">`
+        CFI EndBlock cfiBlock2
+//   79 }
+//   80 /*******************************************************************************
+//   81 Save_Dat: 保存当前屏幕显示图像原始数据    输入：文件编号     返回值：0x00=成功 
+//   82 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function Save_Dat
+        THUMB
+//   83 u8 Save_Dat(u8 FileNum)
+//   84 {
+//   85   u8  Filename[13] = "FILE    DAT"; 
+Save_Dat:
+        LDR.N    R2,??Save_Dat_0  ;; `?<Constant "FILE    DAT">_1`
+        PUSH     {R4,R6,R7,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R7 Frame(CFA, -8)
+        CFI R6 Frame(CFA, -12)
+        CFI R4 Frame(CFA, -16)
+        CFI CFA R13+16
+        SUB      SP,SP,#+32
+        CFI CFA R13+48
+        ADD      R1,SP,#+16
+        MOVS     R4,#+13
+??Save_Dat_1:
+        SUBS     R4,R4,#+1
+        LDRB     R3,[R2, R4]
+        STRB     R3,[R1, R4]
+        BNE.N    ??Save_Dat_1
+//   86   u16 i, j;
+//   87   u16 pCluster[3];
+//   88   u32 pDirAddr[1]; 
+//   89   
+//   90   Make_Filename(FileNum, Filename);
+//   91   if(__OpenFileWr(SecBuff, Filename, pCluster, pDirAddr)!=OK) return DISK_ERR;
+        LDR.N    R4,??DataTable4  ;; SecBuff
+        MOVS     R1,R0
+        MOV      R0,SP
+        _BLF     u8ToDec3,??u8ToDec3??rT
+        LDRB     R0,[SP, #+0]
+        ADD      R3,SP,#+4
+        ADD      R2,SP,#+8
+        STRB     R0,[SP, #+20]
+        LDRB     R0,[SP, #+1]
+        ADD      R1,SP,#+16
+        STRB     R0,[SP, #+21]
+        LDRB     R0,[SP, #+2]
+        STRB     R0,[SP, #+22]
+        MOVS     R0,R4
+        _BLF     __OpenFileWr,??__OpenFileWr??rT
+        CBZ      R0,??Save_Dat_2
+        MOVS     R0,#+10
+        B.N      ??Save_Dat_3
+//   92   memset(SecBuff, 0, 512);
+??Save_Dat_2:
+        MOVS     R2,#+512
+        MOVS     R1,#+0
+//   93   for(j=0; j<4; j++){
+        LDR.N    R7,??Save_Dat_0+0x4  ;; TrackBuff
+        MOVS     R0,R4
+        _BLF     memset,??memset??rT
+        MOVS     R6,#+0
+//   94     for(i=0; i<299; i++)  SecBuff[i] = TrackBuff[i*4 + j];
+??Save_Dat_4:
+        MOVS     R0,#+0
+??Save_Dat_5:
+        ADDS     R3,R6,R0, LSL #+2
+        LDRB     R3,[R7, R3]
+        STRB     R3,[R4, R0]
+        LDR.N    R3,??Save_Dat_0+0x8  ;; 0x12b
+        ADDS     R0,R0,#+1
+        UXTH     R0,R0
+        CMP      R0,R3
+        BCC.N    ??Save_Dat_5
+//   95     SecBuff[299] = Title[j][POSI].Value;
+        LDR.N    R2,??DataTable9  ;; Title
+        MOVS     R0,#+80
+//   96     if(__ProgFileSec(SecBuff, pCluster)!= OK) return WR_ERR; // 写入数据
+        ADD      R1,SP,#+8
+        MLA      R0,R6,R0,R2
+        ADDS     R0,R0,#+76
+        LDRH     R0,[R0, #+0]
+        STRB     R0,[R4, #+299]
+        MOVS     R0,R4
+        _BLF     __ProgFileSec,??__ProgFileSec??rT
+        CBNZ     R0,??Save_Dat_6
+//   97     Print_Clk(254, 0, (SCRN<<8)+ TEXT1, j & 3);              // 进度指示
+??Save_Dat_7:
+        LDR.N    R2,??DataTable8  ;; 0x50a
+        LSLS     R3,R6,#+30
+        LSRS     R3,R3,#+30
+        MOVS     R1,#+0
+        MOVS     R0,#+254
+        _BLF     Print_Clk,??Print_Clk??rT
+//   98   }
+        ADDS     R6,R6,#+1
+        UXTH     R6,R6
+        CMP      R6,#+4
+        BCC.N    ??Save_Dat_4
+//   99   if(__CloseFile(SecBuff, 0x0800, pCluster, pDirAddr)!= OK) return WR_ERR;
+        ADD      R3,SP,#+4
+        ADD      R2,SP,#+8
+        MOVS     R1,#+2048
+        MOVS     R0,R4
+        _BLF     __CloseFile,??__CloseFile??rT
+        CBZ      R0,??Save_Dat_3
+??Save_Dat_6:
+        MOVS     R0,#+9
+//  100   return OK;
+??Save_Dat_3:
+        ADD      SP,SP,#+32
+        CFI CFA R13+16
+        POP      {R4,R6,R7,PC}
+        DATA
+??Save_Dat_0:
+        DC32     `?<Constant "FILE    DAT">_1`
+        DC32     TrackBuff
+        DC32     0x12b
+        CFI EndBlock cfiBlock3
+//  101 }
+//  102 /*******************************************************************************
+//  103 Save_Bmp: 保存当前屏幕显示图像为BMP格式    输入：文件编号     返回值：0x00=成功 
+//  104 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function Save_Bmp
+        THUMB
+//  105 u8 Save_Bmp(u8 FileNum)
+//  106 {
+//  107   u8  Filename[12] = "IMAG    BMP"; 
+Save_Bmp:
+        LDR.N    R2,??Save_Bmp_0  ;; `?<Constant "IMAG    BMP">`
+        PUSH     {R4-R11,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R11 Frame(CFA, -8)
+        CFI R10 Frame(CFA, -12)
+        CFI R9 Frame(CFA, -16)
+        CFI R8 Frame(CFA, -20)
+        CFI R7 Frame(CFA, -24)
+        CFI R6 Frame(CFA, -28)
+        CFI R5 Frame(CFA, -32)
+        CFI R4 Frame(CFA, -36)
+        CFI CFA R13+36
+        SUB      SP,SP,#+28
+        CFI CFA R13+64
+        ADD      R1,SP,#+16
+        MOVS     R4,#+12
+??Save_Bmp_1:
+        SUBS     R4,R4,#+1
+        LDRB     R3,[R2, R4]
+        STRB     R3,[R1, R4]
+        BNE.N    ??Save_Bmp_1
+//  108   u16 k, i, j, x=0, y=0, ColorH, ColorL;
+//  109 
+//  110   u16 pCluster[3];
+//  111   u32 pDirAddr[1]; 
+//  112 
+//  113 //   u8 Num[10];  
+//  114 /* 
+//  115   Make_Filename(FileNum, Filename);
+//  116   if(__OpenFileWr(SecBuff, Filename, pCluster, pDirAddr)!=OK) return DISK_ERR;
+//  117 //  
+//  118   Shor2Hex(Num, *pCluster); /////////////////////////////// 
+//  119   __Display_Str( 0*8, 220, WHT, PRN, Num);/////////////////
+//  120   Shor2Hex(Num, *(pCluster+1)); /////////////////////////// 
+//  121   __Display_Str( 5*8, 220, GRN, PRN, Num);////////////////
+//  122 //  
+//  123   memcpy(SecBuff, BmpHead, 54);
+//  124   i = 0x0036; // 调色板存放开始地址
+//  125   for(j=0; j<16; ++j){
+//  126     SecBuff[j*4 +i+0]=(BMP_Color[j]& 0xF800)>>8; // Bule
+//  127     SecBuff[j*4 +i+1]=(BMP_Color[j]& 0x07E0)>>3; // Green
+//  128     SecBuff[j*4 +i+2]=(BMP_Color[j]& 0x001F)<<3; // Red
+//  129     SecBuff[j*4 +i+3]= 0;                        // Alpha
+//  130   }
+//  131   i = 0x0076; // 图像数据开始存放地址
+//  132   k = 0;
+//  133   for(y=0; y<240; y++){
+//  134     for(x=0; x<400 ; x+=2){
+//  135       __Point_SCR(x, y);
+//  136       ColorH =__LCD_GetPixl();
+//  137       __Point_SCR(x+1, y);
+//  138       ColorL =__LCD_GetPixl();
+//  139       SecBuff[i] =(Color_Num(ColorH)<<4)+ Color_Num(ColorL);
+//  140       i++;
+//  141       if(i>=512){
+//  142         if(__ProgFileSec(SecBuff, pCluster)!= OK) return WR_ERR; // 写入数据
+//  143         Print_Clk(254, 0, (SCRN<<8)+ TEXT1, (k++ >>1)& 3);    // 进度指示
+//  144         i=0; 
+//  145 //   
+//  146 //  Filename[11] = 0;  
+//  147 //  __Display_Str(10*8, 220, WHT, PRN, Filename);
+//  148   Char2Hex(Num, *pCluster);  
+//  149   __Display_Str(k*4*8, 220, WHT, PRN, Num);
+//  150 //  Char2Hex(Num, *(pCluster+1));  
+//  151 //  __Display_Str(28*8, 220, WHT, PRN, Num);
+//  152   while(1);
+//  153   Char2Hex(Num, k);////////////////////////////////  
+//  154   __Display_Str(20*8, 215, YEL, PRN, Num);/////////
+//  155   Shor2Hex(Num, *pCluster); /////////////////////// 
+//  156   __Display_Str(25*8, 215, WHT, PRN, Num);/////////
+//  157   Shor2Hex(Num, *(pCluster+1));///////////////////  
+//  158   __Display_Str(30*8, 215, GRN, PRN, Num);////////
+//  159   Key_Buffer = 0;/////////////////////////////////
+//  160   while(!Key_Buffer);/////////////////////////////
+//  161 //
+//  162       }
+//  163     }
+//  164   }
+//  165   if(i!=0) if(__ProgFileSec(SecBuff, pCluster)!= OK) return WR_ERR; // 写入数据
+//  166 //  while(1);
+//  167   if(__CloseFile(SecBuff, 0xBC00, pCluster, pDirAddr)!= OK) return WR_ERR;
+//  168   return 0; 
+//  169   k=0;
+//  170  Char2Hex(Num, *(pCluster+1)); __Display_Str((k%24)*16, (k/24)*15, WHT, PRN, Num); k++;
+//  171  Char2Hex(Num, *pCluster    ); __Display_Str((k%24)*16, (k/24)*15, GRN, PRN, Num); k++;
+//  172  if(*pCluster > 0x154){Key_Buffer = 0; while(Key_Buffer == 0) {} }
+//  173 // if(k >= 16*24){__Clear_Screen(BLACK); k = 0;}
+//  174 */ 
+//  175   
+//  176   Make_Filename(FileNum, Filename);
+        MOVS     R1,R0
+        MOV      R0,SP
+        _BLF     u8ToDec3,??u8ToDec3??rT
+        LDRB     R0,[SP, #+0]
+//  177   if(__OpenFileWr(SecBuff, Filename, pCluster, pDirAddr)!=OK) return DISK_ERR;
+        ADD      R3,SP,#+4
+        ADD      R2,SP,#+8
+        STRB     R0,[SP, #+20]
+        LDRB     R0,[SP, #+1]
+        ADD      R1,SP,#+16
+        STRB     R0,[SP, #+21]
+        LDRB     R0,[SP, #+2]
+        STRB     R0,[SP, #+22]
+        LDR.N    R0,??DataTable4  ;; SecBuff
+        MOV      R8,R0
+        _BLF     __OpenFileWr,??__OpenFileWr??rT
+        CBZ      R0,??Save_Bmp_2
+        MOVS     R0,#+10
+        B.N      ??Save_Bmp_3
+//  178   memcpy(SecBuff, BmpHead, 54);
+??Save_Bmp_2:
+        LDR.N    R4,??Save_Bmp_0+0x4  ;; BMP_Color
+        MOVS     R2,#+54
+        MOV      R0,R8
+        MOVS     R1,R4
+        ADDS     R1,R1,#+32
+        _BLF     memcpy,??memcpy??rT
+//  179   i = 0x0036; // 调色板存放开始地址
+//  180   for(j=0; j<16; ++j){
+        MOVS     R0,#+0
+        MOV      R9,R0
+//  181     SecBuff[j*4 +i+0]=(BMP_Color[j]& 0xF800)>>8; // Bule
+??Save_Bmp_4:
+        MOVS     R2,R0
+        LDRH     R1,[R4, R2, LSL #+1]
+        ADDS     R3,R8,R2, LSL #+2
+//  182     SecBuff[j*4 +i+1]=(BMP_Color[j]& 0x07E0)>>3; // Green
+        LSLS     R2,R2,#+2
+        ADDS     R2,R2,#+54
+        ADD      R2,R2,R8
+        ANDS     R5,R1,#0xF800
+        LSRS     R5,R5,#+8
+        STRB     R5,[R3, #+54]!
+        ANDS     R3,R1,#0x7E0
+        ASRS     R3,R3,#+3
+        STRB     R3,[R2, #+1]
+//  183     SecBuff[j*4 +i+2]=(BMP_Color[j]& 0x001F)<<3; // Red
+        LSLS     R1,R1,#+3
+        STRB     R1,[R2, #+2]
+//  184     SecBuff[j*4 +i+3]= 0;                        // Alpha
+        MOVS     R1,#+0
+        STRB     R1,[R2, #+3]
+//  185   }
+        ADDS     R0,R0,#+1
+        UXTH     R0,R0
+        CMP      R0,#+16
+        BCC.N    ??Save_Bmp_4
+//  186   i = 0x0076; // 图像数据开始存放地址
+        MOVS     R4,#+118
+//  187   k = 0;
+        MOVS     R5,#+0
+//  188   for(y=0; y<240; y++){
+        MOV      R10,R9
+//  189     for(x=0; x<400 ; x+=2){
+??Save_Bmp_5:
+        MOVS     R6,#+0
+//  190       __Point_SCR(x, y);
+??Save_Bmp_6:
+        MOV      R1,R10
+        MOVS     R0,R6
+        _BLF     __Point_SCR,??__Point_SCR??rT
+//  191       ColorH =__LCD_GetPixl();
+        _BLF     __LCD_GetPixl,??__LCD_GetPixl??rT
+        MOV      R11,R0
+//  192       __Point_SCR(x+1, y);
+        MOV      R1,R10
+        ADDS     R0,R6,#+1
+        UXTH     R0,R0
+        _BLF     __Point_SCR,??__Point_SCR??rT
+//  193       ColorL =__LCD_GetPixl();
+        _BLF     __LCD_GetPixl,??__LCD_GetPixl??rT
+        MOVS     R7,R0
+//  194       SecBuff[i] =(Color_Num(ColorH)<<4)+ Color_Num(ColorL);
+        MOV      R0,R11
+        BL       Color_Num
+        MOVS     R1,R0
+        PUSH     {R1}
+        CFI CFA R13+68
+        MOVS     R0,R7
+        BL       Color_Num
+        POP      {R1}
+        CFI CFA R13+64
+        MOV      R2,R8
+        ADDS     R0,R0,R1, LSL #+4
+        STRB     R0,[R2, R4]
+//  195       i++;
+        ADDS     R4,R4,#+1
+        UXTH     R4,R4
+//  196       if(i>=512){
+        MOVS     R1,#+512
+        CMP      R4,R1
+        BCC.N    ??Save_Bmp_7
+//  197         if(__ProgFileSec(SecBuff, pCluster)!= OK) return WR_ERR; // 写入数据
+        ADD      R1,SP,#+8
+        MOV      R0,R8
+        _BLF     __ProgFileSec,??__ProgFileSec??rT
+        CBNZ     R0,??Save_Bmp_8
+//  198 // Char2Hex(Num, *(pCluster+1)); __Display_Str((k%24)*16, (k/24)*15, WHT, PRN, Num); k++;
+//  199 // Char2Hex(Num, *pCluster    ); __Display_Str((k%24)*16, (k/24)*15, GRN, PRN, Num); k++;
+//  200 // if(*pCluster > 0){Key_Buffer = 0; while(Key_Buffer == 0) {} }
+//  201 // if(k >= 16*24){__Clear_Screen(BLACK); k = 0;}
+//  202         Print_Clk(254, 0, (SCRN<<8)+ TEXT1, (k++ >>1)& 3);    // 进度指示
+??Save_Bmp_9:
+        LDR.N    R2,??DataTable8  ;; 0x50a
+        ASRS     R0,R5,#+1
+        LSLS     R3,R0,#+30
+        LSRS     R3,R3,#+30
+        MOVS     R1,#+0
+        MOVS     R0,#+254
+        _BLF     Print_Clk,??Print_Clk??rT
+        ADDS     R5,R5,#+1
+        UXTH     R5,R5
+//  203         i=0; 
+        MOV      R4,R9
+//  204       }
+//  205     }
+??Save_Bmp_7:
+        ADDS     R6,R6,#+2
+        UXTH     R6,R6
+        MOVS     R1,#+400
+        CMP      R6,R1
+        BCC.N    ??Save_Bmp_6
+//  206   }
+        MOV      R0,R10
+        ADDS     R0,R0,#+1
+        UXTH     R0,R0
+        MOV      R10,R0
+        CMP      R0,#+240
+        BCC.N    ??Save_Bmp_5
+//  207   if(i!=0) if(__ProgFileSec(SecBuff, pCluster)!= OK) return WR_ERR; // 写入数据
+        CBZ      R4,??Save_Bmp_10
+        ADD      R1,SP,#+8
+        MOV      R0,R8
+        _BLF     __ProgFileSec,??__ProgFileSec??rT
+        CBNZ     R0,??Save_Bmp_8
+//  208   if(__CloseFile(SecBuff, 0xBC00, pCluster, pDirAddr)!= OK) return WR_ERR;
+??Save_Bmp_10:
+        ADD      R3,SP,#+4
+        ADD      R2,SP,#+8
+        MOVS     R1,#+48128
+        MOV      R0,R8
+        _BLF     __CloseFile,??__CloseFile??rT
+        CBZ      R0,??Save_Bmp_3
+??Save_Bmp_8:
+        MOVS     R0,#+9
+//  209   return 0; 
+??Save_Bmp_3:
+        ADD      SP,SP,#+28
+        CFI CFA R13+36
+        POP      {R4-R11,PC}      ;; return
+        DATA
+??Save_Bmp_0:
+        DC32     `?<Constant "IMAG    BMP">`
+        DC32     BMP_Color
+        CFI EndBlock cfiBlock4
+//  210 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable4:
+        DC32     SecBuff
+//  211 /*******************************************************************************
+//  212 Save_Buf: 保存采集数据缓存区为BUF格式    输入：文件编号     返回值：0x00=成功      
+//  213 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function Save_Buf
+        THUMB
+//  214 u8 Save_Buf(u8 FileNum)
+//  215 {
+//  216   u8   i, Filename[12] = "DATA    BUF"; 
+Save_Buf:
+        LDR.N    R2,??Save_Buf_0  ;; `?<Constant "DATA    BUF">`
+        PUSH     {R4-R6,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R6 Frame(CFA, -8)
+        CFI R5 Frame(CFA, -12)
+        CFI R4 Frame(CFA, -16)
+        CFI CFA R13+16
+        SUB      SP,SP,#+28
+        CFI CFA R13+44
+        ADD      R1,SP,#+16
+        MOVS     R4,#+12
+??Save_Buf_1:
+        SUBS     R4,R4,#+1
+        LDRB     R3,[R2, R4]
+        STRB     R3,[R1, R4]
+        BNE.N    ??Save_Buf_1
+//  217   u16* p ;
+//  218   
+//  219   u16 pCluster[3];
+//  220   u32 pDirAddr[1]; 
+//  221   
+//  222   Make_Filename(FileNum, Filename);
+//  223   if(__OpenFileWr(SecBuff, Filename, pCluster, pDirAddr)!=OK) return DISK_ERR;
+        LDR.N    R4,??DataTable21  ;; SecBuff
+        MOVS     R1,R0
+        MOV      R0,SP
+        _BLF     u8ToDec3,??u8ToDec3??rT
+        LDRB     R0,[SP, #+0]
+        ADD      R3,SP,#+4
+        ADD      R2,SP,#+8
+        STRB     R0,[SP, #+20]
+        LDRB     R0,[SP, #+1]
+        ADD      R1,SP,#+16
+        STRB     R0,[SP, #+21]
+        LDRB     R0,[SP, #+2]
+        STRB     R0,[SP, #+22]
+        MOVS     R0,R4
+        _BLF     __OpenFileWr,??__OpenFileWr??rT
+        CBZ      R0,??Save_Buf_2
+        MOVS     R0,#+10
+        B.N      ??Save_Buf_3
+//  224   for(i=0; i<32; i++){
+??Save_Buf_2:
+        MOVS     R6,#+0
+        MOVS     R5,#+0
+//  225     memcpy(SecBuff, &(DataBuf[i*512/4]), 512);
+??Save_Buf_4:
+        LSLS     R0,R5,#+9
+        ASRS     R1,R0,#+1
+        MOVS     R2,#+512
+        ADDS     R0,R0,R1, LSR #+30
+        LDR.N    R1,??DataTable22  ;; DataBuf
+        ASRS     R0,R0,#+2
+        ADDS     R1,R1,R0, LSL #+2
+        MOVS     R0,R4
+        _BLF     memcpy,??memcpy??rT
+//  226     if(__ProgFileSec(SecBuff, pCluster)!= OK) return WR_ERR; // 写入数据
+        ADD      R1,SP,#+8
+        MOVS     R0,R4
+        _BLF     __ProgFileSec,??__ProgFileSec??rT
+        CMP      R0,#+0
+        BNE.N    ??Save_Buf_5
+//  227     Print_Clk(254, 0, (SCRN<<8)+ TEXT1, (i >>1)& 3);        // 进度指示
+??Save_Buf_6:
+        LDR.N    R2,??DataTable8  ;; 0x50a
+        ASRS     R0,R5,#+1
+        LSLS     R3,R0,#+30
+        LSRS     R3,R3,#+30
+        MOVS     R1,#+0
+        MOVS     R0,#+254
+        _BLF     Print_Clk,??Print_Clk??rT
+//  228   }
+        ADDS     R5,R5,#+1
+        UXTB     R5,R5
+        CMP      R5,#+32
+        BCC.N    ??Save_Buf_4
+//  229   memset(SecBuff, 0, 512);
+        MOVS     R2,#+512
+        MOVS     R1,#+0
+        MOVS     R0,R4
+        _BLF     memset,??memset??rT
+//  230   p =(u16*)SecBuff;
+//  231   for(i=0; i<4; i++){                     // 保存显示菜单中各个对应项的值
+        LDR.N    R1,??DataTable9  ;; Title
+        MOVS     R0,R4
+        MOV      R5,R6
+//  232     *p++ = Title[i][0].Value;
+??Save_Buf_7:
+        MOVS     R2,R5
+        MOVS     R3,#+80
+//  233     *p++ = Title[i][1].Value;
+//  234     *p++ = Title[i][2].Value;
+//  235     *p++ = Title[i][3].Value;
+//  236   }
+        ADDS     R5,R5,#+1
+        MLA      R2,R2,R3,R1
+        UXTB     R5,R5
+        LDRH     R3,[R2, #+16]
+        STRH     R3,[R0, #+0]
+        LDRH     R3,[R2, #+36]
+        STRH     R3,[R0, #+2]
+        LDRH     R3,[R2, #+56]
+        ADDS     R2,R2,#+76
+        STRH     R3,[R0, #+4]
+        LDRH     R2,[R2, #+0]
+        STRH     R2,[R0, #+6]
+        ADDS     R0,R0,#+8
+        CMP      R5,#+4
+        BCC.N    ??Save_Buf_7
+//  237   *p++ = Title[5][0].Value;
+        ADDW     R2,R1,#+416
+        LDRH     R3,[R2, #+0]
+//  238   *p++ = Title[5][1].Value;
+//  239 
+//  240   *p++ = 0x00FF & Ka1[_A_Range];
+        ADDS     R1,R1,#+56
+        STRH     R3,[R0, #+0]
+        LDRH     R2,[R2, #+20]
+        LDR.N    R3,??DataTable27  ;; Ka1
+        STRH     R2,[R0, #+2]
+        LDRSH    R2,[R1, R6]
+        LDRB     R2,[R3, R2]
+//  241   *p++ = Ka2[_A_Range];
+        LDR.N    R3,??DataTable28  ;; Ka2
+        STRH     R2,[R0, #+4]
+        LDRSH    R2,[R1, R6]
+        LDRH     R2,[R3, R2, LSL #+1]
+//  242   *p++ = 0x00FF & Kb1[_B_Range];
+        LDR.N    R3,??DataTable29  ;; Kb1
+        STRH     R2,[R0, #+6]
+        LDRSH    R2,[R1, #+80]
+        LDRB     R2,[R3, R2]
+        STRH     R2,[R0, #+8]
+//  243   *p++ = Kb2[_B_Range];
+        LDR.N    R2,??DataTable30  ;; Kb2
+        LDRSH    R1,[R1, #+80]
+        LDRH     R1,[R2, R1, LSL #+1]
+        STRH     R1,[R0, #+10]!
+//  244 
+//  245   if(__ProgFileSec(SecBuff, pCluster)!= OK) return WR_ERR; // 写入数据
+        ADD      R1,SP,#+8
+        MOVS     R0,R4
+        _BLF     __ProgFileSec,??__ProgFileSec??rT
+        CBNZ     R0,??Save_Buf_5
+//  246   if(__CloseFile(SecBuff, 0x4200, pCluster, pDirAddr)!= OK) return WR_ERR;
+??Save_Buf_8:
+        ADD      R3,SP,#+4
+        ADD      R2,SP,#+8
+        MOVS     R1,#+16896
+        MOVS     R0,R4
+        _BLF     __CloseFile,??__CloseFile??rT
+        CBZ      R0,??Save_Buf_3
+??Save_Buf_5:
+        MOVS     R0,#+9
+//  247   return 0;
+??Save_Buf_3:
+        ADD      SP,SP,#+28
+        CFI CFA R13+16
+        POP      {R4-R6,PC}       ;; return
+        Nop      
+        DATA
+??Save_Buf_0:
+        DC32     `?<Constant "DATA    BUF">`
+        CFI EndBlock cfiBlock5
+//  248 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable8:
+        DC32     0x50a
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable9:
+        DC32     Title
+//  249 /*******************************************************************************
+//  250 Load_Dat: 加载保存过的采集数据缓冲区    输入：文件编号     返回值：0x00=成功 
+//  251 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function Load_Buf
+        THUMB
+//  252 u8 Load_Buf(u8 FileNum)
+//  253 {
+//  254   u8  i, Filename[13] = "DATA    BUF"; 
+Load_Buf:
+        LDR.N    R2,??Load_Buf_0  ;; `?<Constant "DATA    BUF">_1`
+        PUSH     {R4-R7,R9-R11,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R11 Frame(CFA, -8)
+        CFI R10 Frame(CFA, -12)
+        CFI R9 Frame(CFA, -16)
+        CFI R7 Frame(CFA, -20)
+        CFI R6 Frame(CFA, -24)
+        CFI R5 Frame(CFA, -28)
+        CFI R4 Frame(CFA, -32)
+        CFI CFA R13+32
+        SUB      SP,SP,#+32
+        CFI CFA R13+64
+        ADD      R1,SP,#+16
+        MOVS     R4,#+13
+??Load_Buf_1:
+        SUBS     R4,R4,#+1
+        LDRB     R3,[R2, R4]
+        STRB     R3,[R1, R4]
+        BNE.N    ??Load_Buf_1
+//  255   u16 *p;
+//  256   
+//  257   u16 pCluster[3];
+//  258   u32 pDirAddr[1]; 
+//  259   
+//  260   p = TempPar;
+//  261   *p++ = 0xAA55;
+        LDR.N    R6,??DataTable24  ;; TempPar
+        LDR.N    R1,??DataTable25  ;; 0xaa55
+        STRH     R1,[R6], #+2
+//  262   for(i=0; i<4; i++){                     // 保存显示菜单中各个对应项的值
+        MOVS     R1,#+0
+//  263     *p++ = Title[i][0].Value;
+??Load_Buf_2:
+        LDR.N    R2,??DataTable31  ;; Title
+        MOVS     R3,#+80
+        MOV      R9,R2
+        MOVS     R2,R1
+//  264     *p++ = Title[i][1].Value;
+//  265     *p++ = Title[i][2].Value;
+//  266     *p++ = Title[i][3].Value;
+//  267   }
+        ADDS     R1,R1,#+1
+        MLA      R2,R2,R3,R9
+        UXTB     R1,R1
+        LDRH     R3,[R2, #+16]
+        STRH     R3,[R6, #+0]
+        LDRH     R3,[R2, #+36]
+        STRH     R3,[R6, #+2]
+        LDRH     R3,[R2, #+56]
+        ADDS     R2,R2,#+76
+        STRH     R3,[R6, #+4]
+        LDRH     R2,[R2, #+0]
+        STRH     R2,[R6, #+6]
+        ADDS     R6,R6,#+8
+        CMP      R1,#+4
+        BCC.N    ??Load_Buf_2
+//  268   *p++ = Title[5][0].Value;
+//  269   *p++ = Title[5][1].Value;
+//  270   for(i=0; i<8; i++){
+        LDR.N    R4,??DataTable29  ;; Kb1
+        LDR.N    R5,??DataTable30  ;; Kb2
+        ADDW     R10,R9,#+416
+        LDRH     R1,[R10, #+0]
+        STRH     R1,[R6, #+0]
+        LDRH     R1,[R10, #+20]
+        STRH     R1,[R6, #+2]
+        ADDS     R6,R6,#+4
+        MOVS     R1,#+0
+//  271     *p++ = 0x00FF & Ka1[i];
+??Load_Buf_3:
+        LDR.N    R3,??DataTable27  ;; Ka1
+        MOVS     R2,R1
+//  272     *p++ = Ka2[i];
+//  273     *p++ = 0x00FF & Kb1[i];
+//  274     *p++ = Kb2[i];
+//  275   }
+        ADDS     R1,R1,#+1
+        MOV      R11,R3
+        LDRB     R3,[R3, R2]
+        UXTB     R1,R1
+        STRH     R3,[R6, #+0]
+        LDR.N    R3,??DataTable28  ;; Ka2
+        LDRH     R3,[R3, R2, LSL #+1]
+        STRH     R3,[R6, #+2]
+        LDRB     R3,[R4, R2]
+        STRH     R3,[R6, #+4]
+        LDRH     R2,[R5, R2, LSL #+1]
+        STRH     R2,[R6, #+6]
+        ADDS     R6,R6,#+8
+        CMP      R1,#+8
+        BCC.N    ??Load_Buf_3
+//  276   Make_Filename(FileNum, Filename);
+//  277   i = __OpenFileRd(SecBuff, Filename, pCluster, pDirAddr);
+        LDR.N    R6,??DataTable21  ;; SecBuff
+        MOVS     R1,R0
+        MOV      R0,SP
+        _BLF     u8ToDec3,??u8ToDec3??rT
+        LDRB     R0,[SP, #+0]
+        ADD      R3,SP,#+12
+        ADD      R2,SP,#+4
+        STRB     R0,[SP, #+20]
+        LDRB     R0,[SP, #+1]
+        ADD      R1,SP,#+16
+        STRB     R0,[SP, #+21]
+        LDRB     R0,[SP, #+2]
+        STRB     R0,[SP, #+22]
+        MOVS     R0,R6
+        _BLF     __OpenFileRd,??__OpenFileRd??rT
+        MOVS     R7,R0
+//  278   if(i != OK) return i;
+        BNE.N    ??Load_Buf_4
+//  279   for(i=0; i<32; i++){
+        MOVS     R7,#+0
+//  280     if(__ReadFileSec(SecBuff, pCluster)!= OK) return RD_ERR;
+??Load_Buf_5:
+        ADD      R1,SP,#+4
+        MOVS     R0,R6
+        _BLF     __ReadFileSec,??__ReadFileSec??rT
+        CBZ      R0,??Load_Buf_6
+??Load_Buf_7:
+        MOVS     R0,#+8
+        B.N      ??Load_Buf_4
+//  281     memcpy(&(DataBuf[i*512/4]),SecBuff,512);
+??Load_Buf_6:
+        LSLS     R0,R7,#+9
+        ASRS     R3,R0,#+1
+        MOVS     R2,#+512
+        ADDS     R0,R0,R3, LSR #+30
+        LDR.N    R3,??DataTable22  ;; DataBuf
+        ASRS     R0,R0,#+2
+        MOVS     R1,R6
+        ADDS     R0,R3,R0, LSL #+2
+        _BLF     memcpy,??memcpy??rT
+//  282   }
+        ADDS     R7,R7,#+1
+        UXTB     R7,R7
+        CMP      R7,#+32
+        BCC.N    ??Load_Buf_5
+//  283   if(__ReadFileSec(SecBuff, pCluster)!= OK) return RD_ERR;
+        ADD      R1,SP,#+4
+        MOVS     R0,R6
+        _BLF     __ReadFileSec,??__ReadFileSec??rT
+        CMP      R0,#+0
+        BNE.N    ??Load_Buf_7
+//  284   p =(u16*)SecBuff;
+//  285   for(i=0; i<4; i++){
+        MOVS     R7,#+0
+//  286     Title[i][0].Value = *p++;             // 加载之前的显示菜单中各个对应项的值
+??Load_Buf_8:
+        MOVS     R0,R7
+        LDRH     R2,[R6, #+0]
+        MOVS     R1,#+80
+//  287     Title[i][1].Value = *p++ ;
+//  288     Title[i][2].Value = *p++;
+//  289     Title[i][3].Value = *p++;
+//  290     Title[i][0].Flag  = UPDAT;
+//  291     Title[i][1].Flag  = UPDAT;
+//  292     Title[i][2].Flag  = UPDAT;
+//  293     Title[i][3].Flag  = UPDAT;
+//  294   }
+        ADDS     R7,R7,#+1
+        MLA      R0,R0,R1,R9
+        UXTB     R7,R7
+        MOVS     R1,R0
+        ADDS     R0,R0,#+58
+        STRH     R2,[R1, #+16]!
+        LDRH     R2,[R6, #+2]
+        STRH     R2,[R1, #+20]
+        LDRH     R2,[R6, #+4]
+        STRH     R2,[R1, #+40]
+        LDRH     R2,[R6, #+6]
+        ADDS     R6,R6,#+8
+        STRH     R2,[R0, #+18]
+        MOVS     R2,#+2
+        STRB     R2,[R1, #+2]
+        STRB     R2,[R1, #+22]
+        STRB     R2,[R0, #+0]
+        STRB     R2,[R0, #+20]
+        CMP      R7,#+4
+        BCC.N    ??Load_Buf_8
+//  295   Title[5][0].Value = *p++;
+        LDRH     R0,[R6, #+0]
+        STRH     R0,[R10, #+0]
+//  296   Title[5][1].Value = *p++;
+        LDRH     R0,[R6, #+2]
+//  297   Title[5][0].Flag  = UPDAT;
+//  298   Title[5][1].Flag  = UPDAT;
+        STRB     R2,[R10, #+22]
+//  299       
+//  300   Ka1[_A_Range] = (*p++ );
+        MOV      R2,R11
+        STRH     R0,[R10, #+20]
+        MOVS     R0,#+2
+        STRB     R0,[R10, #+2]
+        LDRH     R3,[R6, #+4]
+        MOV      R0,R9
+        LDRSH    R1,[R0, #+56]!
+        STRB     R3,[R2, R1]
+//  301   Ka2[_A_Range] = (*p++ );
+        LDR.N    R2,??DataTable28  ;; Ka2
+        LDRH     R3,[R6, #+6]
+        STRH     R3,[R2, R1, LSL #+1]
+        LDRSH    R0,[R0, #+80]
+        LDRH     R1,[R6, #+8]
+        STRB     R1,[R4, R0]
+//  302   Kb1[_B_Range] = (*p++);
+//  303   Kb2[_B_Range] = (*p++); /**/
+        LDRH     R1,[R6, #+10]!
+        STRH     R1,[R5, R0, LSL #+1]
+//  304 
+//  305   Title[RUNNING][STATE].Value = 1;                 // 置"HOLD" 状态
+        ADDW     R0,R9,#+336
+        MOVS     R1,#+1
+        STRH     R1,[R0, #+0]
+//  306   Title[RUNNING][STATE].Flag |= UPDAT;             // 置相应的更新标志
+        LDRB     R1,[R0, #+2]
+        ORRS     R1,R1,#0x2
+        STRB     R1,[R0, #+2]
+//  307   return 0;
+        MOVS     R0,#+0
+??Load_Buf_4:
+        ADD      SP,SP,#+32
+        CFI CFA R13+32
+        POP      {R4-R7,R9-R11,PC}
+        Nop      
+        DATA
+??Load_Buf_0:
+        DC32     `?<Constant "DATA    BUF">_1`
+        CFI EndBlock cfiBlock6
+//  308 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable21:
+        DC32     SecBuff
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable22:
+        DC32     DataBuf
+//  309 
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function reset_parameter
+        THUMB
+//  310 void reset_parameter(void)
+//  311 {
+//  312   u16* p;
+//  313   u8   i;
+//  314   
+//  315   p=TempPar;
+//  316   p++;
+reset_parameter:
+        LDR.N    R1,??DataTable24  ;; TempPar
+//  317   if(TempPar[0]!=0xAA55) return;
+        LDR.N    R3,??DataTable25  ;; 0xaa55
+        PUSH     {R4-R7}
+        CFI R7 Frame(CFA, -4)
+        CFI R6 Frame(CFA, -8)
+        CFI R5 Frame(CFA, -12)
+        CFI R4 Frame(CFA, -16)
+        CFI CFA R13+16
+        LDRH     R0,[R1, #+0]
+        ADDS     R2,R1,#+2
+        CMP      R0,R3
+        BNE.N    ??reset_parameter_0
+//  318   for(i=0; i<4; i++){
+        MOVS     R3,#+0
+        MOVS     R4,#+0
+        MOVS     R5,#+2
+        B.N      ??reset_parameter_1
+//  319     Title[i][0].Value = *p++;             // 加载之前的显示菜单中各个对应项的值
+??reset_parameter_2:
+        LDRH     R7,[R2, #+0]
+        MOVS     R6,#+80
+        MLA      R0,R4,R6,R0
+//  320     Title[i][1].Value = *p++;
+//  321     Title[i][2].Value = *p++;
+//  322     Title[i][3].Value = *p++;
+//  323     Title[i][0].Flag  = UPDAT;
+//  324     Title[i][1].Flag  = UPDAT;
+//  325     Title[i][2].Flag  = UPDAT;
+//  326     Title[i][3].Flag  = UPDAT;
+//  327   }
+        ADDS     R4,R4,#+1
+        UXTB     R4,R4
+        MOVS     R6,R0
+        ADDS     R0,R0,#+58
+        STRH     R7,[R6, #+16]!
+        LDRH     R7,[R2, #+2]
+        STRH     R7,[R6, #+20]
+        LDRH     R7,[R2, #+4]
+        STRH     R7,[R6, #+40]
+        LDRH     R7,[R2, #+6]
+        ADDS     R2,R2,#+8
+        STRH     R7,[R0, #+18]
+        STRB     R5,[R6, #+2]
+        STRB     R5,[R6, #+22]
+        STRB     R5,[R0, #+0]
+        STRB     R5,[R0, #+20]
+??reset_parameter_1:
+        LDR.N    R0,??DataTable31  ;; Title
+        CMP      R4,#+4
+        BCC.N    ??reset_parameter_2
+//  328   Title[5][0].Value = *p++;
+        LDRH     R4,[R2, #+0]
+        ADDW     R0,R0,#+416
+        STRH     R4,[R0, #+0]
+//  329   Title[5][1].Value = *p++;
+        LDRH     R4,[R2, #+2]
+        ADDS     R2,R2,#+4
+//  330   Title[5][0].Flag  = UPDAT;
+        STRB     R5,[R0, #+2]
+        STRH     R4,[R0, #+20]
+//  331   Title[5][1].Flag  = UPDAT;
+        STRB     R5,[R0, #+22]
+//  332   
+//  333   for(i=0; i<8; i++){
+        MOVS     R0,#+0
+        B.N      ??reset_parameter_3
+//  334     Ka1[i] = (s8)(*p++ );//& 0xff);
+??reset_parameter_4:
+        LDR.N    R5,??DataTable27  ;; Ka1
+        LDRH     R6,[R2, #+0]
+//  335     Ka2[i] = (*p++ );
+//  336     Kb1[i] = (s8)(*p++);// & 0xff);
+//  337     Kb2[i] = (*p++);
+//  338   }
+        ADDS     R0,R0,#+1
+        UXTB     R0,R0
+        STRB     R6,[R5, R4]
+        LDR.N    R5,??DataTable28  ;; Ka2
+        LDRH     R6,[R2, #+2]
+        STRH     R6,[R5, R4, LSL #+1]
+        LDR.N    R5,??DataTable29  ;; Kb1
+        LDRH     R6,[R2, #+4]
+        STRB     R6,[R5, R4]
+        LDR.N    R5,??DataTable30  ;; Kb2
+        LDRH     R6,[R2, #+6]
+        ADDS     R2,R2,#+8
+        STRH     R6,[R5, R4, LSL #+1]
+??reset_parameter_3:
+        MOVS     R4,R0
+        CMP      R4,#+8
+        BCC.N    ??reset_parameter_4
+//  339   p = TempPar;
+//  340   *p++ = 0;
+        STRH     R3,[R1, #+0]
+//  341 }
+??reset_parameter_0:
+        POP      {R4-R7}
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI CFA R13+0
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock7
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable24:
+        DC32     TempPar
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable25:
+        DC32     0xaa55
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable27:
+        DC32     Ka1
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable28:
+        DC32     Ka2
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable29:
+        DC32     Kb1
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable30:
+        DC32     Kb2
+//  342 
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI Function make_Vertical
+        THUMB
+//  343 void make_Vertical(u8 TRACK,u8* buf,u8* len)
+//  344 {
+make_Vertical:
+        PUSH     {R4-R6}
+        CFI R6 Frame(CFA, -4)
+        CFI R5 Frame(CFA, -8)
+        CFI R4 Frame(CFA, -12)
+        CFI CFA R13+12
+//  345   u8 i=0;
+//  346   u8* ptr;
+//  347 
+//  348   ptr = &Vertical[0][0] + 10*Title[TRACK][2].Value;
+        LDR.N    R6,??DataTable31  ;; Title
+        MOVS     R3,#+0
+        MOVS     R5,#+80
+        MOVS     R4,#+0
+        MLA      R0,R0,R5,R6
+        LDR.N    R6,??DataTable34  ;; Vertical
+        MOVS     R5,#+10
+        LDRSH    R0,[R0, #+56]
+        MLA      R0,R0,R5,R6
+        LDRB     R5,[R0, #+0]
+        CBZ      R5,??make_Vertical_0
+//  349   while(*ptr != 0){
+//  350     if(*ptr == 0x21)  buf[i] = 0x20;
+??make_Vertical_1:
+        LDRB     R6,[R0, #+0]
+        ADDS     R5,R1,R4
+        CMP      R6,#+33
+        ITEE    NE 
+        STRBNE   R6,[R5, #+0]
+        MOVEQ    R6,#+32
+        STRBEQ   R6,[R5, #+0]
+//  351     else              buf[i] = *ptr;
+//  352     ptr++;
+//  353     i++;
+//  354   };
+        LDRB     R5,[R0, #+1]!
+        ADDS     R4,R4,#+1
+        UXTB     R4,R4
+        CMP      R5,#+0
+        BNE.N    ??make_Vertical_1
+//  355   buf[i]   = 0x2c;
+??make_Vertical_0:
+        ADDS     R0,R1,R4
+        MOVS     R1,#+44
+        STRB     R1,[R0, #+0]
+//  356   buf[i+1] = 0;
+        STRB     R3,[R0, #+1]
+//  357   *len = i+1;
+        ADDS     R4,R4,#+1
+        STRB     R4,[R2, #+0]
+//  358 }
+        POP      {R4-R6}
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI CFA R13+0
+        BX       LR               ;; return
+        CFI EndBlock cfiBlock8
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable31:
+        DC32     Title
+//  359 /*******************************************************************************
+//  360 Save_Csv: 保存采集数据缓存区为CSV格式    输入：文件编号     返回值：0x00=成功      
+//  361 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI Function Save_Csv
+        THUMB
+//  362 u8 Save_Csv(u8 FileNum)
+//  363 {
+//  364   u8  Num[4], track[4], Filename[12] = "DATA    CSV"; 
+Save_Csv:
+        LDR.N    R2,??Save_Csv_0  ;; `?<Constant "DATA    CSV">`
+        PUSH     {R4-R11,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R11 Frame(CFA, -8)
+        CFI R10 Frame(CFA, -12)
+        CFI R9 Frame(CFA, -16)
+        CFI R8 Frame(CFA, -20)
+        CFI R7 Frame(CFA, -24)
+        CFI R6 Frame(CFA, -28)
+        CFI R5 Frame(CFA, -32)
+        CFI R4 Frame(CFA, -36)
+        CFI CFA R13+36
+        SUB      SP,SP,#+36
+        CFI CFA R13+72
+        ADD      R1,SP,#+24
+        MOVS     R4,#+12
+??Save_Csv_1:
+        SUBS     R4,R4,#+1
+        LDRB     R3,[R2, R4]
+        STRB     R3,[R1, R4]
+        BNE.N    ??Save_Csv_1
+//  365   u32 i, k = 0;
+//  366   s16 temp;
+//  367   u8  count, j, n = 0;
+//  368   
+//  369   u16 pCluster[3];
+//  370   u32 pDirAddr[1]; 
+//  371 
+//  372   Make_Filename(FileNum, Filename);
+//  373   if(__OpenFileWr(SecBuff, Filename, pCluster, pDirAddr)!=OK) return DISK_ERR;
+        LDR.N    R5,??DataTable33  ;; SecBuff
+        MOVS     R1,#+0
+        MOV      R8,R1
+        MOVS     R1,R0
+        ADD      R0,SP,#+4
+        _BLF     u8ToDec3,??u8ToDec3??rT
+        LDRB     R0,[SP, #+4]
+        ADD      R3,SP,#+20
+        ADD      R2,SP,#+8
+        STRB     R0,[SP, #+28]
+        LDRB     R0,[SP, #+5]
+        ADD      R1,SP,#+24
+        MOVS     R4,#+0
+        STRB     R0,[SP, #+29]
+        LDRB     R0,[SP, #+6]
+        STRB     R0,[SP, #+30]
+        MOVS     R0,R5
+        _BLF     __OpenFileWr,??__OpenFileWr??rT
+        CBZ      R0,??Save_Csv_2
+        MOVS     R0,#+10
+        B.N      ??Save_Csv_3
+//  374   memcpy(SecBuff, "TRACK1 ", 7);
+??Save_Csv_2:
+        LDR.N    R1,??Save_Csv_0+0x4  ;; `?<Constant "TRACK1 ">`
+        MOVS     R2,#+7
+        MOVS     R0,R5
+        _BLF     memcpy,??memcpy??rT
+//  375   make_Vertical(TRACK1, &SecBuff[7], &count);
+        LDR.N    R0,??Save_Csv_0+0x8  ;; Title + 56
+        MOVS     R1,#+10
+        MOVS     R6,#+0
+        MOV      R9,R0
+        LDR.N    R0,??DataTable34  ;; Vertical
+        MOV      R10,R0
+        LDRSH    R0,[R9, #+0]
+        MLA      R0,R0,R1,R10
+        MOVS     R1,#+32
+        MOV      R11,R1
+        LDRB     R1,[R0, #+0]
+        CBZ      R1,??Save_Csv_4
+??Save_Csv_5:
+        LDRB     R2,[R0, #+0]
+        ADDS     R1,R5,R6
+        CMP      R2,#+33
+        ITE     NE 
+        STRBNE   R2,[R1, #+7]
+        STRBEQ   R11,[R1, #+7]
+        LDRB     R1,[R0, #+1]!
+        ADDS     R6,R6,#+1
+        UXTB     R6,R6
+        CMP      R1,#+0
+        BNE.N    ??Save_Csv_5
+??Save_Csv_4:
+        ADDS     R0,R5,R6
+        MOVS     R1,#+44
+        STRB     R1,[R0, #+7]
+//  376   k = 7 + count;
+//  377   memcpy(&SecBuff[k], "TRACK2 ", 7);
+        LDR.N    R1,??Save_Csv_0+0xC  ;; `?<Constant "TRACK2 ">`
+        STRB     R4,[R0, #+8]
+        ADDS     R6,R6,#+1
+        UXTB     R6,R6
+        ADDS     R6,R6,#+7
+        ADDS     R7,R5,R6
+        MOVS     R2,#+7
+        MOVS     R0,R7
+        _BLF     memcpy,??memcpy??rT
+//  378   make_Vertical(TRACK2, &SecBuff[k+7], &count);
+        LDRSH    R1,[R9, #+80]
+        MOVS     R2,#+10
+        ADDS     R7,R7,#+7
+        MOVS     R0,#+0
+        MLA      R1,R1,R2,R10
+        LDRB     R2,[R1, #+0]
+        CBZ      R2,??Save_Csv_6
+??Save_Csv_7:
+        LDRB     R2,[R1, #+0]
+        ADDS     R3,R7,R0
+        CMP      R2,#+33
+        ITE     NE 
+        STRBNE   R2,[R3, #+0]
+        STRBEQ   R11,[R3, #+0]
+        LDRB     R2,[R1, #+1]!
+        ADDS     R0,R0,#+1
+        UXTB     R0,R0
+        CMP      R2,#+0
+        BNE.N    ??Save_Csv_7
+??Save_Csv_6:
+        ADDS     R1,R7,R0
+        MOVS     R2,#+44
+        STRB     R2,[R1, #+0]
+        STRB     R4,[R1, #+1]
+//  379   k += 7 + count;
+//  380   memcpy(&SecBuff[k], "TRACK3,TRACK4,\r\n", 15);
+        LDR.N    R1,??Save_Csv_0+0x10  ;; `?<Constant "TRACK3,TRACK4,\\r\\n">`
+        ADDS     R0,R0,#+1
+        UXTB     R0,R0
+        ADDS     R0,R0,#+7
+        ADDS     R6,R6,R0
+        MOVS     R2,#+15
+        ADDS     R0,R5,R6
+        _BLF     memcpy,??memcpy??rT
+//  381   k += 15;
+        ADDS     R6,R6,#+15
+//  382   for(i=0; i<4096; i++){
+        MOV      R10,R8
+//  383     temp=Ka1[_A_Range]+((Ka2[_A_Range]*(DataBuf[i] & 0xff))+512)/1024;
+??Save_Csv_8:
+        LDR.N    R0,??DataTable35  ;; DataBuf
+        LDRSH    R2,[R9, #+0]
+        LDR.N    R1,??DataTable46  ;; Ka1
+        LDR.N    R3,??DataTable48  ;; Ka2
+        LDR      R0,[R0, R10, LSL #+2]
+        LDRSB    R1,[R1, R2]
+        LDRH     R2,[R3, R2, LSL #+1]
+        UXTB     R3,R0
+        MULS     R2,R3,R2
+        ADDW     R2,R2,#+512
+        LSRS     R2,R2,#+10
+        ADDS     R2,R1,R2
+        SXTH     R2,R2
+//  384     if(temp > 0){
+        MOVS     R1,#+199
+        CMP      R2,#+1
+        BLT.N    ??Save_Csv_9
+//  385       if(temp > 200)  track[0] = 199;
+        CMP      R2,#+201
+        ITE     LT 
+        STRBLT   R2,[SP, #+0]
+        STRBGE   R1,[SP, #+0]
+        B.N      ??Save_Csv_10
+//  386       else            track[0] = temp;
+//  387     } else            track[0] = 0;
+??Save_Csv_9:
+        MOVS     R2,#+0
+        STRB     R2,[SP, #+0]
+??Save_Csv_10:
+        LDRSH    R2,[R9, #+80]
+        LDR.N    R3,??DataTable47  ;; Kb1
+        LDR.N    R7,??DataTable49  ;; Kb2
+        LDRSB    R3,[R3, R2]
+        LDRH     R2,[R7, R2, LSL #+1]
+        ANDS     R7,R0,#0xFF00
+        MULS     R2,R7,R2
+        LSRS     R2,R2,#+8
+        ADDW     R2,R2,#+512
+        LSRS     R2,R2,#+10
+        ADDS     R2,R3,R2
+        SXTH     R2,R2
+//  388     temp = Kb1[_B_Range]+((Kb2[_B_Range]*(DataBuf[i] & 0xff00)>>8)+512)/1024;
+//  389     if(temp > 0){
+        CMP      R2,#+1
+        BLT.N    ??Save_Csv_11
+//  390       if(temp > 200)  track[1] = 199;
+        CMP      R2,#+201
+        ITE     LT 
+        STRBLT   R2,[SP, #+1]
+        STRBGE   R1,[SP, #+1]
+        B.N      ??Save_Csv_12
+//  391       else            track[1] = temp;
+//  392     } else            track[1] = 0;
+??Save_Csv_11:
+        MOVS     R1,#+0
+        STRB     R1,[SP, #+1]
+//  393     if((DataBuf[i] & 0x010000)==0)  track[2] = Title[TRACK3][POSI].Value;
+??Save_Csv_12:
+        LDR.N    R1,??Save_Csv_0+0x14  ;; Title + 236
+        LSLS     R3,R0,#+15
+        LDRSH    R2,[R1, #+0]
+        ITTE    MI 
+        ADDMI    R2,R2,#+20
+        STRBMI   R2,[SP, #+2]
+        STRBPL   R2,[SP, #+2]
+//  394     else                            track[2] = 20 + Title[TRACK3][POSI].Value;
+//  395     if((DataBuf[i] & 0x020000)==0)  track[3] = Title[TRACK4][POSI].Value;
+        LDRSH    R1,[R1, #+80]
+        LSLS     R0,R0,#+14
+        ITTE    MI 
+        ADDMI    R1,R1,#+20
+        STRBMI   R1,[SP, #+3]
+        STRBPL   R1,[SP, #+3]
+//  396     else                            track[3] = 20 + Title[TRACK4][POSI].Value;
+//  397     for(j=0; j<4; j++){
+        STR      R8,[SP, #+4]
+//  398       u8ToDec3(Num, track[j]);
+??Save_Csv_13:
+        LDR      R0,[SP, #+4]
+        MOV      R1,SP
+//  399       for(count=0; count<3; count++){
+        MOVS     R7,#+0
+        UXTB     R0,R0
+        LDRB     R1,[R1, R0]
+        ADD      R0,SP,#+16
+        _BLF     u8ToDec3,??u8ToDec3??rT
+//  400         if(Num[count] == 0) break;
+??Save_Csv_14:
+        LDR.N    R1,??DataTable40  ;; 0x50a
+        ADD      R0,SP,#+16
+        LDRB     R0,[R0, R7]
+        MOV      R11,R1
+        CBZ      R0,??Save_Csv_15
+//  401         SecBuff[k++] = Num[count];
+        STRB     R0,[R5, R6]
+        ADDS     R6,R6,#+1
+//  402         if(k >= 512){
+        CMP      R6,#+512
+        BCC.N    ??Save_Csv_16
+//  403           if(__ProgFileSec(SecBuff, pCluster)!= OK) return WR_ERR; // 写入数据
+        ADD      R1,SP,#+8
+        MOVS     R0,R5
+        _BLF     __ProgFileSec,??__ProgFileSec??rT
+        CMP      R0,#+0
+        BNE.W    ??Save_Csv_17
+//  404           Print_Clk(254, 0, (SCRN<<8)+ TEXT1, (n++ >>1)& 3);    // 进度指示
+??Save_Csv_18:
+        ASRS     R0,R4,#+1
+        LSLS     R3,R0,#+30
+        LSRS     R3,R3,#+30
+        MOV      R2,R11
+        MOVS     R1,#+0
+        MOVS     R0,#+254
+        _BLF     Print_Clk,??Print_Clk??rT
+        ADDS     R4,R4,#+1
+        UXTB     R4,R4
+//  405           k = 0;
+        MOV      R6,R8
+//  406         }
+//  407       }
+??Save_Csv_16:
+        ADDS     R7,R7,#+1
+        UXTB     R7,R7
+        CMP      R7,#+3
+        BCC.N    ??Save_Csv_14
+//  408       SecBuff[k++] = 0x2c;
+??Save_Csv_15:
+        MOVS     R0,#+44
+        STRB     R0,[R5, R6]
+        ADDS     R6,R6,#+1
+//  409       if(k >= 512){
+        CMP      R6,#+512
+        BCC.N    ??Save_Csv_19
+//  410         if(__ProgFileSec(SecBuff, pCluster)!= OK) return WR_ERR; // 写入数据
+        ADD      R1,SP,#+8
+        MOVS     R0,R5
+        _BLF     __ProgFileSec,??__ProgFileSec??rT
+        CMP      R0,#+0
+        BNE.N    ??Save_Csv_17
+//  411         Print_Clk(254, 0, (SCRN<<8)+ TEXT1, (n++ >>1)& 3);    // 进度指示
+??Save_Csv_20:
+        ASRS     R0,R4,#+1
+        LSLS     R3,R0,#+30
+        LSRS     R3,R3,#+30
+        MOV      R2,R11
+        MOVS     R1,#+0
+        MOVS     R0,#+254
+        _BLF     Print_Clk,??Print_Clk??rT
+        ADDS     R4,R4,#+1
+        UXTB     R4,R4
+//  412         k = 0;
+        MOV      R6,R8
+//  413       }
+//  414     }
+??Save_Csv_19:
+        LDR      R0,[SP, #+4]
+        ADDS     R0,R0,#+1
+        UXTB     R0,R0
+        STR      R0,[SP, #+4]
+        CMP      R0,#+4
+        BCC.N    ??Save_Csv_13
+        MOVS     R0,#+13
+        STRB     R0,[R5, R6]
+        ADDS     R6,R6,#+1
+//  415     SecBuff[k++] = 0x0d;
+//  416     if(k >= 512){
+        CMP      R6,#+512
+        BCC.N    ??Save_Csv_21
+//  417       if(__ProgFileSec(SecBuff, pCluster)!= OK) return WR_ERR; // 写入数据
+        ADD      R1,SP,#+8
+        MOVS     R0,R5
+        _BLF     __ProgFileSec,??__ProgFileSec??rT
+        CMP      R0,#+0
+        BNE.N    ??Save_Csv_17
+//  418       Print_Clk(254, 0, (SCRN<<8)+ TEXT1, (n++ >>1)& 3);    // 进度指示
+??Save_Csv_22:
+        ASRS     R0,R4,#+1
+        LSLS     R3,R0,#+30
+        LSRS     R3,R3,#+30
+        MOV      R2,R11
+        MOVS     R1,#+0
+        MOVS     R0,#+254
+        _BLF     Print_Clk,??Print_Clk??rT
+        ADDS     R4,R4,#+1
+        UXTB     R4,R4
+//  419       k = 0;
+        MOV      R6,R8
+//  420     }
+//  421     SecBuff[k++] = 0x0a;
+??Save_Csv_21:
+        MOVS     R7,#+10
+        STRB     R7,[R5, R6]
+        ADDS     R6,R6,#+1
+//  422     if(k >= 512){
+        CMP      R6,#+512
+        BCC.N    ??Save_Csv_23
+//  423       if(__ProgFileSec(SecBuff, pCluster)!= OK) return WR_ERR; // 写入数据
+        ADD      R1,SP,#+8
+        MOVS     R0,R5
+        _BLF     __ProgFileSec,??__ProgFileSec??rT
+        CBNZ     R0,??Save_Csv_17
+//  424       Print_Clk(254, 0, (SCRN<<8)+ TEXT1, (n++ >>1)& 3);    // 进度指示
+??Save_Csv_24:
+        ASRS     R0,R4,#+1
+        LSLS     R3,R0,#+30
+        LSRS     R3,R3,#+30
+        MOV      R2,R11
+        MOVS     R1,#+0
+        MOVS     R0,#+254
+        _BLF     Print_Clk,??Print_Clk??rT
+        ADDS     R4,R4,#+1
+        UXTB     R4,R4
+//  425       k = 0;
+        MOV      R6,R8
+//  426     }
+//  427   }
+??Save_Csv_23:
+        ADDW     R10,R10,#+1
+        CMP      R10,#+4096
+        BCC.W    ??Save_Csv_8
+//  428   if(k != 0){
+        CBZ      R6,??Save_Csv_25
+//  429     SecBuff[k++]=0x0d;
+        MOVS     R0,#+13
+        STRB     R0,[R5, R6]
+        ADDS     R6,R6,#+1
+//  430     SecBuff[k++]=0x0a;
+//  431     memset(&SecBuff[k],0,(512-k));
+        MOVS     R1,#+0
+        STRB     R7,[R5, R6]
+        ADDS     R6,R6,#+1
+        RSBS     R2,R6,#+512
+        ADDS     R0,R5,R6
+        _BLF     memset,??memset??rT
+//  432     k=0;
+//  433     if(__ProgFileSec(SecBuff, pCluster)!= OK) return WR_ERR; // 写入数据
+        ADD      R1,SP,#+8
+        MOVS     R0,R5
+        _BLF     __ProgFileSec,??__ProgFileSec??rT
+        CBNZ     R0,??Save_Csv_17
+//  434     Print_Clk(254, 0, (SCRN<<8)+ TEXT1, (n >>1)& 3);    // 进度指示
+??Save_Csv_26:
+        ASRS     R0,R4,#+1
+        LSLS     R3,R0,#+30
+        LSRS     R3,R3,#+30
+        MOV      R2,R11
+        MOVS     R1,#+0
+        MOVS     R0,#+254
+        _BLF     Print_Clk,??Print_Clk??rT
+//  435   }
+//  436   if(__CloseFile(SecBuff, n*512, pCluster, pDirAddr)!= OK) return WR_ERR;
+??Save_Csv_25:
+        ADD      R3,SP,#+20
+        ADD      R2,SP,#+8
+        LSLS     R1,R4,#+9
+        MOVS     R0,R5
+        _BLF     __CloseFile,??__CloseFile??rT
+        CBZ      R0,??Save_Csv_3
+??Save_Csv_17:
+        MOVS     R0,#+9
+//  437   return OK;
+??Save_Csv_3:
+        ADD      SP,SP,#+36
+        CFI CFA R13+36
+        POP      {R4-R11,PC}      ;; return
+        DATA
+??Save_Csv_0:
+        DC32     `?<Constant "DATA    CSV">`
+        DC32     `?<Constant "TRACK1 ">`
+        DC32     Title + 56
+        DC32     `?<Constant "TRACK2 ">`
+        DC32     `?<Constant "TRACK3,TRACK4,\\r\\n">`
+        DC32     Title + 236
+        CFI EndBlock cfiBlock9
+//  438 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable33:
+        DC32     SecBuff
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable34:
+        DC32     Vertical
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable35:
+        DC32     DataBuf
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable40:
+        DC32     0x50a
+//  439 /*******************************************************************************
+//  440 Load_Parameter: 加载之前的工作参数                           Return: 0= Success
+//  441 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI Function Load_Param
+        THUMB
+//  442 u8 Load_Param(void)
+//  443 { 
+Load_Param:
+        PUSH     {R4,R6,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R6 Frame(CFA, -8)
+        CFI R4 Frame(CFA, -12)
+        CFI CFA R13+12
+//  444   u8  Sum = 0, Filename[12], Versions = 0x06; 
+//  445   u16 i;
+//  446   u16* p =(u16*)SecBuff;
+//  447   
+//  448   u16 pCluster[3];
+//  449   u32 pDirAddr[1]; 
+//  450   
+//  451   Word2Hex(Filename, __GetDev_SN());
+//  452   Filename[8] = 'W'; Filename[9] = 'P'; Filename[10] = 'T'; Filename[11] = 0; 
+//  453   i = __OpenFileRd(SecBuff, Filename, pCluster, pDirAddr);
+        LDR.N    R4,??DataTable53  ;; SecBuff
+        SUB      SP,SP,#+24
+        CFI CFA R13+36
+        MOVS     R6,#+0
+        _BLF     __GetDev_SN,??__GetDev_SN??rT
+        MOVS     R1,R0
+        MOV      R0,SP
+        _BLF     Word2Hex,??Word2Hex??rT
+        MOVS     R0,#+87
+        STRB     R0,[SP, #+8]
+        MOVS     R0,#+80
+        STRB     R0,[SP, #+9]
+        MOVS     R0,#+84
+        STRB     R0,[SP, #+10]
+        MOVS     R0,#+0
+        STRB     R0,[SP, #+11]
+        ADD      R3,SP,#+12
+        ADD      R2,SP,#+16
+        MOV      R1,SP
+        MOVS     R0,R4
+        _BLF     __OpenFileRd,??__OpenFileRd??rT
+//  454   if(i != OK) return i;
+        MOVS     R1,R0
+        BNE.N    ??Load_Param_0
+//  455 //  if(__OpenFileRd(SecBuff, Filename, pCluster, pDirAddr) != OK) return NO_FILE;
+//  456   if(__ReadFileSec(SecBuff, pCluster)!= OK) return RD_ERR;
+        ADD      R1,SP,#+16
+        MOVS     R0,R4
+        _BLF     __ReadFileSec,??__ReadFileSec??rT
+        CBZ      R0,??Load_Param_1
+        MOVS     R0,#+8
+        B.N      ??Load_Param_0
+//  457   if(Versions !=(*p & 0xFF)) return VER_ERR;          // 版本出错返回
+??Load_Param_1:
+        LDRH     R0,[R4, #+0]
+        UXTB     R0,R0
+        CMP      R0,#+6
+        BEQ.N    ??Load_Param_2
+        MOVS     R0,#+5
+        B.N      ??Load_Param_0
+//  458   for(i=0; i<512; ++i) Sum += SecBuff[i];
+??Load_Param_2:
+        MOVS     R0,#+0
+        MOVS     R2,#+512
+??Load_Param_3:
+        LDRB     R1,[R4, R0]
+        ADDS     R0,R0,#+1
+        UXTH     R0,R0
+        ADDS     R6,R6,R1
+        UXTB     R6,R6
+        CMP      R0,R2
+        BCC.N    ??Load_Param_3
+//  459   if(Sum != 0) return SUM_ERR;                        // 校验和出错返回
+        CBZ      R6,??Load_Param_4
+        MOVS     R0,#+6
+        B.N      ??Load_Param_0
+//  460   Current =(*p++ >>8);                                // 加载之前的 Current Title
+??Load_Param_4:
+        LDR.N    R0,??DataTable54  ;; Current
+        LDRH     R1,[R4], #+2
+        LSRS     R1,R1,#+8
+        STRB     R1,[R0, #+0]
+//  461   for(i=0; i<7; i++){ 
+        MOVS     R0,#+0
+??Load_Param_5:
+        LDR.N    R2,??DataTable55  ;; Detail
+        ADDS     R1,R2,R0, LSL #+1
+        LDRH     R2,[R4, #+0]
+//  462     Detail[i*2]  = *p;
+//  463     Detail[i*2+1]= (*p++ >>8);                        // 加载之前的 Detail
+        ADDS     R0,R0,#+1
+        UXTH     R0,R0
+        STRB     R2,[R1, #+0]
+        LDRH     R2,[R4], #+2
+        LSRS     R2,R2,#+8
+        STRB     R2,[R1, #+1]
+        CMP      R0,#+7
+        BCC.N    ??Load_Param_5
+//  464   }
+//  465   for(i=0; i<13; i++){
+        LDR.N    R3,??DataTable56  ;; Title
+        MOVS     R0,#+0
+//  466     Title[i][0].Value = *p++;                         // 加载之前的显示菜单中各个对应项的值
+??Load_Param_6:
+        MOVS     R1,R0
+        MOVS     R2,#+80
+//  467     Title[i][1].Value = *p++;
+//  468     Title[i][2].Value = *p++;
+//  469     Title[i][3].Value = *p++;
+//  470   }
+        ADDS     R0,R0,#+1
+        MLA      R1,R1,R2,R3
+        LDRH     R2,[R4, #+0]
+        UXTH     R0,R0
+        STRH     R2,[R1, #+16]!
+        LDRH     R2,[R4, #+2]
+        STRH     R2,[R1, #+20]
+        LDRH     R2,[R4, #+4]
+        STRH     R2,[R1, #+40]
+        LDRH     R2,[R4, #+6]
+        ADDS     R4,R4,#+8
+        CMP      R0,#+13
+        STRH     R2,[R1, #+60]
+        BCC.N    ??Load_Param_6
+//  471   for(i=0; i<9; i++){
+        LDR.N    R3,??DataTable57  ;; Meter
+        MOVS     R0,#+0
+//  472     Meter[i].Item     = *p;
+??Load_Param_7:
+        MOVS     R1,R0
+        MOVS     R2,#+12
+//  473     Meter[i].Track    =(*p++ >>8);       // 加载之前的测量项目及测量对象
+//  474   }
+        ADDS     R0,R0,#+1
+        MLA      R1,R1,R2,R3
+        LDRH     R2,[R4, #+0]
+        UXTH     R0,R0
+        STRB     R2,[R1, #+5]
+        LDRH     R2,[R4], #+2
+        LSRS     R2,R2,#+8
+        STRB     R2,[R1, #+4]
+        CMP      R0,#+9
+        BCC.N    ??Load_Param_7
+//  475   for(i=0; i<10; i++){
+        MOVS     R0,#+0
+//  476     Ka1[i] = *p;                         // 恢复原来的 A 通道低位误差校正系数
+??Load_Param_8:
+        LDR.N    R2,??DataTable46  ;; Ka1
+        LDRH     R3,[R4, #+0]
+        MOVS     R1,R0
+//  477     Kb1[i] =(*p++ >>8);                  // 恢复原来的 B 通道低位误差校正系数
+//  478     Ka2[i] = *p++;                       // 恢复原来的 A 通道增益误差校正系数
+//  479     Kb2[i] = *p++;                       // 加载之前的 B 通道增益误差校正系数
+//  480     Ka3[i] = *p;                         // 恢复原来的 A 通道高位误差校正系数
+//  481     Kb3[i] =(*p++ >>8);                  // 恢复原来的 B 通道高位误差校正系数
+//  482   }
+        ADDS     R0,R0,#+1
+        STRB     R3,[R2, R1]
+        LDR.N    R2,??DataTable47  ;; Kb1
+        LDRH     R3,[R4, #+0]
+        UXTH     R0,R0
+        LSRS     R3,R3,#+8
+        STRB     R3,[R2, R1]
+        LDR.N    R2,??DataTable48  ;; Ka2
+        LDRH     R3,[R4, #+2]
+        STRH     R3,[R2, R1, LSL #+1]
+        LDR.N    R2,??DataTable49  ;; Kb2
+        LDRH     R3,[R4, #+4]
+        STRH     R3,[R2, R1, LSL #+1]
+        LDR.N    R2,??DataTable60  ;; Ka3
+        LDRH     R3,[R4, #+6]!
+        STRB     R3,[R2, R1]
+        LDR.N    R2,??DataTable63  ;; Kb3
+        LDRH     R3,[R4], #+2
+        LSRS     R3,R3,#+8
+        STRB     R3,[R2, R1]
+        CMP      R0,#+10
+        BCC.N    ??Load_Param_8
+//  483   V_Trigg[A].Value = *p++;
+        LDR.N    R0,??DataTable64  ;; V_Trigg
+        LDRH     R1,[R4], #+2
+        STRH     R1,[R0, #+0]
+//  484   V_Trigg[B].Value = *p++;               // 恢复原来A,B通道触发阈值
+        LDRH     R1,[R4, #+0]
+        STRH     R1,[R0, #+4]
+//  485   return OK;
+        MOVS     R0,#+0
+??Load_Param_0:
+        ADD      SP,SP,#+24
+        CFI CFA R13+12
+        POP      {R4,R6,PC}
+        CFI EndBlock cfiBlock10
+//  486 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable46:
+        DC32     Ka1
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable47:
+        DC32     Kb1
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable48:
+        DC32     Ka2
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable49:
+        DC32     Kb2
+//  487 /*******************************************************************************
+//  488  Save_Parameter: 保存当前的工作参数                          Return: 0= Success
+//  489 *******************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock11 Using cfiCommon0
+        CFI Function Save_Param
+        THUMB
+//  490 u8 Save_Param(void)             // 保存工作参数表文件
+//  491 {
+Save_Param:
+        PUSH     {R4-R8,LR}
+        CFI ?RET Frame(CFA, -4)
+        CFI R8 Frame(CFA, -8)
+        CFI R7 Frame(CFA, -12)
+        CFI R6 Frame(CFA, -16)
+        CFI R5 Frame(CFA, -20)
+        CFI R4 Frame(CFA, -24)
+        CFI CFA R13+24
+//  492   u8  Sum = 0, Filename[12], Versions = 0x06; 
+//  493   u16 i, Tmp[2];
+//  494   u16* p =(u16*)SecBuff;
+//  495   
+//  496   u16 pCluster[3];
+//  497   u32 pDirAddr[1]; 
+//  498 
+//  499   Word2Hex(Filename, __GetDev_SN());
+//  500   Filename[8] = 'W'; Filename[9] = 'P'; Filename[10] = 'T';
+//  501   switch (__OpenFileRd(SecBuff, Filename, pCluster, pDirAddr)){
+        LDR.N    R6,??DataTable53  ;; SecBuff
+        SUB      SP,SP,#+28
+        CFI CFA R13+52
+        MOVS     R4,#+0
+        MOVS     R7,#+84
+        _BLF     __GetDev_SN,??__GetDev_SN??rT
+        MOVS     R1,R0
+        ADD      R0,SP,#+4
+        _BLF     Word2Hex,??Word2Hex??rT
+        MOVS     R0,#+87
+        MOV      R8,R0
+        STRB     R8,[SP, #+12]
+        MOVS     R0,#+80
+        STRB     R0,[SP, #+13]
+        STRB     R7,[SP, #+14]
+        MOV      R3,SP
+        ADD      R2,SP,#+16
+        ADD      R1,SP,#+4
+        MOVS     R0,R6
+        _BLF     __OpenFileRd,??__OpenFileRd??rT
+        MOVS     R5,#+0
+        CBZ      R0,??Save_Param_0
+        CMP      R0,#+4
+        BEQ.N    ??Save_Param_1
+        B.N      ??Save_Param_2
+//  502   case OK:                                                     // 原WPT文件存在
+//  503     Tmp[0] = *pCluster;
+??Save_Param_0:
+        LDRH     R0,[SP, #+16]
+//  504     Filename[8] = 'B'; Filename[9] = 'A'; Filename[10] = 'K';  // 转成BAK文件
+//  505     if(__OpenFileWr(SecBuff, Filename, pCluster, pDirAddr)!= OK) return DISK_ERR;
+        MOV      R3,SP
+        ADD      R2,SP,#+16
+        STRH     R0,[SP, #+24]
+        MOVS     R0,#+66
+        STRB     R0,[SP, #+12]
+        MOVS     R0,#+65
+        STRB     R0,[SP, #+13]
+        MOVS     R0,#+75
+        STRB     R0,[SP, #+14]
+        ADD      R1,SP,#+4
+        MOVS     R0,R6
+        _BLF     __OpenFileWr,??__OpenFileWr??rT
+        CBZ      R0,??Save_Param_3
+??Save_Param_4:
+        MOVS     R0,#+10
+        B.N      ??Save_Param_5
+//  506     if(__ReadFileSec(SecBuff, Tmp     )!= OK) return RD_ERR;
+??Save_Param_3:
+        ADD      R1,SP,#+24
+        MOVS     R0,R6
+        _BLF     __ReadFileSec,??__ReadFileSec??rT
+        CBZ      R0,??Save_Param_6
+        MOVS     R0,#+8
+        B.N      ??Save_Param_5
+//  507     if(__ProgFileSec(SecBuff, pCluster)!= OK) return WR_ERR;  // 保存BAK文件
+??Save_Param_6:
+        ADD      R1,SP,#+16
+        MOVS     R0,R6
+        _BLF     __ProgFileSec,??__ProgFileSec??rT
+        CMP      R0,#+0
+        BNE.W    ??Save_Param_2
+//  508     if(__CloseFile(SecBuff, 512, pCluster, pDirAddr)!= OK) return WR_ERR;/**/
+??Save_Param_7:
+        MOV      R3,SP
+        ADD      R2,SP,#+16
+        MOVS     R1,#+512
+        MOVS     R0,R6
+        _BLF     __CloseFile,??__CloseFile??rT
+        CMP      R0,#+0
+        BNE.W    ??Save_Param_2
+//  509   case NEW:                                                    // 原WPT文件不存在
+//  510     Filename[8] = 'W'; Filename[9] = 'P'; Filename[10] = 'T';  // 创建WPT文件
+??Save_Param_1:
+        STRB     R8,[SP, #+12]
+        MOVS     R0,#+80
+        STRB     R0,[SP, #+13]
+        STRB     R7,[SP, #+14]
+//  511     if(__OpenFileWr(SecBuff, Filename, pCluster, pDirAddr)!= OK) return DISK_ERR;
+        MOV      R3,SP
+        ADD      R2,SP,#+16
+        ADD      R1,SP,#+4
+        MOVS     R0,R6
+        _BLF     __OpenFileWr,??__OpenFileWr??rT
+        CMP      R0,#+0
+        BNE.N    ??Save_Param_4
+//  512     memset(SecBuff, 0, 512);
+        MOVS     R2,#+512
+        MOVS     R1,#+0
+        MOVS     R0,R6
+        _BLF     memset,??memset??rT
+//  513     *p++ =(Current <<8)+ Versions;           // 保存参数表版本号及当前的 Title
+        LDR.N    R0,??DataTable54  ;; Current
+//  514     for(i=0; i<7; i++){ 
+        MOV      R1,R4
+        LDRB     R0,[R0, #+0]
+        LSLS     R0,R0,#+8
+        ADDS     R0,R0,#+6
+        STRH     R0,[R6, #+0]
+        ADDS     R0,R6,#+2
+        B.N      ??Save_Param_8
+??Save_Param_9:
+        LDR.N    R3,??DataTable55  ;; Detail
+        ADDS     R2,R3,R1, LSL #+1
+        LDRB     R3,[R2, #+1]
+        LDRB     R2,[R2, #+0]
+//  515       *p++ =(Detail[i*2+1]<<8)+ Detail[i*2]; // 保存当前的 Detail
+        ADDS     R1,R1,#+1
+        UXTH     R1,R1
+        ADDS     R2,R2,R3, LSL #+8
+        STRH     R2,[R0], #+2
+??Save_Param_8:
+        CMP      R1,#+7
+        BCC.N    ??Save_Param_9
+//  516     }
+//  517     for(i=0; i<13; i++){                     // 保存显示菜单中各个对应项的值
+        LDR.N    R7,??DataTable56  ;; Title
+        MOVS     R1,#+0
+        B.N      ??Save_Param_10
+//  518       *p++ = Title[i][0].Value;
+??Save_Param_11:
+        MOVS     R3,#+80
+//  519       *p++ = Title[i][1].Value;
+//  520       *p++ = Title[i][2].Value;
+//  521       *p++ = Title[i][3].Value;
+//  522     }
+        ADDS     R1,R1,#+1
+        MLA      R2,R2,R3,R7
+        UXTH     R1,R1
+        LDRH     R3,[R2, #+16]
+        STRH     R3,[R0, #+0]
+        LDRH     R3,[R2, #+36]
+        STRH     R3,[R0, #+2]
+        LDRH     R3,[R2, #+56]
+        ADDS     R2,R2,#+76
+        STRH     R3,[R0, #+4]
+        LDRH     R2,[R2, #+0]
+        STRH     R2,[R0, #+6]
+        ADDS     R0,R0,#+8
+??Save_Param_10:
+        MOVS     R2,R1
+        CMP      R2,#+13
+        BCC.N    ??Save_Param_11
+//  523     for(i=0; i<9; i++){
+        LDR.N    R7,??DataTable57  ;; Meter
+        MOVS     R1,#+0
+        B.N      ??Save_Param_12
+//  524       *p++ =(Meter[i].Track<<8)+ Meter[i].Item; // 保存测量项目及测量对象
+??Save_Param_13:
+        MOVS     R3,#+12
+//  525     }
+        ADDS     R1,R1,#+1
+        MLA      R2,R2,R3,R7
+        UXTH     R1,R1
+        LDRB     R3,[R2, #+4]
+        LDRB     R2,[R2, #+5]
+        ADDS     R2,R2,R3, LSL #+8
+        STRH     R2,[R0], #+2
+??Save_Param_12:
+        MOVS     R2,R1
+        CMP      R2,#+9
+        BCC.N    ??Save_Param_13
+//  526     for(i=0; i<10; i++){
+        MOVS     R2,#+0
+        B.N      ??Save_Param_14
+//  527       *p++ = (Kb1[i]<<8)+ Ka1[i];             // 保存当前 A,B 通道低位误差校正系数
+??Save_Param_15:
+        LDR.N    R3,??DataTable58  ;; Kb1
+        LDR.N    R7,??DataTable59  ;; Ka1
+//  528       *p++ =  Ka2[i];                         // 保存当前 A 通道增益误差校正系数
+//  529       *p++ =  Kb2[i];                         // 保存当前 B 通道增益误差校正系数
+//  530       *p++ = (Kb3[i]<<8)+ Ka3[i];             // 保存当前 A,B 通道高位误差校正系数
+//  531     }
+        ADDS     R2,R2,#+1
+        LDRSB    R3,[R3, R1]
+        LDRSB    R7,[R7, R1]
+        UXTH     R2,R2
+        ADDS     R3,R7,R3, LSL #+8
+        LDR.N    R7,??DataTable60  ;; Ka3
+        STRH     R3,[R0, #+0]
+        LDR.N    R3,??DataTable61  ;; Ka2
+        LDRH     R3,[R3, R1, LSL #+1]
+        STRH     R3,[R0, #+2]
+        LDR.N    R3,??DataTable62  ;; Kb2
+        LDRH     R3,[R3, R1, LSL #+1]
+        STRH     R3,[R0, #+4]
+        LDR.N    R3,??DataTable63  ;; Kb3
+        LDRSB    R3,[R3, R1]
+        LDRSB    R1,[R7, R1]
+        ADDS     R1,R1,R3, LSL #+8
+        STRH     R1,[R0, #+6]
+        ADDS     R0,R0,#+8
+??Save_Param_14:
+        MOVS     R1,R2
+        CMP      R1,#+10
+        BCC.N    ??Save_Param_15
+//  532     *p++ = V_Trigg[A].Value;
+        LDR.N    R1,??DataTable64  ;; V_Trigg
+        LDRH     R2,[R1, #+0]
+        STRH     R2,[R0], #+2
+//  533     *p++ = V_Trigg[B].Value;                  // 保存当前A,B通道触发阈值   
+        LDRH     R1,[R1, #+4]
+        STRH     R1,[R0, #+0]
+//  534     for(i=0; i<511; i++)  Sum += SecBuff[i];  // 计算参数表校验和
+        LDR.N    R1,??Save_Param_16  ;; 0x1ff
+        B.N      ??Save_Param_17
+??Save_Param_18:
+        LDRB     R0,[R6, R4]
+        ADDS     R4,R4,#+1
+        UXTH     R4,R4
+        ADDS     R5,R5,R0
+        UXTB     R5,R5
+??Save_Param_17:
+        CMP      R4,R1
+        BCC.N    ??Save_Param_18
+//  535     SecBuff[511] = (~Sum)+ 1;
+        MVNS     R0,R5
+        ADDS     R0,R0,#+1
+        STRB     R0,[R6, #+511]
+//  536     if(__ProgFileSec(SecBuff, pCluster)!= OK) return WR_ERR; // 写入数据
+        ADD      R1,SP,#+16
+        MOVS     R0,R6
+        _BLF     __ProgFileSec,??__ProgFileSec??rT
+        CBNZ     R0,??Save_Param_2
+//  537     if(__CloseFile(SecBuff, 512, pCluster, pDirAddr)!= OK) return WR_ERR;
+??Save_Param_19:
+        MOV      R3,SP
+        ADD      R2,SP,#+16
+        MOVS     R1,#+512
+        MOVS     R0,R6
+        _BLF     __CloseFile,??__CloseFile??rT
+        CBZ      R0,??Save_Param_5
+//  538     return OK;
+//  539     default:  return WR_ERR;
+??Save_Param_2:
+        MOVS     R0,#+9
+??Save_Param_5:
+        ADD      SP,SP,#+28
+        CFI CFA R13+24
+        POP      {R4-R8,PC}
+        DATA
+??Save_Param_16:
+        DC32     0x1ff
+        CFI EndBlock cfiBlock11
+//  540   }
+//  541 }
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable53:
+        DC32     SecBuff
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable54:
+        DC32     Current
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable55:
+        DC32     Detail
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable56:
+        DC32     Title
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable57:
+        DC32     Meter
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable58:
+        DC32     Kb1
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable59:
+        DC32     Ka1
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable60:
+        DC32     Ka3
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable61:
+        DC32     Ka2
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable62:
+        DC32     Kb2
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable63:
+        DC32     Kb3
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable64:
+        DC32     V_Trigg
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock12 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??u8ToDec3??rT:
+        LDR.N    R3,??Subroutine0_0  ;; u8ToDec3
+        BX       R3
+        DATA
+??Subroutine0_0:
+        DC32     u8ToDec3
+        CFI EndBlock cfiBlock12
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock13 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__OpenFileRd??rT:
+        PUSH     {R3}
+        CFI CFA R13+4
+        LDR.N    R3,??Subroutine1_0  ;; __OpenFileRd
+        MOV      R12,R3
+        POP      {R3}
+        CFI CFA R13+0
+        BX       R12
+        Nop      
+        DATA
+??Subroutine1_0:
+        DC32     __OpenFileRd
+        CFI EndBlock cfiBlock13
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock14 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__ReadFileSec??rT:
+        LDR.N    R3,??Subroutine2_0  ;; __ReadFileSec
+        BX       R3
+        DATA
+??Subroutine2_0:
+        DC32     __ReadFileSec
+        CFI EndBlock cfiBlock14
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock15 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??memcpy??rT:
+        LDR.N    R3,??Subroutine3_0  ;; memcpy
+        BX       R3
+        DATA
+??Subroutine3_0:
+        DC32     memcpy
+        CFI EndBlock cfiBlock15
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock16 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__OpenFileWr??rT:
+        PUSH     {R3}
+        CFI CFA R13+4
+        LDR.N    R3,??Subroutine4_0  ;; __OpenFileWr
+        MOV      R12,R3
+        POP      {R3}
+        CFI CFA R13+0
+        BX       R12
+        Nop      
+        DATA
+??Subroutine4_0:
+        DC32     __OpenFileWr
+        CFI EndBlock cfiBlock16
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock17 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??memset??rT:
+        LDR.N    R3,??Subroutine5_0  ;; memset
+        BX       R3
+        DATA
+??Subroutine5_0:
+        DC32     memset
+        CFI EndBlock cfiBlock17
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock18 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__ProgFileSec??rT:
+        LDR.N    R3,??Subroutine6_0  ;; __ProgFileSec
+        BX       R3
+        DATA
+??Subroutine6_0:
+        DC32     __ProgFileSec
+        CFI EndBlock cfiBlock18
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock19 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Print_Clk??rT:
+        PUSH     {R3}
+        CFI CFA R13+4
+        LDR.N    R3,??Subroutine7_0  ;; Print_Clk
+        MOV      R12,R3
+        POP      {R3}
+        CFI CFA R13+0
+        BX       R12
+        Nop      
+        DATA
+??Subroutine7_0:
+        DC32     Print_Clk
+        CFI EndBlock cfiBlock19
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock20 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__CloseFile??rT:
+        PUSH     {R3}
+        CFI CFA R13+4
+        LDR.N    R3,??Subroutine8_0  ;; __CloseFile
+        MOV      R12,R3
+        POP      {R3}
+        CFI CFA R13+0
+        BX       R12
+        Nop      
+        DATA
+??Subroutine8_0:
+        DC32     __CloseFile
+        CFI EndBlock cfiBlock20
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock21 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__Point_SCR??rT:
+        LDR.N    R3,??Subroutine9_0  ;; __Point_SCR
+        BX       R3
+        DATA
+??Subroutine9_0:
+        DC32     __Point_SCR
+        CFI EndBlock cfiBlock21
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock22 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__LCD_GetPixl??rT:
+        LDR.N    R3,??Subroutine10_0  ;; __LCD_GetPixl
+        BX       R3
+        DATA
+??Subroutine10_0:
+        DC32     __LCD_GetPixl
+        CFI EndBlock cfiBlock22
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock23 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??__GetDev_SN??rT:
+        LDR.N    R3,??Subroutine11_0  ;; __GetDev_SN
+        BX       R3
+        DATA
+??Subroutine11_0:
+        DC32     __GetDev_SN
+        CFI EndBlock cfiBlock23
+
+        RSEG CODE:CODE:NOROOT(2)
+        CFI Block cfiBlock24 Using cfiCommon0
+        CFI NoFunction
+        THUMB
+??Word2Hex??rT:
+        LDR.N    R3,??Subroutine12_0  ;; Word2Hex
+        BX       R3
+        DATA
+??Subroutine12_0:
+        DC32     Word2Hex
+        CFI EndBlock cfiBlock24
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(2)
+`?<Initializer for BMP_Color>`:
+        DATA
+        DC16 65535, 65504, 48608, 2047, 1527, 63519, 47127, 2016, 1504, 31727
+        DC16 1311, 63488, 31, 0, 0, 0
+`?<Initializer for BmpHead>`:
+        DC8 66, 77, 248, 11, 0, 0, 0, 0, 0, 0, 118, 0, 0, 0, 40, 0, 0, 0, 144
+        DC8 1, 0, 0, 240, 0, 0, 0, 1, 0, 4, 0, 0, 0, 0, 0, 130, 11, 0, 0, 18
+        DC8 11, 0, 0, 18, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(2)
+`?*?DATA_ID`:
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_I:
+        DCD      sfe(DATA_I) - sfb(DATA_I), sfb(DATA_I), sfb(DATA_ID)
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_Z:
+        DCD      sfe(DATA_Z) - sfb(DATA_Z), sfb(DATA_Z), sfb(DATA_Z)
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+`?<Constant "FILE    DAT">`:
+        DATA
+        DC8 "FILE    DAT"
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+`?<Constant "FILE    DAT">_1`:
+        DATA
+        DC8 "FILE    DAT"
+        DC8 0, 0, 0, 0
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+`?<Constant "IMAG    BMP">`:
+        DATA
+        DC8 "IMAG    BMP"
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+`?<Constant "DATA    BUF">`:
+        DATA
+        DC8 "DATA    BUF"
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+`?<Constant "DATA    BUF">_1`:
+        DATA
+        DC8 "DATA    BUF"
+        DC8 0, 0, 0, 0
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+`?<Constant "DATA    CSV">`:
+        DATA
+        DC8 "DATA    CSV"
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+`?<Constant "TRACK1 ">`:
+        DATA
+        DC8 "TRACK1 "
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+`?<Constant "TRACK2 ">`:
+        DATA
+        DC8 "TRACK2 "
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+`?<Constant "TRACK3,TRACK4,\\r\\n">`:
+        DATA
+        DC8 "TRACK3,TRACK4,\015\012"
+        DC8 0, 0, 0
+
+        END
+//  542 
+//  543 /******************************** END OF FILE *********************************/
+//  544 
+// 
+// 3 504 bytes in segment CODE
+//   116 bytes in segment DATA_C
+//    88 bytes in segment DATA_I
+//    88 bytes in segment DATA_ID
+// 1 844 bytes in segment DATA_Z
+//    24 bytes in segment INITTAB
+// 
+// 3 368 bytes of CODE  memory (+ 160 bytes shared)
+//   204 bytes of CONST memory
+// 1 932 bytes of DATA  memory
+//
+//Errors: none
+//Warnings: none
